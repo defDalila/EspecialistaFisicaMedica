@@ -1,5 +1,7 @@
-# Conteúdos para a Prova de Especialista em Física Médica :books:
+# Especialista em Física Médica - Radioterapia :books:
 
-## :file_folder: Braquiterapia
+## Conteúdos:
 
-- :memo: Procedimentos e Técnicas de Implante
+### :file_folder: Braquiterapia
+
+- :memo: Procedimentos e Técnicas de Tratamento
