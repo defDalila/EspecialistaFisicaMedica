@@ -6,7 +6,8 @@
 \usepackage[brazil]{babel}
 \usepackage{graphicx}
 \usepackage[margin=10pt,font=small,labelfont=bf]{caption}
-\usepackage[dvipsnames]{xcolor}
+\usepackage[dvipsnames, svgnames]{xcolor}
+\DeclareCaptionFont{MediumOrchid}{\color[svgnames]{MediumOrchid}}
 \usepackage[pdftex]{hyperref}
 \usepackage{natbib}
 \bibliographystyle{plainnat}
@@ -14,6 +15,7 @@
 \usepackage{color}
 \usepackage{footnote}
 \usepackage{setspace}
+\usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{fancyhdr}
 \usepackage{leading}
@@ -35,7 +37,7 @@
 \renewcommand{\headrulewidth}{0pt}
 \rfoot{Página \thepage}
 \title{Braquiterapia}
-\author{Técnicas e Implantes\cite{devlin2015}}
+\author{Técnicas e Implantes\nocite{*}}
 \date{\textit{Dalila Mendonça}}
 \begin{document}
 	\maketitle
@@ -323,8 +325,12 @@
 			\end{equation}
 
 	\section{Fontes Utilizadas Em Braquiterapia}
+% TODO: Inserir sobre as fontes de rutênio 106 e de Californio 252 - fontes menos utilizadas
+
+		\subsection*{\textbf{\textit{\textcolor{CarnationPink}{Fontes de  Fótons de Alta Energia}}}}
+
 			
-		\subsection{Rádio 226 \textbf{\textcolor{CarnationPink}{(${}^{226}Ra$)}}}
+		\subsection{Rádio 226 \textbf{\textcolor{CarnationPink}{(${}^{226}Ra$)}}}\label{sec:radio226}
 			
 			
 			\begin{itemize}
@@ -337,6 +343,10 @@
 				\item \textbf{$t_{1/2}$:} 1600 anos
 				\item \textbf{\% de mudança de atividade: } 0.04\% ao ano
 			\end{itemize}
+			
+			\
+
+			O \textsuperscript{226}Ra foi o primeiro elemento a ser utilizado em Braquiterapia e devido a sua energia média era utilizado em vários tratamentos Intersticiais. Devido ao decaimento do \textsuperscript{226}Ra para o gás \textsuperscript{222}Rd emitindo uma partícula $\mathrm{\alpha}$ (${}_2^4He$), ocorre um aumento da pressão dentro do encapsulamento o que leva à rachaduras no envolcro da fonte, acarretando na contaminação com um material altamente danoso.
 
 			\
 		
@@ -355,13 +365,19 @@
 
 			\
 
+			O \textsuperscript{137}Cs foi um dos substitutos do \textsuperscript{226}Ra. Por emitir uma energia média semelhante à do \textsuperscript{226}Ra, sua penetração no tecido possuía um certo grau de similaridade com o \textsuperscript{226}Ra. O \textsuperscript{137}Cs foi gradativamente sendo substituído por fontes com alta atividade com a finalidade de tornar os tempos de tratamento cada vez menores.
+
+			O \textsuperscript{137}Cs é utilizado em sistemas afterloading de Braquiterapia LDR e foi amplamente utilizado em implantes ginecológicos LDR.
+
+			\
+
 		\subsection{Cobalto 60 \textbf{\textcolor{CarnationPink}{(${}^{60}Co$)}}}
 		
 
 
 			\begin{itemize}
 				\item \textbf{Aplicação Clínica:} LDR Intracavitária e Intersticial e HDR Intracavitária
-				\item \textbf{Sítios de tratamento mais comuns:} Multiplos sítos
+				\item \textbf{Sítios de tratamento mais comuns:} Múltiplos sítios
 				\item \textbf{Forma da fonte:} fio
 				\item \textbf{Partícula Emitida:} Raios-$\gamma$
 				\item \textbf{Energia média: } 1250 KeV
@@ -372,19 +388,7 @@
 
 			\
 
-		\subsection{Ouro 198 \textbf{\textcolor{CarnationPink}{(${}^{198}Au$)}}}
-
-
-			\begin{itemize}
-				\item \textbf{Aplicação Clínica:} LDR intersticial
-				\item \textbf{Sítios de tratamento mais comuns:} Próstata
-				\item \textbf{Forma da fonte:} Sementes
-				\item \textbf{Partícula Emitida:} Raios-$\gamma$
-				\item \textbf{Energia média: } 412 KeV
-				\item \textbf{HVL:} 2.5 mm de Pb
-				\item \textbf{$t_{1/2}$:} 2.7 dias
-				\item \textbf{\% de mudança de atividade: } 22.6\% por dia
-			\end{itemize}
+			O \textsuperscript{60}Co também foi um dos substitutos do \textsuperscript{226}Ra. Um dos maiores diferenciais é que o \textsuperscript{60}Co possui uma alta atividade específica o que permite a confecção de fontes pequenas. Quando comparado ao \textsuperscript{137}Cs, é necessário uma troca de fonte com maior frequência devido o \textsuperscript{60}Co ter um tempo de meia vida menor que a do \textsuperscript{137}Cs. Portanto, para tratamentos LDR é mais interessante a utilização do \textsuperscript{137}Cs. Porém, quando comparado ao tratamento HDR com \textsuperscript{192}Ir, o \textsuperscript{60}Co pode ser uma opção mais interessante para os locais com maior dificuldade de troca de fonte.
 
 			\
 
@@ -403,18 +407,50 @@
 
 			\
 
+			Possui uma energia média com menor poder de penetração mas ainda sim com força suficiente para tratamentos de implantes Intersticiais feitos com o \textsuperscript{137}Cs e o \textsuperscript{60}Co. o \textsuperscript{192}Ir possui alta atividade específica o que permite a confecção de fontes pequenas, em formato de sementes e que podem ser colocadas em fitas ou fios espaçadas entre si. O \textsuperscript{192}Ir é muito utilizado em sistemas afterloading HDR.
+
+			\
+
+			\subsection{Ouro 198 \textbf{\textcolor{CarnationPink}{(${}^{198}Au$)}}}
+
+
+			\begin{itemize}
+				\item \textbf{Aplicação Clínica:} LDR intersticial
+				\item \textbf{Sítios de tratamento mais comuns:} Próstata
+				\item \textbf{Forma da fonte:} Sementes
+				\item \textbf{Partícula Emitida:} Raios-$\gamma$
+				\item \textbf{Energia média: } 412 KeV
+				\item \textbf{HVL:} 2.5 mm de Pb
+				\item \textbf{$t_{1/2}$:} 2.7 dias
+				\item \textbf{\% de mudança de atividade: } 22.6\% por dia
+			\end{itemize}
+
+			\
+
+			O \textsuperscript{198}Au é utilizado em forma de semente para implantes Intersticiais permanentes. Possui como vantagem uma menor energia quando comparado com o \textsuperscript{137}Cs e o \textsuperscript{60}Co. A sua meia vida curta permite ser utilizado em implantes permanentes. Sua utilização foi diminuída com a introdução do \textsuperscript{125}I
+
+			\
+
+		
+		\subsection*{\textbf{\textit{\textcolor{CarnationPink}{Fontes de  Fótons de Baixa Energia}}}}
+
+
 		\subsection{Iodo 125 \textbf{\textcolor{CarnationPink}{(${}^{125}I$)}}}
 
 			\begin{itemize}
 				\item \textbf{Aplicação Clínica:} LDR Intersticial e Superficial
 				\item \textbf{Sítios de tratamento mais comuns:} Próstata e olho
 				\item \textbf{Forma da fonte:} sementes
-				\item \textbf{Partícula Emitida:} Raios-$\gamma$
+				\item \textbf{Partícula Emitida:} Raios-X
 				\item \textbf{Energia média: } 28 KeV
 				\item \textbf{HVL:} 0.025 mm de Pb
 				\item \textbf{$t_{1/2}$:} 59.4 dias
 				\item \textbf{\% de mudança de atividade: } 1.2\% por dia
 			\end{itemize}
+
+			\
+
+			É uma fonte de baixa energia amplamente utilizada no implante permanente de próstata na forma de pequenas sementes embora também possa ser utilizadas em placas oftalmológicas e em implantes cerebrais. Esta engergia apresenta um acentuado falloff de dose no tecido e requer blindagem mínima para fins de radioproteção. Porém, devido a baixa dose dos fótons emitidos por esta fonte, possui uma dosimetria mais complexa e é fortemente dependente do design da fonte.
 
 			\
 
@@ -425,7 +461,7 @@
 				\item \textbf{Aplicação Clínica:} LDR Intersticial
 				\item \textbf{Sítios de tratamento mais comuns:} Próstata
 				\item \textbf{Forma da fonte:} Sementes
-				\item \textbf{Partícula Emitida:} Raios-$\gamma$
+				\item \textbf{Partícula Emitida:} Raios-x
 				\item \textbf{Energia média: } 21 KeV
 				\item \textbf{HVL:} 0.008 mm de Pb
 				\item \textbf{$t_{1/2}$:} 17 dias
@@ -433,6 +469,11 @@
 			\end{itemize}
 
 			\
+
+			O \textsuperscript{103}Pd é uma alternativa ao \textsuperscript{125}I pois os fótons emitidos possuem uma energia similar porém um tempo de meia vida mais curto. O fato da meia vida o \textsuperscript{103}Pd ser mais curta fornece uma vantagem biológica pois a dose será entregue em um menor intervalo de tempo. O \textsuperscript{103}Pd é utilizado em implantes permanentes de próstata e em placas oftalmológicas.
+
+			\
+
 		
 		\subsection{Césio 131 \textbf{\textcolor{CarnationPink}{(${}^{131}Cs$)}}}
 
@@ -449,6 +490,33 @@
 
 			\
 
+			o \textsuperscript{131}Cs também é uma alternativa ao \textsuperscript{125}I com uma meia vida menor e energia similar, o que também permite que a dose seja entregue em um menor intervalo de tempo.
+
+			\
+
+		\subsection*{\textbf{\textit{\textcolor{CarnationPink}{Emissores de Partículas Beta}}}}
+
+
+		\subsection{Fósforo 32 \textbf{\textcolor{CarnationPink}{(${}^{32}P$)}}}
+
+			\begin{itemize}
+				\item \textbf{Aplicação Clínica:} LDR Superficial
+				\item \textbf{Sítios de tratamento mais comuns:} pele
+				\item \textbf{Forma da fonte:} discos, placas ou fios
+				\item \textbf{Partícula Emitida:} partícula-$\beta$
+				\item \textbf{Energia média: } 695 KeV
+				\item \textbf{Energia máxima: } 1710 KeV
+				\item \textbf{HVL:} N/A
+				\item \textbf{$t_{1/2}$:} 14.3 dias
+				\item \textbf{\% de mudança de atividade: } 
+			\end{itemize}
+
+			\
+
+			O \textsuperscript{32}P é um \textit{\textcolor{CarnationPink}{emissor beta puro}} que pode ser utilizado em um disco ou em placas para o tratamento de lesões na pele. Pode também ser utilizado em fios para o tratamento de braquiterapia vascular intervencionista de restenose in-stent de artéria cardíaca.
+
+			\
+
 		\subsection{Estrôncio 90 \textbf{\textcolor{CarnationPink}{(${}^{90}Sr$)}}}
 
 			\begin{itemize}
@@ -456,25 +524,47 @@
 				\item \textbf{Sítios de tratamento mais comuns:} Olhos
 				\item \textbf{Forma da fonte:} Sementes, placas ou aplicadores
 				\item \textbf{Partícula Emitida:} partícula-$\beta$
-				\item \textbf{Energia média: } 224 KeV (máxima)
+				\item \textbf{Energia média: } 196 KeV 
+				\item \item \textbf{Energia máxima: } 546 KeV
 				\item \textbf{HVL:} N/A
-				\item \textbf{$t_{1/2}$:} 28.8 anos
+				\item \textbf{$t_{1/2}$:} 28.9 anos
 				\item \textbf{\% de mudança de atividade: } 2.4\% por dia
 			\end{itemize}
 
-	
+
+		\subsection{Ítrio 90 \textbf{\textcolor{CarnationPink}{(${}^{90}Y$)}}}
+
+			\begin{itemize}
+				\item \textbf{Aplicação Clínica:} LDR Superficial
+				\item \textbf{Sítios de tratamento mais comuns:} Olhos
+				\item \textbf{Forma da fonte:} placas ou micro-esferas
+				\item \textbf{Partícula Emitida:} partícula-$\beta$
+				\item \textbf{Energia média: } 933 KeV 
+				\item \item \textbf{Energia máxima: } 2280 KeV
+				\item \textbf{HVL:} N/A
+				\item \textbf{$t_{1/2}$:} 64.1 h
+				\item \textbf{\% de mudança de atividade: } 
+			\end{itemize}
+
+		\
+
+			O \textsuperscript{90}Y é um \textit{\textcolor{CarnationPink}{emissor beta puro}} e tanto o \textsuperscript{90}Sr como o \textsuperscript{90}Y são utilizados em placas oftalmológicas ou em tratamentos de alguns tipos de canceres em regiões que não pode haver uma profundidade de penetração da radiação no tecido. Além disso, o \textsubscript{90}Y é utilizado em micro-esferas para o tratamento de doenças hepáticas, onde as micro-esferas são produzidas com vidro ou resina incorporando o nuclídio.
+
+		\
+
 	\section{Distribuição de Dose em Braquiterapia}
 
 		Devido a baixa energia dos fótons emitidos por fontes de braquiterapia, que é da ordem de KeV, a distribuição de dose apresenta um alto gradiente de dose e um falloff de dose mais rápido quando comparado à teleterapia.
 
 		A maior vantagem deste gradiente acentuado é conseguir poupar os tecidos sadios adjacentes.Porém, caso o alvo esteja distante da fonte, cobrir o alvo com a dose de prescrição será difícil pelo mesmo motivo, pois irá aumentar a dose nos tecidos mais próximos. Portanto para diminuir a dose em volta do alvo indica-se utilizar o maior aplicador possível para que este tecido seja afastado para longe da fonte em uma região com um menor gradiente de dose. 
 
-		Uma discrepância de milímetros em braquiterapia pode ser crítica no tratamento devido à forma do falloff de dose e portanto requer uma precisão milimétrica no posicionamento da fonte em sistemas afterloading.
+		Uma discrepância de milímetros em braquiterapia pode ser crítica no tratamento devido à forma do falloff de dose e portanto requer uma precisão milimétrica no posicionamento da fonte em sistemas afterloading. A Figura \ref{img:DistribuicaoDoseBalao} mostra as isodoses próximas a fonte e na profundidade de prescrição para um tratamento de mama utilizando um balão.
 
-		\begin{figure}
+		\begin{figure}[h]
 			\centering
 			\includegraphics[width=0.5\textwidth]{Imagens/falloffDoseMammosite.JPG}
 			\caption{Distribuição de dose com um balão de mama inflado. A dose de prescrição está a 1 cm de profundidade da superfície do balão. Caso o balão seja esvaziado, a dose nesse mesmo ponto pode ficar 10 vezes maior que a dose de prescrição.}
+			\label{img:DistribuicaoDoseBalao}
 		\end{figure}
 
 		São 3 fatores que impactam na forma da distribuição de dose em braquiterapia: \textbf{\textcolor{CarnationPink}{distância da fonte, forma e encapsulamento e o material do encapsulamento}}.
@@ -629,7 +719,12 @@
 			onde:
 
 			\begin{itemize}
-				\item \textbf{\textcolor{CarnationPink}{$\varLambda$} : } é a constante de taxa de dose responsável por corrigir a medida no ar para a água. É definida como a taxa de dose na água por unidade de força Kerma-ar na posição de referência $\mathrm{P_0(r_0, \theta_0)}$.
+				\item \textbf{\textcolor{CarnationPink}{$\varLambda$} : } é a constante de taxa de dose responsável por corrigir a medida no ar para a água. É definida como a taxa de dose na água por unidade de força Kerma-ar na posição de referência $\mathrm{P_0(r_0, \theta_0)}$. Esta constante faz com que o cálculo de dose seja feito para um meio homogêneo de água, o que é mais adequado para simular um paciente, mesmo não considerando a heterogeneidade.
+
+					\begin{equation}
+						\varLambda = \frac{\dot{D}(r_0, \theta_0)}{S_k}
+					\end{equation}
+
 					$$[\varLambda] = cGy / U \cdot h$$
 
 				\item \textbf{\textcolor{CarnationPink}{$S_k$} : } É a força Kerma-ar. É definida como a taxa kerma-ar medida em uma distância específica do centro da fonte ao longo do seu eixo transversal multiplicado pelo quadrado da distância do ponto à fonte, medida no ar livre.
@@ -640,7 +735,7 @@
 
 					$$[S_k] = U = cGy \cdot cm^2 / h$$
 
-				\item \textbf{\textcolor{CarnationPink}{$G(r, \theta)$}: } É a função Geométrica. Fornece a efetiva lei do inverso quadrado pois considera a variação da dose relativa devido à distribuição espacial da atividade dentro da fonte (forma da fonte). Depende apenas da distância radial e angular do ponto de análise portanto não considera o espalhamento e a atenuação da fonte.
+				\item \textbf{\textcolor{CarnationPink}{$G(r, \theta)$}: } É a função Geométrica. Fornece a efetiva lei do inverso quadrado pois considera a variação da dose relativa devido à distribuição espacial da atividade dentro da fonte (forma da fonte). Depende apenas da distância radial e angular do ponto de análise portanto não considera o espalhamento e a atenuação da fonte. Em outras palavras, A função geométrica reflete a queda de dose com brase na lei do inverso quadrado para a geometria da fonte.
 				
 					$$[G(r_ \theta)] = cm^{-2}$$
 
@@ -660,21 +755,346 @@
 						G(r, \theta) = \left(r^2 - \frac{L^2}{4}\right)^{-1}, \qquad para \qquad \theta = 0
 					\end{equation}
 				
-				\item \textbf{\textcolor{CarnationPink}{$g(r)$} : } É chamada de Função de dose radial. É uma quantidade adimensional que considera o falloff da dose ao longo do plano transversal da fonte devido ao espalhamento e a atenuação no material do encapsulamento da fonte. É definida ao longo do eixo transversal $\mathrm{(\theta = \pi / 2)}$, portanto depende apenas da distância radial do ponto à fonte.
+				\item \textbf{\textcolor{CarnationPink}{$g(r)$} : } É chamada de Função de dose radial. É uma quantidade adimensional que considera o falloff da dose ao longo do plano transversal da fonte devido ao espalhamento e a atenuação no material do encapsulamento da fonte. É definida ao longo do eixo transversal $\mathrm{(\theta = \pi / 2)}$, portanto depende apenas da distância radial do ponto à fonte. Em outras palavras, a função de dose radial reflete na queda da dose devido ao espelhamento e atenuação da radiação. Seus valores são tabelados e podem ser encontrados no update do TG-143 e em seu suplemento.
 				
 					Na distância de referência $r_0$
 
 					$$g(r_0) = 1$$
 				
-				\item \textbf{\textcolor{CarnationPink}{$F(r, \theta)$} : } É chamada de Função de Anisotropia. Leva em consideração o formato anisotrópico da distribuição de dose causado pela própria filtração do encapsulamento da fonte e a transmissão oblíqua através do encapsulamento. Fonece a distribuição de dose para ângulos diferentes de $\theta = \pi / 2$, ou seja, para pontos em ângulos fora do eixo transversal da fonte.
+				\item \textbf{\textcolor{CarnationPink}{$F(r, \theta)$} : } É chamada de Função de Anisotropia. Leva em consideração o formato anisotrópico da distribuição de dose causado pela própria filtração do encapsulamento da fonte e a transmissão oblíqua através do encapsulamento. Fonece a distribuição de dose para ângulos diferentes de $\theta = \pi / 2$, ou seja, para pontos em ângulos fora do eixo transversal da fonte. Em outras palavras, a função de anisotropria dornece a variação da dose em função do ângulo polar formado com o plano transversal da fonte.
 				
 					Para $\theta = \theta_0 = \pi/2$
 
 					$$F(r, \theta_0) = 1$$
 
 			\end{itemize}
-
 			
+			Ao aplicar a equação \ref{eq:formalismoTg43} para uma \textbf{\textcolor{CarnationPink}{fonte pontual}}, pode-se desconsiderar a anisotropia da distribuição de dose em função do ângulo,  pois a distribuição de dose para uma fonte pontual é isotrópica na mesma distância radial. Nesses casos, não se considera a posição angular do ponto de cálculo, passando a depender apenas da posição radial. Portanto a função de anisotropia passa ser: $F(r, \theta) \rightarrow \Phi (r)$,  que é um fator de anisotropia 1D dado pela média da taxa de dose em cada distância em relação ao ângulo sólido.
+			
+			\begin{equation}
+				\dot{D}(r) = S_k \; \varLambda \; \left(\frac{r_0}{r} \right)^2 \; g(r) \; \Phi (r)
+				\label{eq:aproxModularFontePontual}
+			\end{equation}
+			
+			A Aproximação fornecida pela Equação \ref{eq:aproxModularFontePontual} pode ser aplicada sempre que:
+
+			\begin{enumerate}
+				\item A distância do ponto até a fonte é de no mínimo duas vezes o tamanho efetivo da fonte de modo que a forma da distribuição de dose nesse ponto não cause impacto no cálculo da dose.
+				\item Quando as fontes estão distribuídas aleatoriamente de forma que pe tomado uma média dos efeitos de anisotropia.
+			\end{enumerate}
+
+			Tratamentos de próstata com LDR são um exemplo de aproximação para fonte pontual enquanto que os tratamentos HDR utilizam o formalismo em si para as fontes cilíndricas.
+
+		\subsection*{\textcolor{CarnationPink}{Exemplo: Tratamento de Próstata com fontes de Baixa Energia}}
+
+			É comum ser realizado um planejamento intra-operatório para implantes de próstata onde é adquirida uma imagem de ultrasonografia transretal, que é transferida para o sistema de planejamento. Na imagem são delineados o volume alvo, o reto e a uretra. Normalmente o sistema de planejamento assumo os cálculos de distribuição de dose para uma fonte pontual. Modelos de fontes lineares podem ser utilizados desde que parta do pressuposto que essas fontes são paralelas às agulhas, porém essa forma pode levar à imprecisões nos cálculos de dose. Por outro lado, a orientação das fontes podem ser mais precisamente definidas utilizando uma imagem de Tomografia Computadorizada (TC) durante a avaliação da dose pós-implante através de métodos de segmentação automatizados. Nestes casos a distribuição de dose pode ser calculada através da soma da dose de cada semente.
+
+			\begin{enumerate}
+				\item \textbf{As sementes do modelo Amersham 6702 de \textsuperscript{125}I são utilizadas em um implante de próstata. A força Kerma-ar para estas sementes é de 0.5 U. Uma semente está a 3.0 cm da parede anterior do reto.}
+				
+					\begin{enumerate}
+						\item \textbf{Qual é a taxa de dose dessa semente até o ponto mais próximo do reto?}
+						\item \textbf{Quanta dose este ponto receberá da fonte após 1 mês?}
+						\item \textbf{Qual a dose total que será recebida devido à esta fonte?}
+					\end{enumerate}
+			\end{enumerate}
+
+			\textbf{\textcolor{CarnationPink}{Solução:}}
+
+			\begin{quote}
+				\color{MediumOrchid}
+				A dose neste caso deve ser avaliada utilizando a aproximação para uma fonte pontual pois embora a dose seja calculada para apenas uma semente, o ponto de análise está a uma distância superior a 2 vezes o tamanho da fonte. De acordo com o TG-43, este modelo de fonte possui comprimento L = 3.0 mm.
+
+				Os valores das quantidades necessárias para determinação da dose foram obtidos no update do TG-43 e todos os dados necessários para os cálculos podem ser conferidos na tabela \ref{tb:paramExercCalcDose}:
+
+				\begin{table}[h]
+					\color{MediumOrchid}
+					\centering
+					\captionsetup{labelfont={color=MediumOrchid, bf}}
+					\caption{\textcolor{MediumOrchid}{Valores dos parâmetros necessários para a resolução do exercício.}}
+					\label{tb:paramExercCalcDose}
+					\begin{tabular}{c c}
+					\hline
+					\multicolumn{2}{c}{Valores para r = 3.0 cm } \\
+					\multicolumn{2}{c}{considerando uma fonte pontual} \\
+					\midrule[1.5pt]
+					Parâmetro & Valor \\
+					\addlinespace[4pt]
+					\midrule[1.5pt]
+					$S_k$ & $0.5 \; U$ \\
+					\addlinespace[4pt]
+					\hline
+					$\varLambda$ & $1.036 \; cGy  \cdot h^{-1} \cdot U^{-1}$ \\
+					\addlinespace[4pt]
+					\hline
+					$g_p(r)$ & $0.702$ \\
+					\addlinespace[4pt]
+					\hline
+					$\phi_{an}(r)$ & $0.951$ \\
+					\addlinespace[4pt]
+					\hline
+					\multirow{2}{*}{$t_{1/2}$} & $59.4 \; dias$\\
+					 & $1425.6 h$ \\
+					\addlinespace[4pt]
+					\hline
+					 $r_0$ & $ 1 \; cm$ \\
+					\addlinespace[4pt]
+					\hline
+					\hline
+					
+					\end{tabular}
+				\end{table}
+
+				\textbf{(a)} A taxa de dose  no ponto é então:
+
+					$$\dot{D}(r) = S_k \cdot \varLambda \cdot \left(\frac{r_0}{r}\right)^2 \cdot g(r) \cdot \phi_{an}(r)$$
+				
+					Fazendo as devidas substituições temos:
+
+					$$\dot{D}(r= 3cm) = 0.5 \cdot 1.036 \cdot \left(\frac{1}{3}\right)^2 \cdot 0.702 \cdot 0.951$$
+
+					Portanto, temos que
+
+					$$\dot{D}(r= 3cm) = 0.0384 \; cGy / h$$
+
+				\textbf{(b)} A dose acumulada após 1 mês de implante devido à fonte pode ser obtida através da equação:
+
+					$$D(t) = \dot{D_0} \cdot 1.44 \cdot t_{1/2} \cdot \left(1 - e^{- ln 2 \cdot \frac{t}{t_{1/2}}}\right)$$
+
+					Sendo $t = 30 \; dias$, e utilizando a taxa de dose inicial obtida no item (a), temos então que:
+
+					$$D(t = 30 \; dias) = 0.0384 \cdot 1.44 \cdot 1425.6 \cdot \left(1 - e^{- 0.693 \cdot \frac{30}{59.4}}\right) $$
+
+					Portanto, a dose após 1 mês de implante é:
+
+					$$D(t = 30 \; dias) = 23.28 \; cGy$$
+
+					\textbf{\textcolor{CarnationPink}{Obs:}} \textit{O valor da meia vida dentro da exponencial foi utilizado em dias para ficar da mesma dimensão do tempo de implante; Fora da exponencial foi utilizado em horas para obter a dose em Gy uma vez que a taxa de dose foi determinada em Gy/h, caso contrário essa conversão deveria ter sido feita no final do exercício.}
+
+				\textbf{(c)} A dose total para um implante permanente cuja meia vida é muito menor que o tempo do implante é obtida através da relação:
+
+					$$D = 1.44 \cdot \dot{D_0} \cdot t_{1/2}$$
+
+					Portanto a dose total recebida no ponto devido a está fonte será de:
+
+					$$D = 1.44 \cdot 0.0384 \cdot 1425.6$$
+					$$D = 78.83 \; cGy$$
+
+				\textbf{\textcolor{CarnationPink}{Obs:}} \textit{ A dose no ponto foi calculada para a contribuição de apenas 1 semente. Para obter a dose total recebida nesse ponto deve-se somar a contribuição de todas as fontes inseridas no implante.}
+
+
+
+			\end{quote}
+
+		\subsection{Cálculos de Dose Baseados em Imagens}
+
+			Algoritmos de cálculo de dose baseados em modelos podem ser utilizados para cálculos de distribuição de dose levando em consideração um meio heterogêneo, uma vez que o formalismo do TG-43 considera o meio homogêneo em seus cálculos.
+			
+			Os algoritmos de cálculo consideram o impacto de diferentes meios materiais na dispersão da dose através de:
+
+				\begin{itemize}
+					\item Simulação e Acoplamento do par fóton-elétron no transporte de radiação; ou
+					\item Através da utilização de técnicas de integração da dispersão multidimensional.
+				\end{itemize}
+			
+			Os métodos de cálculos computacionais mais utilizados são:
+
+				\begin{itemize}
+					\item \textbf{\textit{\textcolor{CarnationPink}{Collapsed Cone Convolution-Superposition}}}, que utilizam Kernels para calcular a dose de radiação do feixe primário e do feixe espalhado no qual mapeia, espacialmente, a disposição de energia no meio. \textit{Exemplo:} \textit{\textbf{Oncentra\textsuperscript{\textregistered}}, Sistema de planejamento de braquiterapia da Elekta que implementa o algoritmo Convolution-Superposition}.
+					
+					\item \textbf{\textit{\textcolor{CarnationPink}{Grid-based Boltzmann Solvers}}}, onde é utilizada uma abordagem determinística para resolver diretamente a equação de transporte linear de Boltzmann. \textit{Exemplo:} \textit{\textbf{Acuros\textsuperscript{\textregistered}}, algoritmo implementado no sistema de planejamento Brachyvision\textsuperscript{\textregistered} da Varian}.
+					
+					\item \textbf{\textit{\textcolor{CarnationPink}{Monte Carlo Simulations}}}, que utiliza abordagens estocásticas para resolver a equação de transporte linear de Boltzmann através de amostragens aleatórias. É um modelo mais presente em pesquisas científicas.
+					
+					\item \end{itemize}
+		
+	\section{Braquiterapia de Baixa Energia}
+		
+
+		Fontes consideradas de baixa energia são aquelas que emitem fótons com energia da ordem de 50 KeV, como o \textsuperscript{125}I, \textsuperscript{103}Pd e \textsuperscript{131}Cs.
+
+		Devido a baixa energia dos fótons emitidos por estas fontes, a proteção radiológica se torna mais efetiva por dois motivos:
+
+			\begin{enumerate}
+				\item O feixe é atenuado pelo próprio paciente, nos casos de implante temporário.
+				\item A blindagem de chumbo necessária para estas fontes é mínima nos casos de implantes temporários, como ocorre em placas oftalmológicas.
+			\end{enumerate}
+		
+		As principais aplicações de fontes de braquiterapia de baixa energia são feitas nos implantes permanentes de próstata guiados por ultrasonografia transretal. Embora tenha uma aplicação mais limitada, também podem ser aplicadas no tratamento de melanomas intraoculares e tumores pulmonares em estágio inicial.
+
+		Quando uma fonte é considerada como \textit{\textcolor{CarnationPink}{rádio-equivalente}}, como ocorre com as fontes de \textsuperscript{137}Cs, \textsuperscript{60}Co e \textsuperscript{198}Au, seu espectro é governado por raios-$\mathrm{\gamma}$ de alta energia e podem facilmente ser especificadas em termos da definição ``\textit{miligramas de rádio equivalente}", possuindo métodos mais simples para cálculos de dose pois a energia desses fótons é minimamente modificada pela construção da fonte e pela atenuação no tecido. 
+
+		Porém, quando se trata de fontes de baixa energia, como o \textsuperscript{125}I, \textsuperscript{103}Pd e o \textsuperscript{131}Cs, os cálculos de dose já não são tão simples uma vez que a energia do feixe é significativamente modificada devido à atenuação e ao espalhamento dos fótons de baixa energia causados pelo encapsulamento da fonte. Para estes casos é necessária uma modificação apropriada no formalismo de cálculo para a determinação da calibração da força da fonte.
+
+		\subsection{Design e construção das Sementes}
+
+			O formalismo de cálculo estabelecido pelo TG-43 contemplava primordialmente os modelos de sementes:
+
+				\begin{itemize}
+					\item \textsuperscript{125}I: Nycomed-Armsham 6702 e 6711
+					\item \textsuperscript{103}Pd: Theragenics TP-200
+					\item  \textsuperscript{192}Ir: Best Medial e Alpha-Omega
+				\end{itemize}
+			
+			O Report Tg-43 foi atualizado para corrigir inconsistências no report original e para incluir recomendações a cerca de fontes de braquiterapia de baixa energia, incluindo conjuntos de dados dosimétricos paras as novas fontes de \textsuperscript{125}I e \textsuperscript{103}Pd além dos guidelines para a determinação dos parâmetros dosimétricos das fontes de baixa energia.
+
+
+			As fontes desenvolvidas possuem normalmente uma dimensão externa de 4.5 mm de comprimento e 0.8 mm de diâmetro, onde:
+
+				\begin{itemize}
+					\item O diâmetro é estabelecido sendo o mesmo que o tamanho do calibre de uma agulha utilizada na braquiterapia Intersticial; E
+					\item O tamanho é definido com base na regulamentação dos EUA para materiais radioativos sob a forma especial com limite de 0.5 cm para fins de embalagem e envio.
+				\end{itemize}
+
+				As características básicas de uma fonte são:
+
+				\begin{enumerate}
+					\item   Possuem um encapsulamento da fonte que deve ser feito através de uma cápsula de Titanio, sendo normalmente um tubo fino fabricado pelo processo de extrusão.
+					\item Possuem envólcruos das extremidades devem ser na forma de soldas de extremidade, copos ou outros mecanismos para vedar os tubos de titânio após os componentes internos serem inseridos.
+					\item Os portadores de fonte ativa devem estar na forma de esferas ou cilindros.
+					\item Possuem um material com a fonte ativa que contem o material radioativo incorporado ao portador da fonte.
+				\end{enumerate}
+
+
+			Em uma fonte ideal, espera-se que a distribuição de dose em volta da fonte seja uniforme e que haja uma reprodutibilidade na distribuição de dose inter-fontes. Portanto, algumas características dosimétricas podem ser afetadas devido à problemas na fabricação da fonte e portanto durante a fabricação de uma fonte deve-se atentar as seguintes características:
+
+				\begin{enumerate}
+					\item O encapsulamento da fonte deve conter uma espessura uniforme de titânio, o que é possível ser alcançado através de equipamentos mais sofisticados.
+					
+					\item O projeto dos envolcruos de fechamento devem ser finos e uniformes e devem garantir uma variação mínima inter-sementes. 
+
+						\textit{Envolcruos de fechamentos mais espessos, como soldas ou copos, podem aumentar a anisotropia na distribuição de dose próximo às extremidades da semente, reduzindo a precisão do cálculo da dose baseado em fontes pontuais. Variações na espessura da solda entre as sementes causam desvios nos cálculos. Essas variações, embora clinicamente insignificantes, tem o potencial de aumentar significativamente as incertezas dos valores calculados da função de anisotropia da fonte devido às incertezas nas espessuras médias das soldas de fechamento utilizada nos cálculos. Além disso, pode também aumentar a incerteza nos valores medidos de anisotropia}
+					
+					\item A geometria e o material dos portadores de fonte ativa podem afetar as características dosimétricas da fonte:
+					
+						\begin{enumerate}
+							\item Utilizando \textbf{Prata} como o material do portador de fonte ativa, os raios-x da camada K desse material possuem energia de 25.51 KeV; Portanto a prata irá suavizar o espectro de energia do fotón emitido pela fonte encapsulada. Isso resulta em uma menor constante de taxa de dose em sementes de \textsuperscript{125}I com portador de prata quando comparado aos outros materiais de portadores de fonte.
+							
+								\textit{\textcolor{CarnationPink}{Exemplo:}} 
+									\begin{itemize}
+										\item Valor médio da constante de taxa de dose para o \textsuperscript{125}I encapsulado com Ag:
+										
+											\textbf{$\mathrm{0.953 \; cGy \cdot h^{-1} \cdot \; U^{-1}}$}
+										\item Valor médio da constante de taxa de dose para outras sementes de \textsuperscript{125}I:
+										
+											\textbf{$\mathrm{1.026 \; cGy \cdot h^{-1} \cdot \; U^{-1}}$}
+									\end{itemize}
+
+							\item A falta de reprodutibilidade do posicionamento dos portadores da fonte dentro do encapsulamento de titânio pode afetar negativamente a precisão nas medidas da distribuição de dose em volta da fonte, semelhantemente ao que ocorre com as diferênças das espessuras da solda no fechamento da semente em sua parte interna.
+							
+						\end{enumerate}
+					
+					\item A falta de uniformidade na deposição do material da fonte radioativa nos carregadores da fonte podem aumentar os valores calculados e medidos da anisotropia da distrinuição de dose e até mesmo da função de dose radial.
+					
+				\end{enumerate}
+
+			As incertezas na distribuição de dose devido à fabricação da fonte são reduzidas conforme tenha um aumento do número de fontes utilizadas no tratamento do paciente; Além dessa incertezas serem mais enunciadas à curtas distâncias da fonte. Pode-se afirmar então que os cálculos de dose baseados em fontes pontuais permitem precisão adequada do cálculo da dose pois são tomados à uma distância segura da fonte ou devido à contribuição de várias fontes, situações onde os erros de fabricação são despresíveis.
+
+			Nenhuma alteração na fabricação da fonte deve ser feita sem comunicação prévia devido a alta sensibilidade das fontes de baixa energia o que faz com que qualquer alteração pode levar a um impacto dosimétrico.
+
+		\subsection{Dosimetria das Fontes de Baixa Energia}
+
+			As fontes de braquiterapia são descritas com base em sua atividade aparente. A atividade aparente é obtida através da taxa de exposição na distância de calibração em um laboratório acreditado. Com bases nesses valores que foram calculados as distribuições de dose 2-D.
+
+			O padrão para determinar a força da donte é a \textbf{\textcolor{CarnationPink}{Força Kerma-AR}}, que pode ser convertida para a taxa de exposição à 1m da fonte através da relação:
+
+				\begin{equation}
+					S_k = \dot{X}(R \cdot h^{-1}) \cdot 0.876 \; (cGy/R) \cdot (1 \; m)^2
+				\end{equation}
+			
+			A força Kerma-ar é definida como o produto da força Kerma-ar devido aos fotons de energia $\dot{K}$ maiores que a energia de corte $\delta$ a uma distância $d$ e o quadrado da distância:
+
+				\begin{equation}
+					S_k = \dot{K}_\delta (d) \cdot d^2
+				\end{equation}
+
+				\textbf{\textcolor{CarnationPink}{Obs:} } O valor valor para energia de corte para fótons de baixa energia é de:
+
+				$$\delta = 5 \; \; KeV$$
+				
+			A força Kerma=ar em uma fonte cilíndrica pode ser calibrada através de comparação direta com uma fonte do mesmo tipo calibrada no laboratório acreditado.
+
+			\textbf{\textcolor{CarnationPink}{Obs:}} O NIST é um laboratório acreditado onde a calibração é feita com uma câmara de ar livre com ampla angulação (incidência de vários ângulos) com uma aproximação de $0.01 \; \; Gy \; m^2 \; h^{-1}$. É feita uma filtragem com alumínio para excluir a contaminação com fótons de baixa energia da ordem da energia de corte na definição da Força Kerma-ar para minimizar a incerteza na medição.
+
+			A dose 2-D é então determinada pela Equação \ref{eq:formalismoTg43} levando em consideração a correção feita na exposição para determinar a força kerma-ar;
+
+		\subsection{Aplicações Clínicas dos Fótons de Baixa Energia}
+
+			Os raios-X de baixa energia possuem maior Transferência Linear de Energia \textbf{\textcolor{CarnationPink}{(LET)}} quando comparados aos raios-x de alta energia. Isto resulta em uma maior Efetividade Biológica Relativa \textbf{\textcolor{CarnationPink}{(RBE)}}, o que é uma vantagem na morte tumoral.
+
+			As energias típicas para braquiterapia de baixa energia estão abaixo de 50 KeV, com energias efetivas semelhante aos raiox-X de baixa energia entre 30KeV e 150 KeV. No caso do \textsuperscript{125}I, a RBE comparada ao \textsuperscript{60}Co varia entre 1.1 - 2.0. Já o \textsuperscript{103}Pd possui um valor de LET ligeiramente maior que o \textsuperscript{125}I e seus valores de RBE são aceitos como sendo aproximadamente 10\% mais altos.
+
+			Os valores da RBE também dependem da dose e da taxa de dose que serão entregues. Esses valores são determinados principalmente pela natureza e duração do implante. A tabela \ref{tb:rbeI25} mostra a diferença dos valores de RBE em relação ao \textsuperscript{60}Co com base no tipo de implante.
+
+				\begin{itemize}
+					\item Em casos de \textcolor{CarnationPink}{Implantes Temporários}, a dose típica a ser entregue varia entre 60 Gy - 90 Gy em poucos dias de tratamento a uma taxa de dose variandro ente 0.5 Gy/h até 0.8 Gy/h utilizando sementes com alta atividade.
+					\item Já nos casos de \textcolor{CarnationPink}{implantes permanentes}, a taxa de dose timicamente utilizada é menor que 0.2 Gy/h utilizando sementes de baixa atividade.
+				\end{itemize}
+
+				\begin{table}[h]
+					\centering
+					\caption{Valores de RBE para o \textsuperscript{125}I}
+					\label{tb:rbeI25}
+					\begin{tabular}{c c}
+					\toprule
+					Técnica & RBE \\
+					\midrule[1.5pt]
+					Implantes Temporários & 1.15 - 1.20 \\
+					Implantes Permanentes & $>$ 2.0 \\
+					\bottomrule
+					\bottomrule
+					\end{tabular}
+				\end{table}
+
+			Sendo $\lambda$ a constante de decaimento, $\mu$ a constante de recuperação do dano subletal e $T$ o tempo de duração de uma seção de braquiterapia, podemos extrair as seguintes relações:
+			
+			\begin{itemize}
+		
+			
+				\item A dose para os implantes temporários pode ser obtida através da Equação \ref{eq:doseCumulativa}. 
+
+					$$D(t) = \frac{1}{\lambda} \cdot \dot{D_0} \cdot \left(1 - e^{-\lambda t}\right)$$
+
+				\item A dose biológicamente eficaz \textbf{\textcolor{CarnationPink}{(BED)}} para implantes temporários pode ser obtida através da equação:
+
+					\begin{equation}
+						BED = \frac{1}{\lambda} \dot{D_0}\left(1 - e^{-\lambda t}\right)
+						\left\{ 1 + \frac{2 \dot{D_0}\lambda}{(\mu - \lambda)(\alpha / \beta) (1 - e^{-\lambda t})}
+						\left[\frac{1}{2\lambda}(1 - e^{-\lambda t }) - \frac{1}{\mu + \lambda} (e - e^{-(\mu + \lambda) t})\right]\right\} 
+					\end{equation}
+
+				\item O BED para uma duração T da seção de braquiterapia é obtido através da relação:
+
+					\begin{equation}
+						BED_{BT} = D \left\{ 1 + \frac{2 \cdot D}{(\alpha / \beta)\mu \cdot T}
+						\left[1 - \frac{1}{\mu T} (1 - e^{-\mu T})\right]\right\}
+					\end{equation}
+				
+				\item A Dose Total para implantes permanentes é dada por:
+					
+					\begin{equation}
+						D = \frac{1}{\lambda} \cdot \dot{D_0}
+					\end{equation}
+				
+				\item O BED para implantes permanentes é obtido através da equação:
+					
+					\begin{equation}
+						BED = \frac{1}{\lambda} \dot{D_0} \left(1 + \frac{\dot{D_0}}{(\mu + \lambda) \alpha / \beta}\right)
+					\end{equation}
+			
+			\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
 
 	\bibliography{ref.bib}
 
