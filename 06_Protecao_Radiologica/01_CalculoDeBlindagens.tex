@@ -1,0 +1,245 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[margin=10pt,font=small,labelfont=bf]{caption}
+\usepackage[dvipsnames, svgnames]{xcolor}
+\DeclareCaptionFont{MediumOrchid}{\color[svgnames]{MediumOrchid}}
+\usepackage[pdftex]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\bibpunct{[}{]}{,}{s}{}{}
+\usepackage{color}
+\usepackage{footnote}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{leading}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{float}
+\renewcommand{\thefootnote}{\alph{footnote}}
+\usepackage{url}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=cyan,      
+    urlcolor=cyan,
+    citecolor=cyan,
+    pdftitle={Proteção Radiológica}
+}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{Página \thepage}
+\title{Proteção Radiológica}
+\author{Cálculo de Blindagens\nocite{*}}
+\date{\textit{Dalila Mendonça}}
+\begin{document}
+	\maketitle
+
+    \section{Introdução}
+
+    A implementação de um serviço de Radioterapia passa pelas seguintes etapas:
+
+    \begin{enumerate}
+        \item Escolha e aquisição dos equipamentos;
+        \item Elaboração do projeto de blindagem;
+        \item Elaboração do \textcolor{CarnationPink}{\textbf{RPAS} - \textit{Relatório Preliminar de Análise de Segurança}} contendo o Projeto de Blindagem;
+        \item Encaminhamento do RPAS para a CNEN (ANSN - Agencia Nacional de Segurança Nuclear) para obter a autorização para a construção;
+        \item  Elaboração do \textcolor{CarnationPink}{\textbf{RFAS} - \textit{Relatório Final de Análise de Segurança}} após a conclusão da construção e realização dos testes de aceite. Neste documento está inserido o Plano de Proteção Radiológica (PPR)
+    \end{enumerate}
+
+    A elaboração do RPAS é feita pelo Físico SPR (supervisor de proteção radiológica) e a coordenação da construção é feita pelo arquiteto com assistência direta do Físico Médico.
+
+    Uma construção de Radioterapia está integrada à serviços de energia elétrica, iluminação, condicionamento da ventilação e temperatura, fornecimento de água, drenagem, gases medicinais, acabamento e decoração; Todos realizados com ergonomia e segurança.
+
+    \section{Aspectos do Projeto}
+
+        A portaria 1884/1994 do Ministério da Saúde determina que um serviço de Radioterapia deve ter no mínimo:
+
+            \begin{itemize}
+                \item 1 consultório indiferenciado com 7.5 m\textsuperscript{2};
+                \item 1 sala de preparo e observação dos pacientes com 6.5 m\textsuperscript{2};
+                \item 1 Posto de enfermagem com 6 m\textsuperscript{2};
+                \item 1 sala de serviços gerais com 6 m\textsuperscript{2};
+                \item 1 oficina para confecção de moldes e máscaras com 10 m\textsuperscript{2};
+                \item 1 sala para simulador, que pode ser a mesma da braquiterapia, com área e blindagens compatíveis com os equipamentos;
+                \item 1 sala de planejamento e Física Médica com 10 m\textsuperscript{2};
+                \item 1 sala de terapia para cada equipamento com área e blindagens compatíveis com a máquina;
+                \item Sala de espera para pacientes e acompanhantes;
+                \item Depósito para material de limpeza;
+                \item Sanitários para funcionários;
+                \item Vestiário para pacientes;
+                \item Sala de utilidades;
+                \item Copa;
+                \item Câmara Escura;
+                \item Sala administrativa;
+                \item Depósito de eequipamentos; e 
+                \item Áreas para macas e cadeiras.
+            \end{itemize}
+
+    \section{Detalhamento Do Projeto}
+        
+        \begin{itemize}
+            \item O Acesso as salas de tratamento devem ser largos para permitir a entrada da máquina, macas e cadeiras;
+            \item O Piso deve suportar cargas pesadas;
+            \item Deve haver uma porta na entrada das salas de tratamento mesmo que a radiação que chega na porta seja totalmente blindada pelo labirinto;
+            \item A porta deve ter blindagem caso o labirinto não tenha tamanho suficiente para blindar a radiação à níveis do publico devido às limitações de tamanho da sala ou quando receber um equipamento com energia maior;
+            \item Equipamentos com Beam-Stopper auxiliam na redução das blindagens;
+            \item Equipamentos com energias de fótons maiores que 10 MV requerem uma blindagem de neutrons na porta;
+            \item Portas motorizadas devem possuir mecanismo auxiliar para ser utilizado em caso de falhas mecânicas ou elétricas;
+            \item A porta deve possuir um mecanismo que assegure que a porta esteja fechada enquanto ocorra a exposição e deve ser possível ser aberta por fora e por dentro;
+            \item A blindagem da porta deve ser homogênea e se extender por alguns centímetros além do vão da porta para evitar a existência de frestas;
+            \item  São mandatórios mecanismos ``corta-fogo'' e intertravamento elétrico para que não haja exposição com a porta aberta;
+            \item O comando deve ser próximo à entrada da porta para que seja mantido à vigilância da entrada pelos técnicos;
+            \item Os cabos elétricos devem estar dentro de canaletas construídas no alicerce para correrem facilmente para dentro da sala;
+            \item devem ser instalados dutos reservas para cabos, esgoto, água e ar-condicionado;
+            \item Os materiais dos dutos devem ser compatíveis com a sua utilização: Para cabos(PVC) e para água (Cobre);
+            \item Deve ser fixado na porta o trifólio com as escritas ``Cuidado Radiação'' e os nomes dos responsáveis com seus respectivos telefones para casos de emergência;
+            \item É necessário um sinal luminoso que indique quando há presença de radiação (luz vermelha) e quando o equipamento está de prontidão para irradiar (luz verde);
+            \item Teleterapia com \textsuperscript{60}Co e Braquiterapia HDR exigem que dentro da sala exista um monitor de área independente que sinalize a exposição à radiação de dentro da sala e no comando;
+            \item Devem ser instalados botões de emergência dentro das áreas supervisionadas e das salas de tratamento para serem acionados em casos de exposição acidental;
+            \item É necessário a intalação de sistemas de água dentro da sala de tratamento para o resfriamento do acelerador linear; E água para a higienização de mãos e dosimetria;
+            \item É necessário a instalação de um sistema de Ar-condicionado;
+            \item Pode ser necessária a instalação de gases medicinais para anestesias e recuperação do paciente;
+            \item Pisos e recessos devem ser impermeabilizados;
+            \item A drenagem do solo deve ser um dos primeiros itens da construção, que exige técnica apurada. Deve-se atentar à hidrografia do solo e a existência de lençóis freaticos. Caso forem superficiais, podem inundar a sala de tratamento em um dia de chuva intensa e causar danos irreparáveis à máquina;
+            \item O sistema de ar condicionado deve climatizar adequadamente o ambiente e proporcionar recirculação do ar. Para isto podem ser utilizados:
+                \begin{itemize}
+                    \item Um sistema central: Nesses casos é indicado a entrada pela barreira da porta, tomando cuidado para evitar a saída de radiação secundária. O duto de entrada deve ser blindado com lâminas de chumbo e/ou absorvedores de neutrons e deve ser feito de forma que sua entrada seja curva;
+                    \item Sistema tipo Split: Sistema cuja canalização é feita com tubos de pequenos diâmetros que entram na sala fazendo curvaturas para eliminar o escape de radiação. Como não possuem recirculador, é necessário o provisionamento da renovação do ar. A melhor rota dentro da sala é moir meio de um teto rebaixado seguindo o labirinto;
+                    
+
+                    Obs: Sistemas individuais não são recomendados por exigirem uma grande abertura na blindagem que requer uma blindagem adicional complicada
+                \end{itemize}
+            \item Caso os lasers sejam embutidos nas paredes blindadas, eles devem ser fixados em placas de aço fundifas no concreto com dimensões de 4 cm de espessura e 2.5 cm de margem extra em relação a caixa do laser;
+            \item A visualização do paciente deve ser feita com duas câmeras: uma focada no isocentro e outra dando uma visão panorâmica da sala de tratamento;
+            \item Deve ser instalado um dispositivo de comunicação oral que permita a comunicação entre a sala de tratamento e o comando;
+            \item Deve existir um mobiliário capaz de armazenar todos os dispositivos utilizados no serviço, como: Acessórios de imobilização; blocos, máscaras, aplicadores de elétrons, etc\dots
+            \item Um item importante e muita vezes negligenciado é a instalação de dutos apropriados para a passagem dos cabos de dosimetria. Eles devem sair do comando e atravessar a parede para a sala de tratamento de forma que minimize a radiação secundária e impeça a passagem de radiação primária.
+        \end{itemize}
+
+    
+    \section{Relatório Preliminar de Análise de Segurança}
+
+        \subsection{Formato e Apresentação}
+
+            Todo processo inicia-se com a abertura de um SCRA (Solicitação de Conceção de Licenças e Autorizações) juntamente com um documento elaborado pelo Titular da Instalação apresentando o serviço e descrevendo resumidamente o objetivo do serviço.
+
+            A elaboração do RPAS deve ser estruturada da seguinte maneira:
+
+            \begin{enumerate}
+                \item Devem ser enviadas duas cópias do RPAS contendo o sumário geral, o índice de tópicos e definições de siglas, abreviações, símbolos e termos especiais; Ambos devem ser utilizados de forma consistente;
+                \item Deve conter um capítulo exclusivo referente a transporte e rejeitos de materiais radioativos quando for aplicável;
+                \item As informações devem ser apresentadas de forma clara e concisa, sempre que possível utilizando tabelas, gráficos, esquemas, diagramas e plantas;
+                \item Devem obedecer as seguintes recomendações gráficas:
+
+                    \begin{enumerate}
+                        \item Folhas de texto: A4
+                        \item Esquemas e Gráficos: A4 (\textit{Podem ser com tamanhos maiores contanto que dobradas não ultrapasse o tamanho A4})
+                        \item Plantas: Tamanho A0 ou A1
+                            \begin{itemize}
+                                \item Escala 1:50 para detalhes;
+                                \item Escala 1:100 para planta baixas
+                                \item Escala 1:500 para situações
+                            \end{itemize}
+                    \end{enumerate}
+
+                    As folhas deverão ser dobradas para o tamanho A4 contendo carimbo de identificação com  o endereço do serviço, assinatura e CREA do engenheiro ou arquiteto responsável pela obra. É recomendado ter a assinatura e o RT do SPR, porém não é obrigatório.
+            \end{enumerate}
+
+        \subsection{Conteúdo do RPAS}
+            
+            \begin{enumerate}
+                \item \textbf{\textcolor{CarnationPink}{Identificação do Serviço na Folha de Rosto}}
+                
+                    Deve conter o nome oficial, nome fantasia, endereço, telefone, e-mail, nome e qualificação do titular, registro do Responsável Técnico e seu nome, nome e registro do SPR se ja tiver sido contratado
+
+                \item \textbf{\textcolor{CarnationPink}{Descrição dos Equipamentos Emissores de Radiação}}
+
+                    Fabricante, modelo, tipo, radiações emitidas, energias, técnica isocêntrica ou não, taxa de dose nominal, campo máximo de radiação, fuga máxima pelo cabeçote, transmissão pelo ``beam-Stopper'', ambos parâmetros certificados pelo fabricante. TVL de feixe largo para concreto comum e demais materiais utilizados na blindagem, tanto para feixe primário quanto para radiação de fuga e para a radiação espalhada em todas as energias de fótons.
+
+                \item \textbf{\textcolor{CarnationPink}{Descrição Resumida do Funcionamento do Equipamento}}
+                
+                    Anexar catálogos 
+                
+                \item \textbf{\textcolor{CarnationPink}{Apresentação dos Trabalhadores e suas Respectivas Qualificações}}
+                
+                    Identificar o titular, responsável técnico e seu substituto, SPR e seu substituto, descrevendo suas atribuições, responsabilidades e horários de trabalho; Para os demais funcionários é necessário apenas definir suas atribuições;
+                
+                \item \textbf{\textcolor{CarnationPink}{Descrição dos Instrumentos de Detecção e Monitoração da Radiação que serão Adquiridos}}
+                
+                    Deverão ser identificados os monitores de área e os dosímetros clínicos.
+
+                \item \textbf{\textcolor{CarnationPink}{Descrever as Instalações do Serviço}}
+                
+                    Deverão ser descritas as salas blindadas e as salas de apoio, demonstrando as classificação das áreas como livres, supervisionadas ou controladas. Descrever o laboratório de preparação das fontes para braquiterapia sem afterloading remoto; Descrever as salas de tratamento, simulação, comnandos, salas de espera, de exames, banheiros; Identificar acessos, portas, gaps, overlaps, materiais da parede, tubulações, interlocks, botões de emergência, sinalização de advertência, intercomunicação visual e oral, etc \dots
+                
+                \item \textbf{\textcolor{CarnationPink}{Plantas da Instalação}}
+
+                    Deverá conter no mínimo 3 plantas:
+
+                    \begin{enumerate}
+                        \item \textbf{Planta de Situação:} Contendo a localização do serviço de Radioterapia e do Hospital em relação à vizinhança. Deverá estar em uma escala de 1:200 ou 1:500;
+                        \item \textbf{Planta do Serviço de Radioterapia:} Contendo todas as instalações do serviço com suas respectivas identificações, realçando as áreas blindadas. Deverá estar em uma escala de 1:50 ou 1:100;
+                        \item \textbf{Prancha Detalhada das Áreas Blindadas:} Contendo a planta e os cortes de elevação lateral e elevação frontal para cada equipamento de radioterapia da instalação. As plantas deverão:
+
+                            \begin{itemize}
+                                \item Incluir as dimensões das blindagens e a posição dos pontos de cálculo das blindagens;
+                                \item Conter o desenho da máquina e dos dispositivos auxiliares nas suas posições, incluindo o feixe primário em todas as direções;
+                                \item Indicar a posição da porta, armários, pia, sistemas hidráulicos, tubulações, etc \dots
+                                \item Incluir quadro contendo a identificação da máquina, carga de trabalho, limites de dose; E para cada ponto de cálculo de blindagem deverá ser apresentada a classificação da área, fatores de uso, ocupação e distância.
+                                \item Deverá estar em uma escala de 1:20 ou 1:50
+                            \end{itemize}
+                    \end{enumerate}
+            
+            \end{enumerate}
+    \section{Cálculo de Blindagens}
+
+        \subsection{Limites Autorizados e Classificação das Áreas}
+
+            As dimensões das blindagens devem ser tais que estejam em conformidade com os limites definidos pela CNEN e pelo princípio de otimização. Primeiro deve ser calculado os valores de espessura da barreira para os limites primários de dose efetiva e na sequência determina-se as espessuras da barreira utilizando o princípio de otimização. As áreas com radiação e as áreas circunvizinhas devem ser classificadas como áreas restritas (aos trabalhadores) e áreas livres (para indivíduos do público).
+            
+
+            A CNEN dispensa a demonstração dos cálculos de otimização no RPAS quando o projeto assegura que, em condições normais de operação, as três seguintes condições sejam garantidas simultaneamente:
+
+            \begin{enumerate}
+                \item A dose efetiva anual para trabalhadores não  exceda $1 \; mSv$
+                \item A dose efetiva anual para indivíduos do grupo crítico não exceda $10 \; \mu Sv$
+                \item A dose efetiva coletiva anual não exceda o valor de $1 \; pessoa \cdot Sv$
+            \end{enumerate}
+
+            Os limites de dose efetiva para fins de cálculo de blindagem são:
+
+            \begin{itemize}
+                \item Para trabalhadores: $20 \; mSv / ano$
+                \item Para indivíduos do público: $1 \; mSv/ano$
+            \end{itemize}
+
+            Os limites derivados semanais utilizados nos cálculos de blindagem, admitindo o total de 50 semanas em 1 ano são:
+
+            \begin{itemize}
+                \item Para trabalhadores: $0.4 \; mSv / semana$
+                \item Para indivíduos do público: $0.02 \; mSv/semana$
+            \end{itemize}
+
+            Para a determinação das blindagens, deverão ser feitas as seguintes considerações:
+
+            \begin{itemize}
+                \item A Sala de tratamento deve ser classificada como área controlada;
+                \item As salas de comando devem ser classificadas como salas supervisionadas;
+                \item As salas de espera, vestiários e banheiros devem ser classificadas como área livre, pois os pacientes são considerados indivíduos do público quando estão fora da sala de tratamento;
+                \item Salas de tratamento anexas à sala em que está sendo feito o cálculo de blindagens é considerada como área livre, pois o paciente presente na sala é considerado como um indivíduo do público para a outra sala de tratamento;
+                \item No cálculo de barreira primária não é considerada a atenuação do feixe pelo paciente;
+                \item Os cálculos devem sempre assumir uma incidência perpendicular da radiação na parede;
+                \item Os valores para a radiação de fuga devem respeitar os limites impostos pela CNEN na norma NN 6.10;
+            \end{itemize}
+
+
+\bibliography{ref.bib}
+\end{document}
