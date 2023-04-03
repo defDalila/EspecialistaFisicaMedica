@@ -5,7 +5,7 @@
 ### :file_folder: Braquiterapia
 
 - :memo: Principais definições e Física da Braquiterapia
-- :memo: Principais Aplicadores Utilizados em Braquiterapia
+- :memo: [Principais Aplicadores Utilizados em Braquiterapia](EspecialistaFisicaMedica/01_Braquiterapia/02_PrincipaisAplicadores.pdf)
 - :memo: Procedimentos de Braquiterapia por Sítio Anatômico
 
 
