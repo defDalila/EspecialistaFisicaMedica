@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 % \usepackage[T1]{fontenc}
 \usepackage{amsmath, amsfonts, amssymb}
+\usepackage{siunitx}
 \usepackage[brazil]{babel}
 \usepackage{graphicx}
 \usepackage[margin=10pt,font=small,labelfont=bf]{caption}
@@ -21,6 +22,8 @@
 \usepackage{leading}
 \usepackage{indentfirst}
 \usepackage{wrapfig}
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{1pt}
 \usepackage{float}
 \renewcommand{\thefootnote}{\alph{footnote}}
 \usepackage{url}
@@ -199,7 +202,8 @@
                     \end{enumerate}
             
             \end{enumerate}
-    \section{Cálculo de Blindagens}
+
+    \section{Limites e Definições Para o Cálculo de Blindagens}
 
         \subsection{Limites Autorizados e Classificação das Áreas}
 
@@ -238,8 +242,514 @@
                 \item No cálculo de barreira primária não é considerada a atenuação do feixe pelo paciente;
                 \item Os cálculos devem sempre assumir uma incidência perpendicular da radiação na parede;
                 \item Os valores para a radiação de fuga devem respeitar os limites impostos pela CNEN na norma NN 6.10;
+                
+                \
+
+                \begin{center}
+                    \fcolorbox{cyan}{white}{
+                    \begin{minipage}{0.8\textwidth}
+                        \centering
+                        \textcolor{cyan}{\textbf{Limites de Radiação de Fuga Para Aceleradores Lineares de até 10 MV}}
+
+                        \begin{itemize}
+                            \item Não exceda 0.2\% da taxa kerma no ar no seu centro em qualquer ponto de um plano circular com 2 m de raio perpendicular centrado no feixe primário;
+                            \item Não exceda 0.5\% da taxa kerma no ar no eixo do feixe primário na distância normal de tratamento, exceto no plano circular acima referido, a 1 m do feixe de elétrons dentro do tubo de aceleração entre a origem e o alvo ou janela de elétrons.
+                        \end{itemize}
+                    \end{minipage}}
+                \end{center}
+                
+                    \textcolor{CarnationPink}{\textbf{Obs:}} Para fins de cálculos de blindagem, assume uma radiação de fuga de 0.1\% ou 1/100;
+                
+                \item Recomenda-se que os valores para o fator de ocupação em áreas livres sejam muito conservadores;
+                \item A \textbf{\textit{\textcolor{CarnationPink}{Regra das Duas Fontes}}} é utilizada como uma medida conservadora, sempre que os componentes de radiação são somados para definir a espessura da parede; Neste caso é utilizada a TVL e a HVL da radiação mais penetrante.
             \end{itemize}
 
+        \subsection{Parâmetros Utilizados no Cálculo de Blindagens}
+
+            Os parâmetros necessários para o cálculo de blindagens são: \textbf{\textit{Limite de Dose (P), Carga de trabalho (W), Fator Uso (U), Fator Ocupação (T), distância do ponto de cálculo até a fonte ou até o isocentro (d) e Tamanho Máximo do Campo de Radiação (l)}}.
+
+        \subsection*{\textcolor{CarnationPink}{Limite de Dose (P)}}
+
+            Os limites de dose utilizados em cálculo de blindagens estão resumidos na Tabela \ref{tb:limitesDoseCalculoBlindagem}.
+
+            \begin{table}[h]
+                \centering
+                \caption{Limites de Dose Para Cálculos de Blindagem}
+                \label{tb:limitesDoseCalculoBlindagem}
+                \begin{tabular}{l  c c}
+                    \toprule
+                     & \multicolumn{2}{c}{Limites de Dose} \\
+                     \addlinespace[6pt]
+                     & Indivíduo do Público & IOE \\
+                     \cmidrule{2-3}
+                     \addlinespace[6pt]
+                     Anual &  1 mSv/ano & 20 mSv/ano \\
+                     \addlinespace[6pt]
+                     Semanal & 0.02 mSv/semana & 0.4 mSv/Semana \\
+                     \addlinespace[5pt]
+                     \hline
+                     \hline
+                \end{tabular}
+            \end{table}
+
+        \subsection*{\textcolor{CarnationPink}{Carga de Trabalho (W)}}
+
+            É a integral do tempo da taxa de dose absorvida determinada na profundidade de dose máxima a 1 m da fonte. 
+
+            \begin{itemize}
+                \item O período de tempo para obter a carga de trabalho é de \textbf{1 semana}.
+                \item A unidade de medida para a carga de trabalho é $[W] = Gy/semana$
+                \item Uma outra carga de trabalho $W_2$ para uma distância diferente da distância de referência de 1 m da fonte é obtida através da lei do inverso quadrado da distância:
+                
+                    \begin{equation}
+                        W_2 = W_1 \left(\frac{1 \; m}{d_2}\right)^2
+                    \end{equation}
+
+                \item A carga de trabalho é estimada com base na dose absorvida no isocentro em uma semana, calculada a partir do número médio de pacientes tratados em uma semana e a dose média utilizada nos tratamentos. 
+                \item A carga de trabalho relacionada aos controles de qualidade realizados no equipamento deve ser considerada nos cálculos de blindagem. O NCRP 49 indica que a carga de trabalho para o controle de qualidade deve ser: $W_{CQ} = 100 \; Gy/semana$ a 1 m da fonte.
+                \item Para Aceleradores Lineares com duas energias de fótons, é utilizada a carga de trabalho da energia mais alta para fins de blindagem. Porém, em algumas situações, é necessário considerar separadamente as cargas de trabalho para cada qualidade do feixe afim de determinar a espessura da barreira primária e secundária.
+                \item Em equipamentos que utilizam a técnica de IMRT, há um aumento da rasiação de fuga pelo cabeçote e portanto há um aumento da carga de trabalho para a radiação de fuga
+            \end{itemize}
+
+        \subsection*{\textcolor{CarnationPink}{Fator Uso (U)}}
+
+            É definido como a fração da carga de trabalho do feixe primário que é direcionada para a barreira primária.
+
+            \begin{itemize}
+                \item O Fator Uso é dependente das técnicas utilizadas na instalação;
+                \item O fator uso pode ser definido para as 4 paredes dos ângulos retos (0°, 90°, 180° e 270°) caso esses sejam os ângulos mais utilizados;
+                \item Nos Casos em que são utilizados maioritariamente campos tangentes, as incidências nas angulações oblíquas devem ser analisadas;
+                \item Em instalações que realizam procedimentos de TBI deverão considerar um maior fator uso para a parede para onde o feixe é direcionado nesse procedimento.
+            \end{itemize}
+
+
+        \subsection*{\textcolor{CarnationPink}{Fator Ocupação (T)}}
+
+            É a fração média de tempo que o indivíduo com maior tempo de exposição está presente na sala enquanto o feixe está ligado. É determinado através da média semanal de horas trabalhadas avaliadas em um ano. Por exemplo, um fator de ocupação 1/40 diz que o indivíduo com maior exposição permaneceu no local apenas 1 hora por semana.
+        
+        \subsection{Barreiras de Proteção}
+
+            \begin{wrapfigure}{r}{0.6\textwidth}
+                \centering
+                \includegraphics[width=0.58\textwidth]{Imagens/esquemaBarreirasDeProtecao.JPG}
+                \caption{Esquema das barreiras de proteção em uma sala de tratamento}
+                \label{fig:esquemaBarreirasDeProtecao}
+            \end{wrapfigure}
+
+            As barreiras podem ser classificadas como \textit{Barreira Primária ou Barreira Secundária}. A Figura \ref{fig:esquemaBarreirasDeProtecao} apresenta um esquema para a definição das barreiras.
+
+            A \textit{\textcolor{CarnationPink}{Barreira Primária}} é a que protege contra a radiação primária; ou seja, protege contra o feixe útil utilizado nos tratamentos pois está diretamente em frente ao feixe útil do AL. Esta barreira, porém, deve proteger tanto contra o feixe primário quanto o secundário.
+
+            A {\textit{\textcolor{CarnationPink}{Barreira Secundária}}} é aquela barreira que protege contra a radiação secundária, ou seja, a radiação espalhada ou produzida devido a iterações com o paciente e a radiação de fuga do cabeçote. Como a radiação é espalhada em todas as direções, toda a sala terá no mínimo a blindagem para radiação secundária. Algumas ressalvas podem ser feitas, por exemplo no piso, caso esteja localizado em subsolo ou em casos de Skyshine, onde a blindagem poderá ser reduzida.
+        
+        
+        \subsection{Princípios para Diminuição da Exposição}
+            
+            São 3 os princípios utilizados para diminuir a exposição de um indivíduo à radiação:
+
+            \begin{enumerate}
+                \item Aumentando a distância entre o indivíduo e a fonte de radiação;
+                \item Limitando o tempo de exposição; e
+                \item Adicionando Blindagem entre o indivíduo e a fonte de radiação.
+            \end{enumerate}
+        
+        \subsection{Considerações Para o Cálculo de Blindagens}
+
+        \begin{wrapfigure}{l}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.5\textwidth]{Imagens/esquemaBasicoDeBlindagem.jpg}
+            \caption{Esquema básico de uma blindagem}
+            \label{fig:esquemaBasicoDeBlindagem}
+        \end{wrapfigure}
+
+        Dado uma fonte de radiação S, localizada a uma distância d de um ponto de análise de dose O (Figura \ref{fig:esquemaBasicoDeBlindagem}), o limite de dose P para esse ponto deve ser respeitado, caso não aconteça, deverá ser adicionada uma barreira B entre S e O para que o feixe seja atenuado até que o limite P seja respeitado.
+        
+        Para o cálculo de blindagens, alguns aspectos deverão ser considerados, sendo eles:
+
+        \begin{itemize}
+            \item Os tipos de radiação que devem ser levados em conta nos cálculos são:
+                \begin{itemize}
+                     \item A radiação Breamsstrahlung; 
+                     \item Os Neutrons;
+                     \item A radiação-$\mathrm{\gamma}$
+                \end{itemize}
+            \end{itemize}
+        
+            \
+
+            A radiação de Breamsstrahlung acontece no cabeçote do acelerador, na colisão do elétron com o alvo.
+            O processo de produção fóton-neutron ($\gamma, n$) ocorre tanto no cabeçote do AL quanto na blindagem da sala.
+            Os raios-$\mathrm{\gamma}$ provenientes da captura de neutrons ocorre apenas na blindagem da sala, sendo um resultado da produção de nêutrons no cabeçote devido aos feixes primários com energia acima da energia de ligação dos nêutrons, que é de aproximadamente 8 MeV para a maior parte dos nuclídeos. De acordo com o NCRP 79 este efeito é mais enunciado para feixes com energia de fótons acima de 10 MeV.
+            
+
+            Como ja citado anteriormente, o primeiro passo no cálculo de blindagens é determinar o fator de transmissão B e definir a espessura do material que atende aos limites de dose P, descrevendo os valores da espessura ou a TVL para o material. Para cada ponto e parede, deve ser apresentada as espessuras mínimas para a radiação primária e para a radiação secundária.
+
+            Para os cálculos da porta, deve-se descrever o material da blindagem e levar em consideração os múltiplos espalhamentos no paciente e nas superfícies, descrevendo-os e determinando seus valores e a distância de cada um dos parâmetros avaliados e o percentual de atenuação para a incidência angular.
+
+            Caso não haja ocupação no pavimento superior, serão utilizados os cálculos de espalhamento de radiação no ar para skyshine. Caso contrário, deveram ser calculadas as blindagens não somente para a sala logo acima à sala do acelerador, mas também às salas adjacentes devido à incidências oblíquas.
+
+            Ao final, deverá ser apresentados os cálculos que levaram à determinação das barreiras necessárias para atingir os níveis de dose otimizados dos diferentes pontos de cálculo.
+
+    \section{Calculo de Blindagens}
+
+        \subsection{Cálculo de Blindagem Para a Barreira Primária}
+            
+            A barreira primária deve ser projetada para atenuar o feixe útil de fotons e também atenuar a dose equivalente através da barreira causada por produtos secundários do feixe de fótons, como a radiação-$\mathrm{\gamma}$ e os nêutrons. Em uma barreira adequada, a razão entre a dose equivalente transmitida através da barreira e o limite de dose P para o ponto de análise deve ser menor ou igual a 1.
+
+
+            O fator de transmissão da barreira primária pode ser obtido através da seguinte relação:
+
+            A intensidade inicial para uma dada parede $I_0$ será a dose total absorvida, considerando o fator uso e o fator ocupação avaliado em um ponto a 0.3m da barreira em análise, portanto a intensidade inicial é definida como:
+            
+            \begin{equation}
+                I_0 = W \cdot U \cdot T
+            \end{equation}
+
+            A intensidade que deseja-se alcançar é definida pelo limite \textbf{P} que está a uma distância \textbf{d} da fonte de radiação. Sabendo que o fator W é obtido a uma distância $d_0 = 1 \; m$ da fonte, podemos utilizar a lei do inverso quadrado da distância, para obter uma relação entra a intensidade inicial e a intensidade desejada. 
+
+            
+                $$I_0 \cdot d_0^2 = P \cdot d^2$$
+            
+
+            Para obter a fração da intensidade de radiação transmitida, basta dividir a intensidade desejada pela intensidade inicial de radiação, o que irá nos fornecer o fator de transmissão da parede.
+
+            
+                $$B_{prim} = \frac{P \cdot d^2}{I_0 \cdot d_0^2}$$
+            
+            Fazendo as devidas substituições, temos que o fator de transmissão para a barreira primária é dado por:
+
+            \begin{equation}
+                B_{prim} = \frac{P \cdot d^2}{W \cdot U \cdot T \cdot (1 \; m^2)}
+                \label{eq:fatorDeTransmissao}
+            \end{equation}
+
+            Onde P é dado em Sv/semana, W é dado em Gy/semana, d é a distância da fonte até o ponto de proteção,  dado em metros e U e T são adimensionais. Portanto o fator de transmissão B\textsubscript{prim} é uma quantidade sem unidade; 
+
+            A espessura da barreira pode ser determinada através das Camadas Deci-Redutoras (TVL's) com base na energia do feixe emitido pelo AL e os tipos de materiais que podem ser utilizados na blindagem. 
+
+            Sabendo que uma TVL reduz a intensidade para 1/10 da intensidade inicial, temos que:
+            
+            Após 1 TVL:
+
+            $$I_1 = \left(\frac{1}{10}\right)I_0$$
+
+            Após 2 TVL's :
+
+            $$I_2 = \left(\frac{1}{10}\right)I_1 = \left(\frac{1}{10}\right)\left(\frac{1}{10}\right)I_0 = \left(\frac{1}{10}\right)^2 I_0$$
+
+            Após 3 TVL's :
+
+            $$I_3 = \left(\frac{1}{10}\right)I_2 = \left(\frac{1}{10}\right)^3 I_0$$,  
+
+            Portanto, após n TVL's:
+
+            \begin{equation}
+                I = \left(\frac{1}{10}\right)^n I_0
+                \label{eq:intensidadeAposnTVL}
+            \end{equation}
+            
+
+
+            Sabendo que o fator de transmissão é dado por 
+            
+            $$B = \frac{I}{I_0}$$
+
+            Substituindo este valor na equação \ref{eq:intensidadeAposnTVL}, temos que:
+
+            $$\frac{I}{I_0} = \left(\frac{1}{10}\right)^n $$
+
+            \begin{equation}
+                B = \left(\frac{1}{10}\right)^n
+                \label{eq:fatorTransmissaoBase10}
+            \end{equation}
+            
+
+            Aplicando o logaritmo na base 10, temos então:
+
+            $$\log (B) = \log \left(\frac{1}{10}\right)^n $$
+
+            $$\log (B) = n \log \left(\frac{1}{10}\right) $$
+
+            $$\log (B) = n [\log (1) - \log (10) ]$$
+
+           Resolvendo os logaritmos e isolando o numero de TVL's (n), chegamos que:
+
+            $$\log (B) = n (0 - 1)$$
+          
+            $$ n = - \log(B) $$
+           
+            Portanto do número de camadas Deci-redutoras necessárias para reduzir a intensidade de radiação à um fator de transmissão B\textsubscript{prim} é dado por:
+
+            \begin{equation}
+                n = - \log (B_{prim})
+            \end{equation}
+
+            Após atravessar uma certa espessura, ocorre um endurecimento do feixe, pois são filtrados os fótons de energias mais baixas. Portanto há uma mudança no espectro de radiação que penetra a barreira o que faz com que após passar pela primeira TVL, a segunda TVL será mais espessa devido ao endurecimento do feixe. Dados empíricos mostram que a partir da segunda TVL, as espessuras se mantém às mesmas. 
+
+            A espessura da barreira é obtida através da seguinte relação:
+
+            \begin{equation}
+                t_{barreira} = TVL_1 + (n - 1)TVL_e
+                \label{ eq:espessuraBarreira}
+            \end{equation}
+
+
+            onde, 
+
+            \begin{itemize}
+                \item TVL\textsubscript{1} é a primeira camada deci-redutora
+                \item TVL\textsubscript{e} é a camada deci-redutora no equilíbrio
+            \end{itemize}
+
+            Portanto, se a espessura da barreira for maior que 1 TVL, o fator de transmissão total é dado por:
+
+            Isolando n na equação \ref{ eq:espessuraBarreira}, temos que:
+
+            $$n = 1 + \frac{t - TVL_1}{TVL_e}$$
+
+            Substituindo o valor de n na equação \ref{eq:fatorTransmissaoBase10},
+
+            $$B = \left(\frac{1}{10}\right)^{1 + \frac{t - TVL_1}{TVL_e}}$$
+
+            Obtendo então a relação para o fator de transmissão total:
+
+            \begin{equation}
+                B = 10^{-\left\{1 + \left[\frac{t - TVL_1}{TVL_e}\right]\right\}}
+            \end{equation}
+
+            
+            Quando o material utilizado é o concreto, seja ele comum ou denso, a espessura obtida através destes cálculos são suficientes para absorver os fotons-neutrons e radiação gama emitida por captura de neutrons, devido a alta quantidade de hidrogênio presente nesse material e portanto nenhuma barreira adicional é necessária. Porém, ao utilizar outros materiais na barreira primária, algumas considerações especiais precisam ser feitas.
+
+            Embora a técnica de IMRT utilize um alto número de unidades monitoras ou tempo de beam-on, ela utiliza feixes muito estreitos e então a carga de trabalho média sobre qualquer área de 100 cm\textsuperscript{2} na barreira primária é aproximada para as cargas de trabalho padrão;
+
+            \begin{wrapfigure}{r}{0.5\textwidth}
+                \centering
+                \includegraphics[width=0.4\textwidth]{Imagens/esquemaIncidenciaObliqua.JPG}
+                \caption{Esquema de incidência obliqua}
+                \label{fig:esquemaIncidenciaObliqua}
+            \end{wrapfigure}
+
+            A espessura da barreira primária deve ser calculada para incidências perpendiculares do feixe e deve se manter constante ao longo de toda a largura da barreira. Quando a radiação incide obliquamente na barreia, a espessura requerida será menor que a calculada acima. A diferença dessas espessuras dependem do ângulo de incidência em relação à normal à parede, o material da barreira, a atenuação requerida e a energia da radiação.Se não houvesse espalhamento da radiação no material da barreira, a relação entre a espessura obliqua $t_s$ e a espessura $t$ seria dada por $t_s = t/ \cos \theta$, Figura \ref{fig:esquemaIncidenciaObliqua}. Porém para ângulos grandes ($\theta > \ang{45}$), o fóton espalhado  pode ter um comprimento de caminho $< t_s$ antes de sair da barreira, o que acarretará na necessidade de uma barreira com espessura $> t$. Na maior parte das situações este efeito é pequeno e é tratado como um pequeno aumento na espessura t aproximada. No entanto quando é requerida uma atenuação devido à sua amplitude para ângulos grandes, o aumento na barreira de concreto é de ~ 2 HVL para fótons de baixa energia e de ~1 HVL para fótons de alta energia.
+
+            Os Lasers utilizados no posicionamento devem ser incorporados na blindagem. Esta defasagem na blindagem pode ser de em torno 1 HVL para feixes de alta energia, portando deve ser adicionadas placas de aço ou chumbo com espessura suficiente para fornecer a mesma atenuação da quantidade de blindagem que foi removida para inserção do laser.
+
+
+        \subsection{Largura do Cinturão Primário}
+
+            O cinturão primário é uma espessura adicionada à barreira secundária na região do feixe primário que é limitada pela largura do cinturão primário; A largura do cinturão primário por sua vez é determinada através do tamanho máximo da diagonal do maior tamanho de campo, somando no mínimo \qty{30}{cm} de cada lado. O cinturão primário pode ser projetado para que a protuberância, relacionada à diferênca de espessura entre a barreira primária e a  barreira secundária, fique para dentro da sala de tratamento, ou para fora da sala de tratamento; e dependendo da sua posição, o tamanho máximo do campo utilizado para definir a largura do cinturão primário será diferente. 
+
+            \begin{itemize}
+                \item Se a barreira ficar para dentro da lada de tratamento, o tamanho máximo do campo é definido na parte interna da barreira secundária, como mostra a Figura \ref{fig:esquemaCinturaoPrimarioDentroDaSala}. 
+                
+                    \begin{figure}[h]
+                        \centering
+                        \includegraphics[width=0.5\textwidth]{Imagens/esquemaCinturaoPrimarioDentroDaSala.JPG}
+                        \caption{Cinturão primário dentro da sala de tratamento}
+                        \label{fig:esquemaCinturaoPrimarioDentroDaSala}
+                    \end{figure}
+
+
+                \item Caso a Barreira seja projetada para ficar fora da sala de tratamento, o tamanho de campo máximo será definido na parte mais externa da barreira primária, como mostra a Figura \ref{fig:esquemaCinturaoPrimarioForaDaSala}
+                
+                    \begin{figure}[h]
+                        \centering
+                        \includegraphics[width=0.5\textwidth]{Imagens/esquemaCinturaoPrimarioForaDaSala.JPG}
+                        \caption{Cinturão primário fora da sala de tratamento}
+                        \label{fig:esquemaCinturaoPrimarioForaDaSala}
+                    \end{figure}
+
+                
+                \item Se a Barreira primária é projetada utilizando concreto juntamente com outro material, seja ele aço ou chumbo, a fim de manter toda a parede com a mesma espessura, o tamanho de campo é definido a partir da projeção do campo na superfície mais externa (distal) do chumbo ou aço, como mostra a Figura \ref{fig:esquemaCinturaoPrimarioDoisMateriaisDeBlindagem}
+                    
+                    \begin{figure}[h]
+                        \centering
+                        \includegraphics[width=0.5\textwidth]{Imagens/esquemaCinturaoPrimarioDoisMateriaisDeBlindagem.JPG}
+                        \caption{Cinturão primário utilizando mais de um material na blindagem}
+                        \label{fig:esquemaCinturaoPrimarioDoisMateriaisDeBlindagem}
+                    \end{figure}
+                
+                \item O valor de \qty{30}{cm} só é suficiente caso seja suficiente para interceptar a radiação espalhada a \ang{20} a partir do isocentro. 
+                
+                \item Na maior parte dos aceleradores, o maior tamanho de campo é de \qtyproduct{40 x 40}{cm} na distância Fonte-Superfície (SSD) de \qty{100}{cm}; Com o tamanho máximo da diagonal limitado a ~\qty{50}{cm} na SSD de \qty{100}{cm}. 
+                
+                \item A largura da barreira primária é definida no topo da parede primária, que é a região da parede mais longe do isocentro. Esta largura é mantida a mesma para toda a região do cinturão primário.
+                
+                \item É comum que os aceleradores lineares sejam instalados nas salas de tratamento de forma que a rotação do gantry ocorra em um plano ortogonal às barreiras primárias.  No entanto, devido a algumas limitações de espaço, por exemplo, o acelerador pode ser instalado de forma que seu eixo de rotação não esteja ortogonal às barreiras primárias. A Figura \ref{fig:esquemaBarreiraAceleradorAngulado} mostra um acelerador posicionado na sala de forma que seu eixo de rotação está a uma angulação de \ang{45} com as barreiras primárias. 
+                
+                    \begin{figure}[h]
+                        \centering
+                        \includegraphics[width=0.5\textwidth]{Imagens/esquemaBarreiraAceleradorAngulado.JPG}
+                        \caption{Barreiras para um Acelerador com eixo de rotação do gantry a \ang{45}.}
+                        \label{fig:esquemaBarreiraAceleradorAngulado}
+                    \end{figure}
+
+                    Nestes casos, deve-se atentar à falta de simetria das posições da extremidades do campo em relação ao eixo central, projetado na barreira primária, uma vez que os fótons que viajam em duas arestas opostas do feixe, embora saiam com a mesma angulação do feixe, atravessarão a blindagem com diferentes angulações de incidência.  
+            \end{itemize}
+        
+        \subsection{Barreiras Lamidadas}
+            
+            São aquelas que utilizam mais de um material para compor a blindagem, como por exemplo, Concreto, Chumbo e Aço.
+
+            O fator de transmissão total para a barreira primária é calculado a partir da multiplicação dos fatores de transmissão para cada material utilizado, ou seja:
+
+            \begin{equation}
+                B_{total} = B_{concreto} \cdot B_{chumbo} \cdot B_{aco}
+            \end{equation}
+            
+
+            Estes cálculos não levam em consideração a atenuação e a produção de fóton-neutrons ou raios-$\gamma$ emitidos por captura de neutrons em feixes com energia acima de \qty{10}{MV}. E para estes casos, deve-se atentar à correta disposição dos materiais na blindagem pois a camada de metal pode se tornar uma fonte de fotons-neutrons, aumentando a exposição além da blindagem. Isto ocorre apenas para a barreira primária, pois a radiação espalhada para além da barreira primária não possui energia suficiente para produzir um fótoneutrôn e a intensidade da radiação de fuga, quando combinada com a seção de choque para produção de fotoneutrôns não produz um número significante de neutrôns nas barreiras secundárias.
+
+            A Dose-equivalente de neutrons por semana devido a uma barreira laminada quando o colimador está aberto em seu tamanho máximo é obtida pela equação empirica:
+
+            \begin{equation}
+                H_n = \frac{D_0 \; R \; F_{max}}{\left(\frac{t_m}{2} + t_2 + 0.3\right)} 
+                \left[10^{-\left(\frac{t_1}{TVL_x}\right)}\right]
+                \left[10^{-\left(\frac{t_2}{TVL_n}\right)}\right]
+            \end{equation}
+
+            Onde: \\
+            $H_n$ =  Dose equivalente de neutrons por semana \\
+            $D_0$ =  Dose absorvida de raios-x por semana no isocentro \\
+            $R$ = Coeficiente de produção de neutrons \\
+            $F_{max}$ = Área máxima do campo no isocentro \\
+            $t_m$ = espessura da camada de metal \\
+            $t_1$ = espessura da primeira camada de concreto \\
+            $t_2$ = espessura da segunda camada de concreto \\
+            $TVL_x$ = camada deci-redutora do concreto para o feixe de raios-x primpario \\
+            $TVL_n$ = Camada deci-redutora de concreto para neutrôns \\
+            $0.3$ = distancia entre a superfície externa da barreira e o ponto de ocupação.
+
+
+            \begin{wrapfigure}{l}{0.4\textwidth}
+                \centering
+                \includegraphics[width=0.36\textwidth]{Imagens/esquemaBarreiraLaminada.JPG}
+                \caption{Barreira Laminada}
+                \label{fig:esquemaBarreiraLaminada}
+            \end{wrapfigure}
+            
+            \
+
+            A Figura \ref{fig:esquemaBarreiraLaminada} esquematiza a composição de uma barreira laminada. Devido ao processo de produção de neutrons no metal que subsequentemente interage com o concreto, ocorre a produção de raios-$\gamma$, que são gerados, ou a partir da captura de neutrons no concreto, ou a partir da desexitação dos núcleos do metal que sofreram interação fotonuclear.
+
+            A dose equivalente total através da barreira $(H_{tot})$ deve então contabilizar a dose equivalente dos neutrons $(H_na)$ e a dose equivalente para os fótons de raios-x transmitidos $ H_{tr}$ pela parede e dos raios-$\gamma$ produzidos na parede. Baseados em medidas em parades laminadas com energias entre \qtylist{15; 18}{MV} é seguro estabelecer a componente para as radiações x e $\gamma$ sendo 2.7 vezes o valor para a dose equivalente transmitida para a radiação-x, ou seja:
+
+            \begin{equation}
+                H_{tot} = H_n + 2.7 H_{tr}
+            \end{equation}
+
+            Quando $B_{prim}$ é conhecida, o valor de $H_{tr}$ pode ser obtido através da Equação \ref{eq:fatorDeTransmissao} substituindo $P$ por $H_{tr}$. Se na soma,  $H_{tot} > P$ então o cálculo deve ser iterado para reduzir o valor de $H_{tr}$ até que $H_{tot}$ alcance o limite P definido para a blindagem;
+
+        \subsection{Cálculo de Blindagem para a Barreira Secundária}
+
+            As barreiras secundárias são projetadas de forma quem sejam efetivas na blindagem dos seguintes componentes:
+
+                \begin{enumerate}
+                    \item Radiação de fuga do cabeçote;
+                    \item Radiação espalhada pelo paciente;
+                    \item Radiação espalhada nas paredes; e 
+                    \item Radiações secundárias, incluindo fotoneutrons e raios-$\gamma$ produzidos por captura de neutrons, que devem ser considerados na existência de fótons com energia superior a \qty{10}{MeV} e ao lidar com barreiras finas, como ocorre em portas em um labirinto ou em conduítes 
+                \end{enumerate}
+
+            Como a radiação de fuga e a radiação espalhada possuem diferentes energias, os valores da barreira são calculados separadamente para cada uma destas componentes e no final são comparadas para obter a espessura mais recomendada; A Figura \ref{fig:esquemaTransmissaoRadiacaoEspalhadaPaciente} mostra o esquema para cálculos da barreira secundária. 
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.6\textwidth]{Imagens/esquemaTransmissaoRadiacaoEspalhadaPaciente.JPG}
+                \caption{Barreira Laminada}
+                \label{fig:esquemaTransmissaoRadiacaoEspalhadaPaciente}
+            \end{figure}
+
+            A transmissão da barreira devido à radiação espelhada pelo paciente é obtida a partir da Equação \ref{eq:BarreiraSecundariaEspalhamentoPaciente}: 
+
+            \begin{equation}
+                B_{ps} = \frac{P}{\alpha W T} \; d_{sca}^2 \; d_{sec}^2 \; \frac{400}{F}
+                \label{eq:BarreiraSecundariaEspalhamentoPaciente}
+            \end{equation}
+
+            E o fator de transmissão para a radiação de fuga é obtido através da Equação \ref{eq:fatorTransmissaoRadiacaoDeFuga}.
+
+                \begin{equation}
+                    B_L = \frac{P \; d_L^2}{10^{-3} \; W ; T}
+                    \label{eq:fatorTransmissaoRadiacaoDeFuga}
+                \end{equation}
+
+            Onde, 
+
+
+            \begin{itemize}
+                \item $B_{ps}$ = É o fator de transmissão devido a radiação espalhada pelo paciente
+                
+                \item $P$ = É o limite de dose semanal a ser alcançado através da blindagem [\unit{Sv/semana}]
+                
+                \item $\alpha$ = É a fração de espalhamento ou fração da dose absorvida do feixe primário que é espalhada pelo paciente em um ângulo perpendicular à parede. É definida como a razão entre a intensidade da radiação espalhada a \qty{1}{m} do objeto espalhador e a intensidade de radiação primária no isocentro.
+                
+                \item $W$ = É a carga de trabalho semanal [\unit{Gy/semana}] 
+                
+                \item $T$ = Fator ocupação no ponto localizado a \qty{0.3}{m} da superfície externa da parede
+                
+                \item $d_{sca}$ = Distância entre o alvo de raios-x e o paciente ou superfície espalhadora [\unit{m}]
+                
+                \item $d_{sec}$ = É a distância entre a superfície espalhadora e o ponto de proteção [\unit{m}]
+                
+                \item $400$ = Assume que a fração de espalhamento é normalizada para campos de \qtyproduct{20 x 20}{cm}
+                
+                \item $F$ = É a área do campo a 1m da fonte medida no centro do paciente [\unit{cm^2}]
+                
+                \item $d_L$ = É a distância entre o isocentro ao ponto que será protegido [\unit{m}]
+                
+                \item $10^{-3}$ = Assume que a radiação de fuga pelo cabeçote é de 0.1\% do feixe útil.
+            \end{itemize}
+
+            
+            \textbf{\textit{\textcolor{CarnationPink}{Obs:}}} O fator uso é tomado como sendo igual a 1 para a radiação espalhada, pois o fator uso é uma função do ângulo do Gantry para uma dada direção e a radiação espalhada assume diversas direções;
+
+            \begin{itemize}
+                \item Em práticas que utilizam as técnicas de IMRT, a carga de trabalho para a radiação de fuga deve ser alterada.
+                
+                \item Após determinar o fator de transmissão para radiação espalhada e radiação de fuga, a espessura de material necessária para blindagem é obtida através das TVL's para cada componente.
+                
+                \item Se a espessura de material necessário para a blindagem é aproximadamente a mesma para cada componente secundaria, como se o espaço ocupado em questão fosse irradiado por duas fontes de intensidade aproximadamente igual,  1 HVL é adicionado à componente que apresentou maior espessura nos cálculos;
+                
+                \item Se os valores de espessura obtidas pelas componentes secundárias se diferirem em mais de 1 TVL então a espessura mais larga é utilizada;
+            \end{itemize}
+        
+        \subsection{Portas e Labirintos}
+
+            Os cálculos para portas e labirintos são separados para Aceleradores Lineares com energia de até \qty{10}{MV} e para Aceleradores Lineares com energias acima de \qty{10}{MV}, pois existem diferenças entre os tipos de radiação secundárias e as fluências produzidas em cada uma dessas faixas de energia.
+
+            \begin{itemize}
+                \item \textbf{\textit{\textcolor{CarnationPink}{Aceleradores com Energia de até \qty{10}{MV}}}}
+            \end{itemize}
+            
+
+            Um labirinto é desenvolvido para diminuir o nível de radiação na entrada da sala de tratamento sem a necessidade de utilizar uma porta extemamente massiva. E a menos que o labirinto seja muito longo ou que tenha várias voltas, uma blindagem na porta ainda é necessária.
+
+            Para definir a blindagem da porta, é necessário:
+
+            \begin{enumerate}
+                \item Determinar a dose equivalente na posição da porta do labirinto avaliada primeiramente para o caso onde o feixe está direcionado perpendicularmente à parede em frente a porta do labirinto;
+                \item Utiliza-se uma equação empírica para relacionar a dose equivalente obtida no item anterior à dose equivalente total na porta do labirinto devido aos feixes apontados para às principais direções, 
+                \item Determina-se a espessura de material necessária para blindagem afim de reduzir a dose equivalente ao valor do limite P estabelecidoo
+            \end{enumerate}
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.6\textwidth]{Imagens/esquemaLabirinto.JPG}
+                \caption{Esquematização de um labirinto}
+                \label{fig:esquemaLabirinto}
+            \end{figure}
+
+            A radiação que alcança a na porta do labirinto é devido aos fótons espalhados nas superfícies da sala e pelo paciente além da radiação de fuga que sai do cabeçote e penetra diretamente o a parede interna do labirinto. As componentes da dose equivalente devido às diferentes radiações que chegam na porta são:
+
+            \begin{itemize}
+                \item $H_S$ = Dose equivalente por semana devito ao espalhamento do feixe primário pelas superfícies da sala de tratamento;
+                \item $H_{LS}$ = Dose equivalente por semana devido aos fótons provenientes de fuga do cabeçote que são espalhados pelas superfícies da sala;
+                \item $H_{ps}$ = Dose equivalente por semana devido ao fixe primário espalhado pelo paciente;
+                \item $H_{LT}$ = A Radiação de fuga que é transmitida diretamente atravé da parede interna do labirinto.
+            \end{itemize}
+
+
+            
 
 \bibliography{ref.bib}
 \end{document}
