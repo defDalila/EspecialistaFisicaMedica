@@ -712,6 +712,11 @@
                 
                 \item Se os valores de espessura obtidas pelas componentes secundárias se diferirem em mais de 1 TVL então a espessura mais larga é utilizada;
             \end{itemize}
+
+        
+        
+            \textbf{\textit{\textcolor{CarnationPink}{Obs:}}} Para fótons, como o fator de qualidade do feixe é igual a 1, a dose equivalente e a dose absorvida são grandezas equivalentes. 
+            
         
         \subsection{Portas e Labirintos}
 
@@ -742,14 +747,144 @@
             A radiação que alcança a na porta do labirinto é devido aos fótons espalhados nas superfícies da sala e pelo paciente além da radiação de fuga que sai do cabeçote e penetra diretamente o a parede interna do labirinto. As componentes da dose equivalente devido às diferentes radiações que chegam na porta são:
 
             \begin{itemize}
-                \item $H_S$ = Dose equivalente por semana devito ao espalhamento do feixe primário pelas superfícies da sala de tratamento;
+                \item $H_S$ = Dose equivalente por semana devido ao espalhamento do feixe primário pelas superfícies da sala de tratamento;
                 \item $H_{LS}$ = Dose equivalente por semana devido aos fótons provenientes de fuga do cabeçote que são espalhados pelas superfícies da sala;
-                \item $H_{ps}$ = Dose equivalente por semana devido ao fixe primário espalhado pelo paciente;
-                \item $H_{LT}$ = A Radiação de fuga que é transmitida diretamente atravé da parede interna do labirinto.
+                \item $H_{ps}$ = Dose equivalente por semana devido ao feixe primário espalhado pelo paciente;
+                \item $H_{LT}$ = Dose equivalente da Radiação de fuga que é transmitida diretamente através da parede interna do labirinto.
             \end{itemize}
 
+            A Equação \ref{eq:doseEquivalenteNaPortaDevidoRadiacaoPrimariaEspalhadaNaParede} fornece a componente da radiação primária espalhada pela parede G que chega até a porta, conforme sinalizada na Figura \ref{fig:esquemaLabirinto}.
 
+            \begin{equation}
+                H_s = \frac{W \; U_G \; \alpha_0 \; A_0 \; \alpha_z \; A_z}{\left(d_h \; d_r \; d_z\right) ^ 2}
+                \label{eq:doseEquivalenteNaPortaDevidoRadiacaoPrimariaEspalhadaNaParede}
+            \end{equation}
+
+            Onde:
+
+                \begin{itemize}
+                    \item $H_s$ é a dose equivalente por semana na porta do labirinto devido ao espalhamento do feixe primário pela parede G;
+                    \item $W$ é a carga de trabalho dada em \unit{Gy \cdot semana^{-1}}
+                    \item $U_G$ é o fator de ocupação para a parede G;
+                    \item $A_0$ é a area do feixe na primeira superfície de espalhamento dado em \unit{m^2};
+                    \item $\alpha_0$ é o coeficiente de reflexão na primeira superfície de espalhamento $A_0$;
+                    \item $A_z$ é a segunda superfície de espalhamento, dada como a área da seção transversal da entrada do labirinto, definida pela projeção da área da primeira parede de espalhamento $A_0$ na parede interna da entrada do labirinto;
+                    \item $\alpha_z$ é o coeficiente de reflexão para a segunda superfície de espalhamento $A_z$, normalmente assume-se uma energia de 0.5 MeV;
+                    \item $d_h$ é a distância perpendicular do alvo até a primeira superfície de espalhamento, igual a $d_{pp}$, que é a distância perpendicular entre o isocentro e a parede somado mais 1m;
+                    \item $d_r$ é a distância do centro do feixe na primeira superfície de espalhamento até ao ponto b localizado na linha média do labirinto, passando pela a borda interna do labirinto;
+                    \item $d_z$ é a distância da linha central ao longo do labirinto, a partir do ponto b até a porta.
+                \end{itemize}
             
+            Este cálculo está restrito a uma das duas condições:
+
+                \begin{enumerate}
+                    \item A razão entre a altura e a largura do labirinto deve estar entre 1 e 2;
+                    \item O valor obtido através da equação : $$\left[\frac{d_z}{\left(altura \times largura\right)^\frac{1}{2}}\right]$$ deve estar entre 2 e 6; Este valor pode não ser alcançados em muitos casos onde o labirinto é projetado de forma que seja mais curto, principalmente devido à limitações de espaço.
+                \end{enumerate}
+            
+            
+            A radiação de fuga do cabeçote que sofre apenas um espalhamento pela área $A_1$ da parede G antes de alcançar a porta representa a Dose equivalente obtida através da Equação \ref{eq:doseEquivalenteRadiacaoDeFugaEspalhada}
+
+                \begin{equation}
+                    H_{LS} = \frac{L_f \; W_L \; U_G \; \alpha_1 \; A_1}{\left(d_{sec} \; d_{zz}\right)^2}
+                    \label{eq:doseEquivalenteRadiacaoDeFugaEspalhada}
+                \end{equation}
+
+            Onde:
+
+                \begin{itemize}
+                    \item $H_{LS}$ é a dose equivalente por semana na porta do labirinto devido à um único espalhamento da radiação de fuga do cabeçote;
+                    \item $L_f$ é a fração da radiação de fuga a \qty{1}{m} da fonte tomada como 1/1000 ou \qty{0.1}{\%};
+                    \item $W_L$ É a carga de trabalho para a radiação de fuga dada em \unit{Gy \; semana^{-1}};
+                    \item $U_G$ é o fator uso para a parede G;
+                    \item $\alpha_1$ coeficiente de reflexão para o espalhamento da radiação de fuga pela a parede G. Toma como base as energias de \qty{1.4}{MeV} para feixes de fótons de \qty{6}{MV} e \qty{1.5}{MeV} para fótons de \qty{10}{MV};
+                    \item $A_1$ área da parede G que pode ser vista pela porta do labirinto dada em \unit{m^2};
+                    \item $d_{sec}$ é a distância do alvo até a a linha central do labirinto na parede G; Pode ser tomado a partir do isocentro como uma representação da posição média do alvo;
+                    \item $d_{zz}$ distância da linha central do labirinto, tomado a partir da parede G vista da porta do labirinto até a porta;
+                \end{itemize}
+            
+            
+            A Dose equivalente na porta devido a radiação espalhada pelo paciente é obtida pela Equação \ref{eq:doseEquivalenteRadiacaoEspalhadaPaciente}:
+
+                \begin{equation}
+                    H_{ps} = \frac{a(\theta) \; W \; U_G \; \left(\frac{F}{400}\right) \; \alpha_1 \; A_1}{\left(d_{sca} \; d_{sec} \; d_{zz}\right)^2}
+                    \label{eq:doseEquivalenteRadiacaoEspalhadaPaciente}
+                \end{equation}
+
+            Onde:
+
+                \begin{itemize}
+                    \item $H_{ps}$ É a dose equivalente por semana na parede da porta devido a radiação espalhada pelo paciente [\unit{Gy \; semana^{-1}}]
+                    \item $a(\theta)$   fração de espalhamento para a radiação espalhada pelo paciente no ângulo $\theta$;
+                    \item $W$ Carga de trabalho para o feixe primário;
+                    \item $U_G$ Fator uso para a parede G;
+                    \item $F$ Área do campo no meio do DAP do paciente a uma distância de 1m da fonte;
+                    \item $\alpha_1$ coeficiente de reflexão na parede G para a radiação espalhada pelo paciente; Pode ser obtido para a energia média dos fótons espalhados em vários ângulos pelo paciente, mas, conservativamente, pode ser utilizada a energia de \qty{0.5}{MeV};
+                    \item $d_{sca}$ Distância do alvo para o paciente;
+                    \item $d_{sec}$ distância do paciente até o ponto central do labirinto na parede G;
+                    \item $d_{zz}$ distância da superfície $A_1$ até a porta do labirinto;
+                \end{itemize} 
+            
+            \textbf{\textit{\textcolor{CarnationPink}{Obs:}}} Para energias superiores a 10MV, a contribuição do espalhamento pelo paciente é ignorada uma vez que se torna insignificante quando comparada com a contribuição devido a radiação de fuga e a radiação gama produzida por captura de neutrons produzidos no labirinto por neutrons lentos (K ~ \qty{1}{eV}.)
+
+            A dose equivalente na porta devido a radiação de fuga transmitida pela parede Z do labirinto é obtida pela Equação \ref{eq:doseEquivalenteRadiacaoFugaTransmitida}:
+
+                \begin{equation}
+                    H_{LT} = \frac{L_f \; W_L \; U_G \; B}{d_L^2}
+                    \label{eq:doseEquivalenteRadiacaoFugaTransmitida}
+                \end{equation}
+
+            Onde:
+
+                \begin{itemize}
+                    \item $H_{LT}$ é a dose equivalente por semana na porta do labirinto devido a radiação de fuga que atravessa a parede interna do labirinto;
+                    \item $L_f$ É a razão da radiação de fuga do cabeçote equivalente a $10^{-3}$ o valor do feixe útil;
+                    \item $W_L$ É a carga de trabalho para a radiação de fuga; 
+                    \item $U_G$ É o fator uso para a parede G;
+                    \item $d_L^2$ distância do alvo até o centro da porta do labirinto, atravessando a parede interna do labirinto (Z);
+                \end{itemize}
+            
+            Após obter todas as contribuições para a dose equivalente, quando o gantry direciona o feixe para a parede vista pela porta do labirinto (G). A dose equivalente na porta devido a parede G é obtida através da Equação \ref{eq:doseEquivalenteTotalNaPortaDoLabirintoParaAParedeG}:
+
+                \begin{equation}
+                    H_G = f H_S + H_{LS} + H_{PS} + H_{LT}
+                    \label{eq:doseEquivalenteTotalNaPortaDoLabirintoParaAParedeG}
+                \end{equation}
+
+            Vale notar que a carga de trabalho W é utilizada para determinar H\textsubscript{G} quando o feixe está direcionado para a parede G, ou seja, utiliza W U\textsubscript{G}, e $f$ é a fração do feixe primário transmitido pelo paciente que alcança a parede G. Por exemplo, $f$ tem  o valor de ~0.25 para feixes de \qtyrange{6}{10}{MV}, quando o tamanho de campo é de \qtyproduct{40 x 40}{cm} e é utilizado um \textit{phantom} de \qtyproduct{40 x 40 x 40}{cm}.
+                
+            A Dose equivalente total é então obtida então considerando as 4 principais direções de incidência do feixe ($\theta = $ \ang{0}, \ang{90}, \ang{180}, \ang{270}).  Quando o fator uso para cada parede é de 1/4, a dose equivalente total na porta é estimada com base na Dose equivalente para a parede G a partir da Equação \ref{eq:doseEquivalenteTotalParaALcomEMenorQue10}:
+
+                \begin{equation}
+                     H_{tot} = 2.64 H_G
+                    \label{eq:doseEquivalenteTotalParaALcomEMenorQue10}
+                \end{equation}
+                
+            Esta equação deve ser utilizada com atenção para aqueles casos que não respeitem as condições citadas anteriormente: 
+
+                $$1 < \frac{Altura}{Largura} < 2, $$ e
+                $$2 < \left[\frac{d_z}{\left(altura \times largura\right)^\frac{1}{2}}\right] < 6$$
+
+            O fator de transmissão necessário para a blindagem da porta é obtido através da Equação \ref{eq:TransmissaoBlindagemPorta}:
+
+                \begin{equation}
+                    B_{door} = \frac{P}{H_{tot}}
+                    \label{eq:TransmissaoBlindagemPorta}
+                \end{equation}
+            
+
+            Algumas considerações finais para a determinação da blindagem na porta:
+            \begin{enumerate}
+                \item Para AL's com energia menor que \qty{10}{MV}, a blindagem da porta é baseada em dados de transmissão de um feixe largo para fótons de \qty{0.2}{MeV}.
+                \item Caso a parede interna do labirinto seja muito estreita, o espectro de energia e intensidade de radiação que chega na porta irá aumentar devido ao aumento da radiação de fuga que é emitida por esta parede. Nestes casos a blindagem da porta será determinada somente pela componente $H_{LT}$ e serão utilizados os dados de transmissão para as energias da radiação de fuga; No geral, este não será o caso se a componente $H_{LT}$ for menor que a componente $H_G$;
+                \item Em casos onde existem a técnica de TBI, o valor de \qty{2.64}{H_G} pode não ser aplicável;
+            \end{enumerate}
+            
+
+
+
+
+% TODO: Inserir os valores padrão para cada um dos fatores
 
 \bibliography{ref.bib}
 \end{document}
