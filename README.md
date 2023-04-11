@@ -14,6 +14,8 @@
 
 ### :file_folder: Física Médica
 
+- :memo: Física Das Radiações
+
 
 ### :file_folder: Garantia da Qualidade
 
