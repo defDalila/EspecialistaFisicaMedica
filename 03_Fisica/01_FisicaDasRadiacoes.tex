@@ -1178,31 +1178,31 @@
             \begin{figure}[h]
                 \centering
                 \subfigure[]{\label{fig:AlDireto}
-                \includegraphics[width=0.6\textwidth]{Imagens/esquemaAceleradorFeixeDireto.jpg}}
+                \includegraphics[width=0.4\textwidth]{Imagens/esquemaAceleradorFeixeDireto.jpg}}
                 \subfigure[]{\label{fig:AlGuiaNoGantry}
-                \includegraphics[width=0.6\textwidth]{Imagens/esquemaAceleradorGuiaNoGantry.jpg}}
+                \includegraphics[width=0.4\textwidth]{Imagens/esquemaAceleradorGuiaNoGantry.jpg}}
                 \subfigure[]{\label{fig:AlGuiaNoSuporte}
-                \includegraphics[width=0.6\textwidth]{Imagens/esquemaAceleradorGuiaNoSuporteDoGantry.jpg}}
+                \includegraphics[width=0.4\textwidth]{Imagens/esquemaAceleradorGuiaNoSuporteDoGantry.jpg}}
                 \caption{Esquemas de montagem da guia aceleradora em Linacs onde \ref{fig:AlDireto} a guia de onda é montada alinhada ao isocentro do gantry, \ref{fig:AlGuiaNoGantry} a guia de onda é montada paralelamente ao eixo de rotação do gantry e \ref{fig:AlGuiaNoSuporte} a guia de onda é montada no suporte do gantry}.
                 \label{fig:esquemasMontagemGuia}
             \end{figure}
 
-            \begin{itemize}
-                \item \textbf{\textit{\textcolor{CarnationPink}{Sistema de Injeção}}}
-            \end{itemize}
-
-                O Sistema de injeção consiste em uma acelerador eletrostático chamado de gun de elétrons.
-
                 \begin{itemize}
-                    \item A gun de elétrons pode ser de dois tipos: Tipo Diodo ou Tipo Triodo.
-                    
-                    \item Ambos os tipos consistem em um filamento de cátodo aquecido e um ânodo perfurado aterrado e a gun do tipo triodo também possue uma grade incorporada. Os elétrons são  termionicamente emitidos a partir do cátodo aquecido e são focados em um feixe lápis através de eletrodos curvos de foco e então são acelerados em direção ao ânodo perfurado  através do qual eles são impulsionados para entrar na guia aceleradora.
-                    
-                    \item Os campos eletrostáticos utilizados para acelerar os elétrons na gun do tipo diodo são alimentados diretamente pelo modulador pulsado na forma de um pulso negativo entregue ao cátodo da gun.
-                    
-                    \item Na gun do tipo triodo, o cátodo é mantido em um potencial estático negativo (normalmente de \qty{-20}{kV}). A grade do triodo é mantida suficientemente negativa em relação ao cátodo para cortar a corrente para o ânodo. A injeção dos elétrons na guia de onda é controlada através de pulsos de voltagem que são aplicados na grade e devem estar sincronizados com os pulsos aplicados no gerador de micro-ondas.
+                    \item \textbf{\textit{\textcolor{CarnationPink}{Sistema de Injeção}}}
                 \end{itemize}
-                  
+
+                    O Sistema de injeção consiste em uma acelerador eletrostático chamado de gun de elétrons.
+
+                    \begin{itemize}
+                        \item A gun de elétrons pode ser de dois tipos: Tipo Diodo ou Tipo Triodo.
+                        
+                        \item Ambos os tipos consistem em um filamento de cátodo aquecido e um ânodo perfurado aterrado e a gun do tipo triodo também possue uma grade incorporada. Os elétrons são  termionicamente emitidos a partir do cátodo aquecido e são focados em um feixe lápis através de eletrodos curvos de foco e então são acelerados em direção ao ânodo perfurado  através do qual eles são impulsionados para entrar na guia aceleradora.
+                        
+                        \item Os campos eletrostáticos utilizados para acelerar os elétrons na gun do tipo diodo são alimentados diretamente pelo modulador pulsado na forma de um pulso negativo entregue ao cátodo da gun.
+                        
+                        \item Na gun do tipo triodo, o cátodo é mantido em um potencial estático negativo (normalmente de \qty{-20}{kV}). A grade do triodo é mantida suficientemente negativa em relação ao cátodo para cortar a corrente para o ânodo. A injeção dos elétrons na guia de onda é controlada através de pulsos de voltagem que são aplicados na grade e devem estar sincronizados com os pulsos aplicados no gerador de micro-ondas.
+                    \end{itemize}
+                    
             
                 \begin{itemize}
                     \item \textbf{\textit{\textcolor{CarnationPink}{Sistema de Geração de Energia por Radiofrequência}}}
@@ -1307,28 +1307,402 @@
 
                     \begin{itemize}
                         \item Os feixes clínicos de fótons são produzidos através da comninação do alvo com um filtro aplanador.
-                        \item Os feixes clínicos de elétrons são produzidos retraindo o alvo e o filtro aplanador da direção do pencil beam e espalhando o pencil beam utilizando uma folha espalhadora simples ou dupla, ou defletindo e escaneando o pencil beam magneticamente para cobrir o tamanho de campo requerido para o tratamento com elétrons. Cones especiais são utilizados para colimar o feixe de elétrons.
+                        \item Os feixes clínicos de elétrons são produzidos retraindo o alvo e o filtro aplanador da direção do pencil beam e espalhando o pencil beam utilizando uma folha espalhadora simples ou dupla, ou defletindo e mapeando o feixe lápis de elétrons magneticamente para cobrir o tamanho de campo requerido para o tratamento com elétrons. Cones especiais são utilizados para colimar o feixe de elétrons.
                         \item Cada feixe clínico de fótons tem sua própria combinação de alvo e filtro aplanador. Os filtros aplanadores e as folhas espalhadoras são montadas em um carrosel ou em uma gaveta deslizante para facilitar seu posicionamento mecânico na frente do feixe conforme necessário.
-                        \item Os colimadores primários definem o campo circular máximo, no qual é posteriormente truncado com colimador retangular ajustável que consistem em dois jaws superiores e dois jaws inferiores, independentes que produzem campos quadrados e retangulares com uma dimensão máxima de \qtyproduct{40 x 40}{cm} no isocentro do acelerador.   
+                        \item Os colimadores primários definem o campo circular máximo, no qual é posteriormente truncado com colimador retangular ajustável que consistem em dois jaws superiores e dois jaws inferiores, independentes que produzem campos quadrados e retangulares com uma dimensão máxima de \qtyproduct{40 x 40}{cm} no isocentro do acelerador.
+                        \item As câmaras de ionização de transmissão são utilizadas para monitorar o output do feixe de fótons e elétrons assim como a planura radial e transversal do feixe.
+                        \item A luz de campo e o telêmetro auxiliam no posicionamento do paciente com base nos marcadores de posicionamento inseridos no paciente.
                     \end{itemize}
                     
                 \begin{itemize}
                     \item \textbf{\textit{\textcolor{CarnationPink}{Produção de Feixes Clínicos de Fótons No Linac}}}
                 \end{itemize}
 
+                    Os feixes clinicos de fótons são produzidos através da colisão dos elétrons com um alvo, e aplanados utilizando um filtro aplanador. Quando um feixe de fótons atravessa o colimador primário, ele tende a ser muito intenso em seu centro e menos intenso em sua periferia. Portanto o filtro aplanador torna o feixe uniforme (plano) no isocentro. Porém, alguns equipamentos, possuem a opção de remover o filtro aplanador, para que esta característica do feixe possa ser utilizada propositalmente em tratamentos de SBRT, por exemplo.
+                    
+                    Para feixes produzidos com elétrons com energia abaixo de \qty{15}{MeV} o alvo ideal deve possuir alto número atômico, já os feixes produzidos com elétrons com energia superior a \qty{15}{MeV} o material ideal do alvo deve ter um baixo número atômico. O material do filtro aplanador deve possuir baixo Z independente da energia do feixe.
+
+                    A maior parte dos AL's utilizam o tungstênio como material do alvo devido ao seu alto número atômico (Z = 74) que favorece a produção de raios-x de bremsstrahlung e possuir alto ponto de fusão (\qty{3422}{\degreeCelsius}).
+
+                    
+
                 \begin{itemize}
                     \item \textbf{\textit{\textcolor{CarnationPink}{Colimação do Feixe}}}
                 \end{itemize}
+
+                    Em um sistema de colimação existe o colimador primário, que é fixo; o colimador secundário, composto por jaws móveis e por um colimador terciário opcional, chamados de Multileaf colimator; Nos feixes de eletrons, são utilizados, adicionalmente, aplicadores.
+
+                    \begin{itemize}
+                        \item O colimador primário define o maior tamanho de campo circular possível. E modelado em um formato cônico utilizando uma blindagem de tungstênio, com os lados da abertura cônica projetando-se nas bordas do alvo em uma extremidade do bloco e no filtro de nivelamento na outra extremidade. A espessura da blindagem é determinada de modo que atenue a intensidade média do feixe primário que sai do cabeçote para menos de 0.1\% da intensidade incial do feixe primário.
+                        
+                        \item Os colimadores secundários são responsáveis por definir o tamanho de campo de tratamento e consiste em quatro blocos divididos em 2 jaws superiores de 2 jaws inferiores, que formam campos quadrados ou retangulares variando de poucos milímetros até \qty{40}{cm}.
+                        
+                        \item Aceleradores mais antigos, tem a movimentação dos jaws ocorrendo simetricamente, (cada jaw abre o mesmo tamanho a partir do isocentro). Aceleradores mais modernos possuem jaws assimétricos, onde a movimentação de cada jaw é feita independentemente, permitindo utilizar campos assimétricos como os campos meio-bloqueados.
+                        
+                        \item O MLC está relacionado a terapia conformacional, sendo utilizados nas técnicas de intensidade modulada, com step and shoot, dmlc, ou terapia com arco.
+                        
+                        \item Os micro-multileaf são projeados com lâminas com espessuras finas no isocentro, abrindo campos da ordem de \qtyproduct{10 x 10}{cm} para serem utilizados em tratamentos de radiocirurgia.
+                    \end{itemize}
 
                 \begin{itemize}
                     \item \textbf{\textit{\textcolor{CarnationPink}{Produção de Feixes Clínicos de Elétrons No Linac}}}
                 \end{itemize}
 
+                Para habilitar o modo feixe de elétrons, o alvo e o filtro aplanador são removidos do caminho do feixe de elétrons. A corrente dos feixes de elétrons produzidos em feixes clínicos são de duas a três ordens de magnetude menores que aquelas utilizadas na produção de feixes clínicos de fótons. O feixe lápis de elétrons sai do sistema de transporte à vacuo do feixe através de uma fina janela, normalmente feita de Berílio (\ce{Be}), no qual possui um baixo número atômico, o que minimiza o espalhamento do feixe e a produção de raios-x Bremsstrahlung.
+
+                    \begin{itemize}
+                        
+                        \item Existem duas técnicas possíveis na produção do feixe clínico de elétrons a partir do feixe lápis:
+                        
+                            \begin{enumerate}
+                                \item \textbf{Espalhamento do Feixe lápis}: O espalhamento do feixe lápis (que possui área de ~ \qty{4}{mm^2})  em uma área alargada, fornecendo tamanhos de campo de até \qtyproduct{25 x 25}{cm} é alcançado colocando finas folhas feitas em material com alto número atômico (cobre ou chumbo) na frente do feixe lápis, no nível do filtro aplanador utilizados no modo fótons. As folhas espalhadoras modificam o feixe fino alterando o ângulo médio de espalhamento tornando o feixe mais difuso e absorvem a energia dos elétrons incidente e alargam o espectro do feixe lápis. O grau de difusão depende da energia do feixe incidente e do número atômico (Z) do material difusor. Por isso, uma única folha difusora não consegue garantir o espalhamento idealmente para todas as faixas de energia produzidas pelo acelerador linear. A melhor solução consiste na utilização de duas folhas espalhadoras distintas. A primeira folha produz uma difusão básica do feixe enquanto a segunda folha se encarrega de produzir a difusão final esperada para a obtenção de campos homogêneos na faixa de 5cm x 5cm a 30cm x 30cm. Uma folha espalhadora de baixo número atômico não difunde o feixe suficientemente e, em contrapartida, também não o contamina muito com fótons de bremsstrahlung nem degrada muito seu espectro de energia. Uma folha difusora de alto número atômico pode difundir o feixe além do necessário; em contrapartida, pode aumentar a contaminação com fótons de bremsstrahlung além de degradar em demasia o seu espectro de energia. A solução para tudo isso é a utilização de um material de número atômico médio: o Alumínio. Um sistema de duas folhas de alumínio produzirá, satisfatoriamente, feixes extensos e homogêneos, com uma produção mínima de contaminação por fótons e uma degradação mínima do espectro de energia. 
+                                
+
+                                \item \textbf{Mapeamento do Feixe lápis}: É uma alternativa às folhas espalhadoras, embora menos utilizada. Esta técnica utiliza dois imãs computadorizadamente controlados chamados de dispositivos eletrônicos de varredura, que defletem o feixe lápis em dois planos ortogonais, mapeando o feixe em toda a largura de campo requerida para o tratamento.  O feixe fino produz um campo extenso por um movimento de varredura bidimensional sincronizado, criado por campos magnéticos variáveis, posicionados após a janela de saída do feixe de elétrons. No sistema de varredura, o feixe extenso é obtido por uma varredura de grande amplitude que produzirá um feixe homogêneo para toda a variedade de campos utilizados. Além disso, a intensidade do campo magnético variará de acordo com a energia nominal do feixe de elétrons utilizado. A contaminação por fótons é mínima nesse processo, pois o feixe primário não colide diretamente com nenhuma folha difusora. Existe, entretanto, uma produção de fótons em segundo grau, causada pelos elétrons que atingem as bordas do colimador, a superfície interna dos cones aplicadores e outras estruturas adjacentes.
+                            \end{enumerate}
+
+                        \item O sistema de varredura bidimensional foi abandonado e hoje em dia todos os fabricantes de aceleradores lineares utilizam um sistema de dupla folha espalhadora de alumínio, – uma primária fixa e uma secundária, que varia para cada energia dos feixes clínicos de elétrons, uma vez que Os campos obtidos com dupla folha espalhadora possuem as mesmas características dos obtidos com um dispositivo de varredura e O dispositivo de varredura é um sistema eletrônico razoavelmente complexo que encarece bastante o custo total do equipamento além de estar sujeito a falhas e defeitos de funcionamento quando além de estar sujeito a falhas e defeitos de funcionamento quando além de estar sujeito a falhas e defeitos de funcionamento quando comparado à simplicidade do uso de folhas difusoras de alumínio.
+                        
+                    \end{itemize}
+                
 
                 \begin{itemize}
                     \item \textbf{\textit{\textcolor{CarnationPink}{Sistema De Monitoramento De Dose}}}
                 \end{itemize}
+
+                    Os monitores de radiação utilizados nos Aceleradores Lineares clínicos possue um padrão para o tipo de detector que deve ser utilizado, exibição das unidades monitoras, interrompimento da radiação e monitoramento da planura e da taxa de dose, ambos definidos pela IEC 60601-2-1.
+
+                    \begin{itemize}
+                        \item As câmaras de ionização mais utilizadas são de transmissão, incorporadas no acelerador na frente do feixe de fótons e elétrons, monitorando continuamente o output do feixe durante o tratamento.
+                        
+                        \item Normalmente são utilizadas câmaras seladas para manter sua resposta independente da temperatura e pressão do ambiente;
+                        
+                        \item As câmaras são posicionadas entre o filtro aplanador ou folha espalhadora e o sistema de colimação secundário;
+                        
+                        \item Por questões de segurança do paciente, o sistema de dosimetria dos AL's consistem em duas câmaras de ionização (primária e secundária) independentes , tanto na sua fonte de alimentação de polarização quanto no eletrômetro de leitura. As duas câmeras são projetadas de forma que caso uma falhe durante o tratamento, a segunda câmara irá terminar a irradiação, usualmente depois de uma dose adcional de apenas poucos por centro acima da dose prescrita foi entregue.
+                        
+                        \item No caso de falha simultânea das câmaras, o temporizador do AL irá desligar a máquina com uma overdose mímima para o paciente.
+                        
+                        \item Os principais requisitos para as câmaras de ionização monitoras são:
+                        
+                            \begin{enumerate}
+                                \item Devem tem um efeito mínimo nos feixes clínicos de fótons e elétrons;
+                                \item Devem ter resposta independente das condições ambientais de temperatura e pressão;
+                                \item Devem operar em condições de saturação;
+                            \end{enumerate}
+                        
+                        \item A câmara de ionização primária mede MU's. Normalmente sua sensibilidade é ajustada de forma que 1 MU corresponde a dose de \qty{1}{cGy} entregue em um phantom de água na profundidade de dose máxima no eixo central do feixe quando é irradiado com um campo de \qtyproduct{10 x 10}{cm} a uma distância da fonte até a superfície (SSD) de \qty{100}{cm}.
+                        
+                        \item Uma vez que as MU's de tratamento são definidas, após serem alvançadas, o circuito da câmara primária irá terminar a entrega de dose do paciente. E antes de uma nova irradiação, o display das MU's deve ser resetado para o valor zero e uma nova irradiação será possível definindo um novo valor de MU;
+                        
+                        \item Além das MU's, o sistema de monitoramento de dose também monitora outros parâmetros como simetria, planura e energia do feixe; A medida destes valores requer que os eletrodos das câmaras de ionização primária e secundária sejam divididos em vários setores, com seus sinais resultantes destas medidas devem ser utilizados em circuitos de realimentação automátícos para direcionar o feixe de elétrons através da guia aceleradora, sistema de transporte e alvo ou folha de espalhamento afim de garantir a simetria e planura do feixe.
+                        
+                        \item Os AL's devem ser equipados com um sistema de monitoração que mostra continuamente a taxa de dose no isocentro e interrompe o feixe quando a medida da taxa de dose excede duas vezes o valor máximo especificado pela descrição técnica da máquina.
+                    
+
+                    \end{itemize}
+            
+            \subsubsection{Microton}
+
+                \begin{wrapfigure}{r}{0.45\textwidth}
+                    \centering
+                    \includegraphics[width=0.4\textwidth]{Imagens/microton.jpg}
+                    \caption{Mícroton}
+                    \label{fig:microton}
+                \end{wrapfigure}
+                    
+                O mícroton foi inventado no mesmo período que o AL e utilizado em rotinas clínicas na decada de 70, porém a utilização de Al's foi mais aceita por ser mais simples. Um mícroton consiste em um acelerador linear, acoplado a um campo magnético,  onde os elétrons acelerados percorrem uma trajetória circular e entram novamente no acelerador linear ganhando mais velocidade. A figura \ref{fig:microton} mostra o esquema de um mícroton. 
                 
+                O Loop é controlado pelo campo magnético e a cada vez que o elétron passa no acelerador linear,  ganha energia e portanto o raio do loop aumenta.  É possível produzir eletrons com energia de até \qty{1500}{MeV} e ao alcançar a energia desejada, os elétrons são capturados em um tubo coletor que está associado ao raio do loop.
+
+
+                Outra forma de mícroton e chamado de \textit{racetrack} onde são utilizadas linhas retas com bending magnets nos finais da tragetória que curvam o feixe de elétrons na forma de uma "pista de corrida"
+                
+
+
+            \subsubsection{Cíclotron}
+
+
+            \begin{wrapfigure}{l}{0.42\textwidth}
+                \centering
+                \includegraphics[width=0.4\textwidth]{Imagens/ciclotron.jpg}
+                \caption{Cíclotron}
+                \label{fig:ciclotron}
+            \end{wrapfigure}
+
+
+                A Figura \ref{fig:ciclotron} mostra um esquema de um Cíclotron que consiste em dois eletrodos em forma de ``D'' com voltagem alternada na presença de um campo magnético perpendicular estático.
+
+                A frequência de alteração da polaridade deve ser combinada com a ``frequência de ressonância do cíclotron'' da partícula alvo permitindo que a partícula desenvolva uma tragetória espiral, ganhando velocidade e massa relativística em cada revolução até que ela colida na parede ou seja coletada no tubo do feixe. 
+
+                Este acelerador pode ser utilizado para acelerar qualquer partícula carregada utilizada em feixes da radioterapia e foi principalmente utilizado para acelerar prótons. 
+
+            \subsubsection{Síncroton}
+
+                Um síncrotron é um acelerador de partículas circular que utiliza campos magnéticos para manter as partículas carregadas em uma trajetória espiralada. As partículas são aceleradas por meio de campos elétricos em um tubo de vácuo e, em seguida, são injetados em um anel de armazenamento, onde são mantidos em uma trajetória circular por meio de ímãs supercondutores.
+
+                Enquanto um cíncroton utiliza um campo magético constante que se alterna com uma frequência constante, o sincroton utiliza um campo magnético com frequência variável que se adapta às mudanças na massa da partícula a cada segmento a medida que a partícula se aproxima da velocidade da luz;
+
+                A estrutura de um síncontron se assemelha a um toróide com segmentos magnéticos que eventualmente alimentam um anel de armazenamento com a linha de feixe útil que posteriormente sai tangenciando o anel de armazenamento externo. 
+
+                A medida que a espiral se torna mais larga e os imãs se tornam mais poderosos, as partículas podem atingir energias extremamente altas (da ordem de GeV) e por isto são utilizados na Radioterapia para acelerar prótons e outras partículas pesadas. 
+                
+    \section{Interação da Radiação Eletromagnética Com a Matéria}
+
+        Como os fótons não possuem carga, são radiações indiretamente ionizantes e possuem diferentes predominâncias em seus processos de interação, que dependem da energia do fóton e em alguns casos, do número atômico do material com o qual a radiação interage. As interações consiste em três principais mecanismos, a \textbf{\textit{\textcolor{CarnationPink}{absorção}}}, que consiste na dimunuição do número de fótons do feixe devido à absorção da energia desses fótons pelo meio, e o \textbf{\textit{\textcolor{CarnationPink}{espalhamento}}}, que consiste na diminuição do número de fótons do feixe devido à mudança de direção destes fótons. Ao dizer que o feixe sofreu uma \textbf{\textit{\textcolor{CarnationPink}{atenuação}}}, significa que esse feixe diminuiu seu número de fótons devido absorção ou espalhamento.
+
+
+        \subsection{Atenuação do Feixe de Fótons}
+
+            A intensidade $I(x)$ para um feixe estreito monoenergético de fótons, atenuado por uma espessura de material atenuador $x$ é dado por:
+
+                \begin{equation}
+                    I(x) = I_0 e^{-\mu x}
+                \end{equation}
+            
+            \noindent onde $I_0$ é a intensidade inicial do feixe não atenuado e $\mu$ é o coeficiente de atenuação linear que depende da energia do fóton incidente e o número atômico do materaial atenuador.
+
+            O coeficiente de atenuação linear é uma medida da taxa na qual a intensidade de um feixe de radiação é reduzida ao passar por um material. É uma medida da capacidade do material de absorver, espalhar e dissipar a radiação em diferentes direções enquanto ela atravessa o material. Quanto maior o coeficiente de atenuação linear, mais rápida é a taxa de atenuação da radiação, o que significa que o material tem uma maior capacidade de absorver e dispersar a radiação.
+
+            A Camada Semi-Redutora (HVL) é definida como a espessura do material atenuador necessária para atenuar a intensidade do feixe de fótons até 50\% do seu valor original, e pode ser obtida através da relação:
+
+                \begin{equation}
+                    x_{1/2} = HVL = \frac{\ln 2}{\mu}
+                \end{equation}
+            
+
+            A Camada Deci-Redutora é definida como a espessura necessária de material atenuador para atenuar a intensidade do feixe para 10\% do seu valor inicial, e pode ser obtida através da relação:
+
+                \begin{equation}
+                    x_{1/10} = TVL = \frac{\ln 10}{\mu}
+                \end{equation}
+
+            A relação entre a TVL e a HVL é dada por:
+
+            \begin{equation}
+                TVL = \frac{\ln 10}{ \ln 2} HVL = 3.33 HVL
+            \end{equation}
+
+            O livre caminho médio $\bar{x}$ é a distância média que um fóton com energia $h \nu$ viaja através de um material absorvedor antes de sofrer uma iteração.  A relação entre o $\bar{x}$ e o coeficiente de atenuação linear $\mu$ é dada pela definição básica de livre caminho médio:
+
+            \begin{equation}
+                \bar{x} = \frac{\int_{0}^{\infty} x e^{- \mu x} \,dx }{\int_{0}^{\infty} e^{- \mu x} \,dx } = 
+                \frac{\frac{1}{\mu^2}}{\frac{1}{\mu}} = \frac{1}{\mu}
+            \end{equation}
+
+            \noindent ou
+
+                \begin{equation}
+                    I(x) = \frac{1}{e}I_0 = I_0 e^{-\mu \bar{x}}
+                \end{equation}
+
+            \noindent resultando em
+
+                \begin{equation}
+                    \frac{1}{e} = e^{-\mu \bar{x}} \quad ou \quad \mu \bar{x} = 1 \quad e \quad \bar{x} = \frac{1}{\mu}
+                \end{equation}
+
+            O fator de homogeneidade do feixe de fótons $\chi $ é dado pela razão entre a primeira HVL ($HVL_1$) e a segunda HVL ($HVL_2$),  que é a espessura de material que reduz o feixe de $0.5I_0$ para $0.25I_0$.
+
+                \begin{equation}
+                    \chi = \frac{HVL_1}{HVL_2}
+                \end{equation}
+
+                \begin{itemize}
+                    \item Quando $\chi = 1$ significa que  
+                    
+                        $$HVL_1 = HVL_2$$ 
+                    
+                    \noindent Se trata de feixe de fótons monoenergéticos, como o feixe de \ce{^{60}Co} com energia de \qty{1.25}{MeV} e o feixe de \ce{^{137}Cs} com energia de \qty{0.662}{MeV}
+                    
+                    \item Quando $\chi \neq  1$, os fótons apresentam um espectro de energia. 
+                    
+                    Caso $\chi <  1$, temos que
+
+                        $$\frac{HVL_1}{HVL_2} < 1 \quad \Rightarrow \quad HVL_1 < HVL_2$$
+                        
+
+                    \noindent O que mostra que após a primeira camada semi-redutora, é necessario uma espessura maior para atenuar o feixe em 50\% do seu valor. Neste caso o absorverdor promove o endurecimento do feixe, removendo os fótons de baixa energia do espectro (região do efeito fotoelétrico) 
+
+                    Caso $\chi >  1$, temos que
+
+                        $$\frac{HVL_1}{HVL_2} > 1 \quad \Rightarrow \quad HVL_1 > HVL_2 $$
+                        
+
+                    \noindent o que mostra que após a $HVL_1$ é necessário uma menor espessura para atenuar o feixe em 50\% do seu valor. Ocorre então a suavização do feixe na primeira HVL, devido a remoção dos fótons de alta energia do espectro (região da produção de pares).
+
+                \end{itemize}
+
+            Além do coeficiente de atenuação linear $\mu$ são definidos outros coeficientes, também chamados de seção de choque, que definem as características da atenuação do feixe e a relaciona com a probabilidade de ocorrência das interações. 
+
+            O \textbf{\textit{\textcolor{CarnationPink}{Coeficiente de Atenuação Mássico}}} ($\mu_m$) é dado pelo coeficiente de atenuação linear dividido pela massa por unidade de volume do absorvedor ($\rho$ - densidade mássica):
+
+                \begin{equation}
+                    \mu_m = \frac{\mu}{\rho}
+                \end{equation}
+
+            \noindent onde $\rho$ é a densidade mássica do material absorvedor. A unidade no SI é \unit{m^2/Kg} e quando utilizada nos cálculos, a espessura é obtida em \unit{Kg/m^2}.
+
+            O \textbf{\textit{\textcolor{CarnationPink}{Coeficiente de Atenuação Atômico}}} (${}_a\mu$) é dado pelo coeficiente de atenuação linear dividido pelo número de átomos $N_a$ por volume $\mathcal{V}$ do absorvedor:
+
+                \begin{equation}
+                    {}_a\mu = \frac{\mu}{\frac{N_a}{\mathcal{V}}}
+                \end{equation}
+
+            \noindent A unidade do SI para o ${}_a\mu$ é \unit{m^2/atomo} que equivale a \qty{e4}{cm^2/atomo}. Quando o ${}_a\mu$ é utilizado na equação de atenuação, a espessura é obtida em \unit{atomo/m^2} onde \qty{1}{atomo/m^2} equivale a \qty{e-4}{atomo/cm^2}
+
+
+            O \textbf{\textit{\textcolor{CarnationPink}{Coeficiente de Atenuação Eletrônico}}} (${}_e\mu$) é dado pelo coeficiente de atenuação linear dividido pelo número de elétrons $N_e$ por unidade de volume $\mathcal{V}$ do absorvedor.
+
+            \begin{equation}
+                {}_e\mu = \frac{\mu}{\frac{N_e}{\mathcal{V}}}
+            \end{equation}
+
+            \noindent A unidade do SI para o ${}_e\mu$ é \unit{m^2/eletron}.
+
+            Como ambos os coeficientes são dados em termos da área do material, também são referidos como seção de choque. As relações entre os coeficientes de atenuação são:
+
+            \begin{equation}
+                \mu = \rho \mu_m = n\;{}_a\mu = Zn\;{}_e\mu
+            \end{equation}
+
+            \noindent onde 
+
+                \begin{equation}
+                    n = \frac{N_a}{\mathcal{V}}
+                \end{equation}
+
+            \noindent e
+
+                \begin{equation}
+                    \frac{N_a}{\mathcal{V}} = \rho \frac{N_a}{m} = \rho \frac{N_A}{A}
+                \end{equation}
+
+            Para fins de dosimetria, são definidos outros dois coeficientes de atenuação:
+
+            \begin{enumerate}
+                \item \textbf{\textit{\textcolor{CarnationPink}{Coeficiente Linear de Transferência de Energia}}}: Coeficiente utilizado para definir a energia média transferida ($\bar{E}_{tr}$) pelos fótons para as partículas carregadas no meio em uma interação fóton-átomo. É dado por:
+                
+                    \begin{equation}
+                        \mu_{tr} = \mu \frac{\bar{E}_{tr}}{h \nu} = \mu \bar{f}_{tr}
+                    \end{equation}
+
+                \noindent onde $\bar{f}_{tr}$ é a fração média total da energia do fóton que é transferida na forma de energia cinética para partículas carregadas através de várias interações entre o fóton incidente e o material do absorvedor.
+                
+                \item \textbf{\textit{\textcolor{CarnationPink}{Coeficiente Linear de Absorção de Energia}}}: Coeficiente utilizado para definir a energia média absorvida ($\bar{E}_{ab}$)pelo meio em uma interação fóton-átomo. É dado por:
+                    
+                    \begin{equation}
+                        \mu_{ab} = \mu \frac{\bar{E}_{ab}}{h \nu} = \mu \bar{f}_{ab}
+                    \end{equation}
+
+                \noindent onde $\bar{f}_{ab}$ é a fração média total da energia do fóton que é absorvida pelo material absorvedor.
+            \end{enumerate}
+
+            A energia média transferida por um fóton para uma partícula carregada do meio pode ser definida através da soma de duas componentes: A energia média absorvida pelo meio absorvedor ($\bar{E}_{ab}$) e a energia média perdida pelas partículas carredas secundárias irradiada em forma de radiação eletromagnética, podendo ser radiação de bremsstrahlung, aniquilação em voo ou produção fluorescente devido a desexitação do átomo ($\bar{E}_{rad}$).
+            
+                \begin{equation}
+                    \bar{E}_{tr} = \bar{E}_{ab} + \bar{E}_{rad}
+                \end{equation}
+
+            \noindent o que nos permite chegar na relação:
+
+                $$\frac{\mu_{ab}}{\rho} = \frac{\bar{E}_{tr} - \bar{E}_{rad}}{h \nu} \frac{\mu}{\rho} = \frac{\mu_{tr}}{\rho} \left(1 - \frac{\bar{E}_{rad}}{\bar{E}_{tr}}\right) = \frac{\mu_{tr}}{\rho} (1 - \bar{g}) $$
+
+                \begin{equation}
+                    = \frac{\mu}{\rho}\bar{f}_{tr}(1 - \bar{g}) = \frac{\mu_{tr}}{\rho}(1 - \bar{g})
+                \end{equation}
+
+            \noindent onde $\bar{g}$ é a fração média de radiação definida como a fração da energia cinética média transferida do fóton incidente para a partícula carregada do meio que é subsequentemente irradiada na forma de fótons.
+
+                \begin{equation}
+                    \bar{g} = \frac{\bar{E}_{rad}}{\bar{E}_{tr}} 
+                    = 1 - \frac{\bar{E}_{ab}}{\bar{E}_{tr}}
+                    = 1 - \frac{\bar{f}_{ab}}{\bar{f}_{tr}}
+                    = 1 - \frac{\mu_{ab}/ \rho}{\mu_{tr}/ \rho}
+                \end{equation}
+
+                
+            Em um feixe largo, além do feixe primário, devem ser considerados os os fótons secundários que são espalhados no meio absorvedor e que contribui nos na energia transferida para o meio avaliada na área de abrangência do campo de radiação, diferentemente do feixe estreito que a radiação é espalhada para outra região diferente daquela no qual o feixe primário está incidindo. 
+
+                \begin{equation}
+                    B = \frac{I_B(x)}{I_N(x)} 
+                \end{equation}
+
+            \noindent onde $B$ é o fator de build-up que representa os fótons secundários que são espalhados, $I_N(x)$ é a intensidade para um feixe estreito e $I_B(x)$ é a intensidade para o feixe secundário. Portanto
+
+                \begin{equation}
+                    I_B(x) = I_{N_0} e^{- \bar{\mu}_{eff} x}
+                \end{equation}
+
+            \noindent onde
+
+                \begin{equation}
+                    \bar{\mu}_{eff} = \mu - \frac{\ln B}{x}
+                \end{equation}
+
+
+
+
+        \subsection{Espalhamento Coerente (Rayleigh, Thompson)}
+
+            Este processo de interação ocorre nas faixas de energia de \qtyrange{1}{1000}{keV} onde $h\nu \ll m_ec^2$, Figura \ref{fig:espalhamentoCoerente}. Ao interagir com um elétron orbital fracamente ligado (com ação combinada do átomo inteiro), este fóton é absorvido pelo elétron que começa a oscilar em alta frequência (oscilação de dipolo induzida), e ao relaxar, este excesso de energia é liberado como outro fóton com a mesma energia do fóton incidente porém com uma pequena angulação em relação a tragetória do fóton incidente. Como nenhuma energia é transferida, este espalhamento não contribui para o coeficiente de transferencia de energia, porém contribui para o coeficiente de atenuação, além do mais, este efeito não causa ionizações e portanto não contribui para a dose absorvida no meio.
+
+            \begin{itemize}
+                \item A secão de choque atômica para o Espalhamento coerente é proporcional a:  ${}_a\sigma_R \propto (z / h\nu)^2$
+                \item O coeficiente de atenuação mássico é proporcional a: $\mu_R / \rho \propto (z / h\nu)^2$
+            \end{itemize}
+
+            No tecido e em materiais tecido-equivalentes, a importancia relativa do espalhamento coerente é pequena, contribuindo com poucos \% do coeficiente de atenuação total;
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.5\textwidth]{Imagens/espalhamentoCoerente.JPG}
+                \caption{Espalhamento Coerente}
+                \label{fig:espalhamentoCoerente}
+            \end{figure}
+
+        \subsection{Efeito Fotoelétrico}
+
+            O fóton interage com um életron fortemente ligado ao átomo do meio absorvedor, onde este fóton é totalmente absorvido e o elétron é ejetado do átomo que sai como um fóton-elétron com energia cinética igual a energia do fóton incidente subtraída da energia de ligação deste elétron ao átomo, Figura \ref{fig:efeitoFotoeletrico} , ou seja:
+
+
+
+                \begin{equation}
+                    E_k = h\nu - E_B
+                \end{equation}
+
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{Imagens/efeitoFotoeletrico.JPG}
+                    \caption{Efeito Fotoelétrico}
+                    \label{fig:efeitoFotoeletrico}
+                \end{figure}
+
+
+            \begin{itemize}
+                \item O coeficiente de atenuação atômico para o efeito fótoelétrico é proporcional a: ${}_a\tau \propto Z^4 / (h\nu)^3$;
+                \item o coeficiente de atenuação mássico para o efeito fotoelétrico é proporcional a
+                : $\tau_m \propto (Z / h\nu)^3$
+            \end{itemize}
+
+            Conforme a energia do fóton incidente aumenta, a seção de choque mássica $\tau_m$ diminui, e existe uma descontinuidade em $\tau_m$ quando a energia do fóton incidente é igual a energia de ligação de uma das camadas internas. Esta descontinuidade é chamada de bordas de absorção e refletem o fato de que para energias do fóton incidente menores que a energia de ligação de uma determinada camada não ocorrerá o efeito enquanto que para energias maiores ou iguais o efeito ocorrerá; A Figura \ref{fig:descontinuidadeEfeitoFotoeletrico} mostra a seção de choque atômica para o efeito fotoelétrico ${}_a\tau$ para diferentes tipos de materiais em função da energia do fóton incidente, onde pode ser observado as bordas de absorção da camada K
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.6\textwidth]{Imagens/descontinuidadeEfeitoFotoeletrico.JPG}
+                \caption{Efeito Fotoelétrico}
+                \label{fig:descontinuidadeEfeitoFotoeletrico}
+            \end{figure}
+
+        \subsection{Espalhamento Compton}
+
+        \subsection{Produção de Pares}
+
+        \subsection{Produção de Tripleto}
+
+        \subsection{Desintregação Fotonuclear}
+
+        
 
 \bibliography{ref.bib}
 \end{document}
