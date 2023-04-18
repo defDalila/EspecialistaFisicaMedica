@@ -19,6 +19,7 @@
 
 ### :file_folder: Garantia da Qualidade
 
+- :memo: TG 142
 
 ### :file_folder: Medicina
 

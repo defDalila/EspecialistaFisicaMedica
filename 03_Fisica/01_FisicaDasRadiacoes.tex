@@ -1645,7 +1645,7 @@
 
         \subsection{Espalhamento Coerente (Rayleigh, Thompson)}
 
-            Este processo de interação ocorre nas faixas de energia de \qtyrange{1}{1000}{keV} onde $h\nu \ll m_ec^2$, Figura \ref{fig:espalhamentoCoerente}. Ao interagir com um elétron orbital fracamente ligado (com ação combinada do átomo inteiro), este fóton é absorvido pelo elétron que começa a oscilar em alta frequência (oscilação de dipolo induzida), e ao relaxar, este excesso de energia é liberado como outro fóton com a mesma energia do fóton incidente porém com uma pequena angulação em relação a tragetória do fóton incidente. Como nenhuma energia é transferida, este espalhamento não contribui para o coeficiente de transferencia de energia, porém contribui para o coeficiente de atenuação, além do mais, este efeito não causa ionizações e portanto não contribui para a dose absorvida no meio.
+            Este processo de interação ocorre nas faixas de energia de \qtyrange{1}{1000}{keV} onde $h\nu \ll m_ec^2$, Figura \ref{fig:espalhamentoCoerente}. Se trata de um processo de interação do fóton com o átomo como um todo onde todos os elétrons contribuem para o espalhamento do fóton.Neste processo o fóton é absorvido pelo átomo fazendo com que os elétrons fortemente ligados ao átomo que comecem a oscilar em alta frequência (oscilação de dipolo induzida), e ao relaxar, este excesso de energia é liberado como outro fóton com a mesma energia do fóton incidente porém com uma pequena angulação em relação a tragetória do fóton incidente. Como nenhuma energia é transferida, este espalhamento não contribui para o coeficiente de transferencia de energia, porém contribui para o coeficiente de atenuação, além do mais, este efeito não causa ionizações e portanto não contribui para a dose absorvida no meio.
 
             \begin{itemize}
                 \item A secão de choque atômica para o Espalhamento coerente é proporcional a:  ${}_a\sigma_R \propto (z / h\nu)^2$
@@ -1678,14 +1678,17 @@
                     \label{fig:efeitoFotoeletrico}
                 \end{figure}
 
+                O efeito fotoelétrico causa ionização no meio, ou seja, ele quebra ligações moleculares causando dano às celulas; Portanto o efeito fotoelétrico contribui para a dose absorvida. E devido a esta ionização, sequencialmente ocorrerá a emissão de raios-x característicos ou elétron Auger.
 
             \begin{itemize}
                 \item O coeficiente de atenuação atômico para o efeito fótoelétrico é proporcional a: ${}_a\tau \propto Z^4 / (h\nu)^3$;
                 \item o coeficiente de atenuação mássico para o efeito fotoelétrico é proporcional a
-                : $\tau_m \propto (Z / h\nu)^3$
+                : $\tau_m \propto (Z / h\nu)^3$. 
+                \item Esta dependência com $z^3$ mostra que tecidos como osso irão atenuar mais o feixe de fótons em estruturas como o osso do que comparado ao tecido mole. 
+                \item A dependência com $(1 / h\nu)^3$ mostra que o efeito tem maior predominâncias à baixas energias, conforme a energia aumenta, diminui a probabilidade de ocorrer o efeito fotoelétrico. As evidências mostram que para baixas a seção de choque atômica varia com $(1 / h\nu)^3$ e para altas energias se transforma para $(1 / h\nu)$. 
             \end{itemize}
 
-            Conforme a energia do fóton incidente aumenta, a seção de choque mássica $\tau_m$ diminui, e existe uma descontinuidade em $\tau_m$ quando a energia do fóton incidente é igual a energia de ligação de uma das camadas internas. Esta descontinuidade é chamada de bordas de absorção e refletem o fato de que para energias do fóton incidente menores que a energia de ligação de uma determinada camada não ocorrerá o efeito enquanto que para energias maiores ou iguais o efeito ocorrerá; A Figura \ref{fig:descontinuidadeEfeitoFotoeletrico} mostra a seção de choque atômica para o efeito fotoelétrico ${}_a\tau$ para diferentes tipos de materiais em função da energia do fóton incidente, onde pode ser observado as bordas de absorção da camada K
+            Conforme a energia do fóton incidente aumenta, a seção de choque mássica $\tau_m$ diminui, e existe uma descontinuidade em $\tau_m$ quando a energia do fóton incidente é igual a energia de ligação de uma das camadas internas. Esta descontinuidade é chamada de bordas de absorção e refletem o fato de que para energias do fóton incidente menores que a energia de ligação de uma determinada camada não ocorrerá o efeito enquanto que para energias maiores ou iguais o efeito ocorrerá; A Figura \ref{fig:descontinuidadeEfeitoFotoeletrico} mostra a seção de choque atômica para o efeito fotoelétrico ${}_a\tau$ para diferentes tipos de materiais em função da energia do fóton incidente, onde pode ser observado as bordas de absorção da camada K.
 
             \begin{figure}[h]
                 \centering
@@ -1694,15 +1697,828 @@
                 \label{fig:descontinuidadeEfeitoFotoeletrico}
             \end{figure}
 
+            \begin{itemize}
+                \item A energia média transferida para um elétron da camada K $(\bar{E_K})_{tr}^{fe}$, a partir de um fóton com energia $h \nu > E_B(K)$ devido ao efeito fotoelétrico é dada por:
+                
+                    \begin{equation}
+                        \bar{E_K}_{tr}^{fe} = h\nu - P_K \omega_K E_B(K)
+                    \end{equation}
+
+                \noindent onde $E_B(K)$ é a energia de ligação do elétron na camada interna K, $P_K$ é a fração de todas as interações por efeito fotoelétrico que ocorrem na camada K e $\omega_K$ é a produção fluorescente para a camada K. A faixa de $P_K$ varia entre 1.0 para materiais com número atômico baixo, e de 0.8 para materiais de número atômico alto. Isso mostra que, para materiais com número atômico baixo, o efeito fotoelétrico tende a ocorrer totalmente na camada K, e para materiais com número atômico alto, apenas 80\% do efeito fotoelétrico é devido à interação do fóton com um elétron da camada K, e demais interações ocorrem em outras camadas. 
+
+                \item O Efeito Fotoelétrico é predominante na água e no tecido mole para energias abaixo de 20 keV. Para o chumbo, o Efeito fotoelétrico é predominante para energias abaixo de 500 keV.
+            \end{itemize}
+
         \subsection{Espalhamento Compton}
 
+            O Efeito compton representa a interação do fóton com um elétron orbital onde  $h\nu \gg E_B $ e portanto esta é a definição que o elétron está essencialmente livre e em um estado estácionario. Neste processo o fóton com  energia $h\nu$ perde parte de sua energia para o elétron de recuo, que ganha energia Cinética, e é espalhado  como um  foton com energia $h\nu'$  em um ângulo de espalhamento $\theta$, como mostra a Figura \ref{fig:esquemaEfeitoCompton}. O Angulo $\phi$ representa o ângulo entre a direção de incidência do fóton e a direção do elétron de recuo. 
+
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{Imagens/esquemaEfeitoCompton.JPG}
+                    \caption{Esquema de Interação do Efeito Compton}
+                    \label{fig:esquemaEfeitoCompton}
+                \end{figure}
+
+            A figura \ref{fig:diagramaMomentoEfeitoCompton} mostra o diagrama de vetores para a conservação do momento no Efeito Compton.
+
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{Imagens/esquemaVetorialMomentoEfeitoCompton.jpg}
+                    \caption{Diagrama vetorial do momento para o Efeito Compton}
+                    \label{fig:diagramaMomentoEfeitoCompton}
+                \end{figure}
+
+
+            Utilizando os princípios de conservação de energia e momento, temos as seguintes relações apresentadas na Tabela \ref{tb:conservacaoEnergiaMomentoCompton}.
+
+            \begin{table}[h]
+                \centering
+                \caption{Relações de Energia e Momento para cada partícula envolvida no processo de interação}
+                \label{tb:conservacaoEnergiaMomentoCompton}
+                \begin{tabular}{c c c c c}
+                    \hline
+                    \addlinespace[5pt]
+                    & \multicolumn{2}{c}{Energia Cinética} & \multicolumn{2}{c}{Momento} \\
+                    \cline{2-5}
+                    \addlinespace[5pt]
+                    \multirow[c]{-2}{*}{Partícula} & Antes & Depois & Antes & Depois \\
+                    \hline
+                    \addlinespace[5pt]
+                    Fóton & $h\nu$ & $h \nu'$ & $\vec{p}_{h\nu}$  & $\vec{p}_{h\nu'}$ \\
+                    \addlinespace[5pt]
+                    Elétron & $m_e c^2$ & $E_e$ & $0$ & $\vec{p}_e$ \\
+                    \hline
+                    \hline
+                \end{tabular}
+            \end{table}
+
+
+            \noindent A conservação de energia nos fornece: 
+
+            \begin{equation}
+                h\nu + m_ec^2 = h \nu' + E_e
+                \label{eq:conservacaoDeEnergiaCompton}
+            \end{equation}
+
+            \noindent onde $h\nu$ é a energia do fóton incidente, $m_ec^2$ é a energia de repouso do elétron, $h \nu'$ é a energia do fóton espalhado e $E_e$ é a energia total do recuo do elétron.
+
+            \noindent Através das relações relativísticas, sabemos que a energia total do elétron é dada pela relação:
+
+                \begin{equation}
+                    E_e = m_e c^2 + K_e
+                \end{equation}
+
+            \noindent onde $K_e$ é a energia cinética do elétron. O que nos leva a relação:
+
+                \begin{equation}
+                    h \nu = h\nu' + K_e
+                \end{equation}
+
+            
+            \noindent Sabendo que a energia total do elétron está relacionada ao seu momento através da equação:
+
+                \begin{equation}
+                    E_e^2 = (m_ec^2)^2 + (p_ec)^2
+                \end{equation}
+
+            \noindent temos então que:
+
+                \begin{equation}
+                    (h\nu - h\nu') + m_ec^2 = \sqrt[2]{(m_ec^2)^2 + p^2 c^2}
+                \end{equation}
+
+            \noindent o que nos leva a equação:
+
+                \begin{equation}
+                    p_e^2 = \frac{1}{c^2} \left\{ (h\nu)^2 + (h\nu')^2 - 2 (h\nu)(h\nu') + 2m_ec^2(h\nu - h\nu')\right\}
+                    \label{eq:momentoConserEner}
+                \end{equation}
+
+            \noindent A grandeza momento, é uma grandeza vertorial; A conservação do momento é dada pela equação:
+
+                \begin{equation}
+                    \vec{p}_{h\nu} = \vec{p}_e + \vec{p}_{h\nu'}
+                 \end{equation}
+
+            \noindent Decompondo o momento no eixo x e y, e assumindo que a direção de propagação é ao longo do eixo x, de forma que o momento do fóton incidente no eixo perpendicular é 0, temos que o momnento na direção y é dado por:
+
+                 $$0 = p_e \; seno(\phi) - p_{h\nu'} \; seno(\theta)$$
+
+                 \begin{equation}
+                    p_e \; seno(\phi) = p_{h\nu'} \; seno(\theta)
+                 \end{equation}
+
+            \noindent o momento no eixo x é dado por:
+
+                 $$p_{h\nu} = p_e \cos(\phi) + p_{h\nu'} \cos(\theta)$$
+
+                 \begin{equation}
+                    p_e \; \cos(\phi) = p_{h\nu} - p_{h\nu'} \; \cos(\theta)
+                 \end{equation}
+
+            \noindent Eliminando a dependencia do angulo $\phi$ chegamos na relação:
+
+            \begin{equation}
+                p_e^2 = \frac{1}{c^2} \left\{ (h\nu)^2 - 2 (h\nu)(h\nu')\cos(\theta)+  (h\nu')^2\right\}
+                \label{eq:momentoEqMomento}
+            \end{equation}
+
+            \noindent Unindo \ref{eq:momentoConserEner} e \ref{eq:momentoEqMomento} temos que:
+
+                \begin{equation}
+                    h\nu' = \frac{h\nu}{1 + \frac{h\nu}{m_ec^2}[1 - \cos(\theta)]}
+                \end{equation}
+
+            \noindent E então, a energi
+            
+                \begin{equation}
+                    K_e = h\nu \frac{\varepsilon (1 - \cos \theta)}{1 + \varepsilon (1 - \cos \theta)}
+                \end{equation}
+
+            \noindent onde $\varepsilon = h\nu/m_e c^2$.
+
+            \
+
+            \noindent Uma vez que a fequência e o comprimento de onda estão relacionados pela equação $c = \lambda \nu$, podemos obter o deslocamento do comprimento de onda para a interação dos fótons com um eletrón livre:
+
+                \begin{equation}
+                    \lambda - \lambda' = \frac{h}{me_c}[1 - \cos(\theta)]
+                \end{equation}
+
+            \noindent que pode ser escrito da forma:
+
+                \begin{equation}
+                    \lambda - \lambda' = \lambda_c[1 - \cos(\theta)]
+                \end{equation}
+
+            \noindent onde $\lambda_c$ é conhecido como o comprimento de onda Compton;
+
+
+            \noindent O angulo de espalhamento do fóton e o ângulo do recuo do elétron estão relacionados a partir da seguinte relação:
+
+                \begin{equation}
+                    \cot \phi = \left[1 + \frac{h\nu}{m_ec^2} \right]\tan \left(\frac{\theta}{2}\right)
+                \end{equation}
+
+            \noindent que pode ser escrita da forma:
+
+                \begin{equation}
+                    \cot \phi = \left[1 + \varepsilon  \right]\tan \left(\frac{\theta}{2}\right)
+                \end{equation}
+
+            \noindent o que nos permite afirmar:
+
+                \begin{itemize}
+                    \item  O ângulo $\phi$ pode variar de 0 até $\pi/2$;
+                        \begin{enumerate}
+                            \item Se $\theta = \pi$, ocorre o retroespalhamento do fóton, e então 
+                            
+                                $$\cot \phi = \frac{1}{\tan \phi} =  \left[1 + \frac{h\nu}{m_ec^2} \right]\tan \left(\frac{\pi}{2}\right) $$
+
+                                $$\tan \phi = \frac{1}{(1 + \varepsilon ) \tan \left(\frac{\pi}{2}\right)}$$
+
+                                \noindent como $\tan (\pi/2) \rightarrow \infty$,
+
+                                $$\tan \phi = 0$$
+
+                                $$\phi = \arctan 0 = 0$$
+
+                            \item Se $\theta = 0$, o fóton não é espalhado, e portanto:
+                            
+                            $$\cot \phi = \frac{1}{\tan \phi} =  \left[1 + \frac{h\nu}{m_ec^2} \right]\tan \left(\frac{0}{2}\right) $$
+                            $$=  \left[1 + \frac{h\nu}{m_ec^2} \right]\tan 0 $$
+
+                            $$\tan \phi = \frac{1}{(1 + \varepsilon ) \tan 0}$$
+
+                            \noindent como $\tan 0 = 0$, 
+
+                            $$\frac{1}{(1 + \varepsilon ) \tan 0} \rightarrow \infty $$
+
+                            \noindent e portanto 
+
+                            $$\phi = \arctan \rightarrow \infty = \frac{\pi}{2} $$
+
+                        \end{enumerate}
+                    \item Para um dado ângulo de espalhamento $\theta$, quanto maior a energia do fóton incidente, menor o ângulo de recuo do elétron.
+                \end{itemize}
+
+            \noindent Avaliando a energia do fóton espalhado com base no ângulo de espalhamento, temos que:
+
+                \begin{enumerate}
+                    \item Para $\theta = 0$, temos que:
+                    
+                        $$h\nu' = \frac{h\nu}{1 + \varepsilon (1 - \cos 0)}$$
+
+                        $$h\nu' = \frac{h\nu}{1 + \varepsilon (1 - 1)}$$
+
+                        \begin{equation}
+                            h\nu' = h\nu
+                        \end{equation}
+
+                        \noindent portanto, a energia do fóton incidente é máxima e é igual a energia do fóton espalhado e nenhuma energia cinética é transferida para o recuo do elétron, sendo a energia mínima do elétron.
+
+                    \item Para $\theta = \pi/2$
+                    
+                        $$h\nu' = \frac{h\nu}{1 + \varepsilon (1 - \cos \pi/2)}$$
+
+                        $$h\nu' = \frac{h\nu}{1 + \varepsilon (1 - 0)}$$
+
+                        \begin{equation}
+                            h\nu' = \frac{h\nu}{1 + \varepsilon}
+                        \end{equation}
+
+
+                    \item Para $\theta = \pi$
+                    
+                        $$h\nu' = \frac{h\nu}{1 + \varepsilon (1 - \cos \pi)}$$
+
+                        $$h\nu' = \frac{h\nu}{1 + \varepsilon (1 + 1)}$$
+
+                        \begin{equation}
+                            h\nu' = \frac{h\nu}{1 + 2\varepsilon}
+                        \end{equation}
+                        
+                        \noindent portanto a energia do fóton é mínima para esse ângulo de espalhamento de forma que para fótons espalhados com está angulação, o elétron obterá energia máxima.
+
+                    \item Nos casos em que o fóton incidente possui alta energia, de forma que
+                    
+                        $$\varepsilon = \frac{h\nu}{m_ec^2} \rightarrow \infty$$
+
+                    \noindent
+
+                        \begin{enumerate}
+                            \item Para $\theta = \pi/2$
+                            
+                                \begin{equation}
+                                    h\nu' \approx m_ec^2
+                                \end{equation}
+
+                            \item Para $\theta = \pi$
+                            
+                                \begin{equation}
+                                    h\nu' \approx 0.5 m_ec^2
+                                \end{equation}
+                        \end{enumerate}
+
+                    \item A figura \ref{fig:maximoEMediaFracaoEletronCompton} mostra a fração máxima e a fração média da energia transmitida do fóton incidente para o recudo do elétron, onde a fração média é utilizada para determinar a contribuição do Efeito Compton no coeficiente de energia transferida. Por exemplo, nos casos de retroespalhamento do fóton, é analisado a fração máxima da energia do fóton trasmitida para o elétron, e para um fóton incidente com a energia de \qty{1}{MeV}, \qty{0.8}{MeV} é transferido como energia cinética para o elétron de recuo e \qty{0.2}{MeV} é a energia do fóton espalhado. Em média, para um fóton incidente com a energia de \qty{1}{MeV} resultará em um elétron com energia de \qty{0.44}{MeV} e um fóton espalhado com energa de \qty{0.56}{MeV}.
+                    
+                        \begin{figure}[h]
+                            \centering
+                            \includegraphics[width=0.6\textwidth]{Imagens/maximoEMediaFracaoEletronCompton.JPG}
+                            \caption{Fração média e máxima da energia do fóton transferida para um elétron.}
+                            \label{fig:maximoEMediaFracaoEletronCompton}
+                        \end{figure}
+                \end{enumerate}
+
+                Como o Efeito Compton ocorre na interação de um fóton com um elétron praticamente livre e em um estado estacionário ($h\nu \gg m_e c^2$), temos que:
+
+                    \begin{itemize}
+                        \item O Coeficiente de atenuação atômico para o efeito compton depende linearmente do número atômico do material absorvedor, ou seja:
+                        
+                            $${}_a\sigma_c \propto Z $$
+
+                        \item O coeficiente de atenuação mássico (${}_m\sigma_c$) e o coeficiente de atenuação eletrônico (${}_e\sigma_c$) são independentes do número atômico Z;
+                        
+                        \item A probabilidade de ocorrência do efeito compton é proporcional à densidade eletrônica do meio; O coeficiente de atenuação eletrônico (${}_e\sigma_c$) dimunui com o aumento da energia do fótons incidente.
+                        
+                        \item A maior vantagem da probabilidade de ocorrência do efeito ser independente do número atômico Z é que é possível ocorrer uma distribuição de dose mais uniforme independente do tipo de tecido, sendo o efeito compton importante nos tratamentos de Radioterapia.
+                        
+                        \item Já para a produção de imagens, o efeito compton é um efeito indesejado pois irá causar borramento e ruído na imagem uma vez que o foton que chega ao detector pode ter vindo de um ângulo diferente do ângulo de incidencia, prejudicando a resolução da imagem.
+                        
+                        \item Para a água e o tecido mole, o Efeito Compton é predominante entre as faixas de energia de ~ 20 keV até ~20 MeV. Para o chumbo, o Efeito Compton é predominante para energias entre 500 keV e 5 MeV.
+                    \end{itemize}
+            
         \subsection{Produção de Pares}
+
+                Na produção de pares, um fóton incidente com a energia mínima de \qty{1.022}{MeV} interage com o campo elétrico do núcleo atômico que é totalmente absorvido pelo átomo que emite um par elétron-pósitron com a energia cinética combinada igual a $h\nu - 2 m_ec^2$, como mostra a Figura \ref{fig:esquemaProducaoDePares}.
+
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{Imagens/producaoDePares.JPG}
+                    \caption{Produção de Pares}
+                    \label{fig:esquemaProducaoDePares}
+                \end{figure}
+
+                Uma vez que são produzidas duas novas partículas, é necessário um limiar de energia mínimo de 2 vezes a energia de repouso do elétron para que este efeito ocorra. 
+
+                A probalilidade de ocorrência da produção de pares é zero para energias abaixo do limiar de \qty{1.022}{MeV} e aumenta drasticamente com o aumento da energia do fóton incidente. 
+
+                \begin{itemize}
+                    \item O coeficiente de atenuação atômico ${}_a\kappa$ varia com $Z^2$
+                    \item O coeficiente de atenuação mássico $\kappa/\rho$ varia com Z;
+                    \item Para a água e o tecido mole, a prdodução de pares é o efeito predominante para fótons com energia superior a 20 MeV; Já para o chumbo, a produção de pares é predominante para energias superiores a 5 MeV.
+                \end{itemize}
 
         \subsection{Produção de Tripleto}
 
+            Ocorre quando um fóton de alta energia, ao invés de interagir com o campo do núcleo, interage com o campo elétrico de um elétron orbital fortemente ligado, o elétron orbital é ejetado além de ser produzido um par elétron-pósitron. A probabilidade de ocorrência deste efeito é proporcional ao número atômico Z e requer um limiar de energia igual a $4 m_ec^2$, totalizando \qty{2.044}{MeV}. 
+
         \subsection{Desintregação Fotonuclear}
+
+            Também chamada de Reação fotonuclear, consiste na interação de um fóton com alta energia (maior significância para fótons com energia superior a 10 MeV) com o núcleo de um átomo, onde este núcleo absorve o fóton incidente e resulta na emissão de um neutron (na chamada reação ($x, n$)) ou na emissão de um próton (na chamara reação ($x, p$)) e a transformação do núcleo em um produto de reação radioativo (fragmento).
+
+                \begin{itemize}
+                    \item O limiar de energia para ocorrência da fotodesintegração nuclear depende do tipo de reação reação e do número de massa do núcleo. O limiar é da ordem de 10 MeV para a maior parte dos núcleos, exceto para o deutério (\ce{^2H}) e para o Berílio-9 (\ce{^9Be}) que possuem uma energia limiar para a fotodesintegração nuclear de aproximadamente 2 MeV.
+                    
+                    \item A probabilidade de ocorrência da fotodesintegração nuclear é muito menor que os outros tipos de interação de fótons e portanto sua contribuição no coeficiente total de atenuação é de apenas poucos porcento para energias acima do limiar de reação. 
+                    
+                    \item Embora a contribuição da desintergração fotonuclear tenha pouca significância para fins de coeficiente de atenuação total, esta interação é considerada para fins de cálculos de blindagem em salas de radioterapia que utilizam energias superiores a 10 MeV, devido ao aumento da reação (x, n) que aumenta a produção de neutrôns e devido à radioatividade induzida no ar da sala de tratamento e nos componentes da máquina devido a reação (x, n). Devido ao aumento da produção de neutrons, a blindagem da porta da sala conta com uma camada de materiais hidrogenados ou borados para termalizar e absorver esses neutrons. A radioatividade provocada no ar da sala deve ser minimizada através de uma adequada veltilação da sala de tratamento, efetuando de 6 a 8 trocas de ar por hora.  A radioatividade produzida nos componentes da máquina é minimizada utilizando materiais com baixa seção de choque para a reação (x, n) e a utilização de materiais no qual o produto da reação (x, n) tenha uma meia-vida curta.
+                \end{itemize}
+
+        \subsection{Contribuição dos Coeficientes de Atenuação}
+
+            Para um dado fóton com energia $h\nu$ interagindo com um material absorvedor de número atômico Z:
+            
+            \begin{itemize}
+                \item o coeficiente de atenuação ($\mathbf{\mu}$) é dado por:
+
+                    \begin{equation}
+                        \mu = \tau + \sigma_r + \sigma_c + \kappa
+                    \end{equation}
+
+                \item O coeficiente de atenuação mássico ($\mathbf{\mu/\rho}$) é dado por:
+                
+                    \begin{equation}
+                        \frac{\mu}{\rho} = \frac{\tau}{\rho} + \frac{\sigma_r}{\rho} + \frac{\sigma_c}{\rho} + \frac{\kappa}{\rho}
+                    \end{equation}
+
+                \item O coeficiente de transferência de energia $(\mathbf{\mu_{tr}})$ é dado por:
+                
+                    \begin{equation}
+                        \mu_{tr} = \tau_{tr} + (\sigma_C)_{tr} + \kappa_{tr}
+                        = \tau \frac{\bar{K}_{tr}^{\tau}}{h\nu} + \sigma_c \frac{\bar{K}_{tr}^{\sigma_C}}{h\nu} + \kappa \frac{\bar{K}_{tr}^{\kappa}}{h\nu}
+                    \end{equation}
+
+                \noindent onde,
+
+
+                \noindent $\mathbf{\bar{K}_{tr}^{\tau}}$ é a energia cinética média transferida para as partículas carregadas devido ao efeito fotoelétrico. Pode ser aproximada pela equação $h\nu - P_k \omega_k E_b(K)$, onde $E_b(K)$ é a energia de ligação do elétron pertencente a camada K, $P_k$ é a fração de todas as interações do efeito fotoelétrico que ocorrem na camada K e $\omega_k$ é a produção fluorescente para a camada K.
+                
+
+                \noindent $\mathbf{\bar{K}_{tr}^{\sigma_C}}$ é a energia cinética média transferida para as partículas carregadas devido ao efeito compton. Este valor é obtido através de tabelas ou gráficos contendo dados experimentais; 
+
+
+                \noindent $\mathbf{\bar{K}_{tr}^{\kappa}}$ é a energia cinética média transferida para as partículas carregadas devido a produção de pares, que é obtido através da equação $h\nu - 2m_ec^2$.
+
+
+                \textbf{Obs:} Como o espalhamento Rayleigh  contribui para a dose absorvida e nem para a dose transferida pois não há transferência de energia nessa interação.
+
+            \item O Coeficiente mássico de transferência de energia $(\mathbf{\mu_{tr}/\rho})$ é dado por:
+            
+                \begin{equation}
+                    \frac{\mu_{tr}}{\rho} = \frac{\tau_{tr}}{\rho} + \frac{(\sigma_C)_{tr}}{\rho} + \frac{\kappa_{tr}}{\rho}
+                \end{equation}
+
+            
+            \item O coeficiente de absorção de energia ($\mathbf{\mu}_{ab}$) é dado por:
+            
+                \begin{equation}
+                    \mu_{ab} = \mu_{tr}(1 - g)
+                \end{equation}
+
+            \noindent onde g é a fração da energia do fóton incidente transferida que é emitida na forma de radiação eletromagnética. 
+
+            \item O Coeficiente mássico de absorção de energia ($\mathbf{\mu}_{ab}/\rho$) é dado por:
+            
+                \begin{equation}
+                    \frac{\mu_{ab}}{\rho} = \frac{\mu_{tr}}{\rho}(1 - g)
+                \end{equation}
+
+            \end{itemize}
+
+        \subsection{Predominância dos Efeitos}
+
+            A Figura \ref{fig:predominanciaInteracoes} mostra as regiões de predominância de cada efeito com base na energia do fóton incidente e o número atômico do material absorvedor.    
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.8\textwidth]{Imagens/predominanciaInteracoes.JPG}
+                \caption{Predominância de cada efeito}
+                \label{fig:predominanciaInteracoes}
+            \end{figure}
+
+            Por exemplo, O chumbo, com Z = 82, ao incidir um fóton com energia de 0.1 MeV a maior parte das iterações serão devidas ao efeito fotoelétrico, já o tecido mole, com Número atômico efetivo de aproximadamente 7.5 irradiado com a mesma energia, sofrerá predominantemente mais interações devido ao efeito compton.
 
         
 
+        \subsection{Aniquilação dos Pares}
+
+            É um processo que ocorre devido à produção de pósitrons durante o a produção de pares ou através do decaimento $\beta^+$. Pode ocorrer duas formas de aniquilação:
+
+
+            \begin{enumerate}
+                \item \textbf{\textcolor{CarnationPink}{Aniquilação Padrão Elétron-Pósitron}}: é o processo mais comum, onde um pósitron perde quase toda sua energia cinética e então se aniquila com um elétron orbital do absorvedor, considerado estacionário e livre. A aniquilação resulta em dois fótons com energia igual a energia de repouso do elétron,  0.511 MeV cada, emitidos com uma angulação de aproximadamente \ang{180} entre um e outro. Neste processo há a conservação de carga total, energia cinética total e momento total (que é igual a zero).
+                
+                \item \textbf{\textcolor{CarnationPink}{Aniquilação em voo}}: É um processo menos comum, que equivale  cerca de 2\% de todos os processos de aniquilação, caracterizado pela aniquilação de um pósitron com energia cinética diferente de zero e um elétron fortemente ligado ao átomo de um absorvedor ou com um elétron livre.
+
+
+                    \begin{enumerate}
+                        \item Quando a interação ocorre com um elétron está fortemente ligado ao átomo, o núcleo pode captar o momento de recuo e a aniquilação em voo produz apenas um fóton com energia igual a soma da energia total do pósitron $E_{e^+}$, que por sua vez equivale à soma da energia de repouso do pósitron ($m_{e^+}c^2$) e a energia cinética do pósitron ($E_k^{e^+}$) e a energia de repouso do elétron ($m_{e^-}c^2$), ou seja:
+                
+                            \begin{equation}
+                                h\nu = E_{e^+} + m_{e^-}c^2
+                                = E_K^{e^+} + m_{e^+}c^2 + m_{e^-}c^2
+                            \end{equation}
+
+                        \item Quando a Aniquilação em voo ocorre com um elétron essencialmente livre, a aniquilação resultará em dois fótons $h\nu_1$ e $h\nu_2$ movendo a partir do ponto de aniquilação, cada um com seu próprio ângulo de emissão, $\theta$ e $\phi$, com respeito à direção de incidência. A Figura \ref{fig:aniquilacaoVooEletronLivre} mostra esquematicamente a aniquilação em voo com um elétron livre.
+                        
+                        \begin{figure}[h]
+                            \centering
+                            \includegraphics[width=0.8\textwidth]{Imagens/esquemaAniquilacaoVoo.JPG}
+                            \caption{Esquema para a conservação da energia e momento na aniquilação em voo envolvendo um elétron livre}
+                            \label{fig:aniquilacaoVooEletronLivre}
+                        \end{figure}
+
+                        Pelo princípio de conservação de energia temos:
+
+                            \begin{equation*}
+                                E_k^{e^+} + 2m_ec^2 = h\nu_1 + h\nu_2
+                            \end{equation*}
+
+                        A conservação do momento no eixo x é dada por:
+
+                            \begin{equation*}
+                                \frac{E_k^{e^+}}{c}\sqrt[2]{1 + \frac{2m_{e^+}c^2}{E_k^{e^+}}} = \frac{h\nu_1}{c}\cos \theta + \frac{h\nu_2}{c}\cos \phi
+                            \end{equation*}
+
+                        A conservação do momento no eixo y é dada por:
+
+                            \begin{equation*}
+                                0 = \frac{h\nu_1}{c}\sin \theta - \frac{h\nu_2}{c}\sin \phi
+                            \end{equation*}
+
+                        \end{enumerate}
+                    
+            \end{enumerate}
+        \subsection{Raios Delta}
+
+        Se tratam de partículas carregadas energéticas produzidas nas interações iniciais dos fótons. Possuem energia suficiente para produzir ionizações e excitações no átomo por si só e eveltualmente são absorvidos pelo átomo.
+
+        \subsection{Efeito Compton Nuclear}
+
+            É um processo no qual o fóton incidente com energia $h\nu$ interage com o núcleo e transfere parte da sua energia para o recuo do núcleo e então é espalhado com uma energia menor $h\nu'$ com um ângulo $\theta$. Este efeito pode ocorrer mas é muito menos provável que o efeito compton padrão, no qual o fóton é espalhado devido a interação com um elétron "livre".
+
+        \subsection{Efeito Compton Inverso}
+
+            É um processo no qual um fóton de baixa energia interage com um elétron com energias altamente relativísticas e ganha a energia perdida pelo elétron em contraste ao efeito compton padrão que um fotón de alta energia tranfere energia para um eletron "livre". 
+        
+    \section{Interação da Radiação Particulada com a Matéria}
+
+       A radiação particulada engloba todas as partículas massivas que podem ser classificadas com respeito a sua carga elétrica como carregadas ou não-carregadas; e podem ser classificadas quando a sua massa como leves ou pesadas. As partículas carregadas são diretamente ionizantes e interagem através de seu campo coulombiano enquanto que as partículas não-carregadas são indiretamente ionizantes, onde as ionizações são secundárias ao seu processo de interação. Diferentemente dos fótons, estas partículas percorrem uma distância finita no meio, que pode ser definida através de seu alcançe ou através do comprimento de caminho percorrido. Nos casos de partículas carregadas pesadas, existe a ocorrência do pico de Bragg no final do seu comprimento de caminho.
+
+       \subsection{Tipos de Radiação Particulada}
+
+            A radiação pode ser classificada como:
+
+            \begin{itemize}
+                \item \textbf{\textit{\textcolor{CarnationPink}{Partículas Carregadas}}:} Partículas que podem interagir diretamente com os elétrons do núcleo, através da Força Coulombiana. Estas partículas são classificadas como diretamente ionizantes e tem uma penetração menor no tecido quando comparada com as partículas neutras.
+                
+                \item \textbf{\textit{\textcolor{CarnationPink}{Partículas neutras (sem carga)}}:}  Devido a ausência de carga, estas partículas são chamadas de indiretamente ionizantes, por não interagir através da força coulombiana. Nos casos de partículas neutras pesadas, a maior parte das interações ocorre com o núcleo do átomo e portanto são mais penetrantes; 
+                
+                \item \textbf{\textit{\textcolor{CarnationPink}{Partículas Leves}}:} são aquelas partículas com massa similar a massa do elétron, então consiste basicamente nos elétrons, pósitrons e partículas $\beta$. Devido a sua massa muito pequena, estas partículas tendem a ser espalhadas muito facilmente, ou seja, mudam facilmente a direção de sua trajetória no meio descrevendo uma trajetória tortuosa, de forma que o seu comprimento de caminho percorrido  seja muito maior que seu alcançe, como mostra a Figura \ref{fig:alcanceECaminhoPercorrido}.
+
+                    \begin{figure}[h]
+                        \centering
+                        \includegraphics[width=0.6\textwidth]{Imagens/alcanceECaminhoPercorrido.JPG}
+                        \caption{Diferença entre alcance (Range) e Comprimento de Caminho Percorrido para o elétron.}
+                        \label{fig:alcanceECaminhoPercorrido}
+                    \end{figure}
+
+                \item \textbf{\textit{\textcolor{CarnationPink}{Partículas Pesadas}}:} são aquelas com massa significativamente maior que a massa do elétron, como prótons, neutrôns, partículas alpha, etc \dots. Devido a sua massa, estas partículas descrevem uma trajetória aproximadamente em linha reta e portanto seu alcance é aproximadamente igual ao seu comprimento de caminho percorrido; 
+
+            \end{itemize}
+
+        \subsection{Formas de Interação das Partículas Carregadas}
+
+            
+            Os fótons são partículas indiretamente ionizantes e portanto viajam sempre com velocidade constante igual a velocidade da luz mantendo sempre a mesma energia. Já as partículas carregadas são diretamente ionizantes e portanto possuem velocidade variável a medida que interagem com o meio, pois liberam parte de sua energia no meio. Lembrando que velocidade e energia estão diretamente relacionadas, quando uma partícula ganha energia, ela se move mais rápido, e vice-versa.
+
+            \textbf{\textcolor{CarnationPink}{Portanto, uma partícula carregada, ao interagir com o meio perde sua energia para o meio em cada interação até que seja totalmente freada, o que muda é a energia das partículas do feixe e não o número de partículas presentes no feixe. Já um feixe de fótons sofre atenuação, o que muda é o número de fótons presentes no feixe, de forma que o número de fótons no feixe dimunui a cada interação sem mudar a energia dos fótons que permanece no feixe.}}
+
+
+            A Figura \ref{fig:atenuacaoVsStoppingPower} mostra a diferença entre Atenuação e Stopping Power (poder de freamento), onde as parículas indiretamente ionizantes, no caso os fótons, irão sofrer, aleatoreamente, múltiplos espalhamentos e colisões de forma que irá diminuir o número de fótons no feixe, ou seja a fluência do feixe. Os prótons e outras partículas terão ter caminhos que irão diminuir sua energia a medida que eles sofram interação com mais átomos através da força coulombiana, e estas partículas irão gradualmente desacelerar e eventualmente parar com um certo grau de certeza para uma certa energia inicial.
+
+        
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.9\textwidth]{Imagens/atenuacaoVsStoppingPower.JPG}
+                \caption{Atenuação versus Stopping Power}
+                \label{fig:atenuacaoVsStoppingPower}                
+            \end{figure}
+            
+
+            Quando uma partícula carregada viaja em um absorvedor, ela irá experimentar a Força coulombiana tanto com o núcleo como com os elétrons orbitais do átomo (Fig. \ref{fig:colisoesComOAtomo}). As interações podem ser divididas em três categorias que variam com o tamanho do parâmetro de impacto classico $b$ da trajetória da partícula carregada comparado com o raio atômico classico $a$ do material absorvedor com o qual a partícula carregada interage, sendo as categorias:
+
+                \begin{enumerate}
+                    \item Quando $b \ll a$ é caracterizado como produção bremsstrahlung onde a partícula carregada irá interagir com o campo do núcleo atômico;No caso de elétrons, o elétron incidente sofre uma interação radiativa com o núcleo atômico. O Elétron irá emitir um fóton com uma energia que pode variar entre zero e a energia cinética do elétron incidente. A magnetude de energia do fóton de bremsstrahlung emitido irá depender da magnetude do parâmetro de impacto $b$, quanto menor $b$ maior é a energia do fóton produzido. 
+                    \item Quando $b \approx a$, é chamada de colisão dura, onde a interação coulombiana ocorre com um elétron do átomo do absorvedor. Em feixes de Elétrons,  a partícula carregada irá sofrer uma colisão dura com um elétron atômico e uma fração apreciável da energia cinética do elétron incidente será transferida para o elétron orbital. 
+                    \item Quando $ b \gg a $ é chamada de colisão suave, onde a partícula carregada interage com os elétrons do átomo. No caso de elétrons, o elétron incidente irá interagir com o átomo como um todo e irá transferir apenas uma pequena fração de energia cinética para os elétrons orbitais. 
+                \end{enumerate}
+
+
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{Imagens/tiposDeColisoes.JPG}
+                    \caption{Diferentes tipos de colisão da partícula carregada com o átomo.}
+                    \label{fig:colisoesComOAtomo}                
+                \end{figure}
+
+
+            \begin{itemize}
+                \item \textbf{\textit{\textcolor{CarnationPink}{Colisões Elásticas}}:} Onde a energia cinética e o momento são conservados, e a energia é transferida entre a partícula e o meio. Toda a energia é mantida na forma de movimento.
+                
+                \item \textbf{\textit{\textcolor{CarnationPink}{Colisões Inelásticas}}:} Onde a energia cinética e o momento não são conservados. A energia transfere energia para o meio e desacelera. Esta energia pode ser liberada como um fóton ou pode ser transferida para um elétron no meio causando a ionização;
+            \end{itemize}
+
+        \subsection{Especificações das Partículas Carregadas}
+
+            O valor \textbf{\textcolor{CarnationPink}{W}} é a energia média necessária para produzir um par de ions em um gás. Por exemplo, para o ar em condições normais de temperatura e pressão, $\mathrm{\mathbf{W \approx 33.97 \; eV}}$. O valor \textbf{W} é relativamente pequeno comparado a energia típica das partículas carregadas, que é da ordem de MeV para feixes de elétrons e da ordem de centenas de MeV para partículas pesadas. 
+
+            A \textbf{\textcolor{CarnationPink}{Ionização Específica}} é o número de pares de ions produzidos por unidade de caminho percorrido. A ionização específica é maior para baixas energias e menor para altas energias, ou seja, partículas mais lentas tem maior poder de ionização que partículas mais rápidas. 
+
+            A \textbf{\textcolor{CarnationPink}{Transferência Linear de Energia (LET)}} é a quantidade de energia que uma partícula deposita em ionizações locais por unidade de caminho percorrido; A LET pode ser pensada como a quantidade de dano que uma partícula causa na sua trajetória no meio.
+
+            O \textbf{\textcolor{CarnationPink}{Stopping Power (\textit{Poder de Freamento})}} é a quantidade de energia que a partícula perde por unidade de caminho percorrido. 
+
+            Tanto a Ionização Específica, quanto o Stopping Power e a LET aumentam a medida que a partícula desacelera, devido ao maior tempo disponível para interação com o meio.
+
+        \subsection{Stopping Power e a Dose Absorvida}
+
+            O Stopping Power possui duas componentes:
+
+                \begin{enumerate}
+                    \item \textbf{\textit{\textcolor{CarnationPink}{Stopping Power de Colisão ($S_c$)}:}} Se trata da energia perdida devido a colisões com o meio, que causam ionizações ou excitações. Esta componente contribui diretamente com a dose absorvida, como a energia depositada localmente no meio. 
+                    
+                    \item \textbf{\textit{\textcolor{CarnationPink}{Stopping Power de Radiação ($S_r$)}:}} É a energia perdida no processo radiativo como a emissão bremsstrahlung. Não contribui efetivamente para a dose absorvida uma vez que a energia é irradiada para longe da região de interação.
+                \end{enumerate}
+
+            A perda inelástica de energia de um elétron se movendo em um meio com densidade $\rho$ é descrito pelo poder de freamento mássico total $(S/\rho)_{tot}$, no qual representa a energia cinética $E_k$ perdida pelo elétron por unidade de caminho percorrido $x$, ou seja:
+
+                \begin{equation}
+                    (S/\rho)_{tot} = \frac{1}{\rho} \frac{d E_k}{d x} \qquad (MeV \cdot cm^2/g)
+                \end{equation}
+
+            $(S/\rho)_{tot}$ possui duas componentes: O poder de freamento mássico de colisão $(S/\rho)_{col}$ resultante das colisões e excitações do elétron incidente e o elétron orbital,  e o poder de freamento mássico de radiação $(S/\rho)_{rad}$ resultante da interação elétron-núcleo (bremsstrahlung). Portanto,
+
+                \begin{equation}
+                    (S/\rho)_{tot} = (S/\rho)_{col} + (S/\rho)_{rad}
+                \end{equation}
+
+            O $(S/\rho)_{col}$ representa uma quantidade importante na dosimetria das radiações, uma vez que a dose no meio pode ser expressa como:
+
+                \begin{equation}
+                    D = \phi \cdot (S/\rho)_{col}
+                \end{equation}
+
+            onde $\phi$ é a fluência das partículas carregadas. 
+
+            O $(S/\rho)_{col}$ também é utilizado para determinar o alcance dos elétrons no meio, onde:
+
+                \begin{equation}
+                    R = \int_{0}^{E_{k_i}} \left(\frac{S}{\rho} (E_k)\right)_{tot}^{-1}  \,dE_k 
+                \end{equation}
+
+            onde $E_{k_i}$ é a energia cinética inicial do elétron. 
+
+            Tanto o $(S/\rho)_{tot}$ quanto o $(S/\rho)_{rad}$ são utilizados na determinação da produção radiativa, também chamada de eficiência de bremsstrahlung, onde:
+
+                \begin{equation}
+                    Y = \frac{1}{E_{k_i}} \int_{0}^{E_{k_i}} \frac{(S/\rho)_{rad}}{(S/\rho)_{tot}} \,dE_k 
+                \end{equation}
+
+            O Stopping Power foca na energia perdida por uma partícula carregada se movendo através de um meio absorvedor. Quando o foco está relacionado ao meio absorvedor, então o interesse está na taxa linear de absorção de energia pelo meio absorvedor quando uma partícula atravessa este meio.  A taxa de absorção de energia, definida como Transferencia Linear de Energia (LET) é devinida como a energia média transmitida localmente para o meio absorvedor por um determinado tipo radiação com energia específica ao percorrer uma determinada distância no meio. 
+            
+            O poder de freamento de colisão, é subdividido em duas componentes: o poder de freamento de colisões duras e poder de freamento de colisões suaves, ou seja:
+
+                \begin{equation}
+                    S_{col} = S_{col}^{Hard} + S_{col}^{Soft}
+                \end{equation}
+
+            Na dosimetria das radiações, é inserido o Poder de freamento mássico restrito $(S_\Delta/\rho)$, que representa a fração do poder de freamento de colisão $(S/\rho)_{col}$ que resulta em raios delta (raios-$\delta$) com energias menores que a energia de corte $\Delta$. Na dosimetria, a energia de corte é definida como 10 keV, uma energia que permite que o elétron atravesse um gap de ar na câmara de ionização de apenas 1 mm. Os raios-$\delta$ são definidos como elétrons que adiquirem energia cinética suficientemente alta por meio de colisões duras, de forma que é possível que eles carreguem esta energia a uma distância significativa de onde eles foram liberados, e tem capacidade de produzir suas próprias ionizações nos átomos do absorvedor.
+
+
+            Um outro conceito é o de \textbf{\textit{\textcolor{CarnationPink}{Poder de Espalhamento Mássico}}}. Quando um feixe de elétrons atravessa um absorvedor, ele sofre multiplos espalhamentos devido à interação coulombiana com os elétrons orbitais e os núcleos dos átomos do absorvedor. O espalhamento angular e espacial de um feixe estreito de elétrons pode ser aproximado por uma distribuição Gaussiana. Os múltiplos espalhamentos sofridos por elétrons que propagam um comprimento de caminho percorrido $l$ através de um meio absorvedor é comumente descrito pelo ângulo médio quadrado de espalhamento $\bar{\theta^2}$ que é proporcional a espessura mássica $\rho\,l$ do absorvedor.
+
+                \begin{equation}
+                    \frac{\mathcal{T} }{\rho} = \frac{1}{\rho} \frac{d \bar{\theta^2}}{d l}
+                    \quad
+                    ou
+                    \quad
+                    \frac{\mathcal{T} }{\rho} = \frac{\bar{\theta^2}}{\rho l}
+                \end{equation}
+
+            O poder de espalhamento varia aproximadamente proporcional ao quadrado do número atômico do absorvedor $(\mathcal{T} \propto Z^2)$ e inversamente proporcional ao quadrado da energia cinética do elétron $(\mathcal{T} \propto 1/E_k^2)$. 
+            
+        \subsection{Relações da Transferência Linear de Energia}
+
+            \begin{itemize}
+                \item A LET aumenta com a carga da partícula Q: 
+                    
+                    \begin{itemize}
+                        \item Aproximadamente proporcional a $Q^2$
+                            
+                        \item Exemplo: Um íon de carbono com 10 MeV (Q = +6) tem uma LET de \qty{200}{keV/\mu m} enquanto que um próton com 10 MeV (q = +1) possui uma LET de \qty{4}{keV/\mu m}
+                    \end{itemize}
+    
+                \item A LET diminui com o aumento da velocidade $v$ da partícula:
+                    
+                    \begin{itemize}
+                        \item Aproximadamente proporcional a $1/v^2$ (inversamente proporcional ao quadrado da velocidade);
+                            
+                        \item Para energias muito menores que a energia de repouso da partícula, $v^2 \propto E$ (o quadrado da velocidade é proporcional a energia da partícula);
+                            
+                        \item Para altas energias $v$ se aproxima da velocidade da luz $c$ e não pode mais ser aumentada.
+                            
+                        \item Exemplo: Um próton com 2 MeV tem uma LET de \qty{16}{keV/\mu m}, um próton de 10 MeV tem uma LET de \qty{4}{keV/\mu m} e um próton de 200 MeV tem uma LET de \qty{0.4}{keV/\mu m}
+                    \end{itemize}
+    
+                \item A LET aumenta com o aumento da densidade do meio $\rho$:
+                    
+                    \begin{itemize}
+                        \item É aproximadamente proporcional a $\rho$
+                        \item Este relação é devido à partícula encontrar muito mais átomos quando passa através de um material mais denso, por exemplo, a partícula encontra muito mais átomos quando atravessa o chumbo do que quando atravéssa o ar. 
+                    \end{itemize}
+    
+                \item A LET diminui com o aumento do número atômico (Z) do meio:
+                    
+                    \begin{itemize}
+                        \item Mesmo que existam mais átomos para colidir em um bloco de chumbo, estes átomos serão muito mais difíceis de se colidir. 
+                            
+                        \item Esta propriedade pode ser entendida como um efeito de triagem. Em um meio com número atômico Z elevado, o alto número de elétrons em volta de cada núcleo cancela parte da carga nuclear. 
+                            
+                        \item Portanto, o Chumbo (Pb) tem menor LET por unidade de massa que a água. 
+                    \end{itemize}
+            \end{itemize}
+                
+        \subsection{Interação dos Elétrons}
+
+
+            Os elétrons podem interagir com os elétrons orbitais, que são os processos de interação mais frequentes, ou pode interagir com o núcleo do átomo, que ocorre com menos frequência. Os processos de interação são definidos como:
+
+            \begin{itemize}
+                \item \textbf{\textit{\textcolor{CarnationPink}{Colisão inelástica com um elétron atômico}:}} O elétron incidente transfere parte de sua energia para um elétron do átomo de forma que não seja suficiente para arrancar este elétron do átomo, fazendo com que o elétron permaneça ligado ao átomo mas com um estado excitado de energia (salta para uma camada mais energética). O elétron atômico irá então liberar o excesso de energia emitindo fótons (Raios-X característicos) voltando ao seu estado fundamental. Como o elétron continua ligado ao átomo, há uma perda de energia cinética e por isso é chamada de colisão inelástica. 
+                
+
+                \item \textbf{\textit{\textcolor{CarnationPink}{Colisão Elástica com um Elétron do Átomo}:}} Nesta interação, o elétron interage com o elétron ligado ao átomo e transfere parte da sua energia para o elétron ligado sufuciente para que este elétron seja ejetado, causando a ionização do átomo. Este elétron é então ejetado com uma certa energia cinética e portanto neste processo a energia cinética é conservada, sendo compartilhada pelo elétron incidente e o elétron ejetado (elétron secundário). O Elétron secundário liberado poderá então causar ionizações adicionais no meio graças a sua energia adquirida na interação.
+                
+                A Figura \ref{fig:interacaoEletronComEletron} mostra os processos de interação entre elétrons. 
+
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{Imagens/interacaoEletronComEletron.JPG}
+                    \caption{Interações entre o elétron incidente e o elétron ligado}
+                    \label{fig:interacaoEletronComEletron}                
+                \end{figure}
+                
+
+
+                \item \textbf{\textit{\textcolor{CarnationPink}{Colisão Inelástica com o Núcleo}:}} Ocorre quando um elétron interage com o campo do núcleo. Ao interagir com o núcleo, este elétron é desacelerado devido a alteração da direção de sua trajetória, liberando energia durante sua desaceleração em forma de radiação eletromagnética (fótons). Este fóton é chamado de Raios-x de bremsstrahlung, e é resposável pela produção dos raios-x em tubos de raios-x e em aceleradores lineares.
+                    
+                A produção de fótons por bremsstrahlung é governada pela relação de Larmor que afirma que a potência $P$ emitida na forma de fótons a partir de uma partícula carregada acelerada é proporcional ao quadrado da carga $q$ da partícula e proporcional ao quadrado da aceleração $a$ da partícula, ou seja:
+
+                    \begin{equation}
+                        P = \frac{q^2 a^2}{6 \pi \varepsilon_0 c^3}
+                    \end{equation}
+
+                A distribuição angular dos fótons emitidos é proporcional a:
+
+                    \begin{equation}
+                        \frac{\sin^2 \theta}{(1 - \beta \cos \theta )^5}
+                    \end{equation}
+                
+                Onde $\theta$ é o ângulo entre a aceleração da partícula carregada e um vetor unitário conectando a carga com um ponto de observação e $\beta$ é o padrão relativístico $v/c$. Para pequenas velocidades, ($v \ll c$) , $\beta \rightarrow 0$ e a distribuição angular é governada por $\sin^2\theta$ exibindo um máximo em $\theta$ = \ang{90}. No entando, a medida que a velocidade da partícula carregada aumenta até proximo a velocidade da luz, a distribuição angular dos fótons emitidos torna-se cada vez mais na direção de propagação do elétron incidente. 
+
+                O ângulo no qual a intensidade dos fótons emitidos é máxima pode ser calculado através da relação:
+
+                    \begin{equation}
+                        \theta_{max} = \arccos \left[ \frac{1}{3\beta} \left(\sqrt{1 + 15 \beta^2} - 1 \right)\right] 
+                    \end{equation}
+
+                de forma que para $\beta \rightarrow 0$ então $\theta \rightarrow \pi / 2$ e para $\beta \rightarrow 1$ então $\theta \rightarrow 0$. Isto indica que para os feixes de radiodiagnótico e Orthovoltagem a maior parte dos raios-x produzidos são direcionados à \ang{90} a partir da direção dos feixes de elétrons e para feixes de Radioterapia, a maior parte dos fótons produzidos são na direção de incidência do feixe de elétrons que colide com o alvo. 
+
+                A energia perdida através de radiação e a produção radiativa $g$ aumenta diretamente com o número atômico Z do material absorvedor e com a energia cinética dos elétrons. A produção radiativa para alvos de raios-x na faixa de energia do radiodiagnóstico (~ 100 keV) é da ordem de 1\%, enquanto que a produção radiativa na faixe de energia de radioterapia é da ordem de ~ 10\% até ~ 20\%. 
+
+                \item \textbf{\textit{\textcolor{CarnationPink}{Colisão Elástica com o Núcleo}:}} Uma vez que o elétron é muito mais leve que o núcleo, ele não transfere de fato energia para o núcleo e portanto ele é apenas espalhado, mudando sua direção sem mudar sua energia cinética. 
+                
+                A figura \ref{fig:interacaoEletronNucleo} mostra as possíveis formas de interação entre o elétron incidente e o núcleo.
+
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{Imagens/interacaoEletronNucleo.JPG}
+                    \caption{Interação do Elétron com o Núcleo}
+                    \label{fig:interacaoEletronNucleo}                
+                \end{figure}
+
+                
+            \end{itemize}
+
+        \subsection{Interação das Partículas Carregadas Pesadas}
+
+            O processo de interação é o mesmo para prótons, partículas alfa, ions de carbono, ions de neonio \dots Os processos de interação podem ser:
+
+            \begin{itemize}
+                \item \textbf{\textit{\textcolor{CarnationPink}{Colisão Inelástica com o Elétron atômico}:}} A medida que as partículas pesadas viajam através do meio, sua carga positiva irá atrair milhares de elétrons orbitais. Alguns desses elétrons são meramente excitados, outros porém serão ionizados. Como a partícula é muito pesada, não há mudanças significativas em sua trajetória e portanto descreve um percurso praticamente linear. A cada interação a partícula se desacelera um pouco e a medida que é desacelerada, é mais provável que a partícula pesada interaja com os elétrons atômicos e com o núcleo. Esta partícula irá aumentar a quantidade de interações até perder toda sua energia e finalmente parar. Esta explosão de energia liberada em torno do ponto de parada é chamado de \textbf{\textcolor{CarnationPink}{Pico de Bragg}}.
+                
+                A figura \ref{fig:picodeBragg} mostra a deposição de energia de uma partícula carregada ao longo da distância percorrida no meio, onde as patículas carregadas pesadas, ao se moverem em um meio, irão se desacelerar, e quanto mais devagar estas partículas estiverem, mais tempo terão para interagir com os elétrons do meio, causando ainda mais dano até que ela pare depositando toda sua energia, causando um dano máximo, que ocorre no final da sua trajetória sendo denominado de pico de bragg. Mesmo após o pico de bragg, existe uma quantidade pequena de danos secundários causados pelos detritos liberados no pico de bragg, como raios delta, neutrons \dots
+                
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{Imagens/picodeBragg.JPG}
+                    \caption{Pico de Bragg}
+                    \label{fig:picodeBragg}                
+                \end{figure}
+                
+
+                \item \textbf{\textit{\textcolor{CarnationPink}{Reação Nuclear}:}} Uma vez que a partícula carregada se desacelera até uma energia em torno de 0.01 MeV, ela é capaz de interagir com o núcleo. As interações entre partículas carregadas pesadas e o núcleo podem resultar em várias reações nucleares, já abordadas anteriormente, causando a produção de partículas secundárias e em radioatividade residual. Embora as partículas carregadas pesadas também possam experimentar o processo de Bremsstrahlung, devido a sua alta massa, este efeito é mínimo.  
+            \end{itemize}
+
+        \subsection{Interação de Neutrôns}
+
+            Como os neutrôns não possuem carga, eles não são desacelerados pelos elétrons orbitais e portanto a maior parte de sua interação ocorre com o núcleo do átomo. Sua velocidade, e consequentemente sua energia, é o principal fator que determina a forma com o qual os neutrôns irão interagir com o meio.
+
+            Os neutôns são classificados como: \textit{\textcolor{CarnationPink}{neutrôns térmicos}}, que são os neutrôns lentos, com energia de aproximadamente 0.025 eV e os neutrôns rápidos, cuja energia está na faixe de KeV's até MeV's;
+
+            \begin{itemize}
+                \item \textbf{\textit{\textcolor{CarnationPink}{Interação dos neutrons rápidos}:}} 
+                
+                    \begin{itemize}
+                        \item \textbf{\textit{\textcolor{CarnationPink}{Colisão Elástica com o Núcleo de Hidrogênio (prótons)}:}} Uma vez que o neutron tem aproximadamente a mesma massa que o próton, este é o método mais eficiente de transferência de energia cinética. Devido a suas massas semelhantes, os neutrôns tem tendência a interagir através de colisão direta com os núcleos de hidrogênio compartilhando sua energia cinética com o próton (Figura \ref{fig:colisaoElasticaNeutronProton}). Os neutrôns portanto tem maior probabilidade de interagir com materiais que possuem muito hidrogênio em sua constituição, caracteristicos de materiais com número atômico baixo como a água e o plástico, diferentemente do núcleos pesados como o chumbo, que possui pouco hidrogênio em sua molécula, o que o torna pobre na blindagem de neutrôns. 
+                        
+                        A colisão elástica com o núcleo de hidrogênio é o principal processo de interação dos neutrons rápidos e resulta no recuo do próton que poderá sofrer outros processos de interação. 
+
+                            \begin{figure}[h]
+                                \centering
+                                \includegraphics[width=0.8\textwidth]{Imagens/colisaoElasticaNeutronProton.JPG}
+                                \caption{Colisão Elástica entre o neutron e um núcleo de hidrogênio}
+                                \label{fig:colisaoElasticaNeutronProton}                
+                            \end{figure}
+
+                        \item \textbf{\textit{\textcolor{CarnationPink}{Espalhamento Inelástico}:}} Ocorre quando um neutron é espalhado pelo núcleo e perde sua energia através da emissão de um raio gama (Figura \ref{fig:espalhamentoInelasticoNeutron}). 
+                        
+                            \begin{figure}[h]
+                                \centering
+                                \includegraphics[width=0.8\textwidth]{Imagens/espalhamentoInelasticoNeutron.JPG}
+                                \caption{Espalhamento Inelástico do Neutron pelo Núcleo}
+                                \label{fig:espalhamentoInelasticoNeutron}                
+                            \end{figure}
+                        
+                        \item \textbf{\textit{\textcolor{CarnationPink}{Espalação Nuclear}:}} Ocorre quando um neutron com energia superior a 7 MeV sofre uma colisão inelástica com o núcleo com energia grande o suficiente para quebrar o núcleo, no processo chamado de espalação, que resulta em fragmentos nucleares chamados de produtos de espalação, que são partículas carregadas, preferencialmente partículas alfa que ao serem liberadas causam uma grande densidade de ionização nas proximidades (Figura \ref{fig:espalacaoNeutron}).
+                        
+                        \begin{figure}[h]
+                            \centering
+                            \includegraphics[width=0.8\textwidth]{Imagens/espalacaoNeutron.JPG}
+                            \caption{Colisão Inelástica do Neutron com espalação}    
+                            \label{fig:espalacaoNeutron}
+                        \end{figure}
+                    \end{itemize}
+
+                \item \textbf{\textit{\textcolor{CarnationPink}{Interação Dos Neutrôns Térmicos}:}} Quando os neutrôns são térmicos, eles podem participar de reações nucleares, sendo elas:
+                
+                    \begin{itemize}
+                        \item \textbf{\textit{\textcolor{CarnationPink}{Captura Radiativa}:}} Onde o neutrôn é absorvido pelo núcleo que ganha 1 u e não sofre nenhuma transformação futura.
+                        
+                        \item \textbf{\textit{\textcolor{CarnationPink}{Transmutação}:}} O núcleo absorve o neutrôn que interaje através das forças nucleares e então este núcleo ejeta uma partícula alfa ou um próton (Fig. \ref{fig:transmutacaoNuclear}). Este processo muda o número atômico e portanto altera todas as propriedades químicas do átomo; Quando isto acontece com um átomo que é parte de uma molécula, ele quebra as ligações químicas e rompe a molécula.
+                        
+                        \begin{figure}[h]
+                            \centering
+                            \includegraphics[width=0.8\textwidth]{Imagens/transmutacaoNuclear.JPG}
+                            \caption{Transmutação Nuclear}
+                            \label{fig:transmutacaoNuclear}                
+                        \end{figure}
+
+
+                        \item \textbf{\textit{\textcolor{CarnationPink}{Fissão Nuclear}:}} Ocorre quando um neutron térmico é absorvido pelo núcleo de um material físsil, como o urânio ou plutônio; Este processo não é relevante para área médica exceto em cados de acidente nuclear ou terrorismo. 
+                    \end{itemize}
+            \end{itemize}
+
+        \subsection{Píons}
+
+            Desde 2014 os píons não são mais utilizados para tratamento. Um Méson-Pi, ou píon é uma partícula subatômica feita de um par de quark e um anti-quark, diferentemente dos prótons e neutrons que são formados por 3 quarks.  O Méson-PI pode ter carga positiva, negativa ou carga neutra e é considerada uma partícula pesada, pois possui uma massa igual a 273 vezes a massa do elétron, embora seja muito mais leve que o próton. Pode ser fácilmente produzido colidindo um alvo de Berílio com prótons acelerados a uma energia entre 400 MeV até 800 MeV. 
+
+            Quando um Méson-PI interagem com o meio, inicialmente um Méson-Pi negativo sofre um processo de interação semelhante a um próton: É gradualmente desacelerado, depositando mais energia a medida que desacelera, fornecendo uma distribuição de dose semelhante a do próton. A diferença está quando o Mesón-PI alcança o pico de bragg: Quando a partícula para, ela é atraída para dentro do núcleo e uma vez dentro do núcleo, este se torna extremamente instável e explode em uma Formação Estelar, composta por prótons, netrôns, partículas alfa, e outros fragmentos nucleares. Estes fragmentos depositam uma energia muito alta perto do pico de bragg.
+            
+        \subsection{Ionização e Ação Biológica}
+
+            \begin{itemize}
+                \item As partículas carregadas são diretamente ionizantes pois podem interagir diretamente com os elétrons do meio, diferentemente das partículas sem carga (neutrons e fótons) que não interagem diretamente com os elétrons do átomo, e causa ionizações devido à partículas secundárias liberadas no meio. 
+                
+                \item O principal mecanismo de dano radiológico nas células vivas é o Dano ao DNA;
+                
+                \item O Dano ao DNA pode ser causado por duas formas :
+                
+                    \begin{enumerate}
+                        \item Ação Direta, que é a ionização direta do DNA sem a dependência de oxigenação da célula;
+                        \item Ação Indireta, onde ocorre a ionização da água, criando radicais livres (hidroxilas) que podem reagir com o DNA causando o dano. Este efeito pode ser potencializado devido a presença de oxigênio;
+                    \end{enumerate}
+                
+                \item O Mecanismo de Ação Indireta é dominado pelas radiações de baixa LET: Fótons, elétrons e prótons rápidos são consideradas radiações de baixa LET; e seu efeito biológico é fortemente dependente da presença de oxigenação;
+                
+                \item O Mecanismo de Ação Direta é dominado pelas radiações de alta LET: São consideradas radiações de alta LET as partículas alfa e os íons de carbono. Neste caso a presença do oxigênio não influenciará no dano biológico. 
+            \end{itemize}
+            
+
+
+        
 \bibliography{ref.bib}
 \end{document}
