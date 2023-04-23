@@ -1,0 +1,479 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{siunitx}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[margin=10pt,font={small, it},labelfont=bf, textfont=it]{caption}
+\usepackage[dvipsnames, svgnames]{xcolor}
+\DeclareCaptionFont{MediumOrchid}{\color[svgnames]{MediumOrchid}}
+\usepackage[pdftex]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\bibpunct{[}{]}{,}{s}{}{}
+\usepackage{color}
+\usepackage{footnote}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{leading}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{mdframed}
+\usepackage{etoolbox}
+\usepackage[version=4]{mhchem}
+
+\newcounter{exemplo}
+
+\NewDocumentEnvironment{exemplo}{ O{} }{%
+\allowbreak
+\setlength{\parindent}{0pt}
+  \begin{mdframed}[
+  leftline=true,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=2pt,
+  linecolor=CarnationPink,
+  frametitlerule=false,
+  frametitlefont=\Large\bfseries\color{CarnationPink},
+  frametitle={\color{CarnationPink}\normalfont\bfseries Exemplo: #1},
+  ]
+}{%
+  \end{mdframed}
+}
+
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{1pt}
+\usepackage{float}
+\renewcommand{\thefootnote}{\alph{footnote}}
+\usepackage{url}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=cyan,      
+    urlcolor=cyan,
+    citecolor=cyan,
+    pdftitle={Estatística De Contagens}'
+}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{Página \thepage}
+\title{Dosimetria}
+\author{Estatística de Contagens\nocite{*}}
+\date{\textit{Dalila Mendonça}}
+\begin{document}
+	\maketitle
+
+
+\section{Introdução}
+
+  	Como a Radioatividade se trata de um processo aleatório, realizar medidas das partículas emitidas está 	relacionada a uma certa flutuação estatística que está associada a imprecisão nas contagens.
+
+    A estatística de contagens é utilizada para determinar uma medida adequada da radiação emitida em processos nucleares juntamente com a incerteza associada a medida. A estatística de contagens pode ser dividida em duas categorias:
+
+        \begin{enumerate}
+          \item É utilizada para verificar o correto funcionamento do equipamento de medida onde diversas medidas são realizadas sob as mesmas condições, mantendo as características do equipamento o mais constante possível. Devido às flutuações das leituras, as medidas obtidas terão uma certa variação interna que pode ser quantificada e comparada com valores determinados em modelos estatísticos preditivos e caso exista uma divergência pode-se inferir que o equipamento está com anormalidades nas contagens;
+          \item É utilizada para determinar a incerteza estatística inerente da medição quando apenas uma medida é realizada; 
+        \end{enumerate}
+    
+\section{Caracterização dos Dados}
+
+    Assumindo uma coleção de N medidas independentes da mesma quantidade física:
+
+        \begin{equation*}
+        	x_1,x_2, x_3, ... , x_i , ... , x_N
+        \end{equation*}
+        
+    \noindent onde os valores de $x_i$ são inteiros, medidos em intervalos de tempo com mesmo tamanho.
+
+        \begin{itemize}
+            \item A \textit{\textcolor{CarnationPink}{Soma $\mathcal{S}$}} das medidas é dada por:
+              
+                \begin{equation}
+                	\mathcal{S}  \equiv  \sum_{i = 1}^{N} x_i  
+                \end{equation}
+
+            \item A \textit{\textcolor{CarnationPink}{Média Experimental $\bar{x}_e$}} das medidas é dada por:
+              
+                	\begin{equation}
+                  	\bar{x}_e \equiv  \frac{\mathcal{S}}{N}
+                	\end{equation}
+              		onde N é o total de medidas realizadas. 
+
+
+            \item A \textit{\textcolor{CarnationPink}{Função de Distribuição de Frequência $F(x)$}} representa a frequência relativa com o qual cada medida aparece em uma coleção de dados, ou seja:
+              
+					\begin{equation}
+					F(x) = \frac{Numero \; de \; ocorrencias \; de \;x}{numero \; total \; de \; medidas \; N}
+					\end{equation}
+
+					A distribuição de frequências é um valor normalizado, ou seja:
+
+					\begin{equation}
+					\sum_{x = 0}^{\infty} F(x) = 1 
+					\end{equation}
+
+			\item A média experimental $\bar{x}_e$ pode ser obtida em função da distribuição de frequência através da seguinte relação:
+				
+					\begin{equation}
+						\bar{x}_e = \sum_{x = 0}^{\infty} x \cdot F(x)
+					\end{equation}
+
+			\item O \textit{\textcolor{CarnationPink}{resíduo $d_i$}} de qualquer dado do conjunto, que é a diferença do valor medido para a média do conjunto de dados, ou seja
+				
+					\begin{equation}
+						d_i \equiv x_i - \bar{x}_e
+					\end{equation}
+
+				de modo que:
+
+					\begin{equation}
+						\sum_{i = 1}^{\infty} d_i = 0
+					\end{equation}
+
+			\item O desvio, é definido semelhantemente ao resíduo, com a diferença que para o desvio é utilizado a média experimental $\bar{x}_e$ e para o desvio é utilizado o valor verdadeiro da média $\bar{x}$, ou seja:
+				
+					\begin{equation}
+						\epsilon_i \equiv x_i - \bar{x}
+					\end{equation}
+
+
+			\item A variância amostral quantifica a quantidade de flutuação interna em conjunto de dados. É definida como a média do quadrado do desvio:
+				
+					\begin{equation}
+						s^2 \equiv \epsilon^2 = \frac{1}{N} \sum_{i = 1}^{\infty} (x_i - \bar{x})^2
+					\end{equation}
+
+				A variância amostral é útil para avaliar o grau de dispersão de um conjuntos de dados ou avaliar o quando um valor é diferente de outro. 
+
+			\item Uma vez que não se sabe o valor verdadeiro da média, a expressão alternativa para obter a variância é dada por:
+				
+					\begin{equation}
+						s^2 = \frac{1}{N - 1} \sum_{i = 1}^{\infty} (x_i - \bar{x}_e)^2
+					\end{equation}
+
+				onde é aplicada a uma amostra onde é utilizada a média experimental. Como a variância amostral é dada pela média do quadrado dos desvios do valor medido para a média, a variância amostral é uma medida da flutuação do conjunto de dados. 
+				
+			\item A variância amostral em termos da função de distribuição de frequência é dada por:
+				
+					\begin{equation}
+						s^2 = \sum_{x = 0}^{\infty} (x - \bar{x})^2 F(x)
+					\end{equation}
+
+				o que permite chegar na relação:
+
+					\begin{equation}
+						s^2 = \bar{x^2} - \bar{x}^2
+					\end{equation}
+        \end{itemize}
+
+\section{Modelos Estatísticos}
+
+	Sob certas condições, é possível predizer a função de distribuição que irá descrever o resultado de diversas medições feitas repetidamente. As medições são definidas como a contagem do número de sucessos em um ensaio, onde só existem duas possibilidades: sucesso ou falha (processo binário).
+	
+	
+	\begin{exemplo}[Processos Binários]
+
+		\begin{itemize}
+			\item Jogar uma moeda: onde a Cara pode ser definida como a opção de sucesso e a probabilidade de sucesso é de $p = 1/2$;
+			\item Jogar um dado: Onde uma das faces pode ser escolhida como a opção de sucesso, por exemplo a face 6 e a probabilidade de sucesso é de $p = 1/6$;
+			\item Decaimento radioativo: onde o decaimento pode ser definido como a opção de sucesso e a probabilidade de sucesso é de $1 - e^{-\lambda t}$
+		\end{itemize}
+		
+	\end{exemplo}
+
+
+	Existem três principais modelos estatísticos que abordam processos binários:
+
+	\begin{enumerate}
+		\item \textit{\textbf{\textcolor{CarnationPink}{Distribuição Binomial:}}} Este modelo amplamente utilizado para todos os casos em que a probabilidade $p$ de ocorrência de sucesso é constante. Não é computacionalmente aplicável à decaimentos radioativos pois o número de núcleos é sempre muito grande o que o torna raramente aplicável à contagens nucleares.
+		
+		\item \textit{\textbf{\textcolor{CarnationPink}{Distribuição de Poisson:}}} Este modelo é uma aproximação matemática direta da distribuição binomial quando é considerado que a probabilidade de sucesso $p$ é pequena e constante. Isto significa que é escolhida um tempo de observação muito menor que o tempo de meia-vida da fonte, de forma que o número de átomos decaindo em função do tempo é constante e a probabilidade de registrar uma contagem para um dado núcleo é sempre pequena;
+		
+		\item \textit{\textbf{\textcolor{CarnationPink}{Distribuição Gaussiana:}}} É também conhecida como distribuição normal; e faz a aproximação para os casos em que o número médio de sucessos é relativamente grande. Esta condição se aplica a qualquer situação em que será acumulado diversas contagens durante a medição e não apenas algumas poucas contagens. Portanto, este é o modelo amplamente utilizado em estatística de contagens.		
+	\end{enumerate}
+
+	\subsection{Distribuição Binomial}
+
+		Se $n$ é o número de ensaios e para cada ensaio existe a probabilidade $p$ de ocorrer um sucesso então podemos predizer que a probabilidade de contarmos $x$ sucessos é dada por:
+
+			\begin{equation}
+				P(x) = \frac{n!}{(n - x)! x!} p^x (1 - p)^{n - x}
+			\end{equation}
+
+		\noindent onde $P(x)$ é a função preditiva da distribuição de probabilidade, definida apenas para valores inteiros de $x$ e $n$. 
+
+		\begin{itemize}
+			\item A Distribuição Binomial é normalizada de forma que:
+
+				\begin{equation}
+					\sum_{x = 0}^{n} P(x) = 1
+				\end{equation}
+
+			\item O valor médio $\bar{x}$ da distribuição é dado por:
+				
+				\begin{equation}
+					\bar{x} = \sum_{x = 0}^{n} x \cdot P(x)
+				\end{equation}
+
+				que pode ser simplificado para a relação:
+
+				\begin{equation}
+					\bar{x} = p \cdot n
+				\end{equation}
+			
+			\item A variância é dada por:
+			
+				\begin{equation}
+					\sigma^2 \equiv \sum_{x = 0}^{n} (x - \bar{x})^2 \cdot P(x)
+				\end{equation}
+
+			que pode ser simplificada para a relação:
+
+				\begin{equation}
+					\sigma^2 = np(1 - p)
+				\end{equation}
+
+				\begin{equation}
+					\sigma^2 = \bar{x}(1 - p)
+				\end{equation}
+
+			\item O desvio padrão, é dado pela raiz da variância, ou seja:
+			
+				\begin{equation}
+					\sigma = \sqrt{\sigma^2}
+				\end{equation}
+
+			O desvio padrão nos fornece a diferença entre o valor medido e a média verdadeira. 
+
+		\end{itemize}
+
+	\subsection{Distribuição de Poisson}
+
+		Como citado anteriormente, esta distribuição se adequa àqueles processos binários onde a probabilidade de obter sucesso é pequena, ou seja $p \ll 1$,  e não varia com o tempo. Portanto, pode ser aplicada a maioria das contagens nucleares onde o número de núcleos é grande e o tempo de observação é muito menor que o tempo de meia vida do elemento radioativo. 
+
+		A aproximação da distribuição binomial para se adequar a estes casos é dada por:
+
+			\begin{equation}
+				P(x) = \frac{(\bar{x})^x e^{-\bar{x}}}{x!}
+			\end{equation}
+
+		\noindent onde $\bar{x} = pn$. Esta simplificação é util quando se conhece apenas a média da distribuição e não se sabe o tamanho e as probabilidades individuais da amostra. 
+
+		\begin{itemize}
+			\item A distribuição de Poisson é normalizada, de modo que:
+			
+				\begin{equation}
+					\sum_{x = 0}^{n} P(x) = 1
+				\end{equation}
+
+			\item A média da distribuição de Poisson é dada por:
+			
+				\begin{equation}
+					\bar{x} = \sum_{x = 0}^{n} x \cdot P(x)
+				\end{equation}
+
+			\item A variância da distribuição de Poisson é dada por:
+			
+				\begin{equation}
+					\sigma^2 \equiv \sum_{x = 0}^{n} (x - \bar{x})^2 \cdot P(x) = pn
+				\end{equation}
+
+				ou seja,
+
+				\begin{equation}
+					\sigma^2 = \bar{x}
+				\end{equation}
+
+			\item O desvio padrão é dado por:
+			
+				\begin{equation}
+					\sigma = \sqrt{\sigma^2} = \sqrt{\bar{x}}
+				\end{equation}
+
+		\end{itemize}
+
+		Esta distribuição é aproximadamente centrada em torno da média embora seja consideravelmente assimétrica devido aos valores pequenos da média.
+
+
+	\subsection{Distribuição Normal (Gaussiana)}
+
+		A Distribuição de Poisson fornece uma aproximação matemática da distribuição binomial para os casos em que $p \ll 1$. A distribuição normal faz a aproximação da distribuição de Poisson para os casos em que o valor médio da distribuição é grande (maior que ~ 25 ou 30). A Gaussiana é dada por:
+
+			\begin{equation}
+				P(x) = \frac{1}{\sqrt{2 \pi x}} e^{-\frac{(x - \bar{x})^2}{2\bar{x}}}
+			\end{equation}
+
+		As propriedades da Distribuição Normal são:
+
+			\begin{itemize}
+				\item É normalizada, ou seja:
+				
+					\begin{equation}
+						\sum_{x = 0}^{n} P(x) = 1
+					\end{equation}
+
+				\item A média da distribuição Normal é dada por:
+			
+					\begin{equation}
+						\bar{x} = \sum_{x = 0}^{n} x \cdot P(x)
+					\end{equation}
+	
+				\item A variância da distribuição Normal é dada por:
+				
+					\begin{equation}
+						\sigma^2 \equiv \sum_{x = 0}^{n} (x - \bar{x})^2 \cdot P(x) = pn
+					\end{equation}
+	
+					ou seja,
+	
+					\begin{equation}
+						\sigma^2 = \bar{x}
+					\end{equation}
+	
+				\item O desvio padrão é dado por:
+				
+					\begin{equation}
+						\sigma = \sqrt{\sigma^2} = \sqrt{\bar{x}}
+					\end{equation}
+			\end{itemize}
+
+
+		
+		 
+
+		Os valores de desvio padrão podem ser utilizados como limites superiores e inferiores da margem de erro de forma que dependendo da quantidade de desvios padrão utilizados para estabelecer os limites há um percentual de chance de o valor verdadeiro para a média estar dentro do intervalo. A tabela \ref{tab:medidasContagem} mostra os limites do intervalo para uma medida única com valor igual a 100, onde a confiança representa o percentual de chance do valor verdadeiro da média estar dentro daquele intervalo, e o desvio padrão é dado por $\sigma = \sqrt{100} = 10$ (Para uma contagem única x, $\sigma = \sqrt{x}$).
+
+
+		\begin{table}[h]
+			\centering
+			\caption{Exemplo de intervalos de para uma medida única $x=100$}
+			\label{tab:medidasContagem}
+			\begin{tabular}{c c c}
+				\hline
+				\addlinespace[6pt]
+				Desvios Padrão & Intervalo & Confiança \\
+				\addlinespace[6pt]
+				\hline
+				$x \pm 0.67 \sigma$ & 93.3 - 106.7 & 50\% \\
+				\addlinespace[6pt]
+				$x \pm \sigma$ & 90.0 - 110.0 & 68\% \\
+				\addlinespace[6pt]
+				$x \pm 1.64 \sigma$ & 83.6 - 116.4 & 90\% \\
+				\addlinespace[6pt]
+				$x \pm 1.96 \sigma$ & 80.4 - 119.6 & 95\% \\
+				\addlinespace[6pt]
+				$x \pm 2.58 \sigma$ & 74.2 - 125.8 & 99\% \\
+				\hline
+				\hline
+			\end{tabular}
+		\end{table}
+
+		O desvio padrão relativo é definido como $$\sigma / x$$
+
+\section{Propagação de Erros}
+
+	Dada uma medida u, obtida através das medidas x, y, z,... ou seja, u = u(x, y, z, ...), cada uma com seus respectivos desvios padrões $\sigma_x$, $\sigma_y$, $\sigma_z$, \dots; O desvio padrão da medida u é dada por:
+	
+		\begin{equation}
+			\sigma_u^2 = \left(\frac{\partial u}{\partial x}\right)^2 \sigma_x^2
+				+ \left(\frac{\partial u}{\partial y}\right)^2 \sigma_y^2
+				+ \left(\frac{\partial u}{\partial z}\right)^2 \sigma_z^2 + ...
+		\end{equation}
+
+		
+	\subsection{Soma ou Subtração de Contagens}
+
+		Dado 
+
+			\begin{equation*}
+				u = x + y \qquad ou \qquad u = x - y
+			\end{equation*}
+
+
+		\noindent O desvio padrão será:
+
+			\begin{equation}
+				\sigma_u = \sqrt{\sigma_x^2 + \sigma_y^2} 
+			\end{equation}
+		
+	\subsection{Multiplicação por Constante}
+
+		Dado 
+
+			\begin{equation*}
+				u = A \cdot x
+			\end{equation*}
+
+		\noindent, onde A é uma constante, o desvio padrão de u será:
+
+			\begin{equation}
+				\sigma_u = A \sigma_x
+			\end{equation}
+
+	\subsection{Divisão Por Constante}
+
+		Dado 
+
+			\begin{equation*}
+				u =\frac{1}{B} \cdot x
+			\end{equation*}
+
+		\noindent, onde B é uma constante, o desvio padrão de u será:
+
+			\begin{equation}
+				\sigma_u = \frac{1}{B} \sigma_x
+			\end{equation}
+		
+	\subsection{Multiplicação ou Divisão De Contagens}
+
+		Dado 
+
+			\begin{equation*}
+				u = x \cdot y
+			\end{equation*}
+
+		\noindent ou
+
+			\begin{equation*}
+				u = \frac{x}{y}
+			\end{equation*}
+
+		\noindent onde x e y são contagens, o desvio padrão de u será:
+
+			\begin{equation}
+				\sigma_u = u \sqrt{\left(\frac{\sigma_x}{x}\right)^2 + \left(\frac{\sigma_y}{y}\right)^2}
+			\end{equation}
+
+	\subsection{Valor Médio de Múltiplas Contagens Independentes}
+
+		Dado 
+
+			\begin{equation*}
+				\mathcal{S} = x_1 + x_2 + ... + x_N
+			\end{equation*}
+
+		\noindent onde $x_i$ foram medidas tomadas da mesma variável no mesmo intervalo de tempo. Dado N medições, a média das medidas é dada por:
+
+			\begin{equation*}
+				\bar{x} = \frac{\mathcal{S}}{N}
+			\end{equation*}
+
+		\noindent Portanto, o desvio padrão para a média é dado por:
+
+			\begin{equation}
+				\sigma_{\bar{x}} = \sqrt{\frac{\bar{x}}{N}}
+			\end{equation}
+
+
+
+	
+
+\bibliography{ref.bib}
+\end{document}
