@@ -15,6 +15,7 @@
 ### :file_folder: Física Médica
 
 - :memo: Física Das Radiações
+- :memo: Grandezas e Quantidades Dosimétricas
 
 
 ### :file_folder: Garantia da Qualidade

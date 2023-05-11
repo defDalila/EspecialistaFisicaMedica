@@ -1,0 +1,203 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{siunitx}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[margin=10pt,font={small, it},labelfont=bf, textfont=it]{caption}
+\usepackage[dvipsnames, svgnames]{xcolor}
+\DeclareCaptionFont{MediumOrchid}{\color[svgnames]{MediumOrchid}}
+\usepackage[pdftex]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\bibpunct{[}{]}{,}{s}{}{}
+\usepackage{color}
+\usepackage{footnote}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{leading}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{mdframed}
+\usepackage{etoolbox}
+\usepackage[version=4]{mhchem}
+
+\newcounter{exemplo}
+
+\NewDocumentEnvironment{exemplo}{ O{} }{%
+\allowbreak
+\setlength{\parindent}{0pt}
+  \begin{mdframed}[
+  leftline=true,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=2pt,
+  linecolor=CarnationPink,
+  frametitlerule=false,
+  frametitlefont=\Large\bfseries\color{CarnationPink},
+  frametitle={\color{CarnationPink}\normalfont\bfseries Exemplo: #1},
+  ]
+}{%
+  \end{mdframed}
+}
+
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{1pt}
+\usepackage{float}
+\renewcommand{\thefootnote}{\alph{footnote}}
+\usepackage{url}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=cyan,      
+    urlcolor=cyan,
+    citecolor=cyan,
+    pdftitle={Proteção Radiológica}
+}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{Página \thepage}
+\title{Física Médica}
+\author{Grandezas E Quantidades Dosimétricas\nocite{*}}
+\date{\textit{Dalila Mendonça}}
+\begin{document}
+	\maketitle
+
+    As grandezas relacionadas a Dosimetria das Radiações auxiliam na determinação quantitativa da energia depositada pela radiação no meio. 
+    
+    
+    \section{Fluência e Fluência de Energia dos Fótons}
+
+        Embora seja definida para fótons, a fluência pode ser utilizada por partículas carregadas. 
+
+        \
+
+        A \textit{\textbf{\textcolor{CarnationPink}{Fluência de Partículas $\mathbf{\Phi}$}}} é dado pela taxa de variação do número de partículas $dN$ incidentes em uma esfera com área de seção transversal $dA$, ou seja:
+
+			\begin{equation}
+			\Phi  = \frac{d N}{d A} 
+			\end{equation}
+
+    	\noindent A unidade de medida da fluência da partículas	$\Phi$ é \unit{m^{-2}}. O fato de considerar apenas uma esfera com seção transversal $dA$ está relacionado ao fato de que só é considerado na fluência uma área perpendicular a direção de propagação do feixe (uma vez que independente da angulação que o feixe está incidindo, sempre atravessará a mesma área transversal de uma esfera) e portanto não há dependência angular na fluência. Ao considerar uma fluência planar, avalia-se o número de fótons que atravessam um plano por unidade de área, e portanto a fluência irá depender do ângulo de incidência do feixe. 
+
+      	\
+
+      	A \textit{\textbf{\textcolor{CarnationPink}{Fluência de Energia $\mathbf{\Psi}$}}} E a razão entre a Energia Radiante Incidente ($dE$) e a área transversal de uma esfera ($dA$), ou seja:
+
+			\begin{equation}
+			\Psi = \frac{d E}{d A}
+			\end{equation}
+
+      	\noindent A unidade de medida da Fluência de Energia é \unit{J \cdot m^{-2}}. A Fluência de energia pode ser calculada através da Fluência de partículas através da relação:
+
+			\begin{equation}
+			\Psi = \frac{d N}{d A} \cdot E = \Phi \cdot E
+			\end{equation}
+      
+      	\noindent onde $E$ é a energia da partícula e $\Phi$ é o número de partículas com energia E, caracterizada por um feixe monoenergético. 
+
+    	\
+
+    	A maior parte dos feixes de fótons e de outras partículas são polienergéticos, e portanto para estes feixes são utilizados o \textit{\textbf{\textcolor{CarnationPink}{Espectro de Fluência de Partículas $\Phi_E(E)$ e o Espectro de Fluência de Energia $\Psi_E(E)$}}}, onde:
+
+			\begin{equation}
+			\Phi_E(E) = \frac{d \Phi}{dE}(E)
+			\end{equation}
+
+      	\noindent e
+
+			\begin{equation}
+			\Psi_E(E) = \frac{d \Psi}{d E}(E) = \frac{d \Phi}{dE}(E) \cdot E 
+			\end{equation}
+
+		\
+
+		A \textit{\textbf{\textcolor{CarnationPink}{Taxa De Fluência Da Partícula}}} é dada pela taxa de variação da fluência em relação ao tempo, ou seja:
+
+			\begin{equation}
+				\dot{\Phi} = \frac{d \Phi}{d t}
+			\end{equation}
+
+		\noindent no qual é dada em \unit{m^-2 \cdot s^-1}.
+
+		\
+
+		A \textit{\textbf{\textcolor{CarnationPink}{Taxa de Fluência de Energia}}}, também chamada de intensidade, é dada pela taxa de variação da fluência de energia em função do tempo, ou seja:
+
+			\begin{equation}
+				\dot{\Psi} = \frac{d \Psi}{d t}
+			\end{equation}
+
+		\noindent onde sua unidade de medida é \unit{W \cdot m^{-2}} ou \unit{J \cdot m^{-2} \cdot s^{-1}}.
+		
+	\section{Exposição}
+
+		A Exposição ($X$) é a habilidade dos fótons ionizar o ar, dada pela seguinte equação:
+
+			\begin{equation}
+				X = \frac{\Delta Q}{\Delta m_{ar}}
+			\end{equation}
+
+		\noindent onde $\Delta Q$ é o valor absoluto da carga total dos íons de um sinal produzidos no ar, quando todos os elétrons e pósitrons liberados ou criados por fótons em  massa de ar $\Delta m_{ar}$ são completamente parados no ar. A unidade de medida no SI é \unit{C \cdot Kg^{-1}}; A unidade antiga da Exposição é o Roentgen (R) onde:
+
+			\begin{equation*}
+				1 R = 2.58 \times 10 ^{-4}\frac{C}{Kg}
+			\end{equation*}
+
+		\noindent porém está unidade já não é tão utilizada e portanto a unidade para Exposição é de \qty{2.58e{-4}}{C/Kg} de ar.
+
+	\section{Kerma}
+
+		KERMA é o acrônimo para Energia Cinética Liberada Por Unidade de Massa. É uma quantidade não estocástica aplicável às radiações indiretamente ionizantes, como prótons e nêutrons. Esta grandeza quantifica a quantidade média de energia transferida pela radiação indiretamente ionizante para radiações diretamente ionizantes, sem se preocupar com o que acontece após esta transferência de energia. 
+
+		Considerando os fótons, o processo de ionização se dá por duas etapas: 
+
+			\begin{enumerate}
+				\item Os fótons transferem sua energia para as partículas carregadas secundárias, como os elétrons, por meio de diferentes processos de interação (Efeito Fotoelétrico, Efeito Compton, Produção de pares, etc \dots).
+				
+				\item A partícula secundária liberara irá então transferir sua energia através de processos como excitação e ionização. 
+			\end{enumerate}
+
+		O KERMA é então definido como a energia média transferida $d\bar{E}_{tr}$ de uma partícula indiretamente ionizante para partículas carregadas em um meio de massa $dm$, ou seja:
+
+			\begin{equation}
+				K = \frac{d \bar{E}_{tr}}{d m}
+			\end{equation}
+
+		\noindent onde a unidade para o KERMA é de \unit{J \cdot Kg^{-1}}
+
+
+	\section{Dose Absorvida}
+
+		A Dose absorvida é uma grandeza não-estocástica aplicável tanto para radiações indiretamente ionizantes quanto para radiações diretamente ionizantes. Para a radiação indiretamente ionizante, parte da sua energia é transferida como energia cinética para as partículas carregadas do meio, resultando no KERMA, e na sequência, as partículas carregadas perdem parcelas de sua energia para o meio, resultando na dose absorvida, e perdem parte da sua energia através da produção radiativa, em processos de bremmstrahlung ou aniquilação em voo. 
+		
+		
+		A Dose  Absorvida está relacionada à uma quantidade estocástica chamada de energia transmitida ($\varepsilon$). A dose absorvida é definida como a energia média transmitida ($d\bar{\varepsilon}$) pela radiação diretamente ionizante para a matéria de massa $dm$ em um volume finito $V$, ou seja:
+
+
+			\begin{equation}
+				D = \frac{d \bar{\varepsilon}}{d m}
+			\end{equation}
+
+		\noindent A unidade para a Dose Absorvida é o Gy = \unit{J \cdot Kg ^{-1}}.
+
+		A energia transmitida $\varepsilon$ é a soma de todas as energias entrando no volume de interesse subtraída da soma de todas as energias que saem do volume de interesse, considerando qualquer conversão de massa-energia dentro do volume. Por exemplo, a produção de pares diminui a energia em 1.022 MeV enquanto que a Aniquilação dos pares elétron-pósitron aumentam a energia pelo mesmo fator. 
+
+		\textcolor{CarnationPink}{OBS:} Devido os elétrons viajarem no meio transferindo energia ao longo de sua trajetória, o local de deposição de energia é diferente do local onde a energia foi transferida pelo KERMA. 
+
+
+
+
+
+
+
+
+  \bibliography{ref.bib}
+\end{document}  
