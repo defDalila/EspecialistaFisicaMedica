@@ -340,7 +340,40 @@
 		
 		O ruído estatístico representa a quantidade mínima de flutuação que não pode pode ser removida independente da qualidade do sistema de medição utilizado. O ruído estatístico surge devido ao fato de que a carga Q gerada dentro do detector devido a um quanta de radiação  não é uma variável contínua, mas sim um valor discreto do número de portadores de carga. Pode ser feita uma estimativa da flutuação inerente da detecção assumindo que os portadores de carga criados se se aproximam de distribuição Gaussiana.
 
-		
+	\subsection{Eficiência de Detecção}
 
+		A eficiência de detecção varia com o tipo de radiação para o qual o detector será utilizado, sendo diferente para radiações diretamente ionizantes e indiretamente ionizantes.
+
+		Quando uma radiação diretamente ionizante, como as partículas alfa e os elétrons, entra na cavidade do detector, causarão imediatamente ionizações e excitações no volume da cavidade, e após viajar uma pequena fração do seu alcance será liberado pares de íons suficientes que farão com que o pulso resultante seja grande o suficiente para ser registrado; Portanto, garantindo que o detector consiga detectar toda partícula carregada que entra em sua cavidade, pode-se dizer que o detector possuirá uma eficiência de contagem de 100\%. 
+
+		Enquanto que a radiação diretamente ionizante é imediatamente detectada entrar na cavidade do detector, para detectar uma radiação indiretamente ionizante, ela deve primeiramente sofrer uma interação significante no detector, para então ser possível detectá-la. Como estas radiações podem viajar largas distâncias entre as interações, alguns quantas dessa radiação não serão detectados e portanto a eficiência do detector será sempre menor que 100\%.
+
+		A eficiência na contagem é dividida entre:
+
+			\begin{itemize}
+				\item Eficiência Absoluta ($\epsilon_{abs}$), que é definida como a razão entre o número de pulsos registados $N_P$ e o número de partículas $N$ emitidas pela fonte, ou seja
+				
+					\begin{equation}
+						\epsilon_{abs} = \frac{N_P}{N}
+					\end{equation}
+				
+				A eficiência absoluta depende das propriedades do detector e da geometria  utilizada na contagem, sendo a principal componente a distância da fonte ao detector.
+				
+				\item Eficiência Intrínseca ($\epsilon_{int}$), que é definida como a razão entre o número de pulsos registrados $N_P$ e o Número de partículas $N_{in}$ que incidem no detector, ou seja:
+				
+					\begin{equation}
+						\epsilon_{int} = \frac{N_P}{N_{in}}
+					\end{equation}
+
+				A eficiência intrínseca depende principalmente do material do detector, da energia da radiação, e da espessura de material do detector na região de incidência do feixe. 
+			\end{itemize}
+
+		A relação entre as eficiências para uma fonte isotrópica é dada por:
+
+			\begin{equation}
+					\epsilon_{int} = \epsilon_{abs} \cdot \left(\frac{4 \pi}{\Omega}\right)
+			\end{equation}
+
+		\noindent onde $\Omega$ é o ângulo sólido do detector visto a partir da posição da fonte. A efi
 \bibliography{ref.bib}
 \end{document}
