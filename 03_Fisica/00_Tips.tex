@@ -1,0 +1,128 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{siunitx}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[margin=10pt,font={small, it},labelfont=bf, textfont=it]{caption}
+\usepackage[dvipsnames, svgnames]{xcolor}
+\DeclareCaptionFont{MediumOrchid}{\color[svgnames]{MediumOrchid}}
+\usepackage[pdftex]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\bibpunct{[}{]}{,}{s}{}{}
+\usepackage{color}
+\usepackage{footnote}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{leading}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{mdframed}
+\usepackage{etoolbox}
+\usepackage[version=4]{mhchem}
+
+\newcounter{exemplo}
+
+\NewDocumentEnvironment{exemplo}{ O{} }{%
+\allowbreak
+\setlength{\parindent}{0pt}
+  \begin{mdframed}[
+  leftline=true,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=2pt,
+  linecolor=CarnationPink,
+  frametitlerule=false,
+  frametitlefont=\Large\bfseries\color{CarnationPink},
+  frametitle={\color{CarnationPink}\normalfont\bfseries Exemplo: #1},
+  ]
+}{%
+  \end{mdframed}
+}
+
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{1pt}
+\usepackage{float}
+\renewcommand{\thefootnote}{\alph{footnote}}
+\usepackage{url}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=cyan,      
+    urlcolor=cyan,
+    citecolor=cyan,
+    pdftitle={Estatística De Contagens}'
+}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{Página \thepage}
+\title{Física}
+\author{Notas Rápidas\nocite{*}}
+\date{\textit{Dalila Mendonça}}
+\begin{document}
+	\maketitle
+
+\section{Notas}
+
+\begin{itemize}
+    \item Isótopos estáveis possuem a razão neutrons:protons de $1:1$ para $z <  20$ e 1.5:1 para núcleos mais pesados;
+    
+    \item O output de um tubo de raiox-x aumenta com o quadrado da voltagem do tubo  e linearmente com a corrente do tubo;
+    
+    \item A filtração inerente é especificada em termos de mm de Al e é normalmente de 0.5 mm de Al até 1.0 mm de Al;
+    
+    \item O feixe de elétrons que sai da cavidade de aceleração normalmente tem uma dispersão de energia de 1\% a 2\%. O bending magnet de \ang{270} permite o foco adequado de elétrons de energias ligeiramente diferentes e, portanto, menor ponto focal no alvo. Há também menos perda de intensidade do feixe de elétrons com o bending magnet de \ang{270}, embora com maior complexidade e custo de construção do linac. Ao usar apenas um bending magnet de \ang{90}, os elétrons de baixa energia seriam curvados ligeiramente mais do que os elétrons de alta energia, resultando assim em um grande ponto focal no alvo de raios-x. Um ponto focal maior, por sua vez, resultaria em uma ligeira degradação da nitidez da penumbra do feixe, o que é indesejável.
+    
+    \item As primeiras unidades combinadas de tratamento com RM usavam \ce{^{60}Co} porque expor o feixe de elétrons a um campo magnético externo é um problema de engenharia difícil, porém atualmente são utilizados AL's. Mesmo dentro do paciente, a presença do campo magnético afeta a distribuição da dose entregue devido às interações dos elétrons secundários com o campo magnético. Os implantes de metal podem estar sujeitos a aquecimento, bem como a forças magnéticas, e muitos implantes não são seguros para uso em nenhuma unidade de RM. Há uma limitação na movimentação de mesa quando comparados a Al's convencionais;
+    
+    \item De acordo com a AAPM TG-50, os MLC's são geralmente feitos de uma liga de tungstênio porque é dura, usinável, barata e tem uma das maiores densidades;
+    
+    \item A unidade de Hounsfield é dada por:
+    
+        \begin{equation*}
+            HU = \left[\frac{\mu - \mu_{agua}}{\mu_{agua}}\right] \times 1000
+        \end{equation*}
+    \item Feixes de elétrons são mais prováveis de interagir com os elétrons orbitais das camadas mais externas do átomo. Quando uma partícula carregada interage com um átomo, a influência do campo de força coulombiano da partícula afeta o átomo como um todo. A maioria das interações são colisões “suaves” com elétrons da camada externa, transferindo apenas frações mínimas da energia cinética da partícula incidente. Esse processo costuma ser chamado de “aproximação de desaceleração contínua”.
+    
+    \item O controle automático de brilho em um modo de fluoroscopia do sistema de imagem kV montado em um gantry pode modificar kV e mAs. O objetivo do controle automático de brilho é obter a melhor qualidade possível da imagem de fluoroscopia alterando kV e mAs.
+    
+    \item O número de nêutrons produzidos por MU aumenta rapidamente com a energia do feixe, mas o espectro de energia dos nêutrons não tem uma forte dependência da energia do feixe, embora a energia média do nêutron aumente ligeiramente.
+    
+    \item A transmissão de um MLC é de 1 - 2\%; 
+    
+    \item O sistema de direcionamento do feixe compara as leituras das duas câmaras monitoras e as equaliza desviando o feixe garantindo a simetria do feixe. Ao fazê-lo, também mantém a taxa de dose, qualidade e saída, mas estes são simplesmente resultados de manter a simetria do feixe.
+    
+    \item MLCs com extremidades das lâminas arredondadas são projetadas para manter uma penumbra geométrica relativamente constante em diferentes posições da lâmina no feixe.
+    
+    \item A magnetron gera RF, enquanto A klystron requeruma fonte de RF (driver de RF), que ela amplificam. Um thyratron é um switch.
+    
+        \begin{itemize}
+            \item Uma klystron amplifica as microondas de baixa potência em microondas de alta potência. À medida que os elétrons são enviados através de um tubo de drift, sua velocidade é modulada pelo campo elétrico alternado na frequência das micro-ondas de baixa potência entrantes, criando “montes” de elétrons. Os montes induzem cargas na cavidade final, criando microondas de maior potência na mesma frequência.
+            
+            \item A magnetron é um gerador de micro-ondas. Tem uma estrutura circular com um cátodo no centro e um ânodo na superfície externa composta por cavidades ressonantes. Os elétrons são produzidos no cátodo e são submetidos a um campo elétrico entre o ânodo e o cátodo. Um campo magnético estático é aplicado perpendicularmente ao campo elétrico e ao movimento dos elétrons. Os elétrons se movem em espirais em direção às cavidades, criando energia de micro-ondas, que é então enviada para o guia de onda acelerador.
+        \end{itemize}
+    
+    \item A fotodesintegração é um processo nuclear no qual um núcleo atômico absorve um raio gama de alta energia, entra em um estado excitado e decai imediatamente emitindo uma partícula subatômica. Os nêutrons são produzidos nas reações ($\gamma$,n) por feixes de raios X de alta energia incidentes nos vários materiais do alvo, filtro de achatamento e colimadores. A contaminação por nêutrons aumenta rapidamente à medida que a energia do feixe aumenta de 10 para 20 MV e então permanece aproximadamente constante acima disso.
+    
+    \item A produção fluorescente $w$ é definida como a probabilidade de um átomo produzir radiação característica em vez de um elétron Auger: Alto Z, Alto $w$, portanto a emissão de raios-x característicos é mais provável; Baixo Z, baixo $w$ e portanto a emissão de elétrons auger é mais provável. 
+    
+    \item O \ce{SF6} é um dielétrico e evita arcos dentro do guia de ondas de transmissão que guia as micro-ondas de sua fonte para o guia de ondas de aceleração.
+    
+    \item Um linac usa microondas a 3.000 MHz ou 3 GHZ. Estes são chamados de microondas de banda S. Alguns aceleradores mais compactos, como o CyberKnife, usam micro-ondas da banda X em torno de 10 GHz. O tamanho do guia de ondas depende do comprimento de onda do micro-ondas, portanto, uma frequência mais alta implica em um guia de ondas mais curto.
+    
+    \item O efeito Cerenkov ocorre quando uma partícula carregada viaja em um meio a uma velocidade maior que a velocidade da luz nesse meio (nenhuma partícula massiva pode viajar mais rápido que a luz no vácuo). Nessa condição, a partícula carregada cria uma “onda de choque” eletromagnética, semelhante à onda de choque acústica quando um avião viaja mais rápido que a velocidade do som. A onda de choque eletromagnético aparece como uma explosão de radiação visível, conhecida como radiação de Cerenkov. Potencialmente, isso poderia ser usado para medir a posição e a intensidade da dose depositada.
+    
+    \item o \ce{^{192}Ir} decai emitindo uma partícula beta menos 95.1\% do tempo, emitindo na sequência radiação gama com energia média de 380 KeV. Nos restante do tempo (4.9\%) decai por captura eletrônica.
+\end{itemize}
+
+
+\bibliography{ref.bib}
+\end{document}
