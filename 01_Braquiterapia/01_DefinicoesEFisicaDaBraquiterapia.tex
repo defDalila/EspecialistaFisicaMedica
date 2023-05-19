@@ -202,7 +202,7 @@
 			\item \textbf{Tempo de meia-vida ($t_{1/2}$): } É o tempo no qual o número de átomos radioativos de uma amostra demora para decair pela metade do seu valor inicial, ou seja é o tempo para que o número de átomos radioativos remanescentes na amostra fique igual a metade do seu valor inicial, 
 			
 				\begin{equation}
-					N(t) = {1/2}N_0
+					N(t) = \frac{1}{2}N_0
 				\end{equation}
 
 				Portanto o tempo de meia-vida  ($t_{1/2}$) é dado por:
@@ -541,7 +541,7 @@
 				\item \textbf{Forma da fonte:} Sementes, placas ou aplicadores
 				\item \textbf{Partícula Emitida:} partícula-$\beta$
 				\item \textbf{Energia média: } 196 KeV 
-				\item \item \textbf{Energia máxima: } 546 KeV
+				\item \textbf{Energia máxima: } 546 KeV
 				\item \textbf{HVL:} N/A
 				\item \textbf{$t_{1/2}$:} 28.9 anos
 				\item \textbf{\% de mudança de atividade: } 2.4\% por dia
@@ -556,7 +556,7 @@
 				\item \textbf{Forma da fonte:} placas ou micro-esferas
 				\item \textbf{Partícula Emitida:} partícula-$\beta$
 				\item \textbf{Energia média: } 933 KeV 
-				\item \item \textbf{Energia máxima: } 2280 KeV
+				\item \textbf{Energia máxima: } 2280 KeV
 				\item \textbf{HVL:} N/A
 				\item \textbf{$t_{1/2}$:} 64.1 h
 				\item \textbf{\% de mudança de atividade: } 
@@ -572,7 +572,7 @@
 
 		Devido a baixa energia dos fótons emitidos por fontes de braquiterapia, que é da ordem de KeV, a distribuição de dose apresenta um alto gradiente de dose e um falloff de dose mais rápido quando comparado à teleterapia.
 
-		A maior vantagem deste falloff acentuado é conseguir poupar os tecidos sadios adjacentes.Porém, caso o alvo esteja distante da fonte, cobrir o alvo com a dose de prescrição será difícil pelo mesmo motivo, pois irá aumentar a dose nos tecidos mais próximos. Portanto para diminuir a dose em volta do alvo indica-se utilizar o maior aplicador possível para que este tecido seja afastado para longe da fonte em uma região com um menor gradiente de dose. 
+		A maior vantagem deste falloff acentuado é conseguir poupar os tecidos sadios adjacentes; Porém, caso o alvo esteja distante da fonte, cobrir o alvo com a dose de prescrição será difícil pelo mesmo motivo, pois irá aumentar a dose nos tecidos mais próximos. Portanto para diminuir a dose em volta do alvo indica-se utilizar o maior aplicador possível para que este tecido seja afastado para longe da fonte em uma região com um menor gradiente de dose. 
 
 		Uma discrepância de milímetros em braquiterapia pode ser crítica no tratamento devido à forma do falloff de dose e portanto requer uma precisão milimétrica no posicionamento da fonte em sistemas afterloading. A Figura \ref{img:DistribuicaoDoseBalao} mostra as isodoses próximas a fonte e na profundidade de prescrição para um tratamento de mama utilizando um balão.
 
@@ -771,7 +771,7 @@
 						G(r, \theta) = \left(r^2 - \frac{L^2}{4}\right)^{-1}, \qquad para \qquad \theta = 0
 					\end{equation}
 				
-				\item \textbf{\textcolor{CarnationPink}{$g(r)$} : } É chamada de Função de dose radial. É uma quantidade adimensional que considera o falloff da dose ao longo do plano transversal da fonte devido ao espalhamento e a atenuação no material do encapsulamento da fonte. É definida ao longo do eixo transversal $\mathrm{(\theta = \pi / 2)}$, portanto depende apenas da distância radial do ponto à fonte. Em outras palavras, a função de dose radial reflete na queda da dose devido ao espelhamento e atenuação da radiação. Seus valores são tabelados e podem ser encontrados no update do TG-143 e em seu suplemento.
+				\item \textbf{\textcolor{CarnationPink}{$g(r)$} : } É chamada de Função de dose radial. É uma quantidade adimensional que considera o falloff da dose ao longo do plano transversal da fonte devido ao espalhamento e a atenuação no material do encapsulamento da fonte e devido a alteração do meio de ar para a água. É definida ao longo do eixo transversal $\mathrm{(\theta = \pi / 2)}$, portanto depende apenas da distância radial do ponto à fonte. Em outras palavras, a função de dose radial reflete na queda da dose devido ao espelhamento e atenuação da radiação onde o espalhamento aumenta a dose na profundidade e a atenuação diminui a dose na profundidade. Seus valores são tabelados e podem ser encontrados no update do TG-143 e em seu suplemento.
 				
 					Na distância de referência $r_0$
 
@@ -902,6 +902,29 @@
 
 			\end{quote}
 
+		
+		\subsection{Sistemas Clássicos para Implantes Intersticiais}
+
+			Antes da era computacional, eram utilizadas tabelas pré-calculadas para determinar a quantidade de rádio necessária em um \textit{\textbf{\textcolor{CarnationPink}{Implante Intersticial}}}.
+
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=0.7\textwidth]{Imagens/carregamentosHistoricos.JPG}
+				\caption{Sistemas de Carregamento Clássicos}
+				\label{img:carregamentosHistoricos}
+			\end{figure}
+
+
+			\begin{itemize}
+				\item Sistema Manchester (Paterson-Parker): Utilizavam agulhas ou cateteres perpendiculares entre si (crossed ends), como mostra a Figura \ref{img:carregamentosHistoricos}.  Este sistema possui diferentes tabelas de carregamento de dose para um único plano, dois planos e implantes volumétricos. Utilizava o carregamento não uniforme periférico gerando uma distribuição de dose homogênea.
+				
+				\item Sistema Quimbly: Utilizavam agulhas ou cateteres perpendiculares entre si, semelhantemente ao sistema Manchester; A principal diferença entre esses sistemas é que no Quimbly utilizava o carregamento uniforme gerando uma distribuição de dose com um ponto quente central no volume implantado. 
+				
+				\item Sistema Paris: utilizava implantes volumétricos com multiplas agulhas ou cateteres paralelos entre si. Onde as agulhas eram distribuidas igualmente espaçadas entre si e com carregamento uniforme das fontes, gerando um ponto quente central. 
+			\end{itemize}
+
+% TODO: Sistema Classico Fletcher
+
 		\subsection{Cálculos de Dose Baseados em Imagens}
 
 			Algoritmos de cálculo de dose baseados em modelos podem ser utilizados para cálculos de distribuição de dose levando em consideração um meio heterogêneo, uma vez que o formalismo do TG-43 considera o meio homogêneo em seus cálculos.
@@ -922,7 +945,7 @@
 					
 					\item \textbf{\textit{\textcolor{CarnationPink}{Monte Carlo Simulations}}}, que utiliza abordagens estocásticas para resolver a equação de transporte linear de Boltzmann através de amostragens aleatórias. É um modelo mais presente em pesquisas científicas.
 					
-					\item \end{itemize}
+					\end{itemize}
 		
 	\section{Braquiterapia de Baixa Energia}
 		
@@ -1152,7 +1175,7 @@
 
 					\begin{figure}[h]
 						\centering
-						\includegraphics[width=0.7\textwidth]{Imagens/balaoMammoSite.JPG}
+						\includegraphics[width=0.6\textwidth]{Imagens/balaoMammoSite.JPG}
 						\caption{MammoSite}
 						\label{img:mammosite}
 					\end{figure}
@@ -1201,7 +1224,7 @@
 
 
 
-
+	\pagebreak
 	\bibliography{ref.bib}
 
 \end{document}

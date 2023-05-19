@@ -6,7 +6,7 @@
 \usepackage{siunitx}
 \usepackage[brazil]{babel}
 \usepackage{graphicx}
-\usepackage[margin=10pt,font=small,labelfont=bf]{caption}
+\usepackage[margin=10pt,font={small, it},labelfont=bf, textfont=it]{caption}
 \usepackage[dvipsnames, svgnames]{xcolor}
 \DeclareCaptionFont{MediumOrchid}{\color[svgnames]{MediumOrchid}}
 \usepackage[pdftex]{hyperref}
@@ -18,10 +18,35 @@
 \usepackage{setspace}
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{subfigure}
 \usepackage{fancyhdr}
 \usepackage{leading}
 \usepackage{indentfirst}
 \usepackage{wrapfig}
+\usepackage{mdframed}
+\usepackage{etoolbox}
+\usepackage[version=4]{mhchem}
+
+\newcounter{exemplo}
+
+\NewDocumentEnvironment{exemplo}{ O{} }{%
+\allowbreak
+\setlength{\parindent}{0pt}
+  \begin{mdframed}[
+  leftline=true,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=2pt,
+  linecolor=CarnationPink,
+  frametitlerule=false,
+  frametitlefont=\Large\bfseries\color{CarnationPink},
+  frametitle={\color{CarnationPink}\normalfont\bfseries Exemplo: #1},
+  ]
+}{%
+  \end{mdframed}
+}
+
 \setlength{\fboxsep}{10pt}
 \setlength{\fboxrule}{1pt}
 \usepackage{float}
@@ -33,7 +58,7 @@
     filecolor=cyan,      
     urlcolor=cyan,
     citecolor=cyan,
-    pdftitle={Proteção Radiológica}
+    pdftitle={Cálculo de Blindagens}
 }
 \pagestyle{fancy}
 \fancyhf{}
@@ -531,19 +556,19 @@
 
             A espessura da barreira primária deve ser calculada para incidências perpendiculares do feixe e deve se manter constante ao longo de toda a largura da barreira. Quando a radiação incide obliquamente na barreia, a espessura requerida será menor que a calculada acima. A diferença dessas espessuras dependem do ângulo de incidência em relação à normal à parede, o material da barreira, a atenuação requerida e a energia da radiação.Se não houvesse espalhamento da radiação no material da barreira, a relação entre a espessura obliqua $t_s$ e a espessura $t$ seria dada por $t_s = t/ \cos \theta$, Figura \ref{fig:esquemaIncidenciaObliqua}. Porém para ângulos grandes ($\theta > \ang{45}$), o fóton espalhado  pode ter um comprimento de caminho $< t_s$ antes de sair da barreira, o que acarretará na necessidade de uma barreira com espessura $> t$. Na maior parte das situações este efeito é pequeno e é tratado como um pequeno aumento na espessura t aproximada. No entanto quando é requerida uma atenuação devido à sua amplitude para ângulos grandes, o aumento na barreira de concreto é de ~ 2 HVL para fótons de baixa energia e de ~1 HVL para fótons de alta energia.
 
-            Os Lasers utilizados no posicionamento devem ser incorporados na blindagem. Esta defasagem na blindagem pode ser de em torno 1 HVL para feixes de alta energia, portando deve ser adicionadas placas de aço ou chumbo com espessura suficiente para fornecer a mesma atenuação da quantidade de blindagem que foi removida para inserção do laser.
+            Os Lasers utilizados no posicionamento devem ser incorporados na blindagem. Esta defasagem na blindagem pode ser em torno de 1 HVL para feixes de alta energia, portando deve ser adicionadas placas de aço ou chumbo com espessura suficiente para fornecer a mesma atenuação da quantidade de blindagem que foi removida para inserção do laser.
 
 
         \subsection{Largura do Cinturão Primário}
 
-            O cinturão primário é uma espessura adicionada à barreira secundária na região do feixe primário que é limitada pela largura do cinturão primário; A largura do cinturão primário por sua vez é determinada através do tamanho máximo da diagonal do maior tamanho de campo, somando no mínimo \qty{30}{cm} de cada lado. O cinturão primário pode ser projetado para que a protuberância, relacionada à diferênca de espessura entre a barreira primária e a  barreira secundária, fique para dentro da sala de tratamento, ou para fora da sala de tratamento; e dependendo da sua posição, o tamanho máximo do campo utilizado para definir a largura do cinturão primário será diferente. 
+            O cinturão primário é uma espessura adicionada à barreira secundária na região do feixe primário que é limitada pela largura do cinturão primário; A largura do cinturão primário por sua vez é determinada através do tamanho máximo da diagonal do maior tamanho de campo, somando no mínimo \qty{30}{cm} de cada lado. O cinturão primário pode ser projetado para que a protuberância, relacionada à diferença de espessura entre a barreira primária e a  barreira secundária, fique para dentro da sala de tratamento, ou para fora da sala de tratamento; e dependendo da sua posição, o tamanho máximo do campo utilizado para definir a largura do cinturão primário será diferente. 
 
             \begin{itemize}
-                \item Se a barreira ficar para dentro da lada de tratamento, o tamanho máximo do campo é definido na parte interna da barreira secundária, como mostra a Figura \ref{fig:esquemaCinturaoPrimarioDentroDaSala}. 
+                \item Se a barreira ficar para dentro da sala de tratamento, o tamanho máximo do campo é definido na parte interna da barreira secundária, como mostra a Figura \ref{fig:esquemaCinturaoPrimarioDentroDaSala}. 
                 
                     \begin{figure}[h]
                         \centering
-                        \includegraphics[width=0.5\textwidth]{Imagens/esquemaCinturaoPrimarioDentroDaSala.JPG}
+                        \includegraphics[width=0.4\textwidth]{Imagens/esquemaCinturaoPrimarioDentroDaSala.JPG}
                         \caption{Cinturão primário dentro da sala de tratamento}
                         \label{fig:esquemaCinturaoPrimarioDentroDaSala}
                     \end{figure}
@@ -553,38 +578,55 @@
                 
                     \begin{figure}[h]
                         \centering
-                        \includegraphics[width=0.5\textwidth]{Imagens/esquemaCinturaoPrimarioForaDaSala.JPG}
+                        \includegraphics[width=0.4\textwidth]{Imagens/esquemaCinturaoPrimarioForaDaSala.JPG}
                         \caption{Cinturão primário fora da sala de tratamento}
                         \label{fig:esquemaCinturaoPrimarioForaDaSala}
                     \end{figure}
 
                 
-                \item Se a Barreira primária é projetada utilizando concreto juntamente com outro material, seja ele aço ou chumbo, a fim de manter toda a parede com a mesma espessura, o tamanho de campo é definido a partir da projeção do campo na superfície mais externa (distal) do chumbo ou aço, como mostra a Figura \ref{fig:esquemaCinturaoPrimarioDoisMateriaisDeBlindagem}
+                \item Se a Barreira primária é projetada utilizando concreto juntamente com outro material, seja ele aço ou chumbo, a fim de manter toda a parede com a mesma espessura, o tamanho de campo é definido a partir da projeção do campo na superfície mais externa (distal) do chumbo ou aço, como mostra a Figura \ref{fig:esquemaCinturaoPrimarioDoisMateriaisDeBlindagem}.
                     
                     \begin{figure}[h]
                         \centering
-                        \includegraphics[width=0.5\textwidth]{Imagens/esquemaCinturaoPrimarioDoisMateriaisDeBlindagem.JPG}
+                        \includegraphics[width=0.4\textwidth]{Imagens/esquemaCinturaoPrimarioDoisMateriaisDeBlindagem.JPG}
                         \caption{Cinturão primário utilizando mais de um material na blindagem}
                         \label{fig:esquemaCinturaoPrimarioDoisMateriaisDeBlindagem}
                     \end{figure}
                 
-                \item O valor de \qty{30}{cm} só é suficiente caso seja suficiente para interceptar a radiação espalhada a \ang{20} a partir do isocentro. 
+                \item O valor de \qty{30}{cm} só é suficiente caso consiga interceptar a radiação espalhada a \ang{20} a partir do isocentro. 
                 
-                \item Na maior parte dos aceleradores, o maior tamanho de campo é de \qtyproduct{40 x 40}{cm} na distância Fonte-Superfície (SSD) de \qty{100}{cm}; Com o tamanho máximo da diagonal limitado a ~\qty{50}{cm} na SSD de \qty{100}{cm}. 
+                \item Na maior parte dos aceleradores, o maior tamanho de campo é de \qtyproduct{40 x 40}{cm} na distância Fonte-Superfície (SSD) de \qty{100}{cm}; Com o tamanho máximo da diagonal limitado a aproximadamente \qty{50}{cm} na SSD de \qty{100}{cm}. 
                 
                 \item A largura da barreira primária é definida no topo da parede primária, que é a região da parede mais longe do isocentro. Esta largura é mantida a mesma para toda a região do cinturão primário.
                 
-                \item É comum que os aceleradores lineares sejam instalados nas salas de tratamento de forma que a rotação do gantry ocorra em um plano ortogonal às barreiras primárias.  No entanto, devido a algumas limitações de espaço, por exemplo, o acelerador pode ser instalado de forma que seu eixo de rotação não esteja ortogonal às barreiras primárias. A Figura \ref{fig:esquemaBarreiraAceleradorAngulado} mostra um acelerador posicionado na sala de forma que seu eixo de rotação está a uma angulação de \ang{45} com as barreiras primárias. 
+            \end{itemize}
+
+            A maior dimensão do campo no isocentro ocorre na diagonal do campo, quando o colimador está a \ang{45}, como mostra a Figura \ref{fig:maiorDimensaoDoCampo}.
+
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.9\textwidth]{Imagens/maiorDimensaoDoCampo.JPG}
+                    \caption{Maior dimensão do campo}
+                    \label{fig:maiorDimensaoDoCampo}
+                \end{figure}
+            
+            Sendo $x$ a distância da fonte até a superfície da barreira e $\ell_{max}$ a largura máxima do campo no isocentro (a 1 metro da fonte), a largura horizontal da barreira primária L é dada por:
+
+                \begin{equation}
+                    L = \left(\sqrt{2} \cdot \ell_{max}\right) \cdot x + 0.6
+                \end{equation}
+                
+            É comum que os aceleradores lineares sejam instalados nas salas de tratamento de forma que a rotação do gantry ocorra em um plano ortogonal às barreiras primárias.  No entanto, devido a algumas limitações de espaço, por exemplo, o acelerador pode ser instalado de forma que seu eixo de rotação não esteja ortogonal às barreiras primárias. A Figura \ref{fig:esquemaBarreiraAceleradorAngulado} mostra um acelerador posicionado na sala de forma que seu eixo de rotação está a uma angulação de \ang{45} com as barreiras primárias. 
                 
                     \begin{figure}[h]
                         \centering
-                        \includegraphics[width=0.5\textwidth]{Imagens/esquemaBarreiraAceleradorAngulado.JPG}
+                        \includegraphics[width=0.4\textwidth]{Imagens/esquemaBarreiraAceleradorAngulado.JPG}
                         \caption{Barreiras para um Acelerador com eixo de rotação do gantry a \ang{45}.}
                         \label{fig:esquemaBarreiraAceleradorAngulado}
                     \end{figure}
 
                     Nestes casos, deve-se atentar à falta de simetria das posições da extremidades do campo em relação ao eixo central, projetado na barreira primária, uma vez que os fótons que viajam em duas arestas opostas do feixe, embora saiam com a mesma angulação do feixe, atravessarão a blindagem com diferentes angulações de incidência.  
-            \end{itemize}
+            
         
         \subsection{Barreiras Lamidadas}
             
@@ -825,7 +867,7 @@
                     \item $d_{zz}$ distância da superfície $A_1$ até a porta do labirinto;
                 \end{itemize} 
             
-            \textbf{\textit{\textcolor{CarnationPink}{Obs:}}} Para energias superiores a 10MV, a contribuição do espalhamento pelo paciente é ignorada uma vez que se torna insignificante quando comparada com a contribuição devido a radiação de fuga e a radiação gama produzida por captura de neutrons produzidos no labirinto por neutrons lentos (K ~ \qty{1}{eV}.)
+            \textbf{\textit{\textcolor{CarnationPink}{Obs:}}} Para energias superiores a 10MV, a contribuição do espalhamento pelo paciente é ignorada uma vez que se torna insignificante quando comparada com a contribuição devido a radiação de fuga e a radiação gama produzida por captura de neutrons produzidos no labirinto por neutrons lentos (K aprox \qty{1}{eV}.)
 
             A dose equivalente na porta devido a radiação de fuga transmitida pela parede Z do labirinto é obtida pela Equação \ref{eq:doseEquivalenteRadiacaoFugaTransmitida}:
 
