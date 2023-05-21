@@ -41,7 +41,7 @@
   linecolor=CarnationPink,
   frametitlerule=false,
   frametitlefont=\Large\bfseries\color{CarnationPink},
-  frametitle={\color{CarnationPink}\normalfont\bfseries Exemplo: #1},
+  frametitle={\color{CarnationPink}\normalfont\bfseries #1},
   ]
 }{%
   \end{mdframed}
@@ -84,8 +84,13 @@
 			\begin{equation}
 			\Phi  = \frac{d N}{d A} 
 			\end{equation}
+		
+		\begin{exemplo}[Unidade]
+			A unidade de medida da fluência da partículas	$\Phi$ é \unit{m^{-2}}.
+		\end{exemplo}
 
-    	\noindent A unidade de medida da fluência da partículas	$\Phi$ é \unit{m^{-2}}. O fato de considerar apenas uma esfera com seção transversal $dA$ está relacionado ao fato de que só é considerado na fluência uma área perpendicular a direção de propagação do feixe (uma vez que independente da angulação que o feixe está incidindo, sempre atravessará a mesma área transversal de uma esfera) e portanto não há dependência angular na fluência. Ao considerar uma fluência planar, avalia-se o número de fótons que atravessam um plano por unidade de área, e portanto a fluência irá depender do ângulo de incidência do feixe. 
+
+    	\noindent  O fato de considerar apenas uma esfera com seção transversal $dA$ está relacionado ao fato de que só é considerado na fluência uma área perpendicular a direção de propagação do feixe (uma vez que independente da angulação que o feixe está incidindo, sempre atravessará a mesma área transversal de uma esfera) e portanto não há dependência angular na fluência. Ao considerar uma fluência planar, avalia-se o número de fótons que atravessam um plano por unidade de área, e portanto a fluência irá depender do ângulo de incidência do feixe. 
 
       	\
 
@@ -95,7 +100,12 @@
 			\Psi = \frac{d E}{d A}
 			\end{equation}
 
-      	\noindent A unidade de medida da Fluência de Energia é \unit{J \cdot m^{-2}}. A Fluência de energia pode ser calculada através da Fluência de partículas através da relação:
+
+		\begin{exemplo}[Unidade]
+			A unidade de medida da Fluência de Energia é \unit{J \cdot m^{-2}}.
+		\end{exemplo}
+
+      	\noindent  A Fluência de energia pode ser calculada através da Fluência de partículas através da relação:
 
 			\begin{equation}
 			\Psi = \frac{d N}{d A} \cdot E = \Phi \cdot E
@@ -134,8 +144,12 @@
 			\begin{equation}
 				\dot{\Psi} = \frac{d \Psi}{d t}
 			\end{equation}
+		
 
-		\noindent onde sua unidade de medida é \unit{W \cdot m^{-2}} ou \unit{J \cdot m^{-2} \cdot s^{-1}}.
+		\begin{exemplo}[Unidade]
+			A unidade de medida da Taxa de Fluência de Energia é \unit{W \cdot m^{-2}} ou \unit{J \cdot m^{-2} \cdot s^{-1}}.
+		\end{exemplo}
+		
 		
 	\section{Exposição}
 
@@ -145,13 +159,19 @@
 				X = \frac{\Delta Q}{\Delta m_{ar}}
 			\end{equation}
 
-		\noindent onde $\Delta Q$ é o valor absoluto da carga total dos íons de um sinal produzidos no ar, quando todos os elétrons e pósitrons liberados ou criados por fótons em  massa de ar $\Delta m_{ar}$ são completamente parados no ar. A unidade de medida no SI é \unit{C \cdot Kg^{-1}}; A unidade antiga da Exposição é o Roentgen (R) onde:
+		\noindent onde $\Delta Q$ é o valor absoluto da carga total dos íons de um sinal produzidos no ar, quando todos os elétrons e pósitrons liberados ou criados por fótons em  massa de ar $\Delta m_{ar}$ são completamente parados no ar.
+		
+		
+		\begin{exemplo}[Unidade]
+			A unidade de medida no SI é \unit{C \cdot Kg^{-1}}; A unidade antiga da Exposição é o Roentgen (R) onde:
 
 			\begin{equation*}
 				1 R = 2.58 \times 10 ^{-4}\frac{C}{Kg}
 			\end{equation*}
 
 		\noindent porém está unidade já não é tão utilizada e portanto a unidade para Exposição é de \qty{2.58e{-4}}{C/Kg} de ar.
+		\end{exemplo}
+		
 
 	\section{Kerma}
 
@@ -170,8 +190,11 @@
 			\begin{equation}
 				K = \frac{d \bar{E}_{tr}}{d m}
 			\end{equation}
-
-		\noindent onde a unidade para o KERMA é de \unit{J \cdot Kg^{-1}}
+		
+		\begin{exemplo}[Unidade]
+			A unidade para o KERMA é de \unit{J \cdot Kg^{-1}}
+		\end{exemplo}
+		
 
 
 	\section{Dose Absorvida}
@@ -186,11 +209,393 @@
 				D = \frac{d \bar{\varepsilon}}{d m}
 			\end{equation}
 
-		\noindent A unidade para a Dose Absorvida é o Gy = \unit{J \cdot Kg ^{-1}}.
+		\begin{exemplo}[Unidade]
+			A unidade para a Dose Absorvida é o Gy = \unit{J \cdot Kg ^{-1}}.
+		\end{exemplo}
+		
 
 		A energia transmitida $\varepsilon$ é a soma de todas as energias entrando no volume de interesse subtraída da soma de todas as energias que saem do volume de interesse, considerando qualquer conversão de massa-energia dentro do volume. Por exemplo, a produção de pares diminui a energia em 1.022 MeV enquanto que a Aniquilação dos pares elétron-pósitron aumentam a energia pelo mesmo fator. 
 
 		\textcolor{CarnationPink}{OBS:} Devido os elétrons viajarem no meio transferindo energia ao longo de sua trajetória, o local de deposição de energia é diferente do local onde a energia foi transferida pelo KERMA. 
+
+	\section{Stopping Power}
+
+		O Stopping Power é definido teoricamente através da teoria de Bethe para elétrons e pósitrons. É definido como o valor esperado da taxa de energia perdida por unidade de caminho percorrido para uma partícula carregada. O poder de freamento mássico divide o poder de freamento pela densidade do meio e elimina a dependência da densidade do meio no poder de freamento, exceto pelos efeitos de densidade. 
+
+			\begin{exemplo}[Unidade]
+
+				A unidade de medida do poder de freamento é \unit{MeV/cm}.
+
+				A unidade de medida do poder de freamento mássico é \unit{MeV/cm^2g}.
+
+			\end{exemplo}
+
+		Existem dois tipos de poder de freamento:
+
+		\begin{enumerate}
+			\item \textbf{Poder de Freamento de Colisão}, também chamado de poder de freamento de ionização, onde é resultado das interações das partículas carregadas com os elétrons orbitais;
+			\item \textbf{Poder de Freamento Radiativo}, que é devido a interação das partículas carregadas com o núcleo do átomo.
+		\end{enumerate}
+
+		Além dos citados, o \textbf{Poder de Freamento Mássico Irrestrito} expressa a taxa média de perda de energia pela a partícula carregada devido às colisões duras e suaves. Neste caso, a energia máxima transferida para um elétron orbital permitida em uma colisão dura é igual a metade da energia cinética do elétron ou toda a energia de um pósitron. 
+
+
+		O \textbf{Poder de Freamento Mássico Restrito} é definido para determinar a energia transferida localmente do meio por colisão, ou seja, não inclui a energia transferida para os raios delta determinando um limiar de energia $\Delta$.
+
+		O \textbf{Poder de Freamento Linear por Colisão Restrito}, também chamado de \textbf{Transferência Linear de Energia (LET)} é definido como a energia perdida por uma partícula carregada devido a colisões duras e suaves $dE_\Delta$ ao atravessar uma distância linear $dl$ subtraída da energia cinética total das partículas carregadas liberadas cuja energia cinética excede o limiar $\Delta$.
+
+			\begin{equation}
+				L_\Delta = \frac{dE_\Delta}{dl}
+			\end{equation}
+	
+		
+	\section{Relação entre Fluência de Energia e Kerma (Fótons)}
+
+		A energia transferida pelos fótons para os elétrons pode ser perdida através de interações por colisão (duras ou suaves) ou através de interações radiativas (bremsstrahlung e aniquilação de pares). 
+		
+		O Kerma total é dividido em duas partes:
+
+		\begin{enumerate}
+			\item \textcolor{CarnationPink}{\textbf{Kerma de Colisão:}} É a parte do kerma que leva a produção de elétrons que irão dissipar sua energia através ionizações causadas na trajetória ou nas proximidades da trajetória do elétron no meio, resultante da interação coulombiana com os elétrons orbitais. Portanto, kerma de colisão é o valor líquido de energia transferida para as partículas carregadas no ponto de interesse, excluindo a perda radiativa de energia e a energia transferida de uma partícula carregada para a outra.
+			
+			\item \textcolor{CarnationPink}{\textbf{Kerma Radiativo:}} É a parte do Kerma que leva à produção de fótons a medida que a partícula carregada é desacelerada e interage com o meio. A interação mais significativa é a radiação de freamento, porém também pode ser resultado da aniquilação em vôo.
+		\end{enumerate}
+
+
+		O Kerma total $K$ é então:
+
+			\begin{equation}
+				K = K_{col} + K_{rad}
+			\end{equation}
+
+		A fração média de energia transferida para os elétrons que é perdida através de processos radiativos é chamada de fração radiativa $\bar{g}$. Portanto, a fração média de energia transferida para os elétrons que é perdida através de colisões é dada por $(1 - \bar{g})$ e o Kerma de colisão pode ser obtido através da seguinte equação:
+
+			\begin{equation}
+				K_{col} = K(1 - \bar{g})
+			\end{equation}
+
+		Para feixes monoenergéticos, a relação entre o Kerma de colisão e a fluência de energia $\Psi$ para um ponto no meio é dada por:
+
+			\begin{equation}
+				K_{col} = \Psi \left(\frac{\mu_{ab}}{\rho}\right)
+			\end{equation}
+
+		\noindent onde $\mu_{ab}/\rho$ é o coeficiente mássico de absorção de energia para feixes monoenergéticos. 
+
+		Para feixes polienergéticos é considerado o espectro de energia, de forma que:
+
+			\begin{equation}
+				K_{col} = \int_{0}^{E_{max}} \Psi_E(E) \left(\frac{\mu_{ab}}{\rho}\right)  \,dE 
+				= \Psi \left(\frac{\bar{\mu}_{ab}}{\rho}\right)
+			\end{equation}
+
+		\noindent onde:
+
+			$$\Psi = \int_{0}^{E_{max}} \Psi_E(E) \, dE$$
+
+		\noindent representa a fluência total de energia, e:
+
+			$$\left(\frac{\bar{\mu}_{ab}}{\rho}\right)
+			= \frac{1}{\Psi} \int_{0}^{E_{max}} \Psi_E(E) \left(\frac{\mu_{ab}}{\rho}\right)  \,dE
+			$$
+
+		\noindent é uma abreviação para o coeficiente mássico de absorção de energia para o meio calculado sobre o espectro de fluência de energia.
+
+
+		Para feixes monoenergéticos, o Kerma total $K$ se relaciona com a fluência de energia $\Psi$ através da seguinte equação:
+
+		\begin{equation}
+			K = \Psi \left(\frac{\mu_{tr}}{\rho}\right)
+		\end{equation}
+
+		\noindent onde $\mu_{tr}/\rho$ é o coeficiente mássico de transferência de energia para feixes monoenergéticos. Semelhantemente ao Kerma de colisão, para feixes polienergéticos é considerado o espectro de fluência de energia para determinar o Kerma total.
+
+
+		Dado dois meios com materiais diferentes, material 1 e material 2, a relação entre o Kerma de colisão destes materiais é obtida da seguinte forma:
+
+		\begin{equation}
+			\frac{K_{col,2}}{K_{col, 1}} = \frac{\Psi_2 \left(\frac{\mu_{ab}}{\rho}\right)_2}{\Psi_1 \left(\frac{\mu_{ab}}{\rho}\right)_1}
+			\equiv \left(\Psi \right)_{2,1}\left(\frac{\mu_{ab}}{\rho}\right)_{2,1}
+			\label{eq:razaoKcol}
+		\end{equation}
+
+		A Equação \ref{eq:razaoKcol} é frequentemente utilizada naquelas circunstâncias em que pode-se aproximar a razão entre as fluências de energia $(\Psi)_{2,1}$ para 1, que ocorre quando os materiais são muito similares ou quando a massa do material 2 é suficiente para fornecer um buildup (acúmulo) e ao mesmo tempo é pequena o suficiente de modo que não perturbe a fluência de fótons que atravessa o material 1.
+
+
+	\section{Relação entre Fluência e Dose (Elétrons)}
+
+		Dado as seguintes condições:
+
+		\begin{enumerate}
+			\item Os fótons produzidos no volume de interesse devido a produção radiativa, escapam do volume, ou seja, são espalhados para uma região distante do volume; e
+			\item Os elétrons secundários liberados são absorvidos no local ou há um equilíbrio de partículas carregadas dos elétrons secundários.
+		\end{enumerate}
+
+		\noindent a \textbf{\textit{\textcolor{CarnationPink}{Dose Absorvida}}} no meio $D_{m}$ está relacionada com a fluência eletrônica no meio $\Phi_{m}$ através da seguinte equação:
+
+			\begin{equation}
+				D_m = \Phi_m \left(\frac{S_{col}}{\rho}\right)_m
+				\label{eq:doseNoMeio}
+			\end{equation}
+
+		\noindent onde $(S_{col}/\rho)_m$ é o poder de freamento de colisão mássico irrestrito do meio.
+
+		Devido a desaceleração do elétron no meio, mesmo para uma energia cinética inicial monoenergética $E_k$, sempre estará presente um espectro de fluência primário $\Phi_{m,E}$ que irá variar de $E_k$ até zero. Neste caso, a dose absorvida no meio pode ser obtida integrando a Equação \ref{eq:doseNoMeio}:
+
+			\begin{equation}
+				D_{m}= \int_{0}^{E_{max}} \Phi_{m, E}(E)\left(\frac{S_{col}}{\rho}\right)_{m}(E)  \,dE
+				= \Phi_m \left(\frac{\bar{S}_{col}}{\rho}\right)_m
+				\label{eq:doseAbsorvidaNoMeio}
+			\end{equation}
+
+		Desta forma, pode-se obter a dose absorvida através da fluência total de partículas e do poder de freamento de colisão médio para o espectro de energia das partículas carregadas. 
+
+		A razão da dose absorvida entre o meio 1 e o meio 2, é dada por:
+
+			\begin{equation}
+				\frac{D_{m2}}{D_{m1}} = (\Phi)_{m2,m1} \left(\frac{\bar{S}_{col}}{\rho}\right)_{m2,m1}
+			\end{equation}
+
+
+		O espectro de fluência de elétrons realístico completo consiste nas partículas carregadas primárias, liberadas pelo feixes de fótons polienergéticos que interagiram com o meio, e que são desaceleradas, através das colisões duras e suaves, resultando em uma fluência de partículas carregadas secundárias (raios delta). 
+		
+		
+
+	\section{Relação entre Kerma e Dose (Equilíbrio de Partículas Carregadas)}
+		
+
+		Geralmente, a transferência de energia do fóton para a partícula carregada em um determinado local não leva a absorção de energia pelo meio no mesmo local. Isto se deve ao alcance finito dos elétrons liberados através das interações dos fótons.
+
+		Como os fótons secundários produzidos geralmente escapam do volume de interesse, a dose absorvida se relaciona principalmente com o Kerma de colisão; No entanto, a razão entre a dose e o kerma colisional é denotada por:
+
+		\begin{equation}
+			\beta = \frac{D}{K_{col}}
+		\end{equation}
+
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.60\textwidth]{Imagens/relacaoKermaEDose.jpg}
+			\caption{Relação entre Dose Absorvida e Kerma}
+			\label{fig:relacaoKermaEDose}
+		\end{figure}
+		
+		A Figura \ref{fig:relacaoKermaEDose} mostra a relação entre o Kerma de colisão e a dose absorvida para um caso hipotético de equilíbrio de partículas carregadas (CPE) e para um caso de equilíbrio transiente de partículas carregadas (TCPE).
+
+		A medida que um feixe de fótons de alta energia penetra no meio, o Kerma de colisão é máximo na superfície do material irradiado devido a fluência de fótons ser maior na superfície. Inicialmente, a fluência de partículas carregadas, e portanto a dose absorvida aumenta em função da profundidade até que a profundidade de dose máxima seja atingida.
+
+		Considerando um caso hipotético no qual não houvesse atenuação ou espalhamento dos fótons no meio, mas ainda houvesse produção de elétrons, como mostra a Figura \ref{fig:relacaoKermaEDose} (a), ocorreria a região de buildup, onde $\beta < 1$ seguida por uma região de completo equilíbrio de partículas carregadas onde $\beta = 1$ e portanto $D = K_{col}$.
+
+		Em uma situação realística, como apresentado na Figura \ref{fig:relacaoKermaEDose} (b), existe a atenuação e o espalhamento dos fótons no meio, fazendo com que ocorra uma região de equilíbrio transiente de partículas carregadas, onde existe uma relação aproximadamente constante entre o Kerma de Colisão e a dose absorvida. Esta relação é praticamente constante pois em feixes de fótons de alta energia, a energia média dos elétrons gerados e, portanto, seu alcance não tem mudança significativa com a profundidade do meio e portanto pode-se dizer que os elétrons são sempre liberados com a mesma energia.
+
+		No caso especial em que existe equilíbrio de partículas carregadas, (na profundidade de dose máxima), a relação entre a dose absorvida D e o Kerma total K é dada por:
+
+			\begin{equation}
+				D = K_{col} = K(1 - \bar{g})
+			\end{equation}
+
+		\noindent onde $\bar{g}$ é a fração radiativa dependente da energia cinética do elétron e do meio. Quanto maior a energia cinética e maior o número atômico do meio, maior a fração $\bar{g}$.
+
+		\begin{exemplo}[Exemplo]
+			Para elétrons liberados em um meio de ar por um feixe de \ce{^{60}Co} a fração radiativa $\bar{g}$ é de 0.0032.
+		\end{exemplo}
+
+		O buildup da dose absorvida é responsável pelo efeito poupador da pele nos casos de irradiação com feixes de fótons de alta energia. Na prática, a dose na superfície é baixa mas não é nula devido a contaminação do feixe com elétrons devido a interação dos fótons com o meio acima do phantom, ou devido às partículas carregadas geradas no cabeçote do acelerador e nos dispositivos modificadores de feixe.
+
+	\section{Relação entre Kerma e Exposição}
+
+		A energia média liberada no ar por par de íons formados $W_{ar}$ é dada por:
+
+			\begin{equation}
+				W_{ar} = \frac{E_k}{N}
+			\end{equation}
+
+		\noindent onde N é o número médio de pares de íons formados quando a energia cinética inicial $E_k$ de uma partícula carregada é completamente dissipada no ar.
+
+		\begin{exemplo}
+			A melhor estimativa para o valor médio de $W_{ar}$ é de 33.97 eV/par de ions.
+
+			\begin{equation}
+				\frac{W_{ar}}{e} 
+				= \frac{33.97 (eV/par)\times 1.602 \times 10^{-19} (J/eV)}{1.602 \times 10^{-19}(C/par)}
+				= 33.97 \, J/C
+			\end{equation}
+		\end{exemplo}
+
+		Multiplicando o Kerma de colisão por $(e/W_{ar})$, o número de coulombs de carga criada por joule de energia depositada, obtém-se a carga criada por unidade de massa de ar, ou seja, a exposição:
+
+			\begin{equation}
+				X = (K_{col})_ar \left(\frac{e}{W_{ar}}\right)
+			\end{equation}
+
+		E relação entre o Kerma total no ar e a exposição é dada por:
+
+			\begin{equation}
+				K_{ar} = X \left(\frac{W_{ar}}{e}\right) \frac{1}{1 - \bar{g}}
+			\end{equation}
+
+	\section{Teorias Cavitárias}
+
+		Para medir a dose absorvida em um meio é necessário inserir um dosímetro neste meio com capacidade de medir a dose. Porém, o volume sensível deste dosímetro normalmente contém um material diferente daquele onde está inserido. Portanto, as teorias de cavidades relacionam a dose absorvida no volume sensível do detector (cavidade) com a dose absorvida no meio no qual a cavidade está inserida. 
+
+		As teorias cavitárias são divididas com base no tamanho da cavidade, quando comparada ao alcance das partículas carregadas secundárias liberadas pelos fótons (Figura \ref{fig:teoriasDasCavidades} (a)). Uma cavidade pequena é definida como uma cavidade que possui um diâmetro muito menor que o alcance dos elétrons liberados (Figura \ref{fig:teoriasDasCavidades} (b)); Uma cavidade intermediária possui um diâmetro da mesma ordem que o alcance dos elétrons secundários (Figura \ref{fig:teoriasDasCavidades} (c)); Já uma cavidade grande possui um diâmetro muito maior que o alcance dos elétrons liberados (Figura \ref{fig:teoriasDasCavidades} (c)). 
+
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.65\textwidth]{Imagens/teoriasDasCavidades.jpg}
+			\caption{Teorias Cavitárias}
+			\label{fig:teoriasDasCavidades}
+		\end{figure}
+
+		
+		\subsection{Teoria Cavitária de Bragg-Gray}
+
+			É a teoria utilizada nas pequenas cavidades, e pode ser utilizada quando as seguintes condições forem válidas:
+
+			\begin{enumerate}
+				\item A cavidade deve ser pequena o suficiente quando comparada ao alcance das partículas carregadas que incidem na cavidade de forma que sua presença no meio não perturbe a fluência das partículas carregadas no meio;\label{cond:cav1}
+				\item A dose absorvida na cavidade é depositada apenas pelas partículas carregadas que a atravessam, ou seja, as interações dos fótons na cavidade são desprezíveis de modo que possam ser ignoradas.\label{cond:cav2}
+			\end{enumerate}
+
+
+			A condição (\ref{cond:cav1}) implica que as fluências dos elétrons $\Phi_E(E)$ denotada na Equação \ref{eq:doseAbsorvidaNoMeio} é a mesma e  igual à fluência de equilíbrio estabelecida no meio circundante. Esta condição só é válida em regiões onde ocorrem equilíbrio eletrônico ou de equilíbrio eletrônico transiente. Além disto, a presença de uma cavidade no meio sempre irá causar algum grau de perturbação na fluência de modo que é necessário introduzir fatores de correção para a perturbação.
+
+			A condição (\ref{cond:cav2}) implica que todos os elétrons que depositam a dose dentro da cavidade são produzidos fora da cavidade e atravessam completamente a cavidade. Nenhum elétron secundário é, portanto, produzido dentro da cavidade e nenhum elétron irá parar completamente dentro da cavidade. 
+
+			Sob estas duas condições, a Teoria cavitária de Bragg-Gray permite que a dose no meio $D_{meio}$ e a dose na cavidade $D_{cav}$ estão relacionadas a partir da seguinte equação:
+
+				\begin{equation}
+					D_{meio} = D_{cav} \left(\frac{\bar{S}}{\rho}\right)_{meio, cav}
+				\end{equation}
+
+			\noindent onde $(\bar{S}/\rho)_{meio,cav}$ é a razão entre o poder de freamento de colisão mássico irrestrito do meio e da cavidade. O uso do poder de freamento irrestrito exclui a produção de partículas carregadas secundárias (raios delta) no meio e na cavidade.
+
+
+			Embora o tamanho da cavidade não seja explicitamente levado em conta na teoria cavitária de Bragg-Gray, ele será fundamental para obedecer as duas condições estabelecidas. Portanto, uma cavidade que se qualifique como uma cavidade de Bragg-Gray para feixes de fótons de alta energia pode não se comportar como uma cavidade de Bragg-Gray para feixes de fótons de média e baixa energia.
+
+
+		\subsection{Teoria Cavitária de Spencer-Attix}
+
+			A teoria cavitária de Bragg-Gray não considera os elétrons secundários (delta) gerados como resultado das colisões duras ocorridas durante o desaceleramento dos elétrons primários no volume sensível do dosímetro. A Teoria Cavitária de Spencer-Attix é uma formulação mais geral que considera a criação destes elétrons que possuem energia suficiente para causar suas próprias ionizações. 
+
+			Alguns dos raios delta liberados dentro da cavidade preenchida com gás terão energia suficiente para sair da cavidade carregando parte de sua energia com eles. Este fato reduz a dose absorvida na cavidade e irá requerer uma modificação no poder de freamento do gás; 
+
+			Portanto, a Teoria Cavitária de Spencer-Attix opera sob as mesmas condições estabelecidas para a Teoria Cavitária de Bragg-Gray com a diferença que estas condições serão aplicadas tanto para a fluência das partículas primárias quanto para a fluência das partículas secundárias.
+
+			A fluência das partículas secundárias são divididas em duas componentes com base no limiar de energia $\Delta$ definido pelo usuário:
+
+			\begin{enumerate}
+				\item Elétrons secundários com energia cinética $E_K$ menor que $\Delta$, onde são considerados como elétrons lentos e irão depositar sua energia localmente e não participarão da fluência das partículas secundárias; e
+				\item Elétrons secundários com energia cinética $E_K$ maior ou igual a $\Delta$, que são considerados rápidos e fazem parte do espectro dos elétrons. 
+			\end{enumerate}
+
+			Consequentemente, o espectro de partículas secundárias terá um limiar de baixa energia $\Delta$ e um limiar de alta energia $E_{K_0}$, onde $E_{K_0}$ representa a energia cinética inicial do elétron. Uma vez que a menor energia é $\Delta$, um elétron rápido com energia cinética $E_{K}$ maior ou igual a $2\Delta$ não poderá perder uma energia maior que $\Delta$; E um elétron rápido com energia cinética menor que $2\Delta$ não poderá perder uma energia maior que $E_K/2$, onde $(\Delta \leq E_K < 2\Delta)$. 
+
+			Devido a Teoria Cavitária de Bragg-Gray que estipula que não deve haver a produção de elétrons dentro da cavidade, os elétrons com energia $\Delta$ devem ser capazes de atravessar a cavidade. O limar de energia $\Delta$ está então relacionado com o tamanho da cavidade e é definido como a energia do elétron com um alcance igual ao tamanho médio da linha ao longo da cavidade. 
+
+			A relação entre a dose no meio e a dose na cavidade para a teoria cavitária Spencer-Attix é dada por:
+
+				\begin{equation}
+					\frac{D_{meio}}{D_{cav}} = s_{meio,cav}
+				\end{equation}
+
+			\noindent onde $s_{meio,cav}$ é a razão entre o poder de freamento de colisão mássico restrito do meio e da cavidade que é dado por:
+
+			
+			\begin{equation}
+				s_{meio,cav}
+				= \frac{\int_{\Delta}^{E_{K_0}} \Phi_{meio, E_k}^{e-e}(E_K)(L_{\Delta , meio}/\rho)\,dE_K + TE_{meio}}
+				{\int_{\Delta}^{E_{K_0}} \Phi_{meio, E_k}^{e-e}(E_K)(L_{\Delta , cav}/\rho)\,dE_K + TE_{cav}}
+			\end{equation}
+
+			\noindent onde:
+
+			\begin{exemplo}
+				
+			
+			\begin{flushleft}
+				$(L_{\Delta}(E_K)/\rho)$ é o poder de freamento de colisão restrito com limiar de energia $\Delta$; \\
+
+				\
+
+				$\Phi_{meio, E_k}^{e-e}(E_K)$ é a fluência de elétrons rápidos com energia variando de $\Delta$ até $E_{k_0}$.
+
+				\
+
+				$e-e$ representa a contribuição de elétrons delta no espectro de desaceleração.
+
+				\
+
+				$TE_{meio}$ e $TE_{cav}$ são chamados de termos de \textit{track end} e representam a parte da energia cinética depositada por elétrons com energia cinética inicial entre $\Delta$ e $2\Delta$ no meio e na cavidade, respectivamente. Estes elétrons podem ter uma perda de energia cinética que faz com que sua energia cinética fique menor que $\Delta$, de forma que sua energia residual após estes eventos seja depositada localmente e estes elétrons são removidos do espectro. 
+
+			\end{flushleft}
+			\end{exemplo}
+
+			Simulações de Monte Carlo mostram que existe uma diferença entre a Teoria de Bragg-Gray e a teoria de Spencer-Attix, mas que geralmente esta diferença não é muito significativa. Como os poderes de freamento colisional para diferentes meios mostram comportamentos semelhantes em função da energia, sua razão para os dois meios varia muito lentamente com a energia. 
+
+			A razão entre o poder de freamento da água e do ar para as câmaras de ionização é fracamente dependente da energia de corte. Para câmaras de ionização tipo Farmer e câmaras de placas paralelas utilizadas em radioterapia o valor nominal para a energia de corte é normalmente de \qty{10}{keV}. Para uma câmara de ionização típica usada em água, a dependência energética da relação água/ar do poder de freameno surge principalmente da diferença na correção do efeito de densidade entre os dois materiais.
+
+
+		\subsection{Aplicação da Teoria Cavitária em Câmaras de Ionização}
+
+			No contexto das teorias cavitárias, o volume sensível de um dosímetro é identificado como a cavidade, no qual pode estar preenchido com um gás, um líquido ou um sólido limitado por uma parede feita de outro material. Normalmente é utilizado gás pois permite um meio elétrico mais simples para a coleta de cargas liberadas no volume sensível pela radiação. 
+
+			O meio que envolve a cavidade de uma câmara de ionização depende da situação em que o dispositivo é usado. Em uma abordagem mais antiga, a parede (geralmente suplementada com uma tampa de buildup) serve como meio de buildup e a teoria de Bragg-Gray fornece uma relação entre a dose no gás e a dose na parede. Isso é referido como uma câmara de ionização de paredes espessas e forma a base dos padrões de kerma no ar baseados em câmaras de cavidade e dos protocolos de dosimetria baseados em $C_\lambda$ da década de 1970. Se, no entanto, a câmara for usada em um fantoma sem a capa de buildup, uma vez que as espessuras típicas da parede são muito mais finas do que o alcance dos elétrons secundários, a proporção da dose da cavidade devido aos elétrons gerados no fantoma excede em muito a contribuição da dose na parede e, portanto, o fantoma serve como meio e a parede é tratada como uma perturbação nesse conceito.
+
+			No caso de uma \textbf{\textcolor{CarnationPink}{câmara de ionização de paredes espessas}} em um feixe de fótons de alta energia, a espessura da parede deve ser maior que o alcance dos elétrons secundários no material da parede para garantir que os elétrons que atravessam a cavidade surjam da parede e não do meio. A equação da cavidade de Bragg-Gray então relaciona a dose na cavidade com a dose na parede da câmara. A dose no meio está relacionada com a dose na parede por meio de uma razão entre os coeficientes mássicos de absorção de energia do meio e da parede $(\bar{\mu}_{ab}/\rho)_{meio, wall}$, assumindo que:
+
+			\begin{enumerate}
+				\item A dose absorvida é igual ao Kerma de colisão; e
+				\item A fluência dos fótons não é perturbada pela presença da câmara.
+			\end{enumerate}
+
+			A dose na cavidade de gás está relacionada com a ionização produzida na cavidade através da equação:
+
+				\begin{equation}
+					D_{gas} = \frac{Q}{m}\left(\frac{\bar{W}_{gas}}{e}\right)
+				\end{equation}
+
+			\noindent onde $Q$ é a carga (de qualquer sinal) produzida na cavidade e $m$ é a massa de gás na cavidade.
+
+			A teoria cavitária de Spencer-Attix pode ser utilizada para calcular a dose no meio através das seguintes relações:
+
+			$$D_{meio} = D_{wall} \left(\frac{\bar{\mu}_{ab}}{\rho}\right)_{meio, wall} = D_{gas} s_{wall, gas}\left(\frac{\bar{\mu}_{ab}}{\rho}\right)_{meio, wall}$$
+
+			\begin{equation}
+				D_{meio} = \frac{Q}{m}\left(\frac{\bar{W}_{gas}}{e}\right)s_{wall, gas}\left(\frac{\bar{\mu}_{ab}}{\rho}\right)_{meio, wall}
+				\label{eq:doseParedeEspessa}
+			\end{equation}
+
+			\noindent onde $s_{wall, gas}$ é a razão entre o poder de freamento de colisão mássico restrito da parede da cavidade e do gás com um limiar de energia $\delta$. Na prática, são adicionados fatores de correção à Equação \ref{eq:doseParedeEspessa} para satisfazer as condições 1 e 2 citadas acima.
+
+			Uma equação similar à Equação \ref{eq:doseParedeEspessa} é utilizada para as calibrações de Kerma no ar; no entanto a quantidade de interesse já não é mais a dose no meio e sim o Kerma no ar e portanto são introduzidos fatores de correção substanciais para a parede afim de garantir o completo equilíbrio eletrônico na parede e satisfazer a condição 1.
+
+			No caso de uma \textbf{\textcolor{CarnationPink}{câmara de ionização de paredes finas}} em um feixe de fótons ou elétrons de alta energia, a parede, a cavidade e o eletrodo central são tradados como uma perturbação na fluência do meio e a equação envolve a razão entre os poderes de freamento restrito do meio e do gás da seguinte forma:
+
+				\begin{equation}
+					D_{meio} = \frac{Q}{m}\left(\frac{\bar{W}_{gas}}{e}\right)s_{meio, gas}\, p_{fl}\, p_{dis}\, p_{wall}\, p_{cel}
+				\end{equation}
+
+			\noindent onde:
+
+			\begin{exemplo}
+				$p_{fl}$ é o fator de correção para a perturbação na fluência dos elétrons; 
+
+				\
+
+				$p_{dis}$ é o fator de correção para o deslocamento do ponto efetivo de medida;
+
+				\
+
+				$p_{wall}$ é o fator de correção para a parede;
+
+				\
+
+				$p_{cel}$ é o fator de correção para o eletrodo central.
+			\end{exemplo}
+
+
+
+
 
 
 
