@@ -41,7 +41,7 @@
   linecolor=CarnationPink,
   frametitlerule=false,
   frametitlefont=\Large\bfseries\color{CarnationPink},
-  frametitle={\color{CarnationPink}\normalfont\bfseries Exemplo: #1},
+  frametitle={\color{CarnationPink}\normalfont\bfseries #1},
   ]
 }{%
   \end{mdframed}
@@ -333,7 +333,7 @@
                 \item A carga de trabalho é estimada com base na dose absorvida no isocentro em uma semana, calculada a partir do número médio de pacientes tratados em uma semana e a dose média utilizada nos tratamentos. 
                 \item A carga de trabalho relacionada aos controles de qualidade realizados no equipamento deve ser considerada nos cálculos de blindagem. O NCRP 49 indica que a carga de trabalho para o controle de qualidade deve ser: $W_{CQ} = 100 \; Gy/semana$ a 1 m da fonte.
                 \item Para Aceleradores Lineares com duas energias de fótons, é utilizada a carga de trabalho da energia mais alta para fins de blindagem. Porém, em algumas situações, é necessário considerar separadamente as cargas de trabalho para cada qualidade do feixe afim de determinar a espessura da barreira primária e secundária.
-                \item Em equipamentos que utilizam a técnica de IMRT, há um aumento da rasiação de fuga pelo cabeçote e portanto há um aumento da carga de trabalho para a radiação de fuga
+                \item Em equipamentos que utilizam a técnica de IMRT, há um aumento da radiação de fuga pelo cabeçote e portanto há um aumento da carga de trabalho para a radiação de fuga.
             \end{itemize}
 
         \subsection*{\textcolor{CarnationPink}{Fator Uso (U)}}
@@ -760,13 +760,11 @@
             \textbf{\textit{\textcolor{CarnationPink}{Obs:}}} Para fótons, como o fator de qualidade do feixe é igual a 1, a dose equivalente e a dose absorvida são grandezas equivalentes. 
             
         
-        \subsection{Portas e Labirintos}
+        \section{Portas e Labirintos}
 
             Os cálculos para portas e labirintos são separados para Aceleradores Lineares com energia de até \qty{10}{MV} e para Aceleradores Lineares com energias acima de \qty{10}{MV}, pois existem diferenças entre os tipos de radiação secundárias e as fluências produzidas em cada uma dessas faixas de energia.
 
-            \begin{itemize}
-                \item \textbf{\textit{\textcolor{CarnationPink}{Aceleradores com Energia de até \qty{10}{MV}}}}
-            \end{itemize}
+        \subsection{Aceleradores com Energia de até \qty{10}{MV}}
             
 
             Um labirinto é desenvolvido para diminuir o nível de radiação na entrada da sala de tratamento sem a necessidade de utilizar uma porta extemamente massiva. E a menos que o labirinto seja muito longo ou que tenha várias voltas, uma blindagem na porta ainda é necessária.
@@ -776,7 +774,7 @@
             \begin{enumerate}
                 \item Determinar a dose equivalente na posição da porta do labirinto avaliada primeiramente para o caso onde o feixe está direcionado perpendicularmente à parede em frente a porta do labirinto;
                 \item Utiliza-se uma equação empírica para relacionar a dose equivalente obtida no item anterior à dose equivalente total na porta do labirinto devido aos feixes apontados para às principais direções, 
-                \item Determina-se a espessura de material necessária para blindagem afim de reduzir a dose equivalente ao valor do limite P estabelecidoo
+                \item Determina-se a espessura de material necessária para blindagem afim de reduzir a dose equivalente ao valor do limite P estabelecido.
             \end{enumerate}
 
             \begin{figure}[h]
@@ -922,7 +920,94 @@
                 \item Em casos onde existem a técnica de TBI, o valor de \qty{2.64}{H_G} pode não ser aplicável;
             \end{enumerate}
             
+        \subsection{Aceleradores com Energia acima de \qty{10}{MV}}
+        
 
+            A Figura \ref{fig:esquemaLabirintoNeutrons} mostra o esquema de um labirinto para aceleradores de alta energia. A estimativa de dose equivalente devido aos fótons espalhados através do labirinto pode ser determinada através do método utilizado para Aceleradores com até 10 MV, no entanto, uma vez que a energia média dos raios gama de captura para o concreto é de \qty{3.6}{MeV}, uma porta e labirinto que fornece blindagem suficiente para os raios gama de captura será suficiente para os fótons espalhados.
+
+            Para labirintos em Aceleradores de alta energia, quando a distância do Ponto A até o Ponto B, apresentados na Figura \ref{fig:esquemaLabirintoNeutrons}, é maior que 2.5 m, o campo de fótons é dominado pelos raios gama de captura e a componente dos fótons espalhados pode ser ignorada. De fato, a dose equivalente dos fótons fora da porta do labirinto apenas muda ligeiramente quando o tamanho de campo formado pelo colimador é ajustado do tamanho máximo para totalmente fechado ou quando o fantoma (objeto espalhador) é removido da frente do feixe. 
+
+             
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.6\textwidth]{Imagens/esquemaLabirintoNeutrons.jpg}
+                \caption{Esquema de labirinto para Aceleradores Lineares com energia acima de 10 MV}
+                \label{fig:esquemaLabirintoNeutrons}
+            \end{figure}
+
+    \subsubsection{Dose Equivalente dos Fótons Na Porta do Labirinto}
+
+        Para calcular a dose equivalente dos raios gama de captura na porta da sala de tratamento, é utilizado um método descrito por McGinley onde, a dose equivalente $h_{\varphi}$ para os raios gama de captura na entrada externa do labirinto, por unidade de dose de raios-X absorvida no isocentro é dada pela seguinte equação:
+
+            \begin{equation}
+                h_{\varphi} = K \varphi_A 10^{-\left(\frac{d_2}{TVD}\right)}
+            \end{equation}
+
+
+        \begin{exemplo}[onde:]
+                \textcolor{CarnationPink}{$\mathbf{K}$} é a razão da dose equivalente dos raios gama de captura (Sv) com a fluência total dos nêutrons no ponto A apresentado na Figura \ref{fig:esquemaLabirintoNeutrons}. Um valor médio de K igual a \qty{6.9 e{-16}}{Sv \cdot m^2} foi encontrado com base em medidas realizadas em diversos aceleradores.
+
+                \
+
+                \textcolor{CarnationPink}{$\mathbf{\varphi_A}$} é a fluência total de nêutrons (\unit{m^{-2}}) no ponto A por unidade de dose absorvida (\unit{Gy}) dos raios-X no isocentro.
+
+                \
+
+                \textcolor{CarnationPink}{$\mathbf{d_2}$} é a distância do ponto A até a porta (m).
+
+                \
+
+                \textcolor{CarnationPink}{$\mathbf{TVD}$} é a distância deci-redutora, tendo um valor de \qty{\sim 5.4}{m} para raios-X na faixa entre \qtyrange{18}{25}{MV} e um valor de \qty{\sim 3.9}{m} para feixes de fótons de \qty{15}{MV}.
+        \end{exemplo}
+
+        A fluência total de nêutrons na entrada interna do labirinto (Ponto A na Figura \ref{fig:esquemaLabirintoNeutrons}) por unidade de dose absorvida de raios-X no isocentro pode ser determinada através da seguinte equação:
+
+            \begin{equation}
+                \varphi_A = \frac{\beta Q_n}{4 \pi d_1^2} 
+                + \frac{5.4 \beta Q_n}{2 \pi S_r} 
+                + \frac{1.3 Q_n}{2 \pi S_r}
+            \end{equation}
+
+        \begin{exemplo}[onde:]
+                O primeiro termo representa a componente dos neutrons diretos, o segundo termo representa a componente dos neutrons espalhados e a terceira componente representa os neutrons térmicos.
+
+                \
+
+                \textcolor{CarnationPink}{$\mathbf{\beta}$} é o fator de transmissão para os nêutrons que penetram a blindagem do cabeçote, tendo o valor igual a 1 para blindagens com chumbo e 0.85 para blindagens com tungstênio.
+
+                \
+
+                \textcolor{CarnationPink}{$\mathbf{d_1}$} é a distância do isocentro até o ponto A (m).
+
+                \
+
+                \textcolor{CarnationPink}{$\mathbf{Q_n}$} é a força da fonte de nêutrons dada em quantidade de neutrons emitidos pelo cabeçote do acelerador por Gy de dose absorvida de raios-x no isocentro.
+
+                \
+
+                \textcolor{CarnationPink}{$\mathbf{S_r}$} área total de superfície  da sala de tratamento (\unit{m^2})
+
+                \
+
+                \textcolor{CarnationPink}{$\mathbf{1/2\pi}$} nos termos dos nêutrons espalhados e térmicos representa a fração dos nêutrons que entram no labirinto.
+        \end{exemplo}
+
+        A dose equivalente semanal $H_{cg}$ (Sv/semana) para os raios gama de captura é dada por:
+
+            \begin{equation}
+                H_{cg} = W_L \cdot h_{\varphi}
+            \end{equation}
+
+        \begin{exemplo}[onde:]
+            \textcolor{CarnationPink}{$\mathbf{W_L}$} é a carga de trabalho para a radiação de fuga.
+        \end{exemplo}
+
+    \subsubsection{Dose Equivalente dos Nêutrons Na Porta do Labirinto}
+
+        Para Aceleradores operando em energias superiores a 10 MV é necessária uma blindagem na porta tanto para fótons quanto para nêutrons. O a dose equivalente de nêutrons na entrada do labirinto varia um pouco, mas não é afetada pela configuração do colimador. Como a máxima fluência de nêutrons é obtida quando os colimadores estão fechados, espera-se que a maioria dos fotonêutrons se originem no cabeçote dos aceleradores. O campo de neutrons no labirinto também depende do ângulo do gantry e da localização do plano rotação do alvo na sala de tratamento. Foi demonstrado que o nível de nêutrons na porta é máximo quando o ângulo de gantry está alinhado horizontalmente com a direção 3 - 1, indicado na Figura \ref{fig:esquemaLabirintoNeutrons}. 
+
+        A dose equivalente dos nêutrons na entrada externa do labirinto pode ser determinada através de diferentes métodos analíticos que utilizam o conceito de distância deci-redutora
 
 
 

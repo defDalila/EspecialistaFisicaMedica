@@ -3,9 +3,10 @@
 \usepackage[utf8]{inputenc}
 % \usepackage[T1]{fontenc}
 \usepackage{amsmath, amsfonts, amssymb}
+\usepackage{siunitx}
 \usepackage[brazil]{babel}
 \usepackage{graphicx}
-\usepackage[margin=10pt,font=small,labelfont=bf]{caption}
+\usepackage[margin=10pt,font={small, it},labelfont=bf, textfont=it]{caption}
 \usepackage[dvipsnames, svgnames]{xcolor}
 \DeclareCaptionFont{MediumOrchid}{\color[svgnames]{MediumOrchid}}
 \usepackage[pdftex]{hyperref}
@@ -17,10 +18,35 @@
 \usepackage{setspace}
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{subfigure}
 \usepackage{fancyhdr}
 \usepackage{leading}
 \usepackage{indentfirst}
 \usepackage{wrapfig}
+\usepackage{mdframed}
+\usepackage{etoolbox}
+\usepackage[version=4]{mhchem}
+
+\newcounter{exemplo}
+
+\NewDocumentEnvironment{exemplo}{ O{} }{%
+\allowbreak
+\setlength{\parindent}{0pt}
+  \begin{mdframed}[
+  leftline=true,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=2pt,
+  linecolor=CarnationPink,
+  frametitlerule=false,
+  frametitlefont=\Large\bfseries\color{CarnationPink},
+  frametitle={\color{CarnationPink}\normalfont\bfseries #1},
+  ]
+}{%
+  \end{mdframed}
+}
+
 \setlength{\fboxsep}{10pt}
 \setlength{\fboxrule}{1pt}
 \usepackage{float}
@@ -32,7 +58,7 @@
     filecolor=cyan,      
     urlcolor=cyan,
     citecolor=cyan,
-    pdftitle={Braquiterapia}
+    pdftitle={Braquiterapia}'
 }
 \pagestyle{fancy}
 \fancyhf{}
@@ -50,19 +76,19 @@
 
 	Os procedimentos de Braquiterapia podem ser classificados de acordo com a técnica do implante, duração do tratamento, taxa de dose e o tipo de carregamento.
 
-		\subsection{Técnicas implantarias}
+		\subsection{Técnicas implantárias}
 
 			Quanto a técnica de implante, a braquiterapia pode ser classificada como:
 
 		\begin{enumerate}
-			\item \textbf{Braquiterapia Intersticial:} Técnica cujas fontes são colocadas diretamente em contato com o tecido.Exemplos:Braquiterapia de próstata, braquiterapia de cabeça e pescoço, braquiterapia de sarcomas, etc...
+			\item \textbf{Braquiterapia Intersticial:} Técnica cujas fontes de braquiterapia são colocadas diretamente em contato com o tecido. Exemplos:Braquiterapia de próstata, braquiterapia de cabeça e pescoço, braquiterapia de sarcomas, etc...
 			
-			\item \textbf{Braquiterapia Intracavitária:}  Procedimento onde as fontes são colocadas dentro de cavidades com o auxílio de um aplicador, e o aplicador fica em contato com o tecido que será tratado. Exemplos: Braquiterapia ginecológica (vagina e útero), etc...
+			\item \textbf{Braquiterapia Intracavitária:}  Procedimento onde as fontes são colocadas dentro de aplicadores e que são inseridos dentro de cavidades, e o aplicador em si que fica em contato com o tecido que será tratado. Exemplos: Braquiterapia ginecológica (vagina e útero), etc...
 			
 			
 			\item \textbf{Braquiterapia Intraluminal:} Técnica que consiste na inserção das fontes com auxilio de catéteres em órgãos tubulares (lume, \textit{Do inglês - lumen}). Exemplos: Esôfago e Traqueia.
 			
-			\item \textbf{Braquiterapia Superficial:} Consiste na inserção das fontes em placas, moldes ou aplicadores que estarão em contato com a superfície externa para tratamento. Exemplos: Braquiterapia de pele e braquiterapia oftalmológica.
+			\item \textbf{Braquiterapia Superficial:} Consiste na inserção das fontes de radiação em placas, moldes ou aplicadores que estarão em contato com superfícies externas para tratamento. Exemplos: Braquiterapia de pele e braquiterapia oftalmológica.
 			
 			\item \textbf{Braquiterapia Intravascular:} Se trata da inserção das fontes de radiação em vasos sanguíneos.
 
@@ -75,9 +101,9 @@
 
 			\begin{enumerate}
 
-				\item \textbf{Braquiterapia Permanente:}  São os tratamentos no qual as fontes são permanentemente colocadas no paciente, ou seja, uma vez inseridas essas fontes não são removidas. Envolvem fontes de radiação cujo tempo de meia-vida é muito menor que o tempo de duração do implante (que se dará ao longo de todo o tempo de vida do paciente).
+				\item \textbf{Braquiterapia Permanente:}  São os tratamentos no qual as fontes são permanentemente colocadas no paciente, ou seja, uma vez inseridas essas fontes não são removidas. Este procedimento envolve fontes de radiação cujo tempo de meia-vida é muito menor que o tempo de duração do implante (que se dará ao longo de todo o tempo de vida do paciente).
 				
-				\item \textbf{Braquiterapia Temporária:} São os tratamentos onde a fonte de radiação é implantada no paciente por um curto período de tempo e então a fonte é removida. Envolve fontes de radiação cujo tempo de meia-vida é muito maior que a duração do implante.
+				\item \textbf{Braquiterapia Temporária:} São os tratamentos onde a fonte de radiação é implantada no paciente por um curto período de tempo e então a fonte é removida. Este procedimento envolve fontes de radiação cujo tempo de meia-vida é muito maior que a duração do implante.
 				
 			\end{enumerate}
 
@@ -86,18 +112,18 @@
 			Pode ser classificada como Braquiterapia de Baixa Taxa de Dose (LDR), Braquiterapia de média taxa de Dose (MDR), Braquiterapia de Alta taxa de Dose (HDR) e Braquiterapia com Taxa de Dose Pulsada (PDR), onde:
 
 			\begin{itemize}
-				\item \textbf{LDR:} Entrega a dose com uma taxa entre 0.4 Gy/h até 2 Gy/h. Com esta técnica pode ser necessário a internação do paciente devido ao longo tempo de tratamento, embora possa ser possível um atendimento ambulatorial.
-				\item \textbf{MDR:} Entrega a dose com taxas que variam de 2 Gy/h até 12 Gy/h.
-				\item  \textbf{HDR:} A dose é entregue com taxas superiores a 12 Gy/h. Devido à tecnologia utilizada para entrega da dose é possível entregar taxas de dose superiores à 7 Gy/min diminuindo significativamente o tempo de tratamento e portanto não requer internação. 
+				\item \textbf{LDR:} Entrega a dose com uma taxa de dose entre 0.4 Gy/h até 2 Gy/h. Devido ao longo tempo de tratamento, é necessário a internação do paciente para realizar o tratamento, embora possa ser possível um atendimento ambulatorial.
+				\item \textbf{MDR:} Entrega a dose com taxas de dose que variam de 2 Gy/h até 12 Gy/h.
+				\item  \textbf{HDR:} A dose é entregue com taxas de dose superiores a 12 Gy/h. Devido à tecnologia utilizada para entrega da dose é possível entregar taxas de dose superiores à 7 Gy/min diminuindo significativamente o tempo de tratamento e portanto não requer internação. 
 				\item \textbf{PDR:} Esta técnica consiste em utilizar uma fonte de HDR para simular um tratamento LDR através da emissão de um pulso de radiação a cada 1 hora.
 			\end{itemize}
 
 		\subsection{Carregamento da Fonte}
 
-			Para o carregamento da fonte no paciente são utilizados \textbf{aplicadores}, e sua utilização é justificada por dois principais motivos:
+			Para o carregamento da fonte no paciente são utilizados \textbf{aplicadores}, e a utilização de aplicadores se deve a dois principais motivos:
 
 			\begin{enumerate}
-				\item Os aplicadores permitem que o médico insira a fonte de radiação sem a necessidade de entrar em contato direto com a fonte. \textit{\textcolor{CarnationPink}{Exemplo:}} \textit{Aplicador MICK para braquiterapia de próstata, Figura \ref{img:aplicadorMick}.}
+				\item Os aplicadores permitem que o médico insira a fonte de radiação sem a necessidade do médico entrar em contato direto com a fonte. \textit{\textcolor{CarnationPink}{Exemplo:}} \textit{Aplicador MICK para braquiterapia de próstata, Figura \ref{img:aplicadorMick}.}
 
 				\begin{figure}[h]
 					\centering
@@ -116,12 +142,12 @@
 				\end{figure}
 			\end{enumerate}
 
-			Os tipos de carregamento podem ser definidos com base na forma que as fontes serão inseridas e de acordo com o tempo com que a fonte ficará em cada posição de parada.
+			Os tipos de carregamento podem ser definidos com base na forma como as fontes serão inseridas e de acordo com o tempo com o qual a fonte ficará em cada posição de parada (posições pré-definidas que a fonte irá parar para entregar a dose).
 
 			Quanto ao método de inserção das fontes, o carregamento da fonte pode ser classificado como:
 
 			\begin{itemize}
-				\item \textbf{Braquiterapia com pré-carregamento manual (\textit{preloaded}):} Onde as fontes são pré-carregadas no aplicador antes de ser inserido no paciente.
+				\item \textbf{Braquiterapia com pré-carregamento manual (\textit{preloaded}):} Onde as fontes são manualmente pré-carregadas no aplicador e na sequência o aplicador é inserido no paciente.
 				\item \textbf{Braquiterapia com pós-carregamento manual (\textit{Manually afterloaded}):} Os aplicadores são inseridos no paciente e na sequência o médico insere manualmente as fontes nos aplicadores.
 				\item \textbf{Braquiterapia com pós-carregamento remoto (\textit{Remotely afterloaded}):} O aplicador é inserido no paciente e um equipamento (o robô) é responsável por mover as fontes dentro do aplicador de acordo com as posições remotamente pré-definidas. Neste procedimento é envolvida uma maior tecnologia que permite uma maior precisão no posicionamento das fontes.
 			\end{itemize}
@@ -139,7 +165,7 @@
 						\label{img:carregamentoUniforme}
 					\end{figure}
 
-				\item \textbf{Carregamento Não-Uniforme:} As fontes permanecem tempos diferentes em cada posição de parada. Esta técnica pode ser utilizada para gerar uma distribuição de dose mais homogênea ao longo do aplicador ao utilizar um carregamento com tempos de parada maiores nas extremidades que no centro do aplicador, como mostra a Figura \ref{img:carregamentoPeriferico}.
+				\item \textbf{Carregamento Não-Uniforme:} As fontes com mesma atividade permanecem tempos diferentes em cada posição de parada. Esta técnica pode ser utilizada para gerar uma distribuição de dose mais homogênea ao longo do aplicador ao utilizar um carregamento com tempos de parada maiores nas extremidades que no centro do aplicador (carregamento periférico), como mostra a Figura \ref{img:carregamentoPeriferico}.
 				
 				\begin{figure}[h]
 					\centering
@@ -162,15 +188,23 @@
 					\label{eq:DesintegraçãoPorUnidadeDeTempo}
 				\end{equation}
 		
-				onde, 
+				\begin{exemplo}[onde:]
+					\textcolor{CarnationPink}{$\mathbf{\frac{dN}{dt}}$} é o número de desintegrações por unidade de tempo;
 
-				$\mathbf{\frac{dN}{dt}}$ é o número de desintegrações por unidade de tempo;
+					\
 
-				$\mathbf{\lambda}$ é a constante de decaimento; Refere-se a uma taxa pela qual o número de átomos radioativos diminuem ou decaem ao longo do tempo; e
+					\textcolor{CarnationPink}{$\mathbf{\lambda}$} é a constante de decaimento; Refere-se à taxa pela qual o número de átomos radioativos diminuem ou decaem ao longo do tempo; e
 
-				$\mathbf{N}$ é o número de átomos radioativos da amostra.
+					\
 
-				\textbf{\textcolor{CarnationPink}{Obs:}} O sinal negativo na equação indica que o número de átomos radioativos remanescentes na amostra diminui com o passar do tempo. 
+
+					\textcolor{CarnationPink}{$\mathbf{N}$} é o número de átomos radioativos da amostra.
+
+					\
+
+					\textit{\textbf{\textcolor{CarnationPink}{Obs:}}} O sinal negativo na equação indica que o número de átomos radioativos remanescentes na amostra diminui com o passar do tempo. 
+				\end{exemplo}
+				
 
 			\item \textbf{Lei do decaimento exponencial: } Permite obter o número de átomos radioativos em  um tempo t qualquer que ainda não decaíram, ou seja, indica o número de átomos de um determinado elemento instável que não sofreram transformação.
 
@@ -187,7 +221,7 @@
 
 				$N(t)$ é a quantidade de átomos radioativos remanescentes após um tempo t.
 
-				Através da Equação \ref{eq:decaimentoExponencial} podemos extrair que a fração de átomos que permanecem na amostra após um tempo t é dada por 
+				Através da Equação \ref{eq:decaimentoExponencial} podemos extrair que a fração de átomos que permanecem na amostra após um tempo t é dada por:
 
 				\begin{equation}
 					\frac{N(t)}{N_0}
@@ -219,8 +253,6 @@
 					N = \left({1/2}\right)^n N_0
 				\end{equation}
 
-
-
 % Deduzir o porque a vida média assume que N é igual a 1/e				
 			\item \textbf{Tempo de vida-média ($\tau$): } Se caracteriza como o tempo necessário para que todos os átomos radioativos decaiam assumindo que a taxa de decaimento se mantenha fixa em seu valor inicial.
 			
@@ -232,9 +264,9 @@
 					\tau = 1.44 \times t_{1/2}
 				\end{equation}
 
-				\textbf{\textcolor{CarnationPink}{Obs:} } O tempo de vida média é utilizado para calcular a dose total recebida em um implante permanente pois as fontes radioativas ficarão em todo o seu tempo de vida inseridas no paciente e a vida média descreve o tempo médio total que um material permanece radioativo.
+				\textbf{\textcolor{CarnationPink}{Obs:}} O tempo de vida média é utilizado para calcular a dose total recebida em um implante permanente pois as fontes radioativas ficarão em todo o seu tempo de vida inseridas no paciente e a vida média descreve o tempo médio total que um material permanece radioativo.
 
-			\item \textbf{Meia Vida Biológica ($t_{biol}$): } É o tempo que leva para a metade da fonte ser eliminada pelo próprio corpo.
+			\item \textbf{Meia Vida Biológica ($t_{biol}$):} É o tempo que leva para a metade da fonte ser eliminada pelo próprio corpo.
 			
 			\item \textbf{Meia Vida Efetiva ($t_{eff}$): } É o tempo de meia vida que considera tanto a eliminação biológica do material quanto o seu tempo de decaimento.
 			
