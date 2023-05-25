@@ -324,21 +324,26 @@
             \begin{itemize}
                 \item O período de tempo para obter a carga de trabalho é de \textbf{1 semana}.
                 \item A unidade de medida para a carga de trabalho é $[W] = Gy/semana$
-                \item Uma outra carga de trabalho $W_2$ para uma distância diferente da distância de referência de 1 m da fonte é obtida através da lei do inverso quadrado da distância:
+                \item Uma outra carga de trabalho $W_2$ para uma distância diferente da distância de referência de 1 m da fonte, como ocorre em tratamentos de TBI, é obtida através da lei do inverso quadrado da distância:
                 
                     \begin{equation}
                         W_2 = W_1 \left(\frac{1 \; m}{d_2}\right)^2
                     \end{equation}
 
                 \item A carga de trabalho é estimada com base na dose absorvida no isocentro em uma semana, calculada a partir do número médio de pacientes tratados em uma semana e a dose média utilizada nos tratamentos. 
-                \item A carga de trabalho relacionada aos controles de qualidade realizados no equipamento deve ser considerada nos cálculos de blindagem. O NCRP 49 indica que a carga de trabalho para o controle de qualidade deve ser: $W_{CQ} = 100 \; Gy/semana$ a 1 m da fonte.
+                \item A carga de trabalho relacionada aos controles de qualidade e outras medidas feitas pela física no equipamento deve ser considerada nos cálculos de blindagem. O NCRP 49 indica que a carga de trabalho para o controle de qualidade deve ser: $W_{CQ} = 100 \; Gy/semana$ a 1 m da fonte.
+                \item Para feixes com duas energias e feixes de elétrons, é necessário separar a carga de trabalho para cada energia de fótons e normalmente a maior energia que determinará a blindagem necessária.
                 \item Para Aceleradores Lineares com duas energias de fótons, é utilizada a carga de trabalho da energia mais alta para fins de blindagem. Porém, em algumas situações, é necessário considerar separadamente as cargas de trabalho para cada qualidade do feixe afim de determinar a espessura da barreira primária e secundária.
+                \item Deve-se fornecer uma estimativa altamente conservadora para o número de pacientes tratados por dia, utilizando como base o número de equipamentos, dados históricos e demográficos.
+                \item Naqueles equipamentos onde não é possível estimar a carga de trabalho clínica, recomenda-se utilizar o valor de 1000 Gy/semana para aceleradores com energia de até 10 MV e 500 Gy/semana para aceleradores com energias acima de 10 MV.
+                \item Em equipamentos que utilizam TBI, a carga de trabalho no isocentro é muito maior que os tratamentos convencionais que utilizam a mesma dose absorvida devido à distância extendida utilizada para este tratamento.
+                
                 \item Em equipamentos que utilizam a técnica de IMRT, há um aumento da radiação de fuga pelo cabeçote e portanto há um aumento da carga de trabalho para a radiação de fuga.
             \end{itemize}
 
         \subsection*{\textcolor{CarnationPink}{Fator Uso (U)}}
 
-            É definido como a fração da carga de trabalho do feixe primário que é direcionada para a barreira primária.
+            É definido como a fração da carga de trabalho do feixe primário que é direcionada para a barreira primária. É um fator que é função do ângulo do gantry e irá depender das geometrias utilizadas nos campos de tratamento. Por exemplo, uma variação de \ang{90} entre os campos descreve uma geometria \textit{4-field box}, e o fator uso para estas angulações pode ser utilizado. Porém, um equipamento que realize mais tratamentos com tangentes para mamas terá uma ângulação oblíqua mais adequada para determinação do fator uso. As Figuras \ref{fig:fatorUso} e \ref{fig:fatorUso2} mostram exemplos de fatores uso recomendados por grandes centros.
 
             \begin{itemize}
                 \item O Fator Uso é dependente das técnicas utilizadas na instalação;
@@ -346,6 +351,20 @@
                 \item Nos Casos em que são utilizados maioritariamente campos tangentes, as incidências nas angulações oblíquas devem ser analisadas;
                 \item Em instalações que realizam procedimentos de TBI deverão considerar um maior fator uso para a parede para onde o feixe é direcionado nesse procedimento.
             \end{itemize}
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.8\textwidth]{Imagens/fatorUso.JPG}
+                \caption{Exemplo de fator uso para diferentes variações de ângulo de gantry em casos que varia os campos com um intervalo de \ang{90} e \ang{45}.}
+                \label{fig:fatorUso}
+            \end{figure}
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.8\textwidth]{Imagens/fatorUso2.JPG}
+                \caption{Exemplo de fator uso para diferentes variações de ângulo de gantry em casos que varia os campos com um intervalo de \ang{90}.}
+                \label{fig:fatorUso2}
+            \end{figure}
 
 
         \subsection*{\textcolor{CarnationPink}{Fator Ocupação (T)}}
@@ -415,7 +434,7 @@
 
             Ao final, deverá ser apresentados os cálculos que levaram à determinação das barreiras necessárias para atingir os níveis de dose otimizados dos diferentes pontos de cálculo.
 
-    \section{Calculo de Blindagens}
+    \section{Cálculos de Blindagem para as Barreiras}
 
         \subsection{Cálculo de Blindagem Para a Barreira Primária}
             
@@ -542,8 +561,10 @@
                 B = 10^{-\left\{1 + \left[\frac{t - TVL_1}{TVL_e}\right]\right\}}
             \end{equation}
 
+            Este valor irá representar a verdadeira transmissão da barreira após considerar os valores das camadas deci-redutoras que serão utilizadas na blindagem.
+
             
-            Quando o material utilizado é o concreto, seja ele comum ou denso, a espessura obtida através destes cálculos são suficientes para absorver os fotons-neutrons e radiação gama emitida por captura de neutrons, devido a alta quantidade de hidrogênio presente nesse material e portanto nenhuma barreira adicional é necessária. Porém, ao utilizar outros materiais na barreira primária, algumas considerações especiais precisam ser feitas.
+            Quando o material utilizado é o concreto, seja ele comum ou denso, a espessura obtida através destes cálculos são suficientes para absorver os fotonêutrons e radiação gama emitida por captura de neutrons, devido a alta quantidade de hidrogênio presente nesse material e portanto nenhuma barreira adicional é necessária. Porém, ao utilizar outros materiais na barreira primária, algumas considerações especiais precisam ser feitas.
 
             Embora a técnica de IMRT utilize um alto número de unidades monitoras ou tempo de beam-on, ela utiliza feixes muito estreitos e então a carga de trabalho média sobre qualquer área de 100 cm\textsuperscript{2} na barreira primária é aproximada para as cargas de trabalho padrão;
 
@@ -917,7 +938,7 @@
             \begin{enumerate}
                 \item Para AL's com energia menor que \qty{10}{MV}, a blindagem da porta é baseada em dados de transmissão de um feixe largo para fótons de \qty{0.2}{MeV}.
                 \item Caso a parede interna do labirinto seja muito estreita, o espectro de energia e intensidade de radiação que chega na porta irá aumentar devido ao aumento da radiação de fuga que é emitida por esta parede. Nestes casos a blindagem da porta será determinada somente pela componente $H_{LT}$ e serão utilizados os dados de transmissão para as energias da radiação de fuga; No geral, este não será o caso se a componente $H_{LT}$ for menor que a componente $H_G$;
-                \item Em casos onde existem a técnica de TBI, o valor de \qty{2.64}{H_G} pode não ser aplicável;
+                \item Em casos onde existem a técnica de TBI, o valor de \qty{2.64}{H_G} pode não ser aplicável; Como a técnica de TBI envolve o tratamento em uma localização diferente do isocentro, os efeitos da radiação espalhada na porta deverão ser considerados. 
             \end{enumerate}
             
         \subsection{Aceleradores com Energia acima de \qty{10}{MV}}
@@ -997,6 +1018,7 @@
 
             \begin{equation}
                 H_{cg} = W_L \cdot h_{\varphi}
+                \label{eq:doseEquivalenteRaiosGamaCaptura}
             \end{equation}
 
         \begin{exemplo}[onde:]
@@ -1007,7 +1029,282 @@
 
         Para Aceleradores operando em energias superiores a 10 MV é necessária uma blindagem na porta tanto para fótons quanto para nêutrons. O a dose equivalente de nêutrons na entrada do labirinto varia um pouco, mas não é afetada pela configuração do colimador. Como a máxima fluência de nêutrons é obtida quando os colimadores estão fechados, espera-se que a maioria dos fotonêutrons se originem no cabeçote dos aceleradores. O campo de neutrons no labirinto também depende do ângulo do gantry e da localização do plano rotação do alvo na sala de tratamento. Foi demonstrado que o nível de nêutrons na porta é máximo quando o ângulo de gantry está alinhado horizontalmente com a direção 3 - 1, indicado na Figura \ref{fig:esquemaLabirintoNeutrons}. 
 
-        A dose equivalente dos nêutrons na entrada externa do labirinto pode ser determinada através de diferentes métodos analíticos que utilizam o conceito de distância deci-redutora
+        A dose equivalente dos nêutrons na entrada externa do labirinto pode ser determinada através de diferentes métodos analíticos que utilizam o conceito de distância deci-redutora (TVD) onde a TVD é aproximadamente igual a três vezes a raiz quadrada do produto da altura vezes a largura da abertura e que cada braço adicional na abertura do labirinto diminui a fluência aproximadamente mais três vezes. 
+
+        No \textcolor{CarnationPink}{\textbf{\textit{Método de Kersey}}} a posição efetiva da fonte de neutrons é definida no isocentro do acelerador e a dose equivalente para os neutrons ($H_{n,D}$) na entrada externa do labirinto por unidade de dose absorvida de raios-X no isocentro é dada por:
+
+        \begin{equation}
+            H_{n,D} = (H_0) \left(\frac{S_0}{S_1}\right) \left(\frac{d_0}{d_1}\right)^2 10^{-\left(\frac{d_2}{5}\right)}
+        \end{equation}
+
+        \begin{exemplo}[onde:]
+            \textcolor{CarnationPink}{$\mathbf{H_0}$} é a dose equivalente total para os nêutrons, incluindo os componentes direto, espalhado e térmicos na distância $d_0$ (1.41 m) a partir do alvo por unidade de dose absorvida de raios-X no isocentro (\unit{mSv \cdot Gy^{-1}}). Esses valores são encontrados na tabela B.9 no apêndice do NCRP 151.
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{S_0}$} é a área da seção transversal da entrada interna do labirinto.
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{S_1}$} é a área da seção transversal do labirinto visto pela entrada externa.
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{d_1}$} é a distância do isocentro até o ponto na linha central do labirinto a partir do qual o isocentro é visível (A).
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{d_2}$} é a distância do ponto A até a entrada do labirinto (Ponto B) no caso de labirintos com apenas 1 curva. Para labirintos com duas curvas, é a distância do ponto A até o Ponto C somado com a distância do ponto C até o Ponto D.
+
+            \
+
+            \textcolor{CarnationPink}{\textbf{Obs:}} neste método, o quociente igual a 5 indica que o labirinto possui uma TVD de 5 m para a atenuaçãod os neutrons no labirinto. 
+
+        \end{exemplo}
+
+        Medidas experimentais mostraram que a razão entre a dose equivalente para neutrons calculada com o método de Kersey e a dose equivalente medida diretamente pode variar entre 0.82 até 2.3 em aceleradores com energia de 15 MV até 18 MV e que a TVD é aproximadamente 16\% menor que 5 m e portanto este valor pode ser usado de forma conservadora.
+
+        O \textcolor{CarnationPink}{\textbf{\textit{Método de Kersey Modificado}}} leva em consideração as diferenças experimentais encontradas no método tradicional afim de se obter uma representação mais realística da dose equivalente devido aos nêutrons, dada pela seguinte equação:
+
+        \begin{equation}
+            H_{n,D} = 2.4 \times 10^{-15} \varphi_A \sqrt{\frac{S_0}{S_1}}
+            \left[1.64 \times 10^{-\left(\frac{d_2}{1.9}\right)} + 10^{-\left(\frac{d_2}{TVD}\right)}\right]
+        \end{equation}
+
+        \begin{exemplo}[onde:]
+            \textcolor{CarnationPink}{$\mathbf{H_{n,D}}$} é a dose equivalente devido aos neutrons na entrada do labirinto por unidade de dose absorvida (Gy) de raios-X no isocentro (\unit{Sv \cdot n^{-1} \cdot m^2}).
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{\varphi_A}$} é a fluência de neutrons por unidade de dose absorvida devido aos fótons no isocentro (\unit{m^{-2} \cdot Gy^{-1}}).
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{S_0/S_1}$} razão entre a área da seção transversal da entrada interna do labirinto e a área da seção transversal ao longo do labirinto.
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{TVD}$} é a distância deci-redutora, dada em metros, que varia com a raiz quadrada a área da seção transversal ao londo do labirinto (\unit{m^2}) $S_1$, ou seja:
+
+                \begin{equation}
+                    TVD = 2.06 \sqrt{S_1}
+                \end{equation}
+        \end{exemplo}
+
+        A dose equivalente semanal $H_n$ (\unit{Sv / semana}) na porta devido aos neutrons é dada por:
+
+        \begin{equation}
+            H_n = W_L \cdot H_{n,D}
+            \label{eq:doseEquivalenteNeutrons}
+        \end{equation}
+
+        \begin{exemplo}[onde:]
+            \textcolor{CarnationPink}{$\mathbf{W_L}$} é a carga de trabalho semanal para a radiação de fuga.
+        \end{exemplo}
+
+    \subsection{Dose Equivalente Total na Porta do Labirinto}   
+
+        A dose equivalente semanal total $H_W$ na entrada externa do labirinto é dada pela soma de todas as componentes que contribuem para a dose equivalente, ou seja:
+
+        \begin{equation}
+            H_W = H_{tot} + H_{cg} + H_{n}
+        \end{equation}
+
+        \begin{exemplo}[onde:]
+            \textcolor{CarnationPink}{$\mathbf{H_{tot}}$} é a componente relacionada a radiação de fuga e a radiação espalhada, dada pela Equação \ref{eq:doseEquivalenteTotalParaALcomEMenorQue10}.
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{H_{cg}}$} é a componente relacionada aos raios gama de captura, dada pela Equação \ref{eq:doseEquivalenteRaiosGamaCaptura}.
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{H_n}$} é a componente relacionada aos nêutrons dada pela Equação \ref{eq:doseEquivalenteNeutrons}.
+        \end{exemplo}
+
+        Para a maior parte dos aceleradores com energia acima de 10 MV, a componente $H_{tot}$ possui uma ordem de grandeza muito menor que a soma de $H_{cg}$ com $H_n$, de forma que esta componente pode ser desprezada.
+
+    \subsection{Blindagem da Porta}
+
+        A blindagem na porta devido a radiação de fuga e a radiação espalhada pode ser obtida com base no fator de transmissão da porta dado pela Equação \ref{eq:TransmissaoBlindagemPorta}. No entanto, em altas energias a componente devido à fuga e espalhamento é relativamente baixa quando comparado às outras componentes que se tornam energéticamente possíveis para maiores energias (neutrons e raios gama de captura). A energia média para os raios gama de captura é de \qty{3.6}{MeV} e pode alcancar energias da ordem de \qty{10}{MeV} em casos onde os labirintos são muito curtos. Nestes casos pode ser necessário uma TVL de chumbo (equivalente a 6.1 cm). 
+
+        A energia média dos neutrons na entrada do labirinto é de \qty{\sim 100}{KeV} com uma TVL de polietileno de 4.5 cm. O Polietileno Borado (BPE) (5\% de boro) é apenas um pouco menos eficaz para neutrons rápidos mas é muito mais eficaz para neutrons térmicos quando comparado com o polietileno sem o boro.  A TVL para o BPE é de 3.8 cm para neutrons com energia de 2 MeV e de 1.2 cm para neutrons térmicos. Portanto, uma recomendação conservadora é utilizar a TVL de 4.5 cm de BPE nos cálculos de blindagem da porta.
+
+        Para as portas onde o comprimento do labirinto seja da ordem de 8 m ou superior, será necessário entre 0.6 cm de chumbo até 1.2 cm de chumbo e entre 2 cm a 4 cm de BPE. Estes elementos deverão ser dispostos tendo uma camada de BPE entre duas camadas de chumbo pois, o chumbo virado para a fonte de nêutrons irpa reduzir a energia dos neutrons devido a espalhamentos não-elástivos e então tornará o BPE mais efetivo na blindagem dos neutrons enquanto que a camada externa de chumbo irá atenuar os raios gama de captura emitidos no BPE com energia de 478 KeV. Quando o labirinto é longo o suficiente para atenuar os neutrons antes que eles cheguem à porta, a camada externa de chumbo não será necessária.
+
+    \section{Procedimentos Especiais}
+
+    \subsection{TBI}
+
+    Em equipamentos que utilizam TBI, a carga de trabalho no isocentro é muito maior que os tratamentos convencionais que utilizam a mesma dose absorvida devido à distância extendida utilizada para este tratamento. A carga de trabalho para o TBI é dada por:
+                
+    \begin{equation}
+        W_{TBI} = D_{TBI} \cdot d_{TBI}^2
+    \end{equation}
+
+    \begin{exemplo}[onde:]
+        \textcolor{CarnationPink}{$\mathbf{D_{TBI}}$} e a dose absorvida semanal semanal total no tratamento de TBI
+        
+        \
+
+        \textcolor{CarnationPink}{$\mathbf{d_{TBI}}$} é a distância do isocentro até a distância de tratamento do TBI.
+    \end{exemplo}
+
+    Cada carga de trabalho individual é multiplicada pelo fator uso para fins de cálculo de blindagem e o fator uso para o TBI é igual a 1 para a parede onde o paciente ficará an frente para o tratamento e zero para as demais, portanto a carga de trabalho do TBI só será contabilizada para o cálculo da barreira onde ficará na frente. 
+
+    \subsection{IMRT}
+
+        Nos tratamentos de IMRT, incluindo SRS e SBRT, devido ao pequeno tamanho de campo é necessário um número elevado de unidades monitoras que aquele necessário nos tratamentos convencionais com a mesma dose absorvida no isocentro. 
+
+        O Fator IMRT ($C_I$) é a razão entre o número médio de unidades monitoras por uinidade de dose absorvida prescrita necessária para um tratamento de IMRT ($MU_{IMRT}$) e o número médio de unidades monitoras por unidade de dose absorvida prescrita para um tratamento convencional ($MU_{conv}$). 
+
+        Para obter este fator, toma-se uma amostra de i casos de IMRT e calcula-se a média das unidades monitoras necessárias para entregar uma dose prescrita por fração ($D_{pre}$) para estes i casos e deve-se incluir as medidas de QA necessárias para cada caso, calculadas em média sobre o número total de frações de tratamento. Portanto, $MU_{IMRT}$ é dada por:
+
+        \begin{equation}
+            MU_{IMRT} = \sum_{i}\frac{MU_i}{(D_{pre})_i}
+        \end{equation}
+         
+        Na sequência, calcula-se o número de MU necessária para entregar a mesma dose absorvida em um fantoma a 10 cm de profundidade na SSD de 100 cm utilizando um campo 10 cm x 10 cm para obter a quantidade $MU_{conv}$ e então obten-se o fator $C_I$, onde:
+
+        \begin{equation}
+            C_I = \frac{MU_{IMRT}}{MU_{conv}}
+        \end{equation}
+
+        Os valores de $C_I$ variam de 2 até valores superiores a 10.  O aumento no numero de MU para tratamentos de IMRT não aumentam significativamente a carga de trabalho para a barreira primária ou para a componente da radiação espalhada da barreira secundária pois a dose absorvida no isocentro são similares. No entando, a contribuição na carga de trabalho para a radiação de fuga é significativamente maior por um fator tão grande quanto $C_I$ dependendo da fração de pacientes que são tratados com IMRT.
+
+    \subsection{QA}
+
+        Se as medidas de QA forem realizadas rotineiramente durante o horário normal de trabalho, o efeito na carga de trabalho pode não ser insignificante em comparação com a carga de trabalgho do tratamento convencional e o impacto nos requistos de proteção da barreira deve ser avaliado. 
+
+        Se a verificação da dose absorvida de tratamentos de IMRT constituir uma parte significativa das medições de QA, um fator de QA ($C_{QA}$) semelhante ao fator de IMRT ($C_I$) pode ser necessário para considerar o aumento nas unidades monitoras.
+
+
+    \subsection{Efeito dos Procedimentos Especiais nos Cálculos}
+
+        \begin{itemize}
+            \item \textbf{\textcolor{CarnationPink}{Barreira Primária}}
+        \end{itemize}
+
+        Para considerar as diferenças nas cargas de trabalho o produto do fator uso pela carga de trabalho é substituido pela soma dos produtos da carga de trabalho pelo fator uso de cada técnica, portanto:
+
+
+        \begin{equation}
+            WU\vert _{prim} = WU\vert _{wall,scat} = W_{conv}U_{conv} + W_{TBI}U_{TBI} + W_{IMRT}U_{IMRT} + W_{QA}U_{QA} + \dots
+        \end{equation}
+
+        \begin{exemplo}[onde:]
+            \textcolor{CarnationPink}{$\mathbf{ WU\vert _{prim}}$} é o produto da carga de trabalho pelo fator uso para a barreira de radiação primária.
+
+            \
+
+
+            \textcolor{CarnationPink}{$\mathbf{WU\vert _{wall,scat}}$} é o produto da carga de trabalho pelo fator uso para a barreira de radiação espalhada pela parede.
+            
+            \
+
+            
+            \textcolor{CarnationPink}{$\mathbf{W_x}$} é a carga de trabalho em Gy/semana a 1 m para o tipo de procedimento x;
+            
+            \
+
+            
+            \textcolor{CarnationPink}{$\mathbf{U_X}$} é o fator uso ou fração do tempo que o feixe provavelmente estará incidindo sobre a barreira durante o tipo de procedimento x.
+        \end{exemplo}
+    
+        \begin{itemize}
+            \item \textbf{\textcolor{CarnationPink}{Barreira Secundária - Radiação Espalhada pelo Paciente}}
+        \end{itemize}
+
+        Neste caso, a carga de trabalho sera dada pela soma das cargas de trabalho para todas as técnicas avaliada no isocentro, ou seja:
+
+        \begin{equation}
+            W_{pat scat_{iso}} = W_{conv} + W_{IMRT} + W_{QA} + \dots
+        \end{equation}
+
+        Normalmente é utilizado um ângulo de espalhamento de \ang{90} e um fator uso de 1, onde será alcançado um resultado conservador para a blindagem uma vez que o aumento da intensidade para angulos de espalhamento pequenos quando comparados ao angulo de espalhamento de \ang{90} é geralmente compensado por um fator de uso muito pequeno para angulações de gantry que produzem ângulos de espalhamento pequenos.
+
+        Para tratamentos de TBI que são realizados com uma SSD extendida, a radiação espalhada pelo paciente surge de uma localização diferente  do isocentro e portanto os valores de $d_{sca}$ e $d_{sec}$ serão diferentes e portanto a blindagem necessária para a radiação espalhada pelo paciente devido ao TBI deve ser calculada separadamente.
+
+        Se as TVL's necessárias para blindade m das duas componentes da radiação espalhada pelo paciente (convencionel e TBI) diferirem por menos de 1 TVL, a maior TVL é utilizada e é adicionada 1 HVL na blindagem, caso contrário, se a diferença for maior que 1 TVL, a maior TVL é utilizada. 
+
+        \begin{itemize}
+            \item \textbf{\textcolor{CarnationPink}{Barreira Secundária - Radiação de Fuga}}
+        \end{itemize}
+
+
+        A carga de trabalho para a radiação de fuga é dada por:
+
+        \begin{equation}
+            W_L = W_{conv} + W_{TBI} + C_I W_{IMRT} + C_{QA} W_{QA}
+        \end{equation}
+
+        Este valor é utilizada para cálculos de fuga de fótons e produção de neutrons.
+
+    \subsection{Taxa De Dose Equivalente Média}
+
+        Ao determinar uma barreira, assume-se que a carga de trabalho será uniformemente distribuída ao longo do ano, pontando é razoável projetar uma barreira que atenda ao valor semanal de 1/50 o valor do objetivo anual. Porém, escalas menores do objetivo da blindagem não são apropriadas e podem se tornar incompatíveis com o princípio ALARA. Mais precisamente, o uso de medidas instantâneas de taxa de dose equivalente (IDR) com o acelerador operando com o output máximo não representa propriamente as verdaderias condições de operação. É mais útil se a carga de trabalho e o fator uso forem utilizados em conjunto com a IDR para avaliar a eficácia da barreira. 
+
+        A taxa média de dose equivalente no tempo (TADR) é a taxa média de dose equivalente atenuada pela barreira sob um período de tempo de operação específico, que depende de W e U e pode ser avaliada em dois periodos de tempo de interesse: semana e hora.
+
+        A taxa média de dose equivalente por semana (${R_W}$) é a TADR avaliada em  um local  durante uma semana de trabalho de 40 horas. Para a barreira primária é dada por:
+
+        \begin{equation}
+            R_w = \frac{IDR \cdot W_{pri} U_{prim}}{\dot{D}_0}
+        \end{equation}
+
+        \begin{exemplo}[onde:]
+            \textcolor{CarnationPink}{$\mathbf{R_w}$} é a TADR avaliada em uma semana (\unit{Sv \cdot semana^{-1}})
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{IDR}$} é a taxa de dose equivalente instantânea (\unit{Sv \cdot h^{-1}} medido com o equipamento operando com o output de taxa de dose absorvida $\dot{D}_0$). a IDR é determiada a 30 cm além da barreira e para as medições realizadas em aceleradores é calculada a média de 20s a 60 s dependendo do tempo de resposta do instrumento e do ciclo de pulso do acelerador
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{\dot{D}_0}$} é o output da taxa de dose absorvida a 1m (\unit{Gy \cdot h^{-1}})
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{W_{prim}}$} é a carga de trabalho para a barreira primária (\unit{Gy \cdot semana^{-1}})
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{U_{pri}}$} é o fator uso para o local de análise.
+        \end{exemplo}
+
+        Para barreiras secundárias, $R_w$ tem contribuição da radiação de fuga e da radiação espalhada pelo paciente, que é obtida através da seguinte equação:
+
+        \begin{equation}
+            R_w = \left(IDR_L \frac{W_L}{\dot{D_0}}\right) + \left(IDR_{ps} \frac{W_{ps} U_{ps}}{\dot{D_0}}\right)
+        \end{equation}
+
+        \begin{equation}
+            IDR_{ps} = IDR_{tot} - IDR_{L}
+        \end{equation}
+
+        \begin{exemplo}[onde:]
+            \textcolor{CarnationPink}{$\mathbf{IDR_L}$} é a taxa de dose equivalente medida num ponto localizado a 30 cm atrás da barreira secundária na ausência de um fantoma no isocentro.
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{IDR_{tot}}$} é a taxa de dose equivalente medida no mesmo ponto na presença do fantoma.
+
+            \
+
+            \textcolor{CarnationPink}{$\mathbf{IDR_{ps}}$} taxa de dose equivalente medida no mesmo ponto devido a radiação espalhada pelo paciente.
+
+        \end{exemplo}
+
+
+        Alguns protocolos de segurança especificam um limite de taxa média de dose equivalente TADR com vase no valor integrado da taxa de dose equivalente em qualquer hora ($R_h$) para áreas livres. O NRC determina o valor de 0.02 mSv em qualquer hora. 
+
+        O Valor de $R_h$ é derivado com base no número máximo de pacientes que podem ser tratados em qualquer hora considerando o tempo para o setup. Portanto:
+
+        \begin{equation}
+            R_h = N_{max} \bar{H}_{pt} = \frac{N_{max} R_w}{\bar{N}_w}
+            = \left(\frac{N_{max}}{40 \bar{N}_h}\right)R_W
+            = \left(\frac{M}{40}\right)R_w
+        \end{equation}
 
 
 
