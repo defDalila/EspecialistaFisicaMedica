@@ -732,7 +732,7 @@
             E o fator de transmissão para a radiação de fuga é obtido através da Equação \ref{eq:fatorTransmissaoRadiacaoDeFuga}.
 
                 \begin{equation}
-                    B_L = \frac{P \; d_L^2}{10^{-3} \; W ; T}
+                    B_L = \frac{P \; d_L^2}{10^{-3} \; W \; T}
                     \label{eq:fatorTransmissaoRadiacaoDeFuga}
                 \end{equation}
 
@@ -744,7 +744,7 @@
                 
                 \item $P$ = É o limite de dose semanal a ser alcançado através da blindagem [\unit{Sv/semana}]
                 
-                \item $\alpha$ = É a fração de espalhamento ou fração da dose absorvida do feixe primário que é espalhada pelo paciente em um ângulo perpendicular à parede. É definida como a razão entre a intensidade da radiação espalhada a \qty{1}{m} do objeto espalhador e a intensidade de radiação primária no isocentro.
+                \item $\alpha$ = É a fração de espalhamento ou fração da dose absorvida do feixe primário que é espalhada pelo paciente em um determinado ângulo. É definida como a razão entre a intensidade da radiação espalhada a \qty{1}{m} do objeto espalhador e a intensidade de radiação primária no isocentro.
                 
                 \item $W$ = É a carga de trabalho semanal [\unit{Gy/semana}] 
                 
@@ -764,7 +764,7 @@
             \end{itemize}
 
             
-            \textbf{\textit{\textcolor{CarnationPink}{Obs:}}} O fator uso é tomado como sendo igual a 1 para a radiação espalhada, pois o fator uso é uma função do ângulo do Gantry para uma dada direção e a radiação espalhada assume diversas direções;
+            \textbf{\textit{\textcolor{CarnationPink}{Obs:}}} O fator uso nas equações da barreira secundária é tomado como sendo igual a 1 para a radiação espalhada pelo paciente. O fator U é uma função do ângulo do gantry. No entanto, se os cálculos são realizados para um ângulo mínimo de espalhamento entre o paciente e o ponto de cálculo e o fator de uso igual a 1 também for utilizado, a espessura da barreira será superestimada devido ao valor para a fração de espalhamento ser conservadoramente alto para pequenos ângulos de espalhamento. 
 
             \begin{itemize}
                 \item Em práticas que utilizam as técnicas de IMRT, a carga de trabalho para a radiação de fuga deve ser alterada.
