@@ -1,0 +1,485 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{siunitx}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[margin=10pt,font={small, it},labelfont=bf, textfont=it]{caption}
+\usepackage[dvipsnames, svgnames]{xcolor}
+\DeclareCaptionFont{MediumOrchid}{\color[svgnames]{MediumOrchid}}
+\usepackage[pdftex]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\bibpunct{[}{]}{,}{s}{}{}
+\usepackage{color}
+\usepackage{footnote}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{leading}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{mdframed}
+\usepackage{etoolbox}
+\usepackage[version=4]{mhchem}
+\usepackage{enumitem}
+
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+
+
+\newcounter{exemplo}
+
+\NewDocumentEnvironment{exemplo}{ O{} }{%
+\allowbreak
+\setlength{\parindent}{0pt}
+  \begin{mdframed}[
+  leftline=true,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=2pt,
+  linecolor=CarnationPink,
+  frametitlerule=false,
+  frametitlefont=\Large\bfseries\color{CarnationPink},
+  frametitle={\color{CarnationPink}\normalfont\bfseries #1},
+  ]
+}{%
+  \end{mdframed}
+}
+
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{1pt}
+\usepackage{float}
+\renewcommand{\thefootnote}{\alph{footnote}}
+\usepackage{url}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=cyan,      
+    urlcolor=cyan,
+    citecolor=cyan,
+    pdftitle={Resumos}
+}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{Página \thepage}
+
+\title{Resumo}
+\author{Notas Rápidas \nocite{*}}
+\date{\textit{Dalila Mendonça}}
+\begin{document}
+	\maketitle
+
+
+\begin{exemplo}[9. Técnicas Avançadas de Tratamento]
+    \textcolor{CarnationPink}{Radioterapia de Intensidade Modulada (IMRT)}
+    \begin{itemize}
+        \item A técnica de IMRT é caracterizada pela entrega de feixes com intensidade não uniforme. Isto requer que cada feixe seja composto por múltiplos segmentos. Estes perfis de intensidade não uniforme, ou seja, as fluências do feixe,  são determinadas por um algoritmo de otimização desenvolvido para atender os objetivos do planejamento definido pelo usuário;
+        
+        \item As principais diferenças entre a Radioterapia Conformacional 3D e a Radioterapia com Intensidade Modulada são que: Na Radioterapia Conformacional 3D são utilizados múltiplos planos cada um com uma única abertura que se adapta ao volume alvo ou protege, intencionalmente, órgãos de risco para produzir uma distribuição de dose conformada. Já o IMRT utiliza múltiplas aberturas para cada feixe. Estas aberturas, também chamadas de segmentos, são determinadas por um processo de otimização computacional, chamado de \textcolor{CarnationPink}{planejamento inverso}. O planejamento 3D também é chamado de \textcolor{CarnationPink}{planejamento direto}, pois o usuário molda as aberturas dos campos para atingir os objetivos do plano ao invés de especificar a dose pretendida para o alvo e então o sistema computacional determinar as aberturas do feixe que melhor alcança a dose solicitada como ocorre no planejamento inverso.
+        
+        \item É possível modular a intensidade de radiação em um tratamento com IMRT através de múltiplas aberturas ou segmentos formados a partir de um colimador multilâminas (MLC). Um MLC consiste em bancos com lâminas adjacentes que podem produzir aberturas de feixes mais adequadas. Um feixe IMRT pode ser entregue utilizando múltiplas aberturas estáticas, técnica conhecida como step-and-shoot, ou através de aberturas dinâmicas, conhecida como sliding window, onde ambas as técnicas são utilizadas para obter a modulação da intensidade. 
+        
+        \item Um feixe de IMRT é entregue utilizando múltiplos pontos de controle. Cada ponto de controle especifica a forma do MLC e uma dose a ser entregue entre os pontos de controle. Portanto, utilizando a técnica \textcolor{CarnationPink}{step-and-shoot}, cada segmento do feixe de IMRT irá conter dois pontos de controle: $(i)$ Um para especificar a posição das lâminas para aquele segmento, entregando dose zero, e $(ii)$ Um ponto de controle subsequente com a mesma forma das lâminas definidas no ponto anterior  porém agora entregando a dose definida para este segmento (daí que fem o termo step-and-shoot). Após entregar a dose, a máquina então para o próximo ponto de controle com um novo formato de segmento.
+        
+        \item A diferença entre um plano IMRT step-and-shoot e um plano IMRT sliding-window, é que em um plano step-and-shoot são utilizados múltiplas aberturas estáticas do MLC, onde o feixe é desligado e então as lâminas se movem para o próximo formato de abertura do MLC e apenas quando as lâminas chegam na posição para aquele segmento o feixe é ligado novamente. Já no plano IMRT com sliding window, a entrega da dose é feita enquanto as lâminas do MLC estão em um movimento contínuo, ou seja, o feixe não é desligado enquanto as lâminas mudam de posição. Devido às limitações mecânicas de velocidade do MLC (normalmente a velocidade máxima da lâmina varia entre 2.5 cm/s até 4.0 cm/s especificada no isocentro), a taxa de dose no sliding window varia para prevenir que o MLC exceda sua velocidade limite.
+        
+        \item Existem dois principais métodos de otimização no planejamento inverso:
+        
+            \begin{enumerate}
+                \item O método da descida do gradiente, otimiza a fluência do IMRT calculando o gradiente da função objetivo (ou função de custo), mas este método pode resultar em uma escolha de um plano que reside em um mínimo local, e desta forma o melhor plano geral não pode ser alcançado.
+                
+                \item O método de otimização de simulação de anelamento (Simulated annealing) utiliza uma abordagem probabilística, com o qual pode escolhar um caminho de otimização com um alto valor da função de custo na esperança de encontrar posteriormente um com o valor mínimo global do custo, que será o melhor plano otimizado.
+            \end{enumerate}
+
+        \item Para os pacientes que serão tratados com planos IMRT, é necessário realizar um QA IMRT paciente-específico para verificar que a dose calculada no sistema de planejamento de tratamento é a mesma que será entregue pelo acelerador. O QA IMRT também verifica se o plano é um plano entregável pelo acelerador linear, ou seja, verifica que o plano calculado não excede nenhuma das limitações físicas da máquina de tratamento.
+        
+        \item As entregas de dose IMRT precisam ser verificadas antes do tratamento, para isto o QA IMRT paciente-específico é realizado entregando o tratamento IMRT em um phantom para verificar a empregabilidade do plano, a dose pontual e a precisão na distribuição de dose bidimensional (2D). As medições são feitas utilizando uma câmara de ionização e filmes dosimétricos, uma matriz de detectores ou utilizando dispositivos eletrônicos de imagem (Portal Dosimetry).
+        
+        \item Outra possibilidade para a modulação da intensidade do feixe é através da utilização de filtros compensadores ao invés de utilizar MLC; Os filtros compensadores podem ser mais robustos que o IMRT utilizando MLC uma vez que eles não dependem da precisão do movimento das lâminas e da comunicação com o software para alcançar o resultado desejado. Os filtros compensadores podem fornecer um espectro contínuo de níveis de intensidade. No entanto, a entrega de planos IMRT utilizando filtros compensadores são muito trabalhosos para serem produzidos e requerem um esforço significante do operador uma vez que cada deixe irá requerer que um filtro compensador diferente seja colocado no cabeçote do acelerador. 
+        
+        \item Os MLCs possuem uma distância ``over-travel'' (fim de curso)  que é definida como a distância máxima que a ponta de uma lâmina pode se estender além do isocentro. A distância típica é de 10 cm a partir do isocentro, e pode variar com o tipo de MLC de cada fabricante. Se essa distância é menor que metade do tamanho de campo máximo, isto limitará o tamanho de campo útil disponível para um feixe IMRT. 
+
+        \item A ``volumetric modulated arc therapy ''(VMAT) (terapia em arco modulado volumétrico, terapia volumétrica em arco modulado, terapia em arco volumétrico modulado ou sei lá \dots) é uma forma de IMRT utilizando feixes rotativos chamados de arcos. Estes arcos são entregues variando a velocidade do gantry, a taxa de dose e a velocidade das lâminas a fim de criar a distribuição de dose desejada. Planos de VMAT são criados utilizando o planejamento inverso para gerar os padrões necessários de movimentação do MLC sincronizados com o ângulo do gantry e com a taxa de dose.
+        
+        \item Algumas precauções devem ser tomadas ao utilizar técnicas de IMRT em alvos que podem apresentar um certo grau de movimentação durante o tratamento. O movimento do alvo de tratamento pode ter um efeito ``interplay'' com o movimento das lâminas do MLC. Este efeito pode ser atenuado utilizando uma menor quantidade de aberturas e utilizando aberturas com maior tamanho. Técnicas de monitoramento de movimentação podem ser utilizadas para minimizar a movimentação do alvo durante o tratamento, o que inclui a compressão abdominal, controle respiratório voluntário ou ativo e gating respiratório.
+        
+        \item Quando um tratamento utilizando a técnica de IMRT é entregue, apenas uma pequena parte do do volume alvo está sendo irradiada por vez. Portanto é fácil para um alvo em movimento, sair para fora da pequena abertura do segmento, ou ter a parte errada do alvo sendo irradiada. Uma vez que os sistemas de planejamento não modelam o movimento do tumor, a dose entregue em um alvo em movimento pode diferir substancialmente da distribuição de dose planejada, sendo este efeito denominado de \textcolor{CarnationPink}{efeito interplay}. Nos planos tridimensionais, todo o tumor está sendo irradiado de uma vez e portanto a movimentação do tumor não é significante nesses casos.
+        
+        \item Um feixe de prótons também podem ter sua intensidade modulada, para isto são utilizados compensadores especialmente fresados que modulam a intensidade do feixe utilizando espessuras variáveis. O IMRT com fótons também pode ser alcançado utilizando filtros compensadores, porém não é um método comum pois exige que o técnico entre na sala de tratamento a cada campo para alterar o compensador. Este também é um fator limitante para o número de campos utilizados em tratamentos com prótons. As unidades de protonterapia mais recentes, estão utilizando técnicas de varreduras de pencil-beam para fornecer a modulação da intensidade do feixe de prótons.
+        
+        \item Existem duas formas de otimização de planos IMRT com respeito às aberturas do MLC:
+        
+            \begin{enumerate}[label=\textcolor{CarnationPink}{\roman*.}]
+                \item O método de otimização de abertura direta (DAO) incorpora as posições das lâminas durante a otimização inversa, no qual o usuário irá definir diretamente o número de aberturas permitidas por feixe ou por plano.
+                
+                \item o método tradicional de otimização consiste em um método de dois passos. Primeiramente a otimização é feita para uma fluência ideal (ou contínua) e então esta fluência ideal é convertida para uma fluência entregável pela máquina obtida pela sequenciamento do MLC, levando em consideração o tamanho das lâminas do MLC, sua transmissão e o tamanho de abertura mínimo, que irão reduzir a conformidade do plano idealizado.
+            \end{enumerate}
+
+        \item Ao comparar as técnicas de IMRT e 3D conformacional com respeito à quantidade de MU, a técnica de IMRT necessitará de mais Mus para entregar a mesma dose que um plano 3D conformacional. Os feixes de IMRT são compostos por diversas aberturas, cada uma delas menor que uma única abertura grande utilizada no plano 3D conformacional. A fim de entregar a mesma dose atraves de todo campo utilizando pequenas aberturas, mais Mu's totais são necessárias. Para alguns planos conformacionais 3D, especialmente quando um filtro físico de \ang{60} é utilizado, o plano 3D conformacional pode ter um maior número de Mus que um plano IMRT. 
+        
+        \item O variação no número de MU para um plano IMRT comparado com um plano conformacional 3D é tipicamente um aumento por um fator de 2 a 3 vezes, dependendo do método de entrega e o método de otimização utilizado. Métodos como do DAO resultam em um menor fator de aumento nas MU's.
+        
+        \item Um lado ruim do uso do IMRT quando comparado à tratamentos convencionais, é que devido ao aumento do número de MU's para entrega da mesma dose, existe uma maior fuga no cabeçote do acelerador linear e então uma maior dose será entregue fora da área de tratamento. Há também um aumento da dose integral com o IMRT.
+        
+        \item Ao comparar planos IMRTs convencionais e planos de VMAT, os planos VMAT utilizam menos MU que os planos de IMRT convencionais. Isto ocorre devido às aberturas do VMAT serem maiores (estarem mais abertas). Porém é possível que os Planos VMAT tenham um número de Mu's maiores que os planos de IMRT convencionais; Isto ocorre quando há um overlapping (sobreposição) entre o volume alvo e os órgãos de risco, o que exigirá pequenas aberturas de tratamento para conformar melhor a distribuição de dose. 
+        
+        \item Em uma otimização de um plano IMRT, são utilizados objetivos tanto para o volume alvo, quanto para os órgãos de risco (OAR's). 
+        
+            \begin{itemize}[label=\textcolor{CarnationPink}{\textopenbullet}]
+                \item  Os objetivos utilizados para o volume alvo são aqueles que exigem que o volume alvo receba uma dose mínima ou doses maiores que ela. Este objetivo pode ser alcançado definindo uma dose pontual mínima (Min Dose) ou a dose mínima que deve ser recebida em um determinado volume (DVH mínimo). Para controlar a distribuição de dose dentro do volume alvo, pode ser necessário que o alvo receba uma dose uniforme específica ou uma dose máxima, utilizando os objetivos para este fim.
+                
+                \item Os objetivos utilizados para os OAR's são aqueles que requerem que o OAR receba uma dose máxima ou doses menores que ela. Este objetivo pode ser alcançado definindo uma dose pontual máxima (Max Dose) ou estabelecendo a dose máxima que pode ser recebida por um determinado volume (DVH max).
+            \end{itemize}
+
+        \item Nem todo sítio de tratamento é um bom candidato para ser tratado com a técnica de IMRT. Os volumes alvo que sofrem uma movimentação intra-fração significante durante o tratamento não são tipicamente considerados bons candidatos para tratamentos IMRT devido o efeito de movimento interplay. Como citado anteriormente, este efeito pode ser atenuado através da redução do número total de segmentos e aumentando o tamanho mínimo permitido para a abertura. Adicionalmente, sítios com um grande volume tumoral, como aqueles envolvidos em cânceres abdominais, costumam ser igualmente bem tratados com terapias conformacionais 3D.
+        
+        \item Em uma otimização, a função de custo, ou função objetivo, é utilizada para determinação fluência... Para uma dada configuração dos parâmetros da máquina (que incluem a forma das lâminas e as MU), o quadrado da diferença entre cada objetivo de dose estabelecido e a dose real é calculado. Cada quadrado da diferença também é multiplicado por um fator peso (ponderação, prioridade) definido pelo usuário. A função objetivo é a soma dessas diferenças individuais ponderadas ao quadrado. O algoritmo de otimização busca então um valor mínimo da função objetivo variando os parâmetros da máquina. 
+
+    \end{itemize}
+
+    \textcolor{CarnationPink}{Radioterapia Estereotáxica}
+    \begin{itemize}
+        \item Tratamentos de SBRT (Stereotatic Body Radiation Therapy) são tratamentos entregues em 5 frações ou menos. Os planos de tratamento são projetados para fornecer uma dose altamente conformada ao alvo com um falloff de dose (queda de dose) muito acentuado e uma distribuição de dose heterogênea dentro do alvo; os principais sítios anatômicos que são tratados com SBRT são: Pulmão, vértebras, pâncreas, próstata e adrenais.
+        
+        \item Ao utilizar planos não coplanares para a entrega da dose, ao invés de somente planos coplanares, é possível alcançar uma mair conformidade e gradientes de de dose mais acentuados, por isso em planos que requerem uma maior conformidade de maior gradiente de dose adota-se a utilização de campos não coplanares.
+        
+        \item Em uma SBRT de coluna, o RTOG 0631 indica uma prescrição de dose de 16 Gy no tumor. O volume de medula contornado para análise dos constraints de dose é definido como o volume contido em um comprimento de medula espinhal com 5mm acima e abaixo do nível do tumor. A dose na medula é limitada a uma dose máxima de 14 Gy em 0.03 mL da do volume de medula contornado, e o volume de medula recebendo 10 Gy deve ser $<$ 10\% do volume de medula contornado. 
+        
+        \item Em tratamentos de SBRT de coluna nenhuma margem é adicionada a partir do GTV para considerar qualquer extensão microscópica ou para compensar error de setup; Portanto o PTV é o próprio GTV.
+        
+        \item Um ITV (internal target volume) é considerado para compensar desvios do posicionamento do tumor devido a sua movimentação. Quando um alvo se movimenta durante o tratamento é útil definir um volume que envolva toda sua extensão de movimentação, esse é o ITV. O ITV pode ser facilmente derivado do contorno do alvo em cada fase da tomografia 4D (4DCT - tomografia computadorizada quadridimensional que consiste em uma aquisição de TC que permite visualizar um alvo em sua amplitude de movimento ). O ITV é então um volume que cobre o o contorno do alvo de cada fase, cada possível posição do alvo deve estar dentro do ITV. Apenas as fases respiratórias utilizadas no tratamento deverão ser utilizadas para determinar o ITV.
+        
+        \item O RTOG 0813 determina os guidelines para delineamento do PTV e ITV para SBRT de pulmão. É menos comum uma expansão do CTV ou ITV para o PTV em tratamentos SBRT, como ocorre na Radioterapia convencional. Se a excursão respiratória (movimentação devido à respiração) for observada utilizando uma 4DCT, uma extensão de 5 mm é adicionada ao ITV para formar o PTV. Se a TC de respiração livre é adquirida sem o ITV (apenas uma aquisição sem ser 4DCT), o GTV é expandido em 1 cm na direção superior-inferior e 5 mm no plano axial. Para esses tratamentos, não são criadas expansões para o CTV.
+        
+        \item Em Tratamentos de SBRT são utilizadas técnicas guiadas por imagem (IGRT), sendo o CBCT e os Raios-x estereoscópico a técnicas mais comumente utilizadas.
+        
+        \item Ao realizar uma SBRT de fígado, é necessário adquirir imagens de tomografia com e sem contraste. A imagem com contraste é utilizada para auxiliar a visualização do tumor enquanto a imagem sem contraste é necessária para o planejamento afim de se evitar valores incorretos para a profundidade efetiva devido a presença do agente de contraste de alta densidade. 
+        
+        \item Em tratamentos de lesões intracraniais, o paciente é tomografado (ou imagens ortogonais no caso de MAV) com um frame estereotáxico afixado no crânio. O frame fornece um sistema de coordenadas com o qual a posição do alvo será determinada com relação a este sistema de coordenadas. O frame é subsequentemente acoplado à mesa de tratamento para então entregar a dose. 
+        
+        \item Outra forma de localização Estereotáxica em lesões intracraniais é através da utilização de SRS frameless que consiste no uso da caixa estereotáxica acoplada a uma máscara termoplástica reforçada. A SRS frameless aumenta o conforto do paciente uma vez que não é necessário fixar um frame (semelhante a uns parafusos) diretamente no crânio do paciente. Além disto também é possível realizar a simulação e o planejamento em momentos diferentes, diferente do que ocorre com  a SRS utilizando frame que, por ser um procedimento invasivo e por o frame ficar preso no crânio do paciente sem poder ser removido, o tratamento deve ser feito no mesmo dia. No entanto, utilizando a técnica frameless há um maior risco de movimento intra-fração e um aumento na incerteza da localização do alvo (o que pode ser melhorado utilizando IGRT).
+        
+        \item Os principais acessórios utilizados em SBRT e SRS são:
+        
+            \begin{enumerate}[label=\textcolor{CarnationPink}{\alph*)}]
+                \item Para SBRT de Pulmão ou tratamentos abdominais:
+                    \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                        \item Colchão de vácuo (blue bag) ou alpha cradles são utilizados para garantir reprodutibilidade no posicionamento dos pacientes para o tratamento;
+                        \item Um invólucro de plástico afixado (``Vacuum-affixed plastic wrap'') a vácuo pode fornecer uma restrição de movimentação adicional caso seja desejado
+                    \end{itemize}
+
+                \item Para SRS intracranial ou tratamentos de coluna cervical:
+                    \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                        \item Normalmente são utilizadas máscaras termoplásticas para garantir a imobilização do paciente.
+                        \item Nos casos de SRS também podem ser usados frames e sistemas frameless.
+                    \end{itemize}
+            \end{enumerate}
+
+        \item Para tratamentos de SBRT as técnicas de entrega de dose normalmente utilizadas são: feixes conformacionais 3D não coplanares, arcos conformacionais, IMRT e VMAT.
+
+        \item Em uma SBRT de próstata, um OAR a ser avaliado é o reto, que possui um certo grau de incerteza em sua posição além da possibilidade de não se manter com o mesmo diâmetro durante o tratamento devido a gazes e etc\dots Para minimizar a incerteza no reto, um balão retal pode ser inserido e inflado para manter um volume reproduzível tanto durante a simulação quanto durante o tratamento. O balão é util não somente para manter um volume reprodutível mas também para imobilizar a próstata e a posição do reto. O balão pode ser inflado com ar ou água. Ao utilizar água, é possível garantir que o volume do balão seja sempre o mesmo, porém ao utilizar o ar é possível alcançar uma melhor preservação da parede retal. 
+
+        \item Existem outros dois tipos de terapia em arco além do VMAT: A terapia em arco conformacional (CAT) e a terapia em arco conformacional dinâmico (DCAT) . A terapia em arco conformacional é uma modalidade de tratamento com rotação do gantry que utiliza uma abertura fixa de campo durante a rotação. Na terapia em arco conformacional dinâmico, a abertura do feixe irá mudar sua forma de modo a conformar com a forma da projeção do volume do tumor a medida que o o gantry gira em torno. Neste caso é necessário um suporte de MLC dinâmico. 
+
+        \item Tanto para o DCAT quanto para o VMAT, as lâminas do MLC irão se movimentar durante a entrega do tratamento. A principal diferença entre o DCAT e o VMAT é que no DCAT o movimento das lâminas é determinada pela projeção do volume alvo enquanto que para o VMAT o planejamento inverso irá determinar a posição das lâminas para cada ângulo do gantry.
+        
+        \item Para tratamentos de SBRT de pulmão, um constraint típico para o pulmão, segundo o RTOG 0813 é que o $V20 < 10\%$.
+        
+        \item Pensando no efeito interplay, tratamentos de SBRT de pulmão podem utilizar IMRT naqueles casos onde as lesões pulmonares apresentem movimentação lenta. Planos IMRT para SBRT de pulmão são frequentemente mais utilizados para tumores centrais, devido a importância em se preservar estruturas críticas nas proximidades. Nos casos de tumores pulmonares centrais são realizadas normalmente 5 frações enquanto que tumores localizados em outras regiões são tratados em 3 frações, justamente devido a proximidade das lesões centrais à estruturas críticas.
+        
+        \item Para auxiliar no delineamento da medula espinhal e da lesão para tratamentos de SBRT de coluna são utilizadas imagens de Ressonância Magnética. Para isto, devem ser feitas as aquisições com sequência ponderada em T1 e a sequência STIR  (short time inversion recovery). STIR é uma sequência com supressão de gordura onde a aquisição Sagital STIR é o exame de escolha para avaliação de edema ósseo e lesões tumorais. As imagens ponderadas em T1 mostram de forma ideal a anatomia de tecidos moles e que aparece brilhante (alta intensidade de sinal) nas imagens ponderadas em T1.
+
+        \item Em um tratamento de SBRT de pulmão, pode-se adquirir uma tomografia computadorizada 4D para delineamento do alvo com base em sua movimentação e uma tomografia 3D com respiração livre para ser base do planejamento do tratamento. Porém, uma possibilidade é obter uma média da 4DCT para ser utilizada como TC base no planejamento. A maior vantagem em utilizar a média da tomografia 4D ao invés da tomografia 3D com respiração livre é que, quando são utilizados técnicas de IGRT utilizando CBCT, a imagem prévia fornecida pelo CBCT irá se assemelhar mais com a CT média devido a aquisição lenta do CBCT que irá registrar reconstruir a imagem volumétrica tomada em diferentes fases respiratórias.
+        
+        \item O RTOG 1112 define os guidelines para tratamentos de SBRT de fígado (carcinoma hepatocelular). Segundo o estudo, 700 mL de pulmão devem ser poupados, de forma que receba uma dose menor que 15 Gy
+
+    \end{itemize}
+
+    \textcolor{CarnationPink}{Monitoramento Respiratório}
+    \begin{itemize}
+        \item O \textbf{movimento respiratório} pode ser monitorado utilizando fluoroscopia ou tomografia computadorizada quadridimensional (4DCT).
+        
+        \item O monitoramento respiratório pode ser alcançado através da utilização de compressores abdominais, controle de respiração ativo, controle voluntário da respiração (breath hold) ou através de gating respiratório.
+        
+        \item Tratamentos com gating (Gated treatment) utilizam um sinal alternativo para indicar a posição do tumor. Estes sinais podem ser indicadores/monitores/rastreadores superficiais, strain gauge belt (extensômetro - objeto capaz de detectar alterações em sua extensão devido à uma força aplicada) ou através de um espirômetro (instrumento capaz de medir a capacidade de ar dos pulmões). Em uma certa faixa desse sinal é então selecionada pelo usuário para indicar que o volume de tratamento está na posição de tratamento desejada. Este sinal será utilizado para ativar o feixe de tratamento quando o volume estiver dentro da faixa selecionada para o tratamento e irá desligar o feixe quando o alvo sair da janela permitida para tratamento.
+        
+        \item As janelas do gating definida para um tratamento normalmente incluem as fases de expiração ou inspiração ou as fases respiratórias de 30\% a 70\%. Tratamentos de mama esquerda ou de parede torácica irão utilizar o final da inspiração para aumentar a distância entre o alvo e o coração. Tratamentos de pulmão podem utilizar o final da expiração, pois esta é uma posição mais reprodutível do tumor, ou então pode ser utilizado o final da inspiração para melhorar os parâmetros dosimétricos to tecido pulmonar sadio.
+        
+        \item Os rastreadores superficiais mais comumente utilizados para o movimento respiratório são:
+        
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                \item \textbf{Sistema RPM} da Varian (Real-Time Position Management), no qual utiliza um refletor infravermelho colocado na superfície do tórax do paciente e então uma câmara infravermelha observa e registra o movimento respiratório.
+                \item \textbf{Sistema ExacTrac} da BrainLab, no qual também utiliza marcadores infravermelhos colocados diretamente no corpo do paciente para monitoramento respiratório;
+                \item \textbf{Sistema AlingRT} comercializado pela VisionRT faz um mapeamento óptico da superfíce, utilizando uma câmara de video para renderizar diretamente a superfície do corpo do paciente que pode ser utilizado como um sinal alternativo. 
+            \end{itemize}
+        
+        \item Tratamentos com gating ativam o tratamento do alvo durante apenas uma parte da sua faixa de movimentação, o que permite minimizar o tamanho do volume de tratamento e minimizar potencialmente a toxicidade nos tecidos sadios. Tratamentos com gating também fornecem uma técnica de monitoramento de movimentação alternativa para os pacientes que não são capazes de tolerar métodos como breath hold, compressão abdominal ou outros métodos mais restritivos. No entanto, tratamentos com gating levam um longo tempo para entregar o tratamento quando comparados aos tratamentos convencionais (sem monitoramento da respiração). Além disso, não é em todos os casos em que pode-se afirmar que o sinal alternativo irá refletir com precisão a posição do volume interno do tumor.
+        
+        \item o ABC (active breathing coordination - coordenação respiratória ativa) é um dispositivo utilizado para segurar o ciclo respiratório do paciente em um limite pré-determinado. Este dispositivo é composto por um bocal conectado a um espirômetro. O fluxo de ar é parada sempre que um limiar de quantidade de ar é inalado.
+        
+        \item A reprodutibilidade do ABC pode ser verificada através da observação de um paciente submetido a uma fluoroscopia enquanto o ABC está em uso. Adicionalmente, múltiplas imagens de CT podem ser adquiridas e fundidas para avaliar a movimentação residual.
+        
+    \end{itemize}
+
+    \textcolor{CarnationPink}{Computing}
+    \begin{itemize}
+        \item Existem 8 bits em 1 byte. Normalmente são fornecidos em unidades de Quilobytes KB (\qty{e{3}}{B}), Megabytes MB (\qty{e{6}}{B}), Gigabytes GB (\qty{e{9}}{B}) e Terabytes TB (\qty{e{12}}{B}). Uma CT tem em torno de 100 MB, um CBCT tem em torno de 30 MB e um arquivo RTplan tem em torno de 10 até 100 KB.
+        
+        \item Um número de ponto flutuante contém 23 números com sinal (positivo ou negativo)  que o representam e 8 números que representam seu expoente, por exemplo, $-1.2354 = -1 \times 12345 \times 10^{-4}$. Portanto são necessários 4 bytes para expressar um número de ponto flutuante.
+        
+        \item Um sistema de registro e verificação (record and verify) registra os aspectos reais da administração do tratamento, como ângulo do gantry, unidades monitoras (MU), configurações do colimador e dos jaws e todas as outras configurações principais da máquina. As imagens de verificação do tratamento, como imagens de portal e tomografias computadorizadas de feixe cônico (CBCT), também são armazenadas. Além disso, informações demográficas do paciente e detalhes do plano de tratamento podem ser incluídos.
+        
+        \item DICOM é um padrão de arquivo usado para comunicação e armazenamento de imagens médicas. Os arquivos DICOM contêm uma seção de dados (data) e cabeçalho (header). A seção de dados contém os próprios dados da imagem. O header contém informações como nome do paciente, número do prontuário, data de nascimento, data e hora do exame, parâmetros de aquisição da imagem e outros detalhes pertinentes;
+        
+        \item DICOM-RT é uma extensão do padrão DICOM específico para aplicações radio-oncoligia. O DICOM-RT contém sete objetos DICOM especificamente projetados: RT Image, RT Structure Set, RT Plan, RT Dose, RT Beams Treatment Record, RT Brachy Treatment Record, e RT Treatment Summary Record.
+        
+        \item PACS significa Picture Archiving and Communication System. Sua finalidade é fornecer um repositório digital seguro para todas as imagens médicas usadas no atendimento ao paciente.
+
+    \end{itemize}
+
+\end{exemplo}
+
+\begin{exemplo}[10. Tratamentos Especializados]
+
+    \textcolor{CarnationPink}{Radiocirurgia Estereotáxica}
+    \begin{itemize}
+        \item A tolerância mecânica para dispositivos de SRS é de $leq$ 1 mm
+        
+        \item Dentre as principais características da Radiocirurgia Estereotáxica é que estre procedimento requer: uma imagem tridimensional (3D), segmentação estereotáxica, gradientes de doses acentuados e alta precisão na entrega do feixe.
+        
+        \item As principais características dos planos de SRS são: $(i)$ É prescrita uma alta dose por fração; e $(ii)$ deve possuir um alto grau de conformidade.
+        
+        \item Os tipos de radiação utilizados em SRS são: Raios gama, raios-X de megavoltagem, e partículas carregadas pesadas;
+        
+        \item A definição de Índice de conformidade para SRS é dada pelo volume coberto pela isodose de prescrição dividido pelo volume do alvo. Quanto mais próximo de 1, melhor é sua conformidade. Esta razão deve ser $\leq$ 2. Este índice não implica em cobertura do alvo, o que deve ser confirmada separadamente. 
+        
+        \item Os principais fatores que contribuem para uma penumbra de dose ``acentuada'' em SRS e SBRT feitas em um linac utilizando cones e arcos circulares são: Múltiplos arcos não coplanares, energia de feixe de 4 a 6 MV, pequena distância do colimador ao tumor.
+        
+        \item O principal teste de controle de qualidade para radiocirurgia realizadas em Aceleradores Lineares é o teste de Winston–Lutz. Este teste conta com uma haste com um pequeno rolamento de esferas que é preso à mesa de tratamento. O rolamento é posicionado no isocentro e são feitas imagens com o feixe do acelerador em múltiplos ângulos de gantry, colimador e de mesa. As imagens são conferidas para garantir que o rolamento se manteve no centro da imagem, o que garante que o isocentro está fixo com respeito aos movimentos de gantry, colimador e mesa.
+        
+        \item Um Gamma Knife contém 192 (modelo Perfexion) ou 201 (Modelos, B, C e 4C) fontes de \ce{^{60}Co}. O Perfexion é organizado em forma de cone com oito setores individuais e os modelos B, C e 4C são organizados em uma matriz hemisférica e alojados em uma unidade fortemente blindada. A radiação é precisamente colimada para entregar uma alta dose de radiação no alvo definido enquanto protege os tecidos adjacentes. Lesões com formas complexas podem ser tratadas através da combinação de colimadores com tamanhos variados, com feixes/setores bloqueados e com ponderação de dose utilizando um software de planejamento muito sofisticado.
+        
+        \item Os principais fatores que contribuem para uma penumbra de dose ``acentuada'' em tratamentos com o Gamma Knife são: O número muito grande de campos não coplanares (192 fontes ou 201 fontes) e a pequena distância do colimador até a fonte. A penumbra geométrica é inversamente proporcional à distância da fonte à distância do colimador até a fonte portanto mover o colimador para mais perto da superfície do paciente diminui a penumbra geométrica.
+        
+        \item O Índice de heterogeneidade em radio cirurgia é definido como a razão entra a dose máxima e a dose de prescrição do alvo. Este valor deve ser $\leq$ 2.
+        
+        \item No Gamma Knife são utilizadas fontes de \ce{^{60}Co} que possui uma energia média de 1.25 MeV ($E_{\gamma 1} = 1.17 \; MeV \; \;  E_{\gamma 2} = 1.33 \; MeV$) e sua meia vida é de 5.26 anos.
+        
+        \item A taxa de dose inicial para uma fonte de \ce{^{60}Co} utilizada no Gamma Knife é cerca de 3 Gy/min; As trocas das fontes de \ce{^{60}Co} devem ser realizadas num intervalo de tempo de de aproximadamente 1 meia vida do \ce{^{60}Co}, ou seja, a troca da fonte deve ser feita entre 5 a 6 anos após a sua instalação.
+        
+        \item Um procedimento típico de um Gamma knife consiste em:
+        
+            \begin{enumerate}
+                \item Teste diário do sistema (Daily QA);
+                \item Fixação do frame estereotáxico ao crânio do paciente;
+                \item Imagem Estereotáxica utilizando MRI, CT ou angiograma de alta resolução, conforme necessário;
+                \item Localização das imagens no frame de referência do Gamma Knife;
+                \item Delineamento dos volumes alvo;
+                \item Planejamento da dose e avaliação dos planos juntamente com todos os membros da equipe de radiocirurgia;
+                \item Entrega do tratamento; e
+                \item Remoção do frame.
+            \end{enumerate}
+
+        \item O plano de tratamento para SRS no Gamma Knife deve ser assinado pelo radio-oncologista, neurocirurgião e pelo físico médico. Todos eles devem ser treinados para realizar os procedimentos no gamma Knife;
+        
+        \item Dado que o Gamma Knife utiliza fontes de cobalto-60, que são produzidas em um reator nuclear, seu uso é regulamentado pela Comissão de Regulamentação Nuclear (NCR) ou pelas Secretarias Estaduais de Saúde dos Estados Convênios. No BR é a CNEN - ANSN.
+        
+        \item Os principais sítios SRS que são tratados no Gamma Knife e suas respectivas doses de prescrição são:
+        
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                \item \textbf{Meningioma:} 13 Gy - 14 Gy;
+                \item \textbf{Adenoma Pituitário:}
+                    \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+                        \item Não secretor: 14 Gy - 16 Gy;
+                        \item Secretor: 18 Gy - 25 Gy;
+                    \end{itemize}
+                \item \textbf{Schwannoma (Neurinoma do Acústico):} 12 Gy - 13 Gy;
+                \item \textbf{Malformação Arteriovenosa (MAV):} 14 Gy - 17 Gy;
+                \item \textbf{Neuralgia dos Trigêmeos: } 80 Gy - 90 Gy (na isodose de 100\%)
+                \item \textbf{Metástases Cerebrais:}
+                    \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+                        \item $\leq 2 \; cm$: 20 Gy - 24 Gy;
+                        \item $2.1 - 3 \; cm$: 18 Gy;
+                        \item $3.1 - 4 \; cm$: 15 Gy.
+                    \end{itemize}
+            \end{itemize}
+
+        \item As principais vantagens em tratamentos de SRS utilizando o Gamma Knife em comparação com SRS realizadas em Aceleradores Lineares são:
+        
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                \item Alta exatidão e precisão;
+                \item Controle de Qualidade mais simples devido a ter menos partes móveis;
+                \item Está no mercado a mais de 50 anos, fornecendo maior experiência em sua utilização;
+                \item Pouco tempo de inatividade devido a uma maior confiabilidade da máquina.
+            \end{itemize}
+
+        \item As principais desvantagens em tratamentos de SRS utilizando o Gamma Knife em comparação com SRS realizadas em Aceleradores Lineares são:
+        
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                \item Trata apenas lesões cerebrais;
+                \item Geralmente os tratamentos são entregues em apenas uma fração;
+                \item Podem ser feitos múltiplos fracionamentos com Extend (Sistema de frame relocável. O EXtend Frame é composto por um frame de fibra de carbono, um bocal com impressão dentária e uma peça frontal configurável que aceita o bocal e se fixa rigidamente ao frame de fibra de carbono, permitindo um tratamento com multifrações) mas sem capacidade de adquirir imagens prévias (IGRT);
+                \item Precisa trocar as fontes a cada 5-6 anos;
+                \item Requer mais precauções quanto à proteção radiológica.
+            \end{itemize}
+
+        \item As principais vantagens em tratamentos SRS em Aceleradores Lineares, quando comparados ao Gamma Knife são:
+        
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                \item É possível realizar tratamentos em apenas 1 fração ou em mais frações;
+                \item Tem capacidade de realizar Radioterapia Guiada Por Imagem (IGRT);
+                \item Permite o tratamento de lesões extracranianas.
+            \end{itemize}
+
+        \item Ja as principais desvantagens em tratamentos SRS em Aceleradores Lineares, quando comparados ao Gamma Knife são:
+            
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                \item Possuem um gantry pessado e portanto é mais difícil manter as tolerâncias necessárias para tratamentos de SRS;
+                \item Exige um maior tempo para efetuar o controle de qualidade do equipamento;
+                \item Possuem aceleradores produzidos por diferentes fabricantes, o que torna mais difícil coletar dados generalizados.
+            \end{itemize}
+
+        \item Para ser possível utilizar um Acelerador Linear para entregar tratamentos de SRS é necessário que o Linac tenha:
+        
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                \item Colimadores Multilâminas de alta definição (MLC HD) , com largurura das lâminas de 2.5 mm ou cones circulares com diâmetros variando entre 4 mm até 30 mm;
+                \item Sistema de orientação por Imagens (IGRT) como os raios-x planares, CBCT, sistemas ópticos ou sistemas utilizando ultrassom.
+                \item Detectores eletrônicos de imagem portal (EPID) ou filmes;
+            \end{itemize}
+
+    \end{itemize}
+
+    \textcolor{CarnationPink}{TBI e TSI}
+    \begin{itemize}
+        \item O TBI é uma técnica especial de Radioterapia, no qual entrega uma dose uniforme em todo o corpo do paciente dentro de $\pm$ 10\% da dose prescrita;
+        
+        \item O tratamento de TBI é utilizado como um regime de condicionamento para o transplante de células-tronco hematopoiéticas (CTH)(\textit{Regime de Condicionamento consiste na administração de quimio e/ou radioterapia em altas doses (mieloablativo) ou com doses reduzidas (não- mieloablativo) antecedendo a infusão de CTH.}) . O TBI aplicado então com o objetivo de erradicar qualquer câncer residual e imunossuprimir o hospedeiro para que ele não possa rejeitar as células tronco doadoras alogênicas (\textit{Transplante alogênico é aquele no qual as células precursoras da medula provêm de outro indivíduo (doador), de acordo com o nível de compatibilidade do material sanguíneo.})  A dose tipica de  um tratamento de TBI é na faixa de 2 Gy até 15 Gy quando feito em conjunto com a quimiorerapia.
+        
+        \item A prescrição mais comum para tratamentos de TBI é uma prescrição de 12 Gy em 6 frações de 2 Gy entregando 2 frações por dia  ao longo de 3 dias com um intervalo mínimo de 6 horas entre uma fração e outra;
+        
+        \item Uma técnica comum para entrega de dose em TBI consiste em utilizar uma SSD extendida, com o gantry posicionado com a direção do feixe perpendicularmente à uma das paredes laterais, de modo que o paciente seja posicionado em decúbito lateral e são tratados 2 ampos, um Ântero-Posterior e um Postero-Anterior (AP/PA). Utilizando esta técnica, o ponto de prescrição é definido na interseção de duas linhas a partir do plano médio sagital até o plano médio axial e do plano médio coronal até o plano médio axial. Esse ponto normalmente é normalmente próximo ao ponto médio no umbigo.
+        
+        \item Em tratamentos de TBI, é colocado na frente do paciente um beam spoiler; A função do beam spoiler é aumentar a dose na superfície sem diminuir a penetrabilidade do feixe; No TBI, o beam spoiler traz a dose da superfície para pelo menos 90\% da dose prescrita. Normalmente é utilizado um beam spoiler com 1 cm a 2 cm de acrílico, dependendo da energia do feixe, e é colocado a uma distância de 10 cm do paciente, no caminho do feixe.
+        
+        \item Nem sempre a sala tem tamanho suficiente para que a SSD extendida alcançável seja suficiente para englobar todo o paciente. Portanto, para maximixar o tamanho de campo, além de abrir o maior tamanho de campo possível o colimador é girado à \ang{45}. Deste modo, uma SSD estendida de 400 cm para um campo 40 cm x 40 cm terá uma projeção de campo de 120 cm com o ângulo de colimador igual a \ang{0} e de 226 cm para ângulo de colimador igual a \ang{45}.
+        
+        \item A taxa de dose utilizada no tratamento de TBI deve ser menor que 0.1Gy/min para minimizar os efeitos colaterais. Uma baixa taxa de dose é um benefício adicional do tratamento com SSD extendida devido ao fator inverso quadrado da distância: Uma taxa de 2Gy/min no isocentro (SAD = 100 cm) é reduzida para uma taxa de dose de 0.125 Gy/min na SSD de 400 cm.
+        
+        \item Os tratamentos de TBI normalmente utilizam campos paralelos opostos com a energia do feixe de 6MV caso do DAP do paciente seja $<$ 35 cm e a SSD extendida é de no mínimo 300 cm. Caso o DAP do paciente seja $>$ 35 cm de espessura, energias maiores de 6MV devem ser utilizadas afim de minimizar a dose excessivamente alta nos tecidos subcutaneos comparado à dose no ponto médio. É importante lembrar que a energia efetiva de um feixe de fótons (PDP) aumenta com o aumento da SSD.
+        
+        \item No tratamento de TBI deve-se atentar à região torácica devido à grande heterogeneidade devido a presença dos pulmões. Os pulmões são estruturas críticas de limitação de dose em tratamentos de TBI. Os pulmões possuem baixa densidade e recebem uma dose que pode exceder a dose de prescrição em 10\% a 24\% dependendo da energia do feixe utilizada. Blocos de chumbo são normalmente utilizados para reduzir a dose nos pulmões em até 80\% da dose de prescrição (quando prescrito 12 Gy).
+        
+        \item A dose nos pulmões podem ser estimadas utilizando sistemas de dosimetria in vivo como os dosímetros termoluminescentes (TLDs), diodos e o metal oxide semiconductor field effect transistors (MOSFETs) que podem ser colocados diretamente no paciente, anterior ao pulmão para irradiações com ou sem blindagens de pulmão. A espessura do bloco ou o número de frações que serão necessárias utilizar a blindagem para atingir uma dose pulmonar segura é então determinada.
+        
+        \item As principais técnicas utilizadas para entregar um tratamento de TBI são:
+        
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                \item Técnica com campos paralelos opostos AP/PA com o paciente na posição vertical com a SSD extendida;
+                \item Paciente deitado no chão, nas posições de decúbito ventral e decúbito dorsal enquanto o gantry oscila de \ang{320} a \ang{40}.
+                \item Técnica bilateral, onde o paciente é tratado com campos laterais opostos enquanto o paciente permanece sentado na mesa de tratamento em posição semi-fetal.
+            \end{itemize}
+
+        \item Total Skin Irradiation (TSI) é uma técnica de tratamento utilizando enétrons com alta taxa de dose, com energias variando de 2 MeV a 9 MeV para o tratamento de lesões superficiais que cobrem uma grande área do corpo.
+        
+        \item O tratamento de TSI é utilziado para tratar grandes lesões na pele que extendem à uma profundidade de aproximadamente 1 cm, como a micosite fungóide ou outros linfomas cutaneos com uma prescrição de dose típica variando de 30 Gy a 40 Gy;
+        
+        \item A técnica de Stanford para tratamentos de TSI consiste em uma técnica de 6 campos (AP, PA e mais 4 campos oblíquos) posicionados com \ang{60} de separação entre cada campo ao redor da circunferência do paciente, onde cada campo consiste em duas componentes de feixes angulados em relação ao plano horizontal ($\sim$ \ang{15}). O paciente fica em três das seis posições por dia.
+        
+        \item Para cada ângulo de incidência em relação à circunferência do paciente (os seis campos separados em \ang{60}), são utilizados dois feixes angulados em relação ao eixo horizontal com objetivo de reduzir a contaminação de Raios-X que chegam no paciente e para fornecar um largo campo de elétrons com uniformidade de dose suficiente nas dimensões verticais.
+        
+        \item No tratamento de TSI, normalmente os olhos e as unhas são protegidas (blindados) pois caso contrário, essas regiões receberiam uma dose maior que a dose recebida no restante da pele após a dose de 20 Gy.
+        
+        \item Um boost é realizado após a irradiação de corpo inteiro, para cobrir as regiões subdosadas por não terem sido completamente expostas no TSI como as solas dos pés, vertex da crânio (o cocorôco, topo da cabeça), períneo, partes mediais das coxas e outras regiões de dobras. 
+
+    \end{itemize}
+
+    \textcolor{CarnationPink}{Terapia com Partículas} 
+    \begin{itemize}
+        \item As principais partículas carregadas pesadas utilizadas para tratamentos de Radioterapia são: \textbf{prótons, ions pesados e pions negativos}. Embora os elétrons também sejam partículas carregadas, eles não entram na classificação de partículas pesadas.  Já os neutrons são partículas pesadas porém não possuem carga;
+        
+        \item Íons pesados são ártomos com Z médio a alto e que perderam todos seus elétrons. Os íons pesados geralmente não sofrem mudanças significaticas em sua direção de propagação ao atravessar a matéria devido à sua grande massa;
+        
+        \item Os íons pesados normalmente utilizados em radioterapia são: \textbf{Neonio, argônio e carbono};
+        
+        \item A faixa de energia típica dos feixes de íons pesados utilizados em radioterapia varia entre 400 MeV/nucleon até 500 MeV/nucleon. É a energia cinética por núcleon que determina o alcançe de um ion pesado no meio e não a energia cinética total do íon. Por exemplo, um íon de carbono tem $Z = 6$ e normalmente $A - Z = 6$ totalizando 12 núcleons; A energia cinética de um íon de carbono deverá ter é de 4800 MeV para alcançar uma energia terapeutica de 400 MeV/núcleon.
+        
+        \item O íon de carbono é considerado o íon pesado ideal para tratamentos de radioterapia devido ao seu poder de freamento e respectiva LET. O poder de freamento de uma partícula é dependente de $Z^2$. Para íons que possuem um Z  maior que o carbono, seus valores de LET são muito altos o que pode resultar em um dano biológico no tecido sadio antes mesmo do íon alcançar o alvo de tratamento. Outro motivo é que os íons de carbono não se fragmentam tanto quanto outros íons quando colidem diretamente com os núcleos do meio. Os fragmentos nucleares podem entregar uma dose além do pico de bragg, o que não é desejável;
+
+        \item Os mésons Pi, ou pions, possuem aproximadamente 15\% da massa do próton e portanto é espalhado três vezes mais que os prótons no meio devido a sua pequena massa. O píon negativo exibe uma curva de Bragg usual, porém o píon possui uma propriedade adicional única; O píon é capturado por um núcleo do meio quando está em repouso (após perder toda sua energia cinética para o meio), o que resulta na liberação de energia cinética devido à fragmentação nuclear e subsequêntemente aumenta a dose perto da região onde ocorre o pico de bragg.
+        
+        \item Os mésons Pi são produzidos através da colisão de prótons, com energia de 400 MeV até 800 MeV, em um alvo de berílio. A energia típica de um méson pi é de 100 MeV e seu alcançe é de 24 cm na água.
+        
+        \item Os prótons interagem principalmente com os elétrons orbitais do átomo e com o núcleo através da força coulombiana. Estas interações envolvem colisões inelástocas dos prótons com os elétrons atômicos quando a energia cinética do próton é perdida para produzir excitações ou ionizações dos átomos, resultando na dose absorvida.
+        
+        \item Os feixes de prótons utilizados em radioterapia possuem energia variando entre 150 MeV a 250 MeV. Estas energias criam um Pico de Bragg em profundidades variando de 15 cm até 40 cm na água.
+        
+        \item A fonte de prótons é basicamente o gás hidrogênio. Estes prótons são então acelerados em cíclotrons ou síncrotons, ambos classificados como aceleradores circulares, onde o próton irá repetidamente atravessar a mesma cavidade de aceleração, sendo mantido em seu caminho através de campos magnéticos. A força do campo magnético aplicado irá depender da carga do próton, sua massa velocidade e do raio de curvatura do acelerador. 
+        
+        \item A eficácia biológica relativa (RBE - ``relative biologic effectiveness'') para os prótons pode ser utilizada para fins de planejamento. Para auxiliar na avaliação da resposta clínica dos feixes de prótons em comparação com os feixes clínicos de fótons, a maioria das instalações utilzia um valor da RBE de 1.1 para os prótons. A RBE varia com a energia e é maior e provavelmente superior à 1.1 na região do pico de Bragg.
+        
+        \item O pico de Bragg é o pico de deposição de dose no final do alcance das partículas carregadas pesadas; Para feixes monoenergéticos de prótons, a curva de dose-profundidade é inicialmente aproximadamente plana, apresentando um crescimento lento da dose com a profundidade,  seguido de um crescimento acentuado da dose próximo ao alcançe final da partícula. A medida que o próton perde energia atravessando o meio e a taxa de energia perdida por unidade de caminho percorrido aumenta. A taxa de energia perdida é máxima quando a partícula alcança velocidade zero no final de seu alcance. A profundidade do pico de bragg aumenta a medida que a energia inicial do feixe de prótons aumenta;
+        
+        \item Embora sejam partículas carregadas, os életrons possuem uma massa relativamente pequena e não apresentam um pico de Bragg em sua curva de dose-profundidade. Embora os elétrons percam mais energia à medida que diminuem sua velocidade no meio, eles estão mais propensos a se espalhar facilmente em outra direção diferente da direção de incidência e portanto não irá fornecer um rastro linear como ocorre com as partículas carregadas pesadas. Estas características do feixe de elétrons atravessando um meio não permitem que ocorra um pico de Bragg com a profundidade.
+        
+        \item Spread-out Bragg peak (SOBP) (``pico de Bragg espalhado'') utiliza a combinação de diferentes energias de feixe para ajudar a cobrir uma maior profundidade de cobertura do que a profundidade coberta com o pico de apenas uma energia (que é um valor muito pequeno). Feixes de maiores  energias auxiliam a cobertura da profundidade distal do volume alvo enquanto que os feixes de menor energia auxiliam na cobertura da profundidade proximal do volume alvo.
+        
+        \item Um pico SOBP é criado através da modulação da energia do próton, que pode ser feita de duas formas:
+            \begin{enumerate}[label=\textcolor{CarnationPink}{\roman*.}]
+                \item O SOBP pode ser criado utilizando um filtro rotativo com espessuras variáveis, que podem ser chamado de ``modulation wheel'' (``roda de modulação''), feita de variáveis espressuras de acrílico ou grafite, que irão degragar/diminuir a energia do feixe. A medida que o feixe se propaga através do filtro com espessura variável, o pico de Bragg para o alcance pré-calibrado é criado;
+                
+                \item Um segundo método é utilizando um acelerador de prótons que possibilita a alteração da energia do feixe. (Existe aquele método citado anteriormente utilizando o dispositivo eletrônico de varredura de pencil-beams pesquisar para ver se é a mesma coisa).
+            \end{enumerate}
+
+        \item Comparado com os fótons, a heterogeneidade do meio irá ter um maior efeito na distribuição de dose para os prótons do que para os fótons. A heterogeneidade dos tecidos podem mudar a atenuação por unidade de caminho percorrido em para os fótons em apenas um pequeno valor percentual, enquanto que para os feixes de prótons a heterogeneidade irá mudar drasticamente o alcance do feixe de modo que  poderá causar uma superdosagem nas estruturas críticas enquanto o tumor seja subdosado. Este fator não é só importante no planejamento mas também nas mudanças na heterogeneidade inter-frações e intra-frações como a movimentação de uma lesão no pulmão.
+        
+        \item As unidades de CT utilizam Raios-X e não prótons para criar sua imagem. Portanto, é necessário converter os números da CT (dado para fótons) para o poder de freamento dos prótons para que seja possível calcular o alcance dos prótons necessário para um determinado campo de tratamento. Esta conversão pode ser feita aplicando uma curva de calibração que é única para o equipamento de CT e para o kVp utilizado e leva em consideração a densidade eletrônica e a composição dos tecidos. Porém, exitem erros e incertezas associadas à convesão dos números de CT com o poder de freamento relativo dos prótons, onde, em um caso partícular, dois materiais podem ter o mesmo número de CT porém terem diferentes valores para o poder de freamento relativo do próton. Estas incertezas são levadas em consideração durante o processo de planejamento de tratamento através da adição de margens proximal e distal em cada campo de tratamento afim de se atinir o SOBP pretendido.
+        
+        \item O planejamento robusto (Robust planning) ou otimização em protonterapia, leva em consideração várias incertezas próton-especificas, incluindo as margens distal e proximal ao longo do eixo do feixe, a borda lateral dos campos e o fator de correção dos números de CT para o poder de freamento do próton. Estas incertezas são especialmente importantes nas interfaces dos tecidos de diferentes composições e densidade. Técnicas corretivas para ajudar a contabilizar essas incertezas vem sido utilizadas tal como o cálculo das distribuições de dose para nas extremidades superior e inferior dessas incertezas para garantir a cobertura completa do alvo. Algoritmos de cálculo Monte Carlo são utilizadis para ajudar a melhorar a precisão do cálculo.
+        
+        \item O gradiente de dose lateral (perpendicular ao  eixo central do feixe) é mais largo quando comparado ao gradiente de dose no eixo central. A medida que o feixe de prótons perde sua energia, há um alargamento lateral do feixe próximo ao fim do seu alcançe devido à multitiplos espalhamentos no meio.
+
+    \end{itemize}
+
+    \textcolor{CarnationPink}{Hipertermia}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+
+\end{exemplo}
+
+\begin{exemplo}[11. Qualidade ]
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{exemplo}
+
+\begin{exemplo}[12. Proteção Radiológica ]
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{exemplo}
+
+\begin{exemplo}[13. Diagnóstico por Imagem]
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{exemplo}
+
+\begin{exemplo}[14. IGRT]
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{exemplo}
+
+
+
+\bibliography{ref.bib}
+\end{document}

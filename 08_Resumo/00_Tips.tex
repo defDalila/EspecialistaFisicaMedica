@@ -28,7 +28,10 @@
 \usepackage[version=4]{mhchem}
 \usepackage{enumitem}
 
-\setlist[itemize]{label=\textcolor{CarnationPink}{\textbullet}}
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+
 
 \newcounter{exemplo}
 
@@ -61,7 +64,7 @@
     filecolor=cyan,      
     urlcolor=cyan,
     citecolor=cyan,
-    pdftitle={Proteção Radiológica}
+    pdftitle={Resumos}
 }
 \pagestyle{fancy}
 \fancyhf{}
