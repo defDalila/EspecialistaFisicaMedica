@@ -126,7 +126,7 @@
             \item Deve haver uma porta na entrada das salas de tratamento mesmo que a radiação que chega na porta seja totalmente blindada pelo labirinto;
             \item A porta deve ter blindagem caso o labirinto não tenha tamanho suficiente para blindar a radiação à níveis do publico devido às limitações de tamanho da sala ou quando receber um equipamento com energia maior;
             \item Equipamentos com Beam-Stopper auxiliam na redução das blindagens;
-            \item Equipamentos com energias de fótons maiores que 10 MV requerem uma blindagem de neutrons na porta;
+            \item Equipamentos com energias de fótons maiores que 10 MV requerem uma blindagem de nêutrons na porta;
             \item Portas motorizadas devem possuir mecanismo auxiliar para ser utilizado em caso de falhas mecânicas ou elétricas;
             \item A porta deve possuir um mecanismo que assegure que a porta esteja fechada enquanto ocorra a exposição e deve ser possível ser aberta por fora e por dentro;
             \item A blindagem da porta deve ser homogênea e se extender por alguns centímetros além do vão da porta para evitar a existência de frestas;
@@ -146,7 +146,7 @@
             \item A drenagem do solo deve ser um dos primeiros itens da construção, que exige técnica apurada. Deve-se atentar à hidrografia do solo e a existência de lençóis freaticos. Caso forem superficiais, podem inundar a sala de tratamento em um dia de chuva intensa e causar danos irreparáveis à máquina;
             \item O sistema de ar condicionado deve climatizar adequadamente o ambiente e proporcionar recirculação do ar. Para isto podem ser utilizados:
                 \begin{itemize}
-                    \item Um sistema central: Nesses casos é indicado a entrada pela barreira da porta, tomando cuidado para evitar a saída de radiação secundária. O duto de entrada deve ser blindado com lâminas de chumbo e/ou absorvedores de neutrons e deve ser feito de forma que sua entrada seja curva;
+                    \item Um sistema central: Nesses casos é indicado a entrada pela barreira da porta, tomando cuidado para evitar a saída de radiação secundária. O duto de entrada deve ser blindado com lâminas de chumbo e/ou absorvedores de nêutrons e deve ser feito de forma que sua entrada seja curva;
                     \item Sistema tipo Split: Sistema cuja canalização é feita com tubos de pequenos diâmetros que entram na sala fazendo curvaturas para eliminar o escape de radiação. Como não possuem recirculador, é necessário o provisionamento da renovação do ar. A melhor rota dentro da sala é moir meio de um teto rebaixado seguindo o labirinto;
                     
 
@@ -421,7 +421,7 @@
             \item Os tipos de radiação que devem ser levados em conta nos cálculos são:
                 \begin{itemize}
                      \item A radiação Breamsstrahlung; 
-                     \item Os Neutrons;
+                     \item Os nêutrons;
                      \item A radiação-$\mathrm{\gamma}$
                 \end{itemize}
             \end{itemize}
@@ -430,7 +430,7 @@
 
             A radiação de Breamsstrahlung acontece no cabeçote do acelerador, na colisão do elétron com o alvo.
             O processo de produção fóton-neutron ($\gamma, n$) ocorre tanto no cabeçote do AL quanto na blindagem da sala.
-            Os raios-$\mathrm{\gamma}$ provenientes da captura de neutrons ocorre apenas na blindagem da sala, sendo um resultado da produção de nêutrons no cabeçote devido aos feixes primários com energia acima da energia de ligação dos nêutrons, que é de aproximadamente 8 MeV para a maior parte dos nuclídeos. De acordo com o NCRP 79 este efeito é mais enunciado para feixes com energia de fótons acima de 10 MeV.
+            Os raios-$\mathrm{\gamma}$ provenientes da captura de nêutrons ocorre apenas na blindagem da sala, sendo um resultado da produção de nêutrons no cabeçote devido aos feixes primários com energia acima da energia de ligação dos nêutrons, que é de aproximadamente 8 MeV para a maior parte dos nuclídeos. De acordo com o NCRP 79 este efeito é mais enunciado para feixes com energia de fótons acima de 10 MeV.
             
 
             Como ja citado anteriormente, o primeiro passo no cálculo de blindagens é determinar o fator de transmissão B e definir a espessura do material que atende aos limites de dose P, descrevendo os valores da espessura ou a TVL para o material. Para cada ponto e parede, deve ser apresentada as espessuras mínimas para a radiação primária e para a radiação secundária.
@@ -571,7 +571,7 @@
             Este valor irá representar a verdadeira transmissão da barreira após considerar os valores das camadas deci-redutoras que serão utilizadas na blindagem.
 
             
-            Quando o material utilizado é o concreto, seja ele comum ou denso, a espessura obtida através destes cálculos são suficientes para absorver os fotonêutrons e radiação gama emitida por captura de neutrons, devido a alta quantidade de hidrogênio presente nesse material e portanto nenhuma barreira adicional é necessária. Porém, ao utilizar outros materiais na barreira primária, algumas considerações especiais precisam ser feitas.
+            Quando o material utilizado é o concreto, seja ele comum ou denso, a espessura obtida através destes cálculos são suficientes para absorver os fotonêutrons e radiação gama emitida por captura de nêutrons, devido a alta quantidade de hidrogênio presente nesse material e portanto nenhuma barreira adicional é necessária. Porém, ao utilizar outros materiais na barreira primária, algumas considerações especiais precisam ser feitas.
 
             Embora a técnica de IMRT utilize um alto número de unidades monitoras ou tempo de beam-on, ela utiliza feixes muito estreitos e então a carga de trabalho média sobre qualquer área de 100 cm\textsuperscript{2} na barreira primária é aproximada para as cargas de trabalho padrão;
 
@@ -667,9 +667,9 @@
             \end{equation}
             
 
-            Estes cálculos não levam em consideração a atenuação e a produção de fóton-neutrons ou raios-$\gamma$ emitidos por captura de neutrons em feixes com energia acima de \qty{10}{MV}. E para estes casos, deve-se atentar à correta disposição dos materiais na blindagem pois a camada de metal pode se tornar uma fonte de fotons-neutrons, aumentando a exposição além da blindagem. Isto ocorre apenas para a barreira primária, pois a radiação espalhada para além da barreira primária não possui energia suficiente para produzir um fótoneutrôn e a intensidade da radiação de fuga, quando combinada com a seção de choque para produção de fotoneutrôns não produz um número significante de neutrôns nas barreiras secundárias.
+            Estes cálculos não levam em consideração a atenuação e a produção de fóton-nêutrons ou raios-$\gamma$ emitidos por captura de nêutrons em feixes com energia acima de \qty{10}{MV}. E para estes casos, deve-se atentar à correta disposição dos materiais na blindagem pois a camada de metal pode se tornar uma fonte de fotons-nêutrons, aumentando a exposição além da blindagem. Isto ocorre apenas para a barreira primária, pois a radiação espalhada para além da barreira primária não possui energia suficiente para produzir um fótoneutrôn e a intensidade da radiação de fuga, quando combinada com a seção de choque para produção de fotoneutrôns não produz um número significante de neutrôns nas barreiras secundárias.
 
-            A Dose-equivalente de neutrons por semana devido a uma barreira laminada quando o colimador está aberto em seu tamanho máximo é obtida pela equação empirica:
+            A Dose-equivalente de nêutrons por semana devido a uma barreira laminada quando o colimador está aberto em seu tamanho máximo é obtida pela equação empirica:
 
             \begin{equation}
                 H_n = \frac{D_0 \; R \; F_{max}}{\left(\frac{t_m}{2} + t_2 + 0.3\right)} 
@@ -678,9 +678,9 @@
             \end{equation}
 
             Onde: \\
-            $H_n$ =  Dose equivalente de neutrons por semana \\
+            $H_n$ =  Dose equivalente de nêutrons por semana \\
             $D_0$ =  Dose absorvida de raios-x por semana no isocentro \\
-            $R$ = Coeficiente de produção de neutrons \\
+            $R$ = Coeficiente de produção de nêutrons \\
             $F_{max}$ = Área máxima do campo no isocentro \\
             $t_m$ = espessura da camada de metal \\
             $t_1$ = espessura da primeira camada de concreto \\
@@ -699,9 +699,9 @@
             
             \
 
-            A Figura \ref{fig:esquemaBarreiraLaminada} esquematiza a composição de uma barreira laminada. Devido ao processo de produção de neutrons no metal que subsequentemente interage com o concreto, ocorre a produção de raios-$\gamma$, que são gerados, ou a partir da captura de neutrons no concreto, ou a partir da desexitação dos núcleos do metal que sofreram interação fotonuclear.
+            A Figura \ref{fig:esquemaBarreiraLaminada} esquematiza a composição de uma barreira laminada. Devido ao processo de produção de nêutrons no metal que subsequentemente interage com o concreto, ocorre a produção de raios-$\gamma$, que são gerados, ou a partir da captura de nêutrons no concreto, ou a partir da desexitação dos núcleos do metal que sofreram interação fotonuclear.
 
-            A dose equivalente total através da barreira $(H_{tot})$ deve então contabilizar a dose equivalente dos neutrons $(H_na)$ e a dose equivalente para os fótons de raios-x transmitidos $ H_{tr}$ pela parede e dos raios-$\gamma$ produzidos na parede. Baseados em medidas em parades laminadas com energias entre \qtylist{15; 18}{MV} é seguro estabelecer a componente para as radiações x e $\gamma$ sendo 2.7 vezes o valor para a dose equivalente transmitida para a radiação-x, ou seja:
+            A dose equivalente total através da barreira $(H_{tot})$ deve então contabilizar a dose equivalente dos nêutrons $(H_na)$ e a dose equivalente para os fótons de raios-x transmitidos $ H_{tr}$ pela parede e dos raios-$\gamma$ produzidos na parede. Baseados em medidas em parades laminadas com energias entre \qtylist{15; 18}{MV} é seguro estabelecer a componente para as radiações x e $\gamma$ sendo 2.7 vezes o valor para a dose equivalente transmitida para a radiação-x, ou seja:
 
             \begin{equation}
                 H_{tot} = H_n + 2.7 H_{tr}
@@ -717,7 +717,7 @@
                     \item Radiação de fuga do cabeçote;
                     \item Radiação espalhada pelo paciente;
                     \item Radiação espalhada nas paredes; e 
-                    \item Radiações secundárias, incluindo fotoneutrons e raios-$\gamma$ produzidos por captura de neutrons, que devem ser considerados na existência de fótons com energia superior a \qty{10}{MeV} e ao lidar com barreiras finas, como ocorre em portas em um labirinto ou em conduítes 
+                    \item Radiações secundárias, incluindo fotonêutrons e raios-$\gamma$ produzidos por captura de nêutrons, que devem ser considerados na existência de fótons com energia superior a \qty{10}{MeV} e ao lidar com barreiras finas, como ocorre em portas em um labirinto ou em conduítes 
                 \end{enumerate}
 
             Como a radiação de fuga e a radiação espalhada possuem diferentes energias, os valores da barreira são calculados separadamente para cada uma destas componentes e no final são comparadas para obter a espessura mais recomendada; A Figura \ref{fig:esquemaTransmissaoRadiacaoEspalhadaPaciente} mostra o esquema para cálculos da barreira secundária. 
@@ -893,7 +893,7 @@
                     \item $d_{zz}$ distância da superfície $A_1$ até a porta do labirinto;
                 \end{itemize} 
             
-            \textbf{\textit{\textcolor{CarnationPink}{Obs:}}} Para energias superiores a 10MV, a contribuição do espalhamento pelo paciente é ignorada uma vez que se torna insignificante quando comparada com a contribuição devido a radiação de fuga e a radiação gama produzida por captura de neutrons produzidos no labirinto por neutrons lentos (K aprox \qty{1}{eV}.)
+            \textbf{\textit{\textcolor{CarnationPink}{Obs:}}} Para energias superiores a 10MV, a contribuição do espalhamento pelo paciente é ignorada uma vez que se torna insignificante quando comparada com a contribuição devido a radiação de fuga e a radiação gama produzida por captura de nêutrons produzidos no labirinto por nêutrons lentos (K aprox \qty{1}{eV}.)
 
             A dose equivalente na porta devido a radiação de fuga transmitida pela parede Z do labirinto é obtida pela Equação \ref{eq:doseEquivalenteRadiacaoFugaTransmitida}:
 
@@ -951,17 +951,17 @@
         \subsection{Aceleradores com Energia acima de \qty{10}{MV}}
         
 
-            A Figura \ref{fig:esquemaLabirintoNeutrons} mostra o esquema de um labirinto para aceleradores de alta energia. A estimativa de dose equivalente devido aos fótons espalhados através do labirinto pode ser determinada através do método utilizado para Aceleradores com até 10 MV, no entanto, uma vez que a energia média dos raios gama de captura para o concreto é de \qty{3.6}{MeV}, uma porta e labirinto que fornece blindagem suficiente para os raios gama de captura será suficiente para os fótons espalhados.
+            A Figura \ref{fig:esquemaLabirintonêutrons} mostra o esquema de um labirinto para aceleradores de alta energia. A estimativa de dose equivalente devido aos fótons espalhados através do labirinto pode ser determinada através do método utilizado para Aceleradores com até 10 MV, no entanto, uma vez que a energia média dos raios gama de captura para o concreto é de \qty{3.6}{MeV}, uma porta e labirinto que fornece blindagem suficiente para os raios gama de captura será suficiente para os fótons espalhados.
 
-            Para labirintos em Aceleradores de alta energia, quando a distância do Ponto A até o Ponto B, apresentados na Figura \ref{fig:esquemaLabirintoNeutrons}, é maior que 2.5 m, o campo de fótons é dominado pelos raios gama de captura e a componente dos fótons espalhados pode ser ignorada. De fato, a dose equivalente dos fótons fora da porta do labirinto apenas muda ligeiramente quando o tamanho de campo formado pelo colimador é ajustado do tamanho máximo para totalmente fechado ou quando o fantoma (objeto espalhador) é removido da frente do feixe. 
+            Para labirintos em Aceleradores de alta energia, quando a distância do Ponto A até o Ponto B, apresentados na Figura \ref{fig:esquemaLabirintonêutrons}, é maior que 2.5 m, o campo de fótons é dominado pelos raios gama de captura e a componente dos fótons espalhados pode ser ignorada. De fato, a dose equivalente dos fótons fora da porta do labirinto apenas muda ligeiramente quando o tamanho de campo formado pelo colimador é ajustado do tamanho máximo para totalmente fechado ou quando o fantoma (objeto espalhador) é removido da frente do feixe. 
 
              
 
             \begin{figure}[h]
                 \centering
-                \includegraphics[width=0.6\textwidth]{Imagens/esquemaLabirintoNeutrons.jpg}
+                \includegraphics[width=0.6\textwidth]{Imagens/esquemaLabirintonêutrons.jpg}
                 \caption{Esquema de labirinto para Aceleradores Lineares com energia acima de 10 MV}
-                \label{fig:esquemaLabirintoNeutrons}
+                \label{fig:esquemaLabirintonêutrons}
             \end{figure}
 
     \subsubsection{Dose Equivalente dos Fótons Na Porta do Labirinto}
@@ -974,7 +974,7 @@
 
 
         \begin{exemplo}[onde:]
-                \textcolor{CarnationPink}{$\mathbf{K}$} é a razão da dose equivalente dos raios gama de captura (Sv) com a fluência total dos nêutrons no ponto A apresentado na Figura \ref{fig:esquemaLabirintoNeutrons}. Um valor médio de K igual a \qty{6.9 e{-16}}{Sv \cdot m^2} foi encontrado com base em medidas realizadas em diversos aceleradores.
+                \textcolor{CarnationPink}{$\mathbf{K}$} é a razão da dose equivalente dos raios gama de captura (Sv) com a fluência total dos nêutrons no ponto A apresentado na Figura \ref{fig:esquemaLabirintonêutrons}. Um valor médio de K igual a \qty{6.9 e{-16}}{Sv \cdot m^2} foi encontrado com base em medidas realizadas em diversos aceleradores.
 
                 \
 
@@ -989,7 +989,7 @@
                 \textcolor{CarnationPink}{$\mathbf{TVD}$} é a distância deci-redutora, tendo um valor de \qty{\sim 5.4}{m} para raios-X na faixa entre \qtyrange{18}{25}{MV} e um valor de \qty{\sim 3.9}{m} para feixes de fótons de \qty{15}{MV}.
         \end{exemplo}
 
-        A fluência total de nêutrons na entrada interna do labirinto (Ponto A na Figura \ref{fig:esquemaLabirintoNeutrons}) por unidade de dose absorvida de raios-X no isocentro pode ser determinada através da seguinte equação:
+        A fluência total de nêutrons na entrada interna do labirinto (Ponto A na Figura \ref{fig:esquemaLabirintonêutrons}) por unidade de dose absorvida de raios-X no isocentro pode ser determinada através da seguinte equação:
 
             \begin{equation}
                 \varphi_A = \frac{\beta Q_n}{4 \pi d_1^2} 
@@ -998,7 +998,7 @@
             \end{equation}
 
         \begin{exemplo}[onde:]
-                O primeiro termo representa a componente dos neutrons diretos, o segundo termo representa a componente dos neutrons espalhados e a terceira componente representa os neutrons térmicos.
+                O primeiro termo representa a componente dos nêutrons diretos, o segundo termo representa a componente dos nêutrons espalhados e a terceira componente representa os nêutrons térmicos.
 
                 \
 
@@ -1010,7 +1010,7 @@
 
                 \
 
-                \textcolor{CarnationPink}{$\mathbf{Q_n}$} é a força da fonte de nêutrons dada em quantidade de neutrons emitidos pelo cabeçote do acelerador por Gy de dose absorvida de raios-x no isocentro.
+                \textcolor{CarnationPink}{$\mathbf{Q_n}$} é a força da fonte de nêutrons dada em quantidade de nêutrons emitidos pelo cabeçote do acelerador por Gy de dose absorvida de raios-x no isocentro.
 
                 \
 
@@ -1034,11 +1034,11 @@
 
     \subsubsection{Dose Equivalente dos Nêutrons Na Porta do Labirinto}
 
-        Para Aceleradores operando em energias superiores a 10 MV é necessária uma blindagem na porta tanto para fótons quanto para nêutrons. O a dose equivalente de nêutrons na entrada do labirinto varia um pouco, mas não é afetada pela configuração do colimador. Como a máxima fluência de nêutrons é obtida quando os colimadores estão fechados, espera-se que a maioria dos fotonêutrons se originem no cabeçote dos aceleradores. O campo de neutrons no labirinto também depende do ângulo do gantry e da localização do plano rotação do alvo na sala de tratamento. Foi demonstrado que o nível de nêutrons na porta é máximo quando o ângulo de gantry está alinhado horizontalmente com a direção 3 - 1, indicado na Figura \ref{fig:esquemaLabirintoNeutrons}. 
+        Para Aceleradores operando em energias superiores a 10 MV é necessária uma blindagem na porta tanto para fótons quanto para nêutrons. O a dose equivalente de nêutrons na entrada do labirinto varia um pouco, mas não é afetada pela configuração do colimador. Como a máxima fluência de nêutrons é obtida quando os colimadores estão fechados, espera-se que a maioria dos fotonêutrons se originem no cabeçote dos aceleradores. O campo de nêutrons no labirinto também depende do ângulo do gantry e da localização do plano rotação do alvo na sala de tratamento. Foi demonstrado que o nível de nêutrons na porta é máximo quando o ângulo de gantry está alinhado horizontalmente com a direção 3 - 1, indicado na Figura \ref{fig:esquemaLabirintonêutrons}. 
 
         A dose equivalente dos nêutrons na entrada externa do labirinto pode ser determinada através de diferentes métodos analíticos que utilizam o conceito de distância deci-redutora (TVD) onde a TVD é aproximadamente igual a três vezes a raiz quadrada do produto da altura vezes a largura da abertura e que cada braço adicional na abertura do labirinto diminui a fluência aproximadamente mais três vezes. 
 
-        No \textcolor{CarnationPink}{\textbf{\textit{Método de Kersey}}} a posição efetiva da fonte de neutrons é definida no isocentro do acelerador e a dose equivalente para os neutrons ($H_{n,D}$) na entrada externa do labirinto por unidade de dose absorvida de raios-X no isocentro é dada por:
+        No \textcolor{CarnationPink}{\textbf{\textit{Método de Kersey}}} a posição efetiva da fonte de nêutrons é definida no isocentro do acelerador e a dose equivalente para os nêutrons ($H_{n,D}$) na entrada externa do labirinto por unidade de dose absorvida de raios-X no isocentro é dada por:
 
         \begin{equation}
             H_{n,D} = (H_0) \left(\frac{S_0}{S_1}\right) \left(\frac{d_0}{d_1}\right)^2 10^{-\left(\frac{d_2}{5}\right)}
@@ -1065,11 +1065,11 @@
 
             \
 
-            \textcolor{CarnationPink}{\textbf{Obs:}} neste método, o quociente igual a 5 indica que o labirinto possui uma TVD de 5 m para a atenuaçãod os neutrons no labirinto. 
+            \textcolor{CarnationPink}{\textbf{Obs:}} neste método, o quociente igual a 5 indica que o labirinto possui uma TVD de 5 m para a atenuaçãod os nêutrons no labirinto. 
 
         \end{exemplo}
 
-        Medidas experimentais mostraram que a razão entre a dose equivalente para neutrons calculada com o método de Kersey e a dose equivalente medida diretamente pode variar entre 0.82 até 2.3 em aceleradores com energia de 15 MV até 18 MV e que a TVD é aproximadamente 16\% menor que 5 m e portanto este valor pode ser usado de forma conservadora.
+        Medidas experimentais mostraram que a razão entre a dose equivalente para nêutrons calculada com o método de Kersey e a dose equivalente medida diretamente pode variar entre 0.82 até 2.3 em aceleradores com energia de 15 MV até 18 MV e que a TVD é aproximadamente 16\% menor que 5 m e portanto este valor pode ser usado de forma conservadora.
 
         O \textcolor{CarnationPink}{\textbf{\textit{Método de Kersey Modificado}}} leva em consideração as diferenças experimentais encontradas no método tradicional afim de se obter uma representação mais realística da dose equivalente devido aos nêutrons, dada pela seguinte equação:
 
@@ -1079,11 +1079,11 @@
         \end{equation}
 
         \begin{exemplo}[onde:]
-            \textcolor{CarnationPink}{$\mathbf{H_{n,D}}$} é a dose equivalente devido aos neutrons na entrada do labirinto por unidade de dose absorvida (Gy) de raios-X no isocentro (\unit{Sv \cdot n^{-1} \cdot m^2}).
+            \textcolor{CarnationPink}{$\mathbf{H_{n,D}}$} é a dose equivalente devido aos nêutrons na entrada do labirinto por unidade de dose absorvida (Gy) de raios-X no isocentro (\unit{Sv \cdot n^{-1} \cdot m^2}).
 
             \
 
-            \textcolor{CarnationPink}{$\mathbf{\varphi_A}$} é a fluência de neutrons por unidade de dose absorvida devido aos fótons no isocentro (\unit{m^{-2} \cdot Gy^{-1}}).
+            \textcolor{CarnationPink}{$\mathbf{\varphi_A}$} é a fluência de nêutrons por unidade de dose absorvida devido aos fótons no isocentro (\unit{m^{-2} \cdot Gy^{-1}}).
 
             \
 
@@ -1098,11 +1098,11 @@
                 \end{equation}
         \end{exemplo}
 
-        A dose equivalente semanal $H_n$ (\unit{Sv / semana}) na porta devido aos neutrons é dada por:
+        A dose equivalente semanal $H_n$ (\unit{Sv / semana}) na porta devido aos nêutrons é dada por:
 
         \begin{equation}
             H_n = W_L \cdot H_{n,D}
-            \label{eq:doseEquivalenteNeutrons}
+            \label{eq:doseEquivalentenêutrons}
         \end{equation}
 
         \begin{exemplo}[onde:]
@@ -1126,18 +1126,18 @@
 
             \
 
-            \textcolor{CarnationPink}{$\mathbf{H_n}$} é a componente relacionada aos nêutrons dada pela Equação \ref{eq:doseEquivalenteNeutrons}.
+            \textcolor{CarnationPink}{$\mathbf{H_n}$} é a componente relacionada aos nêutrons dada pela Equação \ref{eq:doseEquivalentenêutrons}.
         \end{exemplo}
 
         Para a maior parte dos aceleradores com energia acima de 10 MV, a componente $H_{tot}$ possui uma ordem de grandeza muito menor que a soma de $H_{cg}$ com $H_n$, de forma que esta componente pode ser desprezada.
 
     \subsection{Blindagem da Porta}
 
-        A blindagem na porta devido a radiação de fuga e a radiação espalhada pode ser obtida com base no fator de transmissão da porta dado pela Equação \ref{eq:TransmissaoBlindagemPorta}. No entanto, em altas energias a componente devido à fuga e espalhamento é relativamente baixa quando comparado às outras componentes que se tornam energéticamente possíveis para maiores energias (neutrons e raios gama de captura). A energia média para os raios gama de captura é de \qty{3.6}{MeV} e pode alcancar energias da ordem de \qty{10}{MeV} em casos onde os labirintos são muito curtos. Nestes casos pode ser necessário uma TVL de chumbo (equivalente a 6.1 cm). 
+        A blindagem na porta devido a radiação de fuga e a radiação espalhada pode ser obtida com base no fator de transmissão da porta dado pela Equação \ref{eq:TransmissaoBlindagemPorta}. No entanto, em altas energias a componente devido à fuga e espalhamento é relativamente baixa quando comparado às outras componentes que se tornam energéticamente possíveis para maiores energias (nêutrons e raios gama de captura). A energia média para os raios gama de captura é de \qty{3.6}{MeV} e pode alcancar energias da ordem de \qty{10}{MeV} em casos onde os labirintos são muito curtos. Nestes casos pode ser necessário uma TVL de chumbo (equivalente a 6.1 cm). 
 
-        A energia média dos neutrons na entrada do labirinto é de \qty{\sim 100}{KeV} com uma TVL de polietileno de 4.5 cm. O Polietileno Borado (BPE) (5\% de boro) é apenas um pouco menos eficaz para neutrons rápidos mas é muito mais eficaz para neutrons térmicos quando comparado com o polietileno sem o boro.  A TVL para o BPE é de 3.8 cm para neutrons com energia de 2 MeV e de 1.2 cm para neutrons térmicos. Portanto, uma recomendação conservadora é utilizar a TVL de 4.5 cm de BPE nos cálculos de blindagem da porta.
+        A energia média dos nêutrons na entrada do labirinto é de \qty{\sim 100}{KeV} com uma TVL de polietileno de 4.5 cm. O Polietileno Borado (BPE) (5\% de boro) é apenas um pouco menos eficaz para nêutrons rápidos mas é muito mais eficaz para nêutrons térmicos quando comparado com o polietileno sem o boro.  A TVL para o BPE é de 3.8 cm para nêutrons com energia de 2 MeV e de 1.2 cm para nêutrons térmicos. Portanto, uma recomendação conservadora é utilizar a TVL de 4.5 cm de BPE nos cálculos de blindagem da porta.
 
-        Para as portas onde o comprimento do labirinto seja da ordem de 8 m ou superior, será necessário entre 0.6 cm de chumbo até 1.2 cm de chumbo e entre 2 cm a 4 cm de BPE. Estes elementos deverão ser dispostos tendo uma camada de BPE entre duas camadas de chumbo pois, o chumbo virado para a fonte de nêutrons irpa reduzir a energia dos neutrons devido a espalhamentos não-elástivos e então tornará o BPE mais efetivo na blindagem dos neutrons enquanto que a camada externa de chumbo irá atenuar os raios gama de captura emitidos no BPE com energia de 478 KeV. Quando o labirinto é longo o suficiente para atenuar os neutrons antes que eles cheguem à porta, a camada externa de chumbo não será necessária.
+        Para as portas onde o comprimento do labirinto seja da ordem de 8 m ou superior, será necessário entre 0.6 cm de chumbo até 1.2 cm de chumbo e entre 2 cm a 4 cm de BPE. Estes elementos deverão ser dispostos tendo uma camada de BPE entre duas camadas de chumbo pois, o chumbo virado para a fonte de nêutrons irpa reduzir a energia dos nêutrons devido a espalhamentos não-elástivos e então tornará o BPE mais efetivo na blindagem dos nêutrons enquanto que a camada externa de chumbo irá atenuar os raios gama de captura emitidos no BPE com energia de 478 KeV. Quando o labirinto é longo o suficiente para atenuar os nêutrons antes que eles cheguem à porta, a camada externa de chumbo não será necessária.
 
     \section{Procedimentos Especiais}
 
@@ -1245,7 +1245,7 @@
             W_L = W_{conv} + W_{TBI} + C_I W_{IMRT} + C_{QA} W_{QA}
         \end{equation}
 
-        Este valor é utilizada para cálculos de fuga de fótons e produção de neutrons.
+        Este valor é utilizada para cálculos de fuga de fótons e produção de nêutrons.
 
     \subsection{Taxa De Dose Equivalente Média}
 

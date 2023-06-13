@@ -72,7 +72,7 @@
 \rfoot{Página \thepage}
 
 \title{Resumo}
-\author{Notas Rápidas \nocite{*}}
+\author{Técnicas Avançadas de Tratamento e Tratamentos Especializados \nocite{*}}
 \date{\textit{Dalila Mendonça}}
 \begin{document}
 	\maketitle
@@ -403,7 +403,7 @@
 
     \textcolor{CarnationPink}{Terapia com Partículas} 
     \begin{itemize}
-        \item As principais partículas carregadas pesadas utilizadas para tratamentos de Radioterapia são: \textbf{prótons, ions pesados e pions negativos}. Embora os elétrons também sejam partículas carregadas, eles não entram na classificação de partículas pesadas.  Já os neutrons são partículas pesadas porém não possuem carga;
+        \item As principais partículas carregadas pesadas utilizadas para tratamentos de Radioterapia são: \textbf{prótons, ions pesados e pions negativos}. Embora os elétrons também sejam partículas carregadas, eles não entram na classificação de partículas pesadas.  Já os nêutrons são partículas pesadas porém não possuem carga;
         
         \item Íons pesados são ártomos com Z médio a alto e que perderam todos seus elétrons. Os íons pesados geralmente não sofrem mudanças significaticas em sua direção de propagação ao atravessar a matéria devido à sua grande massa;
         
@@ -440,46 +440,46 @@
 
         \item Comparado com os fótons, a heterogeneidade do meio irá ter um maior efeito na distribuição de dose para os prótons do que para os fótons. A heterogeneidade dos tecidos podem mudar a atenuação por unidade de caminho percorrido em para os fótons em apenas um pequeno valor percentual, enquanto que para os feixes de prótons a heterogeneidade irá mudar drasticamente o alcance do feixe de modo que  poderá causar uma superdosagem nas estruturas críticas enquanto o tumor seja subdosado. Este fator não é só importante no planejamento mas também nas mudanças na heterogeneidade inter-frações e intra-frações como a movimentação de uma lesão no pulmão.
         
-        \item As unidades de CT utilizam Raios-X e não prótons para criar sua imagem. Portanto, é necessário converter os números da CT (dado para fótons) para o poder de freamento dos prótons para que seja possível calcular o alcance dos prótons necessário para um determinado campo de tratamento. Esta conversão pode ser feita aplicando uma curva de calibração que é única para o equipamento de CT e para o kVp utilizado e leva em consideração a densidade eletrônica e a composição dos tecidos. Porém, exitem erros e incertezas associadas à convesão dos números de CT com o poder de freamento relativo dos prótons, onde, em um caso partícular, dois materiais podem ter o mesmo número de CT porém terem diferentes valores para o poder de freamento relativo do próton. Estas incertezas são levadas em consideração durante o processo de planejamento de tratamento através da adição de margens proximal e distal em cada campo de tratamento afim de se atinir o SOBP pretendido.
+        \item As unidades de CT utilizam Raios-X e não prótons para criar sua imagem. Portanto, é necessário converter os números de HU (dado para fótons) para o poder de freamento dos prótons para que seja possível calcular o alcance dos prótons necessário para um determinado campo de tratamento. Esta conversão pode ser feita aplicando uma curva de calibração que é única para o equipamento de CT e para o kVp utilizado e leva em consideração a densidade eletrônica e a composição dos tecidos. Porém, exitem erros e incertezas associadas à convesão dos números de HU com o poder de freamento relativo dos prótons, onde, em um caso partícular, dois materiais podem ter o mesmo número de HU porém terem diferentes valores para o poder de freamento relativo do próton. Estas incertezas são levadas em consideração durante o processo de planejamento de tratamento através da adição de margens proximal e distal em cada campo de tratamento afim de se atinir o SOBP pretendido.
         
-        \item O planejamento robusto (Robust planning) ou otimização em protonterapia, leva em consideração várias incertezas próton-especificas, incluindo as margens distal e proximal ao longo do eixo do feixe, a borda lateral dos campos e o fator de correção dos números de CT para o poder de freamento do próton. Estas incertezas são especialmente importantes nas interfaces dos tecidos de diferentes composições e densidade. Técnicas corretivas para ajudar a contabilizar essas incertezas vem sido utilizadas tal como o cálculo das distribuições de dose para nas extremidades superior e inferior dessas incertezas para garantir a cobertura completa do alvo. Algoritmos de cálculo Monte Carlo são utilizadis para ajudar a melhorar a precisão do cálculo.
+        \item O planejamento robusto (Robust planning) ou otimização em protonterapia, leva em consideração várias incertezas específicas para os prótons, incluindo as margens distal e proximal ao longo do eixo do feixe, a borda lateral dos campos e o fator de correção dos números de HU para o poder de freamento do próton. Estas incertezas são especialmente importantes nas interfaces dos tecidos de diferentes composições e densidade. Técnicas corretivas para ajudar a contabilizar essas incertezas vem sido utilizadas tal como o cálculo das distribuições de dose nas extremidades de incertezas superior e inferior para garantir a cobertura completa do alvo. Algoritmos de cálculo Monte Carlo são utilizados para ajudar a melhorar a precisão do cálculo.
         
-        \item O gradiente de dose lateral (perpendicular ao  eixo central do feixe) é mais largo quando comparado ao gradiente de dose no eixo central. A medida que o feixe de prótons perde sua energia, há um alargamento lateral do feixe próximo ao fim do seu alcançe devido à multitiplos espalhamentos no meio.
-
+        \item O gradiente de dose lateral (perpendicular ao  eixo central do feixe) é mais amplo quando comparado ao gradiente de dose no eixo central. A medida que o feixe de prótons perde sua energia, há um alargamento lateral do feixe na região próxima ao fim do seu alcançe devido à multitiplos espalhamentos no meio. 
+        
+        \item Uma das principais desvantagens em utilizar os feixes de prótons é que eles podem ter seu feixe contaminado por outras partículas, principalmente por nêutrons, que tem um efeito biológico muito maior no tecido e pode afetar a distribuição de dose do feixe de fótons. Além disso o acelerador de prótons possui uma estrutura muito grande além de ter altos custos iniciais e altos custos de manutenção.
+        
+        \item Existem duas formas de tratamentos utilizando nêutrons. Uma forma de tratamento é utilizando um feixe externo de nêutrons, que é criado através da aceleração de prótons ou deutérios contra um alvo de berílio. Outra forma é chamada de Terapia de neutros de captura pelo Boro (BNCT): Esta técnica consiste na administração de Boro-10 no paciente, que irá se concentrar preferencialmente no local do tumor, e na sequência o local do tumor é irradiado com um feixe de nêutrons. Este método obtém vantagem da reação de transmutação onde o núcleo do \ce{^{10}B} captura um nêutrons e se torna um núcleo instável, que na sequência emite partículas alfa de curto alcance e íons de lítio, que depositam sua energia concentradamente dentro da célula contendo o átomo inicial de \ce{^{10}B}. O comprimento de caminho combinado para ambos os produtos da reação é de aproximadamente um diâmetro da célula, o que ajuda a confinar a deposição de dose dentro do tumor poupando tecidos sadios. 
+        
+        \item Os prótons e os deutérios normalmente são acelerados através de cíclotrons em energias de aproximadamente 50 MeV, no qual atingem um alvo de Berílio produzindo feixes de nêutrons com energia equivalente a um feixe de raios-X de 6 MV.
+        
+        \item Os principais tratamentos feitos com nêutrons são as neoplasias das glândulas salivares maior e menor. Outros sítios que foram aplicados tratamentos com nêutrons são: tumores de cabeça e pescoço, gliomas malígnos, sarcomas de tecido mole e câncer de próstada. Porém, o tratamento dessas regiões com nêutrons não apresentaram nenhuma vantagem clara quando comparados com tratamentos utilizando fótons ou elétrons.
+        
+        \item Uma das principais desvantagens em utilizar tratamentos com nêutrons é que os neutrôns podem sofrer diversos tipos de interações com o meio, resultando na emissão de raios gama, prótons de recuo, partículas alfa, partículas carregadas pesadas e outros nêutrons. Este espectro amplo de radiação secundaria produzida devido ainteração dos nêutrons resultam em uma ampla penumbra, tornando mais díficil a colimação e o planejamento da configuração do feixe. Além disso, a energia absorvida no tratamento com nêutrons não tem uma correlação suave em função da energia do nêutron, de modo que haverá spikes ou picos de ressonancia onde grandes quantidades de absorção podem ocorrer com energias variáveis de nêutrons.
     \end{itemize}
 
     \textcolor{CarnationPink}{Hipertermia}
     \begin{itemize}
-        \item 
+        \item A Hipertermmia é umtripo de tratamento com o qual os tecidos do corpo são expostos a temperaturas superiores às temperaturas normais. A ideia por trás de um tratamento de hipertermia é aumentara temperatura na célula cancerígena e então a tornar mais sensível a radioterapia e/ou quimioterapia, sendo então utilizada em combinação com estas duas modalidades de tratamento.
+        
+        \item A temperatura utilizada em tratamentos de hipertermia variam entre \ang{41}C a \ang{45}C;
+        
+        \item Nos tratamentos de hipertermia são utilizadas as energias eletromagnéticas de micro-ondas, com frequêndia em torno de 915 MHz para fornecer um aquecimento de até 2 cm de profundidade;
+        
+        \item Um tratamento típico de hipertermia tem uma duração de aproximadamente 60 minutos.
+        
+        \item A hipertermia é quase sempre utilizada como um tratamento adjuvante à radioterapia ou a quimioterapia. Isolada, a hipertermia pode resultar em uma resposta tumoral transitória, mas nenhum controle tumoral a longo prazo foi relatado.
+        
+        \item Combinada com a radioterapia, a hipertermia é administrada por 60 minutos e em seguida é feito o tratamento de radioterapa dentro de 1 hora após a conclusão da hipertermia. A hipertermia é normalmente administrada de duas a três vezes por semana. Um aumento do efeito da radiação é observado se a hipertermia também é entregue após a irradiação.
+        
+        \item A hipertermia é mais frequentemente aplicada no tratamento de recorrência local de câncer de mama, melanomas e cânceres de cabeça e pescoço em conjunto com a radioterapia. Estudos Randomizados mostraram um benefício da hipertermia combinada com a radiorerapia em outros tipos de câncer incluindo esôfago, bexiga, cérvix, retal, gliobastoma multiforme e sarcomas.
+        
+        \item A razão de melhoria térmica (thermal enhancement ratio) é a razão entre a dose de radiação necessária para produzir um efeito biológico específico sem calor e a dose de radiação necessária para produzir um efeito equivalente com calor.
+        
+        \item Com respeito ao ciclo celular, a fase mais sensível à hipotermia é a fase S tardia, que também é a fase mais resistente à radiação-x e portanto resulta nos efeitos sinergéticos da radiação com a hipertermia quando utilizados em combinação. 
+        
     \end{itemize}
 
 \end{exemplo}
-
-\begin{exemplo}[11. Qualidade ]
-    \begin{itemize}
-        \item 
-    \end{itemize}
-\end{exemplo}
-
-\begin{exemplo}[12. Proteção Radiológica ]
-    \begin{itemize}
-        \item 
-    \end{itemize}
-\end{exemplo}
-
-\begin{exemplo}[13. Diagnóstico por Imagem]
-    \begin{itemize}
-        \item 
-    \end{itemize}
-\end{exemplo}
-
-\begin{exemplo}[14. IGRT]
-    \begin{itemize}
-        \item 
-    \end{itemize}
-\end{exemplo}
-
-
 
 \bibliography{ref.bib}
 \end{document}

@@ -389,8 +389,385 @@
 
 	\section{Câmaras de Ionização}
 
+		Considere duas placas separadas por uma cavidade de ar com uma diferença de potencial entre elas; Caso um fóton atravesse entre as placas, esse fóton pode interagir com o nitrogênio presente no ar quebrando a molécula formando um par de elétron e ion de nitrogênio. O elétron irá se mover na direção da placa positiva enquanto que o íon de nitrogênio irá se mover na direção da placa negativa. Haverá então uma diferença de carga líquida que pode ser medida em um eletrômetro. Caso milhares de fótons atravessem o meio, a quantidade de fótons que atravessam esse meio pode ser medida através da diferença da carga dividida pela massa de ar dentro das placas. Algumas das ionizações que acontecem enviarão elétrons para fora das placas, mas algumas dessas ionizações acontecerão fora das placas e enviarão íons dentro da região das placas. A medida que a quantidade de íons que se move para fora da região é igual a quantidade de íons que entram dentro da região, ocorre o equilíbrio eletrônico. Quando a condição de equilíbrio eletrônico é alcançada estará medindo o kerma no ar, caso contrário não estará medindo o Kerma precisamente
+
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.5\textwidth]{Imagens/camaraArLivre.jpg}
+			\caption{Câmara de Ar Livre}
+			\label{fig:camaraArLivre}
+		\end{figure}
+
+	\subsection{Câmaras de Ar Livre}
+		
+		O padrão ouro para medida da radiação ionizante é a câmara de ionização de ar livre, porém sua configuração requer tamanhos proporcionais ao alcance do elétron no ar, o que é muito grande para feixes de megavoltagem. Adicionalmente, uma vez que o meio é o ar livre sua configuração é muito sensível à variações de temperatura, pressão, umidade e do campo elétrico. Por essas razões, as câmaras de ionização de ar livre só existem em laboratórios padrão. 
+
+	\subsection{Câmaras do Tipo Dedal}
+
+		Para obter uma câmara de ionização mais compacta (comparado à câmara de ar livre), é necessário utilizar um eletrodo central e uma parede externa;  O número de elétrons entrando na cavidade deve ser o mesmo número de elétrons saindo da cavidade a fim de alcançar o equilíbrio eletrônico, e isto normalmente irá requerer uma cavidade de ar muito larga;
+		
+		Porém, esta condição pode ser respeitada se as paredes que circundam a cavidade de ar forem feitas com um material muito mais denso mas ainda ter um número atômico semelhante ao número atômico das moléculas de ar; Com uma parede ``equivalente a ar denso'' em volta da cavidade de ar, a câmara pode ser feita pequena o suficiente para ser utilizada clinicamente.
+
+		Caso a câmara seja pequena o suficiente de modo que ao ser inserida em um material a distribuição dos elétrons não seja alterada devido a presença da câmara, então a teoria cavitária de Braag-Gray pode ser utilizada para calcular a dose nessa região (Fig. \ref{fig:camaraDedal}.). 
+
+		A Exposição para uma câmara dedal é calculada a partir da seguinte equação:
+			\begin{equation}
+				X = \frac{Q}{\rho \times \nu} \times \frac{1}{A}
+			\end{equation}
+
+		\begin{exemplo}[Onde]
+			\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+				\item $\mathbf{X}$ é a exposição;
+				\item $\mathbf{Q}$ é a carga medida pelo eletrômetro;
+				\item $\mathbf{\rho}$ é a densidade do ar;
+				\item $\mathbf{\nu}$ é o volume de ar;
+				\item $\mathbf{A}$ é o fator de correção para considerar a perturbação da câmara no meio (pouco menor que 1.00).
+			\end{itemize}
+		\end{exemplo}
+
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.5\textwidth]{Imagens/camaraDedal.jpg}
+			\caption{Câmara dedal: constituída de um eletrodo central e uma parede condutora que pode ser utilizada para medir a carga. A parede feita de um material equivalente aos ar denso permite que a câmara tenha seu tamanho significativamente reduzido enquanto continua mantendo as condições de equilíbrio eletrônico e portanto medições precisas.}
+			\label{fig:camaraDedal}
+		\end{figure}
+
+		Como a câmara do tipo dedal ainda continua sendo preenchida com ar, a densidade do ar dentro da cavidade ainda continuará sensível a variações de temperatura e pressão e portanto esses fatores devem ser considerados para a correção das leituras medidas.
+
+
+	\subsection{Câmaras Condensadoras}
+
+		As câmaras condensadoras operam como capacitores e mede a queda na voltagem na presença da radiação com um fator de conversão conhecido para a queda de voltagem por roetgen de exposição. Esta câmara é sensível a fótons com energias até $\sim$ 2 MeV e são insensíveis a altas energias devido aos elétrons que saltam da haste de metal ou do material do isolante. Esses tipos de detectores não são mais utilizadas em radioterapia. 
+
+	\subsection{Câmaras tipo Farmer}
+		
+		As câmaras de ionização tipo farmer são as mais utilizadas em rotinas de radioterapia. Ela consiste em uma câmara cilíndrica com uma pequena cavidade central e é preenchida com um gás ou uma mistura de gases ionizantes. Esta é uma câmara relativamente estável e confiável para ser utilizadas na dosimetria de fótons de todas as energias nas faixas terapêuticas; A parede do volume sensível é feita de grafite puro e o eletrodo central é feito de alumínio ou grafite. Esta câmara de ionização possui um eletrodo de guarda para evitar corrente de fuga do eletrodo coletor e para definir o volume sensível mais consistentemente.
+
+		A câmara de ionização tipo Farmer tem algumas características que a distingue das demais câmaras de ionização cilíndricas:
+
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+			\item Além dos eletrodos coletores de íons e elétrons, a câmara de ionização tipo Farmer possui um eletrodo de referência. Esse eletrodo é geralmente um cilindro oco no centro da câmara, que ajuda a fornecer uma referência de potencial constante durante as medições.
+			\item A geometria cilíndrica da câmara de ionização tipo Farmer é otimizada para garantir uma resposta de dose uniforme e uma boa representação da dose absorvida em tecidos. O tamanho da câmara também é projetado para ser adequado para uso em feixes de radiação.
+		\end{itemize}
+
+	\section{Dosímetros Termoluminescentes (TLD)}
+
+		Os dosímetros TLD (Termoluminescent Dosimeters) são dispositivos utilizados para medir a dose de radiação ionizante. Eles são amplamente usados em aplicações de monitoramento de radiação, como proteção radiológica, controle de qualidade em radioterapia e monitoramento de exposição ocupacional.
+
+		O funcionamento dos dosímetros TLD baseia-se no fenômeno da termoluminescência que é explicado pela teoria de bandas. A teoria de bandas descreve a estrutura eletrônica dos materiais sólidos em termos das energias permitidas para os elétrons e as bandas de energia disponíveis para eles.
+
+		De acordo com a teoria de bandas, os átomos em um sólido formam uma estrutura cristalina que influencia a distribuição das energias dos elétrons. A estrutura cristalina do material determina as bandas de energia permitidas, que são faixas contínuas de energia eletrônica e as bandas proibidas, que são regiões que não contém níveis de energia permitidos para determinado sólido.
+		
+		Quando um material é exposto à radiação ionizante, a energia da radiação é absorvida pelos átomos do material, excitando elétrons de níveis de energia mais baixos (banda de valência) para níveis de energia mais altos. Esses elétrons excitados ocupam temporariamente estados de energia mais altos na banda de condução.
+		
+		No entanto, esses elétrons excitados não podem permanecer nos estados de energia excitados por um longo tempo, pois há uma tendência para que eles retornem aos níveis de energia mais baixos. Durante o processo de retorno aos níveis de energia mais baixos, os elétrons liberam a energia armazenada na forma de fótons (luz) na região do espectro eletromagnético visível ou invisível (dependendo do material).
+		
+		Porém, quando um material possui impurezas em sua rede cristalina, quando os elétrons retornam para um estado de menor energia eles ficam presos nas armadilhas contidas nas estruturas cristalinas do material chamada de banda proibida. Essa energia armazenada é liberada na forma de luz quando o material é aquecido.
+	
+		O processo de Dosimetria utilizando o TLD se dá através dos seguintes passos:
+
+		\begin{enumerate}
+			\item \textbf{Exposição à radiação:} O dosímetro TLD é exposto à radiação ionizante. Durante a exposição, os elétrons dos átomos do material do dosímetro são excitados e ao retornar para o estado fundamental ficam presos nas armadilhas na rede cristalina do material, que possuem um estado de energia superior ao estado fundamental.
+			\item \textbf{Leitura térmica:} Após a exposição à radiação, o dosímetro é aquecido a uma temperatura adequada, geralmente usando um equipamento chamado leitor de TLD. O aquecimento causa a liberação da energia armazenada na forma de luz visível.
+			\item \textbf{Detecção da luz:} A luz emitida é detectada por um fotomultiplicador ou um dispositivo semelhante. O sinal de luz é convertido em um sinal elétrico proporcional à quantidade de energia armazenada no dosímetro.
+			\item \textbf{Calibração e análise:} O sinal elétrico é calibrado em termos de dose de radiação e, em seguida, é analisado para determinar a quantidade de radiação absorvida pelo dosímetro.
+		\end{enumerate}
+		
+		Os dosímetros TLD utilizam certos materiais termoluminescentes que possuem essa capacidade de armazenar a energia da radiação. Alguns dos materiais comumente usados incluem:
+
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+			\item \textbf{\ce{LiF}:\ce{Mg}, \ce{Ti}} (Fluoreto de Lítio dopado com Magnésio e Titânio): É o material termoluminescente mais amplamente utilizado. Ele possui uma resposta linear com a dose e é eficiente para uma ampla faixa de energias de radiação.
+			
+			\item \textbf{\ce{LiF}:\ce{Mg}, \ce{Cu}, \ce{P}} (Fluoreto de Lítio dopado com Magnésio, Cobre e Fósforo): Esse material possui uma resposta de dose mais sensível para radiações de baixa energia, tornando-o adequado para monitorar radiação de raios-X de baixa energia como os utilizados em radiodiagnóstico.
+			
+			\item \textbf{\ce{Li2B4O7}:\ce{Cu}} (Borato de lítio dopado com cobre): Esse material é utilizado em dosímetros termoluminescentes para monitorar doses de radiação gama e raios X.
+			
+			\item \textbf{\ce{CaSO4}:\ce{Dy}} (Sulfato de Cálcio dopado com Disprósio): Esse material é usado principalmente para monitorar radiação de raios-X em baixas doses.
+			
+			\item \textbf{\ce{CaF2}:\ce{Dy}} (Fluoreto de Cálcio dopado com Disprósio): É adequado para monitorar a dose de radiação devido à feixes de elétrons.
+			
+			\item \textbf{\ce{CaF2}:\ce{Mn}} (Fluoreto de cálcio dopado com manganês): É usado em dosímetros termoluminescentes para medição de doses devido a radiação gama.
+			
+			\item \textbf{\ce{CaPO4}:\ce{Tl}} (Fosfato de Cálcio dopado com Tálio): Também chamado de TLD-100 é um dos materiais mais amplamente utilizados na fabricação de dosímetros termoluminescentes devido à sua alta sensibilidade e estabilidade. Ele possui uma resposta termoluminescente linear e é eficiente em uma ampla faixa de energias de radiação, tornando-o adequado para diversas aplicações.
+			
+			\item \textbf{\ce{MgB4O7}:\ce{Dy}} (Borato de magnésio dopado com disprósio): Este material é utilizado em dosímetros termoluminescentes para monitorar doses de radiação gama e raios X.
+		\end{itemize}
+
+		Esses materiais termoluminescentes são incorporados em pequenos cristais ou pastilhas que são colocados dentro dos dosímetros TLD. É importante ressaltar que os dosímetros TLD precisam ser calibrados para cada tipo de radiação e faixa de energia específica para garantir medições precisas e confiáveis de doses de radiação.
+
+		As maiores \textcolor{CarnationPink}{VANTAGENS} ao utilizar os dosímetros TLD são:
+
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+			\item \textbf{Sensibilidade e resposta resposta linear com a dose: } Os dosímetros TLD possuem uma resposta com a dose relativamente linear, o que significa que sua leitura é proporcional à dose de radiação recebida. Isso os torna adequados para uma ampla faixa de energias de radiação;
+			\item \textbf{Reutilização: } Os dosímetros TLD podem ser reutilizados após a leitura, tornando-os econômicos a longo prazo. Portanto eles podem ser reaquecidos para zerar possíveis sinalizações térmicas e, em seguida, estar pronto para uma nova exposição à radiação.
+			\item \textbf{Pequeno tamanho e não eletrônico:} Os dosímetros TLD são compactos e não requerem energia elétrica para operar. Isso os torna fáceis de transportar e usar em diferentes ambientes, além de serem mais seguros por não ser necessário aplicar uma tensão para utilização;
+			\item \textbf{Alta estabilidade a longo prazo:} Os dosímetros TLD têm boa estabilidade a longo prazo, o que significa que a resposta deles não se deteriora significativamente ao longo do tempo.
+		\end{itemize}
+
+		As principais \textcolor{CarnationPink}{DESVANTAGENS} dos dosímetros TLD são:
+
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+			\item \textbf{Leitura demorada: } A leitura dos dosímetros TLD envolve aquecimento e resfriamento, o que pode levar algumas horas para ser concluído. Isso pode resultar em atrasos na obtenção dos resultados das medições quando precisam ser determinados com certa urgência;
+			\item \textbf{Perda de informação após Leitura: } Uma vez realizado o aquecimento, a informação é perdida não sendo possível uma releitura;
+			\item \textbf{Sensibilidade à umidade e temperatura:} Os dosímetros TLD podem ser sensíveis à umidade e temperatura durante o armazenamento, o que pode afetar sua resposta e precisão. Portanto é necessário armazená-los corretamente para evitar esses problemas;
+			\item \textbf{Limitação na leitura em tempo real:} Embora sejam muito utilizados em dosimetria in vivo, ao contrário de alguns outros tipos de dosímetros, como os dosímetros de estado sólido, os dosímetros TLD não fornecem leituras em tempo real. Isso significa que a dose de radiação não pode ser verificada imediatamente durante a exposição;
+			\item \textbf{Necessidade de equipamento especializado:} A leitura dos dosímetros TLD requer um leitor de TLD, que é um equipamento especializado. Isso pode representar uma limitação em termos de disponibilidade e custo do equipamento o que pode afetar na escolha deste detector para a rotina clínica.
+		\end{itemize}
+
+		O tempo necessário para a leitura de um dosímetro TLD pode variar dependendo do tipo específico de dosímetro TLD e das configurações do equipamento de leitura utilizado. No entanto, geralmente é recomendado aguardar um período de tempo chamado de "período de estabilização" antes de realizar a leitura do dosímetro TLD.
+
+		Esse período de estabilização é necessário porque os elétrons e íons gerados pela radiação no cristal continuam a interagir com as armadilhas de armazenamento de energia no material termoluminescente do dosímetro TLD mesmo após a exposição à radiação ter sido encerrada. Essa interação pode resultar em uma resposta termoluminescente adicional, chamada de "autoextinção" (também conhecida como autoextinguishing ou fading), que pode afetar a leitura correta da dose de radiação. 
+
+		Em geral, é comum aguardar pelo menos algumas horas, e até mesmo algumas dezenas de horas (cerca de 24h), antes de realizar a leitura de um dosímetro TLD. O tempo exato necessário para o período de estabilização pode ser determinado pelo fabricante do dosímetro TLD ou pelas diretrizes e procedimentos específicos adotados pelo laboratório ou serviço de dosimetria.
+
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.5\textwidth]{Imagens/tldOsld.jpg}
+			\caption{Exemplo da teoria de bandas nos fenômenos de termoluminescência (TLD - Aquecimento) e luminescência Opticamente estimulada (OSLD - Luz)}
+			\label{}
+		\end{figure}
+
+	\section{Dosímetros Luminescentes Opticamente Estimulados (OSLD)}
+
+		Os dosímetros OSLD (Optically Stimulated Luminescence Dosimeters) funcionam com base no fenômeno da luminescência estimulada opticamente. 
+
+		Quando o dosímetro é exposto à radiação ionizante, ocorre a interação entre a radiação e os átomos do cristal, gerando íons e elétrons livres. Alguns dos elétrons livres ficam presos nas armadilhas eletrônicas do material sensível à radiação. Após a exposição à radiação, o dosímetro é colocado em um leitor de OSLD. Durante a leitura, o dosímetro é iluminado com uma luz de estimulação, geralmente na faixa de comprimento de onda ultravioleta ou visível. A luz de estimulação libera os elétrons presos nas armadilhas eletrônicas, fazendo com que retornem aos seus estados de energia mais baixos. À medida que os elétrons retornam aos seus estados de energia mais baixos, eles emitem luz na forma de luminescência. Essa luminescência é medida pelo leitor de OSLD, que converte o sinal óptico em um sinal elétrico proporcional à dose de radiação recebida pelo dosímetro. A intensidade da luminescência é proporcional à quantidade de radiação absorvida pelo dosímetro. O leitor de OSLD registra essa intensidade luminescente e calcula a dose de radiação com base em calibrações prévias, que relacionam a intensidade luminescente com a dose de radiação. A tecnologia OSLD é usada em serviços de dosimetria de radiações ionizantes por raios-x, gama e beta. Também pode ser empregada para detecção de nêutrons, embora este uso não seja praticado ainda no Brasil.
+
+		Os principais materiais utilizados nos dosímetros OSL são:
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+			\item \textbf{\ce{Al2O3}:\ce{C}} (Óxido de Alumínio dopado com Carbono): Emite uma luminescencia de 420 nm quando é estimulado com uma luz de 540 nm.
+			\item \textbf{\ce{Al2O3}:\ce{C}, \ce{Mg}} (Óxido de Alumíno dopado com Carbono e Magnésio)
+			\item O \textbf{\ce{Al2O3}} também pode ser dopado com elementos terras raras como o \ce{Ce} (cério) e o \ce{Tl} (tálio).
+		\end{itemize}
+
+		As principais \textcolor{CarnationPink}{VANTAGENS} em utilizar dosímetros OSL são:
+
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+			\item \textbf{Alta sensibilidade:} Os dosímetros OSL são altamente sensíveis à radiação ionizante, permitindo a detecção e medição precisa de doses de radiação relativamente baixas. Isso é especialmente importante em áreas onde doses baixas são relevantes, como medicina nuclear e dose espalhada em radioterapia.
+			\item \textbf{Ampla faixa de dose absorvida:} Os dosímetros OSL podem cobrir uma ampla faixa de dose de radiação, desde doses muito baixas até doses muito altas. Isso os torna adequados para diferentes aplicações, desde monitoramento de exposição ocupacional até medição de doses terapêuticas em radioterapia.
+			\item \textbf{Estabilidade a longo prazo:} Os dosímetros OSL têm uma estabilidade a longo prazo em relação à resposta luminosa. Isso significa que eles mantêm sua calibração e resposta ao longo do tempo, o que é essencial para garantir medições confiáveis e consistentes ao longo de períodos prolongados.
+			\item \textbf{Reutilização:} Os dosímetros OSL podem ser reutilizados após a leitura, o que os torna econômicos e sustentáveis. Após a leitura, a energia armazenada é liberada, permitindo que o dosímetro seja apagado e reutilizado para futuras medições, reduzindo custos.
+			\item \textbf{Leitura rápida e eficiente:} A leitura dos dosímetros OSL é rápida e eficiente. Os dosímetros podem ser lidos em um leitor de OSL em poucos minutos, proporcionando resultados imediatos. Isso é particularmente útil em ambientes de saúde, onde é necessário monitorar rapidamente a exposição à radiação de pacientes e trabalhadores.
+		\end{itemize}
+
+		As principais \textcolor{CarnationPink}{DESVANTAGENS} em utilizar dosímetros OSL são:
+
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+			\item \textbf{Sensibilidade à luz ambiente:} Os dosímetros OSL podem ser sensíveis à luz ambiente. Isso significa que a exposição à luz antes da leitura pode afetar a resposta do dosímetro, levando a resultados imprecisos. Portanto, é necessário tomar precauções para proteger o dosímetro da luz não intencional.
+			\item \textbf{Complexidade da leitura:} A leitura dos dosímetros OSL requer equipamentos específicos, como leitores de OSL, que nem sempre estão disponíveis em todos os locais. Isso pode limitar a capacidade de leitura imediata em algumas situações e exigir a transferência dos dosímetros para um local apropriado para a leitura.
+			\item \textbf{Sensibilidade a altas temperaturas:} Os dosímetros OSL podem ser sensíveis a altas temperaturas. Exposição a temperaturas elevadas pode levar a alterações na resposta do dosímetro e afetar a precisão das medições. É importante armazenar e manusear os dosímetros dentro dos limites de temperatura recomendados pelo fabricante.
+			\item \textbf{Calibração específica:} Cada tipo de dosímetro OSL requer uma calibração específica para correlacionar a resposta luminosa com a dose de radiação. Isso implica que os dosímetros devem ser calibrados com uma fonte conhecida de radiação para cada tipo de aplicação específica. A falta de calibração adequada pode levar a medições imprecisas.
+			\item \textbf{Dependência com o tipo de radiação:} A resposta dos dosímetros OSL pode variar dependendo do tipo de radiação ionizante. Eles podem ter diferentes eficiências de detecção para diferentes tipos de partículas (como fótons, elétrons ou nêutrons). Portanto, a resposta do dosímetro OSL pode não ser igual para todos os tipos de radiação, exigindo fatores de correção ou ajustes para diferentes tipos de exposição.
+		\end{itemize}
+		
+		Uma característica dos OSLDs é a possibilidade de arquivamento do dosímetro e a verificação da dose por meio de leitura não-destrutiva, o que torna possível a reanálise completa das amostras e a realização de avaliações incrementais para rastreamento da exposição ao longo do tempo.
+ 
+	\section{Calorímetros}
+
+		O calorímetro utilizado para a dosimetria das radiações é um dispositivo projetado para medir a quantidade de energia térmica liberada quando a radiação ionizante interage com um material sensível. O princípio básico de funcionamento de um calorímetro é a conversão da energia depositada pela radiação em calor e a medição desse calor gerado, uma vez que a variação da temperatura na água devido a 1 Gy de dose absorvida é:
+		
+			\begin{equation}
+				1 \; Gy = 2.4 \times 10^{-4}\;{}^{\circ}C \; na \; agua
+			\end{equation}
+
+		A determinação da dose absorvida através de um calorímetro se dá da seguinte forma:
+
+		\begin{enumerate}
+			\item \textbf{Material sensível:} O calorímetro é construído com um material sensível à radiação que tem a capacidade de converter a energia depositada pela radiação em calor de forma eficiente. Esse material pode ser um cristal, um líquido ou um polímero termossensível.
+			\item \textbf{Calorimetria adiabática:} O calorímetro é projetado para ser termicamente isolado do ambiente externo, de forma que não haja troca significativa de calor com o ambiente durante a medida. Isso é chamado de calorimetria adiabática.
+			\item \textbf{Absorção de energia:} Quando a radiação ionizante interage com o material sensível, ela deposita energia nesse material causando excitações ou ionizações que eventualmente levam os elétrons a se moverem para camadas mais altas, o que faz com que as moléculas vibrem mais rapidamente, que é basicamente o conceito por trás do calor. De fato, toda a radiação absorvida eventualmente aparece como calor e, portanto, isso pode ser medido com uma precisão muito alta em teoria.
+			\item \textbf{Medida da temperatura:} A temperatura do calorímetro é medida utilizando sensores de temperatura sensíveis e precisos. Esses sensores podem ser termopares, termorresistências (RTDs) ou termistores.
+			\item \textbf{Calibração:} O calorímetro deve ser calibrado previamente usando fontes de radiação de referência para estabelecer uma relação entre a quantidade de calor gerado e a dose de radiação absorvida.
+			\item \textbf{Cálculo da dose}: Com base na medição da temperatura e nas características do calorímetro, é possível calcular a dose de radiação absorvida pelo material sensível, com base nos parâmetros prévios de calibração. 
+		\end{enumerate}
+
+		Os calorímetros utilizados na dosimetria de radiação fornecem uma medida direta da quantidade de energia depositada pela radiação, permitindo uma determinação precisa da dose absorvida. No entanto, eles requerem uma calibração cuidadosa e podem ser mais complexos em comparação com outros métodos de dosimetria de radiação, como os TLDs ou os OSLDs, pois a variação de temperatura é muito pequena, necessitando de um equipamento com uma precisão muito alta, e, portanto, não é considerado muito prático.
+
+	\section{Filmes Radiográficos}
+
+		Os filmes radiográficos são utilizados tanto para fins de diagnóstico em radiologia como para dosimetria das radiações. A sua utilização na dosimetria envolve o princípio da interação da radiação ionizante com a emulsão fotossensível presente no filme.
+
+		Os filmes são constituídos e são utilizados na dosimetria das radiações da seguinte forma:
+
+		\begin{itemize}
+			\item \textbf{Estrutura do filme:} Os filmes radiográficos são compostos por uma emulsão fotossensível, geralmente à base de prata, que é sensível à radiação ionizante. A emulsão contém grãos de brometo de prata halogenada dispersos em uma matriz gelatinosa.
+			\item \textbf{Interação com a radiação:} Quando a radiação ionizante, como raios-X ou raios gama, incide no filme, ocorre uma interação com os grãos de prata halogenada. Essa interação resulta na ionização e excitação dos átomos da prata presentes nos grãos.
+			\item \textbf{Formação da Imagem Latente:} A ionização e excitação dos átomos na emulsão fotossensível causam uma modificação estrutural nos grãos de prata halogenada (reação química), formando uma imagem latente. Essa imagem latente não é visível a olho nu.
+			\item \textbf{Processamento do filme:} O filme é submetido a um processo químico chamado de revelação, fixação e lavagem para revelar a imagem latente. A revelação envolve a redução dos grãos de prata ionizados a grãos metálicos de prata, enquanto a fixação remove os grãos não expostos. A lavagem final remove os resíduos químicos do processo.
+			\item \textbf{Leitura da imagem:} Após o processamento, a imagem resultante no filme radiográfico é visualizada. A densidade e a distribuição dos grãos de prata revelados refletem a quantidade de radiação absorvida pelo filme durante a exposição, onde a quantidade de radiação corresponde à quantidade de prata restante e, portanto, ao escurecimento.
+		\end{itemize}
+
+		As principais \textcolor{CarnationPink}{VANTAGENS} na utilização de Filmes Radiográficos são:
+
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+			\item \textbf{Amplamente disponíveis:} Os filmes radiográficos são amplamente utilizados na prática clínica e estão disponíveis em muitos centros de saúde e hospitais. Isso facilita o acesso a esses materiais para a dosimetria das radiações.
+			\item \textbf{Baixo custo}: Os filmes radiográficos são relativamente baratos em comparação com outros sistemas de dosimetria mais avançados. Isso os torna uma opção acessível, especialmente em configurações com recursos limitados.
+			\item \textbf{Registro permanente:} Os filmes radiográficos fornecem um registro permanente da imagem e da distribuição de dose, permitindo uma documentação precisa dos resultados da dosimetria.
+			\item \textbf{Alta resolução espacial:} Os filmes radiográficos têm alta resolução espacial. A resolução espacial obtida por filmes radiográficos refere-se à capacidade do filme em capturar e reproduzir detalhes espaciais finos na imagem radiográfica. É uma medida da capacidade do filme em distinguir estruturas pequenas e próximas umas das outras; O que significa que eles podem fornecer detalhes precisos sobre a distribuição da dose em uma região específica. Ou seja, feixes de elétrons e feixes de fótons de megavoltagem podem ter suas isodoses medidas com relativa precisão e principalmente a forma de um feixe pode ser determinada.
+			\item \textbf{Sensibilidade à radiação:} Os filmes radiográficos têm uma resposta sensível à radiação ionizante, o que os torna úteis para medir uma ampla faixa de radiação.
+		\end{itemize}
+
+		As principais \textcolor{CarnationPink}{DESVANTAGENS} na utilização de filmes radiográficos são:
+
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+			\item \textbf{Processamento químico}: Os filmes radiográficos requerem processamento químico para revelar a imagem latente, o que pode ser demorado e exigir instalações específicas.
+			\item \textbf{Resposta não linear:} Os filmes radiográficos têm uma resposta não linear à radiação, o que significa que a densidade óptica dos grãos revelados pode não ser diretamente proporcional à dose absorvida. Isso requer uma calibração cuidadosa para obter resultados precisos.
+			\item \textbf{Efeito de sobreposição:} Quando múltiplos filmes são utilizados em conjunto para medir distribuições de dose complexas, pode haver sobreposição entre as imagens, dificultando a interpretação precisa dos resultados.
+			\item \textbf{Limitações de tempo e temperatura:} Os filmes radiográficos podem ser sensíveis ao tempo e à temperatura, o que pode afetar a estabilidade e a precisão das medições. O armazenamento e a manipulação adequadas são essenciais para garantir resultados confiáveis, além disso os filmes são sensíveis à luz visível, podendo ser contaminados.
+			\item \textbf{Dificuldade na automação e análise:} A análise dos filmes radiográficos geralmente requer um processo manual, o que pode ser demorado e sujeito a erros. Além disso, a automação e a análise objetiva podem ser desafiadoras devido à natureza analógica dos filmes.
+		\end{itemize}
+
+	\section{Filmes Radiocrômicos}
+
+		O filme radiocrômico é um tipo especial de filme que muda de cor quando exposto à radiação ionizante. Diferente dos filmes radiográficos convencionais, que são sensíveis à luz, os filmes radiocrômicos não são sensíveis à luz visível (embora ainda seja sensível à luz UV).
+
+		A composição dos filmes radiocrômicos pode variar dependendo do fabricante, mas geralmente eles são compostos por uma matriz polimérica contendo um material sensibilizador. O material sensibilizador é responsável por reagir com a radiação ionizante e causar uma mudança na cor do filme. Quando o filme radiocrômico é exposto à radiação ionizante, ocorrem interações entre os raios X, raios gama ou outras partículas da radiação e o material sensibilizador. Essas interações podem resultar em danos na estrutura molecular do material sensibilizador, que por sua vez causam mudanças na absorção ou reflexão da luz pelo filme. A mudança na absorção ou reflexão da luz afeta a cor percebida do filme. A quantidade de radiação absorvida determinará a magnitude da mudança de cor. Através da análise dessa mudança de cor, é possível determinar a dose de radiação absorvida pelo filme.
+
+		Portanto, o processo de dosimetria utilizando filmes radiocrômicos ocorre da seguinte maneira:
+		\begin{enumerate}
+			\item \textbf{Exposição à radiação:} O filme radiocrômico é colocado em uma região onde a radiação ionizante será medida. A radiação interage com o material sensibilizador no filme, causando danos ou modificando a estrutura molecular do material.
+			\item Mudança de cor: A interação da radiação provoca uma mudança na cor do filme. A magnitude da mudança de cor está relacionada à quantidade de radiação absorvida pelo filme.
+			\item \textbf{Análise da mudança de cor:} Após a exposição, o filme radiocrômico é analisado para determinar a mudança de cor. Isso pode ser feito visualmente, comparando a cor do filme antes e depois da exposição, ou por meio de equipamentos específicos que medem a absorção de luz em diferentes comprimentos de onda.
+			\item \textbf{Calibração:} Antes do uso do filme radiocrômico como dosímetro, é necessário realizar uma calibração. Isso envolve a exposição do filme a uma série conhecida de doses de radiação e a correlação entre a mudança de cor e a dose absorvida é estabelecida.
+			\item \textbf{Interpretação da dose:} Com base na mudança de cor medida no filme radiocrômico, é possível determinar a dose de radiação absorvida pelo filme. A relação entre a mudança de cor e a dose é utilizada para fazer essa determinação.
+		\end{enumerate}
+
+		
+		As principais \textcolor{CarnationPink}{VANTAGENS} na utilização de filmes radiocrômicos são:
+
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+			\item \textbf{Alta resolução espacial:} Os filmes radiocrômicos possuem alta resolução espacial, o que significa que eles podem fornecer informações detalhadas sobre a distribuição espacial da dose de radiação. Isso é especialmente útil em aplicações onde é necessário mapear a distribuição precisa da dose em uma área específica.
+			\item \textbf{Sensibilidade a diferentes tipos de radiação:} Os filmes radiocrômicos podem ser sensíveis a uma ampla gama de radiações ionizantes, incluindo raios X, raios gama, partículas alfa, partículas beta, entre outras. Isso os torna versáteis em termos de aplicação, permitindo a dosimetria de diferentes tipos de radiação.
+			\item \textbf{Não requer fonte de energia externa:} Os filmes radiocrômicos não exigem fonte de energia externa para funcionar. Eles são passivos e não necessitam de eletricidade ou baterias, tornando-os convenientes para uso em diferentes configurações e ambientes.
+		\end{itemize}
+
+		As principais \textcolor{CarnationPink}{DESVANTAGENS} em utilizar filmes radiocrômicos são:
+
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+			\item \textbf{Calibração e interpretação complexas:} A calibração dos filmes radiocrômicos requer procedimentos cuidadosos para correlacionar a mudança de cor com a dose de radiação absorvida. Além disso, a interpretação dos resultados também pode ser complexa, exigindo equipamentos específicos e experiência adequada.
+			\item \textbf{Leitura subjetiva:} A leitura e interpretação da mudança de cor dos filmes radiocrômicos podem ser subjetivas, dependendo da percepção visual do observador. Isso pode introduzir certa subjetividade nas medições e afetar a precisão dos resultados.
+			\item \textbf{Limitações de faixa de dose:} Os filmes radiocrômicos podem ter limitações em termos de faixa de dose que podem ser medidos com precisão. Cada tipo de filme radiocrômico tem sua própria faixa de dose linear e acima ou abaixo dessa faixa, a resposta pode não ser linear ou pode ocorrer saturação.
+			\item \textbf{Limitação de tempo de resposta:} Os filmes radiocrômicos podem ter um tempo de resposta relativamente lento para desenvolver completamente a mudança de cor após a exposição à radiação. Dependendo do tipo de filme e das condições de processamento, pode levar horas, para que a mudança de cor se estabilize completamente. Essa limitação de tempo de resposta pode ser inconveniente em situações onde a resposta imediata é necessária, especialmente em ambientes de monitoramento em tempo real ou em casos de acidentes radiológicos.
+		\end{itemize}
+
+
+	\section{Dosímetro de Fricke}
+
+		O dosímetro de Fricke é um tipo de dosímetro químico utilizado para medir a dose absorvida de radiação . Ele é baseado na propriedade do sal de Fricke, uma solução de sulfato ferroso  em ácido sulfúrico (\ce{H2SO4}), de sofrer uma mudança de cor devido aos íons férricos formados quando exposto à radiação ionizante.
+
+		O processo de funcionamento do dosímetro de Fricke se dá pela seguinte maneira:
+
+		\begin{enumerate}
+			\item \textbf{Preparação do dosímetro:} Uma solução de sal de Fricke é preparada cuidadosamente em laboratório, utilizando sulfato ferroso, cloreto de sódio, ácido sulfúrico e água. A concentração da solução é ajustada para fornecer uma resposta linear à radiação dentro da faixa de dose de radiação avaliada. Normalmente é utilizado uma concentração de 1 mmol/L de sulfato ferroso, 1 mmol/L de \ce{NaCl} e 0,4 mol/L de \ce{H2SO4}.
+			\item \textbf{Exposição à radiação:} O dosímetro de Fricke é exposto à radiação ionizante que se deseja medir a dose absorvida. A radiação interage com os íons da solução de Fricke, causando uma série de reações químicas;
+			\item \textbf{Formação de íons férricos:} A radiação ionizante converte os íons ferrosos (\ce{Fe^2+}) em íons férricos (\ce{Fe^3+}). Essa conversão ocorre devido à oxidação do ferro induzida pelo processo de ionização.
+			\item \textbf{Mudança de cor:} Os íons férricos (\ce{Fe^3+}) formados na solução de Fricke têm uma coloração diferente dos íons ferrosos (\ce{Fe^2+}). A mudança de cor é geralmente uma mudança do tom verde para o tom azul.
+			\item \textbf{Medição da absorção de radiação:} A magnitude da mudança de cor (concentração de íons férricos) é proporcional à quantidade de radiação absorvida pela solução de Fricke. Essa concentração de íons férricos pode ser quantificada por meio de técnicas espectrofotométricas, que medem a absorção de luz em uma determinada faixa de comprimento de onda. (Picos de absorção UV em 224 nm e 304 nm).
+			\item \textbf{Cálculo da dose de radiação absorvida:} A magnitude da mudança de cor é relacionada a uma dose de radiação específica por meio de uma curva de calibração pré-determinada. Com base nessa curva, é possível determinar a dose de radiação absorvida pelo dosímetro de Fricke.
+		\end{enumerate}
+
+		Infelizmente, nem todas as energias dos fótons criam o mesmo número de reações, então existem tabelas de “valores G” que são o número de moléculas produzidas por 100 eV de energia absorvida. O número é de cerca de 15,5 moléculas por 100 eV absorvidos e esse valor de G não muda muito para energias usadas em radiação oncológica.
+
+		O dosímetro de Fricke é um método amplamente utilizado em pesquisas em radioterapia, permitindo uma medição precisa da dose de radiação absorvida. No entanto, requer preparação cuidadosa da solução de Fricke, calibração adequada e análise precisa da concentração de íons férricos para obter resultados confiáveis.
+
+	\section{Detectores de Estado Sólido (Diodos Semicondutores)}
+
+	Os detectores de radiação de estado sólido, também conhecidos como diodos detectores de radiação, são dispositivos semicondutores que são sensíveis à radiação ionizante. Eles são amplamente utilizados para detectar e medir a radiação em diversas aplicações, como medicina nuclear, radioterapia, monitoramento ambiental e segurança nuclear.
+
+	Os detectores semicondutores funcionam da seguinte maneira:
+
+		\begin{enumerate}
+			\item \textbf{Material semicondutor:} O detector de radiação de estado sólido é feito de um material semicondutor, como o silício ou o germânio. Esses materiais possuem propriedades eletrônicas específicas que os tornam sensíveis à radiação ionizante.
+			\item \textbf{Estrutura de diodo:} O detector é projetado na forma de um diodo semicondutor, que é basicamente uma junção p-n entre duas regiões com diferentes tipos de dopagem. Essa estrutura cria uma região de depleção, onde não há portadores de carga livres.
+			\item \textbf{Interação com a radiação:} Quando a radiação ionizante atinge o material semicondutor, ela interage com os átomos do material e produz pares elétrons-buracos. Esses pares elétrons-buracos são criados por processos como ionização e excitação eletrônica.
+			\item \textbf{Geração de carga:} Os pares de elétrons-buracos gerados pela radiação se movem na região de depleção do diodo. Os elétrons são capturados pela região n, enquanto os buracos são capturados pela região p. Esse movimento de cargas gera um sinal elétrico proporcional à quantidade de radiação absorvida.
+			\item \textbf{Coleta e amplificação do sinal:} O sinal elétrico gerado pelos pares elétrons-buracos é coletado pelos contatos metálicos do diodo e direcionado para um circuito de leitura. Nesse circuito, o sinal é amplificado e processado para análise e medição.
+			\item \textbf{Detecção e quantificação da radiação:} Com base no sinal elétrico amplificado e processado, é possível detectar e quantificar a radiação absorvida pelo detector de estado sólido. A magnitude do sinal está diretamente relacionada à energia e à intensidade da radiação.
+		\end{enumerate}
+		
+		Os principais materiais utilizados em um semicondutor são:
+
+			\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+				\item \textbf{Silício (Si):} O silício é o material semicondutor mais amplamente utilizado na indústria eletrônica. É abundante, possui um intervalo de energia adequado e pode ser facilmente dopado para criar diodos com diferentes características. É bastante sensível à radiação ionizante, especialmente para detectar radiação de partículas alfa. O silício pode ser dopado com átomos de fósforo (P) para criar o semicondutor tipo n adicionando elétrons extras, ou com átomos de boro (B) para criar o semicondutor tipo p, adicionando buracos.
+				
+				\item \textbf{Germânio (Ge):} O germânio é um material semicondutor que apresenta maior eficiência na detecção de radiação ionizante em comparação ao silício. É frequentemente usado em detectores de radiação de alta energia, como a espectrometria de raios X.  O germânio pode ser dopado de maneira semelhante ao silício, utilizando átomos de fósforo para criar o tipo n e átomos de boro para criar o tipo p.
+				
+				\item \textbf{Telureto de cádmio (CdTe):} O telureto de cádmio é um material semicondutor composto usado em detectores de radiação de alta eficiência, especialmente para detecção de raios X e gama. É dopado com impurezas de cádmio (Cd) e telúrio (Te) para ajustar suas propriedades elétricas.
+
+				\item \textbf{Telureto de cádmio-zinco (CdZnTe):} O CdZnTe é outro material semicondutor composto usado em detectores de radiação, especialmente para aplicações de detecção de raios X e gama. Ele é dopado com impurezas de cádmio (Cd) e zinco (Zn).
+			\end{itemize}
+
+			Algumas \textcolor{CarnationPink}{VANTAGENS} em utilizar detectores de diodos são:
+
+			\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+				\item \textbf{Alta sensibilidade:} Os diodos semicondutores têm uma alta sensibilidade à radiação ionizante, permitindo a detecção de níveis muito baixos de radiação.
+				\item \textbf{Resposta rápida:} Os diodos semicondutores têm uma resposta rápida à radiação, permitindo uma medição em tempo real da dose de radiação.
+				\item \textbf{Faixa dinâmica ampla:} Os diodos semicondutores possuem uma ampla faixa dinâmica, o que significa que podem medir uma ampla gama de doses de radiação, desde níveis baixos até níveis muito altos.
+				\item \textbf{Tamanho compacto:} Os diodos semicondutores são dispositivos pequenos e compactos, o que facilita sua integração em sistemas e equipamentos de detecção.
+			\end{itemize}
+
+			Algumas \textcolor{CarnationPink}{DESVANTAGENS} em utilizar diodos são:
+
+			\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+				\item \textbf{Sensibilidade à temperatura:} Os diodos semicondutores são sensíveis a variações de temperatura, o que pode afetar sua resposta e precisão na medição da dose de radiação.
+				\item \textbf{Efeito de dano por radiação:} A exposição prolongada à radiação pode causar danos ao material do diodo, levando a alterações em suas propriedades elétricas e, eventualmente, à falha do dispositivo.
+				\item \textbf{Custo}: Os diodos semicondutores, especialmente aqueles de alta qualidade e desempenho, podem ser relativamente caros em comparação com outros tipos de detectores de radiação.
+				\item \textbf{Efeito de envelhecimento:} Com o tempo, os diodos semicondutores podem sofrer degradação de desempenho devido ao envelhecimento, o que pode levar a uma diminuição da sensibilidade e precisão ao longo do tempo.
+				\item \textbf{Efeito da Geometria:} Este detector tem variabilidade no posicionamento causando uma dependência direcional, possui dependência energética em feixes de fótons,
+			\end{itemize}
+		
+	\section{Detectores MOSFET}
+
+		Os detectores MOSFETs (Metal-Oxide-Semiconductor Field-Effect Transistors) são dispositivos semicondutores que são amplamente utilizados como detectores de radiação. Eles são baseados na tecnologia dos transistores de efeito de campo (FET) de óxido de metal-semicondutor (MOS).
+
+		Os detectores MOSFET consistem em uma estrutura de três camadas: o substrato semicondutor, o óxido de isolamento e o metal de controle. O substrato semicondutor é dopado para criar uma região tipo p (p-channel MOSFET) ou tipo n (n-channel MOSFET). O óxido de isolamento é depositado sobre o substrato e atua como um isolante elétrico. O metal de controle é aplicado sobre o óxido de isolamento e funciona como o terminal de controle do transistor.
+	
+		Quando um MOSFET é irradiado com radiação ionizante, a interação da radiação com o substrato semicondutor gera pares de elétrons e buracos. Esses portadores de carga afetam a condutividade do substrato semicondutor, resultando em uma alteração na corrente elétrica que flui através do MOSFET. Essa alteração na corrente é proporcional à dose de radiação incidente.
+	
+		Os detectores MOSFET possuem várias vantagens, como alta sensibilidade, resposta rápida, faixa dinâmica ampla, boa resolução espacial e baixo consumo de energia. Além disso, eles são reutilizáveis e podem ser facilmente integrados a sistemas de leitura e análise.
+
+	\section{Cintiladores}
+
+		Os detectores de cintilação, também conhecidos como detectores de cintiladores, são dispositivos que convertem a energia da radiação incidente em luz visível ou infravermelha próxima. Essa conversão ocorre dentro de um material chamado cintilador, que é composto por cristais ou materiais orgânicos.
+
+		Quando a radiação ionizante interage com o cintilador, ela transfere parte de sua energia para os átomos ou moléculas do material. Essa energia é absorvida pelos elétrons do cintilador, que são promovidos para estados de energia mais elevados. Em seguida, esses elétrons retornam aos seus estados fundamentais, liberando a energia excessiva na forma de fótons de luz.
+	
+		Os fótons de luz emitidos durante o processo de cintilação podem ser detectados por um fotodetector, como um fotomultiplicador (PMT) ou um fotodiodo. O fotodetector converte os fótons de luz em sinais elétricos, que podem ser amplificados e registrados para análise posterior.
+
+		Os detectores de cintilação são utilizados em uma ampla variedade de aplicações de detecção de radiação, incluindo medicina nuclear, detecção de partículas, espectroscopia de raios-X, radiografia industrial e detecção de radiação cósmica. Eles são especialmente úteis quando é necessário distinguir diferentes tipos de radiação ou medir a energia dos fótons incidentes.
+			
+		Os principais detectores cintiladores são:
+
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+			\item \textbf{\ce{NaI}} (Iodeto de Sódio): É um cintilador inorgânico amplamente utilizado em detecção de radiação gama e detecção de raios-X.
+			\item \textbf{\ce{Na(Tl)}} (Iodeto de Sódio dopado com tálio): é uma forma do \ce{NaI} dopado com tálio para aumentar sua eficiência de cintilação.
+			\item \textbf{\ce{CsI}} (Iodeto de Césio): sim como o iodeto de sódio, o CsI é um cintilador inorgânico utilizado na detecção de radiação gama e raios-X. É conhecido por sua boa resolução energética.
+			\item \textbf{\ce{Gd2O3}} (Óxido de Gadolínio): É um cintilador inorgânico usado principalmente em detecção de nêutrons térmicos. Ele possui uma alta eficiência de cintilação para radiação de nêutrons e é frequentemente combinado com materiais conversores para detectar a radiação resultante da interação dos nêutrons.
+			\item \textbf{\ce{C14H10}} (Antraceno): É um cintilador orgânico utilizado principalmente na detecção de radiação alfa. É sensível a partículas carregadas de alta energia e é frequentemente utilizado em detectores de partículas.
+		\end{itemize}
+	
+		As principais \textcolor{CarnationPink}{VANTAGENS} em utilizar cintiladores :
+
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+			\item \textbf{Alta eficiência de detecção:} Os detectores cintiladores podem ter uma alta eficiência de detecção para uma ampla faixa de energias de radiação, o que permite a detecção de baixas doses de radiação.
+			\item \textbf{Alta sensibilidade:} Os cintiladores podem ser altamente sensíveis à radiação, permitindo a detecção de até mesmo pequenas quantidades de radiação.
+			\item \textbf{Boa resolução energética:} Alguns cintiladores possuem uma boa resolução energética, o que significa que eles podem distinguir diferentes níveis de energia da radiação incidente.
+			\item \textbf{Versatilidade:} Existem diversos tipos de cintiladores disponíveis, cada um adequado para diferentes tipos de radiação e aplicações específicas, o que torna os detectores cintiladores versáteis.
+		\end{itemize}
+
+		As principais \textcolor{CarnationPink}{DESVANTAGENS}  em utilizar cintiladores:
+
+		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+			\item \textbf{Decaimento temporal:} Alguns cintiladores podem apresentar um decaimento temporal prolongado, o que pode levar a uma resposta lenta do detector e afetar a precisão temporal das medidas.
+			\item \textbf{Sensibilidade à temperatura:} Alguns cintiladores são sensíveis à temperatura, o que pode afetar a resposta do detector e requerer medidas de controle de temperatura.
+			\item \textbf{Efeito de saturação:} Em altas intensidades de radiação, os detectores cintiladores podem atingir uma saturação, o que pode limitar sua capacidade de medir doses muito altas.
+			\item \textbf{Fragilidade:} Alguns cintiladores são frágeis e 
+			m.\ZXCVpodem ser danificados facilmente, exigindo manuseio cuidadoso e proteção adequada.			\item \textbf{Influência da luz ambiente:} A presença de luz ambiente pode interferir na medição dos cintiladores, exigindo medidas de controle de luz adequadas.
+		\end{itemize}
+
 		
 
-	
+
+
 \bibliography{ref.bib}
 \end{document}

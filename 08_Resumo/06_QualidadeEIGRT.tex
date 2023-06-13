@@ -1,0 +1,390 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{siunitx}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[margin=10pt,font={small, it},labelfont=bf, textfont=it]{caption}
+\usepackage[dvipsnames, svgnames]{xcolor}
+\DeclareCaptionFont{MediumOrchid}{\color[svgnames]{MediumOrchid}}
+\usepackage[pdftex]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\bibpunct{[}{]}{,}{s}{}{}
+\usepackage{color}
+\usepackage{footnote}
+\renewcommand{\thefootnote}{\alph{footnote}}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{leading}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{mdframed}
+\usepackage{etoolbox}
+\usepackage[version=4]{mhchem}
+\usepackage{enumitem}
+
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+
+
+\newcounter{exemplo}
+
+\NewDocumentEnvironment{exemplo}{ O{} }{%
+\allowbreak
+\setlength{\parindent}{0pt}
+  \begin{mdframed}[
+  leftline=true,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=2pt,
+  linecolor=CarnationPink,
+  frametitlerule=false,
+  frametitlefont=\Large\bfseries\color{CarnationPink},
+  frametitle={\color{CarnationPink}\normalfont\bfseries #1},
+  ]
+}{%
+  \end{mdframed}
+}
+
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{1pt}
+\usepackage{float}
+\usepackage{url}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=cyan,      
+    urlcolor=cyan,
+    citecolor=cyan,
+    pdftitle={Resumos}
+}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{Página \thepage}
+
+\title{Resumo}
+\author{Qualidade e IGRT \nocite{*}}
+\date{\textit{Dalila Mendonça}}
+\begin{document}
+	\maketitle
+
+
+\begin{exemplo}[11. Qualidade ]
+
+    \textcolor{CarnationPink}{Controle de Qualidade dos Equipamentos}
+    \begin{itemize}
+        \item De acordo com o TG-142 (\textit{``Task Group 142 report: quality assurance of medical accelerators.''}) Os Controles de Qualidade  (QA) do Acelerador Linear (Linac) requer procedimentos com frequência diária, mensal, anual e sempre for feito algum reparo ou alteração no linac que possa afetar alguma de suas características ou função.
+        
+        \item A calibração absoluta do output de um linac, define a relação entre a dose de radiação depositada no tecido e o output da máquina, medido em unidades monitoras (MU's). O processo de calibração é realizado na água e conta com dois protocolos para sua utilização, o TG-51 da AAMP (\textit{``TG-51 protocol for clinical reference dosimetry of high-energy photon and electron beams''}) e o TRS-398 da IAEA (\textit{``IAEA TRS-398. Absorbed Dose Determination in. External Beam Radiotherapy: An International Code of Practice for Dosimetry.''}). Ambos protocolos utilizam câmaras de ionização e eletrômetros para realizar suas medidas, que foram calibrados em um laboratório credenciado utilizando um feixe de \ce{^{60}Co}, sendo necessário o usuário corrigir o fator de calibração para a qualidade do feixe que está sendo calibrado, através do fator de correção para a qualidade do feixe, (TG-51 = $K_Q$; TRS-398 = $K_{QQ_0}$).
+        
+        \item De acordo com o TG-142, o procedimento de calibração do output anual do acelerador para os feixes de fótons e elétrons deve ser realizado= por um físico médico qualificado e a dose absoluta na água de acordo com o protocolo utilizado deve estar dentro de 1\% do output, normalmente definida em termos de cGy/MU; A verificação mensal deve estar dentro de 2\%; A verificação diária deve estar dentro de 3\%. 
+ % verificar se as demais devem ser realizadas pelo MP       
+        \item As verificações de constância da simetria e planura dos feixes de fótons e elétrons no QA mensal devem estar dentro de 1\% do baseline. No procedimento anual é necessária a mesma tolerância de 1\%, porém devem ser verificadas uma variedade de tamanhos de campo. A tolerância diária é de 3\% para os feixes de fótons, e para a frequência semanal dos feixes de elétrons (que não precisam ser testados diariamente).
+        
+        \item A exatidão dos indicadores da posição da mesa de tratamento é muito importante devido ao posicionamento automatizado controlado pelos sistemas de IGRT. A precisão nos indicadores da posição da mesa deve ser verificada mensalmente e estar dentro de:
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                \item 2 mm/\ang{1} para máquinas que só realizam tratamentos convencionais (2D, 3D e IMRT); e
+                \item 1mm/\ang{0.5} para aceleradores que realizam SBRT e SRS.
+            \end{itemize}
+
+        \item De acordo com o TG-142, os tamanhos de campo definidos pela luz de campo devem estar dentro de 1 mm ou 1\% por lado do campo para os jaws assimétricos modernos.
+        
+        \item De acordo com o TG-51, A energia de cada feixe de elétrons deve ser verificada mensalmente e anualmente. 
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                \item A verificação mensal é feita através da medida da dose em duas profundidades diferentes para verificar a PDP naquele ponto; esta verificação deve concordar em 2\% ou 2 mm com o esperado;
+                \item A verificação anual requer as medidas do valor para o R50e devem estar dentro de 1 mm. O R50 é definido como a profundidade com o qual a PDP dos elétrons é de 50\% do seu valor máximo.
+            \end{itemize}
+
+        \item Algumas tolerâncias definidas no TG-142 são diferentes dependendo da técnica utilizada no acelerador, sendo elas:
+        
+        \begin{center}
+            \begin{tabular}[h]{lcc}
+                \toprule
+                Procedimento & Tolerância Convencional & Tolerância SRS/SBRT \\
+                \midrule
+                Linearidade da MU & $\pm$2\% $\geq$ 5MU & $\pm$2\% $\geq$ 5MU; e $\pm$5\% (2 - 4 MU)\\
+                Coincidência do Iso Mecânico e Radioativo & $\pm$ 2mm & $\pm$ 1 mm \\
+                Lasers & 1.5 mm - 2.0 mm & 1 mm \\
+                Indicador de tamanho do colimador & 2 mm & 1 mm \\
+                Posição da mesa & 2 mm/\ang{1} & 1 mm/\ang{0.5} \\
+                Precisão de imagem & $\leq$ 2 mm & $\geq$ 1 mm \\
+                \bottomrule
+                \bottomrule
+            \end{tabular}
+        \end{center}
+
+        \item Os níveis de output diário tem uma tolerância de 3\%; em uma medida de output que exceda o nível de forma que fique entre 3\% e 5\%, os tratamentos poderão continuar a critério do Físico Médico Responsável; Caso a medida exceda a tolerância de 5\%, os tratamentos deverão ser interrompidos até que o físico médico determine e corrija o motivo de ter ocorrido essa discrepância.
+        
+        \item Segundo o TG-142, os testes do MLC possuem frequência diária, semanal e mensal.
+        
+        \item A tolerância para a repetibilidade do posicionamento da lâmina é de $\pm$ 1mm. O teste é normalmente realizado utilizando um padrão ``picket-fence'', como mostra a figura abaixo. Este teste irradia múltiplas frestas formadas pelo MLC que não devem estar sobrepostas ou subpostas se as lâminas do MLC estiverem se movimentando corretamente.
+        
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{Imagens/picketfence.jpg}
+        \end{center}
+
+        \item Devido ao movimento contínuo do Gantry e das lâminas durante um tratamento utilizando VMAT, alguns testes adicionais de MLC devem ser inclusos, sendo eles: teste de velocidade das lâminas, teste de picket-fence para diferentes ângulos do gantry e entrega de campos VMC específicos para testar a sincronização da velocidade de rotação do gantry, taxa de dose e posicionamento da lâmina.
+
+        \item Segundo o TG-142, para aceleradores lineares equipados com sistemas de CBCT, o QA para a verificação da imagem formada pelo CBCT devem ser realizados diariamente, mensalmente e anualmente. Os QAs diários testam o processo típico de IGRT e o deslocamento do paciente.
+        
+        \item Os testes mensais (QA mensal) para um sistema CBCT contém a coincidência entre as coordenadas de imagem e tratamento; teste de interlocks de segurança do dispositivo de imagem (touch guard) e testes de qualidade da imagem, como testes de distorção geométrica, testes de resolução espacial, contraste da imagem, constância das HU e testes de uniformidade e ruído.
+        
+        \item De acordo com o TG-53 (\textit{``Task Group 53: quality assurance of clinical radiation therapy treatment planning.''}), como a maior partes dos cálculos de dose em radioterapia são feitos a partir de uma imagem de tomografia (CT), é importante realizar um controle de qualidade periódico nas imagens de CT. Estes testes incluem a transferência da imagem, a geometria da imagem e a verificação dos números de HU.
+        
+        \item De acordo com o TG-53 , o TPS (treatment plannig system) deve ser submetido a testes dosimétricos e não dosimétricos. Os testes incluem uma revisão de alterações do sistema e  logs de erro, verificação do input/output do sistema, como o input de uma TC e a verificação do cálculo de dose. Os testes são realizados diariamente, mensalmente, anualmente e após qualquer atualização do TPS.  
+        
+        \item Um teste ``end-to-end'' (teste de ponta a ponta) verifica todo o sistema de radioterapia. Este teste começa com a tomografia de um phantom específico, onde o isocentro será marcado. A CT é então enviada para o sistema de planejamento (TPS) e então é feito o planejamento de teste. Na sequência, o phantom é posicionado no acelerador, de acordo com as marcas do isocentro feitas na CT. São então realizados imafens de portais para garantir que os campos planejados coincidem com as formas obtidas dentro do phantom. No caso do credenciamento do RTOG, o plano é entregue em um phantom contendo filmes e TLDs. A dose medida é então comparada com a dose planejada para confirmar a precisão da entrega da dose planejada.
+        
+        \item De acordo com o TRS-430 (\textit{``Commissioning and quality assurance of computerized planning systems for radiation treatment of cancer''}), os procedimentos de QA referentes a avaliação do plano (DVH) em um sistema de planejamento incluem testes de normalização do plano, verificação da dose absoluta e relativa, determinação do volume, cálculos to tamanho do gri e pontos de distribuição; consistência de estruturas e estatísticas de dose.
+        
+        \item Em sistemas de planejamento, o ponto mais crítico está relacionado com a consistência e a precisão no cálculo das doses e das MUs. Portanto o TRS-430 recomenda os seguintes testes periódicos: 
+            \begin{enumerate}[label=\textcolor{CarnationPink}{\roman*.}]
+                \item Dose calculada por feixe;
+                \item Ponderação do feixe;
+                \item Soma da distribuição de dose; 
+                \item Normalização do Plano; e
+                \item Cálculo de MUs.
+            \end{enumerate}
+
+        \item De acordo com o TG-40 (\textit{`` Comprehensive QA for radiation oncology''}) o \textbf{Teste de Aceite} é um teste que garante que o Acelerador Linear atenda às especificações determinadas pelo fabricante e acordadas no contrato de compra; O teste de aceite deve ser realizado por um Físico Médico Qualificado (QMP) e inclui uma série de verificações de segurança, mecânicos e dosimétricos. Os testes de segurança, como interlock de porta, botões de emergência e levantamento radiométrico na área do comando do linac, são os primeiros que devem ser realizados afim de se garantir um ambiente seguro para a equipe que irá realizar o aceite.
+        
+        \item De acordo com o TG-106 (\textit{``Accelerator beam data commissioning equipment and procedure''}), o processo de comissionamento de um acelerador linear envolve medidas abrangentes e precisas de todos os parâmetros dosimétricos necessários para descrever completamente os feixes de radiação emitidos pelo acelerador. As informações obtidas no comissionamento são utilizadas para modelar o acelerador no sistema de planejamento (TypeScript). Anualmente, devem ser realizadas novas medições para confirmar que os feixes de radiação ainda se comportam como o esperado de acordo com os dados do comissionamento. Caso o feixe não esteja de acordo, o modelo do feixe utilizado no TPS precisará ser atualizado.
+                
+        \item De acordo com o TG-66 (\textit{``Quality assurance for computed-tomography simulators and the computed-tomography-simulation process''}), os testes que devem ser realizados em um CT simulador são:
+            \begin{enumerate}
+                \item Diários:
+                    \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+                        \item Constância da HU na água;
+                        \item Ruído da imagem;
+                        \item Integridade espacial; e
+                        \item Ortogonalidade dos lasers.
+                        
+                        É comum serem feitas verificações adicionais a precisão da marcação do isocentro definido pelo laser;
+                    \end{itemize}
+
+                \item Mensais:
+                    \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+                        \item Testes de qualidade da imagem incluindo uniformidade, ruído, exatidão do número de HU, contraste e resolução espacial;
+                        \item Testes dos componentes mecânicos incluindo orientação e movimentação da mesa;
+                        \item Testes de segurança
+                    \end{itemize}
+
+                \item Anuais: São realizados os testes anteriores incluindo os testes de perfil de radiação, dose de imagem e densidade eletrônica para a calibração da unidade de Hounsfield (HU).
+            \end{enumerate}
+
+        \item De acordo com o TG-40, as novas fontes HDR precisam ser ser calibradas e para isto a atividade de uma fonte de braquiterapia HDR deve ser verificada por um físico médico qualificado (QMP) antes de ser utilizada para os tratamentos. A atividade da fonte deve ser medida utilizando uma câmara de ionização tipo poço calibrada e um eletrômetro. A atividade da fonte deve estar dentro de 5\% da atividade especificada pelo fabricante.
+
+        \item Os testes diários estabelecidos pelo documento  \textit{``High dose rate (HDR) brachytherapy quality assurance: a practical guide''} incluem: testes de verificação da precisão do cronômetro, precisão da posição da fonte, intertravamentos das portas, indicadores de exposição da fonte, sistema de video e comunicação, sistemas e dispositivos de monitoramento da radiação e funcionamento do console de controle;
+      
+    \end{itemize}
+
+    \textcolor{CarnationPink}{Segurança do Paciente}
+    \begin{itemize}
+        \item Em 2014, A ASTRO juntamente com a AAPM lançaram uma nova iniciativa para a segurança do paciente denominada como ``\textit{Radiation Oncology Incident Learning SystemTM (RO-ILS)}'' (Sistema de Aprendizado com Incidentes em Radioterapia). O RO-ILS documenta, analisa e rastreia os incidentes relacionados à segurança do paciente enviados pelos centros de radioterapia participantes. 
+        
+        \item Os guidelines que podem auxiliar na tomada de decisão com respeito a segurança do paciente podem ser encontrados nos reports (TGs) da AAMP, em white papers da ASTRO, em padrões de prática e acreditação do ACR/ASTRO e em regulamentos governamentais com a ANSN/CNEN.
+        
+        \item A agência internacional que regulamenta os materiais produzidos em reatores nucleares, como o \ce{^{60}Co} é a NCR (\textit{``Nuclear Regulatory Commission''}) onde os estados podem optar por adotar os regulamentos do NRC e tornar-se estados de acordo. Aqui no Brasil, a CNEN/ANSN regulamenta esses materiais.
+
+        \item Internacionalmente, a regulamentação dos materiais radioativos de ocorrência natural e os equipamentos de raios-x é feita pelos Estados Individuais. Aqui no Brasil, os equipamentos de raios-x são regulamentados pela ANVISA e os materiais de ocorrência natural entram no controle regulatório da CNEN/ANSN caso a agência determine ser necessário.
+        
+        \item De acordo com o documento da ASTRO \textit{`` Practice Parameter for Radiation Oncology''}, as principais medidas de segurança que devem ser incluídas em uma prática de Radioterapia são:
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+                \item Um sistema de gerenciamentdo de tratamento para a prescrição, configuração dos parâmetros e entrega do tratamento e registro da dose diária entregue e da soma cumulativa da dose.
+                \item Um programa estabelecido pela Física para a calibração dos equipamentos que garanta a entrega precisa da dose ao paciente;
+                \item Um sistema para verificação independente dos parâmetros de tratamento (em teleterapia) seja por outra pessoa qualificada ou por outro método antes do primeiro tratamento;
+                \item Um sistema para o físico médico e o radio-oncologista verificar independentemente todos os parâmetros práticos relevantes no procedimento de braquiterapia, para ser utilizado antes de cada procedimento;
+                \item Um programa para prevenir lesões mecânicas ao paciente causadas pela máquina ou equipamento acessório; Uma lesão mecânica é uma lesão no tecido causada pela aplicação de uma força mecânica.
+                \item Sistemas audio-visual para garantir contato visual e sonoro com o paciente durante o tratamento;
+                \item Estabelecer uma política que exija duas formas de identificação do paciente bem como a verificação dos parâmetros do plano antes de cada tratamento. 
+            \end{itemize}
+        
+        \item Dado o uso rotineiro de IGRT com CBCT, para evitar danos mecânicos pela máquina, um sistema mecânico composto por um anel de proteção preso ao gantry com molas é utilizado nos Aceleradores da Elekta e na Varian é utilizado um sistema de detecção à laser nas máquinas atuais. Além disso, os painéis de imagem KV e MV possuem intertravamentos que interrompem o movimento do gantry quando uma força é aplicada sobre eles. Com base nas posições da mesa antes de realizar o CBCT, o sistema da Varian pode mover a mesa para uma ``zona de segurança'' para evitar possíveis colisões. A mesa será restaurada à sua posição inicial após a imagem de CBCT. Apesar desses projetos de seguranã, recomenda-se que o operador realize um teste para verificar se é possível ocorrer umaa lesão mecânica mo paciente causada pela máquina. 
+        
+        \item Uma forma comum para a identificação do paciente em de duas formas é através do nome completo do paciente e sua data de nascimento.
+
+        \item Segundo o documento \textit{``Quality control quantification (QCQ): a tool to measure the value of quality control checks in radiation oncology.''} Os QA de verificação que devem ser realizados na radioterapia incluem: Revisão do plano pelo médico, revisão do plano pelo físico, revisão do prontuário pelo técnico (operador), QA de IMRT pré-tratamento, Chart rounds, timeout por técnico, checagem da SSD, Filmes de Portais, CT online, dosimetria in-vivo e checagem semanal pela física. Dentre as outras verificações individuais a checagem do plano pela física é a mais sensível para detecção de erros potenciais.
+        
+        \item Qualquer membro da equipe de tratamento, o que inclui médicos, físicos, técnicos, etc\dots, devem declarar um ``time-out'' (intervalo, pausa) durante o tratamento  se tiver alguma dúvida ou preocupação a respeito do plano de tratamento.
+        
+        \item Tendo em vista a segurança do paciente, é importante implementar na rotina da radioterapia checks-list das atividades a serem executadas por cada membro. Estudos tem mostrado que chek-list médico reduz a probabilidade de erros na prática médica e isso pode se extender para qualquer mebro da equipe de radioterapia.
+        
+        \item O controle de qualidade paciente-específico para a técnica de IMRT é necessário pois, com base nas diretrizes do ACR (American College of Radiology) a precisão da entrega da dose deve ser documentada para cada curso de tratamento irradiando um phantom que contém ou um filme dosimétrico calibrado para demonstrar a distribuição de dose ou um sistema de medida equivalente, como uma câmara de ionização ou matrizes de diodos, para verificar que a dose entregue é igual a dose planejada.
+        
+        \item Os níveis de ação para o QA paciente-específico podem variar com base no tipo de tratamento, local da doença, dispositivo de medição, técnica de tratamento, etc\dots Normalmente, o nível de ação para a diferença absoluta de dose pontual entre a dose medida e a dose planejada é de $\pm$ 5\%. A comparação entre a distribuição de dose medida e a planejada é normalmente obtida através da análise gama, em que é necessária uma taxa de aprovação $>$ 90\% utilizando os critérios de 3\%/3 mm. Para tratamentos de SBRT, os níveis de ação podem ser mais rigorosos do que os utilizados nos tratamentos IMRT convencionais.
+        
+        \item O TG-34 (\textit{``Management of radiation oncology patients with implanted cardiac pacemakers''}) fornece recomendações para tratamentos de pacientes que utilizam marca-passo; É recomendado limitar a dose acumulada no marcapasso a 2 Gy. Porém, os fabricantes individuais podem estabelecer limites de dose mais baixos que deverão ser obedecidos. Outra boa prática é evitar o uso de fótons com energia superior a 10 MV, para evitar a produção de nêutrons no cabeçote que podem danificar diretamente a parte eletrônica do marcapasso.  Outro Protocolo, o TG-203 atualiza as informações a respeito dos problemas induzidos no marcapasso com respeito a dose recebida.
+
+        \item Caso uma paciente esteja grávida e tenha sido diagnósticada com carcinoma cervical (câncer de colo de útero), o tratamento de radioterapia não será compatível para este caso pois as regulamentações determinam que a dose equivalente recebida pelo feto não pode exceder 5 mSv durante toda a gravidez, de modo que Doses abaixo de 0.1 Gy devem ser seguras, doses até 0.5 Gy não são necessáriamente fatais mas resultariam dano ao feto. 
+        
+        \item Nos casos de uma paciente grávida que precisa ser submetida a um tratamento de WB (Whole Brain), seguido o princípio ALARA ( ``\textit{As Low as Reasonably Achievable}'') recomenda-se que seja realizada uma CT com espessura de corte grande (por exemplo $>$ 5 mm) e com um curto alcance da varredura ao longo da direção superior-inferior, além de utilizar baixo kVp e/ou mAs. Nas imagens de portal, recomenda-se uma uma exposição.
+        
+        \item Antes de cada tratamento de SRS e SBRT, o radio-oncologista deve estar presente para verificar a integridade do setup e posicionamento do paciente utilizando IGRT.
+
+        \item De acordo com as normas da NRC, deve ser estabelecidoum comitê de proteção radiológica na instituição, que deve incluir um usuário autorizado (médico, técnico, físico médico...), o Supervisor de proteção radiológica, uma enfermeira e um representante da admnistração que não seja um usuário e nem um SPR. No Brasil a portaria 453 da ANVISA determina que em ambientes hospitalares devem ser instaurada um comitê de proteção radiológica sendo integrado por no mínimo um representante da direção do hospital, o SPR e um médico especialista de cada uma das unidades que fazem uso de radiação Ionizante. 
+        
+        \item Segundo a NRC, uma diretiva escrita é necessária para procedimentos que utilizam fontes, como braquiterapia, gamma knife e teleterapia com \ce{^{60}Co}. Dependendo do tipo de aplicação (LDR, HDR permanente ou temporário) a diretiva deverá conter: A dose e o fracionamento (caso este seja aplicável); forma de entrega; radionuclídeo; número de fontes e intensidade total da fonte; região de tratamento e o nome do paciente; Essa diretiva deve ser assinada pelo médico autorizado;
+        
+        \item De acordo com NRC, os níveis de dose estabelecidos para notificação e registro em um evento médico são:
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+                \item Dose Efetiva = 0.05 Sv (5 rem);
+                \item Dose Equivalente em um órgão ou tecido: 0.5 Sv (50 rem);
+                \item Dose Equivalente na pele: 0.5 Sv (50 rem)
+            \end{itemize}
+
+        Para a CNEN, os níveis de registro e investigação dos IOE são:
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+                \item \textbf{Níveis de Registro}
+                    \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+                        \item \textbf{Dose Efetiva:} 0.1 mSv;
+                    \end{itemize}
+
+                \item \textbf{Níveis de Investigação}
+                \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+                    \item \textbf{Dose Efetiva:} 6 mSv por ano ou 1 mSv em qualquer mês;
+                    \item \textbf{Dose Equivalente na pele, mãos ou pés:} 150 mSv no ano ou 20 mSv em qualquer mês;
+                    \item \textbf{Dose Equivalente na pele no critalino}: 6 mSv por ano ou 1mS em qualquer mês;
+                \end{itemize}
+            \end{itemize}
+
+        \item De acordo com a NRC, a instituição licenciada deve informar por telefone o evento médico em no máximo um dia após a descoberta do evento e deverá encaminhar a NRC um relatório por escrito em até no máximo 15 após a descoberta do evento médico. A CNEN não especifica um prazo para submeter o relatório, segundo a 3.01 é necessário enviar um relatório após a investigação do evento médico contendo a causa e as medidas tomadas para evitar o mesmo erro no futuro. 
+
+    \end{itemize}
+    
+\end{exemplo}
+
+\begin{exemplo}[12. IGRT ]
+
+    \begin{itemize}
+        \item IGRT é Radioterapia Guiada por Imagem. É uma técnica utilizada para garantir que o alvo de tratamento seja localizado e alinhado aos feixes de radiação da mesma forma que estão localizados nas imagens utilizadas para planejar o tratamento antes de entregar o tratamento.
+        
+        \item A diferença entre exatidão e precisão é que exatidão é o quão próximo o valor medido está do valor real, enquanto que precisão é o quanto os valores medidos estão próximos um dos outros. É possível ser preciso sem ser exato. O objetivo da radioterapia guiada por imagem (IGRT) é a exatidão.
+        
+        \item A incerteza no posicionamento do alvo durante o tratamento pode ser devido à diferenças interfrações ou intrafrações. Erros de posicionamento/setup do paciente, perda de peso, alterações em volumes e variações no preenchimento do reto e bexiga são alguns exemplos de alterações que podem ocorrer entre uma fração e outra, chamados de desvios interfrações. A movimentação do paciente durante o tratamento, o movimento respiratório, a movimentação de gases no intestino e a movimentação cardíaca são alguns fatores que podem levar à incerteza durante a entrega da dose, chamada de incerteza intrafração.
+        
+        \item Os sistemas utilizados em IGRT são: Dispositivos eletrônicos de Imagem Portal (EPID); par de imagens bidimensionais KV; Imagnes Estereoscópicas de KV; Feixe Cônico de Megavoltagem (MVCBCT), Feixe Cônico de Quilovoltagem (KVCBCT), CT-on-rails (tomografia computadorizada com qualidade de CT diagnóstica in-room); Rastreamento óptico; Imagem de Ressonância Magnética In-room; Ultrassom (US); transponders eletromagnéticos.
+        
+        \item Embora existam diferentes métodos de IGRT, o processo é semelhante para todos. Inicialmente o paciente é posicionado na mesa de tratamento da mesma forma que foi simulado, utilizando o laser da sala para alinhar a origem marcada no corpo do paciente e na seguência é deslocado par ao isocentro, caso seja diferente do TP0; Então, as imagens do paciente são adquiridas utilizando um dos sistemas citados acima. As imagens de IGRT asquiridas são registradas com as imagens de referência, com o foco na anatomia de interesse. O fusão é utilizada para determinar o deslocamento necessário a partir do posicionamento inicial para que o alvo seja alinhado de acordo com a posição planejada. O software de reposicionamento exibirá os deslocamentos a serem realizados na forma de deslocamentos da mesa para alinhar o paciente na posição planejada.
+        
+        \item Em um Dispositivo eletrônico de imagem portal (EPID), os raios-x recebidos pelo painel EPID interagem com a tela contendo detectores cintiladores que converte os raios-x em fótons com comprimento de onda óptico (luz visível). Os fótons ópticos são detectados pelos fotodiodos de silício amorfo que então converte a luz em sinal eletrônico formando a imagem.
+        
+        \item Embora o Cone-beam (CBCT) e a Tomografia Computadorizada (CT) formam imagens a partir da rotação do tubo d3e raios-x em torno de um isocentro (eixo), o a Imagem de CBCT utiliza um feixe de raios-x em forma de cone que é projetado em um detector criando uma imagem volumétrica completa com apenas uma rotação. Uma CT gera imagens do paciente com uma colimação estreita, criando um feixe de raios-x com formato de leque. O feixe colimado cria imagens de uma ``fatia'' fina do paciente; Portanto, enquanto os feixes em formato de leque gira em torno do paciente, a mesa se move lentamente na direção longitudinal, resultando em uma aquisição helicoidal (movimento espiralado) do feixe de raios-X, para obter uma imagem volumétrica do paciente. Em resumo, o CBCT gera várias imagens planares durante a rotação para reconstruir o volume, enquanto o CT gera diversos cortes ao longo da direção longitudinal do paciente para reconstruir o volume.
+        
+        \item O CBCT pode ser realizado utilizando um tubo de raios-x acoplado ao acelerador para formar imagens a partir de um feixe KV ou, pode ser realizado com o próprio feixe emitido do acelerador, formando imagens de cone-beam com feixe de MV (MVCBCT). As vantagens e desvantagens de usar o MVCBCT são:
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                \item \textbf{Desvantagens:} Nessas imagens, a anatomia óssea e tecidos com baixa densidade, como cavidades aéreas ou o pulmão são visíveis. Porém Como a energia é de megavoltagem (MV), o modo de interação predominante é o Espalhamento Compton, que está relacionado com a densidade eletrônica do meio que, para os componentes do corpo, há pouca diferença entre os diferentes tecidos moles; Portanto, o tecido mole é mais difícil de ser visualizado quando comparado a imagens KV onde domina o efeito fotoelétrico. Para melhorar a qualidade de uma imagem MV é então necessário aumentar a dose da imagem, o que irá causar um aumento na exposição à radiação do paciente;
+                
+                \item \textbf{Vantagens:} Devido a dependência com a densidade eletrônica do meio, os artefatos causados por grandes metais implantados são minimizados em imagens de MV, o que facilita a visualização de estruturas próximas ao implante, diferente do que ocorre em imagens KV. Outra vantagem é que as imagens de MV compartilha o mesmo isocentro da máquina de tratamento, evitando divergências do isocentro da imagem e do centro de tratamento, diferentemente das imagens KV que possuem um tubo acoplado ao acelerador, posicionada ortogonalmente ao feixe de tratamento. Portanto, o isocentro do KVCBCT, embora projetado para coincidir com o isocentro da máquina, possui um centro diferente que pode causar um deslocamento entre a imagem e o tratamento. 
+            \end{itemize}
+        
+        \item Uma CT-on-rails (\textit{``Tomografia sobre trilhos''}) é uma TC com qualidade diagnóstica colocada no mesmo bunker que o acelerador linear (linac). Portanto a CT adquirina no IGRT tem a mesma qualidade da CT adquirida para o planejamento. Essa técnica aumenta a exatidão do registro (fusão) das imagens de verificação e de planejamento do tratamento. As imagens adquiridas com a CT-on-rails também podem ser utilizadas para fins de replanejamento adaptativo, pois possuem informações precisas com respeito à densidade eletrônica.
+        
+        \item O dispositivo de rastreamento óptico infravermelho, utiliza marcadores infravermelhos passivos ou ativos que são detectados por uma câmera. Esses marcadores são colocados na superfície do paciente e são úteis para detectar a posição do paciente em relação ao plano de tratamento além de detectar movimentações do paciente durante o tratamento. Um método de calibração é responsável por associar as coordenadas da câmara com as coordenadas do isocentro da máquina de tratamento.
+        
+        \item O Calypso 4D é um sistema da Varian utilizado para IGRT. Este sistema é descrito como ums satélite de posicionamento global (GPS) para o corpo e é uma forma comum de IGRT utilizada no tratamento de radioterapia de próstata. Nesta técnica,  pequenos sinalizadores transponder\footnote{Um transponder é um dispositivo eletrônico que recebe um sinal e o retransmite em resposta. Os transponders são comumente usados em navegação aérea, rastreamento de veículos,comunicação via satélite\dots Eles desempenham um papel importante em fornecer dados precisos e confiáveis em tempo real.} , com 8.5 mm de comprimento e 1.85 mm de diâmetro, são implantados na próstata durante um procedimento ambulatorial de forma que a localização desses transponders indiquem (inferem) a posição e rotação da próstata; O sistema de rastreamento Calypso se comunica com esses transponders por meio de ondas de rádio (radiofrequência). Esse rastreamento pode inferir a posição e o movimento da próstata quase em tempo real, numa taxa de 20 vezes por segundo. Durante a entrega do tratamento, o usuário pode definir um limite para a posição da próstata, de modo que acima deste limite o feixe de radiação será interrompido. Utilizando o Sistema Calypso, dado a sua precisão e exatidão na localização do alvo, altas doses de radiação podem ser entregues ao alvo com margens mais estreitas poupando tecido normal e reduzindo os efeitos colaterais indesejados.
+        
+        \item A principal diferença entre os marcadores de rastreamento óptico e os transponders eletromagnéticos é que os marcadores opticos são colocados na superfície do paciente e utiliza ondas de infravermelho enquanto os transponders eletromagnéticos são implantados no órgão e utilizam ondas de radiofrequência. Enquanto os marcadores ópticos rastreiam movimentações na superfície, os transponders rastreiam as movimentações do próprio órgão;
+        
+        \item Uma ultrassom (US) utiliza ondas sonoras que são refletidas de volta ao transdutor que converte o sinal em uma imagem. A técnica de IGRT utilizando ultrasson é melhor aplicada para a localização da próstata e da cavidade tumoral da mama porque suas localizações permitem fácil acesso à sonda da US. A US não é uma técnica de IGRT invasiva, como o Calypso, e não utiliza radiação ionizante. Portanto, essa técnica pode ser utilizada diariamente para corrigir erros de setup e de movimentação. Uma desvantagem em utilizar a técnica de IGRT com US é que é uma técnica operador-dependente, de modo que os resultados podem variar dependendo de como o operador irá aplicar a pressão na sonda. 
+        
+        \item Em implantes de sementes na próstata, é utilizada a ultrassom em tempo real para guiar o procedimento de implantação. Para tal, é utilizada uma sonda ultrossonográfica transretal para adquirir uma série de imagens estáticas para fins de planejamento. Esta sonda transretal tamnpem é utilizada para visualização da próstata, tecidos circundantes, sementes e agulhas durante a real implantação das sementes.
+        
+        \item Para teleterapia, a ultrasson fornece uma visualização dos tecidos moles da próstata e da cavidade mamária. Durante a aquisição da imagem para planejamento (simulação) podem ser realizadas imagens de ultrassom para serem combinadas com as imagens da TC de planejamento e então fornecer melhor visualização do alvo e das estruturas ao redor do alvo. Durante o tratamento, as imagens de ultrassom do IGRT permitem que as estruturas alvo sejam alinhadas utilizando a forma, o tamanho e a posição anatômica. E sua maior vantagem é não utilizar radiação ionizante na aquisição da imagem.
+        
+        \item Em tratamentos de próstata, que consiste em um tecido mole, utilizar uma técnica de IGRT com feixe MV, como o MVCBCT, não seria o ideal pois os feixes de MV não possui bom contraste em tecidos moles. Porém, para melhorar a visualização nesses casos, é comum a técnica ser combinada com marcadores fiduciais implantados na glândula. Deste modo, os fiduciais são altamente visíveis no MVCBCT e podem ser utilizados para o alinhamento com base na imagem de referência.
+        
+        \item A distribuição de dose em torno do CTV pode ser afetada devido à erros randômicos (aleatórios) e erros sistemáticos. Erros aleatórios são os erros imprevisíveis e que podem variar em magnetude e direção entre uma fração e outra. Esse tipo de erro leva a um desfoque/indefinição/penumbra da distribuição de dose em torno do CTV ao longo do curso de tratamento. Os erros sistemátios são os erros causados por desvios que ocorrem durante cada fração ao longo de todo o curso de tratamento. Esses desvios possuem tamanho e direção semelhante e podem levar a distribuição de dose para fora do CTV.
+        
+        \item Ao inferir que a Técnica de IGRT permite reduzir as margens de tratamento, se refere à margem dada para considerar erros de setup e posicionamento. O GTV é a extensão bruta e visível do Tumor; uma margem é adicionada ao GTV para formar o CTV, essa margem é utilizada para levar em consideração a disseminação microscópica do tumor. A partir do CTV, uma margem pode ser adicionada para considerar a movimentação interna da lesão quando aplicável, formando o ITV. A partir do ITV ou do CTV, uma margem é adicionada para contabilizar possíveis movimentações do paciente, imprecisões no feixe e no posicionamento do paciente, formando o PTV. Como a técnica de IGRT garande maior exatidão no posicionamento do volume alvo em comparação ao que foi planejado, erros relacionados a posicionamento podem ser minimizados, portanto a Técnica de IGRT permite reduzir a margem do CTV para o PTV.
+        
+        \item A formulação de van Herk, também conhecida como margens de tratamento baseadas em van Herk, é um método utilizado na radioterapia para determinar as margens de segurança necessárias ao delinear o volume de tratamento. Essas margens adicionais são calculadas utilizando-se um conjunto de dados de imagem que mostra as variações diárias da posição do tumor, onde os erros podem surgir do delineamentom, movimento e setup. Com base nesses dados, o método de van Herk estima as margens adequadas, levando em consideração o tamanho do tumor, a mobilidade do paciente e os erros de setup. Esta formulação estima que para 90\% da população de pacientes, o CTV receberia 95\% da dose prescrita cumulativa em um tratamento de radioterapia convencional utilizando uma margem par o PTV = 2.5 x o desvio padrão dos erros sistemáticos $+$ 0.7 x o desvio padrão dos erros aleatórios.
+        
+        \item Ao utilizar a técnica de IGRT através de imagens de ressonância magnética, pode-se obter as seguintes vantagens e desvantagens:
+            \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+                \item \textbf{Vantagens:} Excelente visualização de tecidos moles; Não utiliza radiação ionizante e portanto não contribui para a dose no paciente além de ser possível um rastreamento em tempo real do tumor;
+                \item \textbf{Desvantagens:} A variação no campo magnético pode causar distorções geométricas nas imagens do paciente. O campo magnético também pode interferir na distribuição de dose e na função do Acelerador Linear se nenhuma blindagem especial para o campo magnético dor aplicada, uma vez que a produção de radiação é feita com elétrons acelerados e que sofrem interferência de campos magnéticos.
+            \end{itemize}
+
+        \item Imagens de portal (Portal Imaging) são utilizadas para verificar a posição do paciente e também para verificar se a forma e o tamanho do campo estão de acordo com o planejado (em planejamentos 2D e 3D por exemplo). Nesta técnica, são feitas duas exposições, uma com o campo aberto para facilidar a visualização anatômica da região e outra com o campo colimado em sua forma de tratamento para verificar sua confomidade. As duas exposições são sobrepostas na mesma imagem de forma que fica fácil visualizar o campo de tratamento e sua relação com a anatomia da região.
+        
+        \item Uma bandeja BB, também chamada de gratículo ou retículo, é um dispositivo calibrado, com marcadores radiopacos incorporados à bandeja, de forma que são dispostos em um padrão cruzado formando uma régua com escala variando em 1 cm  no isocentro. Esta bandeja é inserida em seu respectivo slot no acelerador ao adquirir uma imagem de porta. Quando a imagem é adquirida, os marcadores ficam visíveis na imagem definindo o isocentreo, os eixos X e Y e a escala. Este dispositivo é usado principalmente em sistemas onde a associação do isocentro do feixe com o isocentro da imagem não é estabelecida (por exemplo ao utilizar chassi na aquisição da imagem de portal); Atualmente, a maioria dos novos Aceleradores utilizam um gratículo digital onde a relação entre o isocentro da máquina e do gerador de imagens de portal eletrônico é definido e conhecido.
+        
+        \item O sistema ExacTrac é um sistema de IGRT de circuito fechado fabricado pela BrainLab. O ExacTrac utiliza duas unidades estereoscópicas de raios-x embutidas no chão, em lados opostos da mesa de tratamento e dois painéis detectores montados no teto. O movimento e o posicionamento do paciente podem ser monitorados durante todo o tratamento utilizando o sistema de rastreamento óptico integrado ao Exactrac além dos raios-x estereoscópicos poderem ser utilizados conforme a necessidade para visualizar a anatomia externa.
+        
+        \item Durate uma aquisição de um KVCBCT, podem ser utilizados filtros Bowtie, do mesmo modo que ocorre em uma CT diagnóstica. Os filtros BowTie são dispositivos de modelagem de feixe para imagens de raios-x que podem melhorar a qualidade da imagem de CBCT; Os filtros Bowtie comumente utilizados em uma imagem de CBCT são os filtros bowtie full-fan (leque completo) e half-fan (meio leque). O perfil de um filtro full-fan é mais grosso em ambos os lados e mais fino nom meio, lembrando uma gravata borboleta. As extremidades mais grossas atenuam mais o feixe do que a área central do filtro. Este filtro é mais utilizado em varreduras de CBCT de crânio. Um filtro half-fan é mais grosso de um lado e mais fino do outro, de modo que atenuará mais o feixe somente em uma extremidade durante a aquisição. O modo half-fan é utilizado para varreduras corporais onde o detector é deslocado lateralmente para aumentar o campo de visão axial da imagem.
+        
+        \item Uma das maiores vantagens em utilizar filtros bowtie ao adquirir uma imagem de KVCBCT é que a qualidade é melhorada porque os artefatos do tipo cupping\footnote{Os artefatos cupping são causados pela radiação espalhada que se origina da interação da radiação primária com os tecidos do paciente. Essa radiação espalhada pode se espalhar em várias direções antes de atingir o detector de imagem, resultando em uma distribuição de intensidade não uniforme. A dispersão da radiação causa uma atenuação maior nos raios que se espalham em ângulos maiores, levando a uma redução da intensidade do sinal na periferia da imagem. Isso cria uma aparência de escurecimento gradual ou "cupping" ao redor das estruturas mais densas ou próximas ao centro da imagem. Os artefatos tipo cupping podem comprometer a qualidade da imagem, prejudicando a visualização adequada das estruturas anatômicas e interferindo na interpretação radiológica. Eles são mais comumente observados em imagens de TC de feixe cônico, em que a geometria de aquisição e a alta dispersão de raios-X aumentam a probabilidade de ocorrência desses artefatos.} causados pelos raios-x espalhados no tecido são reduzidos. Além disso, os raios-x com o kVp mais alto podem ser utilizados sem saturar o detector, e faz com que tenha uma redução das cargas aprisionadas no detector.
+        
+        \item As configurações mais comuns a respeito das faixas de energia nos tubos de raios-x utilizados para o CBCT variam entre 100 kVp até 125 kVp.
+        
+        \item As imagens de KVCBCT podem ser adquiridas através da rotação completa do tubo de raios-x ou realizando apenas meia rotação do tubo. Ao utilizar meio arco, a varredura/ aquisição e a reconstrução serão mais rápidas e será entregue uma menor dose ao paciente devido à aquisição da imagem. Além disso, as estruturas superficiais críticas, como os cristalinos, podem evitar ser irradiadas. A desvantagem desta técnica é que as imagens podem ser de qualidade inferior, ter um maior ruido e sofrer com artefatos.
+        
+        \item A profundidade de dose máxima para imagens kV é essencialmente na superfície, portanto a pele recebe mais dosse em imagens KV do que em imagens MV. Devido ao efeito fotoelétrico, o osso também receberá uma dose maior na imagem KV do que na imagem MV. Os fótons na faixa kV são rápidamente atenuados à medidad que a profundidade do corpo aumenta, ao contrário dos fótons na faixa Mv, que é caracterizado por um buildup, um máximo e uma queda muito mais lenta. 
+        
+        \item O Acelerador Liner Siemns Artiste utiliza um sistema de imagem In-Line kView para aquisição de imagens de IGRT. Esse sistemas utiliza um novo feixe MV que é produzido através de um alvo de carbono sem filtro aplanador. Este novo feixe para imagem desloca o espectro de energia MV para mais próximo do espectro de energia KV e contém mais fótons de baixa energia devido a ausência do filtro aplanador, fazendo com que a imagem adquirida tenha um melhor contraste dos tecidos moles comparados a uma imagem MVCBCT padrão. O termo In-Line diz respeito ao centro da imagem que está alinhado com o isocentro do feixe de tratamento, como é padrão para o MVCBCT.
+        
+        \item Quando um feixe polienergético de raios-X passa através de um objeto, os fótons de energia mais baixa são absorvidos mais rapidamente do que os fótons de energia mais alta. A energia média do feixe aumenta e ele se torna “mais duro”. Isso pode levar a artefatos no CBCT.
+        
+        \item Em um processo de IGRT utilizando CT-on-rails, Primeiro, as marcas externas do paciente são alinhadas aos lasers do acelerador linear. Os BBs são então colocados nessas marcas. O paciente é então girado 180° usando a rotação da coluna da mesa em direção ao tomógrafo e a TC é adquirida. Como o isocentro do acelerador linear e o centro de aquisição da TC não estão associados, as coordenadas dos isocentros dos dois sistemas são associadas manualmente usando os BBs na imagem da TC. Após o registro da imagem, a diferença entre as coordenadas do isocentro definidas (BBs) e as coordenadas do isocentro do planejamento de referência é então calculada e exibida. Esse deslocamento é aplicado manualmente depois que o paciente é girado 180° para trás e realinhado aos lasers do acelerador linear.
+        
+        \item Os métodos usados para registro (fusão) de imagens são a informação mútua (mutual information) ou informação mútua normalizada (normalized mutual information), alinhamento visual (visual alignment), pontos de referência (landmarks) e correspondência de superfície (surface matching).
+        
+        \item O 4DCBCT é uma técnica utilizada para orientação por imagem (IGRT) de pacientes submetidos a tratamentos de um alvo em movimento durtante o tratamento. O 4DCBCT fornece uma visualização volumétrica do movimento do tumor no momento do tratamento. A maior desvantagem desta técnica é que o 4DCBCT requer um tempo de aquisição mais longo, mais dose de imagem e resulta em pior qualidade de imagem.
+        
+        \item O Sistema Real-Time Position Management (RPM) da Varian é um sistema de rastreamento não invasivo e em tempo real usado para medir o a exrtensão do movimento do tórax de um paciente, que pode ser vinculado ao movimento de um tumor-alvo. É melhor usado para gerenciar o movimento do tumor na região torácica e no abdome superior.
+        
+        \item O sistema RPM utiliza uma câmera infravermelha e um bloco reflexivo colocado no paciente para medir o ciclo respiratório com base no movimento do tórax. O ciclo respiratório medido é registrado como uma forma de onda. O médico usa essa forma de onda para determinar os limiares do gating para planejar a aquisição de TC e o gating do tratamento. Durante o tratamento com gating, o feixe será ligado automaticamente se o ciclo respiratório estiver acima do limite e desligado se o ciclo respiratório estiver abaixo dos limites.
+        
+        \item Os dois tipos de binning do ciclo respiratório (dividindo o ciclo em segmentos) são binning de fase e binning de amplitude. A fase é definida selecionando pontos de tempo durante o ciclo respiratório. A amplitude é definida pela atribuição de limiares no ciclo respiratório.
+        
+        \item Uma mesa com 6 graus de liberdade (6DoF) refere-se ao movimento da mesa no espaço tridimensional. A mesa se move nas direções translacionais (superior/inferior, esquerda/direita e para cima/baixo) e nas direções rotacionais (pitch, yaw e roll). O pich tem como eixo de rotação o eixo lateral, o yaw tem como eixo de rotação o eixo longitudinal e o roll tem como o eixo de rotação o eixo vertical.
+        
+        \item A dose de radiação de qualquer uma das das possíveis CTs utilizadas para IGRT dentro da sala varia de acordo com a técnica utilizada e com a parte do corpo que é visualizada. A dose de radiação fornecida varia de 10 a 50 mGy por aquisição, com CT-on-rails e kV CBCT fornecendo doses mais baixas do que MV CBCT. A dose de radiação pode ser reduzida ajustando a técnica de aquisição de imagem utilizada (kVp, mAs, MUs); minimizando a colimação/jaws para incluir apenas a parte do corpo de interesse e através do uso de filtros apropriados.
+        
+        \item A próstata é difícil de visualizar usando a imagem de raios-X on-board de um acelerador linear. Pequenos marcadores fiduciais feitos de ouro ou outros materiais podem ser implantados na próstata antes do curso de tratamento de radioterapia; Uma vez iniciadaa radioterapia, esses marcadores são altamente visíveis nas imagens de verificação pré-tratamento. Suas posições são comparadas com as imagens de referência e os deslocamentos são determinados para garantir que a próstata esteja na posição de tratamento correta. Esses marcadores fiduciais são inseridos normalmente por um urologista onde, durante uma ultrassonografia (US) transretal, uma agulha passa pela sonda e insere três marcadores na próstata; no ápice, meio e base da próstata.
+        
+        \item Os marcadores fiduciais não se limitam apenas à próstata e podem ser usados para outros alvos de tratamento para os quais o contraste de imagem do dispositivo integrado é insuficiente para localizar o alvo. Os marcadores podem ser adicionados deliberadamente ou podem estar relacionados à cirurgia, como stents (pâncreas) ou clipes (por exemplo, mastectomia).
+        
+        \item O Surface Beacon by Calypso é semelhante ao sistema Calypso original, mas em vez de ser implantado, o transponder de radiofrequência é colocado na superfície do paciente. Ele pode ser usado em qualquer parte do corpo para rastrear o movimento intrafração (como a respiração) em tempo real.
+        
+        \item O Acelerador TomoTherapy (Tomoterapia) utiliza um feixe em leque (fan beam) para adquirir as imagens do paciente antes do tratamento (IGRT). O feixe de tratamento de 6 MV é dessintonizado para aproximadamente 3,5 MV. Semelhante a uma TC de diagnóstico, o feixe em leque é girado em torno do paciente enquanto a mesa de tratamento é transladada pela máquina no sentido longituninal. A radiação qué transmitida é medida por um painel detector e então é reconstruída utilizando a técnica de retroprojeção filtrada. Neste caso portanto, não é utilizado um feixe cônico conforme os CBCTs convencionais, mas sim utiliza feixes em forma de leque e faz escaneamento helicoidal, portanto não é MV CBCT mas sim MVCT;
+        
+        \item A dose de imagem adquirida pré-tratamento em uma Tomoterapia depende da configuração utilizada durante a aquisição e da anatomia do paciente; Porém a dose devido a imagem normalmente é de 1 Gy a 3 cGy. Como esta dose é relativamente baixa pois a energia do feixe utilizado na aquisição é menor, é uma aquisição adequada para uso diário, além de também poder ser contabilizada no plano de tratamento.
+        
+        \item Em relação ao tempo de aquisição de uma imagem, um tomógrafo de diagnóstico, que pode completar uma rotação em uma fração de segundo, é muito mais rápido do que o MVCT presente em uma unidade TomoTherapy, que leva cerca de 10 segundos por rotação. Os CT-scanners mais recentes também têm um colimador mais amplo, permitindo-lhes obter maior imagem do paciente em uma rotação do que o TomoTherapy. Uma aquisição típica na unidade TomoTherapy pode levar de 2 a 4 minutos, dependendo da extensão do paciente escaneado. Isso é mais longo do que uma aquisição de CBCT em um acelerador linear, que leva cerca de um minuto, dependendo da velocidade do gantry e do comprimento do arco.
+        
+        \item Uma DRR, ou radiografia reconstruída digitalmente, é uma imagem progetada gerada computacionalmente a partir dos dados da TC. A DRR mostra uma visão panorâmica da anatomia óssea (embora existam outros filtros) que pode ser comparada a uma imagem do portal para verificar se o paciente está posicionado conforme planejado.
+        
+        \item Uma DRR é produzida utilizando uma posição de fonte virtual, onde as linhas radiais são traçadas através dos dados da TC para um plano virtual, definido na distância do painel de imagem do acelerador. Os coeficientes de atenuação ao longo de cada linha são somados para produzir uma imagem no plano virtual.
+        
+        \item Alguns fatores ppodem diminuir a qualidade da DRR gerada, sendo eles: A espessura do corte da TC, o número de pixels, a ampliação da DRR e o tamanho do passo na aquisição helicoidal;
+        
+        \item A equação abaixo é utilizada para determinar a atenuação ao longo das linhas radiais usadas para construir uma radiografia reconstruída digitalmente (DRR): 
+            $$\mu = \mu_{agua}\frac{HU}{1000} + 1$$
+        
+        \item O principal produto do Vision RT é chamado AlignRT. O AlignRT é um sistema óptico de rastreamento de superfície que usa duas ou três câmeras, combinadas com uma projeção de luz padronizada, para visualizar a superfície do corpo do paciente. Essa imagem é comparada a uma imagem de superfície de referência gerada pelo sistema de planejamento de tratamento para garantir que a superfície do paciente esteja posicionada corretamente. Ele também fornece rastreamento de movimento em tempo real, que pode alertar os técnicos sobre os movimentos do paciente e pode até interromper o feixe de radiação se os movimentos excederem as tolerâncias.
+        
+        \item Comparado às outras técnicas de IGRT, o Sistema AlingRT pode calcular a distância da fonte à pele (SSD) em qualquer ponto do paciente durante ou após o tratamento, o que permite que os usuários definam as tolerâncias personalizadas para o paciente em questão de modo que o feixe seja automaticamente interrompido caso os limites forem excedidos; além de oferecer monitoramento e feedback em tempo real. Além disso,  não é necessário utiliozar referências internas ou marcadores externos na pelee não há dose devido a imagem pois não utiliza radiação ionizante.
+        
+        \item O sistema ViewRay's MRIdian é um sistema de radioterapia baseado em ressonância magnética. Ele usa imagens de ressonância magnética para visualizar tecidos moles e realizar terapia com gating em tempo real, sem o uso de fiduciais implantados ou outros procedimentos invasivos.
+        
+        \item O MRIdian usa três heads (cabeçotes) carregados com cobalto-60 e espaçados de 120°. Os três cabeçotes de tratamento podem irradiar um paciente simultaneamente para melhorar a eficiência de aplicação. O MRIdian produz o equivalente a um feixe de acelerador linear de 4 MV (linac). O sistema também usa três colimadores multileaf para modelagem de feixe e tratamentos avançados, como radioterapia de intensidade modulada (IMRT).
+        
+        \item Muitos sistemas de radioterapia guiada por imagem (IGRT) permitem imagens em tempo real, isto é util pois a pré-imagem de um paciente, com tomografia computadorizada de feixe cônico (CBCT), por exemplo, é útil para garantir o posicionamento correto, mas a imagem em tempo real pode garantir que o paciente esteja posicionado corretamente durante toda a entrega do tratamento. A verificação em tempo real mostra se algum movimento está ocorrendo durante o tratamento e permite a interrupção do feixe se o alvo se afastar muito da tolerância. Além disso, ao observar o movimento em tempo real, os médicos podem determinar se as margens estabelecidas são adequadas para a movimentação observada.
+        
+        \item Ao adquirir as imagens, pode ser feita uma avaliação online ou a avaliação pode ser feita offline. Uma estratégia de correção online é quando as correções são feitas antes e durante o tratamento do paciente. As informações fornecidas pela orientação da imagem são usadas para determinar a ação apropriada. Isso explica os erros sistemáticos e aleatórios. A correção offline é realizada analisando várias das imagens dos tratamentos iniciais e decidindo uma estratégia para tratamentos futuros. Este método não eliminará erros aleatórios. Atualmente, a correção online é mais comumente usada.
+
+    \end{itemize}
+\end{exemplo}
+   
+\bibliography{ref.bib}
+\end{document}

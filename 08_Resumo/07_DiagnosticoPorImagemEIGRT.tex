@@ -1,0 +1,234 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{siunitx}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[margin=10pt,font={small, it},labelfont=bf, textfont=it]{caption}
+\usepackage[dvipsnames, svgnames]{xcolor}
+\DeclareCaptionFont{MediumOrchid}{\color[svgnames]{MediumOrchid}}
+\usepackage[pdftex]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\bibpunct{[}{]}{,}{s}{}{}
+\usepackage{color}
+\usepackage{footnote}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{leading}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{mdframed}
+\usepackage{etoolbox}
+\usepackage[version=4]{mhchem}
+\usepackage{enumitem}
+
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+
+
+\newcounter{exemplo}
+
+\NewDocumentEnvironment{exemplo}{ O{} }{%
+\allowbreak
+\setlength{\parindent}{0pt}
+  \begin{mdframed}[
+  leftline=true,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=2pt,
+  linecolor=CarnationPink,
+  frametitlerule=false,
+  frametitlefont=\Large\bfseries\color{CarnationPink},
+  frametitle={\color{CarnationPink}\normalfont\bfseries #1},
+  ]
+}{%
+  \end{mdframed}
+}
+
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{1pt}
+\usepackage{float}
+\renewcommand{\thefootnote}{\alph{footnote}}
+\usepackage{url}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=cyan,      
+    urlcolor=cyan,
+    citecolor=cyan,
+    pdftitle={Resumos}
+}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{Página \thepage}
+
+\title{Resumo}
+\author{Diagnóstico Por Imagem e IGRT \nocite{*}}
+\date{\textit{Dalila Mendonça}}
+\begin{document}
+	\maketitle
+
+
+\begin{exemplo}[13. Diagnóstico por Imagem]
+
+    \textcolor{CarnationPink}{Radiografia e Fluoroscopia}
+    \begin{itemize}
+        \item Existe uma diferença significativa no contrate de uma imagem de radiografia e o contraste de uma imagem de portal feitas no mesmo paciente. 
+        \begin{itemize}[label=\textcolor{CarnationPink}{\textopenbullet}]
+            \item O maior contraste obtido em imagens de radiografia no geral  é resultado dos fótons de energia mais baixas ($\sim$ kV) que sofrem, em sua maioria, interações fotoelétricas, onde a seção de choque para o efeito fotoelétrico é $\sim (Z/E)^3$. Portanto, fótons com baixa energia interagindo em um meio de alto Z resultará em grande absorção de fótons por esse meio, e portanto maior contraste. Esse contraste é então especialmente visualizado quando é adquirida uma radiografia de tecido ósseo.
+            \item Já as imagens de portal feitas na radioterapia utilizam o feixe de megavoltagem (MV) na aquisição da imagem. Para os fótons com energia $\sim MV$ a interação predominante no tecido é o espalhamento Compton. O Efeito Compton depende da densidade eletrônica do meio com o qual ele interage, porém a densidade eletrônica varia minimamente entre os tipos de tecido;
+        \end{itemize}
+
+        \item Os equipamentos de diagnóstico normalmente operam com uma  tensão de pico variando entre 60 kVp até 120 kVp. O kVp utilizado na aquisição de uma imagem dependerá da anatomia a ser visualizada e da qualidade de imagem desejada.
+        
+        \item Na faixa de energia dos Raios-X para diagnóstico, a $D_{max}$ acontece na superfície da pele; Portanto, essencialmente não há uma profundidade de buildup para os raios-x diagnósticos.
+        
+        \item Ao adquirir uma imagem de radiografia, a medida que o receptor da imagem é afastado da fonte sem que outras alterações na geometria sejam realizadas, a anatomia na imagem será amplificada, com o fator de amplificação igual a razão entre a distância da fonte até a imagem e a distância da fonte até o objeto (SID/SOD).
+        
+        \item Em uma aquisição de imagem com controle automático de exposição (\textit{``AEC - automatic exposure control''}) ou com controle automático de brilho (\textit{``ABC - automatic brightness control''}), mover o paciente para o mais próximo possível do receptor da imagem diminuirá a distância entre o paciente e o receptor nas aquisições AEC e ABC afastando o paciente da fonte de modo que a dose na entrada da pele do paciente será reduzida. Essa redução da dose será proporcional à lei do inverso do quadrado da distância, ou seja $(SSD_{inicial}/SSD_{final})^2$.
+        
+        \item Ao realizar uma angiografia utilizando raios-X, ocorre um embaçamento dos vasos sanguíneos na imagem; Os dois principais fatores que contribuiem para o desfoque dos vasos sanguíneos em uma imagem são o tamanho do ponto focal e a localização anatômica do objeto em relação ao receptor de imagem, pois quanto maior a distância maior o desfoque geométrico.
+        
+        \item Não existe um limite de dose de radiação para procedimentos de radiografia e fluoroscopia. No entanto a Joint Comission definiu um evento sentinela para procedimentos de fluoroscopia resultando em uma dose cumulativa na pele de 15 Gy ou mais em um único campo. De um modo geral, um evento adverso é um incidente com dano ao paciente causado pelo cuidado e o evento sentinela é um incidente grave, seja pelo dano, seja pelo risco do dano, ou mesmo pelo desgaste da imagem institucional, que merece ser investigado através de um método mais robusto com a análise de causa raiz.
+        
+        \item Para todas as unidades fluoroscópicas modernas (fabricadas após 2006), a energia cinética cumulativa do ar liberada por unidade de massa (kerma) deve ser exibida no display. O Kerma exibido é o Kerma no ar calculado para um plano de referência. O Kerma no ar reportado é a soma de todo output de radiação, em todas as projeções. Portanto, esse kerma não está diretamente relacionado a uma dose recebida na pele poi não leva em consideração a distribuição geométrica da dose. Além disso, o Kerma no ar pode se desviar substancialmente da dose na pele porque não em conta a precisão da câmara de ionização (que pode se desviar em $\pm$ 35\%), não considera os fatores de atenuação da mesa e da almofada (que podem exceder 30\%), não considera os fatores de retroespalhamento do tecido e os fatores de conversão f baseados na energia do fóton.
+        
+        \item Para imagens de fluoroscopia utilizando um intensificador de imagem, a região anatômica de interesse deve ser colocada no centro do ``field of view'' (FOV), pois todos os intensificadores de imagens possuem alguma distorção geométrica que geralmente é maior perto da periferia da imagem.
+        
+        \item A sequência de conversão do sinal da imagem em um intensificador é: os raios-x saem do paciente e passam pela grade, onde alguns são absorvidos. Os raios-x então chegam ao fósforo de entrada, onde os raios-x são convertidos em luz. Diretamente atrás do fósforo de entrada, os fótons de luz são convertidos em elétrons pelo fotocátodo. Os elétrons são acelerados através do tubo com vácuo e atingem o fósforo de saída, convertendo os elétrons de volta à luz.
+        
+        \item Em imagens fluoroscópicas, ao aumentar a magnificação ocorrerá uma diminuição do FOV o que levará a um aumento da taxa Kerma no ar. Para sistemas que utilizam intensificador de imagem, o aumento do Kerma será proporcional ao quadrado da razão das áreas do feixe $(A2/A1)^2$. Já para receptores digitais de imagens, a taxa kerma no ar geralmente aumenta, mas este aumento não está necessariamente relacionado com a área do feixe.
+        
+        \item Os sistemas fluoroscópicos de ultima geração (\textit{``State-of-the-art''}) utilizam uma filtração dinâmica de cobre (Cu). Este filtro de cobre é utilizado para endurecer o feixe de raios-x, reduzindo então a dose de entrada na pele. Porém, como o feixe é endurecido, há uma perda subsequente de contraste na imagem. 
+        
+        \item Ao diminuir o tamanho de campo de um feixe de raios-x diminuindo a colimação, a taxa de produto kerma-área ar irá diminuir mas a taxa kerma no ar irá se manter a mesma. O Kerma no ar é normalizado para a massa, então o tamanho de campo não ira afetá-lo. No entanto produto kerma-área é o produto entre O Kerma no ar e a área do campo e, portanto, terá um efeito direto quando ocorrer alterações no tamanho de campo.
+        
+        \item Se o produto kerma-área (PKA) for medido para o mesmo tamanho de campo, porém à distâncias diferentes da fonte, os valores do PKA serão os mesmos pois o PKA não é impactado por diferenças nos planos de medida. Embora o Kerma no ar diminua com a distância por um fator definido pelo inverso do quadrado da distância, a área do feixe aumenta na mesma proporção.
+        
+        \item Os recursos de resolução espacial para um filme tradicional são muito maiores do que para qualquer outro receptor de imagem atual (como os intensificadores de imagens ou detectores digitais de tela plana). O principal benefício de se utilizar uma detector digital é a capacidade que ele oferece ao operador de ajustar a janela e o nível, proporcionando um ajuste de contraste dinâmico.
+       
+    \end{itemize}
+
+    \textcolor{CarnationPink}{Ressonância Magnética}
+    \begin{itemize}
+        \item Um equipamento de Ressonância Magnética é composto principalmente pelos seguintes elementos:
+        \begin{enumerate}
+            \item \textbf{Ímã Principal:} É o principal componente da RM. Este ímã cria um campo magnético extremamente forte/intenso e uniforme que envolve a área do corpo a ser examinada. O ímã principal é tipicamente um ímã supercondutor, que consiste em uma bobina de fio supercondutor resfriada a temperaturas muito baixas usando hélio líquido;
+            \item \textbf{Bobinas de Gradiente:} Estas bobinas são colocadas dentro do ímã principal e são responsáveis por criar campos magnéticos variáveis em diferentes direções. Os campos magnéticos dos gradientes são usados para codificar informações espaciais na imagem de ressonância magnética, permitindo a localização precisa dos tecidos e estruturas no corpo.;
+            \item \textbf{Bobinas de radiofrequência (RF):} Essas bobinas emitem pulsos de radiofrequência que são usados para excitar os átomos de hidrogênio presentes nos tecidos do corpo. As bobinas de RF também atuam como antenas receptoras, capturando os sinais de radiofrequência emitidos pelos átomos de hidrogênio em resposta aos pulsos emitidos;
+            \item \textbf{Sistema de aquisição de dados:} Os sinais de radiofrequência capturados pelas bobinas de RF são enviados para o sistema de aquisição de dados do equipamento de ressonância magnética. Nesse sistema, os sinais são amplificados, digitalizados e armazenados para posterior processamento;
+            \item \textbf{Computador e software de reconstrução de imagem:} O computador do equipamento de ressonância magnética executa algoritmos complexos para processar os dados adquiridos e reconstruir a imagem final. Um dos principais métodos utilizados é a transformada de Fourier, que é aplicada aos dados para converter as informações de frequência em informações espaciais, gerando uma imagem em duas ou três dimensões.
+        \end{enumerate}
+        
+        \item Para a formação da imagem na Ressonância Magnética, é necessário que o número de massa atômica A dos átomos presentes no tecido em estudo seja ímpar para que haja um momento magnético líquido do núcleo, o qual é necessário para o funcionamento da ressonância magnética.
+        Isso ocorre devido ao princípio físico conhecido como "regra do spin nuclear" ou "regra do número quântico de spin".
+
+        O número quântico de spin é uma propriedade intrínseca das partículas subatômicas, como os prótons e nêutrons que compõem o núcleo atômico. Ele pode ter dois valores possíveis: +1/2 ou -1/2. A ressonância magnética explora o comportamento dos núcleos atômicos com spin de +1/2 ou -1/2 quando é aplicado um campo magnético externo.
+        
+        Quando um tecido é exposto a um campo magnético forte e uniforme, como o gerado pelo ímã principal em um equipamento de ressonância magnética, os núcleos com spin +1/2 e -1/2 se alinham de forma oposta em relação ao campo magnético. Esse alinhamento é chamado de "spin up" (para o spin +1/2) e "spin down" (para o spin -1/2).
+        
+        Durante o processo de excitação na ressonância magnética, pulsos de radiofrequência são aplicados, o que causa uma perturbação nos alinhamentos dos spins nucleares. Quando os pulsos de radiofrequência são desligados, os núcleos retornam ao seu alinhamento original com o campo magnético.
+        
+        A detecção dos sinais de ressonância magnética é baseada na emissão de energia pelos núcleos após o pulso de radiofrequência. No entanto, para que esse processo de emissão de energia ocorra, é necessário que exista uma diferença de energia entre os estados de spin up e spin down. Essa diferença de energia é chamada de "energia de ressonância".
+        
+        A energia de ressonância depende diretamente da interação entre o campo magnético externo e o campo magnético local gerado pelos elétrons em torno do núcleo. Essa interação é diferente para núcleos com número de massa atômica par e ímpar.
+        
+        Os núcleos com número de massa atômica par têm um campo magnético local efetivo que é cancelado pelos efeitos dos elétrons circundantes, o que resulta em uma energia de ressonância zero. Portanto, eles não emitem sinais detectáveis de ressonância magnética.
+        
+        Por outro lado, os núcleos com número de massa atômica ímpar não têm o cancelamento completo do campo magnético local pelos elétrons circundantes, o que resulta em uma energia de ressonância não nula. Isso permite que eles emitam sinais detectáveis de ressonância magnética, que são utilizados para formar as imagens.
+        
+        Em resumo, o número de massa atômica ímpar é necessário na ressonância magnética porque os núcleos com esse número de massa têm uma energia de ressonância não nula, permitindo que sejam detectados e utilizados para a formação das imagens.
+
+        \item Um pulso de inversão é um tipo de pulso de radiofrequência utilizado na ressonância magnética (MRI) para manipular a magnetização dos spins nucleares nos tecidos. Ele é projetado para inverter a direção da magnetização antes da aquisição dos dados de ressonância magnética. Durante a ressonância magnética, os núcleos atômicos no corpo são submetidos a um campo magnético estático forte, o campo magnético principal. Os spins nucleares se alinham com esse campo magnético principal. Quando um pulso de radiofrequência é aplicado, os spins são excitados e desviados dessa orientação de equilíbrio. No caso de um pulso de inversão, a duração e a amplitude do pulso são projetadas para girar a magnetização dos spins em 180 graus, invertendo sua direção em relação ao campo magnético principal. Isso resulta em um estado em que os spins estão apontando na direção oposta ao campo magnético principal. O objetivo do pulso de inversão é criar um estado de magnetização invertido antes da aquisição dos dados de ressonância magnética. Isso pode ser útil em diferentes aplicações, como na supressão seletiva de tecidos específicos ou na obtenção de informações sobre a perfusão sanguínea cerebral, por exemplo. Após a aplicação do pulso de inversão, ocorre a recuperação da magnetização, na qual os spins nucleares retornam gradualmente à sua orientação de equilíbrio ao longo do tempo. Durante a aquisição dos dados, o sinal de ressonância magnética é detectado a partir dos spins em recuperação, permitindo a formação das imagens.
+        
+        \item O tempo de recuperação é um parâmetro específico da sequência de pulso de ressonância magnética, definido como o intervalo de tempo entre a aplicação de um pulso de excitação ou leitura dos sinais de ressonância magnética e a aplicação do pulso subsequente. É o tempo necessário para que os spins nucleares voltem a um estado de equilíbrio antes de serem novamente excitados ou lidos. O tempo de recuperação também influencia o contraste e o brilho das imagens de ressonância magnética, pois afeta a quantidade de magnetização longitudinal (paralela ao campo magnético principal) dos tecidos. Alterando o TR, é possível destacar diferentes características de tecidos, como o contraste entre tecidos com diferentes tempos de recuperação.
+        
+        \item O tempo de eco (TE) descreve o intervalo de tempo entre a aplicação do pulso de excitação e a aquisição dos sinais de ressonância magnética. Após a aplicação de um pulso de excitação, os spins nucleares são desviados de sua orientação de equilíbrio e começam a precessar em torno do campo magnético principal. Durante esse processo, os spins emitem um sinal de ressonância magnética que é detectado pelos receptores de radiofrequência do equipamento de MRI. O tempo de eco é medido a partir do início do pulso de excitação até o momento em que o sinal de ressonância magnética é adquirido. Esse intervalo de tempo inclui a duração da precessão dos spins nucleares, bem como o tempo necessário para que o sinal se propague dos tecidos até os receptores do equipamento de MRI. O TE desempenha um papel crucial na formação do contraste nas imagens de ressonância magnética. Ele influencia a contribuição do tempo de relaxamento transversal (T2) dos tecidos para o sinal detectado. Quando o TE é curto, os spins nucleares têm menos tempo para perder energia e dissipar sua magnetização transversal. Isso resulta em um sinal de ressonância magnética mais brilhante para tecidos com T2 curto. Por outro lado, quando o TE é longo, os spins nucleares têm mais tempo para perder energia e dissipar sua magnetização transversal. Isso resulta em um sinal de ressonância magnética mais escuro para tecidos com T2 longo.
+        
+        \item O tempo de inversão é o intervalo de tempo entre a aplicação de um pulso de inversão e a aplicação do pulso subsequente de excitação ou leitura dos sinais de ressonância magnética. O TR é um parâmetro importante para controlar a recuperação dos spins nucleares e a geração do sinal de ressonância magnética. O tempo de recuperação pode variar dependendo da sequência de pulso utilizada e do tipo de tecido a ser estudado. Valores mais curtos de TR podem ser usados para adquirir imagens com uma taxa de repetição mais rápida, enquanto valores mais longos de TR podem ser usados para permitir uma recuperação mais completa do sinal.
+        
+        \item O tempo de relaxamento refere-se à taxa na qual os spins nucleares retornam ao seu estado de equilíbrio após serem perturbados. Existem dois tipos principais de tempo de relaxamento:
+        \begin{enumerate}
+            \item \textbf{Tempo de relaxamento longitudinal (T1):} Também conhecido como tempo de recuperação longitudinal, é o tempo necessário para que os spins nucleares retornem à sua magnetização longitudinal de equilíbrio. Durante o T1, os spins estão se realinhando com o campo magnético principal.
+            \item Tempo de relaxamento transversal (T2): É o tempo necessário para que os spins nucleares desviem de sua fase coerente inicial após a aplicação de um pulso de excitação. Durante o T2, ocorre a dissipação de energia entre os spins, resultando em uma diminuição da magnetização transversal.
+        \end{enumerate}
+        
+        \item O gradiente de seleção de corte (também conhecido como gradiente de codificação espacial) é uma parte essencial dos equipamentos de ressonância magnética (MRI). Ele é responsável por criar campos magnéticos variáveis em diferentes direções para codificar informações espaciais durante o processo de aquisição de dados e distinguir as diferentes localizações dos tecidos no corpo, permitindo a formação de imagens detalhadas e precisas.  Para uma largura de banda de radiofrequência (RF) fixa, a espessura do corte da imagem diminuirá quando a intensidade do gradiente de seleção do corte for aumentada. Isso melhora a resolução espacial e reduz a média de volume na dimensão da espessura do corte. 
+        
+        \item Ao utilizar uma MRI para escanear uma região anatômica com alta proporção de gordura, deve-se atentar ao fato de que a presença da gordura poderá afetar o contraste, a qualidade e a interpretação da Imagem. A gordura tem um sinal de ressonância magnética de alta intensidade em comparação com outros tecidos, como músculos, ossos e líquidos. Isso ocorre porque a gordura contém uma grande quantidade de átomos de hidrogênio, que emitem um sinal de ressonância magnética intenso. Portanto, áreas com alta concentração de gordura aparecerão mais brilhantes nas imagens de ressonância magnética. Em algumas situações é desejável suprimir o sinal da gordura para melhorar a visualização de outras estruturas. Para isso podem ser utilizados sequências de inversão de pulsos de recuperação como uma STIR(short tau inversion recovery) com um tempo apropriado de inversão (TI), a Técnica de Dixon (supressão de fase) e a saturação de deslocamento químico (supressão espectral).
+        
+        \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+            \item A sequência STIR envolve a aplicação de uma inversão de pulso curto (tau) antes da aquisição dos dados de ressonância magnética. Durante a inversão de pulso, o sinal da gordura é suprimido, enquanto o sinal de outros tecidos é preservado ou atenuado em menor grau. A supressão do sinal da gordura é alcançada selecionando um tempo de inversão curto, que é especificamente ajustado para anular o sinal da gordura. O sinal dos tecidos que possuem tempos de recuperação mais curtos (como a água presente nos tecidos) se recupera rapidamente após a inversão de pulso e é detectado na aquisição de dados. No entanto, o sinal da gordura, que possui um tempo de recuperação mais longo, permanece suprimido ou atenuado, resultando em uma menor intensidade de sinal da gordura nas imagens finais.Essa supressão seletiva da gordura na sequência STIR permite melhorar a visualização de estruturas adjacentes à gordura, como músculos, vasos sanguíneos, medula óssea, tumores e inflamações. Isso pode ser especialmente útil em áreas do corpo onde a gordura é comumente encontrada, como na pelve, abdômen e extremidades. É importante destacar que a sequência STIR não fornece uma supressão completa da gordura, mas apenas uma atenuação significativa de seu sinal. Além disso, a sequência STIR pode ter um tempo de aquisição mais longo em comparação com outras sequências, devido à necessidade de supressão da gordura.
+            
+            \item A técnica de Dixon aproveita a diferença química nas propriedades de ressonância magnética entre a gordura e a água. Ela envolve a aquisição de múltiplas imagens ponderadas em fase, nas quais a fase é modificada para sensibilizar a gordura e a água de maneira diferente. Com base nessas imagens ponderadas em fase, é possível calcular imagens de gordura e água separadamente. Existem várias variantes da técnica de Dixon, incluindo a abordagem de duas imagens e a abordagem de três imagens. Na abordagem de duas imagens, duas imagens ponderadas em fase são adquiridas, uma com sensibilidade à gordura e outra com sensibilidade à água. Usando essas imagens, é possível realizar um cálculo matemático para separar e gerar imagens individuais de gordura e água. Na abordagem de três imagens, três imagens ponderadas em fase são adquiridas. Duas delas são usadas para a estimativa da fase, enquanto a terceira é usada para a obtenção de imagens separadas de gordura e água. As imagens de gordura e água geradas pela técnica de Dixon podem fornecer informações valiosas em várias aplicações clínicas. Por exemplo, na avaliação do fígado, essa técnica pode ajudar a quantificar o teor de gordura hepática, um indicador importante de doenças hepáticas gordurosas. Além disso, a técnica de Dixon também é usada em outras áreas, como estudos cardíacos, avaliação de tumores e análise da composição corporal.
+            
+            \item A técnica de saturação de deslocamento químico (Chemical Shift Saturation) é uma técnica usada na ressonância magnética (MRI) para suprimir o sinal proveniente de um componente específico em uma imagem. Essa técnica se baseia na propriedade dos spins nucleares de diferentes compostos químicos de ressonarem em frequências ligeiramente diferentes, conhecidas como deslocamento químico. Quando aplicamos um campo magnético forte durante uma sequência de pulso de ressonância magnética, os núcleos atômicos presentes em diferentes substâncias dentro do tecido emitem sinais de ressonância magnética em frequências específicas. Essas frequências são medidas em relação a um composto de referência, como o tetrametilsilano (TMS), e são expressas em partes por milhão (ppm) em relação a essa referência. Na técnica de saturação de deslocamento químico, um pulso de radiofrequência é aplicado na frequência de ressonância específica do componente que se deseja suprimir. Esse pulso de saturação é projetado para afetar seletivamente os spins nucleares desse componente, fazendo com que eles percam energia e desviem de sua fase coerente. Como resultado, os spins nucleares do componente específico são deslocados para fora da fase coerente e têm seu sinal reduzido ou suprimido na imagem final. Os outros componentes químicos que não estão em ressonância com o pulso de saturação permanecem com seus sinais preservados. A técnica de saturação de deslocamento químico é útil em situações em que se deseja suprimir o sinal de um componente específico para melhorar a visualização de outros componentes ou estruturas. Por exemplo, na imagem de uma lesão que contém lipídeos, como uma esteatose hepática, a saturação de deslocamento químico pode ser aplicada para suprimir o sinal proveniente dos lipídeos e destacar outras características relevantes da lesão. 
+        \end{itemize}
+
+        \item Os principais agentes de contraste utilizados na RM são: contraste T1, contraste de T2, contraste de densidade de prótons, contraste de difusão e contraste de realce.
+        \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+            \item \textbf{Contraste de T1:} Nesse tipo de contraste, os tecidos com tempos de relaxamento longitudinal (T1) curtos aparecem brilhantes nas imagens, enquanto os tecidos com T1 longos aparecem mais escuros. O contraste de T1 é obtido usando um tempo de recuperação (TR) curto e um tempo de eco (TE) curto. Ele destaca as diferenças na recuperação da magnetização longitudinal dos tecidos;
+            
+            \item \textbf{Contraste de T2:} Nesse tipo de contraste, os tecidos com tempos de relaxamento transversal (T2) curtos aparecem mais escuros nas imagens, enquanto os tecidos com T2 longos aparecem mais brilhantes. O contraste de T2 é obtido usando um TR longo e um TE longo. Ele destaca as diferenças na dissipação de energia e na recuperação da magnetização transversal dos tecidos;
+            \item \textbf{Contraste de Densidade de Prótons:} Esse tipo de contraste é influenciado pela quantidade de prótons presentes nos tecidos. Tecidos com maior densidade de prótons terão um sinal mais brilhante nas imagens. O contraste de densidade de prótons é obtido usando tempos de TR e TE adequados para maximizar a diferença no sinal entre os tecidos com diferentes densidades de prótons;
+            \item \textbf{Contraste de difusão:}  Esse tipo de contraste destaca a movimentação de água nos tecidos. Ao aplicar gradientes de campo magnético para codificar a difusão, é possível visualizar a direção e a magnitude do movimento da água. Isso é especialmente útil na detecção de anormalidades, como edema ou lesões cerebrais traumáticas;
+            \item \textbf{Contraste de Realce:} Esse tipo de contraste é obtido após a administração de um agente de contraste paramagnético, geralmente à base de gadolínio. O agente de contraste realça a resposta de certos tecidos ou estruturas, como tumores, vasos sanguíneos ou inflamações, tornando-os mais visíveis nas imagens..
+        \end{itemize}
+
+        \item Os contrastes utilizados em RM são utilizados de forma diferente do contraste utilizando em imagens de TC. Os agentes de contraste utilizados em imagens formadas com Raios-X tem um número atômico maior que o do tecido em volta e, portanto, absorvem fótons por meio do efeito fotoelétrico tornando o agente de contraste visível na imagem. Ja na RM, a maior parte dos agentes de contraste afetam o tempo de relaxamento T1 local na região do tecido em que estão presentes. Isso melhora o contraste em um protocolo de aquisição ponderado em T1. Os agentes de contraste não são diretamente visíveis na imagem mas seus efeitos são.
+        
+        \item A resolução espacial típica no plano é semelhante à do CT, com um tamanho de pixel entre 0,5 e 1,0 mm. Com um pequeno campo de visão (FOV) e um gradiente de alta intensidade em uma bobina de superfície, o tamanho do pixel pode ser tão pequeno quanto 0,1 mm.
+        
+        \item Os benefícios de aumentar a intensidade do campo magnético primário ($B_0$), supondo que todos os outros parâmetros permaneçam inalterados, um $B_0$ maior fornece uma relação sinal-ruído (SNR) maior. Se for aceitável uma SNR equivalente à observada com uma intensidade de campo menor; a espessura do corte da imagem pode ser reduzida, o que diminui a média do volume parcial, ou a mesma espessura do corte pode ser usada com um número reduzido de médias de sinal, reduzindo o tempo de aquisição. Um $B_0$ maior também permite uma melhor discriminação na espectroscopia de RM.
+        
+        \item A relaxação T1 depende da intensidade do campo magnético primário; um $B_0$ mais alto requer maior radiofrequência (RF) e maior potência, que deposita mais energia (calor) no tecido. Ondas de RF mais altas resultam em penetração reduzida, o que apresenta problemas de qualidade de imagem, especialmente para imagens de tecidos profundos. Muitos artefatos, como deslocamento químico, são exacerbados pelo aumento de $B_0$.
+                
+        \item Em uma RM de próstata ponderada em T2, o tumor aparece mais escuro que os tecidos normais adjacentes. Isto ocorre porque o tempo de relaxamento T2 do tecido tumoral é menor que o tempo de relaxamento T2 dos tecidos ao redor do tumor. Este T2 encurtado resulta em maior defasagem transversal, resultando em um sinal diminuído e uma aparência mais escura na imagem. 
+        
+    \end{itemize}
+
+    \textcolor{CarnationPink}{Mamografia}
+    \begin{itemize}
+        \item 
+    
+    \end{itemize}
+
+    \textcolor{CarnationPink}{Medicina Nuclear}
+    \begin{itemize}
+        \item 
+    
+    \end{itemize}
+
+    \textcolor{CarnationPink}{Tomografia Computadorizada}
+    \begin{itemize}
+        \item 
+    
+    \end{itemize}
+
+    \textcolor{CarnationPink}{Ultrassonografia}
+    \begin{itemize}
+        \item 
+    
+    \end{itemize}
+
+\end{exemplo}
+
+\begin{exemplo}[14. IGRT]
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{exemplo}
+
+
+
+\bibliography{ref.bib}
+\end{document}
