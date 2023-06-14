@@ -27,6 +27,16 @@
 \usepackage{etoolbox}
 \usepackage[version=4]{mhchem}
 \usepackage{enumitem}
+\usepackage{caption}
+\DeclareCaptionLabelFormat{figuras}{\textcolor{CarnationPink}{Figura \arabic{figure}}}
+\captionsetup[figure]{labelformat=figuras}
+
+\makeatletter
+\renewcommand\tagform@[1]{\maketag@@@{\color{CarnationPink}(#1)}}
+\makeatother
+
+\renewcommand{\theequation}{Eq. \arabic{equation}}
+\renewcommand{\thefigure}{Fig. \arabic{figure}}
 
 \setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
 
@@ -130,7 +140,7 @@
 			Para o carregamento da fonte no paciente são utilizados \textbf{aplicadores}, e a utilização de aplicadores se deve a dois principais motivos:
 
 			\begin{enumerate}
-				\item Os aplicadores permitem que o médico insira a fonte de radiação sem a necessidade do médico entrar em contato direto com a fonte. \textit{\textcolor{CarnationPink}{Exemplo:}} \textit{Aplicador MICK para braquiterapia de próstata, Figura \ref{img:aplicadorMick}.}
+				\item Os aplicadores permitem que o médico insira a fonte de radiação sem a necessidade do médico entrar em contato direto com a fonte. \textit{\textcolor{CarnationPink}{Exemplo:}} \textit{Aplicador MICK para braquiterapia de próstata,  \ref{img:aplicadorMick}.}
 
 				\begin{figure}[h]
 					\centering
@@ -139,7 +149,7 @@
 					\label{img:aplicadorMick}
 				\end{figure}
 
-				\item Os aplicadores permitem que a fonte permaneça em uma posição fixa durante todo o tratamento. \textit{\textcolor{CarnationPink}{Exemplo:}} \textit{Sonda e ovóides, Figura \ref{img:aplicadorSondaEOvoides}.}
+				\item Os aplicadores permitem que a fonte permaneça em uma posição fixa durante todo o tratamento. \textit{\textcolor{CarnationPink}{Exemplo:}} \textit{Sonda e ovóides,    \ref{img:aplicadorSondaEOvoides}.}
 				
 				\begin{figure}[h]
 					\centering
@@ -163,7 +173,7 @@
 
 		% Completar aqui o motivo dos carregamentos serem diferentes e a mudança na distribuição de dose
 			\begin{itemize}
-				\item \textbf{Carregamento Uniforme: } Onde as fontes com a mesma atividade permanecerão o mesmo período de tempo em cada posição de parada, gerando uma distribuição de dose mais quente no centro do aplicador e mais fria das extremidades do aplicador, como mostra a Figura \ref{img:carregamentoUniforme}.
+				\item \textbf{Carregamento Uniforme: } Onde as fontes com a mesma atividade permanecerão o mesmo período de tempo em cada posição de parada, gerando uma distribuição de dose mais quente no centro do aplicador e mais fria das extremidades do aplicador, como mostra a    \ref{img:carregamentoUniforme}.
 				
 					\begin{figure}[h]
 						\centering
@@ -172,7 +182,7 @@
 						\label{img:carregamentoUniforme}
 					\end{figure}
 
-				\item \textbf{Carregamento Não-Uniforme:} As fontes com mesma atividade permanecem tempos diferentes em cada posição de parada. Esta técnica pode ser utilizada para gerar uma distribuição de dose mais homogênea ao longo do aplicador ao utilizar um carregamento com tempos de parada maiores nas extremidades que no centro do aplicador (carregamento periférico), como mostra a Figura \ref{img:carregamentoPeriferico}.
+				\item \textbf{Carregamento Não-Uniforme:} As fontes com mesma atividade permanecem tempos diferentes em cada posição de parada. Esta técnica pode ser utilizada para gerar uma distribuição de dose mais homogênea ao longo do aplicador ao utilizar um carregamento com tempos de parada maiores nas extremidades que no centro do aplicador (carregamento periférico), como mostra a    \ref{img:carregamentoPeriferico}.
 				
 				\begin{figure}[h]
 					\centering
@@ -209,7 +219,7 @@
 
 					\
 
-					\textit{\textbf{\textcolor{CarnationPink}{Obs:}}} O sinal negativo na equação indica que o número de átomos radioativos remanescentes na amostra diminui com o passar do tempo. 
+					\textit{\textbf{\textcolor{CarnationPink}{Obs:}}} O sinal negativo na   indica que o número de átomos radioativos remanescentes na amostra diminui com o passar do tempo. 
 				\end{exemplo}
 				
 
@@ -228,7 +238,7 @@
 
 				$N(t)$ é a quantidade de átomos radioativos remanescentes após um tempo t.
 
-				Através da Equação \ref{eq:decaimentoExponencial} podemos extrair que a fração de átomos que permanecem na amostra após um tempo t é dada por:
+				Através da   \ref{eq:decaimentoExponencial} podemos extrair que a fração de átomos que permanecem na amostra após um tempo t é dada por:
 
 				\begin{equation}
 					\frac{N(t)}{N_0}
@@ -287,7 +297,7 @@
 					A = -\frac{dN}{dt} = \lambda N
 				\end{equation}
 
-			\item \textbf{Atividade em função do tempo ($A(t)$): } Uma vez conhecida a atividade $A_0$ em um tempo $t_0$ qualquer, pode-se obter a atividade da fonte em função do tempo, seja ele no passado ou futuro, através da equação:
+			\item \textbf{Atividade em função do tempo ($A(t)$): } Uma vez conhecida a atividade $A_0$ em um tempo $t_0$ qualquer, pode-se obter a atividade da fonte em função do tempo, seja ele no passado ou futuro, através da  :
 				
 				\begin{equation}
 					A(t) = A_0 \times e^{-\lambda t}
@@ -312,7 +322,7 @@
 
 		\subsection{Atividade}
 
-			É uma das grandezas que pode ser utilizada para especificar a fonte. Como descrito anteriormente, a Atividade é definida como o número de núcleos se submetendo ao decaimento radioativo por unidade de tempo, Equação \ref{eq:AtividadeNoTempo}.
+			É uma das grandezas que pode ser utilizada para especificar a fonte. Como descrito anteriormente, a Atividade é definida como o número de núcleos se submetendo ao decaimento radioativo por unidade de tempo,   \ref{eq:AtividadeNoTempo}.
 
 			\begin{itemize}
 				\item Unidade SI: \textbf{Bq} (Becquerel) = $1\;dps$
@@ -613,7 +623,7 @@
 
 		A maior vantagem deste falloff acentuado é conseguir poupar os tecidos sadios adjacentes; Porém, caso o alvo esteja distante da fonte, cobrir o alvo com a dose de prescrição será difícil pelo mesmo motivo, pois irá aumentar a dose nos tecidos mais próximos. Portanto para diminuir a dose em volta do alvo indica-se utilizar o maior aplicador possível para que este tecido seja afastado para longe da fonte em uma região com um menor gradiente de dose. 
 
-		Uma discrepância de milímetros em braquiterapia pode ser crítica no tratamento devido à forma do falloff de dose e portanto requer uma precisão milimétrica no posicionamento da fonte em sistemas afterloading. A Figura \ref{img:DistribuicaoDoseBalao} mostra as isodoses próximas a fonte e na profundidade de prescrição para um tratamento de mama utilizando um balão.
+		Uma discrepância de milímetros em braquiterapia pode ser crítica no tratamento devido à forma do falloff de dose e portanto requer uma precisão milimétrica no posicionamento da fonte em sistemas afterloading. A    \ref{img:DistribuicaoDoseBalao} mostra as isodoses próximas a fonte e na profundidade de prescrição para um tratamento de mama utilizando um balão.
 
 		\begin{figure}[h]
 			\centering
@@ -627,7 +637,7 @@
 		\begin{enumerate}
 			\item Para distâncias grandes da fonte, ou seja, para distâncias de no mínimo duas vezes o tamanho da fonte, a distribuição de dose é governada pela \textbf{\textcolor{CarnationPink}{lei do inverso quadrado}}. Porém, quanto mais próximo está o ponto de análise da fonte, menos aplicável é a lei do inverso quadrado.
 			
-			\item A forma cilíndrica da fonte faz com que a dose ao longo do seu eixo longitudinal seja diminuída devido à penetração em uma maior quantidade de material quando comparado ao eixo axial, causando uma maior filtração da radiação nessa direção. A Figura \ref{img:distribuicaoDeDose} mostra o comportamento da distribuição de dose ao longo do eixo longitudinal da fonte.
+			\item A forma cilíndrica da fonte faz com que a dose ao longo do seu eixo longitudinal seja diminuída devido à penetração em uma maior quantidade de material quando comparado ao eixo axial, causando uma maior filtração da radiação nessa direção. A    \ref{img:distribuicaoDeDose} mostra o comportamento da distribuição de dose ao longo do eixo longitudinal da fonte.
 			
 				\begin{figure}[h]
 					\centering
@@ -656,31 +666,31 @@
 
 			$\dot{D_0}$ é a taxa de dose inicial da amostra.
 
-			A dose total acumulada em um tempo específico pode ser obtida integrando a Equação \ref{eq:taxaDeDose} no tempo t, ou seja:
+			A dose total acumulada em um tempo específico pode ser obtida integrando a   \ref{eq:taxaDeDose} no tempo t, ou seja:
 
 				\begin{equation}
 					D(t) = \int_{t_0}^{t} \dot{D_0} e^{-\lambda t}\,dt
 					\label{eq:integralDaDose}
 				\end{equation}
 
-			Resolvendo a integral apresentada na Equação \ref{eq:integralDaDose}, obtemos a relação que nos fornece a dose acumulada após um tempo t (dose total).
+			Resolvendo a integral apresentada na   \ref{eq:integralDaDose}, obtemos a relação que nos fornece a dose acumulada após um tempo t (dose total).
 
 				\begin{equation}
 					D(t) = \frac{1}{\lambda} \; \dot{D_0} \; (1 - e^{-\lambda t})
 					\label{eq:doseCumulativa}
 				\end{equation}
 
-			Sabendo que $$\frac{1}{\lambda} = \tau = 1.44 t_{1/2}$$ A equação \ref{eq:doseCumulativa} pode ser escrita da forma:
+			Sabendo que $$\frac{1}{\lambda} = \tau = 1.44 t_{1/2}$$ A   \ref{eq:doseCumulativa} pode ser escrita da forma:
 
 				\begin{equation}
 					D(t) = 1.44\,t_{1/2} \,\dot{D_0} (1 - e^{-\lambda t})
 				\end{equation}
 
-			No caso de implantes permanentes cuja meia vida do elemento é curta, o tempo de tratamento será muito maior que o tempo de meia vida deste elemento pois a dose será entregue ao longo de toda a vida da fonte. Podemos fazer então uma aproximação na Equação \ref{eq:doseCumulativa} quando $t >> t_{1/2}$: 
+			No caso de implantes permanentes cuja meia vida do elemento é curta, o tempo de tratamento será muito maior que o tempo de meia vida deste elemento pois a dose será entregue ao longo de toda a vida da fonte. Podemos fazer então uma aproximação na   \ref{eq:doseCumulativa} quando $t >> t_{1/2}$: 
 
 			Como $$t >> t_{1/2}$$ então $$\frac{t}{t_{1/2}} >> 1$$
 
-			Como $$\lambda = \frac{ln 2}{t_{1/2}}$$ Substituindo este valor na Equação \ref{eq:doseCumulativa} temos que: 
+			Como $$\lambda = \frac{ln 2}{t_{1/2}}$$ Substituindo este valor na   \ref{eq:doseCumulativa} temos que: 
 
 			$$ D(t) = \frac{1}{\lambda}  \; \dot{D_0} \; \left(1 - e^{-\frac{ln 2}{t_{1/2}} t}\right) $$
 
@@ -700,7 +710,7 @@
 
 			$$\lim_{{\frac{t}{t_{1/2}}} \to \infty} \frac{1}{e^{ln 2 \frac{t}{t_{1/2}}}} = \frac{1}{e^{\infty}} = 0 $$
 
-			Chegamos na equação de dose total quando $t >> t_{1/2}$:
+			Chegamos na   de dose total quando $t >> t_{1/2}$:
 
 			\begin{equation}
 				D = \frac{1}{\lambda} \; \dot{D_0} = \tau \; \dot{D_0} = 1.44 \; t_{1/2} \; \dot{D_0}
@@ -725,11 +735,11 @@
 
 			$$ e^{-ln 2 \frac{t}{t_{1/2}}} = 1 - ln 2 \; \frac{t}{t_{1/2}}$$
 
-			Substituindo na equação \ref{eq:doseCumulativa} temos então
+			Substituindo na   \ref{eq:doseCumulativa} temos então
 
 			$$D(t) = \frac{1}{\lambda} \; \dot{D_0} \; \left[1 - \left(1 - \ln 2 \; \frac{t}{t_1/2}\right)\right]$$
 
-			Fazendo as devidas simplificações, chegamos na equação para a dose total quando $t << t_{1/2}$
+			Fazendo as devidas simplificações, chegamos na   para a dose total quando $t << t_{1/2}$
 
 			\begin{equation}
 				D(t) = \dot{D_0} \; t
@@ -739,7 +749,7 @@
 			Portanto a Dose total é dada pela multiplicação da taxa de dose inicial pelo o tempo de tratamento, o que faz sentido pois a atividade de uma fonte com o tempo de meia-vida muito maior que o tempo de tratamento, não sofrerá mudanças significativas nesse curto espaço de tempo.
 
 
-			Nos casos em que o tempo de tratamento é da ordem do tempo de meia vida da fonte, haverá uma mudança significativa da Atividade durante o tempo de tratamento, então a dose total é obtida através da Equação \ref{eq:doseCumulativa}.
+			Nos casos em que o tempo de tratamento é da ordem do tempo de meia vida da fonte, haverá uma mudança significativa da Atividade durante o tempo de tratamento, então a dose total é obtida através da   \ref{eq:doseCumulativa}.
 
 		\subsection{Método de Integral e Interpolação}
 
@@ -753,7 +763,7 @@
 
 			É o método padrão para cálculos de taxa de dose 1D e 2D. Este método assume uma fonte cilíndrica simétrica, considerando as diferenças na distribuição de dose causadas pela forma da fonte. A dose obtida nesse formalismo é determinada para um meio homogêneo de água e portanto não considera a heterogeneidade de um meio não-homogêneo. Os dados tabelados deste formalismo foram obtidos através de medidas experimentais e através de simulações de Monte-Carlo para fontes conhecidas, e são utilizados nos sistemas de planejamento.
 
-			Este método é dividido em módulos onde cada parâmetro depende da posição do ponto de cálculo de dose com respeito à fonte. A Figura \ref{img:FormalismoTg43} mostra a geometria utilizada para cálculo da distribuição de dose. A posição do ponto de cálculo é dada em coordenadas polares $\mathrm{P(r, \theta)}$ onde $r$ é a distância radial do ponto até o centro da fonte e $\theta$ é o ângulo formado com o eixo longitudinal da fonte (eixo z na figura) tomado a partir centro da fonte. A posição $\mathrm{P_0(r_0, \theta_0)}$ é a posição de referência dos cálculos localizada radialmente a 1 cm da fonte ($r_0 = 1 \; cm$) ao longo do eixo central da fonte (eixo y na figura) fazendo um ângulo $\theta_0 = \pi / 2$ com o eixo longitudinal da fonte.
+			Este método é dividido em módulos onde cada parâmetro depende da posição do ponto de cálculo de dose com respeito à fonte. A    \ref{img:FormalismoTg43} mostra a geometria utilizada para cálculo da distribuição de dose. A posição do ponto de cálculo é dada em coordenadas polares $\mathrm{P(r, \theta)}$ onde $r$ é a distância radial do ponto até o centro da fonte e $\theta$ é o ângulo formado com o eixo longitudinal da fonte (eixo z na   ) tomado a partir centro da fonte. A posição $\mathrm{P_0(r_0, \theta_0)}$ é a posição de referência dos cálculos localizada radialmente a 1 cm da fonte ($r_0 = 1 \; cm$) ao longo do eixo central da fonte (eixo y na   ) fazendo um ângulo $\theta_0 = \pi / 2$ com o eixo longitudinal da fonte.
 
 
 				\begin{figure}[h]
@@ -824,14 +834,14 @@
 
 			\end{itemize}
 			
-			Ao aplicar a equação \ref{eq:formalismoTg43} para uma \textbf{\textcolor{CarnationPink}{fonte pontual}}, pode-se desconsiderar a anisotropia da distribuição de dose em função do ângulo,  pois a distribuição de dose para uma fonte pontual é isotrópica na mesma distância radial. Nesses casos, não se considera a posição angular do ponto de cálculo, passando a depender apenas da posição radial. Portanto a função de anisotropia passa ser: $F(r, \theta) \rightarrow \Phi (r)$,  que é um fator de anisotropia 1D dado pela média da taxa de dose em cada distância em relação ao ângulo sólido.
+			Ao aplicar a   \ref{eq:formalismoTg43} para uma \textbf{\textcolor{CarnationPink}{fonte pontual}}, pode-se desconsiderar a anisotropia da distribuição de dose em função do ângulo,  pois a distribuição de dose para uma fonte pontual é isotrópica na mesma distância radial. Nesses casos, não se considera a posição angular do ponto de cálculo, passando a depender apenas da posição radial. Portanto a função de anisotropia passa ser: $F(r, \theta) \rightarrow \Phi (r)$,  que é um fator de anisotropia 1D dado pela média da taxa de dose em cada distância em relação ao ângulo sólido.
 			
 			\begin{equation}
 				\dot{D}(r) = S_k \; \varLambda \; \left(\frac{r_0}{r} \right)^2 \; g(r) \; \Phi (r)
 				\label{eq:aproxModularFontePontual}
 			\end{equation}
 			
-			A Aproximação fornecida pela Equação \ref{eq:aproxModularFontePontual} pode ser aplicada sempre que:
+			A Aproximação fornecida pela   \ref{eq:aproxModularFontePontual} pode ser aplicada sempre que:
 
 			\begin{enumerate}
 				\item A distância do ponto até a fonte é de no mínimo duas vezes o tamanho efetivo da fonte de modo que a forma da distribuição de dose nesse ponto não cause impacto no cálculo da dose.
@@ -912,7 +922,7 @@
 
 					$$\dot{D}(r= 3cm) = 0.0384 \; cGy / h$$
 
-				\textbf{(b)} A dose acumulada após 1 mês de implante devido à fonte pode ser obtida através da equação:
+				\textbf{(b)} A dose acumulada após 1 mês de implante devido à fonte pode ser obtida através da  :
 
 					$$D(t) = \dot{D_0} \cdot 1.44 \cdot t_{1/2} \cdot \left(1 - e^{- ln 2 \cdot \frac{t}{t_{1/2}}}\right)$$
 
@@ -955,7 +965,7 @@
 
 
 			\begin{itemize}
-				\item Sistema Manchester (Paterson-Parker): Utilizavam agulhas ou cateteres perpendiculares entre si (crossed ends), como mostra a Figura \ref{img:carregamentosHistoricos}.  Este sistema possui diferentes tabelas de carregamento de dose para um único plano, dois planos e implantes volumétricos. Utilizava o carregamento não uniforme periférico gerando uma distribuição de dose homogênea.
+				\item Sistema Manchester (Paterson-Parker): Utilizavam agulhas ou cateteres perpendiculares entre si (crossed ends), como mostra a    \ref{img:carregamentosHistoricos}.  Este sistema possui diferentes tabelas de carregamento de dose para um único plano, dois planos e implantes volumétricos. Utilizava o carregamento não uniforme periférico gerando uma distribuição de dose homogênea.
 				
 				\item Sistema Quimbly: Utilizavam agulhas ou cateteres perpendiculares entre si, semelhantemente ao sistema Manchester; A principal diferença entre esses sistemas é que no Quimbly utilizava o carregamento uniforme gerando uma distribuição de dose com um ponto quente central no volume implantado. 
 				
@@ -980,9 +990,9 @@
 				\begin{itemize}
 					\item \textbf{\textit{\textcolor{CarnationPink}{Collapsed Cone Convolution-Superposition}}}, que utilizam Kernels para calcular a dose de radiação do feixe primário e do feixe espalhado no qual mapeia, espacialmente, a disposição de energia no meio. \textit{Exemplo:} \textit{\textbf{Oncentra\textsuperscript{\textregistered}}, Sistema de planejamento de braquiterapia da Elekta que implementa o algoritmo Convolution-Superposition}.
 					
-					\item \textbf{\textit{\textcolor{CarnationPink}{Grid-based Boltzmann Solvers}}}, onde é utilizada uma abordagem determinística para resolver diretamente a equação de transporte linear de Boltzmann. \textit{Exemplo:} \textit{\textbf{Acuros\textsuperscript{\textregistered}}, algoritmo implementado no sistema de planejamento Brachyvision\textsuperscript{\textregistered} da Varian}.
+					\item \textbf{\textit{\textcolor{CarnationPink}{Grid-based Boltzmann Solvers}}}, onde é utilizada uma abordagem determinística para resolver diretamente a   de transporte linear de Boltzmann. \textit{Exemplo:} \textit{\textbf{Acuros\textsuperscript{\textregistered}}, algoritmo implementado no sistema de planejamento Brachyvision\textsuperscript{\textregistered} da Varian}.
 					
-					\item \textbf{\textit{\textcolor{CarnationPink}{Monte Carlo Simulations}}}, que utiliza abordagens estocásticas para resolver a equação de transporte linear de Boltzmann através de amostragens aleatórias. É um modelo mais presente em pesquisas científicas.
+					\item \textbf{\textit{\textcolor{CarnationPink}{Monte Carlo Simulations}}}, que utiliza abordagens estocásticas para resolver a   de transporte linear de Boltzmann através de amostragens aleatórias. É um modelo mais presente em pesquisas científicas.
 					
 					\end{itemize}
 		
@@ -1094,7 +1104,7 @@
 
 			\textbf{\textcolor{CarnationPink}{Obs:}} O NIST é um laboratório acreditado onde a calibração é feita com uma câmara de ar livre com ampla angulação (incidência de vários ângulos) com uma aproximação de $0.01 \; \; Gy \; m^2 \; h^{-1}$. É feita uma filtragem com alumínio para excluir a contaminação com fótons de baixa energia da ordem da energia de corte na definição da Força Kerma-ar para minimizar a incerteza na medição.
 
-			A dose 2-D é então determinada pela Equação \ref{eq:formalismoTg43} levando em consideração a correção feita na exposição para determinar a força kerma-ar;
+			A dose 2-D é então determinada pela   \ref{eq:formalismoTg43} levando em consideração a correção feita na exposição para determinar a força kerma-ar;
 
 		\subsection{Aplicações Clínicas dos Fótons de Baixa Energia}
 
@@ -1129,11 +1139,11 @@
 			\begin{itemize}
 		
 			
-				\item A dose para os implantes temporários pode ser obtida através da Equação \ref{eq:doseCumulativa}. 
+				\item A dose para os implantes temporários pode ser obtida através da   \ref{eq:doseCumulativa}. 
 
 					$$D(t) = \frac{1}{\lambda} \cdot \dot{D_0} \cdot \left(1 - e^{-\lambda t}\right)$$
 
-				\item A dose biológicamente eficaz \textbf{\textcolor{CarnationPink}{(BED)}} para implantes temporários pode ser obtida através da equação:
+				\item A dose biológicamente eficaz \textbf{\textcolor{CarnationPink}{(BED)}} para implantes temporários pode ser obtida através da  :
 
 					\begin{equation}
 						BED = \frac{1}{\lambda} \dot{D_0}\left(1 - e^{-\lambda t}\right)
@@ -1154,7 +1164,7 @@
 						D = \frac{1}{\lambda} \cdot \dot{D_0}
 					\end{equation}
 				
-				\item O BED para implantes permanentes é obtido através da equação:
+				\item O BED para implantes permanentes é obtido através da  :
 					
 					\begin{equation}
 						BED = \frac{1}{\lambda} \dot{D_0} \left(1 + \frac{\dot{D_0}}{(\mu + \lambda) \alpha / \beta}\right)
@@ -1180,7 +1190,7 @@
 		
 		\subsection{Descrição dos Dispositivos Disponíveis}
 
-			O aplicador mais básico é contituído basicamente por um balão de silicone com diâmetro variável, uma haste contendo o canal central (lumen) onde que irá passar a fonte HDR e o canal por onde o balão será inflado como pode ser observado na Figura \ref{img:esquemaBalao}.
+			O aplicador mais básico é contituído basicamente por um balão de silicone com diâmetro variável, uma haste contendo o canal central (lumen) onde que irá passar a fonte HDR e o canal por onde o balão será inflado como pode ser observado na    \ref{img:esquemaBalao}.
 
 			\begin{figure}[h]
 				\centering
@@ -1210,7 +1220,7 @@
 			\begin{itemize}
 				\item \textbf{\textcolor{CarnationPink}{MammoSite}}
 				
-					A Figura \ref{img:mammosite} mostra o balão e seus componentes. Este aplicador é constituído por um balão de silicone conectado por uma haste; possui um único lúmen por onde passa a fonte HDR e está disponível em dois tamanhos: 4.0 - 5.0 cm e 5.0 - 6.0 cm.
+					A    \ref{img:mammosite} mostra o balão e seus componentes. Este aplicador é constituído por um balão de silicone conectado por uma haste; possui um único lúmen por onde passa a fonte HDR e está disponível em dois tamanhos: 4.0 - 5.0 cm e 5.0 - 6.0 cm.
 
 					\begin{figure}[h]
 						\centering
@@ -1221,7 +1231,7 @@
 
 				\item \textbf{\textcolor{CarnationPink}{MammoSiteML}}
 				
-					A Figura \ref{img:mammositeml} mostra o balão e seus componentes. Este aplicador está disponível no tamanho de 3.5 - 5.0 cm e possui 4 lumens, sendo 1 lumen central e 3 lumens periférficos distibuídos em forma triangular à 0.3 cm do lúmen central.
+					A    \ref{img:mammositeml} mostra o balão e seus componentes. Este aplicador está disponível no tamanho de 3.5 - 5.0 cm e possui 4 lumens, sendo 1 lumen central e 3 lumens periférficos distibuídos em forma triangular à 0.3 cm do lúmen central.
 
 					\begin{figure}[h]
 						\centering
@@ -1233,7 +1243,7 @@
 				
 				\item \textbf{\textcolor{CarnationPink}{ConturaMLB}}
 					
-					A Figura \ref{img:conturaMLB} mostra os componentes deste aplicador. Está disponível nos tamanhos de 4 - 5 cm e 4.5 - 6 cm. Possui 5 lumens sendo 1 lumen central e outros 4 lumens periféricos igualmente espaçados a 0.5 cm de dustância do lúmem central. Possui duas portas de vácuo, nas partes proximal e distal do balão, que podem ser utilizadas para a remoção de ar ou fluido, aumentando a conformidade do tecido com a superfície do balão.
+					A    \ref{img:conturaMLB} mostra os componentes deste aplicador. Está disponível nos tamanhos de 4 - 5 cm e 4.5 - 6 cm. Possui 5 lumens sendo 1 lumen central e outros 4 lumens periféricos igualmente espaçados a 0.5 cm de dustância do lúmem central. Possui duas portas de vácuo, nas partes proximal e distal do balão, que podem ser utilizadas para a remoção de ar ou fluido, aumentando a conformidade do tecido com a superfície do balão.
 					
 					\begin{figure}[h]
 						\centering
@@ -1245,7 +1255,7 @@
 			
 			Os balões são inflados com uma solução salina e uma pequena quantidade de contraste para melhorar sua visualização. E para cada dispositivo é oferecido um balão para a avaliação do tamanho da cavidade, \textcolor{CarnationPink}{Cavity Evaluation Device (CED)} que deve ser colocado no momento da mastectomia e somente no momento de tratamento ele é substituído por um balão de tratamento.
 
-			Outo aplicador disponível no mercado é chamado de \textcolor{CarnationPink}{Axxent}, que se trata de um balão desenvolvido com a braquiterapia eletrônica de 50 KeV (Xoft, Inc., Sunnyvale, CA) e semelhantemente ao MammoSite, possui apenas um único lumen central, Figura \ref{img:axxent}.
+			Outo aplicador disponível no mercado é chamado de \textcolor{CarnationPink}{Axxent}, que se trata de um balão desenvolvido com a braquiterapia eletrônica de 50 KeV (Xoft, Inc., Sunnyvale, CA) e semelhantemente ao MammoSite, possui apenas um único lumen central,    \ref{img:axxent}.
 
 			\begin{figure}[h]
 				\centering

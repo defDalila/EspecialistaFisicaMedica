@@ -27,6 +27,21 @@
 \usepackage{etoolbox}
 \usepackage[version=4]{mhchem}
 \usepackage{enumitem}
+\usepackage{caption}
+\usepackage{titlesec}
+
+\titleformat{\section}{\LARGE\color{CarnationPink}}{\thesection}{1em}{}
+\titleformat{\subsection}{\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+
+\DeclareCaptionLabelFormat{figuras}{\textcolor{CarnationPink}{Figura \arabic{figure}}}
+\captionsetup[figure]{labelformat=figuras}
+
+\makeatletter
+\renewcommand\tagform@[1]{\maketag@@@{\color{CarnationPink}(#1)}}
+\makeatother
+
+\renewcommand{\theequation}{Eq. \arabic{equation}}
+\renewcommand{\thefigure}{Fig. \arabic{figure}}
 
 \setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
 
@@ -959,7 +974,7 @@
 
             \begin{figure}[h]
                 \centering
-                \includegraphics[width=0.6\textwidth]{Imagens/esquemaLabirintonêutrons.jpg}
+                \includegraphics[width=0.6\textwidth]{Imagens/esquemaLabirintoneutrons.jpg}
                 \caption{Esquema de labirinto para Aceleradores Lineares com energia acima de 10 MV}
                 \label{fig:esquemaLabirintonêutrons}
             \end{figure}

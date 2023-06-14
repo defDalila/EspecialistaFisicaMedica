@@ -27,6 +27,16 @@
 \usepackage{etoolbox}
 \usepackage[version=4]{mhchem}
 \usepackage{enumitem}
+\usepackage{caption}
+\DeclareCaptionLabelFormat{figuras}{\textcolor{CarnationPink}{Figura \arabic{figure}}}
+\captionsetup[figure]{labelformat=figuras}
+
+\makeatletter
+\renewcommand\tagform@[1]{\maketag@@@{\color{CarnationPink}(#1)}}
+\makeatother
+
+\renewcommand{\theequation}{Eq. \arabic{equation}}
+\renewcommand{\thefigure}{Fig. \arabic{figure}}
 
 \setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
 
@@ -116,7 +126,7 @@
         \subsection{Núcleo}
             \subsubsection{Equivalência de Massa e Energia}
 
-                E equação  $E = m c^2$ permite a conversão entre massa e energia pelo fator $c^2$, isso diz que quando as partículas se aproximam da velocidade da luz, a velocidade se tornará constante de forma que caso a partícula ganhe energia, ela na verdade ganhará massa.
+                E   $E = m c^2$ permite a conversão entre massa e energia pelo fator $c^2$, isso diz que quando as partículas se aproximam da velocidade da luz, a velocidade se tornará constante de forma que caso a partícula ganhe energia, ela na verdade ganhará massa.
 
 
                 \begin{itemize}
@@ -187,7 +197,7 @@
 
                 Este processo resulta em um déficit de massa, caracterizado pela diferença de massa entre a soma dos nucleons separadamente e a massa do núcleo em si. Esse déficit de massa é equivalente, então, à energia de ligação nuclear.
 
-                O déficit de massa é obtido através da Equação:
+                O déficit de massa é obtido através da :
 
                     \begin{equation}
                         \Delta  m = Zm_p + (A - Z)m_n - M
@@ -239,7 +249,7 @@
                     \item Para nucleos com Z acima de 20, a razão mágica é maior que 1:1; Por exemplo o Ouro-197 (\textsuperscript{197}Au)  possui n = 118 e p = 79, ~ 1.5:1;
                 \end{itemize}
 
-                A Figura \ref{fig:estabilidadeNuclear} mostra a curva de dos núcleos estáveis comparado com a razão n/p = 1; Nota-se que com o aumento do número de prótons é necessário um aumento no número de nêutrons para manter a estabilidade nuclear. O Bismuto (Z = 83) é o núcleo estável mais pesado, qualquer núcleo acima dele é instável.
+                A \ref{fig:estabilidadeNuclear} mostra a curva de dos núcleos estáveis comparado com a razão n/p = 1; Nota-se que com o aumento do número de prótons é necessário um aumento no número de nêutrons para manter a estabilidade nuclear. O Bismuto (Z = 83) é o núcleo estável mais pesado, qualquer núcleo acima dele é instável.
 
                 \begin{figure}[h]
                     \centering
@@ -360,7 +370,7 @@
 
             \subsubsection{Modelo Atômico de Bohr}
 
-                É o modelo clássico para o átomo que funciona bem para descrever um átomo de hidrogênio ou aqueles átomos que possuem apenas um elétron orbital, como o Hélio ionizado ou o lítio duplamente ionizado. Este modelo expandiu o modelo atômico de Rutherford combinando a mecânica clássica e a mecânica não-relativística juntamente com o conceito de momento angular quantizado para descrever a forma com o qual os elétrons se comportam no átomo, Figura \ref{fig:modeloAtomicoDeBohr}.
+                É o modelo clássico para o átomo que funciona bem para descrever um átomo de hidrogênio ou aqueles átomos que possuem apenas um elétron orbital, como o Hélio ionizado ou o lítio duplamente ionizado. Este modelo expandiu o modelo atômico de Rutherford combinando a mecânica clássica e a mecânica não-relativística juntamente com o conceito de momento angular quantizado para descrever a forma com o qual os elétrons se comportam no átomo, \ref{fig:modeloAtomicoDeBohr}.
 
                 \begin{figure}[h]
                     \centering
@@ -373,7 +383,7 @@
 
                 O raio atômico de Bohr é uma medida teórica do tamanho do átomo, proposta por Niels Bohr em 1913. Ele calculou o raio do átomo de hidrogênio em seu estado fundamental (ou seja, com apenas um elétron) usando a teoria do modelo atômico de Bohr é definido como a distância média entre o elétron e o núcleo em uma órbita estacionária do átomo de hidrogênio em seu estado fundamental. 
 
-                O raio atômico de Bohr é obtido através da Equação \ref{eq:raioAtomicoDeBohr}:
+                O raio atômico de Bohr é obtido através da  \ref{eq:raioAtomicoDeBohr}:
 
                 \begin{equation}
                     a_0 = \frac{\hslash \; c}{\alpha \; m_e \; c^2}
@@ -385,7 +395,7 @@
                 $$\alpha = \frac{e^2}{4 \pi \epsilon_0} \; \frac{1}{\hslash c} = \frac{1}{137}$$
 
 
-                O que nos permite reescrever a equação \ref{eq:raioAtomicoDeBohr}, chegando no valor para o raio atômico de Bohr:
+                O que nos permite reescrever a  \ref{eq:raioAtomicoDeBohr}, chegando no valor para o raio atômico de Bohr:
 
                 $$a_0 = \frac{4 \pi \epsilon_0}{e^2} \; \frac{(\hslash c)^2}{m_e \; c^2} = 0.5292 \mathring{A} $$
 
@@ -411,7 +421,7 @@
 
                 Onde $a_0$ é o raio de Bohr.
 
-                A velocidade $v_n$ de um elétron em um átomo de Bohr monoeletrônico é dada pela equação:
+                A velocidade $v_n$ de um elétron em um átomo de Bohr monoeletrônico é dada pela :
 
                     \begin{equation}
                         v_n  = \alpha c \left(\frac{Z}{n}\right) = \frac{c}{137}\left(\frac{Z}{n}\right)
@@ -427,7 +437,7 @@
             
             \subsubsection{Espectro de Emissão Para o Átomo de Hidrogênio}
 
-                As séries para o átomo de hidrogênio são sequências de transições eletrônicas que ocorrem quando um elétron é excitado e se move de um nível de energia mais alto para um nível de energia mais baixo, liberando energia na forma de luz. A Figura \ref{fig:diagramaNiveisDeEnergiaParaOAtomoDeHidrogenio} mostra o diagrama para os níveis de energia do átomo de hidrogênio. 
+                As séries para o átomo de hidrogênio são sequências de transições eletrônicas que ocorrem quando um elétron é excitado e se move de um nível de energia mais alto para um nível de energia mais baixo, liberando energia na forma de luz. A \ref{fig:diagramaNiveisDeEnergiaParaOAtomoDeHidrogenio} mostra o diagrama para os níveis de energia do átomo de hidrogênio. 
 
                     \begin{figure}[h]
                         \centering
@@ -457,7 +467,7 @@
 
         \subsection{Átomos com Multielétrons}
             
-            Até então foram abordados os comportamentos para átomos com apenas um elétron orbital, porém para átomos com mais de um elétron alguns comportamentos são acrescentados. A Figura \ref{fig:diagramaNiveisDeEnergiaParaAtomosMultieletrons} mostra os níveis de energia para um átomo de chumbo, que se assemelha ao espectro do átomo de hidrogênio exceto pela quantidade de elétrons em cada camada e a maior energia de ligação nas camadas mais internas do átomo.
+            Até então foram abordados os comportamentos para átomos com apenas um elétron orbital, porém para átomos com mais de um elétron alguns comportamentos são acrescentados. A \ref{fig:diagramaNiveisDeEnergiaParaAtomosMultieletrons} mostra os níveis de energia para um átomo de chumbo, que se assemelha ao espectro do átomo de hidrogênio exceto pela quantidade de elétrons em cada camada e a maior energia de ligação nas camadas mais internas do átomo.
 
                 \begin{figure}[h]
                     \centering
@@ -521,7 +531,7 @@
 
                 Quando um elétron absorve energia, ele pode saltar para uma camada mais energética ou então ele pode ser arrancado do átomo formando uma vacância na camada. 
                 
-                Quando o elétron absorve energia e salta para um estado de maior energia, em busca de estabilidade, o elétron volta para a camada de menor energia, esta energia em excesso pode ser liberada em forma de fótons ou pode ser transferida como energia cinética para outro elétron orbital, Figura \ref{fig:absorcaoDeEnergiaPorEletronOrbital}.
+                Quando o elétron absorve energia e salta para um estado de maior energia, em busca de estabilidade, o elétron volta para a camada de menor energia, esta energia em excesso pode ser liberada em forma de fótons ou pode ser transferida como energia cinética para outro elétron orbital, \ref{fig:absorcaoDeEnergiaPorEletronOrbital}.
 
                 \begin{figure}[h]
                     \centering
@@ -530,7 +540,7 @@
                     \label{fig:absorcaoDeEnergiaPorEletronOrbital}
                 \end{figure}
 
-                Sempre que um elétron é arrancado de uma das camadas mais internas do átomo, um elétron de uma camada mais externa, com maior energia, irá preencher esta vacância da camada mais interna, menos energética. Neste processo, haverá um excesso de energia que poderá ser emitido em forma de fótons, chamados de raios-x característicos ou pode ser transferida para um elétron orbital chamado elétron Auger, Figura \ref{fig:emissaoRaiosXCaracteristicosEEletronAuger}.
+                Sempre que um elétron é arrancado de uma das camadas mais internas do átomo, um elétron de uma camada mais externa, com maior energia, irá preencher esta vacância da camada mais interna, menos energética. Neste processo, haverá um excesso de energia que poderá ser emitido em forma de fótons, chamados de raios-x característicos ou pode ser transferida para um elétron orbital chamado elétron Auger, \ref{fig:emissaoRaiosXCaracteristicosEEletronAuger}.
 
                 \begin{figure}[h]
                     \centering
@@ -560,7 +570,7 @@
                 $\ce{^{226}_{88}Ra ->[{T_{1/2}}][{1,622y}] ^{222}_{86}Rn + ^{4}_{2}He + 4.87 MeV}$
             \end{center}
 
-            A energia liberada no processo é compartilhada com os produtos do decaimento, que podem assumir espectros discretos, onde saem sempre com a mesma energia, ou com espectros contínuos, onde podem assumir qualquer energia dentro da energia máxima liberada no decaimento. Nos casos do espectro contínuo de energia, a energia média da partícula emitida pode ser obtida através da equação:
+            A energia liberada no processo é compartilhada com os produtos do decaimento, que podem assumir espectros discretos, onde saem sempre com a mesma energia, ou com espectros contínuos, onde podem assumir qualquer energia dentro da energia máxima liberada no decaimento. Nos casos do espectro contínuo de energia, a energia média da partícula emitida pode ser obtida através da :
             
                 \begin{equation}
                     \overline{E_k} = \frac{1}{3} E_{max}
@@ -641,7 +651,7 @@
 
                 \textbf{\textit{\textcolor{CarnationPink}{Obs:}}} Nucleos ricos em prótons com energia insuficiente para criar um pósitron decaem apenas por captura eletrônica, já os núcleos muito energéticos ricos em prótons podem decair ou por emissão de pósitron ou por captura eletrônica.
 
-                Como uma vacância em uma camada interna do átomo é formada, consequentemente ocorrerá a emissão de um raio-x característico ou de um elétron Auger; E caso o excesso de energia seja liberado através da conversão interna, outra vacância será formada. A Figura \ref{fig:decaimentoPorCapturaEletronica} exemplifica o processo de captura eletrônica que resulta em um núcleo filho que decai por $\beta^+$.
+                Como uma vacância em uma camada interna do átomo é formada, consequentemente ocorrerá a emissão de um raio-x característico ou de um elétron Auger; E caso o excesso de energia seja liberado através da conversão interna, outra vacância será formada. A \ref{fig:decaimentoPorCapturaEletronica} exemplifica o processo de captura eletrônica que resulta em um núcleo filho que decai por $\beta^+$.
 
                 \begin{figure}[h]
                     \centering
@@ -667,7 +677,7 @@
             \subsubsection{Conversão Interna}
 
                 
-                Ocorre quando um núcleo, ao invés de liberar sua energia emitindo um fóton, transfere esse excesso de energia para um dos elétrons orbitais pertencente às camadas mais internas do átomo.  Esse elétron irá sair com a energia cinética igual a diferença entre a energia transferida para o elétron e a energia de ligação do elétron, que irá depender de qual camada este elétron pertence. Uma vez que diferentes elétrons possuem diferentes energias de ligação, a conversão interna resultará em um espectro de energias. A Figura \ref{fig:processoDeConversaoInterna} mostra a sequência de eventos que ocorrem durante a conversão interna.
+                Ocorre quando um núcleo, ao invés de liberar sua energia emitindo um fóton, transfere esse excesso de energia para um dos elétrons orbitais pertencente às camadas mais internas do átomo.  Esse elétron irá sair com a energia cinética igual a diferença entre a energia transferida para o elétron e a energia de ligação do elétron, que irá depender de qual camada este elétron pertence. Uma vez que diferentes elétrons possuem diferentes energias de ligação, a conversão interna resultará em um espectro de energias. A \ref{fig:processoDeConversaoInterna} mostra a sequência de eventos que ocorrem durante a conversão interna.
 
 
                 \begin{figure}[h]
@@ -683,13 +693,13 @@
             A lei de decaimento exponencial é quem governa o decaimento e crescimento de substâncias radioativas e através dela é possível obter parâmetros que caracterizam uma amostra de substância radioativa.
             
             \begin{itemize}
-                \item A Atividade de uma substância radioativa em um tempo $t$, $\mathcal{A}(t)$ é definida como o produto da constante de decaimento $\lambda$ pelo número de átomos radioativos no tempo $t$, $N(t)$ é dada pela equação:
+                \item A Atividade de uma substância radioativa em um tempo $t$, $\mathcal{A}(t)$ é definida como o produto da constante de decaimento $\lambda$ pelo número de átomos radioativos no tempo $t$, $N(t)$ é dada pela :
 
                     \begin{equation}
                         \mathcal{A} (t) = \lambda N(t)
                     \end{equation}
 
-                \item O número de núcleos pai radioativos $N_p$ em função do tempo $t$ é dado pela equação:
+                \item O número de núcleos pai radioativos $N_p$ em função do tempo $t$ é dado pela :
                     
                     \begin{equation}
                         N_p(t) = N_{p_0} \; e^{-\lambda_P t}
@@ -697,7 +707,7 @@
 
                     onde $N_{p_0}$ é o número inicial de átomos radioativos, ou seja, número de átomos radioativos em t = 0.
 
-                \item A Atividade do núcleo pai $\mathcal{A}_p$ em função do tempo $t$ é obtida através da equação:
+                \item A Atividade do núcleo pai $\mathcal{A}_p$ em função do tempo $t$ é obtida através da :
                 
                     \begin{equation}
                         \mathcal{A}_p(t) = \mathcal{A}_{p_0} \; e^{-\lambda_P t}
@@ -711,7 +721,7 @@
                         N_p(t = t_{1/2}) = \frac{1}{2} N_{p_0} = N_{p_0} \; e^{-\lambda_P t_{1/2}}
                     \end{equation}
                 
-                \item A meia-vida $(t_{1/2})$ e a constante de decaimento $\lambda_P$ podem ser relacionadas através da seguinte equação:
+                \item A meia-vida $(t_{1/2})$ e a constante de decaimento $\lambda_P$ podem ser relacionadas através da seguinte :
                 
                     \begin{equation}
                         \lambda_P = \frac{\ln 2}{t_{1/2}}
@@ -734,7 +744,7 @@
                         \frac{\mathcal{A}_{p_0}}{\lambda_P}
                     \end{equation}
 
-                e portanto, a vida-média está relacionada com a constante de decaimento e com a meia vida através da equação:
+                e portanto, a vida-média está relacionada com a constante de decaimento e com a meia vida através da :
 
                     \begin{equation}
                         \tau_p = \frac{1}{\lambda_P} = \frac{t_{1/2}}{\ln 2} = 1.44 \; t_{1/2}
@@ -813,7 +823,7 @@
                 
             \subsubsection{Eluição do Núcleo Filho}
 
-                Utiliza um gerador do radionuclídeo para extrair o núcleo filho gerado pelo núcleo pai. A cada vez que o núcleo filho é removido, ocorre um novo período de buildup até que seja alcançado novamente o equilíbrio secular ou transiente. Um exemplo é o gerador de \ce{^{99m}_{43}Tc},Figura \ref{fig:graficoEluicaoTecnecio}.
+                Utiliza um gerador do radionuclídeo para extrair o núcleo filho gerado pelo núcleo pai. A cada vez que o núcleo filho é removido, ocorre um novo período de buildup até que seja alcançado novamente o equilíbrio secular ou transiente. Um exemplo é o gerador de \ce{^{99m}_{43}Tc},\ref{fig:graficoEluicaoTecnecio}.
 
 
                     \begin{figure}[h]
@@ -836,7 +846,7 @@
                 
 
                 \begin{itemize}
-                    \item \textbf{\textit{\textcolor{CarnationPink}{Série do Tório (4n):}}} Esta série começa com o Tório-232 (\ce{^{232}Th}) e termina com o isótopo estável Chumbo-208 (\ce{^{208}Pb}), Figura \ref{fig:serieDoTorio}.
+                    \item \textbf{\textit{\textcolor{CarnationPink}{Série do Tório (4n):}}} Esta série começa com o Tório-232 (\ce{^{232}Th}) e termina com o isótopo estável Chumbo-208 (\ce{^{208}Pb}), \ref{fig:serieDoTorio}.
 
                     \begin{figure}[h]
                         \centering
@@ -847,11 +857,11 @@
 
                     Essa série é chamada de 4n porque muitos dos isótopos intermediários têm um número de massa igual a quatro vezes um número inteiro (4n), onde n é um número inteiro.
 
-                        \textbf{Exemplo}: \textit{o primeiro isótopo intermediário na série é o rádio-228 (\ce{^{228}Ra}) , que tem um número de massa de 228. O número 228 é igual a 4 vezes 57, o que corresponde a n = 57 na equação 4n. O segundo isótopo intermediário na série é o actínio-228 (\ce{^{228}Ac}), que também tem um número de massa de 228. Novamente, o número 228 é igual a 4 vezes 57.}
+                        \textbf{Exemplo}: \textit{o primeiro isótopo intermediário na série é o rádio-228 (\ce{^{228}Ra}) , que tem um número de massa de 228. O número 228 é igual a 4 vezes 57, o que corresponde a n = 57 na  4n. O segundo isótopo intermediário na série é o actínio-228 (\ce{^{228}Ac}), que também tem um número de massa de 228. Novamente, o número 228 é igual a 4 vezes 57.}
 
                         Esse padrão de diferença de número de massa de 4n é observado em muitos dos isótopos intermediários da série do tório, como resultado do processo de decaimento radioativo. A série do tório é importante na geologia, pois a taxa de decaimento dos isótopos intermediários é usada para determinar a idade de rochas e minerais, por meio de técnicas como a datação por tório-urânio. Além disso, alguns isótopos intermediários da série do tório, como o protactínio-234 (\ce{^{234}Pa}) e o rádio-223 (\ce{^{223}Ra}), são utilizados em aplicações médicas e industriais.
 
-                    \item \textbf{\textit{\textcolor{CarnationPink}{Série do Neptúnio (4n + 1):}}}: Esta série começa com o Neptúnio-237 (\ce{^{237}Np}) e termina com o isótopo estável Bismuto-209 (\ce{^{209}Bi}), Figura \ref{fig:serieDoNeptunio}. 
+                    \item \textbf{\textit{\textcolor{CarnationPink}{Série do Neptúnio (4n + 1):}}}: Esta série começa com o Neptúnio-237 (\ce{^{237}Np}) e termina com o isótopo estável Bismuto-209 (\ce{^{209}Bi}), \ref{fig:serieDoNeptunio}. 
                     
                         \begin{figure}[h]
                             \centering
@@ -862,11 +872,11 @@
                     
                         Essa série é chamada de 4n + 1 porque muitos dos isótopos intermediários têm um número de massa igual a quatro vezes um número inteiro mais um (4n + 1), onde n é um número inteiro.
                     
-                        \textbf{Exemplo}: \textit{ o primeiro isótopo intermediário na série é o protactínio-233 (233Pa), que tem um número de massa de 233. O número 233 é igual a 4 vezes 58 mais 1, o que corresponde a n = 58 na equação 4n + 1. O segundo isótopo intermediário na série é o urânio-233 (233U), que também tem um número de massa de 233. Novamente, o número 233 é igual a 4 vezes 58 mais 1.}
+                        \textbf{Exemplo}: \textit{ o primeiro isótopo intermediário na série é o protactínio-233 (233Pa), que tem um número de massa de 233. O número 233 é igual a 4 vezes 58 mais 1, o que corresponde a n = 58 na  4n + 1. O segundo isótopo intermediário na série é o urânio-233 (233U), que também tem um número de massa de 233. Novamente, o número 233 é igual a 4 vezes 58 mais 1.}
 
                         Esse padrão de diferença de número de massa de 4n + 1 é observado em muitos dos isótopos intermediários da série do neptúnio, como resultado do processo de decaimento radioativo. A série do neptúnio é menos conhecida e menos estudada do que as séries do urânio e do tório, devido à escassez de fontes naturais de neptúnio e à sua elevada radioatividade, mas ainda tem importância na ciência nuclear e em algumas aplicações industriais.
 
-                    \item \textbf{\textit{\textcolor{CarnationPink}{Série do Urânio (4n + 2):}}} Esta série começa com o Urânio-238 (\ce{^{238}U}) e termina com o isótopo estável Chumbo-206 (\ce{^{206}Pb}), Figura \ref{fig:serieDoUranio}. 
+                    \item \textbf{\textit{\textcolor{CarnationPink}{Série do Urânio (4n + 2):}}} Esta série começa com o Urânio-238 (\ce{^{238}U}) e termina com o isótopo estável Chumbo-206 (\ce{^{206}Pb}), \ref{fig:serieDoUranio}. 
                     
                             \begin{figure}[h]
                                 \centering
@@ -878,12 +888,12 @@
                         
                         Essa série é chamada de "4n + 2" porque muitos dos isótopos intermediários têm um número de massa igual a quatro vezes um número inteiro mais dois (4n + 2), onde n é um número inteiro.
 
-                        \textbf{Exemplo}: \textit{o primeiro isótopo intermediário na série é o tório-234 (\ce{^{234}Th}), que tem um número de massa de 234. O número 234 é igual a 4 vezes 58 mais 2, o que corresponde a n = 58 na equação 4n + 2. O segundo isótopo intermediário na série é o protactínio-234 (\ce{^{234}Pa}), que também tem um número de massa de 234. Novamente, o número 234 é igual a 4 vezes 58 mais 2.}
+                        \textbf{Exemplo}: \textit{o primeiro isótopo intermediário na série é o tório-234 (\ce{^{234}Th}), que tem um número de massa de 234. O número 234 é igual a 4 vezes 58 mais 2, o que corresponde a n = 58 na  4n + 2. O segundo isótopo intermediário na série é o protactínio-234 (\ce{^{234}Pa}), que também tem um número de massa de 234. Novamente, o número 234 é igual a 4 vezes 58 mais 2.}
                     
                         Esse padrão de diferença de número de massa de 4n + 2 é observado em muitos dos isótopos intermediários da série do urânio, como resultado do processo de decaimento radioativo. A série do urânio-238 é importante porque o urânio-238 é um elemento relativamente comum na crosta terrestre e é usado como combustível em reatores nucleares e como material para a produção de armas nucleares.
 
 
-                    \item \textbf{\textit{\textcolor{CarnationPink}{Série do Actínio (4n + 3):}}} Esta série começa com o Urânio-235 (\ce{^{235}U}) e termina com o isótopo estável Chumbo-207 (\ce{^{207}Pb}), Figura \ref{fig:serieDoActinio}. 
+                    \item \textbf{\textit{\textcolor{CarnationPink}{Série do Actínio (4n + 3):}}} Esta série começa com o Urânio-235 (\ce{^{235}U}) e termina com o isótopo estável Chumbo-207 (\ce{^{207}Pb}), \ref{fig:serieDoActinio}. 
                     
                     
                         \begin{figure}[h]
@@ -895,7 +905,7 @@
                     
                         Essa série é chamada de "4n + 3" porque muitos dos isótopos intermediários têm um número de massa igual a quatro vezes um número inteiro mais dois (4n + 3), onde n é um número inteiro.
 
-                        \textbf{Exemplo}: \textit{o primeiro isótopo intermediário na série é o tório-231 (234Th), que tem um número de massa de 231. O número 231 é igual a 4 vezes 57 mais 3, o que corresponde a n = 57 na equação 4n + 3. O segundo isótopo intermediário na série é o protactínio-231 (234Pa), que também tem um número de massa de 231. Novamente, o número 231 é igual a 4 vezes 57 mais 3.}
+                        \textbf{Exemplo}: \textit{o primeiro isótopo intermediário na série é o tório-231 (234Th), que tem um número de massa de 231. O número 231 é igual a 4 vezes 57 mais 3, o que corresponde a n = 57 na  4n + 3. O segundo isótopo intermediário na série é o protactínio-231 (234Pa), que também tem um número de massa de 231. Novamente, o número 231 é igual a 4 vezes 57 mais 3.}
 
                         Vários isótopos intermediários da série do actínio, como o rádio-223, têm aplicações em medicina, como no tratamento de certos tipos de câncer (Xofigo). A série do actínio também é importante na pesquisa nuclear e no estudo da geologia. lém disso, alguns isótopos como o urânio-235 (\ce{^{235}U}) e o plutônio-239 (\ce{^{239}Pu}), são utilizados em aplicações industriais e militares.
 
@@ -947,7 +957,7 @@
 
                 Um reator nuclear é um dispositivo que usa urânio enriquecido como combustível para produzir calor, que é usado para gerar eletricidade ou para outras finalidades. Existem vários tipos de reatores nucleares, mas o mais comum é o reator de água pressurizada (PWR, na sigla em inglês).
 
-                No reator PWR, esquematicamente demonstrado na Figura \ref{fig:reatorNuclear}, o combustível nuclear é colocado em varetas de combustível e inserido em um núcleo do reator, que é preenchido com água. O urânio enriquecido dentro das varetas de combustível sofre fissão nuclear, liberando energia na forma de calor. O calor é transferido para a água do reator, que é mantida sob alta pressão para evitar que ferva.
+                No reator PWR, esquematicamente demonstrado na \ref{fig:reatorNuclear}, o combustível nuclear é colocado em varetas de combustível e inserido em um núcleo do reator, que é preenchido com água. O urânio enriquecido dentro das varetas de combustível sofre fissão nuclear, liberando energia na forma de calor. O calor é transferido para a água do reator, que é mantida sob alta pressão para evitar que ferva.
                 
 
                     \begin{figure}[h]
@@ -977,7 +987,7 @@
 
             As radiações particulada são definidas como as partículas massivas o que inclui os prótons, nêutrons, elétrons, íons de carbono, píons ou qualquer outra partícula ejetada de acelerador de partículas. Todas partículas obedecem a Lei $E = mc^2$ e portanto ao serem aceleradas até próximo da velocidade da luz, sua massa irá aumentar. E se a partícula for destruída, sua massa de repouso será totalmente convertida em energia.
 
-            A radiação eletromagnética é carregada pelos fótons, que são um tipo de bósons. Devido a dualidade onda-partícula, hora a radiação eletromagnética se comporta como onda, hora se comporta como partícula (fótons) o que também acontece com a radiação particulada. Porém, os fótons carrega a força eletromagnética na forma de duas ondas senoidais que oscilam perpendicularmente entre si e perpendicularmente à direção de propagação da onda com a velocidade da luz, sendo elas a oscilação do Campo elétrico e o Campo Magnético, como mostra a Figura \ref{fig:ondaEletromagnetica}.
+            A radiação eletromagnética é carregada pelos fótons, que são um tipo de bósons. Devido a dualidade onda-partícula, hora a radiação eletromagnética se comporta como onda, hora se comporta como partícula (fótons) o que também acontece com a radiação particulada. Porém, os fótons carrega a força eletromagnética na forma de duas ondas senoidais que oscilam perpendicularmente entre si e perpendicularmente à direção de propagação da onda com a velocidade da luz, sendo elas a oscilação do Campo elétrico e o Campo Magnético, como mostra a \ref{fig:ondaEletromagnetica}.
 
                     \begin{figure}[h]
                         \centering
@@ -996,7 +1006,7 @@
                     \end{equation}
                     \noindent onde $\nu$ é a frequência de oscilação da onda
                 
-                \item A frequência $\ni$ e o comprimento de onda $\lambda$ estão relacionados através da equação:
+                \item A frequência $\ni$ e o comprimento de onda $\lambda$ estão relacionados através da :
                     
                     \begin{equation}
                         \nu = \frac{c}{\lambda}
@@ -1060,7 +1070,7 @@
 
             \subsubsection{Espectro Eletromagnético}
 
-                A Figura \ref{fig:espectroEM} mostra a faixa de comprimentos de onda que contemplam o espectro eletromagnético. Em ordem crescente de energia, temos: \textbf{ondas de rádio, micro-ondas, infravermelho, luz visível, raios ultra-violeta, raios-X, raios-gama e raios cósmicos.}
+                A \ref{fig:espectroEM} mostra a faixa de comprimentos de onda que contemplam o espectro eletromagnético. Em ordem crescente de energia, temos: \textbf{ondas de rádio, micro-ondas, infravermelho, luz visível, raios ultra-violeta, raios-X, raios-gama e raios cósmicos.}
 
                 \begin{figure}[h]
                     \centering
@@ -1094,7 +1104,7 @@
         
             \subsubsection{Tubos de Raios-X}
 
-                São comumente utilizados na formação de imagens, como em Imagens planares, mamografia, tomografias  e etc \dots Em um tubo de raois-x, os elétrons são acelerados em direção a um alvo afim de se produzir radiação de Bremsstrahlung. A Figura \ref{fig:tuboDeRaiosX} mostra o esquema de um tubo de raios-x.
+                São comumente utilizados na formação de imagens, como em Imagens planares, mamografia, tomografias  e etc \dots Em um tubo de raois-x, os elétrons são acelerados em direção a um alvo afim de se produzir radiação de Bremsstrahlung. A \ref{fig:tuboDeRaiosX} mostra o esquema de um tubo de raios-x.
 
                     \begin{figure}[h]
                         \centering
@@ -1147,7 +1157,7 @@
 
                 Os Aceleradores Lineares (Linac) só foram desenvolvidos após a Segunda Guerra Mundial, onde foi desenvolvida a tecnologia de micro-ondas de radiofrequência baseadas em partículas aceleradas. 
 
-                Existem duas tecnologias principais utilizadas em aceleradores lineares relacionadas às micro-ondas: Klystron e Magnetron. A figura \ref{fig:esquemaAceleradorLinear} mostra o esquema básico de um Linac clínico.
+                Existem duas tecnologias principais utilizadas em aceleradores lineares relacionadas às micro-ondas: Klystron e Magnetron. A \ref{fig:esquemaAceleradorLinear} mostra o esquema básico de um Linac clínico.
 
 
                 \begin{figure}[h]
@@ -1158,7 +1168,7 @@
                 \end{figure}
 
             
-                A figura \ref{fig:esquemaAceleradorLinear} mostra um esquema geral de um Linac, porém exitem algumas variações significantes entre um fabricante e outro que está relacionada ao design e à energia final dos elétrons acelerados na guia de onda que impacta no tamanho da guia aceleradora. O tamanho da guia aceleradora varia de $\sim $\qty{30}{cm} para $E_k = $ \qty{4}{MeV} até $\sim $\qty{150}{cm} para $E_k = $ \qty{25}{MeV}.
+                A \ref{fig:esquemaAceleradorLinear} mostra um esquema geral de um Linac, porém exitem algumas variações significantes entre um fabricante e outro que está relacionada ao design e à energia final dos elétrons acelerados na guia de onda que impacta no tamanho da guia aceleradora. O tamanho da guia aceleradora varia de $\sim $\qty{30}{cm} para $E_k = $ \qty{4}{MeV} até $\sim $\qty{150}{cm} para $E_k = $ \qty{25}{MeV}.
 
                 Os principais componentes de um Linac, responsáveis pela formação do feixe podem ser agrupados nas seguintes classes:
 
@@ -1178,7 +1188,7 @@
                 
                 \item Este Linac com configuração mais simples é isocentricamente montado para maquinas de \qty{4}{MV} ou \qty{6}{MV}, com a gun de elétrons e o alvo permanetemente embutido na guia de onda aceleradora, não exigindo um sitema de transporte do feixe e nem oferecendo a opção para tratamento com feixes de elétrons.
                 
-                \item As guias aceleradoras para energias de elétrons intermediárias (\qtyrange{8}{15}{MeV}) e para elétrons com alta energia (\qtyrange{15}{30}{MeV}) são muito longas para serem diretamente montadas alinhadas ao isocentro e portanto são montadas ou no gantry, paralela ao seu eixo de rotação, ou são montadas no suporte do gantry. É utilizado um sistema de transporte do feixe para direcionar o elétron acelerado na guia aceleradora para o alvo. Em ambas configurações, a fonte de alimentação de RF é montada no suporte do gantry. A figura \ref{fig:esquemasMontagemGuia} mostra os diferentes esquemas de montagem da guia de onda.
+                \item As guias aceleradoras para energias de elétrons intermediárias (\qtyrange{8}{15}{MeV}) e para elétrons com alta energia (\qtyrange{15}{30}{MeV}) são muito longas para serem diretamente montadas alinhadas ao isocentro e portanto são montadas ou no gantry, paralela ao seu eixo de rotação, ou são montadas no suporte do gantry. É utilizado um sistema de transporte do feixe para direcionar o elétron acelerado na guia aceleradora para o alvo. Em ambas configurações, a fonte de alimentação de RF é montada no suporte do gantry. A \ref{fig:esquemasMontagemGuia} mostra os diferentes esquemas de montagem da guia de onda.
             \end{itemize}
              
 
@@ -1243,7 +1253,7 @@
                         
                         \item Na guia de onda que utiliza estrutura de onda progressiva, as micro-ondas entram na guia aceleradora pelo lado da gun de elétrons e propagam em direção à extremidade de alta energia da guia de onda, onde as micro-ondas são absorvidas sem qualquer reflexão ou saem da guia de onda para serem absorvidas por uma carga resistiva ou para ser realimentada na extremidade de entrada da guia aceleradora. Nesta configuração apenas uma em cada quatro cavidades é, em um determinado momento, adequada para a aceleração dos elétrons, fornecendo um campo elétrico na direção de propagação.
                         
-                        \item Na guia de onda que utiliza estrutura de onda estacionária, cada extremidade da guia de onda é terminada com um disco condutor para refletir as micro-ondas resultando em um acúmulo de ondas estacionárias na guia de onda. Nesta configuração, em todos os momentos, cada segunda cavidade não carrega campo elétrico e, portanto não produz ganho de energia para os elétrons. Estas cavidades servem apenas como cavidades de acoplamento e podem ser movidas para o lado da estrutura da guia de onda, efetivamente encurtando a guia de onda aceleradora em 50\% do seu tamanho. A Figura \ref{fig:corteGuiaDeOndaEstacionaria} mostra um corte longitudinal de uma guia de onda estacionária.
+                        \item Na guia de onda que utiliza estrutura de onda estacionária, cada extremidade da guia de onda é terminada com um disco condutor para refletir as micro-ondas resultando em um acúmulo de ondas estacionárias na guia de onda. Nesta configuração, em todos os momentos, cada segunda cavidade não carrega campo elétrico e, portanto não produz ganho de energia para os elétrons. Estas cavidades servem apenas como cavidades de acoplamento e podem ser movidas para o lado da estrutura da guia de onda, efetivamente encurtando a guia de onda aceleradora em 50\% do seu tamanho. A \ref{fig:corteGuiaDeOndaEstacionaria} mostra um corte longitudinal de uma guia de onda estacionária.
                     \end{itemize}
 
                     \begin{figure}[h]
@@ -1418,7 +1428,7 @@
                     \label{fig:microton}
                 \end{wrapfigure}
                     
-                O mícroton foi inventado no mesmo período que o AL e utilizado em rotinas clínicas na decada de 70, porém a utilização de Al's foi mais aceita por ser mais simples. Um mícroton consiste em um acelerador linear, acoplado a um campo magnético,  onde os elétrons acelerados percorrem uma trajetória circular e entram novamente no acelerador linear ganhando mais velocidade. A figura \ref{fig:microton} mostra o esquema de um mícroton. 
+                O mícroton foi inventado no mesmo período que o AL e utilizado em rotinas clínicas na decada de 70, porém a utilização de Al's foi mais aceita por ser mais simples. Um mícroton consiste em um acelerador linear, acoplado a um campo magnético,  onde os elétrons acelerados percorrem uma trajetória circular e entram novamente no acelerador linear ganhando mais velocidade. A \ref{fig:microton} mostra o esquema de um mícroton. 
                 
                 O Loop é controlado pelo campo magnético e a cada vez que o elétron passa no acelerador linear,  ganha energia e portanto o raio do loop aumenta.  É possível produzir eletrons com energia de até \qty{1500}{MeV} e ao alcançar a energia desejada, os elétrons são capturados em um tubo coletor que está associado ao raio do loop.
 
@@ -1438,7 +1448,7 @@
             \end{wrapfigure}
 
 
-                A Figura \ref{fig:ciclotron} mostra um esquema de um Cíclotron que consiste em dois eletrodos em forma de ``D'' com voltagem alternada na presença de um campo magnético perpendicular estático.
+                A \ref{fig:ciclotron} mostra um esquema de um Cíclotron que consiste em dois eletrodos em forma de ``D'' com voltagem alternada na presença de um campo magnético perpendicular estático.
 
                 A frequência de alteração da polaridade deve ser combinada com a ``frequência de ressonância do cíclotron'' da partícula alvo permitindo que a partícula desenvolva uma tragetória espiral, ganhando velocidade e massa relativística em cada revolução até que ela colida na parede ou seja coletada no tubo do feixe. 
 
@@ -1556,7 +1566,7 @@
                     {}_a\mu = \frac{\mu}{\frac{N_a}{\mathcal{V}}}
                 \end{equation}
 
-            \noindent A unidade do SI para o ${}_a\mu$ é \unit{m^2/atomo} que equivale a \qty{e4}{cm^2/atomo}. Quando o ${}_a\mu$ é utilizado na equação de atenuação, a espessura é obtida em \unit{atomo/m^2} onde \qty{1}{atomo/m^2} equivale a \qty{e-4}{atomo/cm^2}
+            \noindent A unidade do SI para o ${}_a\mu$ é \unit{m^2/atomo} que equivale a \qty{e4}{cm^2/atomo}. Quando o ${}_a\mu$ é utilizado na  de atenuação, a espessura é obtida em \unit{atomo/m^2} onde \qty{1}{atomo/m^2} equivale a \qty{e-4}{atomo/cm^2}
 
 
             O \textbf{\textit{\textcolor{CarnationPink}{Coeficiente de Atenuação Eletrônico}}} (${}_e\mu$) é dado pelo coeficiente de atenuação linear dividido pelo número de elétrons $N_e$ por unidade de volume $\mathcal{V}$ do absorvedor.
@@ -1652,7 +1662,7 @@
 
         \subsection{Espalhamento Coerente (Rayleigh, Thompson)}
 
-            Este processo de interação ocorre nas faixas de energia de \qtyrange{1}{1000}{keV} onde $h\nu \ll m_ec^2$, Figura \ref{fig:espalhamentoCoerente}. Se trata de um processo de interação do fóton com o átomo como um todo onde todos os elétrons contribuem para o espalhamento do fóton.Neste processo o fóton é absorvido pelo átomo fazendo com que os elétrons fortemente ligados ao átomo que comecem a oscilar em alta frequência (oscilação de dipolo induzida), e ao relaxar, este excesso de energia é liberado como outro fóton com a mesma energia do fóton incidente porém com uma pequena angulação em relação a tragetória do fóton incidente. Como nenhuma energia é transferida, este espalhamento não contribui para o coeficiente de transferencia de energia, porém contribui para o coeficiente de atenuação, além do mais, este efeito não causa ionizações e portanto não contribui para a dose absorvida no meio.
+            Este processo de interação ocorre nas faixas de energia de \qtyrange{1}{1000}{keV} onde $h\nu \ll m_ec^2$, \ref{fig:espalhamentoCoerente}. Se trata de um processo de interação do fóton com o átomo como um todo onde todos os elétrons contribuem para o espalhamento do fóton.Neste processo o fóton é absorvido pelo átomo fazendo com que os elétrons fortemente ligados ao átomo que comecem a oscilar em alta frequência (oscilação de dipolo induzida), e ao relaxar, este excesso de energia é liberado como outro fóton com a mesma energia do fóton incidente porém com uma pequena angulação em relação a tragetória do fóton incidente. Como nenhuma energia é transferida, este espalhamento não contribui para o coeficiente de transferencia de energia, porém contribui para o coeficiente de atenuação, além do mais, este efeito não causa ionizações e portanto não contribui para a dose absorvida no meio.
 
             \begin{itemize}
                 \item A secão de choque atômica para o Espalhamento coerente é proporcional a:  ${}_a\sigma_R \propto (z / h\nu)^2$
@@ -1670,7 +1680,7 @@
 
         \subsection{Efeito Fotoelétrico}
 
-            O fóton interage com um életron fortemente ligado ao átomo do meio absorvedor, onde este fóton é totalmente absorvido e o elétron é ejetado do átomo que sai como um fóton-elétron com energia cinética igual a energia do fóton incidente subtraída da energia de ligação deste elétron ao átomo, Figura \ref{fig:efeitoFotoeletrico} , ou seja:
+            O fóton interage com um életron fortemente ligado ao átomo do meio absorvedor, onde este fóton é totalmente absorvido e o elétron é ejetado do átomo que sai como um fóton-elétron com energia cinética igual a energia do fóton incidente subtraída da energia de ligação deste elétron ao átomo, \ref{fig:efeitoFotoeletrico} , ou seja:
 
 
 
@@ -1695,7 +1705,7 @@
                 \item A dependência com $(1 / h\nu)^3$ mostra que o efeito tem maior predominâncias à baixas energias, conforme a energia aumenta, diminui a probabilidade de ocorrer o efeito fotoelétrico. As evidências mostram que para baixas a seção de choque atômica varia com $(1 / h\nu)^3$ e para altas energias se transforma para $(1 / h\nu)$. 
             \end{itemize}
 
-            Conforme a energia do fóton incidente aumenta, a seção de choque mássica $\tau_m$ diminui, e existe uma descontinuidade em $\tau_m$ quando a energia do fóton incidente é igual a energia de ligação de uma das camadas internas. Esta descontinuidade é chamada de bordas de absorção e refletem o fato de que para energias do fóton incidente menores que a energia de ligação de uma determinada camada não ocorrerá o efeito enquanto que para energias maiores ou iguais o efeito ocorrerá; A Figura \ref{fig:descontinuidadeEfeitoFotoeletrico} mostra a seção de choque atômica para o efeito fotoelétrico ${}_a\tau$ para diferentes tipos de materiais em função da energia do fóton incidente, onde pode ser observado as bordas de absorção da camada K.
+            Conforme a energia do fóton incidente aumenta, a seção de choque mássica $\tau_m$ diminui, e existe uma descontinuidade em $\tau_m$ quando a energia do fóton incidente é igual a energia de ligação de uma das camadas internas. Esta descontinuidade é chamada de bordas de absorção e refletem o fato de que para energias do fóton incidente menores que a energia de ligação de uma determinada camada não ocorrerá o efeito enquanto que para energias maiores ou iguais o efeito ocorrerá; A \ref{fig:descontinuidadeEfeitoFotoeletrico} mostra a seção de choque atômica para o efeito fotoelétrico ${}_a\tau$ para diferentes tipos de materiais em função da energia do fóton incidente, onde pode ser observado as bordas de absorção da camada K.
 
             \begin{figure}[h]
                 \centering
@@ -1718,7 +1728,7 @@
 
         \subsection{Espalhamento Compton}
 
-            O Efeito compton representa a interação do fóton com um elétron orbital onde  $h\nu \gg E_B $ e portanto esta é a definição que o elétron está essencialmente livre e em um estado estácionario. Neste processo o fóton com  energia $h\nu$ perde parte de sua energia para o elétron de recuo, que ganha energia Cinética, e é espalhado  como um  foton com energia $h\nu'$  em um ângulo de espalhamento $\theta$, como mostra a Figura \ref{fig:esquemaEfeitoCompton}. O Angulo $\phi$ representa o ângulo entre a direção de incidência do fóton e a direção do elétron de recuo. 
+            O Efeito compton representa a interação do fóton com um elétron orbital onde  $h\nu \gg E_B $ e portanto esta é a definição que o elétron está essencialmente livre e em um estado estácionario. Neste processo o fóton com  energia $h\nu$ perde parte de sua energia para o elétron de recuo, que ganha energia Cinética, e é espalhado  como um  foton com energia $h\nu'$  em um ângulo de espalhamento $\theta$, como mostra a \ref{fig:esquemaEfeitoCompton}. O Angulo $\phi$ representa o ângulo entre a direção de incidência do fóton e a direção do elétron de recuo. 
 
                 \begin{figure}[h]
                     \centering
@@ -1727,7 +1737,7 @@
                     \label{fig:esquemaEfeitoCompton}
                 \end{figure}
 
-            A figura \ref{fig:diagramaMomentoEfeitoCompton} mostra o diagrama de vetores para a conservação do momento no Efeito Compton.
+            A \ref{fig:diagramaMomentoEfeitoCompton} mostra o diagrama de vetores para a conservação do momento no Efeito Compton.
 
                 \begin{figure}[h]
                     \centering
@@ -1783,7 +1793,7 @@
                 \end{equation}
 
             
-            \noindent Sabendo que a energia total do elétron está relacionada ao seu momento através da equação:
+            \noindent Sabendo que a energia total do elétron está relacionada ao seu momento através da :
 
                 \begin{equation}
                     E_e^2 = (m_ec^2)^2 + (p_ec)^2
@@ -1795,14 +1805,14 @@
                     (h\nu - h\nu') + m_ec^2 = \sqrt[2]{(m_ec^2)^2 + p^2 c^2}
                 \end{equation}
 
-            \noindent o que nos leva a equação:
+            \noindent o que nos leva a :
 
                 \begin{equation}
                     p_e^2 = \frac{1}{c^2} \left\{ (h\nu)^2 + (h\nu')^2 - 2 (h\nu)(h\nu') + 2m_ec^2(h\nu - h\nu')\right\}
                     \label{eq:momentoConserEner}
                 \end{equation}
 
-            \noindent A grandeza momento, é uma grandeza vertorial; A conservação do momento é dada pela equação:
+            \noindent A grandeza momento, é uma grandeza vertorial; A conservação do momento é dada pela :
 
                 \begin{equation}
                     \vec{p}_{h\nu} = \vec{p}_e + \vec{p}_{h\nu'}
@@ -1847,7 +1857,7 @@
 
             \
 
-            \noindent Uma vez que a fequência e o comprimento de onda estão relacionados pela equação $c = \lambda \nu$, podemos obter o deslocamento do comprimento de onda para a interação dos fótons com um eletrón livre:
+            \noindent Uma vez que a fequência e o comprimento de onda estão relacionados pela  $c = \lambda \nu$, podemos obter o deslocamento do comprimento de onda para a interação dos fótons com um eletrón livre:
 
                 \begin{equation}
                     \lambda - \lambda' = \frac{h}{me_c}[1 - \cos(\theta)]
@@ -1968,7 +1978,7 @@
                                 \end{equation}
                         \end{enumerate}
 
-                    \item A figura \ref{fig:maximoEMediaFracaoEletronCompton} mostra a fração máxima e a fração média da energia transmitida do fóton incidente para o recudo do elétron, onde a fração média é utilizada para determinar a contribuição do Efeito Compton no coeficiente de energia transferida. Por exemplo, nos casos de retroespalhamento do fóton, é analisado a fração máxima da energia do fóton trasmitida para o elétron, e para um fóton incidente com a energia de \qty{1}{MeV}, \qty{0.8}{MeV} é transferido como energia cinética para o elétron de recuo e \qty{0.2}{MeV} é a energia do fóton espalhado. Em média, para um fóton incidente com a energia de \qty{1}{MeV} resultará em um elétron com energia de \qty{0.44}{MeV} e um fóton espalhado com energa de \qty{0.56}{MeV}.
+                    \item A \ref{fig:maximoEMediaFracaoEletronCompton} mostra a fração máxima e a fração média da energia transmitida do fóton incidente para o recudo do elétron, onde a fração média é utilizada para determinar a contribuição do Efeito Compton no coeficiente de energia transferida. Por exemplo, nos casos de retroespalhamento do fóton, é analisado a fração máxima da energia do fóton trasmitida para o elétron, e para um fóton incidente com a energia de \qty{1}{MeV}, \qty{0.8}{MeV} é transferido como energia cinética para o elétron de recuo e \qty{0.2}{MeV} é a energia do fóton espalhado. Em média, para um fóton incidente com a energia de \qty{1}{MeV} resultará em um elétron com energia de \qty{0.44}{MeV} e um fóton espalhado com energa de \qty{0.56}{MeV}.
                     
                         \begin{figure}[h]
                             \centering
@@ -1998,7 +2008,7 @@
             
         \subsection{Produção de Pares}
 
-                Na produção de pares, um fóton incidente com a energia mínima de \qty{1.022}{MeV} interage com o campo elétrico do núcleo atômico que é totalmente absorvido pelo átomo que emite um par elétron-pósitron com a energia cinética combinada igual a $h\nu - 2 m_ec^2$, como mostra a Figura \ref{fig:esquemaProducaoDePares}.
+                Na produção de pares, um fóton incidente com a energia mínima de \qty{1.022}{MeV} interage com o campo elétrico do núcleo atômico que é totalmente absorvido pelo átomo que emite um par elétron-pósitron com a energia cinética combinada igual a $h\nu - 2 m_ec^2$, como mostra a \ref{fig:esquemaProducaoDePares}.
 
                 \begin{figure}[h]
                     \centering
@@ -2060,13 +2070,13 @@
                 \noindent onde,
 
 
-                \noindent $\mathbf{\bar{K}_{tr}^{\tau}}$ é a energia cinética média transferida para as partículas carregadas devido ao efeito fotoelétrico. Pode ser aproximada pela equação $h\nu - P_k \omega_k E_b(K)$, onde $E_b(K)$ é a energia de ligação do elétron pertencente a camada K, $P_k$ é a fração de todas as interações do efeito fotoelétrico que ocorrem na camada K e $\omega_k$ é a produção fluorescente para a camada K.
+                \noindent $\mathbf{\bar{K}_{tr}^{\tau}}$ é a energia cinética média transferida para as partículas carregadas devido ao efeito fotoelétrico. Pode ser aproximada pela  $h\nu - P_k \omega_k E_b(K)$, onde $E_b(K)$ é a energia de ligação do elétron pertencente a camada K, $P_k$ é a fração de todas as interações do efeito fotoelétrico que ocorrem na camada K e $\omega_k$ é a produção fluorescente para a camada K.
                 
 
                 \noindent $\mathbf{\bar{K}_{tr}^{\sigma_C}}$ é a energia cinética média transferida para as partículas carregadas devido ao efeito compton. Este valor é obtido através de tabelas ou gráficos contendo dados experimentais; 
 
 
-                \noindent $\mathbf{\bar{K}_{tr}^{\kappa}}$ é a energia cinética média transferida para as partículas carregadas devido a produção de pares, que é obtido através da equação $h\nu - 2m_ec^2$.
+                \noindent $\mathbf{\bar{K}_{tr}^{\kappa}}$ é a energia cinética média transferida para as partículas carregadas devido a produção de pares, que é obtido através da  $h\nu - 2m_ec^2$.
 
 
                 \textbf{Obs:} Como o espalhamento Rayleigh  contribui para a dose absorvida e nem para a dose transferida pois não há transferência de energia nessa interação.
@@ -2096,7 +2106,7 @@
 
         \subsection{Predominância dos Efeitos}
 
-            A Figura \ref{fig:predominanciaInteracoes} mostra as regiões de predominância de cada efeito com base na energia do fóton incidente e o número atômico do material absorvedor.    
+            A \ref{fig:predominanciaInteracoes} mostra as regiões de predominância de cada efeito com base na energia do fóton incidente e o número atômico do material absorvedor.    
 
             \begin{figure}[h]
                 \centering
@@ -2128,7 +2138,7 @@
                                 = E_K^{e^+} + m_{e^+}c^2 + m_{e^-}c^2
                             \end{equation}
 
-                        \item Quando a Aniquilação em voo ocorre com um elétron essencialmente livre, a aniquilação resultará em dois fótons $h\nu_1$ e $h\nu_2$ movendo a partir do ponto de aniquilação, cada um com seu próprio ângulo de emissão, $\theta$ e $\phi$, com respeito à direção de incidência. A Figura \ref{fig:aniquilacaoVooEletronLivre} mostra esquematicamente a aniquilação em voo com um elétron livre.
+                        \item Quando a Aniquilação em voo ocorre com um elétron essencialmente livre, a aniquilação resultará em dois fótons $h\nu_1$ e $h\nu_2$ movendo a partir do ponto de aniquilação, cada um com seu próprio ângulo de emissão, $\theta$ e $\phi$, com respeito à direção de incidência. A \ref{fig:aniquilacaoVooEletronLivre} mostra esquematicamente a aniquilação em voo com um elétron livre.
                         
                         \begin{figure}[h]
                             \centering
@@ -2183,7 +2193,7 @@
                 
                 \item \textbf{\textit{\textcolor{CarnationPink}{Partículas neutras (sem carga)}}:}  Devido a ausência de carga, estas partículas são chamadas de indiretamente ionizantes, por não interagir através da força coulombiana. Nos casos de partículas neutras pesadas, a maior parte das interações ocorre com o núcleo do átomo e portanto são mais penetrantes; 
                 
-                \item \textbf{\textit{\textcolor{CarnationPink}{Partículas Leves}}:} são aquelas partículas com massa similar a massa do elétron, então consiste basicamente nos elétrons, pósitrons e partículas $\beta$. Devido a sua massa muito pequena, estas partículas tendem a ser espalhadas muito facilmente, ou seja, mudam facilmente a direção de sua trajetória no meio descrevendo uma trajetória tortuosa, de forma que o seu comprimento de caminho percorrido  seja muito maior que seu alcançe, como mostra a Figura \ref{fig:alcanceECaminhoPercorrido}.
+                \item \textbf{\textit{\textcolor{CarnationPink}{Partículas Leves}}:} são aquelas partículas com massa similar a massa do elétron, então consiste basicamente nos elétrons, pósitrons e partículas $\beta$. Devido a sua massa muito pequena, estas partículas tendem a ser espalhadas muito facilmente, ou seja, mudam facilmente a direção de sua trajetória no meio descrevendo uma trajetória tortuosa, de forma que o seu comprimento de caminho percorrido  seja muito maior que seu alcançe, como mostra a \ref{fig:alcanceECaminhoPercorrido}.
 
                     \begin{figure}[h]
                         \centering
@@ -2204,7 +2214,7 @@
             \textbf{\textcolor{CarnationPink}{Portanto, uma partícula carregada, ao interagir com o meio perde sua energia para o meio em cada interação até que seja totalmente freada, o que muda é a energia das partículas do feixe e não o número de partículas presentes no feixe. Já um feixe de fótons sofre atenuação, o que muda é o número de fótons presentes no feixe, de forma que o número de fótons no feixe dimunui a cada interação sem mudar a energia dos fótons que permanece no feixe.}}
 
 
-            A Figura \ref{fig:atenuacaoVsStoppingPower} mostra a diferença entre Atenuação e Stopping Power (poder de freamento), onde as parículas indiretamente ionizantes, no caso os fótons, irão sofrer, aleatoreamente, múltiplos espalhamentos e colisões de forma que irá diminuir o número de fótons no feixe, ou seja a fluência do feixe. Os prótons e outras partículas terão ter caminhos que irão diminuir sua energia a medida que eles sofram interação com mais átomos através da força coulombiana, e estas partículas irão gradualmente desacelerar e eventualmente parar com um certo grau de certeza para uma certa energia inicial.
+            A \ref{fig:atenuacaoVsStoppingPower} mostra a diferença entre Atenuação e Stopping Power (poder de freamento), onde as parículas indiretamente ionizantes, no caso os fótons, irão sofrer, aleatoreamente, múltiplos espalhamentos e colisões de forma que irá diminuir o número de fótons no feixe, ou seja a fluência do feixe. Os prótons e outras partículas terão ter caminhos que irão diminuir sua energia a medida que eles sofram interação com mais átomos através da força coulombiana, e estas partículas irão gradualmente desacelerar e eventualmente parar com um certo grau de certeza para uma certa energia inicial.
 
         
             \begin{figure}[h]
@@ -2369,7 +2379,7 @@
 
                 \item \textbf{\textit{\textcolor{CarnationPink}{Colisão Elástica com um Elétron do Átomo}:}} Nesta interação, o elétron interage com o elétron ligado ao átomo e transfere parte da sua energia para o elétron ligado sufuciente para que este elétron seja ejetado, causando a ionização do átomo. Este elétron é então ejetado com uma certa energia cinética e portanto neste processo a energia cinética é conservada, sendo compartilhada pelo elétron incidente e o elétron ejetado (elétron secundário). O Elétron secundário liberado poderá então causar ionizações adicionais no meio graças a sua energia adquirida na interação.
                 
-                A Figura \ref{fig:interacaoEletronComEletron} mostra os processos de interação entre elétrons. 
+                A \ref{fig:interacaoEletronComEletron} mostra os processos de interação entre elétrons. 
 
                 \begin{figure}[h]
                     \centering
@@ -2408,7 +2418,7 @@
 
                 \item \textbf{\textit{\textcolor{CarnationPink}{Colisão Elástica com o Núcleo}:}} Uma vez que o elétron é muito mais leve que o núcleo, ele não transfere de fato energia para o núcleo e portanto ele é apenas espalhado, mudando sua direção sem mudar sua energia cinética. 
                 
-                A figura \ref{fig:interacaoEletronNucleo} mostra as possíveis formas de interação entre o elétron incidente e o núcleo.
+                A \ref{fig:interacaoEletronNucleo} mostra as possíveis formas de interação entre o elétron incidente e o núcleo.
 
                 \begin{figure}[h]
                     \centering
@@ -2427,7 +2437,7 @@
             \begin{itemize}
                 \item \textbf{\textit{\textcolor{CarnationPink}{Colisão Inelástica com o Elétron atômico}:}} A medida que as partículas pesadas viajam através do meio, sua carga positiva irá atrair milhares de elétrons orbitais. Alguns desses elétrons são meramente excitados, outros porém serão ionizados. Como a partícula é muito pesada, não há mudanças significativas em sua trajetória e portanto descreve um percurso praticamente linear. A cada interação a partícula se desacelera um pouco e a medida que é desacelerada, é mais provável que a partícula pesada interaja com os elétrons atômicos e com o núcleo. Esta partícula irá aumentar a quantidade de interações até perder toda sua energia e finalmente parar. Esta explosão de energia liberada em torno do ponto de parada é chamado de \textbf{\textcolor{CarnationPink}{Pico de Bragg}}.
                 
-                A figura \ref{fig:picodeBragg} mostra a deposição de energia de uma partícula carregada ao longo da distância percorrida no meio, onde as patículas carregadas pesadas, ao se moverem em um meio, irão se desacelerar, e quanto mais devagar estas partículas estiverem, mais tempo terão para interagir com os elétrons do meio, causando ainda mais dano até que ela pare depositando toda sua energia, causando um dano máximo, que ocorre no final da sua trajetória sendo denominado de pico de bragg. Mesmo após o pico de bragg, existe uma quantidade pequena de danos secundários causados pelos detritos liberados no pico de bragg, como raios delta, nêutrons \dots
+                A \ref{fig:picodeBragg} mostra a deposição de energia de uma partícula carregada ao longo da distância percorrida no meio, onde as patículas carregadas pesadas, ao se moverem em um meio, irão se desacelerar, e quanto mais devagar estas partículas estiverem, mais tempo terão para interagir com os elétrons do meio, causando ainda mais dano até que ela pare depositando toda sua energia, causando um dano máximo, que ocorre no final da sua trajetória sendo denominado de pico de bragg. Mesmo após o pico de bragg, existe uma quantidade pequena de danos secundários causados pelos detritos liberados no pico de bragg, como raios delta, nêutrons \dots
                 
                 \begin{figure}[h]
                     \centering
@@ -2450,7 +2460,7 @@
                 \item \textbf{\textit{\textcolor{CarnationPink}{Interação dos nêutrons rápidos}:}} 
                 
                     \begin{itemize}
-                        \item \textbf{\textit{\textcolor{CarnationPink}{Colisão Elástica com o Núcleo de Hidrogênio (prótons)}:}} Uma vez que o neutron tem aproximadamente a mesma massa que o próton, este é o método mais eficiente de transferência de energia cinética. Devido a suas massas semelhantes, os neutrôns tem tendência a interagir através de colisão direta com os núcleos de hidrogênio compartilhando sua energia cinética com o próton (Figura \ref{fig:colisaoElasticaNeutronProton}). Os neutrôns portanto tem maior probabilidade de interagir com materiais que possuem muito hidrogênio em sua constituição, caracteristicos de materiais com número atômico baixo como a água e o plástico, diferentemente do núcleos pesados como o chumbo, que possui pouco hidrogênio em sua molécula, o que o torna pobre na blindagem de neutrôns. 
+                        \item \textbf{\textit{\textcolor{CarnationPink}{Colisão Elástica com o Núcleo de Hidrogênio (prótons)}:}} Uma vez que o neutron tem aproximadamente a mesma massa que o próton, este é o método mais eficiente de transferência de energia cinética. Devido a suas massas semelhantes, os neutrôns tem tendência a interagir através de colisão direta com os núcleos de hidrogênio compartilhando sua energia cinética com o próton (\ref{fig:colisaoElasticaNeutronProton}). Os neutrôns portanto tem maior probabilidade de interagir com materiais que possuem muito hidrogênio em sua constituição, caracteristicos de materiais com número atômico baixo como a água e o plástico, diferentemente do núcleos pesados como o chumbo, que possui pouco hidrogênio em sua molécula, o que o torna pobre na blindagem de neutrôns. 
                         
                         A colisão elástica com o núcleo de hidrogênio é o principal processo de interação dos nêutrons rápidos e resulta no recuo do próton que poderá sofrer outros processos de interação. 
 
@@ -2461,7 +2471,7 @@
                                 \label{fig:colisaoElasticaNeutronProton}                
                             \end{figure}
 
-                        \item \textbf{\textit{\textcolor{CarnationPink}{Espalhamento Inelástico}:}} Ocorre quando um neutron é espalhado pelo núcleo e perde sua energia através da emissão de um raio gama (Figura \ref{fig:espalhamentoInelasticoNeutron}). 
+                        \item \textbf{\textit{\textcolor{CarnationPink}{Espalhamento Inelástico}:}} Ocorre quando um neutron é espalhado pelo núcleo e perde sua energia através da emissão de um raio gama (\ref{fig:espalhamentoInelasticoNeutron}). 
                         
                             \begin{figure}[h]
                                 \centering
@@ -2470,7 +2480,7 @@
                                 \label{fig:espalhamentoInelasticoNeutron}                
                             \end{figure}
                         
-                        \item \textbf{\textit{\textcolor{CarnationPink}{Espalação Nuclear}:}} Ocorre quando um neutron com energia superior a 7 MeV sofre uma colisão inelástica com o núcleo com energia grande o suficiente para quebrar o núcleo, no processo chamado de espalação, que resulta em fragmentos nucleares chamados de produtos de espalação, que são partículas carregadas, preferencialmente partículas alfa que ao serem liberadas causam uma grande densidade de ionização nas proximidades (Figura \ref{fig:espalacaoNeutron}).
+                        \item \textbf{\textit{\textcolor{CarnationPink}{Espalação Nuclear}:}} Ocorre quando um neutron com energia superior a 7 MeV sofre uma colisão inelástica com o núcleo com energia grande o suficiente para quebrar o núcleo, no processo chamado de espalação, que resulta em fragmentos nucleares chamados de produtos de espalação, que são partículas carregadas, preferencialmente partículas alfa que ao serem liberadas causam uma grande densidade de ionização nas proximidades (\ref{fig:espalacaoNeutron}).
                         
                         \begin{figure}[h]
                             \centering

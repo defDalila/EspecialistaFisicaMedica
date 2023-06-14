@@ -1,0 +1,120 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{siunitx}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[margin=10pt,font={small, it},labelfont=bf, textfont=it]{caption}
+\usepackage[dvipsnames, svgnames]{xcolor}
+\DeclareCaptionFont{MediumOrchid}{\color[svgnames]{MediumOrchid}}
+\usepackage[pdftex]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\bibpunct{[}{]}{,}{s}{}{}
+\usepackage{color}
+\usepackage{footnote}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{leading}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{mdframed}
+\usepackage{etoolbox}
+\usepackage[version=4]{mhchem}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{titlesec}
+
+\titleformat{\section}{\LARGE\color{CarnationPink}}{\thesection}{1em}{}
+\titleformat{\subsection}{\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+
+
+\DeclareCaptionLabelFormat{figuras}{\sffamily\slshape\textcolor{CarnationPink}{Figura \arabic{figure}}}
+\captionsetup[figure]{labelformat=figuras}
+
+\makeatletter
+\renewcommand\tagform@[1]{\maketag@@@{\color{CarnationPink}(#1)}}
+\makeatother
+
+\renewcommand{\theequation}{Eq. \arabic{equation}}
+\renewcommand{\thefigure}{Fig. \arabic{figure}}
+\renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
+
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+
+
+
+\newcounter{exemplo}
+
+\NewDocumentEnvironment{exemplo}{ O{} }{%
+\allowbreak
+\setlength{\parindent}{0pt}
+  \begin{mdframed}[
+  leftline=true,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=2pt,
+  linecolor=CarnationPink,
+  frametitlerule=false,
+  frametitlefont=\Large\bfseries\color{CarnationPink},
+  frametitle={\color{CarnationPink}\normalfont\bfseries #1},
+  ]
+}{%
+  \end{mdframed}
+}
+
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{1pt}
+\usepackage{float}
+\renewcommand{\thefootnote}{\alph{footnote}}
+\usepackage{url}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=cyan,      
+    urlcolor=cyan,
+    citecolor=cyan,
+    pdftitle={Resumos}
+}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{Página \thepage}
+
+\title{Radioterapia}
+\author{Distribuição de Dose e Análise de Espalhamento\nocite{*}}
+\date{\textit{Dalila Mendonça}}
+\begin{document}
+	\maketitle
+
+    \section{Phantoms}
+
+    Normalmente são feitos de água ou material água-equivalente para manter as mesmas características de absorção e espalhamento dos músculos e outros tecidos moles.
+
+    Um material água equivalente para feixes de megavoltagem devem possuir a mesma densidade eletrônica da água, que é o parâmetro relacionado à probilidade de interação nas faixas de energia onde predomina o efeito compton. A densidade eletrônica de um meio é dada pela \ref{eq:densidadeEletronica}:
+
+		\begin{equation}
+			\rho_e = \rho_m \cdot N_A \cdot \left(\frac{Z}{A}\right)
+			\label{eq:densidadeEletronica}
+		\end{equation}
+
+		\begin{exemplo}[onde:]
+			\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
+				\item \begin{equation}
+							\frac{Z}{A} = \sum_{i} a_i \cdot \frac{Z_i}{A_i}
+					\end{equation}
+			\end{itemize}
+				
+			
+		\end{exemplo}
+
+\bibliography{ref.bib}
+\end{document}

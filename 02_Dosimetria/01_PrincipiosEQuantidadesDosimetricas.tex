@@ -27,6 +27,16 @@
 \usepackage{etoolbox}
 \usepackage[version=4]{mhchem}
 \usepackage{enumitem}
+\usepackage{caption}
+\DeclareCaptionLabelFormat{figuras}{\textcolor{CarnationPink}{Figura \arabic{figure}}}
+\captionsetup[figure]{labelformat=figuras}
+
+\makeatletter
+\renewcommand\tagform@[1]{\maketag@@@{\color{CarnationPink}(#1)}}
+\makeatother
+
+\renewcommand{\theequation}{Eq. \arabic{equation}}
+\renewcommand{\thefigure}{Fig. \arabic{figure}}
 
 \setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
 
@@ -160,7 +170,7 @@
 		
 	\section{Exposição}
 
-		A Exposição ($X$) é a habilidade dos fótons ionizar o ar, dada pela seguinte equação:
+		A Exposição ($X$) é a habilidade dos fótons ionizar o ar, dada pela seguinte  :
 
 			\begin{equation}
 				X = \frac{\Delta Q}{\Delta m_{ar}}
@@ -231,7 +241,7 @@
 			H_T = D_T \cdot w_R
 		\end{equation}
 
-		Onde $D_T$ é a dose absorvida média no órgão ou tecido e $w_R$ é o fator de ponderação da radiação. A unidade é Sv (J/Kg). A Figura \ref{fig:fatorPesoRadiacao} mostra os valores para os fatores de ponderação fornecidos pela CNEN.
+		Onde $D_T$ é a dose absorvida média no órgão ou tecido e $w_R$ é o fator de ponderação da radiação. A unidade é Sv (J/Kg). A   \ref{fig:fatorPesoRadiacao} mostra os valores para os fatores de ponderação fornecidos pela CNEN.
 
 		\begin{figure}[h]
 			\centering
@@ -291,7 +301,7 @@
 				K = K_{col} + K_{rad}
 			\end{equation}
 
-		A fração média de energia transferida para os elétrons que é perdida através de processos radiativos é chamada de fração radiativa $\bar{g}$. Portanto, a fração média de energia transferida para os elétrons que é perdida através de colisões é dada por $(1 - \bar{g})$ e o Kerma de colisão pode ser obtido através da seguinte equação:
+		A fração média de energia transferida para os elétrons que é perdida através de processos radiativos é chamada de fração radiativa $\bar{g}$. Portanto, a fração média de energia transferida para os elétrons que é perdida através de colisões é dada por $(1 - \bar{g})$ e o Kerma de colisão pode ser obtido através da seguinte  :
 
 			\begin{equation}
 				K_{col} = K(1 - \bar{g})
@@ -325,7 +335,7 @@
 		\noindent é uma abreviação para o coeficiente mássico de absorção de energia para o meio calculado sobre o espectro de fluência de energia.
 
 
-		Para feixes monoenergéticos, o Kerma total $K$ se relaciona com a fluência de energia $\Psi$ através da seguinte equação:
+		Para feixes monoenergéticos, o Kerma total $K$ se relaciona com a fluência de energia $\Psi$ através da seguinte  :
 
 		\begin{equation}
 			K = \Psi \left(\frac{\mu_{tr}}{\rho}\right)
@@ -342,7 +352,7 @@
 			\label{eq:razaoKcol}
 		\end{equation}
 
-		A Equação \ref{eq:razaoKcol} é frequentemente utilizada naquelas circunstâncias em que pode-se aproximar a razão entre as fluências de energia $(\Psi)_{2,1}$ para 1, que ocorre quando os materiais são muito similares ou quando a massa do material 2 é suficiente para fornecer um buildup (acúmulo) e ao mesmo tempo é pequena o suficiente de modo que não perturbe a fluência de fótons que atravessa o material 1.
+		A   \ref{eq:razaoKcol} é frequentemente utilizada naquelas circunstâncias em que pode-se aproximar a razão entre as fluências de energia $(\Psi)_{2,1}$ para 1, que ocorre quando os materiais são muito similares ou quando a massa do material 2 é suficiente para fornecer um buildup (acúmulo) e ao mesmo tempo é pequena o suficiente de modo que não perturbe a fluência de fótons que atravessa o material 1.
 
 
 	\section{Relação entre Fluência e Dose (Elétrons)}
@@ -354,7 +364,7 @@
 			\item Os elétrons secundários liberados são absorvidos no local ou há um equilíbrio de partículas carregadas dos elétrons secundários.
 		\end{enumerate}
 
-		\noindent a \textbf{\textit{\textcolor{CarnationPink}{Dose Absorvida}}} no meio $D_{m}$ está relacionada com a fluência eletrônica no meio $\Phi_{m}$ através da seguinte equação:
+		\noindent a \textbf{\textit{\textcolor{CarnationPink}{Dose Absorvida}}} no meio $D_{m}$ está relacionada com a fluência eletrônica no meio $\Phi_{m}$ através da seguinte  :
 
 			\begin{equation}
 				D_m = \Phi_m \left(\frac{S_{col}}{\rho}\right)_m
@@ -363,7 +373,7 @@
 
 		\noindent onde $(S_{col}/\rho)_m$ é o poder de freamento de colisão mássico irrestrito do meio.
 
-		Devido a desaceleração do elétron no meio, mesmo para uma energia cinética inicial monoenergética $E_k$, sempre estará presente um espectro de fluência primário $\Phi_{m,E}$ que irá variar de $E_k$ até zero. Neste caso, a dose absorvida no meio pode ser obtida integrando a Equação \ref{eq:doseNoMeio}:
+		Devido a desaceleração do elétron no meio, mesmo para uma energia cinética inicial monoenergética $E_k$, sempre estará presente um espectro de fluência primário $\Phi_{m,E}$ que irá variar de $E_k$ até zero. Neste caso, a dose absorvida no meio pode ser obtida integrando a   \ref{eq:doseNoMeio}:
 
 			\begin{equation}
 				D_{m}= \int_{0}^{E_{max}} \Phi_{m, E}(E)\left(\frac{S_{col}}{\rho}\right)_{m}(E)  \,dE
@@ -402,13 +412,13 @@
 			\label{fig:relacaoKermaEDose}
 		\end{figure}
 		
-		A Figura \ref{fig:relacaoKermaEDose} mostra a relação entre o Kerma de colisão e a dose absorvida para um caso hipotético de equilíbrio de partículas carregadas (CPE) e para um caso de equilíbrio transiente de partículas carregadas (TCPE).
+		A   \ref{fig:relacaoKermaEDose} mostra a relação entre o Kerma de colisão e a dose absorvida para um caso hipotético de equilíbrio de partículas carregadas (CPE) e para um caso de equilíbrio transiente de partículas carregadas (TCPE).
 
 		A medida que um feixe de fótons de alta energia penetra no meio, o Kerma de colisão é máximo na superfície do material irradiado devido a fluência de fótons ser maior na superfície. Inicialmente, a fluência de partículas carregadas, e portanto a dose absorvida aumenta em função da profundidade até que a profundidade de dose máxima seja atingida.
 
-		Considerando um caso hipotético no qual não houvesse atenuação ou espalhamento dos fótons no meio, mas ainda houvesse produção de elétrons, como mostra a Figura \ref{fig:relacaoKermaEDose} (a), ocorreria a região de buildup, onde $\beta < 1$ seguida por uma região de completo equilíbrio de partículas carregadas onde $\beta = 1$ e portanto $D = K_{col}$.
+		Considerando um caso hipotético no qual não houvesse atenuação ou espalhamento dos fótons no meio, mas ainda houvesse produção de elétrons, como mostra a   \ref{fig:relacaoKermaEDose} (a), ocorreria a região de buildup, onde $\beta < 1$ seguida por uma região de completo equilíbrio de partículas carregadas onde $\beta = 1$ e portanto $D = K_{col}$.
 
-		Em uma situação realística, como apresentado na Figura \ref{fig:relacaoKermaEDose} (b), existe a atenuação e o espalhamento dos fótons no meio, fazendo com que ocorra uma região de equilíbrio transiente de partículas carregadas, onde existe uma relação aproximadamente constante entre o Kerma de Colisão e a dose absorvida. Esta relação é praticamente constante pois em feixes de fótons de alta energia, a energia média dos elétrons gerados e, portanto, seu alcance não tem mudança significativa com a profundidade do meio e portanto pode-se dizer que os elétrons são sempre liberados com a mesma energia.
+		Em uma situação realística, como apresentado na   \ref{fig:relacaoKermaEDose} (b), existe a atenuação e o espalhamento dos fótons no meio, fazendo com que ocorra uma região de equilíbrio transiente de partículas carregadas, onde existe uma relação aproximadamente constante entre o Kerma de Colisão e a dose absorvida. Esta relação é praticamente constante pois em feixes de fótons de alta energia, a energia média dos elétrons gerados e, portanto, seu alcance não tem mudança significativa com a profundidade do meio e portanto pode-se dizer que os elétrons são sempre liberados com a mesma energia.
 
 		No caso especial em que existe equilíbrio de partículas carregadas, (na profundidade de dose máxima), a relação entre a dose absorvida D e o Kerma total K é dada por:
 
@@ -460,7 +470,7 @@
 
 		Para medir a dose absorvida em um meio é necessário inserir um dosímetro neste meio com capacidade de medir a dose. Porém, o volume sensível deste dosímetro normalmente contém um material diferente daquele onde está inserido. Portanto, as teorias de cavidades relacionam a dose absorvida no volume sensível do detector (cavidade) com a dose absorvida no meio no qual a cavidade está inserida. 
 
-		As teorias cavitárias são divididas com base no tamanho da cavidade, quando comparada ao alcance das partículas carregadas secundárias liberadas pelos fótons (Figura \ref{fig:teoriasDasCavidades} (a)). Uma cavidade pequena é definida como uma cavidade que possui um diâmetro muito menor que o alcance dos elétrons liberados (Figura \ref{fig:teoriasDasCavidades} (b)); Uma cavidade intermediária possui um diâmetro da mesma ordem que o alcance dos elétrons secundários (Figura \ref{fig:teoriasDasCavidades} (c)); Já uma cavidade grande possui um diâmetro muito maior que o alcance dos elétrons liberados (Figura \ref{fig:teoriasDasCavidades} (c)). 
+		As teorias cavitárias são divididas com base no tamanho da cavidade, quando comparada ao alcance das partículas carregadas secundárias liberadas pelos fótons (  \ref{fig:teoriasDasCavidades} (a)). Uma cavidade pequena é definida como uma cavidade que possui um diâmetro muito menor que o alcance dos elétrons liberados (  \ref{fig:teoriasDasCavidades} (b)); Uma cavidade intermediária possui um diâmetro da mesma ordem que o alcance dos elétrons secundários (  \ref{fig:teoriasDasCavidades} (c)); Já uma cavidade grande possui um diâmetro muito maior que o alcance dos elétrons liberados (  \ref{fig:teoriasDasCavidades} (c)). 
 
 		\begin{figure}[h]
 			\centering
@@ -480,11 +490,11 @@
 			\end{enumerate}
 
 
-			A condição (\ref{cond:cav1}) implica que as fluências dos elétrons $\Phi_E(E)$ denotada na Equação \ref{eq:doseAbsorvidaNoMeio} é a mesma e  igual à fluência de equilíbrio estabelecida no meio circundante. Esta condição só é válida em regiões onde ocorrem equilíbrio eletrônico ou de equilíbrio eletrônico transiente. Além disto, a presença de uma cavidade no meio sempre irá causar algum grau de perturbação na fluência de modo que é necessário introduzir fatores de correção para a perturbação.
+			A condição (\ref{cond:cav1}) implica que as fluências dos elétrons $\Phi_E(E)$ denotada na   \ref{eq:doseAbsorvidaNoMeio} é a mesma e  igual à fluência de equilíbrio estabelecida no meio circundante. Esta condição só é válida em regiões onde ocorrem equilíbrio eletrônico ou de equilíbrio eletrônico transiente. Além disto, a presença de uma cavidade no meio sempre irá causar algum grau de perturbação na fluência de modo que é necessário introduzir fatores de correção para a perturbação.
 
 			A condição (\ref{cond:cav2}) implica que todos os elétrons que depositam a dose dentro da cavidade são produzidos fora da cavidade e atravessam completamente a cavidade. Nenhum elétron secundário é, portanto, produzido dentro da cavidade e nenhum elétron irá parar completamente dentro da cavidade. 
 
-			Sob estas duas condições, a Teoria cavitária de Bragg-Gray permite que a dose no meio $D_{meio}$ e a dose na cavidade $D_{cav}$ estão relacionadas a partir da seguinte equação:
+			Sob estas duas condições, a Teoria cavitária de Bragg-Gray permite que a dose no meio $D_{meio}$ e a dose na cavidade $D_{cav}$ estão relacionadas a partir da seguinte  :
 
 				\begin{equation}
 					D_{meio} = D_{cav} \left(\frac{\bar{S}}{\rho}\right)_{meio, cav}
@@ -564,14 +574,14 @@
 
 			O meio que envolve a cavidade de uma câmara de ionização depende da situação em que o dispositivo é usado. Em uma abordagem mais antiga, a parede (geralmente suplementada com uma tampa de buildup) serve como meio de buildup e a teoria de Bragg-Gray fornece uma relação entre a dose no gás e a dose na parede. Isso é referido como uma câmara de ionização de paredes espessas e forma a base dos padrões de kerma no ar baseados em câmaras de cavidade e dos protocolos de dosimetria baseados em $C_\lambda$ da década de 1970. Se, no entanto, a câmara for usada em um fantoma sem a capa de buildup, uma vez que as espessuras típicas da parede são muito mais finas do que o alcance dos elétrons secundários, a proporção da dose da cavidade devido aos elétrons gerados no fantoma excede em muito a contribuição da dose na parede e, portanto, o fantoma serve como meio e a parede é tratada como uma perturbação nesse conceito.
 
-			No caso de uma \textbf{\textcolor{CarnationPink}{câmara de ionização de paredes espessas}} em um feixe de fótons de alta energia, a espessura da parede deve ser maior que o alcance dos elétrons secundários no material da parede para garantir que os elétrons que atravessam a cavidade surjam da parede e não do meio. A equação da cavidade de Bragg-Gray então relaciona a dose na cavidade com a dose na parede da câmara. A dose no meio está relacionada com a dose na parede por meio de uma razão entre os coeficientes mássicos de absorção de energia do meio e da parede $(\bar{\mu}_{ab}/\rho)_{meio, wall}$, assumindo que:
+			No caso de uma \textbf{\textcolor{CarnationPink}{câmara de ionização de paredes espessas}} em um feixe de fótons de alta energia, a espessura da parede deve ser maior que o alcance dos elétrons secundários no material da parede para garantir que os elétrons que atravessam a cavidade surjam da parede e não do meio. A   da cavidade de Bragg-Gray então relaciona a dose na cavidade com a dose na parede da câmara. A dose no meio está relacionada com a dose na parede por meio de uma razão entre os coeficientes mássicos de absorção de energia do meio e da parede $(\bar{\mu}_{ab}/\rho)_{meio, wall}$, assumindo que:
 
 			\begin{enumerate}
 				\item A dose absorvida é igual ao Kerma de colisão; e
 				\item A fluência dos fótons não é perturbada pela presença da câmara.
 			\end{enumerate}
 
-			A dose na cavidade de gás está relacionada com a ionização produzida na cavidade através da equação:
+			A dose na cavidade de gás está relacionada com a ionização produzida na cavidade através da  :
 
 				\begin{equation}
 					D_{gas} = \frac{Q}{m}\left(\frac{\bar{W}_{gas}}{e}\right)
@@ -588,11 +598,11 @@
 				\label{eq:doseParedeEspessa}
 			\end{equation}
 
-			\noindent onde $s_{wall, gas}$ é a razão entre o poder de freamento de colisão mássico restrito da parede da cavidade e do gás com um limiar de energia $\delta$. Na prática, são adicionados fatores de correção à Equação \ref{eq:doseParedeEspessa} para satisfazer as condições 1 e 2 citadas acima.
+			\noindent onde $s_{wall, gas}$ é a razão entre o poder de freamento de colisão mássico restrito da parede da cavidade e do gás com um limiar de energia $\delta$. Na prática, são adicionados fatores de correção à   \ref{eq:doseParedeEspessa} para satisfazer as condições 1 e 2 citadas acima.
 
-			Uma equação similar à Equação \ref{eq:doseParedeEspessa} é utilizada para as calibrações de Kerma no ar; no entanto a quantidade de interesse já não é mais a dose no meio e sim o Kerma no ar e portanto são introduzidos fatores de correção substanciais para a parede afim de garantir o completo equilíbrio eletrônico na parede e satisfazer a condição 1.
+			Uma   similar à   \ref{eq:doseParedeEspessa} é utilizada para as calibrações de Kerma no ar; no entanto a quantidade de interesse já não é mais a dose no meio e sim o Kerma no ar e portanto são introduzidos fatores de correção substanciais para a parede afim de garantir o completo equilíbrio eletrônico na parede e satisfazer a condição 1.
 
-			No caso de uma \textbf{\textcolor{CarnationPink}{câmara de ionização de paredes finas}} em um feixe de fótons ou elétrons de alta energia, a parede, a cavidade e o eletrodo central são tradados como uma perturbação na fluência do meio e a equação envolve a razão entre os poderes de freamento restrito do meio e do gás da seguinte forma:
+			No caso de uma \textbf{\textcolor{CarnationPink}{câmara de ionização de paredes finas}} em um feixe de fótons ou elétrons de alta energia, a parede, a cavidade e o eletrodo central são tradados como uma perturbação na fluência do meio e a   envolve a razão entre os poderes de freamento restrito do meio e do gás da seguinte forma:
 
 				\begin{equation}
 					D_{meio} = \frac{Q}{m}\left(\frac{\bar{W}_{gas}}{e}\right)s_{meio, gas}\, p_{fl}\, p_{dis}\, p_{wall}\, p_{cel}

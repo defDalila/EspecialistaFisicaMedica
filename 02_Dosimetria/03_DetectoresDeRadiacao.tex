@@ -27,6 +27,16 @@
 \usepackage{etoolbox}
 \usepackage[version=4]{mhchem}
 \usepackage{enumitem}
+\usepackage{caption}
+\DeclareCaptionLabelFormat{figuras}{\textcolor{CarnationPink}{Figura \arabic{figure}}}
+\captionsetup[figure]{labelformat=figuras}
+
+\makeatletter
+\renewcommand\tagform@[1]{\maketag@@@{\color{CarnationPink}(#1)}}
+\makeatother
+
+\renewcommand{\theequation}{Eq. \arabic{equation}}
+\renewcommand{\thefigure}{Fig. \arabic{figure}}
 
 \setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
 
@@ -85,7 +95,7 @@
 
     O tempo para coletar todas as cargas formadas nos detectores varia de um tipo de detector para outro, por exemplo as câmaras de ionização o tempo para coletar todas as cargas é da ordem de poucos milissegundos, enquanto que o tempo de coleção dos  diodos semicondutores é da ordem de poucos nanossegundos. Esses tempos de coleta estão relacionados à mobilidade dos portadores de carga e também à distância que os portadores de carga percorrem até serem coletadas no eletrodo coletor.
 
-    Portanto, para a interação de apenas um quanta de energia, a resposta do detector será uma corrente que flui por um tempo igual ao tempo de coleta da carga. A figura \ref{fig:esquemaTempoColetaCorrente} mostra uma possível dependência temporal da corrente do detector, onde $t_c$ é o tempo para coletar a carga;
+    Portanto, para a interação de apenas um quanta de energia, a resposta do detector será uma corrente que flui por um tempo igual ao tempo de coleta da carga. A  \ref{fig:esquemaTempoColetaCorrente} mostra uma possível dependência temporal da corrente do detector, onde $t_c$ é o tempo para coletar a carga;
 
         \begin{figure}[h]
             \centering
@@ -96,7 +106,7 @@
 
 	\noindent A integral da corrente ao longo de todo o tempo de coleta é igual quantidade total de carga gerada naquela interação específica. 
 
-	Em situações reais, vários quantas estão interagindo com o volume do detector ao longo de um período de tempo. Portanto, para os casos em que há uma alta taxa de irradiação, a corrente gerada pode ser devida a mais de uma interação.  Assumindo que o detector está submetido a uma baixa taxa de radiação, de forma que cada interação irá gerar uma corrente que pode ser distinguida das demais interações. A medida que cada interação ocorre, serão gerados pulsos de correntes elétricas de modo que a intensidade de duração do pulso de corrente poderá variar dependendo do tipo de interação. A Figura \ref{fig:esquemaCorrentePulsada} mostra um esquema da corrente elétrica instantânea fluindo no detector ao longo do tempo.
+	Em situações reais, vários quantas estão interagindo com o volume do detector ao longo de um período de tempo. Portanto, para os casos em que há uma alta taxa de irradiação, a corrente gerada pode ser devida a mais de uma interação.  Assumindo que o detector está submetido a uma baixa taxa de radiação, de forma que cada interação irá gerar uma corrente que pode ser distinguida das demais interações. A medida que cada interação ocorre, serão gerados pulsos de correntes elétricas de modo que a intensidade de duração do pulso de corrente poderá variar dependendo do tipo de interação. A  \ref{fig:esquemaCorrentePulsada} mostra um esquema da corrente elétrica instantânea fluindo no detector ao longo do tempo.
 
 		\begin{figure}[h]
 			\centering
@@ -119,7 +129,7 @@
 
 		\subsubsection{Modo Corrente}
 
-			A Figura \ref{fig:esquemaModoCorrente} apresenta o esquema de um detector operando no modo corrente, onde um amperímetro é conectado aos terminais de saída do detector de radiação;
+			A  \ref{fig:esquemaModoCorrente} apresenta o esquema de um detector operando no modo corrente, onde um amperímetro é conectado aos terminais de saída do detector de radiação;
 
 				\begin{figure}[h]
 					\centering
@@ -152,7 +162,7 @@
 				q & = & carga elétrica ($1.6 \times 10^{-19}C$)
 				\end{tabular}
 
-			Para uma irradiação estacionária do detector, a corrente média pode ser descrita como a soma da corrente constante $I_0$ com a componente de flutuação da corrente dependente do tempo ($\sigma_i(t)$), no qual é a variável aleatória dependente do tempo que ocorre como consequência da natureza aleatória dos eventos interagindo com o detector,  como mostra a figura \ref{fig:esquemaCorrenteFlutuacao}.
+			Para uma irradiação estacionária do detector, a corrente média pode ser descrita como a soma da corrente constante $I_0$ com a componente de flutuação da corrente dependente do tempo ($\sigma_i(t)$), no qual é a variável aleatória dependente do tempo que ocorre como consequência da natureza aleatória dos eventos interagindo com o detector,  como mostra a  \ref{fig:esquemaCorrenteFlutuacao}.
 
 			\begin{figure}[h]
 				\centering
@@ -163,7 +173,7 @@
 
 		\subsubsection{Modo Pulso}
 
-			A natureza do sinal produzido por um único evento depende das características de entrada do circuito no qual o detector está conectado, normalmente utilizando um pré-amplificador. A figura \ref{fig:esquemaModoPulso} apresenta um esquema básico de um circuito utilizado no modo pulso. 
+			A natureza do sinal produzido por um único evento depende das características de entrada do circuito no qual o detector está conectado, normalmente utilizando um pré-amplificador. A  \ref{fig:esquemaModoPulso} apresenta um esquema básico de um circuito utilizado no modo pulso. 
 
 				\begin{figure}[h]
 					\centering
@@ -224,9 +234,9 @@
 			\end{wrapfigure}
 
 
-			$\tau \ll t_c$: Neste caso a constante de tempo do circuito externo é mantida pequena comparada ao tempo para coleta da carga, de forma que a corrente fluindo através da resistência R é essencialmente igual ao valor instantâneo da corrente fluindo no detector. O sinal da voltagem V(t) produzidos sob estas condições tem a forma aproximadamente idêntica à dependência temporal da corrente produzida dentro do detector, como mostra a figura \ref{fig:esquemaCorrenteCircuitoRC}(b). Os detectores de radiação as vezes operam sob estas condições quando informações a respeito de altas taxas de eventos ou informações temporais são mais importantes que uma informação precisa da energia.
+			$\tau \ll t_c$: Neste caso a constante de tempo do circuito externo é mantida pequena comparada ao tempo para coleta da carga, de forma que a corrente fluindo através da resistência R é essencialmente igual ao valor instantâneo da corrente fluindo no detector. O sinal da voltagem V(t) produzidos sob estas condições tem a forma aproximadamente idêntica à dependência temporal da corrente produzida dentro do detector, como mostra a  \ref{fig:esquemaCorrenteCircuitoRC}(b). Os detectores de radiação as vezes operam sob estas condições quando informações a respeito de altas taxas de eventos ou informações temporais são mais importantes que uma informação precisa da energia.
 
-			$\tau \gg t_c$: Este é o principal modo de operação dos detectores que operam no modo pulso. Neste caso a constante de tempo é mantida grande o suficiente quando comparada ao tempo de coleta da carga de modo que uma corrente muito pequena irá fluir através da resistência R durante o tempo de coleta da carga e a corrente do detector é momentaneamente integrada à capacitância. Se assumirmos que o tempo entre os pulsos é suficientemente grande, o capacitor começará a descarregar através da resistência, retornando a voltagem da resistência para zero, como mostra a Figura \ref{fig:esquemaCorrenteCircuitoRC} (c).
+			$\tau \gg t_c$: Este é o principal modo de operação dos detectores que operam no modo pulso. Neste caso a constante de tempo é mantida grande o suficiente quando comparada ao tempo de coleta da carga de modo que uma corrente muito pequena irá fluir através da resistência R durante o tempo de coleta da carga e a corrente do detector é momentaneamente integrada à capacitância. Se assumirmos que o tempo entre os pulsos é suficientemente grande, o capacitor começará a descarregar através da resistência, retornando a voltagem da resistência para zero, como mostra a  \ref{fig:esquemaCorrenteCircuitoRC} (c).
 
 
 			\begin{itemize}
@@ -260,7 +270,7 @@
 
 		\subsubsection*{Distribuição Diferencial de Altura de Pulso}
 
-			A Figura \ref{fig:distribuicaoDeAlturaDePulso} (a) fornece uma distribuição hipotética onde: a abscissa é a escala linear de amplitude de pulso que vai de zero até o maior valor de amplitude observado para a fonte, fornecida em volts (V); O eixo das ordenadas representa o número diferencial $dN$  de pulsos observados para uma amplitude dentro de um incremento diferencial de amplitude $dH$, dividido por esse incremento, ou seja $dN/dH$, fornecido em \unit{V^{-1}}.
+			A  \ref{fig:distribuicaoDeAlturaDePulso} (a) fornece uma distribuição hipotética onde: a abscissa é a escala linear de amplitude de pulso que vai de zero até o maior valor de amplitude observado para a fonte, fornecida em volts (V); O eixo das ordenadas representa o número diferencial $dN$  de pulsos observados para uma amplitude dentro de um incremento diferencial de amplitude $dH$, dividido por esse incremento, ou seja $dN/dH$, fornecido em \unit{V^{-1}}.
 
 			O número de pulsos cuja amplitude está entre dois valores pré-determinados $H_1$ e $H_2$ podem ser obtidos através da área da curva limitada por estas duas amplitudes, ou seja:
 
@@ -285,7 +295,7 @@
 
 		\subsubsection*{Distribuição Diferencial de Altura de Pulso}
 
-			A Figura \ref{fig:distribuicaoDeAlturaDePulso} (b) mostra a distribuição integral para o mesmo espectro apresentado na Figura \ref{fig:distribuicaoDeAlturaDePulso} (a). O eixo das abscissas também representa a escala de amplitude de pulso, e o eixo das ordenadas apresenta o número de pulsos N no qual a amplitude excede o valor apresentado no eixo das abscissas H. N diminui em função H pois cada vez menos pulsos estarão acima de uma amplitude $H_i$ que pode aumentar seu valor além de zero. 
+			A  \ref{fig:distribuicaoDeAlturaDePulso} (b) mostra a distribuição integral para o mesmo espectro apresentado na  \ref{fig:distribuicaoDeAlturaDePulso} (a). O eixo das abscissas também representa a escala de amplitude de pulso, e o eixo das ordenadas apresenta o número de pulsos N no qual a amplitude excede o valor apresentado no eixo das abscissas H. N diminui em função H pois cada vez menos pulsos estarão acima de uma amplitude $H_i$ que pode aumentar seu valor além de zero. 
 			
 			Como todos os pulsos possuem uma amplitude finita maior que zero, então $H = 0$ representa o número total de pulsos observados $N_0$ e a medida que H aumenta a N diminui até que a distribuição integral cai para zero na amplitude de pulso máxima observada ($H_5$). 
 
@@ -297,11 +307,11 @@
 
 		Quando os detectores operam no modo de contagem pulsada, os pulsos do detector são enviados para um dispositivo de contagem que possui um nível fixo de discriminação, ou seja possui um limiar de amplitude de pulso. Para que um pulso de sinal seja registrado pelo circuito do contador este pulso deverá exceder um limiar de amplitude de pulso $H_d$. É possível variar o limiar $H_d$ durante a medição afim de se obter informações a cerca da distribuição de amplitudes de pulso, e medidas realizadas com estas variações resultará da distribuição integral de amplitudes de pulso. 
 
-		Ao realizar uma medida de contagem, a medição deverá ser configurada de modo que se estabeleça um ponto de operação no qual irá ser alcançada a maior estabilidade sob longos períodos de tempo. Ou seja, durante uma medição podem ocorrer pequenos desvios em $H_d$ e portanto deve ser estabelecido um ponto de operação que fará com que esse desvio tenha influência mínima na contagem medida. Como mostra a Figura \ref{fig:distribuicaoDeAlturaDePulso}, o ponto em $H_3$ se configura como um ponto estável de operação; Este ponto representa o ponto de mínimo global da distribuição diferencial de forma que representa um ponto com  variação mínima na curva integral, portanto pequenos desvios no limiar $H_d$ terão um impacto mínimo no número total de pulsos registrados. No geral, regiões de mínimo na curva integral são chamados de platô de contagem e representam áreas de operação no qual é possível alcançar uma sensibilidade mínima a variações no limiar de amplitude. 
+		Ao realizar uma medida de contagem, a medição deverá ser conda de modo que se estabeleça um ponto de operação no qual irá ser alcançada a maior estabilidade sob longos períodos de tempo. Ou seja, durante uma medição podem ocorrer pequenos desvios em $H_d$ e portanto deve ser estabelecido um ponto de operação que fará com que esse desvio tenha influência mínima na contagem medida. Como mostra a  \ref{fig:distribuicaoDeAlturaDePulso}, o ponto em $H_3$ se con como um ponto estável de operação; Este ponto representa o ponto de mínimo global da distribuição diferencial de forma que representa um ponto com  variação mínima na curva integral, portanto pequenos desvios no limiar $H_d$ terão um impacto mínimo no número total de pulsos registrados. No geral, regiões de mínimo na curva integral são chamados de platô de contagem e representam áreas de operação no qual é possível alcançar uma sensibilidade mínima a variações no limiar de amplitude. 
 
 		O platô em contagem de dados também é observado em processos no qual a carga produzida a cada interação é aumentada para um determinado detector de radiação; onde muitas vezes é possível variar o ganho ou a amplificação fornecida para a carga produzida na interação. Esta variação pode ser feita alterando o fator de amplificação de um amplificador linear posicionado entre o detector e o circuito de contagem, ou pode ser feita diretamente alterando a voltagem aplicada no próprio detector. 
 
-		A Figura \ref{fig:curvaContagemGanho} (a) apresenta uma distribuição diferencial de amplitude de pulso, para três valores diferentes de ganho da voltagem. Neste caso, o valor do ganho (G) pode ser definido como a razão entre a amplitude da voltagem para um dado evento no detector e a mesma amplitude antes de algum parâmetro ser alterado, como o fator de amplificação ou a voltagem do detector. 
+		A  \ref{fig:curvaContagemGanho} (a) apresenta uma distribuição diferencial de amplitude de pulso, para três valores diferentes de ganho da voltagem. Neste caso, o valor do ganho (G) pode ser definido como a razão entre a amplitude da voltagem para um dado evento no detector e a mesma amplitude antes de algum parâmetro ser alterado, como o fator de amplificação ou a voltagem do detector. 
 
 			\begin{figure}[h]
 				\centering
@@ -311,14 +321,14 @@
 			\end{figure}
 
 		
-		Ao manter a irradiação constante, quanto maior o ganho na voltagem maior será a amplitude de pulso máxima, porém em ambos os casos a área sob a curva diferencial se manterá constante, ou seja, o número total de pulsos  será sempre o mesmo. A Figura \ref{fig:curvaContagemGanho} mostra que para o ganho G = 1, nenhuma contagem será registrada pois todas as amplitudes de pulso estão abaixo do limiar de amplitude para detecção. Ao realizar contagens em função do ganho da voltagem, obtem-se a distribuição integral, chamada de curva de contagens, apresentada na Figura \ref{fig:curvaContagemGanho} (b). Devido à pequenos valores de ganho, nenhum pulso é contado, porem a medida que o ganho é aumentado, aumenta-se o número de pulsos contados até que o ganho seja suficiente para contar todos os pulsos. 
+		Ao manter a irradiação constante, quanto maior o ganho na voltagem maior será a amplitude de pulso máxima, porém em ambos os casos a área sob a curva diferencial se manterá constante, ou seja, o número total de pulsos  será sempre o mesmo. A  \ref{fig:curvaContagemGanho} mostra que para o ganho G = 1, nenhuma contagem será registrada pois todas as amplitudes de pulso estão abaixo do limiar de amplitude para detecção. Ao realizar contagens em função do ganho da voltagem, obtem-se a distribuição integral, chamada de curva de contagens, apresentada na  \ref{fig:curvaContagemGanho} (b). Devido à pequenos valores de ganho, nenhum pulso é contado, porem a medida que o ganho é aumentado, aumenta-se o número de pulsos contados até que o ganho seja suficiente para contar todos os pulsos. 
 
 		O platô na curva de contagem pode ser previsto com base no valor de ganho que faz com que o limiar de amplitude $H_d$ coincida aproximadamente com um ponto de mínimo na curva diferencial. 
 
 
 	\subsection{Resolução de Energia}
 
-		Diversas aplicações de detectores de radiação tem como objetivo medir a distribuição de energia da radiação incidente, chamado de forma geral como espectroscopia da radiação. A Figura \ref{fig:funcoesDeResposta} ilustra a distribuição diferencial de amplitude de pulso produzida por um detector submetido a um feixe monoenergético; Esta distribuição é chamada de \textbf{função resposta} de um detector para a energia utilizada na sua determinação. A curva chamada de ``Boa Resolução'' ilustra uma possível distribuição em torno da amplitude média de pulso $H_0$; A curva chamada de ``Baixa Resolução'', ilustra a resposta de um detector com um desempenho inferior. Desde que ambos os casos registrem o mesmo número de pulsos, as áreas embaixo das curvas são iguais.
+		Diversas aplicações de detectores de radiação tem como objetivo medir a distribuição de energia da radiação incidente, chamado de forma geral como espectroscopia da radiação. A  \ref{fig:funcoesDeResposta} ilustra a distribuição diferencial de amplitude de pulso produzida por um detector submetido a um feixe monoenergético; Esta distribuição é chamada de \textbf{função resposta} de um detector para a energia utilizada na sua determinação. A curva chamada de ``Boa Resolução'' ilustra uma possível distribuição em torno da amplitude média de pulso $H_0$; A curva chamada de ``Baixa Resolução'', ilustra a resposta de um detector com um desempenho inferior. Desde que ambos os casos registrem o mesmo número de pulsos, as áreas embaixo das curvas são iguais.
 
 		\begin{figure}[h]
 			\centering
@@ -329,7 +339,7 @@
 
 		Embora ambas as distribuições estejam centradas em torno do valor médio $H_0$, a largura da distribuição para a baixa resolução é muito maior. Esta largura reflete o fato de que foi registrada uma grande quantidade de flutuação de pulso a pulso embora a mesma energia tenha sido depositada para cada evento. Se a quantidade destas flutuações é for cada vez menor, a largura da distribuição será cada vez menor e a forma da curva se aproximará para uma função delta de dirac. 
 
-		A definição para a resolução de energia de um detector pode ser observada na Figura \ref{fig:resolucaoDeEnergia}, onde a distribuição diferencial de amplitude de pulso é determinada para um detector submetido a um feixe monoenergético. 
+		A definição para a resolução de energia de um detector pode ser observada na  \ref{fig:resolucaoDeEnergia}, onde a distribuição diferencial de amplitude de pulso é determinada para um detector submetido a um feixe monoenergético. 
 
 			\begin{figure}[h]
 				\centering
@@ -343,7 +353,7 @@
 
 		Quanto menor o valor para a resolução de energia, melhor será a habilidade do detector distinguir duas radiações cujas energias estão próximas uma da outra. Uma regra prática é que o detector deve ser capaz de detectar duas energias separadas por mais de uma FWHW .
 
-		Algumns fatores que causam flutuações na resposta de um detector são: desvios nas características de operação do detector durante a medição; fontes de ruídos aleatórias dentro do detector e do sistema de instrumentação e o ruído estatístico proveniente da natureza discreta do próprio sinal medido. 
+		Alguns fatores que causam flutuações na resposta de um detector são: desvios nas características de operação do detector durante a medição; fontes de ruídos aleatórias dentro do detector e do sistema de instrumentação e o ruído estatístico proveniente da natureza discreta do próprio sinal medido. 
 		
 		O ruído estatístico representa a quantidade mínima de flutuação que não pode pode ser removida independente da qualidade do sistema de medição utilizado. O ruído estatístico surge devido ao fato de que a carga Q gerada dentro do detector devido a um quanta de radiação  não é uma variável contínua, mas sim um valor discreto do número de portadores de carga. Pode ser feita uma estimativa da flutuação inerente da detecção assumindo que os portadores de carga criados se se aproximam de distribuição Gaussiana.
 
@@ -387,7 +397,17 @@
 
 		Praticamente todos os detectores necessitam de uma quantidade de tempo mínima entre dois eventos para que ele possa registrar separadamente os dois pulsos, e essa limitação pode estar relacionada com a forma em si de realizar a detecção ou devido aos componentes eletrônicos do detector. Devido a natureza aleatória do decaimento radioativo, sempre existirá a possibilidade de um sinal verdadeiro não ser registrado por ocorrer muito próximo a outro evento. 
 
-	\section{Câmaras de Ionização}
+	\section{Detectores a Gás}
+
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.7\textwidth]{Imagens/graficoDetectoresAGas.JPG}
+			\caption{Regiões de Operação dos Detectores a gás}
+			\label{fig:graficoDetectoresAGas}
+		\end{figure}
+	
+
+	\subsection{Câmaras de Ionização}
 
 		Considere duas placas separadas por uma cavidade de ar com uma diferença de potencial entre elas; Caso um fóton atravesse entre as placas, esse fóton pode interagir com o nitrogênio presente no ar quebrando a molécula formando um par de elétron e ion de nitrogênio. O elétron irá se mover na direção da placa positiva enquanto que o íon de nitrogênio irá se mover na direção da placa negativa. Haverá então uma diferença de carga líquida que pode ser medida em um eletrômetro. Caso milhares de fótons atravessem o meio, a quantidade de fótons que atravessam esse meio pode ser medida através da diferença da carga dividida pela massa de ar dentro das placas. Algumas das ionizações que acontecem enviarão elétrons para fora das placas, mas algumas dessas ionizações acontecerão fora das placas e enviarão íons dentro da região das placas. A medida que a quantidade de íons que se move para fora da região é igual a quantidade de íons que entram dentro da região, ocorre o equilíbrio eletrônico. Quando a condição de equilíbrio eletrônico é alcançada estará medindo o kerma no ar, caso contrário não estará medindo o Kerma precisamente
 
@@ -400,7 +420,7 @@
 
 	\subsection{Câmaras de Ar Livre}
 		
-		O padrão ouro para medida da radiação ionizante é a câmara de ionização de ar livre, porém sua configuração requer tamanhos proporcionais ao alcance do elétron no ar, o que é muito grande para feixes de megavoltagem. Adicionalmente, uma vez que o meio é o ar livre sua configuração é muito sensível à variações de temperatura, pressão, umidade e do campo elétrico. Por essas razões, as câmaras de ionização de ar livre só existem em laboratórios padrão. 
+		O padrão ouro para medida da radiação ionizante é a câmara de ionização de ar livre, porém sua conção requer tamanhos proporcionais ao alcance do elétron no ar, o que é muito grande para feixes de megavoltagem. Adicionalmente, uma vez que o meio é o ar livre sua conção é muito sensível à variações de temperatura, pressão, umidade e do campo elétrico. Por essas razões, as câmaras de ionização de ar livre só existem em laboratórios padrão. 
 
 	\subsection{Câmaras do Tipo Dedal}
 
@@ -514,7 +534,7 @@
 			\item \textbf{Necessidade de equipamento especializado:} A leitura dos dosímetros TLD requer um leitor de TLD, que é um equipamento especializado. Isso pode representar uma limitação em termos de disponibilidade e custo do equipamento o que pode afetar na escolha deste detector para a rotina clínica.
 		\end{itemize}
 
-		O tempo necessário para a leitura de um dosímetro TLD pode variar dependendo do tipo específico de dosímetro TLD e das configurações do equipamento de leitura utilizado. No entanto, geralmente é recomendado aguardar um período de tempo chamado de "período de estabilização" antes de realizar a leitura do dosímetro TLD.
+		O tempo necessário para a leitura de um dosímetro TLD pode variar dependendo do tipo específico de dosímetro TLD e das conções do equipamento de leitura utilizado. No entanto, geralmente é recomendado aguardar um período de tempo chamado de "período de estabilização" antes de realizar a leitura do dosímetro TLD.
 
 		Esse período de estabilização é necessário porque os elétrons e íons gerados pela radiação no cristal continuam a interagir com as armadilhas de armazenamento de energia no material termoluminescente do dosímetro TLD mesmo após a exposição à radiação ter sido encerrada. Essa interação pode resultar em uma resposta termoluminescente adicional, chamada de "autoextinção" (também conhecida como autoextinguishing ou fading), que pode afetar a leitura correta da dose de radiação. 
 
@@ -601,7 +621,7 @@
 
 		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
 			\item \textbf{Amplamente disponíveis:} Os filmes radiográficos são amplamente utilizados na prática clínica e estão disponíveis em muitos centros de saúde e hospitais. Isso facilita o acesso a esses materiais para a dosimetria das radiações.
-			\item \textbf{Baixo custo}: Os filmes radiográficos são relativamente baratos em comparação com outros sistemas de dosimetria mais avançados. Isso os torna uma opção acessível, especialmente em configurações com recursos limitados.
+			\item \textbf{Baixo custo}: Os filmes radiográficos são relativamente baratos em comparação com outros sistemas de dosimetria mais avançados. Isso os torna uma opção acessível, especialmente em conções com recursos limitados.
 			\item \textbf{Registro permanente:} Os filmes radiográficos fornecem um registro permanente da imagem e da distribuição de dose, permitindo uma documentação precisa dos resultados da dosimetria.
 			\item \textbf{Alta resolução espacial:} Os filmes radiográficos têm alta resolução espacial. A resolução espacial obtida por filmes radiográficos refere-se à capacidade do filme em capturar e reproduzir detalhes espaciais finos na imagem radiográfica. É uma medida da capacidade do filme em distinguir estruturas pequenas e próximas umas das outras; O que significa que eles podem fornecer detalhes precisos sobre a distribuição da dose em uma região específica. Ou seja, feixes de elétrons e feixes de fótons de megavoltagem podem ter suas isodoses medidas com relativa precisão e principalmente a forma de um feixe pode ser determinada.
 			\item \textbf{Sensibilidade à radiação:} Os filmes radiográficos têm uma resposta sensível à radiação ionizante, o que os torna úteis para medir uma ampla faixa de radiação.
@@ -638,7 +658,7 @@
 		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
 			\item \textbf{Alta resolução espacial:} Os filmes radiocrômicos possuem alta resolução espacial, o que significa que eles podem fornecer informações detalhadas sobre a distribuição espacial da dose de radiação. Isso é especialmente útil em aplicações onde é necessário mapear a distribuição precisa da dose em uma área específica.
 			\item \textbf{Sensibilidade a diferentes tipos de radiação:} Os filmes radiocrômicos podem ser sensíveis a uma ampla gama de radiações ionizantes, incluindo raios X, raios gama, partículas alfa, partículas beta, entre outras. Isso os torna versáteis em termos de aplicação, permitindo a dosimetria de diferentes tipos de radiação.
-			\item \textbf{Não requer fonte de energia externa:} Os filmes radiocrômicos não exigem fonte de energia externa para funcionar. Eles são passivos e não necessitam de eletricidade ou baterias, tornando-os convenientes para uso em diferentes configurações e ambientes.
+			\item \textbf{Não requer fonte de energia externa:} Os filmes radiocrômicos não exigem fonte de energia externa para funcionar. Eles são passivos e não necessitam de eletricidade ou baterias, tornando-os convenientes para uso em diferentes conções e ambientes.
 		\end{itemize}
 
 		As principais \textcolor{CarnationPink}{DESVANTAGENS} em utilizar filmes radiocrômicos são:
@@ -761,8 +781,8 @@
 			\item \textbf{Decaimento temporal:} Alguns cintiladores podem apresentar um decaimento temporal prolongado, o que pode levar a uma resposta lenta do detector e afetar a precisão temporal das medidas.
 			\item \textbf{Sensibilidade à temperatura:} Alguns cintiladores são sensíveis à temperatura, o que pode afetar a resposta do detector e requerer medidas de controle de temperatura.
 			\item \textbf{Efeito de saturação:} Em altas intensidades de radiação, os detectores cintiladores podem atingir uma saturação, o que pode limitar sua capacidade de medir doses muito altas.
-			\item \textbf{Fragilidade:} Alguns cintiladores são frágeis e 
-			m.\ZXCVpodem ser danificados facilmente, exigindo manuseio cuidadoso e proteção adequada.			\item \textbf{Influência da luz ambiente:} A presença de luz ambiente pode interferir na medição dos cintiladores, exigindo medidas de controle de luz adequadas.
+			\item \textbf{Fragilidade:} Alguns cintiladores são frágeis e ser danificados facilmente, exigindo manuseio cuidadoso e proteção adequada.			
+			\item \textbf{Influência da luz ambiente:} A presença de luz ambiente pode interferir na medição dos cintiladores, exigindo medidas de controle de luz adequadas.
 		\end{itemize}
 
 		
