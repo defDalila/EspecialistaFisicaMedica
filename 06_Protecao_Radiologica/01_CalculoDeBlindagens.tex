@@ -30,8 +30,12 @@
 \usepackage{caption}
 \usepackage{titlesec}
 
+
+
+
 \titleformat{\section}{\LARGE\color{CarnationPink}}{\thesection}{1em}{}
 \titleformat{\subsection}{\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+
 
 \DeclareCaptionLabelFormat{figuras}{\textcolor{CarnationPink}{Figura \arabic{figure}}}
 \captionsetup[figure]{labelformat=figuras}
@@ -42,6 +46,7 @@
 
 \renewcommand{\theequation}{Eq. \arabic{equation}}
 \renewcommand{\thefigure}{Fig. \arabic{figure}}
+\renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
 
 \setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
 
@@ -68,18 +73,18 @@
   \end{mdframed}
 }
 
-\setlength{\fboxsep}{10pt}
-\setlength{\fboxrule}{1pt}
+\setlength{\fboxsep}{5pt}
+\setlength{\fboxrule}{1.5pt}
 \usepackage{float}
 \renewcommand{\thefootnote}{\alph{footnote}}
 \usepackage{url}
 \hypersetup{
-    colorlinks=true,
-    linkcolor=cyan,
-    filecolor=cyan,      
-    urlcolor=cyan,
-    citecolor=cyan,
-    pdftitle={Resumos}
+	colorlinks=true,
+	linkcolor=DarkTurquoise,
+	filecolor=DarkTurquoise,      
+	urlcolor=DarkTurquoise,
+	citecolor=DarkTurquoise,
+	pdftitle={Radioterapia}
 }
 \pagestyle{fancy}
 \fancyhf{}
@@ -293,7 +298,7 @@
                 \
 
                 \begin{center}
-                    \fcolorbox{cyan}{white}{
+                    \fcolorbox{DarkTurquoise}{white}{
                     \begin{minipage}{0.8\textwidth}
                         \centering
                         \textcolor{cyan}{\textbf{Limites de Radiação de Fuga Para Aceleradores Lineares de até 10 MV}}
