@@ -176,7 +176,7 @@
 
         \item Os diodos são normalmente usados sem tensão de polarização. Um diodo mede um sinal muito forte em relação ao ar (utilizado na cavidade de uma câmara de ionização para medir a dose) porque a densidade do silício é aproximadamente 1.900 vezes a do ar, e a energia necessária para criar um par elétron/buraco no silício é de 3,5 eV, aproximadamente 10 vezes menos que a energia necessária no ar ($\sim$ 33,97 eV) . Os diodos são dosímetros relativos e têm uma dependência direcional maior do que as câmaras de ionização, no entanto, esses fatores não contribuem para as razões pelas quais os diodos mediriam sinais maiores do que as câmaras de ionização para a mesma dose de radiação e mesmo tamanho do detector. 
 
-        \item \textcolor{DarkTurquoise}{Em relação a uma câmara Farmer de 0,6 cc, uma câmara de 0,03 cc terá melhor resolução espacial e mais ruído.} Uma câmara de 0,03 cc é muito menor que uma câmara Farmer e, portanto, terá resolução espacial melhorada, o que resultará em um desempenho superior para medições em campos pequenos. No entanto, esta câmara também experimentará mais ruído nas medidas, e é por isso que, para uma medição de saída em um campo de 10 cm x 10 cm, a câmara Farmer seria uma opção melhor. \textcolor{MediumOrchid}{Porque a câmara de 0.03 cc possui mais ruído nas medidas?}
+        \item \textcolor{DarkTurquoise}{\textbf{Em relação a uma câmara Farmer de 0,6 cc, uma câmara de 0,03 cc terá melhor resolução espacial e mais ruído.}} Uma câmara de 0,03 cc é muito menor que uma câmara Farmer e, portanto, terá resolução espacial melhorada, o que resultará em um desempenho superior para medições em campos pequenos. No entanto, esta câmara também experimentará mais ruído nas medidas, e é por isso que, para uma medição de saída em um campo de 10 cm x 10 cm, a câmara Farmer seria uma opção melhor. \textcolor{MediumOrchid}{Porque a câmara de 0.03 cc possui mais ruído nas medidas?}
 
         \item Na faixa de energia de megavoltagem, o espalhamento Compton é a interação predominante para os fótons. Portanto, para imitar o tecido, o material do phantom deve corresponder à seção de choque do Compton para o tecido, o que ocorre se a densidade de elétrons for compatível.
 
@@ -204,7 +204,7 @@
         
         \item Se os MLCs fossem utilizados para adicionar bloqueio nos campos de tratamento, mas nenhum outro parâmetro fosse alterado o Sc permaneceria o mesmo e Sp diminuiria. Sc depende da posição dos jaws do colimador e, portanto, não mudaria. Sp depende do tamanho efetivo do campo bloqueado e diminui conforme o tamanho do campo diminui.
 
-        \item \textcolor{DarkTurquoise}{Em relação à dose de superfície de raios-x MV:}
+        \item \textcolor{DarkTurquoise}{\textbf{Em relação à dose de superfície de raios-x MV:}}
             \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
                 \item os sistemas de planejamento de tratamento geralmente não calculam com precisão a dose de superfície;
                 \item os elétrons produzidos no cabeçote do linac são um grande componente da dose de superfície;
@@ -213,34 +213,202 @@
                 \item Um feixe sem filtro aplanador (FFF) terá uma dose superficial mais alta do que um feixe com filtro aplanador com o mesmo potencial de ionização para a maioria dos tamanhos de campo. \textcolor{MediumOrchid}{O que é o potencial de ionização e porque eles sendo o mesmo para o feixe FFF e o feixe FF a dose na superfície será a mesma?}
             \end{itemize}
 
-        \item \textcolor{DarkTurquoise}{A PDP a 10 cm de um feixe FFF de 6 MV é aproximadamente 3\% menor em comparação com um feixe FF de 6 MV.} O filtro aplanador remove fótons de baixa energia do feixe causando seu endurecimento, ou seja, aumenta a energia média do feixe plano em relação a um feixe que não utiliza um filtro aplanador (FFF). O resultado do feixe plano mais endurecido é a diminuição da atenuação com a profundidade e um aumento na PDP quando comparada ao feixe FFF com mesma energia nominal.
+        \item \textcolor{DarkTurquoise}{\textbf{A PDP a 10 cm de um feixe FFF de 6 MV é aproximadamente 3\% menor em comparação com um feixe FF de 6 MV.}} O filtro aplanador remove fótons de baixa energia do feixe causando seu endurecimento, ou seja, aumenta a energia média do feixe plano em relação a um feixe que não utiliza um filtro aplanador (FFF). O resultado do feixe plano mais endurecido é a diminuição da atenuação com a profundidade e um aumento na PDP quando comparada ao feixe FFF com mesma energia nominal.
 
         \item À medida que o SSD aumenta, o PDD aumenta devido à diferença no componente quadrado inverso do PDD. O fator de correção, conhecido como fator Mayneord, que converte curvas PDD de um SSD para outro, é: $$F = \left(\frac{SSD_2 + d_m}{SSD_1 + d_m}\right)^2 \cdot \left(\frac{SSD_1 + d}{SSD_2 + d}\right)^2$$ 
 
         \item A densidade eletrônica do pulmão é apenas aproximadamente 30\% da densidade da água, resultando em uma menor absorção e um efeito de build-down (desacumulo? hehe) para feixes de MV. Todos os outros locais do corpo são compostos de tecidos com densidades de elétrons muito mais próximas da água de modo que as correções de heterogeneidade causem menos efeito no número de MU quando comparado ao pulmão.
 
-        \item A TMR para fótons de 15 MV muda em aproximadamente 2,5\% por cm. Como a profundidade é maior, a dose entregue será menor do que a calculada. A mudança na dose do isocentro é, portanto, (–2,5\%/cm x 3 cm) / 4, ou aproximadamente –2\%.
+        \item A TMR para fótons de 15 MV muda em aproximadamente 2,5\% por cm. Como a profundidade é maior, a dose entregue será menor do que a calculada. Caso um tratamento com geometria de box com os campos com o mesmo peso na técnica isocêntrica; se um dos campos tiver com uma profundidade 3cm maior que a planejada a mudança na dose do isocentro é, portanto, (–2,5\%/cm x 3 cm) / 4, ou aproximadamente –2\%. \textcolor{MediumOrchid}{Quais são os valores aproximados para as mudanças em feixes de 6MV e 10 MV?}
 
-        \item 
+        \item O flash de pele (skin flash) é comumente usado no planejamento 3D de alvos próximos à pele, como mama ou crânio total (whole brain), para garantir que todo o alvo permaneça dentro do campo na presença de incertezas de setup, mudanças na anatomia ao longo do tempo ou, no caso de tratamentos de mama, compensar o movimento respiratório. Fechar o colimador na superfície da pele leva ao risco de subdosagem, enquanto abrir o colimador apresenta pouco ou nenhum risco de exposição de tecido adicional.
 
-        \item 
+        \item \textcolor{DarkTurquoise}{\textbf{O ângulo do filtro é definido como o ângulo formado entre a linha perpendicular ao eixo central e uma linha de isodose do campo filtrado em uma profundidade específica.}} O ângulo do filtro é o ângulo da linha de isodose em relação à posição da mesma linha de isodose sem o filtro em uma profundidade que tipicamente é de 10 cm.
 
-        \item 
+        \item À medida que a energia do fóton de megavoltagem aumenta, a profundidade de $D_{max}$ aumenta porque a energia média dos elétrons secundários aumenta. O valor da porcentagem de dose na profundidade (PDP) a 10 cm aumenta à medida que há menos atenuação para energias mais altas.
 
-        \item 
+        \item A configuração do colimador é definida em 100 cm (isocentro). Para configuração de 100 SAD, o tamanho do campo (25cm x 25 cm) está na profundidade do tumor (5 cm). Para uma configuração de SSD igual a 120 cm, o tamanho de campo necessário (a 100 cm) pode ser calculado por 25 cm x (100/125) = 20 cm.
 
-        \item 
+        \item Monte Carlo continua sendo o algoritmo de cálculo de dose mais preciso principalmente se tratando da presença de heterogeneidade, seguido pelos algoritmos de convolução/superposição, algoritmos de convolução de pencil beam e, finalmente, algoritmos de TAR equivalente.
 
-        \item 
+        \item A planura do feixe está relacionada com as doses máximas e mínimas em um plano dentro de 80\% do campo que é dada por $$Planura = \left(\frac{D_{max} - D_{mim}}{D_{max} + D_{mim}}\right)\times 100$$ A simetria do feixe é a diferença percentual na dose entre dois pontos em lados opostos do eixo central (CAX). A razão fora do eixo (OAR - razão off-axis) é a razão da dose em um ponto distante do CAX (eixo central) para aquele no CAX. A PDP e a ração máxima de tecido (TMR) são medidas distalmente ao longo do CAX, perpendicularmente ao plano do perfil do feixe.
 
-        \item 
+        \item \textcolor{DarkTurquoise}{\textbf{A fonte principal de dose de fótons fora do campo de tratamento para o paciente é devido ao espalhamento do paciente nas proximidades da borda do campo, mas depois muda para a fuga do cabeçote a aproximadamente 20 cm da borda do campo.}} Conforme especificado no relatório do AAPM Task Group 158, próximo à borda do campo, a dose fora do campo ocorre principalmente devido ao espalhamento no paciente, que então muda para a radiação de fuga do cabeçote do acelerador à medida que a distância do alvo aumenta. 
 
-        \item 
+        \item Como regra geral, a profundidade de tratamento de um feixe de elétrons MeV, $R_{90}$ em centímetros, pode ser estimada como a energia do elétron em MeV dividida por 3.2. Para uma profundidade de 3.75 cm O uso de uma energia de elétron maior que 12 MeV forneceria mais dose ao pulmão e aos tecidos localizados distalmente ao alvo sem fornecer cobertura de alvo adicional.
 
-        \item 
+        \item O alcance de elétrons de 12 MeV em água/tecido mole é de aproximadamente 6 cm, dado por energia (MeV) / 2. A atenuação por uma dada espessura z de uma heterogeneidade é equivalente à atenuação (z x CET) da água, onde “CET ” significa “coeficiente de espessura equivalente”. O CET é a razão entre a densidade eletrônica do material e a densidade eletrônica da água, então um CET de 1.5 implica que o osso tem 1.5 vezes a densidade eletrônica da água. Depois de percorrer 3 cm de tecido mole, o feixe tem 3 cm de comprimento de caminho equivalente de tecido mole restante. Uma atenuação de 2 cm no osso com CET de 1,5 é equivalente à atenuação de 3 cm na água. Portanto, o alcance geométrico deste feixe de elétrons de 12 MeV neste phantom será de 5 cm (3 cm em tecido mole e 2 cm em osso).
+        
+        \item Em relação a um feixe direto de elétrons, o aumento da obliquidade em um campo faz com que a profundidade da dos0e máxima se mova em direção à superfície do paciente, e a curva de dose na profundidade cai mais rapidamente após atingir o valor máximo à medida que a obliquidade aumenta. O impacto normalmente se torna significativo para ângulos de 45 graus ou mais. Nos cálculos manuais, o impacto é contabilizado com um fator de obliquidade que depende do ângulo e da profundidade dentro do paciente.
 
+        \item Dentre a folha espalhadora, os jaws colimadores, os blocos para elétrons e o tecido do paciente, o que menos contribui para a contaminação do feixe com raios-x é o tecido do paciente. A maior parte da contaminação por raios X em um feixe de elétrons de tratamento resulta de interações de bremsstrahlung com materiais de alto número atômico na cabeça do linac (folhas espalhadoras, jaws do colimador, etc.) e o bloco de colimação de elétrons (cutout). Embora possa haver alguns raios-x criados a partir de interações dentro do paciente, o número é muito menor do que o proveniente da cabeça do linac.
 
+        \item Para feixes de elétrons, as unidades monitoras são calculadas usando MU = (dose de prescrição por fração) / (linha de isodose de prescrição/100\%) / (saída de referência x cone medido/fator de cutout). Para este caso, MU = (400 / 0,85) / (1,0 x 1,009) = 466.
 
+        \item Se um tratamento de elétrons de 9 MeV está planejado para uma SSD de 100 cm com um bolus de 1.0 cm dando uma distância fonte-bolus de 99 cm. Dado uma SSD efetiva de 87 cm, se o paciente for tratado com uma distância fonte-bolus de 100 cm, o paciente estará 1 cm mais distante do que o esperado durante a administração da dose e, portanto, receberá uma dose menor do que o planejado. A SSD effetiva é usada para correção de feixe de elétrons com o IQD ($1/r^2$). Assim, se a SSD efetiva de 87 cm corresponder a uma distância do isocentro de 100 cm, aumentar a distância do paciente em 1 cm corresponderá a uma alteração no output de $(87 cm / 88 cm)^2 = 0.98$, mostrando uma diminuição de 2\% na dose entregue.
+
+        \item Para energias de fótons acima de 10 MeV, as interações fotonucleares entre o feixe de fótons de alta energia e os componentes do cabeçote do gantry do acelerador liberarão nêutrons. Os nêutrons são partículas de alto LET que podem danificar componentes eletrônicos, podendo causar falha funcional dos dispositivos implantados.
+
+        \item De acordo com o AAPM Task Group 203, o intervalo de doses recebido no marcapasso de 2 Gy até 5 Gy é classificado como “risco médio” para pacientes que não dependem de marcapasso e estão sendo tratados com feixes de fótons de 6 MV. Qualquer tratamento com energias de fótons superiores a 10 MV é considerado de alto risco devido à presença de contaminação por nêutrons. Se um paciente não for dependente de marca-passo, doses menores que 2 Gy são consideradas de baixo risco. Se um paciente for dependente de marca-passo, qualquer dose inferior a 5 Gy é considerada de médio risco.
+
+        \item De acordo com o relatório do AAPM Task Group 142, a coincidência de coordenadas de imagem e tratamento para um único ângulo do gantry precisa ser verificada diariamente e deve estar dentro de $\leq$ 2 mm para uma máquina que não realiza tratamentos de SRS/SBRT e dentro de $\leq$ 1 mm para uma máquina que realiza tratamentos de SRS/SBRT . A coincidência de coordenadas de imagem e tratamento em 4 ângulos cardeais precisa ser verificada mensalmente.
+
+        \item \textcolor{DarkTurquoise}{\textbf{De acordo com o relatório do AAPM Task Group 142 - e enfatizado novamente na AAPM Medical Physics Practice Guideline 8a sobre testes de desempenho do acelerador linear - o output do linac precisa ser verificado na água de acordo com o AAPM Task Group 51 anualmente.}} Segundo o guideline 8a: \textcolor{MediumOrchid}{\textbf{Depois que os feixes são calibrados com base no TG51, os sistemas de medição secundário (mensal, se aplicável) e terciário (diário) devem ser irradiados para estabelecer ou confirmar as leituras de output do baseline que estão vinculadas à calibração primária (consulte a seção 8.A. deste relatório). O QMP pode usar um sistema de medição secundário (ou seja, à base de água sólida) para verificações mensais de output ou usar um sistema à base de água como feito para calibração anual. O QMP deve decidir sobre os detalhes dos sistemas de medição secundários e terciários; seu atributo fundamental deve ser a reprodutibilidade.}}
+        
+        \item \textcolor{DarkTurquoise}{\textbf{De acordo com o relatório AAPM Task Group 142, a constância do perfil do feixe (simetria e planura) precisa ser verificada pelo menos mensalmente. Diariamente é necessário ser realizado apenas a constância do output nos testes dosimétricos. Caso o perfil do feixe seja avaliado diariamente (com equipamentos terciários como o daily QA ou QuickCheck) a tolerância é de 2\% do baseline. Nas medidas mensais a tolerância é de 1\% segundo o TG142  (mensal e anual) e de 2\% segundo o Guideline tanto para o mensal quanto para o anual, onde é comparado com o TPS.}}
+        
+        \item O desalinhamento mecânico dos jaws colimadores afetaria os testes de starshots do colimador, a coincidencia do campo radiativo do campo luminoso, o teste Winston-Lutz baseado no jaw e a definição da borda do campo no teste de radiation beam steering
+        
+        \item O Grupo de Tarefas 201 da AAPM aborda o gerenciamento de qualidade da transferência de dados de terapia de feixe externo. O sistema de simulação (SS - simulation system) refere-se à aquisição de dados de imagem (potencialmente de múltiplas modalidades) utilizados para o planejamento do tratamento. O sistema de planejamento de tratamento (TPS - treatment planning system) é utilizado para importação/exportação de imagens, contorno e cálculo de dose. O sistema de gerenciamento de tratamento (TMS - treatment management system), também conhecido como sistema de record and verify, armazena e troca dados do TPS com o linac ou outros dispositivos de entrega de radiação, conhecidos como sistema de entrega de tratamento (TDS - treatment delivery system).
+
+        \item De acordo com o AAPM TG-201, o sistema de gerenciamento de tratamento (TMS) contém informações do paciente como um registro médico eletrônico. No entanto, o R\&V também importa e exporta informações para a máquina de tratamento. Portanto, informações demográficas do paciente, agendamento, bem como parâmetros do plano de tratamento e imagens adquiridas são armazenadas. Embora a scan de planejamento possa estar no sistema de gerenciamento de tratamento para alinhamento com as imagens de tratamento adquiridas, os estudos de imagem secundários usados para delinear o alvo estariam no sistema de planejamento de tratamento e não no TMS.
+
+        \item O aprendizado de máquina (Machine learning) é um ramo da inteligência artificial em que os programas de computador recebem um conjunto de dados de treinamento e, a partir desses dados, podem fazer inferências e previsões, sem que o usuário programe explicitamente o algoritmo para fazê-lo. O algoritmo também pode melhorar com o aumento da “experiência”, em outras palavras, a exposição a conjuntos de dados maiores e mais variados. O aprendizado de máquina é usado em muitos aspectos da vida diária, incluindo filtragem de e-mail, reconhecimento de fala, bem como aplicações específicas em oncologia de radiação, como segmentação de imagens.
+        
+        \item O tipo de detector que utiliza as tensões na região marcada pelo “x” no gráfico abaixo, aproximadamente 1000 a 1400 V é o contador Geiger-Muller. O contador Geiger-Mueller utiliza uma tensão de alta polarização para gerar um sinal uniforme para a radiação recebida. Voltagem adicional aplicada além da região Geiger-Mueller resultaria em uma descarga contínua do detector. O platô na área de baixa tensão é a zona onde operam as câmaras de ionização. A próxima zona à direita, onde há um aumento proporcional da carga coletada com o aumento da tensão aplicada, é a zona onde operam os contadores proporcionais.
+        
+        \begin{center}
+            \fcolorbox{DarkTurquoise}{white}{\includegraphics[width=0.4\textwidth]{Imagens/R23_E74.JPG}}
+        \end{center}
+
+        \item Em um feixe de fótons, a contaminação por nêutrons aumenta rapidamente à medida que a energia do feixe aumenta de 10 para 20 MV. Os raios X de 6 MV estão abaixo do limiar de energia para interações fotonucleares. Um arranjo de labirinto na sala do acelerador pode reduzir drasticamente o requisito de blindagem para a porta. Com um design de labirinto adequado, a porta é exposta principalmente à multiplas radiação espalhada de intensidade e energia muito reduzidas. Em geral, um labirinto mais longo ($>$5 m) também pode reduzir a fluência de nêutrons na porta. Por outro lado, um labirinto na entrada, será necessária uma porta pesada para fornecer uma blindagem equivalente à parede.
+
+        \item \textcolor{DarkTurquoise}{\textbf{O NCRP recomenda que qualquer pessoa que tenha uma chance razoável de receber pelo menos 10\% do limite de dose regulamentar seja monitorado. O tipo de monitor usado dependerá do tipo de radiação a que a pessoa está exposta. Em oncologia de radiação, o dosímetro é normalmente usado no tronco do corpo com um dosímetro de anel usado na mão (extremidade) ao manusear fontes radioativas.}}
+
+        \item \textcolor{DarkTurquoise}{\textbf{Das seguintes circunstâncias: Implante de próstata guiado por ultrassom com fontes de 125I; Implante de próstata guiado por ultrassom com fontes de 103Pd; Radioterapia intraoperatória de alta taxa de dose; Procedimento de radiologia intervencionista guiado por fluoroscopia e Procedimento de implante LDR de 137Cs. Um avental de chumbo seria mais útil para reduzir a dose recebida em um médico que realiza um procedimento de radiologia intervencionista guiado por fluoroscopia. A energia de emissão de 137Cs (662 keV) é muito alta para ser atenuada por um avental de chumbo. A dose de corpo inteiro para o médico dos isótopos 125I e 103Pd é muito baixa, e um avental de chumbo pode retardar o procedimento e resultar em dor nas costas. Na radioterapia intraoperatória HDR, todos saem da sala de tratamento enquanto a radiação está sendo aplicada, portanto, o avental é desnecessário. Na fluoroscopia, a taxa de dose pode ser significativa e as energias típicas de raios X são baixas o suficiente para que o avental forneça proteção significativa.}}
+
+        \item O fator de uso para fuga é unitário (U = 1), pois a radiação de fuga está presente sempre que a máquina é operada.
+
+        \item O modelo de dano (curva) de radiação que é usado atualmente para estimar o risco devido a exposição à radiação e para estabelecer padrões de proteção radiológica e monitoramento de pessoal é o modelo B apresentado na figura abaixo. Os padrões atuais para estabelecer proteção contra radiação utilizam o modelo linear sem limiar de dose (LNT - linear no-threshold).
+        
+        \begin{center}
+            \fcolorbox{DarkTurquoise}{white}{\includegraphics[width=0.4\textwidth]{Imagens/R23_E79.JPG}}
+        \end{center}
+
+        \item \textcolor{DarkTurquoise}{\textbf{A profundidade de penetração de um feixe de ultrassom é inversamente proporcional à frequência do transdutor. A regra geral é que um feixe de ultrassom atenua em 0.5 (dB/cm)/MHz. Ondas de ultrassom de frequência mais alta podem detectar objetos menores na direção do feixe. Escolher a frequência de ultrassom apropriada para uma determinada aplicação é um compromisso entre a profundidade de penetração e a resolução espacial.}}
+
+        \item O núcleo dos átomos de hidrogênio tem um spin diferente de zero que é necessário para um átomo produzir um sinal quando submetido a um sinal de radiofrequência enquanto estiver dentro de um campo magnético. Devido à sua alta sensibilidade e alta concentração no corpo humano, os átomos de hidrogênio são a principal fonte de sinal na ressonância magnética.
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+        
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+        
+        \item
+        
+        \item
+        
+        \item
+        
+        \item
+        
+        \item
+        
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+        
+        \item
+
+        \item
+
+        \item
+            
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+
+        \item
+            
+        \item
+    
+        \item
+   
+        \item
+    
+        \item
+    
+        \item
+    
+        \item
+    
+        \item
+    
+        \item
+    
+        \item
+    
+        \item
+    
+        \item
+    
+        \item
+    
+        \item
+    
+        \item
+    
+        \item
+    
+        \item
+    
     \end{enumerate}
 
 
