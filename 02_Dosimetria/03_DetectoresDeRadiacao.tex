@@ -1,7 +1,6 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage[utf8]{inputenc}
-% \usepackage[T1]{fontenc}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{siunitx}
 \usepackage[brazil]{babel}
@@ -29,15 +28,21 @@
 \usepackage{enumitem}
 \usepackage{caption}
 \usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{LobsterTwo}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{txfonts}
+\AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
+\titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsubsection}{1em}{}
 
 
-\titleformat{\section}{\LARGE\color{CarnationPink}}{\thesection}{1em}{}
-\titleformat{\subsection}{\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
-
-
-\DeclareCaptionLabelFormat{figuras}{\textcolor{CarnationPink}{Figura \arabic{figure}}}
+\DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
 \captionsetup[figure]{labelformat=figuras}
 
 \makeatletter
@@ -66,8 +71,8 @@
   linewidth=2pt,
   linecolor=CarnationPink,
   frametitlerule=false,
-  frametitlefont=\Large\bfseries\color{CarnationPink},
-  frametitle={\color{CarnationPink}\normalfont\bfseries #1},
+  frametitlefont=\LobsterTwo\large\color{CarnationPink},
+  frametitle={\color{CarnationPink}\LobsterTwo\large #1},
   ]
 }{%
   \end{mdframed}
@@ -84,16 +89,16 @@
 	filecolor=DarkTurquoise,      
 	urlcolor=DarkTurquoise,
 	citecolor=DarkTurquoise,
-	pdftitle={Radioterapia}
+	pdftitle={Especialista em Física da Radioterapia}
 }
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \rfoot{Página \thepage}
 
-\title{Dosimetria}
-\author{Detectores de Radiação\nocite{*}}
-\date{\textit{Dalila Mendonça}}
+\title{\LobsterTwo\Huge{Dosimetria}}
+\author{\LobsterTwo\Large{Detectores de Radiação\nocite{*}}}
+\date{\LobsterTwo\textit{Dalila Mendonça}}
 \begin{document}
 	\maketitle
 
@@ -278,7 +283,7 @@
 
 
 
-		\subsubsection*{Distribuição Diferencial de Altura de Pulso}
+		\subsection{Distribuição Diferencial de Altura de Pulso}
 
 			A  \ref{fig:distribuicaoDeAlturaDePulso} (a) fornece uma distribuição hipotética onde: a abscissa é a escala linear de amplitude de pulso que vai de zero até o maior valor de amplitude observado para a fonte, fornecida em volts (V); O eixo das ordenadas representa o número diferencial $dN$  de pulsos observados para uma amplitude dentro de um incremento diferencial de amplitude $dH$, dividido por esse incremento, ou seja $dN/dH$, fornecido em \unit{V^{-1}}.
 
@@ -288,12 +293,12 @@
 					N_{H_1 \rightarrow  H_2} = \int_{H_1}^{H_2} \frac{dN}{dH}  \,dH 
 				\end{equation}
 
-				\begin{wrapfigure}{l}{0.6\textwidth}
+				\begin{figure}[h]
 					\centering
 					\includegraphics[width=0.59\textwidth]{Imagens/distribuicaoDeAlturaDePulso.jpg}
 					\caption{Distribuições de Amplitude}
 					\label{fig:distribuicaoDeAlturaDePulso}
-				\end{wrapfigure}
+				\end{figure}
 
 			O número total de pulsos $N_0$ pode ser obtido através da área total embaixo da curva, ou seja:
 
@@ -303,7 +308,7 @@
 
 			A amplitude de pulso máxima observada ($H_5$) é o ponto ao longo da abscissa no qual a distribuição vai para zero; Picos na distribuição, como ocorre em $H_4$, indicam que são encontrados uma grande quantidade de pulsos para aquela amplitude de pulso; Os vales na distribuição, como ocorre em $H_3$, indicam que são encontrados poucos números de pulsos para aquela determinada amplitude de pulso. 
 
-		\subsubsection*{Distribuição Diferencial de Altura de Pulso}
+		\subsection{Distribuição Diferencial de Altura de Pulso}
 
 			A  \ref{fig:distribuicaoDeAlturaDePulso} (b) mostra a distribuição integral para o mesmo espectro apresentado na  \ref{fig:distribuicaoDeAlturaDePulso} (a). O eixo das abscissas também representa a escala de amplitude de pulso, e o eixo das ordenadas apresenta o número de pulsos N no qual a amplitude excede o valor apresentado no eixo das abscissas H. N diminui em função H pois cada vez menos pulsos estarão acima de uma amplitude $H_i$ que pode aumentar seu valor além de zero. 
 			
@@ -406,20 +411,30 @@
 	\subsection{Tempo Morto}
 
 		Praticamente todos os detectores necessitam de uma quantidade de tempo mínima entre dois eventos para que ele possa registrar separadamente os dois pulsos, e essa limitação pode estar relacionada com a forma em si de realizar a detecção ou devido aos componentes eletrônicos do detector. Devido a natureza aleatória do decaimento radioativo, sempre existirá a possibilidade de um sinal verdadeiro não ser registrado por ocorrer muito próximo a outro evento. 
-
+\pagebreak
 	\section{Detectores a Gás}
 
-		\begin{figure}[h]
-			\centering
-			\includegraphics[width=0.7\textwidth]{Imagens/graficoDetectoresAGas.JPG}
-			\caption{Regiões de Operação dos Detectores a gás}
-			\label{fig:graficoDetectoresAGas}
-		\end{figure}
+	\subsection{Regiões de Operação dos Detectores a Gás}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{Imagens/graficoDetectoresAGas.JPG}
+		\caption{Regiões de Operação dos Detectores a gás}
+		\label{fig:graficoDetectoresAGas}
+	\end{figure}
+		
+
 	
 
 	\subsection{Câmaras de Ionização}
 
 		Considere duas placas separadas por uma cavidade de ar com uma diferença de potencial entre elas; Caso um fóton atravesse entre as placas, esse fóton pode interagir com o nitrogênio presente no ar quebrando a molécula formando um par de elétron e ion de nitrogênio. O elétron irá se mover na direção da placa positiva enquanto que o íon de nitrogênio irá se mover na direção da placa negativa. Haverá então uma diferença de carga líquida que pode ser medida em um eletrômetro. Caso milhares de fótons atravessem o meio, a quantidade de fótons que atravessam esse meio pode ser medida através da diferença da carga dividida pela massa de ar dentro das placas. Algumas das ionizações que acontecem enviarão elétrons para fora das placas, mas algumas dessas ionizações acontecerão fora das placas e enviarão íons dentro da região das placas. A medida que a quantidade de íons que se move para fora da região é igual a quantidade de íons que entram dentro da região, ocorre o equilíbrio eletrônico. Quando a condição de equilíbrio eletrônico é alcançada estará medindo o kerma no ar, caso contrário não estará medindo o Kerma precisamente
+
+	
+
+	\subsection{Câmaras de Ar Livre}
+		
+		O padrão ouro para medida da radiação ionizante é a câmara de ionização de ar livre, porém sua conção requer tamanhos proporcionais ao alcance do elétron no ar, o que é muito grande para feixes de megavoltagem. Adicionalmente, uma vez que o meio é o ar livre sua conção é muito sensível à variações de temperatura, pressão, umidade e do campo elétrico. Por essas razões, as câmaras de ionização de ar livre só existem em laboratórios padrão. 
 
 		\begin{figure}[h]
 			\centering
@@ -427,10 +442,6 @@
 			\caption{Câmara de Ar Livre}
 			\label{fig:camaraArLivre}
 		\end{figure}
-
-	\subsection{Câmaras de Ar Livre}
-		
-		O padrão ouro para medida da radiação ionizante é a câmara de ionização de ar livre, porém sua conção requer tamanhos proporcionais ao alcance do elétron no ar, o que é muito grande para feixes de megavoltagem. Adicionalmente, uma vez que o meio é o ar livre sua conção é muito sensível à variações de temperatura, pressão, umidade e do campo elétrico. Por essas razões, as câmaras de ionização de ar livre só existem em laboratórios padrão. 
 
 	\subsection{Câmaras do Tipo Dedal}
 
@@ -476,7 +487,7 @@
 		A câmara de ionização tipo Farmer tem algumas características que a distingue das demais câmaras de ionização cilíndricas:
 
 		\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
-			\item Além dos eletrodos coletores de íons e elétrons, a câmara de ionização tipo Farmer possui um eletrodo de referência. Esse eletrodo é geralmente um cilindro oco no centro da câmara, que ajuda a fornecer uma referência de potencial constante durante as medições.
+			\item Além dos eletrodos coletores de íons e elétrons, a câmara de ionização tipo Farmer possui um eletrodo de guarda. Esse eletrodo é geralmente um cilindro oco no centro da câmara, que ajuda a fornecer uma referência de potencial constante durante as medições.
 			\item A geometria cilíndrica da câmara de ionização tipo Farmer é otimizada para garantir uma resposta de dose uniforme e uma boa representação da dose absorvida em tecidos. O tamanho da câmara também é projetado para ser adequado para uso em feixes de radiação.
 		\end{itemize}
 
