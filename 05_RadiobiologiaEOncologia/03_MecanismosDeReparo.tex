@@ -1,0 +1,123 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{siunitx}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[margin=10pt,font={small, it},labelfont=bf, textfont=it]{caption}
+\usepackage[dvipsnames, svgnames]{xcolor}
+\DeclareCaptionFont{MediumOrchid}{\color[svgnames]{MediumOrchid}}
+\usepackage[pdftex]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\bibpunct{[}{]}{,}{s}{}{}
+\usepackage{color}
+\usepackage{footnote}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{leading}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{mdframed}
+\usepackage{etoolbox}
+\usepackage[version=4]{mhchem}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{LobsterTwo}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{txfonts}
+\AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
+
+
+\titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+
+
+\DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
+\captionsetup[figure]{labelformat=figuras}
+
+\makeatletter
+\renewcommand\tagform@[1]{\maketag@@@{\color{CarnationPink}(#1)}}
+\makeatother
+
+\renewcommand{\theequation}{Eq. \arabic{equation}}
+\renewcommand{\thefigure}{Fig. \arabic{figure}}
+\renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
+
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+
+
+\newcounter{exemplo}
+
+\NewDocumentEnvironment{exemplo}{ O{} }{%
+\allowbreak
+\setlength{\parindent}{0pt}
+  \begin{mdframed}[
+  leftline=true,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=2pt,
+  linecolor=CarnationPink,
+  frametitlerule=false,
+  frametitlefont=\LobsterTwo\large\color{CarnationPink},
+  frametitle={\color{CarnationPink}\LobsterTwo\large #1},
+  ]
+}{%
+  \end{mdframed}
+}
+
+\setlength{\fboxsep}{5pt}
+\setlength{\fboxrule}{1.5pt}
+\usepackage{float}
+\renewcommand{\thefootnote}{\alph{footnote}}
+\usepackage{url}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=DarkTurquoise,
+	filecolor=DarkTurquoise,      
+	urlcolor=DarkTurquoise,
+	citecolor=DarkTurquoise,
+	pdftitle={Especialista em Física da Radioterapia}
+}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{Página \thepage}
+
+\title{\LobsterTwo\Huge{Radiobiologia}}
+\author{\LobsterTwo\Large{Mecanismos de Reparo do DNA}\nocite{*}}
+\date{\LobsterTwo\textit{Dalila Mendonça}}
+\begin{document}
+	\maketitle
+
+\section{Introdução}
+
+    Existem muitos tipos de lesões que podem ser induzidas no DNA devido a radiação ionizante. A radiação cria pares de íons na água. Se aglomerados de ionização forem formados perto do DNA, eles podem potencialmente danificar o DNA. Células normais bem oxigenadas podem utilizar vários caminhos para reparar diferentes tipos de danos ao DNA. Dano de base e quebras de fita simples (SSB) são geralmente fáceis para uma célula reparar enquanto quebras de fita dupla (DSB), que podem ser reparadas por vias de reparo de junção de extremidade não homóloga (NHEJ) ou reparo homólogo (HR), são mais difíceis. DSBs não reparadas ou mal reparadas podem resultar em aberrações cromossômicas instáveis que podem, por sua vez, levar à morte ou à senescência da célula. É importante entender os mecanismos de reparo do DNA, não apenas em relação ao reparo de dano por radiação, mas também porque sua ausência ou inibição pode desempenhar um papel na predisposição genética ao câncer ou na resposta de tecidos ou tumores à radiação ionizante ou a agentes quimioterápicos que danificam o DNA.
+
+\section{Tipos de Dano ao DNA}
+
+	A oxidação, a quimioterapia e a radioterapia podem danificar o DNA e há muitas maneiras pelas quais isso pode ocorrer.
+
+	\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+		\item \textcolor{DarkTurquoise}{\textbf{Dano à base: }} Um dano à base do DNA ocorre quando uma das bases nitrogenadas (adenina, timina, citosina ou guanina) que compõem a sequência de DNA é alterada ou modificada de de modo que essa base do é quimicamente alterada. Quando ocorre um dano à base do DNA e esse dano não é corrigido adequadamente, podem ocorrer erros de replicação e mutações pontuais ou predispor a danos adicionais no DNA.
+		
+		\item \textcolor{DarkTurquoise}{\textbf{Desparidade de Bases (Base Mismatch):}} Durante a replicação, as cadeias de DNA são duplicadas, e cada base em uma das cadeias é pareada com uma base complementar na nova cadeia em formação. No entanto, às vezes ocorre um erro e uma base incorreta é inserida na nova cadeia. Esse erro é chamado de "base mismatch" ou "desparidade de bases". Significa que uma base incorreta é emparelhada com outra base na nova cadeia de DNA. Essa desparidade pode levar a uma mutação pontual, que é uma alteração em apenas um par de bases no DNA. Se o erro não for corrigido pelo sistema de reparo do DNA, a mutação pontual pode persistir e ser transmitida para as células descendentes. Dependendo da localização e do efeito da mutação, ela pode ter diferentes consequências, como alterar a sequência de aminoácidos em uma proteína, interferir na função da proteína ou ter outros efeitos na expressão gênica.
+		
+		\item \textcolor{DarkTurquoise}{\textbf{Dímeros de pirimidina:}} Os dímeros de pirimidina são danos específicos que ocorrem no DNA quando duas bases de pirimidina adjacentes são ligadas covalentemente entre si. Geralmente, esse tipo de dano ocorre entre duas bases de timina (T), embora também possa ocorrer entre uma timina (T) e uma citosina (C). Esses danos são causados principalmente pela exposição à radiação ultravioleta (UV), como a luz solar. A formação de dímeros de pirimidina causa distorções na estrutura da dupla hélice de DNA. Essas distorções podem interferir na replicação do DNA, na transcrição de genes e na reparação do DNA. Os dímeros de pirimidina impedem a ação correta das enzimas envolvidas nesses processos, afetando assim a integridade e a estabilidade do genoma. Quando o DNA danificado com dímeros de pirimidina é replicado, a replicação ocorre de maneira incorreta nas regiões danificadas. Isso resulta em mutações pontuais, que são alterações em um único par de bases do DNA. Essas mutações podem ter consequências importantes, pois podem afetar a função de genes específicos e contribuir para o desenvolvimento de doenças, como câncer de pele.
+
+	\end{itemize}
+
+
+\bibliography{ref.bib}
+\end{document}
