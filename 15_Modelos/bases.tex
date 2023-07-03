@@ -1,7 +1,7 @@
 \begin{figure}[h]
     \centering
     \fcolorbox{DarkTurquoise}{white}{%
-        \includegraphics[width=0.5\textwidth]{Imagens/}
+        \includegraphics[width=0.8\textwidth]{Imagens/}
     }%
     \caption{}
     \label{fig:}
@@ -16,9 +16,22 @@
     \label{fig:}
 \end{wrapfigure}
 
-\textcolor{DarkTurquoise}{\textbf{:}}
-\textcolor{MediumOrchid}{\textbf{Exemplo:}}
+\begin{figure}[h]
+    \centering
+    \subfigure{
+		\fcolorbox{DarkTurquoise}{white}{%
+			\includegraphics[width=0.6\textwidth]{Imagens/}
+		}} \\ %
+    \caption{}
+    \label{fig:}
+\end{figure}
 
+\textcolor{MediumOrchid}{\textbf{}}
+
+
+\textcolor{DarkTurquoise}{\textbf{:}}
+
+\textcolor{MediumOrchid}{\textbf{Exemplo:}}
 
 
 \textcolor{CarnationPink}{$$}
@@ -28,13 +41,15 @@
 \end{center}
 
 [label=\textcolor{CarnationPink}{\arabic*${}^\circ $}]
-[label=\textcolor{CarnationPink}{\alph*)}]
+[label=\textcolor{CarnationPink}{(\alph*)}]
 [label=\textcolor{CarnationPink}{\roman*.}]
-[label=\textcolor{CarnationPink}{\textopenbullet}]
 [label=\textcolor{CarnationPink}{\arabic*.}]
 
 [label=\textcolor{CarnationPink}{$\star$}]
+[label=\textcolor{CarnationPink}{\textopenbullet}]
 [label=\textcolor{CarnationPink}{$\blacktriangleright$}]
+[label=\textcolor{CarnationPink}{$\blacksquare$}]
+
 
 \textcolor{CarnationPink}{$\mathbf{}$}
 
@@ -45,5 +60,38 @@
 
 \end{tcolorbox}
 
-Qual a tradução da seguinte frase para o português: ""? O que essa frase quer dizer?
+Qual a tradução da seguinte frase para o português?  O que essa frase quer dizer? Me explique detalhadamente: ""?
+
+Reescreva o texto alterando a palavra " " para "  "
+
+
+medição
+
+
+\rowcolors{3}{MediumOrchid!20}{MediumOrchid!20}
+	\arrayrulecolor{MediumOrchid}
+	\begin{longtable}{p{2cm}p{3cm}c}
+	
+		\specialrule{3pt}{0pt}{0pt}
+		\caption{Segundo} \\
+		\specialrule{2pt}{0pt}{0pt}
+  		\textbf{Coluna 1} & \textbf{Coluna 2} & \textbf{Coluna 3} \\
+		\specialrule{2pt}{0pt}{0pt}
+		\endfirsthead
+		
+		\toprule[3pt]
+  		\caption{Segundo} \\
+		\midrule[2pt]
+		\textbf{Coluna 1} & \textbf{Coluna 2} & \textbf{Coluna 3} \\
+		\midrule[2pt]
+		\endhead
+
+		\bottomrule[3pt]
+		\endfoot
+
+		\bottomrule[3pt]
+		\endlastfoot
+
+	\end{longtable}
+
 
