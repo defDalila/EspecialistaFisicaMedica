@@ -11,7 +11,7 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{natbib}
 \bibliographystyle{plainnat}
-\bibpunct{[}{]}{,}{s}{}{}
+\bibpunct{\textcolor{MediumOrchid}{\textbf{[}}}{\textcolor{MediumOrchid}{\textbf{]}}}{,}{s}{}{}
 \usepackage{color}
 \usepackage{footnote}
 \usepackage{setspace}
@@ -34,6 +34,14 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage{txfonts}
+\usepackage[bottom]{footmisc}
+
+\makeatletter
+\def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
+\makeatother
+
+\renewcommand{\footnotelayout}{\itshape\color{black}}
+
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
@@ -95,11 +103,29 @@
 \renewcommand{\headrulewidth}{0pt}
 \rfoot{Página \thepage}
 
-\title{\LobsterTwo\Huge{Teleterapia}}
-\author{\LobsterTwo{Tecnicas de Imobilizacao}\nocite{*}}
+\title{\LobsterTwo\Huge{Radiobiologia}}
+\author{\LobsterTwo\Large{Curvas de Sobrevivência Celular}\nocite{*}}
 \date{\LobsterTwo\textit{Dalila Mendonça}}
 \begin{document}
 	\maketitle
+
+\section{Introdução}
+
+\section{Modelos Baseados Na Distribuição de Poisson}
+
+\section{Modelo de Alvo Único, Hit Único}
+
+\section{Modelo de Múltiplos Alvos, Hit Único}
+
+\section{Modelo Linear-Quadrático (LQ, Alfa-Beta)}
+
+\section{Os “4 Rs” da Radiobiologia}
+
+\section{Danos e Reparos}
+
+\section{Taxa de Dose}
+
+
 
 \bibliography{ref.bib}
 \end{document}
