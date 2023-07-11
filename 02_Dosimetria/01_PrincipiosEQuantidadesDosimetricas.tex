@@ -11,7 +11,7 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{natbib}
 \bibliographystyle{plainnat}
-\bibpunct{[}{]}{,}{s}{}{}
+\bibpunct{\textcolor{MediumOrchid}{\textbf{[}}}{\textcolor{MediumOrchid}{\textbf{]}}}{,}{s}{}{}
 \usepackage{color}
 \usepackage{footnote}
 \usepackage{setspace}
@@ -34,6 +34,14 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage{txfonts}
+\usepackage[bottom]{footmisc}
+
+\makeatletter
+\def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
+\makeatother
+
+\renewcommand{\footnotelayout}{\itshape\color{black}}
+
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
@@ -52,9 +60,9 @@
 \renewcommand{\thefigure}{Fig. \arabic{figure}}
 \renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
 
-\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\blacksquare$}}
 
-\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
 
 
 \newcounter{exemplo}
@@ -88,7 +96,7 @@
 	filecolor=DarkTurquoise,      
 	urlcolor=DarkTurquoise,
 	citecolor=DarkTurquoise,
-	pdftitle={Especialista Em Física da Radioterapia}
+	pdftitle={Especialista em Física da Radioterapia}
 }
 \pagestyle{fancy}
 \fancyhf{}
@@ -121,7 +129,7 @@
 		\end{exemplo}
 
 
-    	\noindent  O fato de considerar apenas uma esfera com seção transversal $dA$ está relacionado ao fato de que só é considerado na fluência uma área perpendicular a direção de propagação do feixe (uma vez que independente da angulação que o feixe está incidindo, sempre atravessará a mesma área transversal de uma esfera) e portanto não há dependência angular na fluência. Ao considerar uma fluência planar, avalia-se o número de fótons que atravessam um plano por unidade de área, e portanto a fluência irá depender do ângulo de incidência do feixe. 
+    	\noindent  O motivo por considerar apenas uma esfera com seção transversal $dA$ está relacionado ao fato de que só é considerado para a fluência uma área perpendicular a direção de propagação do feixe (uma vez que independente da angulação que o feixe está incidindo, sempre atravessará a mesma área transversal de uma esfera) e portanto não há dependência angular na fluência. Ao considerar uma fluência planar, será avalido o número de fótons que atravessam um plano por unidade de área, e portanto a fluência irá depender do ângulo de incidência do feixe. 
 
       	\
 
@@ -206,14 +214,14 @@
 
 	\section{Kerma}
 
-		KERMA é o acrônimo para Energia Cinética Liberada Por Unidade de Massa. É uma quantidade não estocástica aplicável às radiações indiretamente ionizantes, como prótons e nêutrons. Esta grandeza quantifica a quantidade média de energia transferida pela radiação indiretamente ionizante para radiações diretamente ionizantes, sem se preocupar com o que acontece após esta transferência de energia. 
+		KERMA é o acrônimo para Energia Cinética Liberada Por Unidade de Massa. É uma quantidade não estocástica aplicável às \textcolor{DarkTurquoise}{\textbf{radiações indiretamente ionizantes}}, como prótons e nêutrons. Esta grandeza quantifica a quantidade média de energia transferida pela radiação indiretamente ionizante para radiações diretamente ionizantes, sem se preocupar com o que acontece após esta transferência de energia. 
 
 		Considerando os fótons, o processo de ionização se dá por duas etapas: 
 
 			\begin{enumerate}
 				\item Os fótons transferem sua energia para as partículas carregadas secundárias, como os elétrons, por meio de diferentes processos de interação (Efeito Fotoelétrico, Efeito Compton, Produção de pares, etc \dots).
 				
-				\item A partícula secundária liberara irá então transferir sua energia através de processos como excitação e ionização. 
+				\item A partícula secundária liberada irá então transferir sua energia através de processos como excitação e ionização. 
 			\end{enumerate}
 
 		O KERMA é então definido como a energia média transferida $d\bar{E}_{tr}$ de uma partícula indiretamente ionizante para partículas carregadas em um meio de massa $dm$, ou seja:
@@ -233,7 +241,7 @@
 		A Dose absorvida é uma grandeza não-estocástica aplicável tanto para radiações indiretamente ionizantes quanto para radiações diretamente ionizantes. Para a radiação indiretamente ionizante, parte da sua energia é transferida como energia cinética para as partículas carregadas do meio, resultando no KERMA, e na sequência, as partículas carregadas perdem parcelas de sua energia para o meio, resultando na dose absorvida, e perdem parte da sua energia através da produção radiativa, em processos de bremmstrahlung ou aniquilação em voo. 
 		
 		
-		A Dose  Absorvida está relacionada à uma quantidade estocástica chamada de energia transmitida ($\varepsilon$). A dose absorvida é definida como a energia média transmitida ($d\bar{\varepsilon}$) pela radiação diretamente ionizante para a matéria de massa $dm$ em um volume finito $V$, ou seja:
+		A Dose  Absorvida está relacionada à uma quantidade estocástica chamada de energia transmitida ($\varepsilon$). A dose absorvida é definida como a energia média transmitida ($d\bar{\varepsilon}$) pela radiação \textcolor{DarkTurquoise}{\textbf{diretamente ionizante}} para a matéria de massa $dm$ em um volume finito $V$, ou seja:
 
 
 			\begin{equation}
@@ -255,7 +263,7 @@
 			H_T = D_T \cdot w_R
 		\end{equation}
 
-		Onde $D_T$ é a dose absorvida média no órgão ou tecido e $w_R$ é o fator de ponderação da radiação. A unidade é Sv (J/Kg). A   \ref{fig:fatorPesoRadiacao} mostra os valores para os fatores de ponderação fornecidos pela CNEN.
+		Onde $D_T$ é a dose média absorvida no órgão ou tecido e $w_R$ é o fator de ponderação da radiação. A unidade é Sv (J/Kg). A \ref{fig:fatorPesoRadiacao} mostra os valores para os fatores de ponderação fornecidos pela CNEN.
 
 		\begin{figure}[h]
 			\centering
@@ -269,7 +277,7 @@
 
 	\section{Stopping Power}
 
-		O Stopping Power é definido através da teoria de Bethe para elétrons e pósitrons. É definido como o valor esperado da taxa de energia perdida por unidade de caminho percorrido para uma partícula carregada. O poder de freamento mássico divide o poder de freamento pela densidade do meio e elimina a dependência da densidade do meio no poder de freamento, exceto pelos efeitos de densidade. 
+		O Stopping Power é definido através da teoria de Bethe para \textcolor{DarkTurquoise}{\textbf{elétrons e pósitrons}}. É definido como o valor esperado da taxa de energia perdida por unidade de caminho percorrido para uma partícula carregada. O poder de freamento mássico divide o poder de freamento pela densidade do meio e elimina a dependência da densidade do meio no poder de freamento, exceto pelos efeitos de densidade. 
 
 			\begin{exemplo}[Unidade]
 
@@ -282,16 +290,16 @@
 		Existem dois tipos de poder de freamento:
 
 		\begin{enumerate}
-			\item \textbf{Poder de Freamento de Colisão}, também chamado de poder de freamento de ionização, onde é resultado das interações das partículas carregadas com os elétrons orbitais;
-			\item \textbf{Poder de Freamento Radiativo}, que é devido a interação das partículas carregadas com o núcleo do átomo.
+			\item \textcolor{DarkTurquoise}{\textbf{Poder de Freamento de Colisão}}, também chamado de poder de freamento de ionização, onde é resultado das interações das partículas carregadas com os elétrons orbitais;
+			\item \textcolor{DarkTurquoise}{\textbf{Poder de Freamento Radiativo}}, que é devido a interação das partículas carregadas com o núcleo do átomo.
 		\end{enumerate}
 
-		Além dos citados, o \textbf{Poder de Freamento Mássico Irrestrito} expressa a taxa média de perda de energia pela a partícula carregada devido às colisões duras e suaves. Neste caso, a energia máxima transferida para um elétron orbital permitida em uma colisão dura é igual a metade da energia cinética do elétron ou toda a energia de um pósitron. 
+		Além dos citados, o \textcolor{DarkTurquoise}{\textbf{Poder de Freamento Mássico Irrestrito}} expressa a taxa média de perda de energia pela a partícula carregada devido às colisões duras e suaves. Neste caso, a energia máxima transferida para um elétron orbital permitida em uma colisão dura é igual a metade da energia cinética do elétron ou toda a energia de um pósitron. 
 
 
-		O \textbf{Poder de Freamento Mássico Restrito} é definido para determinar a energia transferida localmente do meio por colisão, ou seja, não inclui a energia transferida para os raios delta determinando um limiar de energia $\Delta$.
+		O \textcolor{DarkTurquoise}{\textbf{Poder de Freamento Mássico Restrito}} é definido para determinar a energia transferida localmente do meio por colisão, ou seja, não inclui a energia transferida para os raios delta que depositarão sua energia longe do local, para isso determina-se um limiar de energia $\Delta$.
 
-		O \textbf{Poder de Freamento Linear por Colisão Restrito}, também chamado de \textbf{Transferência Linear de Energia (LET)} é definido como a energia perdida por uma partícula carregada devido a colisões duras e suaves $dE_\Delta$ ao atravessar uma distância linear $dl$ subtraída da energia cinética total das partículas carregadas liberadas cuja energia cinética excede o limiar $\Delta$.
+		O \textcolor{DarkTurquoise}{\textbf{Poder de Freamento Linear por Colisão Restrito}}, também chamado de \textcolor{DarkTurquoise}{\textbf{Transferência Linear de Energia (LET)}} é definido como a energia $dE_\Delta$ perdida por uma partícula carregada devido a colisões duras e suaves  ao atravessar uma distância linear $dl$ subtraída da energia cinética total das partículas carregadas liberadas cuja energia cinética excede o limiar $\Delta$.
 
 			\begin{equation}
 				L_\Delta = \frac{dE_\Delta}{dl}
@@ -305,9 +313,9 @@
 		O Kerma total é dividido em duas partes:
 
 		\begin{enumerate}
-			\item \textcolor{CarnationPink}{\textbf{Kerma de Colisão:}} É a parte do kerma que leva a produção de elétrons que irão dissipar sua energia através ionizações causadas na trajetória ou nas proximidades da trajetória do elétron no meio, resultante da interação coulombiana com os elétrons orbitais. Portanto, kerma de colisão é o valor líquido de energia transferida para as partículas carregadas no ponto de interesse, excluindo a perda radiativa de energia e a energia transferida de uma partícula carregada para a outra.
+			\item \textcolor{DarkTurquoise}{\textbf{Kerma de Colisão:}} É a parte do kerma que leva a produção de elétrons que irão dissipar sua energia através ionizações causadas na trajetória ou nas proximidades da trajetória do elétron no meio, resultante da interação coulombiana com os elétrons orbitais. Portanto, kerma de colisão é o valor líquido de energia transferida para as partículas carregadas no ponto de interesse, excluindo a perda radiativa de energia e a energia transferida de uma partícula carregada para a outra.
 			
-			\item \textcolor{CarnationPink}{\textbf{Kerma Radiativo:}} É a parte do Kerma que leva à produção de fótons a medida que a partícula carregada é desacelerada e interage com o meio. A interação mais significativa é a radiação de freamento, porém também pode ser resultado da aniquilação em vôo.
+			\item \textcolor{DarkTurquoise}{\textbf{Kerma Radiativo:}} É a parte do Kerma que leva à produção de fótons a medida que a partícula carregada é desacelerada e interage com o meio. A interação mais significativa é a radiação de freamento, porém também pode ser resultado da aniquilação em vôo.
 		\end{enumerate}
 
 
