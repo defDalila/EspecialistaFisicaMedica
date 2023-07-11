@@ -11,7 +11,7 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{natbib}
 \bibliographystyle{plainnat}
-\bibpunct{[}{]}{,}{s}{}{}
+\bibpunct{\textcolor{MediumOrchid}{\textbf{[}}}{\textcolor{MediumOrchid}{\textbf{]}}}{,}{s}{}{}
 \usepackage{color}
 \usepackage{footnote}
 \usepackage{setspace}
@@ -34,6 +34,14 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage{txfonts}
+\usepackage[bottom]{footmisc}
+
+\makeatletter
+\def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
+\makeatother
+
+\renewcommand{\footnotelayout}{\itshape\color{black}}
+
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
@@ -54,7 +62,7 @@
 
 \setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
 
-\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
 
 
 \newcounter{exemplo}
@@ -96,7 +104,7 @@
 \rfoot{Página \thepage}
 
 \title{\LobsterTwo\Huge{Proteção Radiológica}}
-\author{\LobsterTwo\Large{aaa}\nocite{*}}
+\author{\LobsterTwo\Large{Bases da Proteção Radiológica}\nocite{*}}
 \date{\LobsterTwo\textit{Dalila Mendonça}}
 \begin{document}
 	\maketitle
