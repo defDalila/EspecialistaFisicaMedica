@@ -1,5 +1,5 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{siunitx}
@@ -34,13 +34,13 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage{txfonts}
-\usepackage[bottom]{footmisc}
+\usepackage[stable]{footmisc}
 
 \makeatletter
 \def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
 \makeatother
 
-\renewcommand{\footnotelayout}{\itshape\color{black}}
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
 
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
@@ -109,6 +109,7 @@
 \begin{document}
 	\maketitle
 
+\thispagestyle{fancy}
 \section{Introdução}
 
 	A radioterapia de intensidade modulada (IMRT - \textit{Intensity-modulated radiotherapy}) fornece um controle excepcional com respeito a entrega da dose. A \ref{fig:imrt7campos} mostra um exemplo de um plano de IMRT com 7 campos para um paciente com carcinoma orofaríngeo T3 de cabeça e pescoço. Este caso ilustra a capacidade de modelar a dose em torno dos órgãos de risco próximos (neste caso, a medula e a parótida) enquanto irradia o volume tumoral bruto (GTV) e as regiões nodais com risco de comprometimento com uma dose alta. Este caso também demonstra a técnica de “dose painting” ou “simultaneous integrated boost (boost concomitante)” em que um único plano é usado para fornecer uma dose total de 70 Gy para a doença presente (GTV), enquanto as regiões nodais recebem simultaneamente uma dose de 59.4 Gy ou 54 Gy. Também está disponível a técnica de IMRT chamada de terapia de arco volumétrico modulado (VMAT - \textit{``volumetric modulated arc therapy''})  que possui capacidade de modelagem da dose semelhante à técnica IMRT com campos estáticos.
