@@ -197,10 +197,20 @@
 		\label{fig:imrt9campos}
 	\end{figure}
 
-	
+	Em alguns casos, o PTV pode se estender para perto da pele ou até mesmo para o ar (ICRU-83 Seção 5.3.1). Isso apresenta um problema para o planejamento inverso, pois o algoritmo pode tentar aumentar artificialmente a fluência do feixe na região de dose aparentemente baixa próxima da pele ou do ar.  Essa situação pode ser evitada criando um volume de PTV modificado que seja cropado na pele ou mesmo puxado para trás. Este PTV modificado é usado para colocar os objetivos do planejamento inverso. Essa abordagem pode ter como  efeito negativo a subdosagem das regiões superficiais do PTV e/ou eliminar o “Skin-flash” necerrário na pele.
+
+	Outra solução é fazer um sub-volume do PTV na pele e atribuir um peso baixo à função objetivo desse volume (ICRU-83). 
+
+	Outra maneira de direcionar as lâminas do MLC para fora da pele e fornecendo um flash da pele é criando um ``PTV ar'' ou um  ``Fake bolus'' que é uma região que se estende para fora da pele na qual a densidade é substituída para um valor de 1 \unit{g \cdot cm^3}. Esta região recebe um peso muito baixo para o objetivo. Isso serve para direcionar as lâminas do  do MLC para fora do corpo durante a otimização. Após a conclusão da otimização final, o “PTV air” é removido e a dose é recalculada. Entretanto, deve-se ter cuidado com esse método, pois o “PTV air” não representa uma verdadeira estrutura anatômica.
+
+
+	Em uma nota mais geral, surge a pergunta sobre o que faz um plano de tratamento “bom”. Esta é uma área de investigação ativa para identificar uma métrica significativa para a qualidade do plano. Por exemplo, \citet{WU20111241} desenvolveu a métrica “overlap volume histogram”, que fornece um método de quantificar a preservação do OAR que pode ser obtida com base na população. Outras métricas foram definidas para fins do “desafio do plano”, um concurso anual administrado pela Radiation Oncology Resources Inc. (agora propriedade da Sun Nuclear Inc.) no qual um único caso de planejamento de tratamento é fornecido para vários dosimetristas e físicos. Embora esses resultados ainda não estejam amplamente disponíveis, as pontuações de qualidade parecem não se correlacionar com a experiência, educação ou status de certificação dos planejadores.
+
+	Outra questão prática é: quanto tempo leva (ou deveria) para concluir um plano IMRT ou VMAT? Esta questão foi parcialmente abordada em uma pesquisa multi-institucional de 2009 sobre práticas de IMRT. Os autores descobriram que a resposta dependia de qual sistema de planejamento estava sendo usado, mas concluíram que os casos de cabeça e pescoço exigiam uma média de 30 horas no total (11 horas para planejamento), casos de pulmão 15 horas (planejamento de 8 horas) e casos de próstata 14 horas (planejamento de 6 horas).
 	
 \section{Entrega e QA}
 
+	Existem muitos métodos diferentes para fornecer tratamentos IMRT e VMAT e cada um tem considerações especiais. Isso inclui tempo de entrega, tempo de beam on,  velocidades mínima e máxima do gantry, taxas de dose mínima e máxima, problemas de colisão, política de aquisição  de imagens, procedimento de entrega interrompido e gerenciamento de movimento. Como muitos dos segmentos usados na IMRT são muito pequenos, pequenas alterações no tamanho da abertura podem afetar significativamente a dose administrada. Devido a esses problemas, é necessário um comissionamento e controle de qualidade de equipamentos mais rigorosos no que diz respeito a IMRT/VMAT. Por exemplo, as tolerâncias de controle de qualidade no AAPM TG-142 são diferentes para uma máquina que executa IMRT e outra que não executa. Algumas informações e ferramentas importantes para validar o desempenho do IMRT podem ser encontradas em AAPM TG-119 (incluindo planos de teste de verificação que podem ser baixados). Phantoms de teste antropomórficos do IROC (anteriormente RPC) também são uma ferramenta de verificação valiosa.
 
 
 \bibliography{ref.bib}
