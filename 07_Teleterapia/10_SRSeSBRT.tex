@@ -11,7 +11,7 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{natbib}
 \bibliographystyle{plainnat}
-\bibpunct{[}{]}{,}{s}{}{}
+\bibpunct{\textcolor{MediumOrchid}{\textbf{[}}}{\textcolor{MediumOrchid}{\textbf{]}}}{,}{s}{}{}
 \usepackage{color}
 \usepackage{footnote}
 \usepackage{setspace}
@@ -34,6 +34,14 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage{txfonts}
+\usepackage[bottom]{footmisc}
+
+\makeatletter
+\def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
+\makeatother
+
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
+
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
@@ -52,9 +60,9 @@
 \renewcommand{\thefigure}{Fig. \arabic{figure}}
 \renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
 
-\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\blacksquare$}}
 
-\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
 
 
 \newcounter{exemplo}
@@ -100,6 +108,85 @@
 \date{\LobsterTwo\textit{Dalila Mendonça}}
 \begin{document}
 	\maketitle
+
+\section{Introdução}
+
+	A radiocirurgia estereotáxica (SRS) foi originalmente definida com o cumprimento de todas as seguintes condições:
+
+	\begin{enumerate}[label=\textcolor{CarnationPink}{(\roman*)}]
+		\item Tratamento com fração única;
+		\item Alta dose por fração ($>$ 5Gy)
+		\item Diâmetro do alvo $<$ 3.5 cm no cérebro;
+		\item Precisão na entrega da dose $<$ 1 mm como definido pelo teste de Winston-Lutz\cite{lutz1988system};
+		\item Nenhuma margem para PTV ou ITV é usada; podendo ser utilizada as margens para o CTV, mas no geral trata apenas o GTV; 
+	\end{enumerate}
+
+	A SRS foi posteriormente expandida para incluir também tratamentos de lesões na coluna vertebral com fração única e também para incluir tratamentos fracionados. A definição atual inclui:
+
+	\begin{enumerate}[label=\textcolor{CarnationPink}{(\roman*)}]
+		\item Tratamentos de 1 até 5 frações;
+		\item Alta dose por fração (acima de 5 Gy);
+		\item Diâmetro do alvo menor que 3.5 cm no sistema nervoso central (SNC  - crânio ou medula);
+		\item Precisão na entrega da dose $<$ 1 mm como definido pelo resultado do teste end-to-end;
+	\end{enumerate}
+
+	A SBRT (Stereotactic Body Radiation Therapy), as vezes também chamada de SABRT (Stereotactic Ablative Radiation Therapy) é definida pelas seguintes condições:
+
+	\begin{enumerate}[label=\textcolor{CarnationPink}{(\roman*)}]
+		\item Tratamentos de 1 a 5 frações (Até 8 frações no Canadá);
+		\item Altas doses por fração (acima de 5 Gy);
+		\item Tamanho do alvo de até 4 cm de diâmetro para lesões no pulmão ou de 5 cm até 7 cm de diâmetro para alvos localizados nas cavidades torácicas e abdominais.
+		\item Precisão na entrega do tratamento $<$ 1.5 mm até 2 mm definidas pelos resultados dos testes end-to-end;
+		\item As margens para o ITV e para o PTV são utilizadas para compensar a movimentação intra-fração e inter-fração e deformações. A maioria dos alvos, exceto a próstata, necessitam de um gerenciamento do movimento respiratório.
+	\end{enumerate}
+
+\section{Requerimentos Técnicos}
+
+	As altas doses e os acentuados gradientes de dose entregues em poucas frações nos tratamentos de SRS e SBRT resultam eum uma margem de erro muito menor que o os fracionamentos de radioterapia convencionais. Uma máquina utilizada para a tratamentos de SRS/SBRT deve, portanto, atender no mínimo aos seguintes requisitos técnicos mais rigorosos:
+
+	\begin{enumerate}[label=\textcolor{CarnationPink}{(\roman*)}]
+		\item A máquina deve atender às tolerâncias mecânicas descritas no TG-142;
+		\item Os campos pequenos devem estar comissionados;
+		\item Recursos de orientação pro imagem ( ou frame);
+		\item Resultados do teste end-to-end (E2E) $<$ 1 mm e resultados do QA entrega (DQA) $<$3\%/2 mm.
+		\item Técnicas de gerenciamento do movimento respiratório;
+	\end{enumerate}
+
+	O teste E2E é uma adaptação do teste Winston-Lutz para a era do SRS/SBRT frameless guiada por imagem. Idealmente, no teste E2E, cada uma das etapas deve ser realizada pelo(s) membro(s) da equipe envolvidos no tratamento que desempenharão esta mesma etapa no tratamento de um paciente. A realização de um teste E2E dessa maneira, como parte do processo de comissionamento, pode ajudar a esclarecer o fluxo de tratamento e o fluxo de informações e também pode servir como uma ferramenta para desenvolver o conjunto inicial de políticas e procedimentos (POP):
+
+	\begin{enumerate}[label=\textcolor{CarnationPink}{\arabic*${}^\circ$}]
+		\item Um phantom  antropomórfico apropriado para o local de tratamento, equipado com fiduciais para localização semelhante ao que será usado em um paciente, é carregado com ferramentas de dosimetria in vivo, como dosímetro termoluminescente (TLD), detector luminescente opticamente estimulado (OSLD), metal- transistores de efeito de campo semicondutores de óxido (MOSFETs), gel ou filme (físico médico).
+		\item O phantom é imobilizado e adquirida sua imagem, usando os mesmos dispositivos de imobilização e protocolos de aquisição que seriam usados para o paciente (técnico).
+		\item As imagens são importadas para o sistema de planejamento de tratamento e o alvo oculto é contornado (médico).
+		\item Um plano de tratamento é desenvolvido cumprindo as restrições de dose prescritas (dosimetrista).
+		\item O plano é assinado e revisado (médico).
+		\item A documentação do plano é gerada e o plano é exportado para a unidade de tratamento (dosimetrista).
+		\item Uma segunda verificação, cálculo da unidade de monitor secundário (MU) e medições de controle de qualidade específicas do paciente, se aplicável, são realizadas (físico-médico).
+		\item O tratamento é entregue (técnico).
+		\item O resultado da medição da dose é analisado (físico).
+	\end{enumerate}
+
+
+\section{Políticas e Procedimentos}
+
+
+\section{Seleção do Paciente e Desenvolvimento de Protocolos de Tratamento}
+
+
+
+\section{Imagem de Simulação}
+
+
+\section{Margens}
+
+
+\section{Constraints de Dose e Planejamento do Tratamento}
+
+\subsection*{RTOG e Outros Protocolos}
+
+\section{Entrega do Tratamento}
+
+
 
 \bibliography{ref.bib}
 \end{document}
