@@ -11,7 +11,7 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{natbib}
 \bibliographystyle{plainnat}
-\bibpunct{[}{]}{,}{s}{}{}
+\bibpunct{\textcolor{MediumOrchid}{\textbf{[}}}{\textcolor{MediumOrchid}{\textbf{]}}}{,}{s}{}{}
 \usepackage{color}
 \usepackage{footnote}
 \usepackage{setspace}
@@ -34,11 +34,22 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage{txfonts}
+\usepackage[bottom]{footmisc}
+\tcbuselibrary{skins,breakable}
+\sisetup{output-decimal-marker={.}}
+
+\makeatletter
+\def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
+\makeatother
+
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
+
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
 \titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
 \titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\LobsterTwo\large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
 
 
 \DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
@@ -52,9 +63,9 @@
 \renewcommand{\thefigure}{Fig. \arabic{figure}}
 \renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
 
-\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\blacksquare$}}
 
-\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
 
 
 \newcounter{exemplo}
@@ -97,7 +108,7 @@
 
 \title{\LobsterTwo\Huge{Dosimetria}}
 \author{\LobsterTwo\Large{Estatística de Contagens\nocite{*}}}
-\date{\LobsterTwo\textit{Dalila Mendonça}}
+\date{\LobsterTwo{Dalila Mendonça}}
 \begin{document}
 	\maketitle
 
@@ -124,13 +135,13 @@
     \noindent onde os valores de $x_i$ são inteiros, medidos em intervalos de tempo com mesmo tamanho.
 
         \begin{itemize}
-            \item A \textit{\textcolor{CarnationPink}{Soma $\mathcal{S}$}} das medidas é dada por:
+            \item A \textit{\textcolor{DarkTurquoise}{Soma $\mathcal{S}$}} das medidas é dada por:
               
                 \begin{equation}
                 	\mathcal{S}  \equiv  \sum_{i = 1}^{N} x_i  
                 \end{equation}
 
-            \item A \textit{\textcolor{CarnationPink}{Média Experimental $\bar{x}_e$}} das medidas é dada por:
+            \item A \textit{\textcolor{DarkTurquoise}{Média Experimental $\bar{x}_e$}} das medidas é dada por:
               
                 	\begin{equation}
                   	\bar{x}_e \equiv  \frac{\mathcal{S}}{N}
@@ -138,7 +149,7 @@
               		onde N é o total de medidas realizadas. 
 
 
-            \item A \textit{\textcolor{CarnationPink}{Função de Distribuição de Frequência $F(x)$}} representa a frequência relativa com o qual cada medida aparece em uma coleção de dados, ou seja:
+            \item A \textit{\textcolor{DarkTurquoise}{Função de Distribuição de Frequência $F(x)$}} representa a frequência relativa com o qual cada medida aparece em uma coleção de dados, ou seja:
               
 					\begin{equation}
 					F(x) = \frac{Numero \; de \; ocorrencias \; de \;x}{numero \; total \; de \; medidas \; N}
@@ -156,7 +167,7 @@
 						\bar{x}_e = \sum_{x = 0}^{\infty} x \cdot F(x)
 					\end{equation}
 
-			\item O \textit{\textcolor{CarnationPink}{resíduo $d_i$}} de qualquer dado do conjunto, que é a diferença do valor medido para a média do conjunto de dados, ou seja
+			\item O \textit{\textcolor{DarkTurquoise}{resíduo $d_i$}} de qualquer dado do conjunto, que é a diferença do valor medido para a média do conjunto de dados, ou seja
 				
 					\begin{equation}
 						d_i \equiv x_i - \bar{x}_e
@@ -168,7 +179,7 @@
 						\sum_{i = 1}^{\infty} d_i = 0
 					\end{equation}
 
-			\item O desvio, é definido semelhantemente ao resíduo, com a diferença que para o desvio é utilizado a média experimental $\bar{x}_e$ e para o desvio é utilizado o valor verdadeiro da média $\bar{x}$, ou seja:
+			\item O desvio, é definido semelhantemente ao resíduo, com a diferença que para o resíduo é utilizado a média experimental $\bar{x}_e$ e para o desvio é utilizado o valor verdadeiro da média $\bar{x}$, ou seja:
 				
 					\begin{equation}
 						\epsilon_i \equiv x_i - \bar{x}
@@ -181,7 +192,7 @@
 						s^2 \equiv \epsilon^2 = \frac{1}{N} \sum_{i = 1}^{\infty} (x_i - \bar{x})^2
 					\end{equation}
 
-				A variância amostral é útil para avaliar o grau de dispersão de um conjuntos de dados ou avaliar o quando um valor é diferente de outro. 
+				A variância amostral é útil para avaliar o grau de dispersão de um conjuntos de dados ou avaliar o quanto um valor é diferente de outro. 
 
 			\item Uma vez que não se sabe o valor verdadeiro da média, a expressão alternativa para obter a variância é dada por:
 				
@@ -189,7 +200,7 @@
 						s^2 = \frac{1}{N - 1} \sum_{i = 1}^{\infty} (x_i - \bar{x}_e)^2
 					\end{equation}
 
-				onde é aplicada a uma amostra onde é utilizada a média experimental. Como a variância amostral é dada pela média do quadrado dos desvios do valor medido para a média, a variância amostral é uma medida da flutuação do conjunto de dados. 
+				que é aplicada a uma amostra no qual é utilizada a média experimental. Como a variância amostral é dada pela média do quadrado dos desvios do valor medido para a média, a variância amostral é uma medida da flutuação do conjunto de dados. 
 				
 			\item A variância amostral em termos da função de distribuição de frequência é dada por:
 				
@@ -200,7 +211,7 @@
 				o que permite chegar na relação:
 
 					\begin{equation}
-						s^2 = \bar{x^2} - \bar{x}^2
+						s^2 = \overline{x^2} - \overline{x}{\,}^2
 					\end{equation}
         \end{itemize}
 
@@ -212,9 +223,9 @@
 	\begin{exemplo}[Processos Binários]
 
 		\begin{itemize}
-			\item Jogar uma moeda: onde a Cara pode ser definida como a opção de sucesso e a probabilidade de sucesso é de $p = 1/2$;
-			\item Jogar um dado: Onde uma das faces pode ser escolhida como a opção de sucesso, por exemplo a face 6 e a probabilidade de sucesso é de $p = 1/6$;
-			\item Decaimento radioativo: onde o decaimento pode ser definido como a opção de sucesso e a probabilidade de sucesso é de $1 - e^{-\lambda t}$
+			\item Jogar uma moeda: onde a Cara pode ser definida como a opção de sucesso e a probabilidade de sucesso é de \textcolor{DarkTurquoise}{$\mathbf{p = 1/2}$};
+			\item Jogar um dado: Onde uma das faces pode ser escolhida como a opção de sucesso, por exemplo a face 2 e a probabilidade de sucesso é de \textcolor{DarkTurquoise}{$\mathbf{p = 1/6}$};
+			\item Decaimento radioativo: onde o decaimento pode ser definido como a opção de sucesso e a probabilidade de sucesso é de \textcolor{DarkTurquoise}{$\mathbf{1 - e^{-\lambda t}}$}
 		\end{itemize}
 		
 	\end{exemplo}
@@ -223,14 +234,14 @@
 	Existem três principais modelos estatísticos que abordam processos binários:
 
 	\begin{enumerate}
-		\item \textit{\textbf{\textcolor{CarnationPink}{Distribuição Binomial:}}} Este modelo amplamente utilizado para todos os casos em que a probabilidade $p$ de ocorrência de sucesso é constante. Não é computacionalmente aplicável à decaimentos radioativos pois o número de núcleos é sempre muito grande o que o torna raramente aplicável à contagens nucleares.
+		\item \textit{\textbf{\textcolor{DarkTurquoise}{Distribuição Binomial:}}} Este modelo amplamente utilizado para todos os casos em que a probabilidade $p$ de ocorrência de sucesso é \textcolor{MediumOrchid}{\textit{constante}}. Não é computacionalmente aplicável à decaimentos radioativos pois o número de núcleos é sempre muito grande o que o torna \textcolor{MediumOrchid}{\textit{raramente aplicável à contagens nucleares}}.
 		
-		\item \textit{\textbf{\textcolor{CarnationPink}{Distribuição de Poisson:}}} Este modelo é uma aproximação matemática direta da distribuição binomial quando é considerado que a probabilidade de sucesso $p$ é pequena e constante. Isto significa que é escolhida um tempo de observação muito menor que o tempo de meia-vida da fonte, de forma que o número de átomos decaindo em função do tempo é constante e a probabilidade de registrar uma contagem para um dado núcleo é sempre pequena;
+		\item \textit{\textbf{\textcolor{DarkTurquoise}{Distribuição de Poisson:}}} Este modelo é uma aproximação matemática direta da distribuição binomial quando é considerado que a probabilidade de sucesso $p$ é \textcolor{MediumOrchid}{\textit{pequena e constante}}. Isto significa que é escolhido um \textcolor{MediumOrchid}{\textit{tempo de observação muito menor que o tempo de meia-vida da fonte}}, de forma que o número de átomos decaindo em função do tempo é constante e a probabilidade de registrar uma contagem para um dado decaimento do núcleo é sempre pequena;
 		
-		\item \textit{\textbf{\textcolor{CarnationPink}{Distribuição Gaussiana:}}} É também conhecida como distribuição normal; e faz a aproximação para os casos em que o número médio de sucessos é relativamente grande. Esta condição se aplica a qualquer situação em que será acumulado diversas contagens durante a medição e não apenas algumas poucas contagens. Portanto, este é o modelo amplamente utilizado em estatística de contagens.		
+		\item \textit{\textbf{\textcolor{DarkTurquoise}{Distribuição Gaussiana:}}} É também conhecida como distribuição normal; e faz a aproximação para os casos em que o número médio de sucessos é relativamente \textcolor{MediumOrchid}{\textit{grande}}. Esta condição se aplica a qualquer situação em que será acumulado \textcolor{MediumOrchid}{\textit{diversas contagens durante a medição}} e não apenas algumas poucas contagens. Portanto, este é o modelo amplamente utilizado em estatística de contagens.		
 	\end{enumerate}
 
-	\subsection{Distribuição Binomial}
+	\subsection*{Distribuição Binomial}
 
 		Se $n$ é o número de ensaios e para cada ensaio existe a probabilidade $p$ de ocorrer um sucesso então podemos predizer que a probabilidade de contarmos $x$ sucessos é dada por:
 
@@ -247,7 +258,7 @@
 					\sum_{x = 0}^{n} P(x) = 1
 				\end{equation}
 
-			\item O valor médio $\bar{x}$ da distribuição é dado por:
+			\item O \textcolor{DarkTurquoise}{valor médio $\bar{x}$} da distribuição é dado por:
 				
 				\begin{equation}
 					\bar{x} = \sum_{x = 0}^{n} x \cdot P(x)
@@ -259,7 +270,7 @@
 					\bar{x} = p \cdot n
 				\end{equation}
 			
-			\item A variância é dada por:
+			\item A \textcolor{DarkTurquoise}{variância} é dada por:
 			
 				\begin{equation}
 					\sigma^2 \equiv \sum_{x = 0}^{n} (x - \bar{x})^2 \cdot P(x)
@@ -275,7 +286,7 @@
 					\sigma^2 = \bar{x}(1 - p)
 				\end{equation}
 
-			\item O desvio padrão, é dado pela raiz da variância, ou seja:
+			\item O \textcolor{DarkTurquoise}{desvio padrão}, é dado pela raiz da variância, ou seja:
 			
 				\begin{equation}
 					\sigma = \sqrt{\sigma^2}
@@ -285,9 +296,10 @@
 
 		\end{itemize}
 
-	\subsection{Distribuição de Poisson}
+	\subsection*{Distribuição de Poisson}
 
-		Como citado anteriormente, esta distribuição se adequa àqueles processos binários onde a probabilidade de obter sucesso é pequena, ou seja $p \ll 1$,  e não varia com o tempo. Portanto, pode ser aplicada a maioria das contagens nucleares onde o número de núcleos é grande e o tempo de observação é muito menor que o tempo de meia vida do elemento radioativo. 
+		Como citado anteriormente, esta distribuição se adequa àqueles \textcolor{MediumOrchid}{\textit{
+			processos binários onde a probabilidade de obter sucesso é pequena}}, ou seja, $p \ll 1$ e não varia com o tempo. Portanto, pode ser aplicada a maioria das contagens nucleares onde o número de núcleos é grande e o tempo de observação é muito menor que o tempo de meia vida do elemento radioativo. 
 
 		A aproximação da distribuição binomial para se adequar a estes casos é dada por:
 
@@ -295,7 +307,7 @@
 				P(x) = \frac{(\bar{x})^x e^{-\bar{x}}}{x!}
 			\end{equation}
 
-		\noindent onde $\bar{x} = pn$. Esta simplificação é util quando se conhece apenas a média da distribuição e não se sabe o tamanho e as probabilidades individuais da amostra. 
+		\noindent onde $\bar{x} = pn$. Esta simplificação é util quando se conhece apenas a \textcolor{MediumOrchid}{\textit{média da distribuição}} e não se sabe o \textcolor{MediumOrchid}{\textit{tamanho}} e as \textcolor{MediumOrchid}{\textit{probabilidades}} individuais da amostra. 
 
 		\begin{itemize}
 			\item A distribuição de Poisson é normalizada, de modo que:
@@ -304,13 +316,13 @@
 					\sum_{x = 0}^{n} P(x) = 1
 				\end{equation}
 
-			\item A média da distribuição de Poisson é dada por:
+			\item A \textcolor{DarkTurquoise}{média} da distribuição de Poisson é dada por:
 			
 				\begin{equation}
 					\bar{x} = \sum_{x = 0}^{n} x \cdot P(x)
 				\end{equation}
 
-			\item A variância da distribuição de Poisson é dada por:
+			\item A \textcolor{DarkTurquoise}{variância} da distribuição de Poisson é dada por:
 			
 				\begin{equation}
 					\sigma^2 \equiv \sum_{x = 0}^{n} (x - \bar{x})^2 \cdot P(x) = pn
@@ -322,7 +334,7 @@
 					\sigma^2 = \bar{x}
 				\end{equation}
 
-			\item O desvio padrão é dado por:
+			\item O \textcolor{DarkTurquoise}{desvio padrão} é dado por:
 			
 				\begin{equation}
 					\sigma = \sqrt{\sigma^2} = \sqrt{\bar{x}}
@@ -333,7 +345,7 @@
 		Esta distribuição é aproximadamente centrada em torno da média embora seja consideravelmente assimétrica devido aos valores pequenos da média.
 
 
-	\subsection{Distribuição Normal (Gaussiana)}
+	\subsection*{Distribuição Normal (Gaussiana)}
 
 		A Distribuição de Poisson fornece uma aproximação matemática da distribuição binomial para os casos em que $p \ll 1$. A distribuição normal faz a aproximação da distribuição de Poisson para os casos em que o valor médio da distribuição é grande (maior que ~ 25 ou 30). A Gaussiana é dada por:
 
@@ -350,13 +362,13 @@
 						\sum_{x = 0}^{n} P(x) = 1
 					\end{equation}
 
-				\item A média da distribuição Normal é dada por:
+				\item A \textcolor{DarkTurquoise}{média} da distribuição Normal é dada por:
 			
 					\begin{equation}
 						\bar{x} = \sum_{x = 0}^{n} x \cdot P(x)
 					\end{equation}
 	
-				\item A variância da distribuição Normal é dada por:
+				\item A \textcolor{DarkTurquoise}{variância} da distribuição Normal é dada por:
 				
 					\begin{equation}
 						\sigma^2 \equiv \sum_{x = 0}^{n} (x - \bar{x})^2 \cdot P(x) = pn
@@ -368,7 +380,7 @@
 						\sigma^2 = \bar{x}
 					\end{equation}
 	
-				\item O desvio padrão é dado por:
+				\item O \textcolor{DarkTurquoise}{desvio padrão} é dado por:
 				
 					\begin{equation}
 						\sigma = \sqrt{\sigma^2} = \sqrt{\bar{x}}
@@ -379,7 +391,7 @@
 		
 		 
 
-		Os valores de desvio padrão podem ser utilizados como limites superiores e inferiores da margem de erro de forma que dependendo da quantidade de desvios padrão utilizados para estabelecer os limites há um percentual de chance de o valor verdadeiro para a média estar dentro do intervalo. A tabela \ref{tab:medidasContagem} mostra os limites do intervalo para uma medida única com valor igual a 100, onde a confiança representa o percentual de chance do valor verdadeiro da média estar dentro daquele intervalo, e o desvio padrão é dado por $\sigma = \sqrt{100} = 10$ (Para uma contagem única x, $\sigma = \sqrt{x}$).
+		Os valores de desvio padrão podem ser utilizados como limites superiores e inferiores da margem de erro de forma que dependendo da quantidade de desvios padrão utilizados para estabelecer os limites há um percentual de chance de o valor verdadeiro para a média estar dentro do intervalo. A Tabela \ref{tab:medidasContagem} mostra os limites do intervalo para uma medida única com valor igual a 100, onde a confiança representa o percentual de chance do valor verdadeiro da média estar dentro daquele intervalo, e o desvio padrão é dado por $\sigma = \sqrt{100} = 10$ (Para uma contagem única x, $\sigma = \sqrt{x}$).
 
 
 		\begin{table}[h]
@@ -419,7 +431,7 @@
 		\end{equation}
 
 		
-	\subsection{Soma ou Subtração de Contagens}
+	\subsubsection*{Soma ou Subtração de Contagens}
 
 		Dado 
 
@@ -434,7 +446,7 @@
 				\sigma_u = \sqrt{\sigma_x^2 + \sigma_y^2} 
 			\end{equation}
 		
-	\subsection{Multiplicação por Constante}
+	\subsubsection*{Multiplicação por Constante}
 
 		Dado 
 
@@ -442,13 +454,13 @@
 				u = A \cdot x
 			\end{equation*}
 
-		\noindent, onde A é uma constante, o desvio padrão de u será:
+		\noindent onde A é uma constante, o desvio padrão de u será:
 
 			\begin{equation}
 				\sigma_u = A \sigma_x
 			\end{equation}
 
-	\subsection{Divisão Por Constante}
+	\subsubsection*{Divisão Por Constante}
 
 		Dado 
 
@@ -456,13 +468,13 @@
 				u =\frac{1}{B} \cdot x
 			\end{equation*}
 
-		\noindent, onde B é uma constante, o desvio padrão de u será:
+		\noindent onde B é uma constante, o desvio padrão de u será:
 
 			\begin{equation}
 				\sigma_u = \frac{1}{B} \sigma_x
 			\end{equation}
 		
-	\subsection{Multiplicação ou Divisão De Contagens}
+	\subsubsection*{Multiplicação ou Divisão De Contagens}
 
 		Dado 
 
@@ -482,7 +494,7 @@
 				\sigma_u = u \sqrt{\left(\frac{\sigma_x}{x}\right)^2 + \left(\frac{\sigma_y}{y}\right)^2}
 			\end{equation}
 
-	\subsection{Valor Médio de Múltiplas Contagens Independentes}
+	\subsubsection*{Valor Médio de Múltiplas Contagens Independentes}
 
 		Dado 
 

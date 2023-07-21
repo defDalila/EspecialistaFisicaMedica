@@ -1,7 +1,6 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage[utf8]{inputenc}
-% \usepackage[T1]{fontenc}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{siunitx}
 \usepackage[brazil]{babel}
@@ -12,7 +11,7 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{natbib}
 \bibliographystyle{plainnat}
-\bibpunct{[}{]}{,}{s}{}{}
+\bibpunct{\textcolor{MediumOrchid}{\textbf{[}}}{\textcolor{MediumOrchid}{\textbf{]}}}{,}{s}{}{}
 \usepackage{color}
 \usepackage{footnote}
 \usepackage{setspace}
@@ -29,15 +28,31 @@
 \usepackage{enumitem}
 \usepackage{caption}
 \usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{LobsterTwo}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{txfonts}
+\usepackage[bottom]{footmisc}
+\tcbuselibrary{skins,breakable}
+\sisetup{output-decimal-marker={.}}
+
+\makeatletter
+\def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
+\makeatother
+
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
+
+\AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
+\titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\LobsterTwo\large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
 
 
-\titleformat{\section}{\LARGE\color{CarnationPink}}{\thesection}{1em}{}
-\titleformat{\subsection}{\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
-
-
-\DeclareCaptionLabelFormat{figuras}{\textcolor{CarnationPink}{Figura \arabic{figure}}}
+\DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
 \captionsetup[figure]{labelformat=figuras}
 
 \makeatletter
@@ -48,9 +63,9 @@
 \renewcommand{\thefigure}{Fig. \arabic{figure}}
 \renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
 
-\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\blacksquare$}}
 
-\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
 
 
 \newcounter{exemplo}
@@ -66,8 +81,8 @@
   linewidth=2pt,
   linecolor=CarnationPink,
   frametitlerule=false,
-  frametitlefont=\Large\bfseries\color{CarnationPink},
-  frametitle={\color{CarnationPink}\normalfont\bfseries #1},
+  frametitlefont=\LobsterTwo\large\color{CarnationPink},
+  frametitle={\color{CarnationPink}\LobsterTwo\large #1},
   ]
 }{%
   \end{mdframed}
@@ -84,16 +99,16 @@
 	filecolor=DarkTurquoise,      
 	urlcolor=DarkTurquoise,
 	citecolor=DarkTurquoise,
-	pdftitle={Radioterapia}
+	pdftitle={Especialista em Física da Radioterapia}
 }
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \rfoot{Página \thepage}
 
-\title{Radioterapia}
-\author{Análise de Distribuição de Dose e Espalhamento\nocite{*}}
-\date{\textit{Dalila Mendonça}}
+\title{\LobsterTwo\Huge{Radioterapia}}
+\author{\LobsterTwo\LARGE{Análise de Distribuição de Dose e Espalhamento\nocite{*}}}
+\date{\LobsterTwo{Dalila Mendonça}}
 \begin{document}
 	\maketitle
 
@@ -145,8 +160,32 @@
 
 	Phantoms antropomórficos são aqueles que simulam o corpo humano tendo a forma de um dorso e é composto por materiais que simulam diferentes tecidos como músculo, pulmão, osso e cavidades de ar. Esse phantom é dividido em diversas sessões (vários recortes) sendo possível inserir detectores de radiação como filmes, etc\dots
 
+\subsubsection*{Penetração do Feixe de Fótons}
 
-	\section{Distribuição de Dose Na Profundidade}
+	Quando um feixe de fótons se propaga pelo ar ou pelo vácuo, seu comportamento é governado pela lei do inverso do quadrado, onde a intensidade do feixe diminui à medida que se afasta da fonte de radiação. No entanto, quando o feixe de fótons passa através de um fantoma (objeto de referência) ou um paciente, ele é afetado por três efeitos principais: atenuação, dispersão e a lei do inverso do quadrado. Esses efeitos combinados tornam a determinação da deposição de dose em um fantoma ou paciente uma tarefa desafiadora.
+
+	A atenuação refere-se à redução da intensidade do feixe de fótons à medida que eles interagem e são absorvidos pelo material do fantoma ou paciente. A atenuação depende das características do material e da energia dos fótons. Quanto maior a energia dos fótons, menor é a atenuação. O espalhamento ocorre quando os fótons sofrem desvios em sua trajetória ao interagir com o material do fantoma ou paciente. Esses desvios podem ser causados por espalhamento Compton e espalhamento Rayleigh. A dispersão afeta a distribuição espacial da dose. A lei do inverso do quadrado ainda se aplica, mas agora com as contribuições da atenuação e do espalhamento, o que torna a relação entre a intensidade do feixe e a distância da fonte mais complexa.
+
+	Medir diretamente a distribuição de dose dentro de um paciente é praticamente impossível devido à complexidade e inacessibilidade do interior do corpo humano. No entanto, é crucial ter um conhecimento preciso e exato da distribuição de dose dentro do volume irradiado para garantir um tratamento por radiação bem-sucedido. Uma abordagem comum é estabelecer várias funções matemáticas que relacionam a dose em qualquer ponto dentro do paciente com a dose conhecida em um ponto de calibração do feixe em um fantoma. O fantoma é um objeto de referência que possui características semelhantes ao tecido humano e é utilizado para calibrar o sistema de medição. Ao medir a dose em pontos específicos do fantoma e relacioná-la às doses em pontos correspondentes dentro do paciente, é possível obter uma estimativa da distribuição de dose dentro do paciente.
+
+	Essas funções são geralmente determinadas utilizando detectores de radiação apropriados colocados em fantomas que têm características semelhantes ao tecido humano. Os detectores registram a dose ou taxa de dose em pontos específicos do fantoma. A dose ou taxa de dose no ponto de referência, que é o ponto de calibração do feixe, é determinada usando ou com fantomas de água. Os fantomas de água são utilizados porque a água tem propriedades de atenuação semelhantes às do tecido humano. A determinação da dose no ponto de referência é realizada em condições de referência específicas, como profundidade, tamanho de campo e distância fonte-superfície (SSD), que são padronizadas e bem definidas.
+
+	A \ref{fig:pdpSaida} ilustra uma distribuição típica de dose ao longo do eixo central de um feixe de fótons de alta energia incidente em um paciente. Diversos pontos e regiões importantes podem ser identificados nessa distribuição. O feixe de fótons entra no paciente na superfície, fornecendo uma dose superficial específica ($D\text{s}$). À medida que o feixe penetra no paciente, a dose aumenta rapidamente inicialmente até atingir um valor máximo em uma certa profundidade ($z_{max})$. Essa profundidade varia dependendo das características do feixe e do tipo de tratamento. Após atingir o valor máximo, a dose começa a diminuir quase exponencialmente à medida que o feixe se propaga através do paciente. No ponto de saída do paciente, a dose atinge um valor específico ($D\text{ex}$), que é determinado pela interação do feixe com os tecidos e a geometria do tratamento.
+
+	\begin{figure}[h]
+		\centering
+		\fcolorbox{DarkTurquoise}{white}{%
+			\includegraphics[width=0.5\textwidth]{Imagens/pdpSaida.JPG
+			}
+		}%
+		\caption{Deposição de dose de um feixe de fótons de megavoltagem em um paciente. Ds é a dose de superfície no lado de entrada do feixe, Dex é a dose de superfície no lado de saída do feixe. Dmax é a dose máxima geralmente normalizada para 100, resultando em uma curva de dose em profundidade conhecida como distribuição de dose em profundidade percentual (PDD). A região entre z = 0 e z = zmax é referida como a região de acúmulo de dose.}
+		\label{fig:pdpSaida}
+	\end{figure}
+
+	A dose de saída se refere à quantidade de dose que é entregue ao paciente no ponto de saída do feixe de radiação. Na \ref{fig:pdpSaida}, é possível observar que, próximo ao ponto de saída do feixe, as curvas de distribuição de dose apresentam uma ligeira inclinação para baixo em relação à curva de distribuição de dose extrapolada. Isso significa que a dose medida nessa região é ligeiramente menor do que o valor esperado. Essa pequena divergência ocorre devido à falta de contribuição de espalhamento proveniente de áreas além do ponto de saída. No ponto de saída, as áreas além desse ponto não contribuem significativamente para a dose medida devido ao espalhamento limitado no meio de ar.
+
+
+\section{Distribuição de Dose Na Profundidade}
 
 	A dose absorvida em um meio varia com a profundidade e depende de vários fatores como: \textit{\textbf{Energia do Feixe, profundidade, tamanho de campo, distância até a fonte e sistema de colimação do feixe}}. O Primeiro passo é definir a variação da dose com a profundidade ao longo do eixo central do feixe e as outras quantidades de interesse são derivadas a partir dessa quantidade. As principais quantidades que determinam essa variação são : PDP, TAR, TPR e TMR. Normalmente essas quantidades são obtidas através de medidas com câmaras de ionização com pequenas cavidades. 
 
@@ -550,36 +589,48 @@
 		\end{itemize}
 	\end{exemplo}
 
+\section{Algoritmos Baseados em Modelo}
 
-	\begin{exemplo}[Pontos Chave]
-		\begin{itemize}
-			\item Tecido Equivalente:
-				\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
-					\item Materiais equivalentes a tecido ou fantomas (no que diz respeito à atenuação do feixe de fótons e distribuição de dose em profundidade) devem ter o mesmo número atômico efetivo e a mesma densidade eletrônica (número de elétrons por centímetro cúbico) que os de tecidos moles. Água, poliestireno e plásticos sintéticos, como água sólida, são exemplos de materiais que são quase equivalentes a tecidos.
-					\item Phantoms antropomórficos, como o Alderson Radiation Therapy Phantom, incorporam materiais para simular tecidos corporais - músculos, ossos, pulmões e cavidades aéreas.
-				\end{itemize}
-			\item Porcentagem de Dose na Profundidade:
-				\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
-					\item PDD para feixes de fótons na água (ou tecidos moles), além da profundidade da dose máxima ($d_{max}$), diminui quase exponencialmente com a profundidade. Aumenta com um aumento na energia do feixe (maior penetração), tamanho do campo (aumento do espalhamento) e com a SSD (efeito da lei do inverso quadrado).
-					\item O fator Mayneord F considera a mudança na PDP com SSD, mas não a mudança no espalhamento (por exemplo, para grandes tamanhos de campo e grandes profundidades). Em geral, superestima o aumento da PDP com o aumento do SSD.
-				\end{itemize}
-			\item Razão Tecido-Ar:
-				\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
-					\item A TAR, como a PDP, depende da profundidade, energia do feixe, tamanho e formato do campo, mas é quase independente da SSD.
-					\item A TAR têm sido tradicionalmente utilizada para cálculo de dose envolvendo feixes de baixa energia (por exemplo, cobalto-60) e geometria de feixe isocêntrica (por exemplo, terapia de rotação ou técnicas estacionárias de SAD). Os métodos atuais de cálculo de dose usam TPRs ou TMRs, que não têm limitação de energia do feixe e podem ser medidas com mais precisão.
-					\item TARs para feixes de baixa energia (até cobalto-60) podem ser medidas diretamente ou calculadas a partir do PDP.
-					\item O BSF ou PSF é a TAR em $d_{max}$. É um fator substancial para feixes na faixa de ortovoltagem (os valores mais altos são para feixes de $\sim$0,6 mm Cu HVL e podem chegar a 1.2–1.4, dependendo do tamanho do campo). O BSF diminui para alguns por cento acima da unidade para cobalto-60 e aproxima-se de uma unidade para feixes de raios-x de alta energia.
-					\item O BSF, como a TAR, não é mais utilizado na dosimetria de feixes de megavoltagem, exceto por algumas instituições onde ainda é utilizado como uma “variável dummy”;
-					\item A SAR representa a componente de espalhamento da TAR. É um conceito útil para a dosimetria de campos de forma irregular (por exemplo, técnica de Clarkson). Como a TAR, essa quantidade pode ser usada para feixes de cobalto-60 ou de baixa energia.
-				\end{itemize}
-			\item Campo Equivalente:
-				\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
-					\item Campos retangulares, quadrados e circulares de feixes de fótons podem ser igualados aproximadamente em termos do output de dose e distribuição de dose na profundidade utilizando tabelas ou igualando A/P (área sobre o perímetro).
-					\item O método A/P não é válido para campos de forma irregular.
-				\end{itemize}
-		\end{itemize}
-	\end{exemplo}
+	Os algoritmos baseados em modelos para o cálculo de distribuições de dose em um paciente podem ser categorizados em três tipos principais:
+
+	\begin{itemize}
+		\item \textcolor{DarkTurquoise}{\textbf{Cálculo analítico simples:}}
 		
+		O método de cálculo analítico simples é uma abordagem relativamente básica que se baseia no cálculo analítico do espalhamento de Compton de primeira ordem. Nesse método, a dose primária no ponto de interesse é complementada pela contribuição do espalhamento. No entanto, essa técnica faz a suposição de um feixe paralelo de fótons com uma única energia e não leva em consideração o espalhamento de ordem superior nem as heterogeneidades presentes no paciente.
+		 
+		\item \textcolor{DarkTurquoise}{\textbf{Método de convolução-sobreposição:}} 
+		
+		O método de convolução-sobreposição leva em consideração a natureza indireta da deposição de dose resultante das interações de fótons com o tecido. Esse método separa as interações primárias de fótons do transporte de fótons espalhados e partículas carregadas geradas por meio do efeito fotoelétrico, espalhamento de Compton e produção de pares.
+
+
+		\item \textcolor{DarkTurquoise}{\textbf{Método de Monte Carlo:}}
+		
+		O método de Monte Carlo é considerado o mais promissor para o cálculo de dose baseado em modelo. Ele utiliza distribuições de probabilidade bem estabelecidas para simular as interações de fótons e elétrons com o paciente e o transporte dessas partículas dentro do paciente. Os métodos de Monte Carlo são essenciais para caracterizar o feixe clínico e também podem calcular diretamente distribuições de dose de fótons para um paciente específico e sua geometria de tratamento. No entanto, a principal limitação dos cálculos diretos de Monte Carlo é o tempo significativo necessário para calcular um grande número de histórias a fim de reduzir as incertezas estocásticas. No entanto, espera-se que avanços na tecnologia de computadores reduzam os tempos de cálculo de Monte Carlo, tornando-o o método padrão no planejamento de tratamento radioterápico. Para realizar cálculos de distribuição de dose baseados em Monte Carlo, são obtidas as densidades eletrônicas dos diferentes tecidos dentro de pacientes individuais, usando tomógrafos computadorizados (TC) ou simuladores de TC, que são componentes cruciais do processo de cálculo.
+	\end{itemize}
+
+\section{Medidas Relativas Para Caracterização do Feixe com Câmaras de Ionização}
+	
+\begin{exemplo}[Aplicações em Cada Medida:]
+	\begin{itemize}
+		\item \textcolor{DarkTurquoise}{\textbf{Câmaras de ionização cilíndricas de volume relativamente grande (0.6 cc):}} são utilizadas para medir doses e taxas de dose em pontos de referência em um fantoma para feixes de fótons de megavoltagem e feixes de elétrons acima de 10 MeV para garantir um sinal razoável e uma boa relação sinal-ruído.
+
+		\item \textcolor{DarkTurquoise}{\textbf{câmaras de ionização de pequeno volume (0.1 cc)}} são utilizadas para medidas de distribuições relativas de dose, como curvas PDD e perfis de feixe, para feixes de fótons além da profundidade de dose máxima ($d_{max}$) e para feixes de elétrons, pois fornecem alta resolução espacial.
+		
+		\item \textcolor{DarkTurquoise}{\textbf{Câmaras de ionização de placas paralelas:}} são utilizadas para medições de doses superficiais e doses na região de buildup para feixes de fótons. Essas câmaras são equipadas com uma fina janela de eletrodo polarizador para capturar a dose superficial e possuem um pequeno espaçamento entre eletrodos (tipicamente 1 mm) para melhor resolução espacial.
+		
+		\item As polaridades positiva e negativa de uma câmara de ionização de placas paralelas são usadas para medir uma curva típica de PDD para feixes de fótons de megavoltagem na região de buildup e além. A diferença nos sinais entre as duas polaridades é mais significativa na superfície do fantoma e diminui com a profundidade até desaparecer em $d_{max}$ e além. Na região de buildup, uma câmara de ionização cilíndrica apresentará leituras artificialmente altas devido à sua espessura excessiva da parede, enquanto uma câmara de placas paralelas fornece medições precisas.
+		
+		\item  Na região de buildup, são medidas as polaridades positiva e negativa de uma câmara de ionização de placas paralelas, e a leitura média entre as duas polaridades é considerada o valor real de dose. Essa média compensa a corrente Compton gerada pelas interações de fótons no eletrodo de medição, que causa um aumento na leitura para a polaridade positiva e uma diminuição na leitura para a polaridade negativa.
+		
+		\item Para profundidades além de  $d_{max}$, ambas as polaridades da câmara fornecem a mesma leitura porque o equilíbrio eletrônico é alcançado no eletrodo de medição.
+		
+		\item  A eficiência de coleta iônica em uma câmara de ionização depende não apenas da diferença de potencial entre os eletrodos polarizante e de medição, mas também da taxa de dose dentro da câmara. Ao medir doses relativas na profundidade, as alterações na recombição iônica com a profundidade são geralmente ignoradas, pois a perda de recombição iônica em câmaras de bom desempenho geralmente é de 2\% ou menos.
+		
+		\item \textcolor{DarkTurquoise}{\textbf{}} As razões de poder freamento (água para ar) e os fatores de correção da câmara são dependentes da profundidade, e seu impacto deve ser considerado com base na situação específica e na precisão desejada ao medir doses em profundidade com câmaras de ionização. Em feixes de fótons, a razão de poder de freamento restrita de água para ar é essencialmente independente da profundidade além de $d_{max}$. Em feixes de elétrons, a razão de poder de freamento restrito de água para ar varia significativamente com a profundidade, exigindo correções na curva de ionização medida ao determinar a dose relativa.
+		
+		\item Para câmaras não blindadas, como câmaras tipo Farmer, o fator de correção de perturbação de fluência também varia com a energia em profundidade em feixes de elétrons. Portanto, câmaras de ionização de placas paralelas bem blindadas são mais adequadas para medir doses relativas em feixes de elétrons em comparação com câmaras do tipo "thimble".
+	\end{itemize}
+\end{exemplo}
 
 
 \pagebreak

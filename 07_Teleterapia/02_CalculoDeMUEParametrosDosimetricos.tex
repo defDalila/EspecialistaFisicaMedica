@@ -500,26 +500,63 @@
             \item Através de um método aproximado que mede os perfis de dose em função da profundidade para um feixe estreito alongado (5 cm x 40 cm). Devido ao perfil de dose do feixe primário ser criado pelo filtro aplanador que possui uma simetria radial, os dados da POAR podem ser tabelados como função da profundidade e da distância radial com respeito ao eixo central.
         \end{enumerate}
     
-    \begin{tcolorbox}[width=\textwidth, colback={white}, title={$\bigstar$ \LobsterTwo{Pontos Chave}$\bigstar $}, coltitle={CarnationPink}, colframe={DarkTurquoise}, fonttitle=\LobsterTwo\Large]
-    \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
-        \item Os fatores TAR e BSF são aplicáveis para feixes de baixa energia até a energia do \ce{^{60}Co}, porém eles não podem ser precisamente medidos para feixes de alta energia devido terem medidas realizadas no ar. Nos casos dos feixes de alta energia, são utilizados os fatores TPR ou TMR, onde amos são medidos no tecido. Ambos estes fatores estão relacionados com os fatores de output $S_c$ e $S_p$ que não possuem limitações de energia.
-        \item As quantidades dosimétricas utilizadas para a determinação das MU/Dose incluem a PDP, TMR (ou TPR), $S_c$, $S_p$ e os fatores de distância até a fonte em relação ao método de entrega da dose SAD ou SSD com respeito à calibração. Assumindo a $SAD = 100\;cm$, a calibração em termos da SSD, onde a SSD é definida na superfície do phantom sendo igual a 100 cm, a profundidade de calibração definido na profundidade de dose máxima estará em uma distância igual a $100 + d_{max}$ da fonte; Já para a calibração pela SAD a distância da fonte ao ponto de referência na profundidade será exatamente igual à SAD e  a SSD na superfície do phantom será igual a $SAD-d_{max}$ (Assumindo que o fator de calibração é definido na profundidade de dose máxima).
-        \item O fator $S_c$ diz respeito ao campo definido pela abertura dos colimadores, normalmente dado pelos valores nominais dos jaws colimadores $x_1, \; x_2, \; y_1\; e\;  y_2$.
-        \item O fator $S_p$ diz respeito ao tamanho de campo projetado na profundidade que realmente será utilizado para tratamento, normalmente é dado pelo campo efetivo formado por blindagens realizadas com blocos ou pelo MLC. 
-        
-        \item A TMR é um caso especial da TPR onde a profundidade de referência é fixada na profundidade de dose máxima ($d_{max}$) que é a mesma para todos os tamanhos de campo para uma determinada energia. Como ao medir $d_{max}$ em função do tamanho de campo, mostra valores diferentes devido ao aumento da contaminação do feixe primário com elétrons em função do aumento do tamanho de campo, a profundidade $d_{max}$ de referência deve ser determinada a partir de uma geometria que minimize a influência da contaminação com os elétrons; ou seja, deve ser definido para o menor campo possível que mantenha as condições de equilíbrio eletrônico (campo \qtyproduct{3 x 3}{cm}).
-        
-        \item Enquanto a PDP depende da SSD, a TMR e a TPR são praticamente independentes da SSD, dependendo apenas da profundidade do ponto em que se deseja avaliar a dose em relação à superfície. 
-        
-        \item Os valores da TMR ou da TPR podem ser medidos diretamente em um phantom ou podem ser determinados a partir das medidas da PDP; O mesmo vale para a PDP que pode ser medida diretamente ou ser obtida através dos valores medidos para a TMR ou TPR;
-        
-        \item Os fatores SMR e SPR representam a componente devido a apenas o espalhamento dos fatores TMR e TPR, ou seja, não consideram a parte da dose no ponto devido ao feixe primário, considerando apenas a dose devido ao feixe espalhado em outro local dentro do campo que alcança o ponto de análise de dose. Esses fatores são úteis para calcular a componente da dose espalhada no ponto devido à geometria de campos irregulares através do método da integral de Clarkson;
-        
-        \item Para determinar a dose em um ponto off-axis devido a um campo assimétrico, é necessário ter estabelecido o fator $POAR$, também chamado de ``off-center ratio'', que considera a mudança na fluência de energia para alvos que não estão centralizados com o eixo do feixe mas sim, normalmente, centralizados no campo assimétrico que possui fluência de energia variável com a distância lateral definida do eixo à borda do campo que não será simétrica; 
-        
-    \end{itemize}
-    \end{tcolorbox}
+\section{Fator OFF-Axis e Perfis de Feixe}
 
+
+    As distribuições de dose ao longo do eixo central do feixe de radiação fornecem apenas informações parciais sobre a dose dentro do paciente. Para ter uma descrição completa e precisa da dose em 2D e 3D, é necessário combinar os dados do eixo central com perfis de dose obtidos fora do eixo central. 
+
+    Os dados fora do eixo são obtidos por meio da medição dos perfis de feixe de radiação perpendicularmente ao eixo central em profundidades específicas em um fantoma. Geralmente, essas medições são feitas em duas profundidades: zmax, que é a profundidade onde a dose atinge seu valor máximo, e 10 cm, que é uma profundidade padrão utilizada para verificar a conformidade com as especificações do equipamento. Dependendo do sistema de planejamento de tratamento (TPS) utilizado no departamento, podem ser necessárias medições em profundidades adicionais.
+
+    A \ref{fig:perfiDeFeixe} apresenta exemplos de perfis de dose típicos medidos em diferentes profundidades em um meio aquoso (água) para dois tamanhos de campo: 10 x 10 $cm^2$ e 30 x 30 $^2$. Esses perfis de dose foram obtidos utilizando um feixe de raios X de alta energia de 10 MV. Ao combinar a distribuição de dose obtida ao longo do eixo central com os dados obtidos fora do eixo, é possível criar uma matriz de dose volumétrica, que fornece informações sobre a distribuição de dose em 2D e 3D. A taxa fora do eixo (OAR, do inglês "Off-Axis Ratio") é uma medida comumente utilizada para avaliar a dose em um ponto localizado fora do eixo central do feixe de radiação. Essa taxa é definida como a razão entre a dose em um ponto fora do eixo e a dose no eixo central do feixe na mesma profundidade em um fantoma.
+
+    \begin{figure}[h]
+        \centering
+        \fcolorbox{DarkTurquoise}{white}{%
+            \includegraphics[width=0.5\textwidth]{Imagens/perfiDeFeixe.JPG}
+        }%
+        \caption{Exemplo de perfis de feixe.}
+        \label{fig:perfiDeFeixe}
+    \end{figure}
+
+    Os perfis de feixe de raios X de megavoltagem exibem três regiões distintas:
+    \begin{itemize}
+        \item \textcolor{DarkTurquoise}{\textbf{Região Central:}}  É a região do feixe onde a dose é mais alta e é chamada de região central ou de pico. Nessa região, a dose é relativamente uniforme e próxima ao valor máximo.
+        \item \textcolor{DarkTurquoise}{\textbf{Região de Penumbra:}}  a região adjacente à região central, onde a dose diminui gradualmente de seu valor máximo para zero. Nessa região, ocorre um gradiente de dose que é mais pronunciado nas bordas do feixe.
+        \item \textcolor{DarkTurquoise}{\textbf{Região de ``Umbra'':}}  É a região além da região de penumbra, onde a dose é baixa ou negligenciável. Nessa região, a dose é considerada insignificante para o tratamento.
+    \end{itemize}
+
+    A região central do perfil de dose se estende a partir do eixo central do feixe de radiação até aproximadamente 1-1.5 cm das bordas geométricas do campo. O tamanho geométrico do campo, que é determinado pelo campo luminoso, é definido como a distância entre os pontos no perfil de dose onde a dose atinge 50\% do valor máximo. Na região central, o perfil de dose para feixes de cobalto-60 (\ce{^{60}Co}) é influenciado pela queda da dose seguindo a lei do inverso do quadrado e pelo aumento da espessura do fantoma para pontos localizados fora do eixo central. No caso dos aceleradores lineares (linacs), a região central é afetada por fatores como a energia dos elétrons que atingem o alvo espesso, o número atômico do alvo e a forma e número atômico do filtro de aplainamento utilizado.
+
+    A região de penumbra do perfil de dose apresenta mudanças rápidas na dose e é influenciada por diversos fatores, como os colimadores que definem o campo, o tamanho finito do ponto focal (ou seja, o tamanho da fonte utilizada) e a falta de equilíbrio eletrônico lateral. A queda na dose ao redor da borda geométrica do feixe tem uma forma sigmoidal e se estende além das mandíbulas do colimador, na região conhecida como cauda penumbral. A penumbra é composta por três componentes individuais: a penumbra de transmissão (causada pela transmissão de dose através das mandíbulas do colimador), a penumbra geométrica (atribuída ao tamanho finito da fonte) e a penumbra de espalhamento (devido ao espalhamento de raios X dentro do paciente). A penumbra total, conhecida como penumbra física, é a soma dessas penumbras individuais. A largura da penumbra física depende de fatores como a energia do feixe de radiação, o tamanho da fonte, a distância fonte-superfície (SSD), a distância fonte-colimador (SDD) e a profundidade em um fantoma.
+
+    A região de umbra está localizada fora do campo de radiação, distante das bordas do campo. Nessa região, a dose de radiação é tipicamente baixa e resulta da radiação que é transmitida através do colimador e da blindagem do cabeçote do equipamento de radioterapia.
+
+\subsubsection*{Planura}
+
+    A planura do feixe é uma medida da uniformidade da dose que o feixe de radiação entrega ao paciente. Para avaliá-la, analisamos os valores de dose máxima ($D_{\text{max}}$) e dose mínima ($D_{\text{min}}$) em uma região central do perfil do feixe, que abrange 80\% da sua largura. O cálculo da planura ($F$) é feito utilizando a equação:
+
+    \begin{equation}
+        F = 100 \times \frac{D_{\text{max}} - D_{\text{min}}}{D_{\text{max}} + D_{\text{min}}}
+    \end{equation}
+
+    As especificações padrão para aceleradores lineares (linacs), que são equipamentos utilizados em radioterapia, estabelecem que a planura do feixe ($F$) deve ser inferior a 3\%. Essa medição é feita em um fantoma de água, que simula as condições de um paciente, a uma profundidade de 10 cm e uma distância de 100 cm entre a fonte de radiação e a superfície do fantoma. Além disso, o maior tamanho de campo disponível, normalmente 40 x 40 \unit{cm^2}, é utilizado nessa avaliação.
+
+    Atingir a conformidade com as especificações de planura a uma profundidade de 10 cm em água pode levar a um fenômeno chamado "superplanificação" na profundidade de dose máxima (zmax), o que resulta no aparecimento de um aumento excessivo de dose nessa região, criando uma forma semelhante a "cornos" no perfil de dose. Por outro lado, à medida que a profundidade (z) aumenta além de 10 cm, pode ocorrer uma "subplanificação", ou seja, uma diminuição da uniformidade da distribuição de dose, o que resulta em um perfil de dose progressivamente pior. Esse comportamento pode ser observado nos perfis de dose para o campo de 30 x 30 \unit{cm^2}, conforme ilustrado na \ref{fig:perfiDeFeixe}.
+
+    A superplanificação e a subplanificação nos perfis do feixe ocorrem devido às energias efetivas mais baixas nas direções fora do eixo central em comparação com a direção do eixo central. Isso significa que a dose entregue pelo feixe de radiação é mais alta no eixo central e diminui nas regiões laterais, resultando nos fenômenos de superplanificação e subplanificação mencionados anteriormente.
+
+\subsubsection*{Simetria}
+
+    A simetria do feixe refere-se à uniformidade da distribuição de dose em cada lado do eixo central do feixe. A profundidade de dose máxima ($z_{\text{max}}$) é frequentemente utilizada para avaliar a simetria do feixe, pois é nessa profundidade que a dose é mais sensível a desvios de simetria.
+
+    Para determinar a simetria do feixe, seleciona-se dois pontos de dose no perfil do feixe que estão igualmente distantes do eixo central. Esses pontos são comparados entre si. Uma especificação comum para a simetria do feixe é que a diferença entre esses dois pontos de dose deve ser inferior a 2\%.  Como alternativa ao método anterior, também é possível calcular a simetria do feixe comparando as áreas sob o perfil do feixe em cada lado do eixo central (direita e esquerda). Essas áreas são calculadas estendendo-se até isodose de 50\% (normalizado para 100\% no ponto do eixo central). A simetria do feixe (S) é então calculada usando a seguinte equação:
+
+    \begin{equation}
+        S = 100 \times \frac{A_{\text{esq}} - A_{\text{dir}}}{A_{\text{esq}} + A_{\text{dir}}}
+    \end{equation}
+
+    Para determinar as áreas sob os perfis de $z_{\text{max}}$, existem diferentes métodos disponíveis. Um dispositivo de varredura em tanque de água, como um ``plotador'' de isodoses 3D, pode oferecer uma opção automática para calcular essas áreas. Alternativamente, métodos práticos como o uso de um planímetro ou a contagem de quadrados em papel gráfico podem ser empregados ao analisar uma cópia impressa do perfil do feixe. Esses métodos permitem a avaliação precisa da simetria do feixe.
+    
 \bibliography{ref.bib}
 \end{document}
     

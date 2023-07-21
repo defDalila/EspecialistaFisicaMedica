@@ -1,0 +1,421 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{siunitx}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[margin=10pt,font={small, it},labelfont=bf, textfont=it]{caption}
+\usepackage[dvipsnames, svgnames]{xcolor}
+\DeclareCaptionFont{MediumOrchid}{\color[svgnames]{MediumOrchid}}
+\usepackage[pdftex]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\bibpunct{\textcolor{MediumOrchid}{\textbf{[}}}{\textcolor{MediumOrchid}{\textbf{]}}}{,}{s}{}{}
+\usepackage{color}
+\usepackage{footnote}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{leading}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{mdframed}
+\usepackage{etoolbox}
+\usepackage[version=4]{mhchem}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{LobsterTwo}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{txfonts}
+\usepackage[bottom]{footmisc}
+\tcbuselibrary{skins,breakable}
+\sisetup{output-decimal-marker={.}}
+
+\makeatletter
+\def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
+\makeatother
+
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
+
+\AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
+
+
+\titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+
+
+\DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
+\captionsetup[figure]{labelformat=figuras}
+
+\makeatletter
+\renewcommand\tagform@[1]{\maketag@@@{\color{CarnationPink}(#1)}}
+\makeatother
+
+\renewcommand{\theequation}{Eq. \arabic{equation}}
+\renewcommand{\thefigure}{Fig. \arabic{figure}}
+\renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
+
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\blacksquare$}}
+
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
+
+
+\newcounter{exemplo}
+
+\NewDocumentEnvironment{exemplo}{ O{} }{%
+\allowbreak
+\setlength{\parindent}{0pt}
+  \begin{mdframed}[
+  leftline=true,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=2pt,
+  linecolor=CarnationPink,
+  frametitlerule=false,
+  frametitlefont=\LobsterTwo\large\color{CarnationPink},
+  frametitle={\color{CarnationPink}\LobsterTwo\large #1},
+  ]
+}{%
+  \end{mdframed}
+}
+
+\setlength{\fboxsep}{5pt}
+\setlength{\fboxrule}{1.5pt}
+\usepackage{float}
+\renewcommand{\thefootnote}{\alph{footnote}}
+\usepackage{url}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=DarkTurquoise,
+	filecolor=DarkTurquoise,      
+	urlcolor=DarkTurquoise,
+	citecolor=DarkTurquoise,
+	pdftitle={Especialista em Física da Radioterapia}
+}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{Página \thepage}
+
+\title{\LobsterTwo\Huge{Radiobiologia}}
+\author{\LobsterTwo\Large{Resposta do Tecido Normal à Radiação}\nocite{*}}
+\date{\LobsterTwo\textit{Dalila Mendonça}}
+\begin{document}
+	\maketitle
+
+
+
+\section{Tipos de Efeitos de Tecido Normal}
+
+	Os efeitos precoces da exposição à radiação, também conhecidos como efeitos agudos, geralmente se manifestam dentro de um período de até 60 dias após a irradiação. Esses efeitos são principalmente causados pela morte aguda de células, especialmente aquelas com alta taxa de renovação celular, como o epitélio gastrointestinal e a medula óssea. A radiação ionizante tem um impacto significativo nas células em divisão ativa, levando à morte celular. Isso pode resultar em sintomas agudos, como náuseas, vômitos, diarreia, fadiga, perda de cabelo e supressão da medula óssea. Esses efeitos são temporários e geralmente desaparecem quando o tecido afetado se recupera.
+
+	No entanto, é importante destacar que a resposta dos tecidos à radiação varia dependendo de sua capacidade de regeneração. Se um número suficiente de células-tronco e células progenitoras sobreviver ao dano inicial, o tecido afetado tem a capacidade de se recuperar completamente ao longo do tempo. Isso ocorre porque as células-tronco têm a capacidade de se multiplicar e diferenciar para substituir as células perdidas. A regeneração dos tecidos pode levar tempo e varia de acordo com o tipo de tecido e a dose de radiação recebida. Em geral, tecidos com alta capacidade de regeneração, como a pele, têm uma recuperação mais rápida do que tecidos com menor capacidade de regeneração, como o sistema nervoso central.
+
+	Os efeitos tardios da radiação referem-se aos efeitos observados após um período de tempo maior, geralmente mais de 60 dias após a exposição à radiação. Esses efeitos são causados por mecanismos diferentes da morte celular aguda e estão relacionados a danos crônicos e cumulativos nos tecidos. Os efeitos tardios podem se manifestar em diferentes formas, dependendo dos tecidos afetados. Alguns dos efeitos tardios comuns incluem danos vasculares, fibrose (cicatrização excessiva do tecido) e lesões nas células parenquimatosas\footnote{As células parenquimatosas são células especializadas que compõem o tecido funcional de um órgão ou tecido específico. Elas desempenham funções metabólicas e estruturais dentro do órgão em questão. Essas células são responsáveis pela execução das atividades específicas do tecido em que estão presentes. Por exemplo, no fígado, as células parenquimatosas são os hepatócitos, que realizam funções relacionadas ao metabolismo, síntese de proteínas, armazenamento de nutrientes e desintoxicação. Já no tecido pulmonar, as células parenquimatosas são os pneumócitos, que estão envolvidos na troca gasosa.} dos órgãos.
+	Os tecidos com renovação celular lenta ou limitada, como o tecido conjuntivo, vasos sanguíneos, pulmões e tecido nervoso central, são mais propensos a desenvolver efeitos tardios. Isso ocorre porque esses tecidos têm uma capacidade limitada de regeneração e reparo em comparação com os tecidos de rápida renovação celular.
+	
+	Os efeitos tardios da radiação podem se manifestar em diferentes momentos e podem ser progressivos. Alguns efeitos tardios podem se desenvolver meses ou anos após a exposição inicial à radiação. Exemplos de efeitos tardios incluem fibrose pulmonar, disfunção endotelial, disfunção renal, neuropatias tardias e risco aumentado de desenvolvimento de câncer.	É importante destacar que os efeitos tardios da radiação são frequentemente irreversíveis e podem afetar negativamente a qualidade de vida dos indivíduos afetados.
+
+	Os efeitos tardios consequenciais são resultado de danos permanentes nos tecidos que surgem como consequência de um efeito precoce grave que não cicatriza completamente. Esses efeitos ocorrem devido a lesões graves e irreparáveis que ocorreram durante a fase inicial da exposição à radiação.	Um exemplo comum de um efeito tardio consequencial é a necrose de pele, em que ocorre a morte das células da pele devido à exposição à radiação. Essa necrose pode ser tão grave que a pele afetada não consegue se regenerar adequadamente e requer intervenção médica, como um enxerto de pele, para promover a cicatrização e a recuperação.
+
+	Outros exemplos de efeitos tardios consequenciais incluem a formação de úlceras ou feridas crônicas que não cicatrizam, a deterioração de tecidos adjacentes à área irradiada e a perda de função de órgãos ou estruturas corporais específicas.Esses efeitos tardios consequenciais podem ter um impacto significativo na qualidade de vida dos indivíduos afetados, requerendo cuidados médicos contínuos e intervenções para minimizar as complicações associadas.
+
+\section{Efeitos do Fracionamento e do Tempo de Tratamento}
+
+	Os efeitos agudos da exposição à radiação são mais influenciados pelo tempo total de tratamento do que pelo tamanho da fração. Isso ocorre porque esses efeitos são principalmente resultado da morte aguda de células, especialmente em tecidos com alta taxa de renovação celular, como o trato gastrointestinal e a medula óssea.
+
+	O parâmetro $\alpha/\beta$ é uma medida da sensibilidade dos tecidos aos efeitos da radiação. Valores mais altos de $\alpha/\beta$ indicam que os tecidos têm uma resposta mais pronunciada às mudanças na dose por fração, enquanto valores mais baixos indicam que os tecidos são menos sensíveis a essas alterações. Os efeitos agudos geralmente têm valores mais altos de $\alpha/\beta$, o que significa que eles são menos sensíveis a alterações no tamanho da fração.
+
+	A toxicidade dos efeitos agudos é avaliada com base na dose total administrada e na dose por semana. O tempo total de tratamento influencia a dose por semana, que é um fator importante para a toxicidade aguda. Prolongar o curso do tratamento de radiação permite que os tecidos danificados tenham a oportunidade de se recuperar parcialmente por meio da repopulação celular. Isso ocorre porque, ao longo do tempo, as células saudáveis remanescentes têm a capacidade de se dividir e repovoar os tecidos, contribuindo para a recuperação.
+
+	No entanto, é importante encontrar um equilíbrio entre prolongar o tratamento para permitir a repopulação celular e limitar a toxicidade aguda. O gerenciamento adequado da toxicidade aguda durante o tratamento de radiação é essencial para garantir que os benefícios do tratamento superem os efeitos colaterais indesejados. Portanto, a estratégia ideal de fracionamento e o tempo total de tratamento devem ser determinados com base nas características do paciente, no tipo de câncer e nos objetivos do tratamento.
+
+	Os efeitos tardios da radiação são mais sensíveis a alterações no tamanho da fração, indicados por valores mais baixos de $\alpha/\beta$. Isso significa que esses efeitos são mais influenciados pelo tamanho da dose administrada em cada fração do tratamento do que pelo tempo total de tratamento.
+
+	A toxicidade dos efeitos tardios é avaliada com base na dose total administrada e na dose por fração. A fracionação da radioterapia, ou seja, dividir a dose total em várias frações administradas ao longo do tempo, permite um aumento na reparação dos tecidos danificados entre as frações. Embora ocorra algum processo de repopulação dos tecidos danificados durante o intervalo entre as frações, esse processo é limitado e geralmente não é clinicamente significativo.
+
+	A fracionação adequada do tratamento é crucial para minimizar os efeitos tardios da radioterapia. Ao dividir a dose total em frações menores, permite-se que os tecidos normais tenham tempo para se recuperar e reparar os danos causados pela radiação. Os regimes de fracionamento são personalizados de acordo com o tipo de câncer, a localização do tumor e os tecidos saudáveis circundantes, a fim de maximizar a eficácia do tratamento e minimizar os efeitos tardios adversos.
+
+	Ao considerar uma reirradiação de uma área previamente irradiada, é importante levar em conta o conceito de "remembered dose" ou "dose lembrada". Esse conceito refere-se à dose acumulada de radiação que o tecido recebeu anteriormente e que pode diminuir sua tolerância à reirradiação.
+
+	Os efeitos tardios da radiação são geralmente irreversíveis, o que significa que os tecidos não se recuperam completamente após a exposição inicial. Essa "memória" da dose de radiação pode levar a uma maior suscetibilidade a danos adicionais quando o tecido é reirradiado. O efeito da "remembered dose" pode resultar em uma maior toxicidade e risco de complicações em tecidos previamente irradiados. É importante ressaltar que os tecidos com reações agudas, que são efeitos observados dentro de poucas semanas após a radiação, geralmente têm um grau menor de "memória" de dose em comparação com os tecidos com reações tardias, que podem surgir meses ou anos após a irradiação.
+
+	Ao planejar uma re-irradiação em uma área previamente irradiada, é essencial considerar cuidadosamente a dose acumulada de radiação recebida pelo tecido, avaliar os riscos potenciais e tomar medidas para minimizar a toxicidade e os efeitos adversos. A decisão de reirradiar deve levar em consideração a relação benefício-risco e ser cuidadosamente avaliada por uma equipe multidisciplinar de especialistas em radioterapia.
+
+\section{Células-tronco: latência e subunidades funcionais}
+
+	Nos tecidos que possuem uma população de células-tronco em divisão e células funcionais não-divisoras, a radiação geralmente afeta principalmente as células-tronco, enquanto as células funcionais têm uma maior capacidade de resistir aos danos causados pela radiação.
+
+	As células-tronco são altamente proliferativas e têm a capacidade de se dividir e se regenerar, desempenhando um papel importante na renovação e regeneração dos tecidos. Devido à sua natureza proliferativa, as células-tronco são mais suscetíveis aos efeitos da radiação, o que pode levar a danos em seu DNA e subsequente morte celular. Por outro lado, as células funcionais não-divisoras, que têm uma função específica no tecido e não se dividem ativamente, tendem a ser mais radioresistentes. Essas células têm uma menor taxa de divisão celular e, portanto, estão menos expostas aos danos causados pela radiação.
+
+	No entanto, é importante destacar que a disfunção tecidual devido à radiação pode não se tornar aparente imediatamente. Após a exposição à radiação, pode ocorrer um período de latência em que não há sintomas ou disfunção aparente. A duração desse período de latência é influenciada pela vida útil das células funcionais afetadas. Se as células funcionais afetadas têm uma vida útil mais longa, o período de latência também será mais longo antes que os efeitos tardios da radiação se manifestem.
+
+	Após o período de latência, quaisquer células-tronco sobreviventes iniciarão o processo de regeneração tecidual. É importante observar que cada célula-tronco tem a capacidade de regenerar apenas um volume finito do órgão. Esse volume específico é conhecido como unidade funcional (UF). 
+
+	O conceito de unidade funcional (UF) é fundamental para entender a regeneração tecidual após a exposição à radiação. Existem duas maneiras principais de compreender a UF: estruturalmente definida e estruturalmente indefinida.
+
+	No caso de UFs estruturalmente definidas, existem estruturas anatômicas específicas que definem grupos de células responsáveis por funções específicas. Essas estruturas podem ser observadas em órgãos como rins (néfrons), pulmões (árvores brônquicas), fígado (tríades portais) ou glândulas exócrinas (unidades funcionais específicas). Cada UF estruturalmente definida é composta por um conjunto de células que trabalham em conjunto para realizar uma função específica no órgão.
+
+	Por outro lado, as UFs estruturalmente indefinidas não correspondem a estruturas anatômicas específicas, mas ainda são essenciais para a função do órgão. Um exemplo disso é a capacidade de migração das células-tronco na pele. As células-tronco têm a capacidade de se mover e se regenerar em uma distância finita, sem serem restritas por fronteiras anatômicas específicas. Embora não haja uma estrutura definida, a função e integridade da pele dependem dessas células-tronco migratórias.
+
+	Em qualquer caso, para manter a função adequada do órgão, é necessário um número mínimo de UFs funcionais, também conhecido como unidade de resgate tecidual. Essa unidade de resgate representa a menor unidade funcional do tecido necessária para sustentar a função do órgão. Se o número de UFs for inferior a esse limite crítico, a função do órgão pode ser comprometida.
+
+	Portanto, a capacidade de regeneração tecidual após a exposição à radiação depende da sobrevivência e atividade das células-tronco, bem como da preservação das UFs funcionais necessárias para sustentar a função do órgão.
+
+\section{Órgãos Seriais e Paralelos e Efeito de Volume}
+
+	Em órgãos em série, como o sistema nervoso central (SNC) ou o trato gastrointestinal (GI), a perda de função em uma parte do órgão pode resultar na interrupção completa da função do órgão como um todo. Isso ocorre porque os órgãos em série têm um suprimento de sangue comum e compartilham vias de comunicação necessárias para a função adequada.
+
+	Diferentemente dos órgãos com estruturas anatômicas definidas, onde a lesão pode ser limitada a uma unidade funcional específica, em órgãos em série, a interrupção de uma parte do órgão pode afetar diretamente a função global. Isso significa que mesmo uma alta dose de radiação em um volume pequeno pode causar danos críticos, pois afeta toda a função do órgão.
+
+	A probabilidade de dano é diretamente proporcional ao volume do órgão irradiado. Isso significa que quanto maior for o volume do órgão irradiado, maior será o risco de lesão. Por exemplo, se a entrega de 50 Gy à medula espinhal apresenta um risco de 1\% de mielopatia por centímetro, irradiar apenas 1 centímetro da medula pode ser considerado aceitável em termos de risco. No entanto, irradiar 30 centímetros da medula não seria considerado razoável devido ao alto risco de danos significativos.
+
+	Além disso, o risco de lesão é determinado principalmente pela dose mais alta recebida. Por exemplo, a medula espinhal pode tolerar uma dose total de 36 Gy quando o órgão inteiro é irradiado, mas não pode tolerar 74 Gy em um único ponto dentro dela. Isso destaca a importância de limitar as doses mais altas a níveis seguros para minimizar o risco de lesões críticas em órgãos em série.
+
+	Em um órgão em paralelo, como o rim, pulmão ou fígado, a perda de função em uma parte específica não afeta a função do órgão como um todo. Cada parte do órgão em paralelo atua independentemente das outras partes. Por exemplo, no caso do rim, se uma parte dele for afetada ou removida, a função renal ainda pode ser mantida pelo rim restante.
+
+	Em órgãos em paralelo, existe um efeito de volume limiar, o que significa que apenas uma parte específica do órgão precisa ser preservada para que a função global seja mantida. Remover completamente um órgão em paralelo não causa insuficiência do órgão, desde que o outro órgão esteja funcionando adequadamente.
+	
+	Além disso, em órgãos em paralelo, o risco de lesão é determinado pela dose média recebida em todo o volume do órgão, não pela dose em um ponto específico. Isso significa que a tolerância do órgão é baseada na dose média em todo o volume do órgão, e não na dose em um ponto específico. Por exemplo, o pulmão pode tolerar uma dose total de 36 Gy quando o órgão inteiro é irradiado, mas pode tolerar facilmente 74 Gy em um único ponto dentro dele.
+
+	A pele e a mucosa são consideradas órgãos com comportamento clínico semelhante aos órgãos em paralelo. Embora não se enquadrem estritamente nas categorias de órgãos em série ou em paralelo, o comportamento clínico desses tecidos é semelhante aos órgãos em paralelo. Isso ocorre porque a perda ou descamação de uma pequena área da pele ou da mucosa é geralmente mais tolerável do que a perda de uma área grande. A pele e a mucosa têm a capacidade de se regenerar e se recuperar de lesões, mas a extensão e a gravidade da lesão podem afetar a capacidade de regeneração.
+
+	O coração pode ser considerado um órgão que apresenta características tanto de um órgão em série quanto de um órgão em paralelo, dependendo do contexto em que é avaliado.
+
+	Em relação ao sistema circulatório, o coração é frequentemente considerado um órgão em série. Isso ocorre porque o coração funciona como uma bomba central que impulsiona o sangue através de uma série de vasos sanguíneos, fornecendo sangue oxigenado e nutrientes para os órgãos e tecidos do corpo. Uma disfunção em qualquer parte do sistema circulatório, incluindo o coração, pode levar a um comprometimento global da função circulatória.
+	
+	No entanto, em relação à radioterapia, o coração é frequentemente tratado como um órgão em paralelo. Isso se deve ao fato de que o coração é composto por várias estruturas distintas, como as artérias coronárias, as válvulas cardíacas e o miocárdio, que podem ser afetadas separadamente pela radiação. Danos específicos em uma dessas estruturas podem levar a consequências clínicas distintas, como doença arterial coronariana, insuficiência valvar ou cardiomiopatia. Portanto, em termos de tolerância à radiação, diferentes partes do coração podem ser consideradas como órgãos em paralelo.
+
+	O pericárdio, que é a membrana que envolve o coração, pode ser considerado um exemplo de órgão em paralelo dentro do contexto do sistema cardiovascular. O pericárdio é uma estrutura separada do músculo cardíaco (miocárdio que é um órgão em série) e tem uma função protetora em relação ao coração.
+
+	Na radioterapia, o pericárdio pode ser exposto à radiação em casos em que o tratamento é direcionado a tumores próximos ao coração. A exposição à radiação do pericárdio pode resultar em inflamação (pericardite), fibrose (espessamento e endurecimento do pericárdio) ou outras complicações relacionadas. Nesse sentido, o pericárdio é considerado um órgão em paralelo porque a toxicidade associada à radiação nessa estrutura é avaliada separadamente das possíveis complicações do miocárdio ou de outras partes do coração. A dose média recebida pelo pericárdio é um fator importante a ser considerado ao determinar os riscos e efeitos colaterais da radioterapia nessa região.
+
+\section{Resposta de Diferentes Tecidos à Radiação }
+
+\subsection*{Pele}
+
+	As respostas agudas da pele ocorrem principalmente na epiderme, a camada mais externa da pele. Elas podem se manifestar como eritema (vermelhidão da pele) devido à dilatação dos vasos sanguíneos e edema. O eritema é uma resposta rápida que pode ocorrer imediatamente após uma dose única alta de radiação. A descamação da pele é outra resposta aguda, mas geralmente é atrasada em cerca de 14 dias, pois as células da epiderme têm um tempo de renovação de aproximadamente 14 dias. A epilação, ou perda de cabelo, também é uma resposta aguda causada por danos às células germinativas dos folículos capilares. Geralmente ocorre após um atraso de 2-3 semanas e leva cerca de 3 meses para que o cabelo comece a crescer novamente.
+
+	As respostas tardias da pele ocorrem predominantemente na derme, a camada mais profunda da pele. Elas são caracterizadas por telangiectasias, que são a dilatação de pequenos vasos sanguíneos na pele, e fibrose, que resulta de danos vasculares crônicos e inflamação. Essas respostas tardias são mais duradouras e podem se desenvolver meses ou anos após a exposição à radiação.
+
+	A tolerância da pele à radiação pode variar dependendo de vários fatores, incluindo a área superficial da pele irradiada, o fracionamento do tratamento e a resposta individual do paciente. No geral, a pele é considerada relativamente tolerante à radiação, mas doses mais altas podem levar a efeitos agudos e tardios mais graves.
+
+	Para cânceres de pele menores e tratamentos localizados, doses mais altas podem ser administradas com uma boa tolerância. Por exemplo, para tratamentos de carcinoma basocelular ou carcinoma espinocelular, doses de até 70 Gy podem ser usadas com segurança, dependendo do tamanho e da localização do tumor.
+
+	No entanto, em áreas maiores da pele, como a parede torácica, doses mais baixas podem levar a toxicidade aguda grave. A sensibilidade da pele à radiação varia em diferentes áreas do corpo e entre os pacientes. Por exemplo, doses tão baixas quanto 50 Gy ou até menos podem resultar em toxicidade aguda significativa na parede torácica, como dermatite aguda (inflamação da pele), eritema, descamação e até úlceras cutâneas.
+
+\subsection*{Hematopoiéticas}
+
+	As células-tronco hematopoéticas (HSCs) são altamente sensíveis à radiação. A tolerância das HSCs à radiação varia dependendo de vários fatores, incluindo o tipo de irradiação, a dose total administrada, a fração de dose e a presença ou ausência de transplante de células-tronco.	As HSCs são responsáveis pela produção de células sanguíneas maduras, como glóbulos vermelhos, glóbulos brancos e plaquetas. Elas residem principalmente na medula óssea e são essenciais para a renovação contínua do sistema hematopoético.
+
+	A sensibilidade das HSCs à radiação é geralmente alta, o que significa que doses relativamente baixas de radiação podem afetar negativamente sua função e sobrevivência. A tolerância das HSCs à radiação é frequentemente expressa como uma dose letal (LD), que é a dose necessária para causar a morte de uma determinada fração de células. A LD50 (dose letal para 50\% das células) das HSCs varia dependendo do contexto clínico, mas em geral está na faixa de 2 a 5 Gy em um único fracionamento.
+
+	Na irradiação do corpo inteiro (TBI), onde todo o corpo é exposto à radiação, a tolerância hematopoético das células-tronco hematopoiéticas (HSCs) é tipicamente uma dose letal (LD50) de 3-4 Gy em uma única fração, sem o uso de transplante de células-tronco. No contexto do transplante de células-tronco hematopoiéticas, o objetivo do condicionamento mieloablativo é eliminar as HSCs do hospedeiro, permitindo o enxerto das células-tronco do doador. Para alcançar essa supressão adequada do sistema hematopoético do receptor, são necessárias doses de TBI que excedam a tolerância das HSCs. O condicionamento mieloablativo busca destruir as HSCs remanescentes do receptor, impedindo sua capacidade de produzir novas células sanguíneas e permitindo a substituição das células-tronco do doador, que irão repopular o sistema hematopoético do receptor.
+
+	Na irradiação parcial do corpo, quando apenas uma parte específica é irradiada, a morte das células-tronco hematopoiéticas (HSCs) nessa área pode levar a respostas compensatórias no sistema hematopoético, incluindo o crescimento acelerado e a diferenciação das células hematopoiéticas em outras partes do corpo. Esse fenômeno é conhecido como "efeito abscopal".
+	No entanto, é importante destacar que a medula óssea fortemente irradiada, com doses acima de 30 Gy, pode ter dificuldade em se recuperar totalmente. Isso pode ser observado em exames de ressonância magnética, onde um sinal anormal na medula óssea pode persistir por muitos anos após a irradiação. Além disso, em alguns casos, a hematopoiese extramedular, que é a formação de células sanguíneas fora da medula óssea, pode ocorrer em órgãos como o baço, fígado ou tecidos moles. Esse é um processo compensatório que ocorre quando a medula óssea está comprometida ou danificada. Essas respostas observadas na irradiação parcial do corpo destacam a complexidade e a capacidade de adaptação do sistema hematopoético diante da radiação. 
+
+	As diferentes linhagens celulares dentro do sistema hematopoético apresentam níveis variados de sensibilidade à radiação. Algumas características específicas de cada linhagem são:
+
+	\begin{itemize}
+		\item \textcolor{DarkTurquoise}{\textbf{Linfócitos}}: Os linfócitos, incluindo as células plasmáticas, são as células mais sensíveis à radiação. Eles experimentam um nadir\footnote{Nadir é um termo utilizado na radioterapia para descrever o ponto mais baixo ou mínimo de uma curva de resposta biológica. No contexto da radioterapia, o nadir é frequentemente utilizado para referir-se ao ponto mais baixo da contagem de células sanguíneas, como os glóbulos brancos, glóbulos vermelhos e plaquetas, após um tratamento de radioterapia ou quimioterapia. O nadir indica o momento em que a contagem dessas células atinge seu valor mais baixo, o que pode levar a efeitos colaterais temporários, como fadiga, diminuição da imunidade e risco aumentado de infecções. }, ou seja, um ponto mais baixo de contagem celular, dentro de algumas horas a poucos dias após a exposição à radiação. Mesmo os linfócitos maduros são radiossensíveis devido à ativação de mecanismos de apoptose (morte celular programada).
+
+		\item \textcolor{DarkTurquoise}{\textbf{Granulócitos}}: A linhagem dos granulócitos, que inclui os neutrófilos, tem uma sensibilidade intermediária à radiação. Nesse caso, apenas as células-tronco hematopoiéticas são mortas pela radiação, enquanto as células diferenciadas dentro da linhagem continuam com sua vida útil normal. Os níveis de granulócitos atingem um nadir em torno de 2-4 semanas após a exposição à radiação.
+
+		\item \textcolor{DarkTurquoise}{\textbf{Plaquetas}}: A linhagem das plaquetas é um pouco menos sensível à radiação em comparação com os linfócitos e granulócitos. Os níveis de plaquetas também atingem um nadir em 2-4 semanas após a exposição à radiação.
+
+		\item \textcolor{DarkTurquoise}{\textbf{Glóbulos vermelhos}}: A linhagem dos glóbulos vermelhos, responsáveis pela produção de hemoglobina, é relativamente resistente à radiação. A menos que haja sangramento significativo, os níveis de hemoglobina não são amplamente afetados pelo tratamento com TBI (irradiação do corpo inteiro).
+	\end{itemize}
+
+\subsection*{Mucosa Oral}
+
+	A mucosite é um efeito colateral comum da radioterapia (RT) na região da cabeça e pescoço. Geralmente, ocorre aproximadamente duas semanas após o início do tratamento e pode ser um fator limitante de dose devido ao seu impacto no conforto do paciente e no resultado geral do tratamento. A mucosite é caracterizada pela descamação do epitélio mucoso, o que resulta na formação de um exsudato fibrinoso. A gravidade da mucosite pode variar, desde um desconforto leve até dor significativa e comprometimento funcional. Na maioria dos casos, a cicatrização da mucosite ocorre em cerca de um mês, a menos que a mucosite tenha sido grave o suficiente para causar alterações permanentes na função. Alguns pacientes com mucosite grave podem experimentar disfagia duradoura (dificuldade para engolir) ou odinofagia (dor ao engolir).
+
+	A dose de tolerância para a mucosite na região da cabeça e pescoço varia dependendo de vários fatores, como a presença ou ausência de quimioterapia concomitante, o tipo de fracionamento da radioterapia e o local específico da irradiação. Geralmente, com o uso de quimioterapia concomitante, a dose de tolerância é em torno de 70 Gy, enquanto sem quimioterapia, a dose de tolerância pode chegar a 75 Gy, considerando o fracionamento padrão. No entanto, é importante ressaltar que esses valores são apenas referências gerais e podem variar em cada caso individual. Além disso, a definição de tolerância também pode ser influenciada pela presença ou ausência de uma sonda de alimentação, que é utilizada para garantir a nutrição adequada em pacientes com dificuldades para se alimentar devido à mucosite. O manejo da mucosite durante a RT frequentemente envolve medidas de suporte, como controle da dor, manutenção da higiene oral e modificações na dieta para garantir uma nutrição adequada.
+
+\subsection*{Glândulas Salivares}
+
+
+	As glândulas salivares, incluindo as glândulas parótidas, submandibulares e numerosas glândulas salivares menores, desempenham um papel vital na produção de saliva. As glândulas salivares são tecidos que respondem tanto de forma aguda quanto tardia à radioterapia na região da cabeça e pescoço. A xerostomia, ou boca seca, é um efeito colateral comum  da radioterapia na região da cabeça e pescoço. A xerostomia geralmente começa a se manifestar cerca de 2 a 3 semanas após o início do tratamento e pode persistir por um longo período ou apresentar uma recuperação limitada ao longo do tempo.
+
+	O risco de desenvolver xerostomia está relacionado à dose de radiação entregue às glândulas salivares. Estudos têm demonstrado que limitar a dose média nas glândulas parótidas bilaterais a valores abaixo de 25 Gy ou manter a dose média em uma única glândula parótida abaixo de 20 Gy, enquanto a outra glândula é tratada com uma dose alta, pode reduzir o risco de xerostomia.
+
+	Além das glândulas parótidas, as glândulas submandibulares e as glândulas salivares menores também desempenham um papel importante no risco de desenvolvimento de xerostomia. Doses mais altas de radiação nessas glândulas podem aumentar a probabilidade de desenvolver sintomas de boca seca.
+
+	São empregados esforços significativos para preservar as glândulas salivares durante a radioterapia, a fim de minimizar o risco de xerostomia. A radioterapia de intensidade modulada (IMRT) e a terapia com prótons são técnicas avançadas que permitem direcionar a radiação com precisão ao tumor, reduzindo a exposição das glândulas salivares adjacentes. Isso ajuda a preservar a função salivar e reduzir os sintomas de boca seca.
+
+	Além das técnicas de radioterapia avançadas, medidas de suporte também são adotadas para aliviar os sintomas de xerostomia. Isso pode incluir o uso de substitutos de saliva para aliviar a secura da boca e a sensação de desconforto. A manutenção de uma boa higiene oral é fundamental para prevenir a cárie dentária e outras complicações bucais associadas à xerostomia. Os pacientes também podem ser aconselhados a aumentar a ingestão de líquidos e evitar alimentos e bebidas que possam agravar a sensação de secura.
+
+\subsection*{Esôfago}
+
+	A esofagite aguda é um efeito colateral comum da radioterapia (RT) na região torácica ou abdominal superior. Ela ocorre geralmente dentro de 1 a 2 semanas após o início do tratamento e é caracterizada por sintomas como dor e dificuldade para engolir (disfagia). A esofagite aguda geralmente se resolve dentro de 1 a 2 semanas após o término da RT.
+
+	No entanto, a toxicidade esofágica tardia é uma preocupação importante. Ela pode se manifestar como fibrose, resultando em \footnote{Estenoses referem-se a estreitamentos anormais ou obstruções em um órgão ou estrutura do corpo.} que causam disfagia contínua, ou necrose, levando a úlceras. Vários fatores, incluindo a dose de radiação, técnica de tratamento e quimioterapia concomitante, influenciam o desenvolvimento da toxicidade esofágica tardia.
+
+	A tolerância do esôfago à radioterapia depende do objetivo do tratamento. Em casos de quimiorradioterapia (ChemoRT) concomitante, doses mais altas de radiação podem aumentar o risco de mortalidade relacionada ao tratamento. Estudos, como o estudo Minsky, mostraram que doses mais altas, como 64 Gy, estão associadas a um maior risco de mortalidade em comparação com doses mais baixas, como 50.4 Gy, ao tratar o esôfago com ChemoRT concomitante.
+
+	Ao tratar cânceres de cabeça e pescoço (H\&N) ou pulmão, o risco de esofagite sintomática está relacionado a características específicas de dose e volume. A irradiação circunferencial do esôfago está associada a um maior risco de estenoses tardias. Para minimizar esse risco, sempre que possível, é preferível poupar um lado do esôfago fora do campo de alta dose durante o planejamento do tratamento de radiação.
+
+	São empregadas medidas proativas para reduzir a ocorrência e a gravidade das toxicidades esofágicas. Isso inclui o uso de técnicas de radiação que minimizam a dose ao esôfago e a utilização de tecnologias avançadas de imagem e planejamento de tratamento. O acompanhamento regular e o cuidado de suporte são fundamentais para gerenciar complicações esofágicas tardias e melhorar a qualidade de vida dos pacientes.
+
+\subsection*{Estômago}
+
+	A gastrite aguda é um efeito colateral comum da radioterapia (RT) que pode ocorrer logo após o tratamento. Ela se manifesta por sintomas como náuseas e vômitos, que podem começar imediatamente após a RT. Esses sintomas geralmente são temporários e tendem a diminuir com o tempo.
+
+	No entanto, a gastrite crônica é uma complicação tardia da RT que pode se desenvolver ao longo do tempo. Ela é caracterizada por sintomas persistentes, como dor abdominal e esvaziamento gástrico retardado. Esses sintomas podem ocorrer meses após a conclusão da RT e podem afetar significativamente a qualidade de vida do paciente. Em alguns casos, a gastrite crônica causada pela RT pode levar ao desenvolvimento de úlceras e sangramento no estômago. Essas complicações podem exigir tratamento adicional e acompanhamento médico adequado.
+
+	A dose de tolerância para o estômago inteiro é geralmente considerada em torno de 45 Gy. Esse valor é utilizado como uma referência durante o planejamento do tratamento de radioterapia para limitar a dose de radiação entregue ao estômago e minimizar o risco de efeitos colaterais de longo prazo.
+
+	É importante ressaltar que a dose de tolerância pode variar dependendo de vários fatores, como técnicas de tratamento utilizadas, terapias concomitantes (como quimioterapia) e características individuais do paciente, incluindo a capacidade de recuperação do estômago. Portanto, cada caso é avaliado de forma individualizada para determinar a dose adequada de radiação a ser administrada.
+
+	Durante o planejamento do tratamento, os profissionais de saúde procuram equilibrar a eficácia do tratamento na destruição das células cancerígenas com a minimização dos danos aos tecidos saudáveis, como o estômago. Isso é feito por meio de técnicas avançadas de radioterapia, como a radioterapia de intensidade modulada (IMRT), que permitem a entrega precisa da radiação ao tumor, reduzindo a exposição de tecidos saudáveis adjacentes.
+
+	Ao limitar a dose de radiação ao estômago, espera-se reduzir o risco de efeitos colaterais de longo prazo, como a gastrite crônica e suas complicações. O acompanhamento regular e a comunicação entre o paciente e a equipe de saúde são fundamentais para monitorar e gerenciar qualquer efeito colateral que possa surgir durante e após o tratamento de radioterapia.
+
+\subsection*{Pulmão}
+
+	O pulmão é considerado um tecido subagudo a tardio nas respostas à radioterapia. A toxicidade pulmonar induzida pela radiação pode se manifestar em diferentes formas, sendo a pneumonite por radiação a manifestação clássica.
+
+	A pneumonite por radiação é uma inflamação aguda dos pulmões que ocorre geralmente entre 6 semanas a 6 meses após a conclusão da radioterapia. Os sintomas podem incluir tosse seca, falta de ar, febre e fadiga. A gravidade dos sintomas pode variar de leves a graves, dependendo da dose de radiação administrada e da sensibilidade individual do paciente.
+
+	Além da pneumonite por radiação aguda, a fibrose pulmonar tardia é uma complicação de longo prazo que pode se desenvolver anos após a radioterapia. A fibrose pulmonar é caracterizada pela formação de tecido fibroso e cicatricial nos pulmões, o que pode levar a uma redução da capacidade pulmonar e dificuldades respiratórias crônicas.
+
+	O pulmão é um exemplo de um órgão em paralelo na radioterapia, o que significa que o risco de toxicidade pulmonar é influenciado pelo volume de tecido pulmonar irradiado.
+
+	Na radioterapia corporal estereotáxica (SBRT), onde doses muito altas de radiação são administradas em um número reduzido de frações, é possível tratar volumes pequenos de tecido pulmonar sem causar toxicidade significativa. Isso ocorre porque a dose é altamente focada e limitada à área-alvo, minimizando a exposição dos tecidos saudáveis ao redor.
+
+	No entanto, na radioterapia com fracionamento convencional, onde a dose total é dividida em várias frações menores, o risco de pneumonite por radiação aumenta gradualmente à medida que a dose no pulmão aumenta. Mesmo em doses baixas, pode haver um pequeno risco de desenvolver pneumonite, que se torna mais substancial em doses mais altas.
+
+	a tolerância pulmonar varia dependendo do local e da intenção do tratamento. Não existem limitações universais estabelecidas para o pulmão na radioterapia, pois cada caso é avaliado individualmente levando em consideração fatores específicos.
+
+	Restrições comuns são aplicadas para limitar a dose recebida pelo pulmão durante o tratamento. Isso pode incluir limitar o volume do pulmão que recebe doses específicas, como:
+
+	\begin{itemize}
+		\item V5 $<$ 70\%
+		\item V20 $<$ 40\%
+		\item V20 (bilateral) $<$ 30\%
+		\item V20 (ipsilateral) $<$ 30\% 
+	\end{itemize}
+
+	Esses valores indicam a porcentagem do volume do pulmão que recebe determinada dose. Além disso, é comum estabelecer a meta de manter a dose média do pulmão abaixo de 20 Gy. Essas restrições são aplicadas para minimizar o risco de toxicidade pulmonar e danos aos tecidos saudáveis do pulmão durante o tratamento de radiação. No entanto, é importante destacar que essas restrições podem variar entre diferentes protocolos de tratamento, instituições e profissionais de saúde.
+
+	Em pacientes pediátricos com tumores metastáticos, a irradiação pulmonar total com uma dose total de 12 Gy em 8 frações é geralmente considerada tolerável devido à capacidade de regeneração do tecido pulmonar em crianças. Essa dose e fracionamento específicos podem ser utilizados com segurança para tratar metástases pulmonares, mantendo o risco de toxicidade pulmonar baixo.
+
+	No entanto, é importante destacar que a irradiação corporal total (TBI), que envolve a exposição de todo o corpo à radiação, pode levar a complicações pulmonares como pneumonite e fibrose pulmonar. O TBI é frequentemente utilizado em transplantes de medula óssea ou tratamento de doenças hematológicas, onde o objetivo é suprimir o sistema imunológico e erradicar a medula óssea existente. Nesses casos, a dose e a distribuição de radiação no pulmão podem ser fatores de risco para o desenvolvimento de complicações pulmonares.
+
+	Para minimizar a exposição pulmonar durante o TBI, blocos de proteção pulmonar podem ser utilizados. Esses blocos são dispositivos de proteção que são colocados na frente do pulmão durante a irradiação para reduzir a dose de radiação recebida pelo tecido pulmonar. Essa abordagem visa limitar a toxicidade pulmonar e proteger a função pulmonar durante o TBI.
+
+	Pacientes com condições pulmonares pré-existentes, como doença pulmonar obstrutiva crônica (DPOC), exposição prévia à bleomicina (um medicamento quimioterápico) ou pneumonectomia anterior (remoção de um pulmão), possuem uma função pulmonar comprometida e, portanto, apresentam um risco aumentado de desenvolver pneumonite por radiação.
+
+	Devido à sensibilidade aumentada desses pacientes, é essencial realizar um monitoramento próximo e um planejamento individualizado do tratamento. Isso inclui uma avaliação cuidadosa da função pulmonar antes e durante o tratamento, a fim de determinar a tolerância do pulmão à radiação. Testes de função pulmonar, como espirometria, podem ser realizados para avaliar a capacidade respiratória e identificar possíveis alterações ao longo do tratamento.
+
+	Além disso, o planejamento do tratamento deve levar em consideração a preservação da função pulmonar, utilizando técnicas de radioterapia que minimizem a dose de radiação recebida pelos pulmões. Isso pode incluir a utilização de técnicas avançadas, como a radioterapia com intensidade modulada (IMRT) ou a terapia com prótons, que permitem uma maior conformidade da dose ao alvo e uma redução da dose nos tecidos saudáveis adjacentes, incluindo os pulmões.
+
+\subsection*{Rins}
+
+	O rim é considerado um tecido de resposta tardia na radioterapia, e os efeitos na função renal podem se manifestar gradualmente ao longo de muitos anos após a irradiação.
+
+	Como um órgão em paralelo, o volume de tecido renal irradiado desempenha um papel importante na determinação do risco de toxicidade renal. A tolerância renal à radiação é influenciada por vários fatores, incluindo a presença de lesões renais comórbidas, como quimioterapia prévia, hipertensão, diabetes e idade. É importante lembrar que muitos pacientes com câncer podem apresentar insuficiência renal mesmo na ausência de irradiação renal devido a essas condições pré-existentes.
+
+	A dose tolerável para o rim inteiro é quantificada usando os valores de TD5 (dose para um efeito em 5\% dos pacientes) e TD50 (dose para um efeito em 50\% dos pacientes). Segundo as estimativas do QUANTEC, o TD5 para o rim inteiro está na faixa de 15 a 18 Gy, indicando a dose na qual 5\% dos pacientes podem apresentar complicações renais. O TD50, que representa a dose na qual 50\% dos pacientes podem apresentar complicações renais, é estimado em cerca de 28 Gy.
+
+\subsection*{Fígado}
+
+	O fígado é conhecido por sua notável capacidade de regeneração. Ele tem a capacidade de regenerar e restaurar sua função mesmo após a remoção cirúrgica de uma parte significativa (aproximadamente dois terços), o que desempenha um papel importante na mitigação do risco de insuficiência hepática após a radioterapia ou a remoção cirúrgica de parte do fígado.
+
+	No planejamento da radioterapia, o efeito dose-volume é crucial para o fígado. Ao minimizar a exposição do tecido hepático saudável à radiação, é possível reduzir significativamente o risco de toxicidade hepática e insuficiência hepática. A preservação de uma porção do fígado fora do campo de tratamento é uma estratégia importante nesse sentido.
+
+	No contexto da radioterapia, o efeito dose-volume é particularmente importante para o fígado. Se uma porção do fígado puder ser poupada da radiação, o risco de insuficiência hepática é significativamente reduzido. Portanto, um planejamento cuidadoso do tratamento é necessário para minimizar a exposição do tecido hepático saudável à radiação.
+
+	Como um tecido de resposta tardia, os sintomas de lesão hepática induzida pela radiação podem levar anos para se manifestarem, a menos que o paciente já tenha cirrose pré-existente. É importante notar que a maioria dos tumores primários do fígado ocorre em pacientes com cirrose hepática.
+
+	A quantificação da dose tolerável para o fígado é realizada usando os valores de TD5 (dose para um efeito em 5\% dos pacientes) e TD50 (dose para um efeito em 50\% dos pacientes). De acordo com o QUANTEC, o TD5 para um fígado saudável é estimado entre 30 a 32 Gy, indicando a dose na qual 5\% dos pacientes podem apresentar complicações hepáticas. Na presença de cirrose Child-Pugh A\footnote{A cirrose Child-Pugh A é uma classificação utilizada para avaliar a gravidade da cirrose hepática com base em critérios clínicos e laboratoriais. Na classificação Child-Pugh A, os pacientes apresentam uma doença hepática compensada, o que significa que o fígado ainda é capaz de desempenhar suas funções essenciais, apesar da presença de cirrose.}, um sistema de classificação da gravidade da doença hepática, o TD5 é reduzido para cerca de 28 Gy. Da mesma forma, o TD50 é estimado em cerca de 42 Gy para um fígado saudável e 36 Gy na presença de cirrose Child-Pugh A.
+
+\subsection*{Bexiga}
+
+	A bexiga é considerada um tecido de resposta tardia na radioterapia, o que significa que os sintomas relacionados à toxicidade geralmente se manifestam vários meses após o tratamento. A perda de células da superfície da bexiga devido à radiação causa proliferação de células estromai\footnote{As células estromais da bexiga são um grupo de células que compõem o tecido conjuntivo da parede da bexiga que  desempenham várias funções, como a produção de matriz extracelular, que fornece suporte estrutural ao órgão. Elas também estão envolvidas na regulação do ambiente inflamatório e na resposta imunológica local.} mais profundas que desencadeia uma série de respostas, incluindo irritabilidade da bexiga, fibrose e redução progressiva da capacidade da bexiga.
+
+	Quando se trata de irradiar toda a bexiga, a dose de tolerância geralmente é considerada em torno de 65 Gy. Manter a dose de radiação abaixo desse limite é importante para minimizar o risco de complicações na bexiga.
+
+	No caso da radioterapia de próstata, onde a bexiga pode estar parcialmente incluída no campo de tratamento, são utilizadas restrições específicas de dose-volume para minimizar o risco de toxicidade na bexiga. Essas restrições são baseadas na quantidade de volume da bexiga que recebe doses mais altas de radiação. Restrições comuns, como mencionado anteriormente, incluem:
+
+	\begin{itemize}
+		\item $V_{65}$ ($< 50\%$)
+		\item $V_{70}$ ($< 35\%$)
+		\item $V_{75}$ ($< 25\%$)
+		\item $V_{80}$ ($< 15\%$)
+	\end{itemize}
+
+	Ao adotar essas restrições, o objetivo é reduzir a probabilidade de efeitos colaterais relacionados à bexiga durante a radioterapia de próstata.
+
+\subsection*{Coração}
+
+	O coração é considerado um tecido de resposta tardia na radioterapia, o que significa que os efeitos tóxicos podem se manifestar anos a décadas após o tratamento. O tamanho da fração da radiação administrada desempenha um papel crucial nos efeitos tóxicos no coração.
+
+	A pericardite e a cardiomiopatia são complicações potenciais da radiação cardíaca, e sua ocorrência está relacionada ao volume total do coração que recebe radiação. A radioterapia em todo o coração pode resultar em pericardite subaguda. Por exemplo, uma dose de radiação de 26 Gy para todo o coração apresenta um risco de 15\% de pericardite. Ao projetar campos de radiação que envolvem o mediastino ou campos de manto para linfoma, é importante fazer esforços para minimizar a exposição do coração à radiação, por meio de técnicas de blindagem e planejamento preciso do tratamento.
+
+	Além disso, é importante destacar que certos agentes quimioterápicos, como a doxorrubicina (adriamicina), podem aumentar ainda mais o risco de morbidade cardíaca quando combinados com a radioterapia. Portanto, a cardiotoxicidade induzida por quimioterapia deve ser considerada ao planejar o tratamento em pacientes que receberam ou receberão quimioterapia cardiotóxica.
+
+	A aterosclerose acelerada refere-se ao processo de desenvolvimento acelerado de placas de gordura nas paredes das artérias, levando ao estreitamento e endurecimento dessas estruturas. Esse processo pode ser desencadeado pela radioterapia aplicada aos vasos coronários, bem como pela presença de fatores de risco cardiovasculares preexistentes, como hipertensão, níveis elevados de colesterol e tabagismo. A radiação pode danificar as células endoteliais que revestem as artérias coronárias, desencadeando uma resposta inflamatória que leva à formação de placas de ateroma.
+
+	No planejamento do tratamento de radiação, é fundamental considerar a proteção dos vasos coronários. Os vasos coronários podem ser delineados como estruturas adicionais durante o planejamento tridimensional do tratamento. Isso permite uma melhor visualização e análise da distribuição da dose de radiação nos arredores dos vasos coronários, possibilitando uma redução da dose nessas áreas críticas. Essa abordagem ajuda a minimizar o risco de danos aos vasos coronários durante a radioterapia.
+
+	Além disso, os pacientes submetidos à radioterapia devem receber orientações sobre estratégias de redução de fatores de risco cardiovasculares. Isso inclui o controle adequado da pressão arterial, a manutenção de níveis saudáveis de colesterol através de dieta e medicação, e a cessação do tabagismo. Essas medidas visam reduzir o impacto dos fatores de risco concomitantes na progressão da aterosclerose e minimizar o risco de complicações cardiovasculares durante e após a radioterapia.
+
+\subsection*{Ossos e Cartilagens}
+
+
+	Ossos e cartilagens são considerados tecidos de resposta tardia na radioterapia, o que significa que os efeitos tóxicos podem se manifestar em um período de tempo mais prolongado após o tratamento. É importante destacar que esses efeitos podem variar entre crianças e adultos devido às diferenças no desenvolvimento e crescimento ósseo.
+
+	Em crianças, uma preocupação significativa é a supressão irreversível do crescimento, que pode ocorrer quando doses de radiação de 10-20 Gy são administradas durante o período de crescimento ativo. A exposição dessas áreas de crescimento ósseo em crianças pode resultar em danos às células produtoras de osso, levando a uma interrupção do crescimento normal e a possíveis deformidades ósseas. Portanto, é importante evitar irradiar áreas do corpo que contenham essas placas de crescimento ósseo em crianças, especialmente na coluna vertebral, para prevenir danos ao crescimento normal e risco de desenvolvimento de escoliose devido ao crescimento desequilibrado.
+
+	Tanto em crianças quanto em adultos, existe o risco de osteorradionecrose ou fraturas ósseas em qualquer osso que receba uma dose alta de radiação acima de 65-70 Gy. Essa toxicidade pode se manifestar meses a anos após o tratamento com radiação. A radiação pode causar danos nas células do tecido ósseo, afetando sua capacidade de se regenerar e remodelar adequadamente. Como resultado, pode ocorrer a deterioração dos ossos irradiados, levando à osteradionecrose, que é a morte do osso devido à radiação, e ao aumento do risco de fraturas.
+
+	É fundamental considerar a tolerância óssea durante o planejamento do tratamento de radioterapia. Técnicas de planejamento como a delimitação cuidadosa dos limites de dose para os ossos e a utilização de feixes de radiação conformados podem ajudar a reduzir a dose de radiação nos tecidos ósseos circundantes, minimizando assim o risco de toxicidade óssea. Além disso, uma avaliação cuidadosa dos riscos e benefícios da radioterapia deve ser feita em pacientes que podem apresentar risco aumentado de toxicidade óssea, como aqueles com osteoporose preexistente ou história de fraturas ósseas.
+
+\subsection*{SNC}
+
+	\textbf{O sistema nervoso central (SNC)}, composto pelo cérebro e pela medula espinhal, é uma região extremamente importante e sensível à radiação. No entanto, diferentes estruturas dentro do SNC possuem sensibilidades variadas aos efeitos da radiação.
+
+	A \textbf{medula espinhal} é particularmente mais sensível à radiação em comparação ao cérebro. Isso se deve, em parte, ao seu alto conteúdo de tecido nervoso e à presença de células progenitoras em sua estrutura. A medula espinhal é especialmente sensível ao tamanho da fração, que se refere à quantidade de radiação administrada por sessão de tratamento. O valor de $\alpha/\beta$ (alfa/beta) é usado para caracterizar a resposta biológica do tecido à radiação. Para a medula espinhal, o valor de $\alpha/\beta$ é estimado entre 1 e 2, o que significa que a resposta do tecido aos efeitos da radiação é mais pronunciada quando doses maiores são administradas em frações menores.
+
+	Os efeitos agudos na medula espinhal podem incluir desmielinização transitória, que é a perda temporária da substância que reveste as fibras nervosas, e pode se manifestar como sintomas como síndrome de sonolência ou sinal de Lhermitte, que é uma sensação de choque elétrico ao mover o pescoço. Esses efeitos agudos geralmente são temporários e podem ser reversíveis com o tempo.
+
+	Já os efeitos tardios na medula espinhal podem envolver alterações vasculares, como microinfartos e micro-hemorragias, além de condições como moyamoya, que é uma doença vascular rara que afeta as artérias cerebrais. Além disso, a medula espinhal pode sofrer disfunção cognitiva, mielopatia (lesão na medula espinhal) ou até mesmo necrose no cérebro, que é a morte do tecido cerebral devido à radiação.
+
+	A dose de tolerância para a medula espinhal é estimada em cerca de 50 Gy sem quimioterapia e 45 Gy com quimioterapia, utilizando fracionamento padrão. O fracionamento padrão é uma técnica na qual a dose total de radiação é dividida em frações menores e administrada ao longo de várias sessões de tratamento. É importante ressaltar que esses valores podem variar dependendo de fatores individuais e das características do paciente, bem como do tipo de tumor e outros tratamentos concomitantes.
+
+	O \textbf{cérebro}, por sua vez, é considerado mais tolerante à radiação em comparação à medula espinhal. Algumas áreas específicas do cérebro, chamadas de volumes de interesse, podem tolerar doses mais altas. Por exemplo, pequenos volumes podem receber doses de até 72 Gy, desde que sejam tomadas precauções adequadas para proteger as estruturas circundantes.
+
+	No caso do \textbf{tronco cerebral}, a dose de tolerância é um tanto controversa e pode variar. No entanto, geralmente é considerada em torno de 54-60 Gy. É importante salientar que a radiação no tronco cerebral requer um planejamento cuidadoso para evitar complicações graves, dada a sua importância para funções vitais.
+
+\subsection*{Gônadas}
+
+	As gônadas, que incluem os testículos nos homens e os ovários nas mulheres, são altamente sensíveis à radiação e requerem atenção especial durante a radioterapia para minimizar os danos e preservar a fertilidade, quando desejado.
+
+	Nos homens, os testículos são particularmente sensíveis à radiação. A produção de espermatozoides é altamente suscetível aos efeitos da radiação, e até mesmo doses relativamente baixas podem levar a uma diminuição na contagem de espermatozoides. Uma dose tão baixa quanto 0.1 Gy pode ter impacto na contagem de espermatozoides, e uma dose de 6 Gy pode causar esterilidade permanente. É importante observar que a sensibilidade dos testículos à radiação é influenciada pelo fracionamento da dose, sendo que a radioterapia fracionada (dividida em doses menores ao longo de várias sessões) pode ser mais prejudicial para os testículos do que uma única dose alta. É necessário um período de cerca de 74 dias para que a contagem de espermatozoides atinja seu ponto mais baixo após a exposição à radiação. No entanto, é importante destacar que a radiação não é um método confiável de esterilização, pois existem casos documentados de homens que tiveram filhos mesmo após receberem 8 Gy de irradiação total do corpo (ITC) e transplante de células-tronco. Doses mais elevadas, geralmente acima de 20 Gy, são necessárias para afetar a produção de testosterona.
+
+	Nas mulheres, os ovários também são altamente sensíveis à radiação. A quantidade de radiação necessária para causar falência ovariana imediata e sintomas clínicos varia com base na idade da mulher. Mulheres mais velhas, que possuem menos óvulos remanescentes, são mais suscetíveis à falência ovariana e podem experimentá-la mesmo com doses relativamente baixas, como 2 Gy. Por outro lado, mulheres mais jovens, incluindo adolescentes, geralmente precisam de doses mais altas, geralmente acima de 12 Gy, para resultar em falência ovariana. A falência ovariana induzida pela radiação se manifesta clinicamente de maneira semelhante a outras formas de falência ovariana, como a remoção cirúrgica dos ovários, a falência ovariana induzida por quimioterapia ou a menopausa natural.
+
+	Dado o impacto potencial na fertilidade, é fundamental adotar considerações e técnicas especiais durante a radioterapia para minimizar a exposição das gônadas à radiação. Isso pode envolver o uso de técnicas de planejamento avançado, como delineamento preciso dos órgãos em risco, técnicas de blindagem para proteção das gônadas e, quando apropriado, o uso de técnicas de preservação da fertilidade, como a criopreservação de óvulos ou esperma antes do tratamento radioterápico. Essas abordagens ajudam a minimizar os danos às gônadas, preservando a fertilidade e melhorando a qualidade de vida dos pacientes após a radioterapia.
+
+\subsection*{Genitalia}
+
+	Os órgãos genitais, como a pele da vulva e do pênis, bem como a vagina, podem ser afetados pela radioterapia, e é importante considerar seus efeitos durante o planejamento e tratamento radioterápico.
+
+	A pele da vulva e do pênis, assim como outras áreas do corpo, pode ser afetada por reações cutâneas devido à radioterapia. No entanto, devido à localização na área genital e às condições de umidade, as reações cutâneas nessa região podem ser particularmente desconfortáveis e desagradáveis para os pacientes. Essas reações podem incluir eritema (vermelhidão), descamação, sensibilidade ou até mesmo ulceração da pele. É importante prestar atenção especial à pele genital durante o tratamento radioterápico e tomar medidas para minimizar os efeitos colaterais, como a aplicação de cremes hidratantes e o uso de técnicas de proteção da pele.
+
+	Em relação à vagina, é conhecido que ela possui uma notável resistência à radiação. A vagina pode tolerar doses relativamente altas de radiação antes de desenvolver complicações, como ulcerações ou fístulas. Em alguns casos, a vagina pode suportar doses acima de 100 Gy antes de apresentar tais complicações. Essa resistência da vagina à radiação é importante para o tratamento eficaz de cânceres ginecológicos, permitindo a administração de doses adequadas para combater o tumor enquanto preserva a função vaginal. Essa preservação da função vaginal é essencial para a qualidade de vida das pacientes.
+
+\end{document}
+
+\bibliography{ref.bib}
+\end{document}

@@ -1,7 +1,6 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage[utf8]{inputenc}
-% \usepackage[T1]{fontenc}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{siunitx}
 \usepackage[brazil]{babel}
@@ -12,7 +11,7 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{natbib}
 \bibliographystyle{plainnat}
-\bibpunct{[}{]}{,}{s}{}{}
+\bibpunct{\textcolor{MediumOrchid}{\textbf{[}}}{\textcolor{MediumOrchid}{\textbf{]}}}{,}{s}{}{}
 \usepackage{color}
 \usepackage{footnote}
 \usepackage{setspace}
@@ -29,15 +28,31 @@
 \usepackage{enumitem}
 \usepackage{caption}
 \usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{LobsterTwo}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{txfonts}
+\usepackage[bottom]{footmisc}
+\tcbuselibrary{skins,breakable}
+\sisetup{output-decimal-marker={.}}
+
+\makeatletter
+\def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
+\makeatother
+
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
+
+\AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
+\titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\LobsterTwo\large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
 
 
-\titleformat{\section}{\LARGE\color{CarnationPink}}{\thesection}{1em}{}
-\titleformat{\subsection}{\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
-
-
-\DeclareCaptionLabelFormat{figuras}{\textcolor{CarnationPink}{Figura \arabic{figure}}}
+\DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
 \captionsetup[figure]{labelformat=figuras}
 
 \makeatletter
@@ -48,9 +63,9 @@
 \renewcommand{\thefigure}{Fig. \arabic{figure}}
 \renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
 
-\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\blacksquare$}}
 
-\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
 
 
 \newcounter{exemplo}
@@ -66,8 +81,8 @@
   linewidth=2pt,
   linecolor=CarnationPink,
   frametitlerule=false,
-  frametitlefont=\Large\bfseries\color{CarnationPink},
-  frametitle={\color{CarnationPink}\normalfont\bfseries #1},
+  frametitlefont=\LobsterTwo\large\color{CarnationPink},
+  frametitle={\color{CarnationPink}\LobsterTwo\large #1},
   ]
 }{%
   \end{mdframed}
@@ -84,33 +99,34 @@
 	filecolor=DarkTurquoise,      
 	urlcolor=DarkTurquoise,
 	citecolor=DarkTurquoise,
-	pdftitle={Radioterapia}
+	pdftitle={Especialista em Física da Radioterapia}
 }
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \rfoot{Página \thepage}
 
-\title{Física Médica}
-\author{Física Das Radiações\nocite{*}}
-\date{\textit{Dalila Mendonça}}
+
+\title{\LobsterTwo\Huge{Física Médica}}
+\author{\LobsterTwo\Large{Física Das Radiações\nocite{*}}}
+\date{\LobsterTwo{Dalila Mendonça}}
 \begin{document}
 	\maketitle
 
 
-    \section{Física Atômica e Nuclear}
+\section{Física Atômica e Nuclear}
 
-        \subsection{Átomos}
+    \subsection{Átomos}
 
-            Um átomo é formado por um núcleo e uma eletrosfera. Os elétrons na eletrosfera que determinam as propriedades químicas dos átomos. Os elementos contidos no núcleo são chamados de núcleons, podendo ser ou próton ou nêutron. Os nuclídeos se referem a composição de prótons e nêutrons em um núcleo.
+        Um átomo é formado por um núcleo e uma eletrosfera. Os elétrons na eletrosfera que determinam as propriedades químicas dos átomos. Os elementos contidos no núcleo são chamados de núcleons, podendo ser ou próton ou nêutron. Os nuclídeos se referem a composição de prótons e nêutrons em um núcleo.
 
-            Cada elemento, está relacionado com os seguintes números:
+        Cada elemento, está relacionado com os seguintes números:
 
-            \begin{itemize}
-                \item \textbf{\textit{\textcolor{CarnationPink}{Z:}}} Número atômico. É definido como o número total de prótons de um elemento;
-                \item \textbf{\textit{\textcolor{CarnationPink}{N:}}} Número total de nêutrons do elemento;
-                \item \textbf{\textit{\textcolor{CarnationPink}{A:}}} Número de massa atômica, dado pela soma do número de prótons Z e o número de nêutrons N de um material (A = Z + N);
-            \end{itemize}
+        \begin{itemize}
+            \item \textbf{\textit{\textcolor{CarnationPink}{Z:}}} Número atômico. É definido como o número total de prótons de um elemento;
+            \item \textbf{\textit{\textcolor{CarnationPink}{N:}}} Número total de nêutrons do elemento;
+            \item \textbf{\textit{\textcolor{CarnationPink}{A:}}} Número de massa atômica, dado pela soma do número de prótons Z e o número de nêutrons N de um material (A = Z + N);
+        \end{itemize}
             
             Ao avaliar diferentes nuclídeos, eles podem ser classificados como:
 

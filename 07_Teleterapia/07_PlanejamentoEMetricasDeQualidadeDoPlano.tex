@@ -35,18 +35,21 @@
 \usepackage{fontspec}
 \usepackage{txfonts}
 \usepackage[bottom]{footmisc}
+\tcbuselibrary{skins,breakable}
+\sisetup{output-decimal-marker={.}}
 
 \makeatletter
 \def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
 \makeatother
 
-\renewcommand{\footnotelayout}{\itshape\color{black}}
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
 
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
 \titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
 \titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\LobsterTwo\large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
 
 
 \DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
@@ -60,9 +63,9 @@
 \renewcommand{\thefigure}{Fig. \arabic{figure}}
 \renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
 
-\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\blacksquare$}}
 
-\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
 
 
 \newcounter{exemplo}
@@ -224,7 +227,32 @@
 
 	O contorno impreciso pode levar a planos abaixo do ideal, atrasar o processo de planejamento pois torna difícil ou impossível atingir algumas metas de dose ou então pode causar erros geográficos (erros no posicionamento). O contorno preciso do alvo e dos OARs são essenciais para um planejamento de alta qualidade. A importância do contorno correto é enfatizada no report da ASTRO \textbf{\textit{``Safety Is No Accident''}} e no white paper de segurança a respeito da revisão por pares, no qual o papel da revisão por pares dos contornos é enfatizado. Deve-se reconhecer que, se os contornos só forem revisados depois do planejamento, o limite para rejeição será muito maior porque o processo de planejamento terá que ser repetido. Isso levou alguns grupos a explorar a revisão por pares antes do planejamento, e isso é defendido no report  S\textbf{\textit{``Safety Is No Accident''}}. Alguns atlas de contorno estão disponíveis para auxiliar no delineamento dos volumes. O NRG Oncology tem um atlas de contorno disponível em seu site, bem como links para o atlas do Radiation Therapy Oncology Group (RTOG), Gynecologic Oncology Group (GOG) e National Surgical Adjuvant Breast and Bowel Project (NSABP) em \href{http://www.nrgoncology.org/Resources.aspx}{http://www.nrgoncology.org/Resources.aspx}. As definições de CTV em atlas, por exemplo, podem variar de acordo com o estágio.
 
+	
 	Um parâmetro crucial no planejamento é a margem usada para expandir do CTV para o PTV. Uma margem muito pequena resulta em um risco de subdosar o CTV. No entanto, se fosse necessária uma cobertura dosimétrica do CTV de 100\% em todos os pacientes, seria necessária uma margem muito grande do CTV para o PTV, resultando em doses mais altas nos OARs. É evidente que algum comprometimento da cobertura é necessário. Uma solução para esse problema vem na formulação de ``regras para margens''.
+
+\subsubsection*{Gross tumour volume}
+
+	\textit{"O Volume Tumoral Macroscópico (GTV, do inglês Gross Tumour Volume) é a extensão e localização macroscópica palpável ou visível/demonstrável de um crescimento maligno".}(ICRU No. 50)
+
+	O GTV é geralmente baseado em informações obtidas por meio de uma combinação de modalidades de imagem (tomografia computadorizada (TC), ressonância magnética (RM), ultrassom, etc.), modalidades de diagnóstico (patologia e relatórios histológicos, etc.) e exame clínico.
+
+\subsubsection*{Clinical Target Volume}
+
+	\textit{``O Volume-Alvo Clínico (CTV, do inglês Clinical Target Volume) é o volume de tecido que contém um GTV demonstrável e/ou doença maligna microscópica subclínica, que precisa ser eliminada. Esse volume deve ser tratado adequadamente para alcançar o objetivo da terapia, que pode ser a cura ou a palição''}(ICRU No. 50).
+
+	O CTV geralmente inclui a área diretamente ao redor do GTV, que pode conter doença microscópica, e outras áreas consideradas em risco e que requerem tratamento (por exemplo, linfonodos positivos). O CTV é um volume anatômico-clínico e geralmente é determinado pelo radio-oncologista, muitas vezes após consulta a outros especialistas relevantes, como patologistas ou radiologistas.
+
+\subsubsection*{Internal Target Volume}
+
+	O Volume-Alvo Interno (ITV, do inglês Internal Target Volume) consiste no CTV acrescido de uma margem interna. A margem interna é projetada para levar em consideração as variações no tamanho e na posição do CTV em relação ao quadro de referência do paciente (geralmente definido pela anatomia óssea); ou seja, variações devido aos movimentos dos órgãos, como a respiração e o conteúdo da bexiga ou reto (Relatório ICRU No. 62).
+
+\subsubsection*{Planning Target Volume}
+
+	\textit{``O Volume-Alvo de Planejamento (PTV, do inglês Planning Target Volume) é um conceito geométrico e é definido para selecionar arranjos adequados de feixe, levando em consideração o efeito líquido de todas as possíveis variações geométricas, a fim de garantir que a dose prescrita seja efetivamente absorvida no CTV''} (ICRU No. 50).
+
+	O PTV inclui a margem do alvo interno (ICRU No. 62) e uma margem adicional para incertezas de posicionamento, tolerâncias da máquina e variações durante o tratamento. O PTV está vinculado ao quadro de referência da máquina de tratamento e geralmente é descrito como o CTV acrescido de uma margem fixa ou variável.
+
+	Normalmente, um único PTV é usado para englobar um ou vários CTVs a serem direcionados por um grupo de campos. O PTV depende da precisão de ferramentas como dispositivos de imobilização e lasers, mas não inclui uma margem para as características dosimétricas do feixe de radiação (ou seja, áreas penumbrais e região de buildup), pois essas requerem uma margem adicional durante o planejamento do tratamento e o projeto de blindagem.
 
 \section{Margens}
 
@@ -300,6 +328,86 @@
 	\end{figure}
 
 \section{Avaliação do Plano e Report da Dose}
+
+	Após a conclusão dos cálculos de dose realizados por dosimetristas ou físicos médicos, o radioterapeuta avalia o plano de tratamento. A distribuição de dose pode ser analisada de várias maneiras, como selecionar pontos relevantes dentro do volume-alvo, usar uma grade de pontos em um contorno ou imagem em 2D, ou utilizar uma matriz de pontos em 3D que abrange a anatomia do paciente.
+
+	A avaliação do plano de tratamento envolve a verificação dos portais de tratamento e da distribuição de isodoses para um tratamento específico. Os portais de tratamento, geralmente avaliados por meio de radiografias de simulação ou radiografias digitalmente reconstruídas (DRRs), são verificados para garantir o direcionamento preciso do volume-alvo de planejamento desejado (PTV). A distribuição de isodoses, juntamente com outras ferramentas de avaliação de dose relevantes, é analisada para garantir a cobertura adequada do alvo e a preservação necessária das estruturas críticas ao redor do PTV.
+
+	Durante a avaliação da distribuição planejada de dose, várias ferramentas são utilizadas, incluindo:
+
+	\begin{enumerate}[label=\textcolor{CarnationPink}{(\roman*)}]
+		\item Curvas de isodose, que mostram as linhas de igual dose para visualizar a distribuição espacial da dose.
+		\item Planos ortogonais e superfícies de isodose, que fornecem uma visão tridimensional da distribuição da dose em diferentes planos e superfícies.
+		\item Estatísticas da distribuição de dose, que envolvem a análise de parâmetros como dose máxima, dose média, dose mínima e homogeneidade.
+		\item Histogramas de dose-volume diferencial (DVHs), que mostram a distribuição estatística das doses recebidas pelas estruturas anatômicas em relação ao volume dessas estruturas.
+		\item Histogramas de dose-volume cumulativos (DVHs), que fornecem uma visão acumulada da dose recebida pelas estruturas ao longo de todo o tratamento.
+	\end{enumerate}
+
+\subsubsection*{Curvas de Isodose}
+
+	As curvas de isodose são uma ferramenta utilizada para avaliar planos de tratamento em um único plano ou em vários planos dentro do paciente. Essas curvas representam a distribuição dos níveis de isodose, que são linhas que conectam pontos com a mesma dose. Essas curvas permitem comparar a isodose que envolve a periferia do alvo com aquela no isocentro (ponto central do alvo). Ao garantir que a relação entre essas isodoses esteja dentro da faixa desejada (por exemplo, 95-100\%), o plano de tratamento pode ser considerado aceitável. No entanto, é importante também verificar se as doses em órgãos críticos permanecem dentro de limites aceitáveis para evitar danos excessivos a essas estruturas. Esse método de avaliação é particularmente útil quando o número de cortes transversais (slices) disponíveis é limitado.
+
+\subsubsection*{Planos Ortogonais e Superfícies de isodose}
+
+
+	Quando um grande número de planos transversais é usado para cálculos de dose, como é o caso em uma tomografia computadorizada (TC), torna-se impraticável avaliar o plano de tratamento apenas com base nas distribuições de isodose dos slices axiais individuais. Em vez disso, as distribuições de isodose podem ser geradas em planos ortogonais de TC, que são reconstruídos a partir dos dados axiais originais. A maioria dos Sistemas de Planejamento de Tratamento (TPS) tridimensionais fornece distribuições de isodose em planos sagitais e coronais, e é cada vez mais comum exibir distribuições de isodose em planos oblíquos arbitrários.
+
+	Uma abordagem alternativa para visualizar as isodoses é mapeá-las em três dimensões e sobrepor a isosuperfície resultante em uma exibição tridimensional que mostra renderizações de superfície do alvo e/ou de outros órgãos. Essa abordagem é útil para avaliar a cobertura do alvo de forma visual, permitindo uma visão mais completa da distribuição da dose. No entanto, essas exibições não fornecem informações sobre a relação espacial entre a isosuperfície e os volumes anatômicos e não fornecem informações quantitativas de volume.
+
+	
+
+\subsubsection*{Estatísticas de Dose}
+
+	Algumas ferramentas de análise de plano não exibem visualmente a distribuição espacial de dose sobrepostas em cortes de TC ou em anatomia delineada. Em vez disso, elas fornecem informações quantitativas sobre o volume do alvo ou estrutura crítica e a dose recebida por esse volume. Ao examinar a matriz de doses para cada elemento de volume dentro de um órgão, várias estatísticas importantes podem ser derivadas, incluindo:
+
+	\begin{itemize}
+		\item A dose mínima para o volume
+		\item A dose máxima para o volume
+		\item A dose média para o volume
+		\item A dose recebida por pelo menos 95\% do volume
+		\item O volume irradiado com pelo menos 95\% da dose prescrita
+	\end{itemize}
+
+\subsubsection*{DVH}
+
+	Os Histogramas Dose-Volume (DVHs) são ferramentas para a avaliação quantitativa de planos de tratamento, resumindo as informações contidas na distribuição tridimensional de dose. 
+
+	Em sua forma mais simples, um DVH representa uma distribuição de frequência dos valores de dose dentro de um volume definido, que pode ser o volume-alvo de planejamento (PTV) em si ou um órgão específico adjacente ao PTV. Em vez de exibir a frequência diretamente, os DVHs são geralmente apresentados como uma porcentagem do volume total no eixo das ordenadas em relação à dose no eixo das abscissas. Existem dois tipos de DVHs comumente usados: DVH diretos (ou diferenciais) e DVH cumulativos (ou integrais). Uma limitação dos DVHs é a perda de informação espacial resultante da condensação de dados durante o processo de cálculo.
+
+
+\subsubsection*{DVH Diferencial}
+
+	Um histograma de dose-volume diferencial (DVH) é gerado pelo computador calculando o número de voxels (unidades tridimensionais de volume) com uma média de dose dentro de uma faixa específica e plotando o volume resultante em função da dose. Comumente, o volume é expresso como uma porcentagem do volume total do órgão. O DVH fornece uma representação gráfica da distribuição da dose em relação ao volume do órgão. A \ref{fig:dvhDiferencial}\textcolor{DarkTurquoise}{(a)} mostra um exemplo de um DVH diferencial para um volume-alvo.
+
+	\begin{figure}[h]
+		\centering
+		\fcolorbox{DarkTurquoise}{white}{%
+			\includegraphics[width=0.8\textwidth]{Imagens/dvhDiferencial.JPG}
+		}%
+		\caption{DVHs diferenciais para um plano de tratamento de próstata de quatro campos para (a) o volume alvo e (b) o reto. Os DVHs diferenciais alvo ideais seriam picos infinitamente estreitos na dose alvo para o PTV e em 0 Gy para a estrutura crítica..}
+		\label{fig:dvhDiferencial}
+	\end{figure}
+
+	No DVH, um alvo ideal seria representado por uma única coluna, indicando que 100\% do volume do alvo recebe a dose prescrita. Por outro lado, para uma estrutura crítica, o DVH pode exibir múltiplos picos, indicando que diferentes regiões do órgão recebem doses variadas. A \ref{fig:dvhDiferencial}\textcolor{DarkTurquoise}{(b)} mostra um exemplo de um DVH para o reto no tratamento da próstata usando uma técnica de quatro campos, onde podemos observar a variação da dose recebida em diferentes partes do reto.
+
+\subsubsection*{DVH Cumulativo}
+
+	Tradicionalmente, os médicos procuravam saber qual a porcentagem do volume-alvo é coberta pela linha de isodose de 95\%. No entanto, no planejamento tridimensional do tratamento, essa informação não pode ser determinada diretamente apenas a partir de um histograma de dose-volume direto (DVH). Para obter essa informação, seria necessário calcular a área sob a curva para todos os níveis de dose acima de 95\% da dose prescrita. Por essa razão, os histogramas de dose-volume cumulativos são mais frequentemente utilizados para responder a essa pergunta.
+
+	Nos histogramas de dose-volume cumulativos, o computador calcula o volume (ou porcentagem de volume) do alvo ou estrutura crítica que recebe pelo menos a dose especificada. Esses histogramas começam em 100\% do volume para 0 Gy, pois todo o volume recebe pelo menos nenhuma dose.	
+
+	A \ref{fig:dvhCumulativo} apresenta o histograma de dose-volume cumulativo correspondente para os mesmos órgãos representados na \ref{fig:dvhDiferencial}, com ambas as estruturas exibidas no mesmo gráfico. Embora a exibição mais comum seja de porcentagem de volume versus dose, há situações em que traçar o volume absoluto versus dose pode ser útil. Por exemplo, se uma tomografia computadorizada não cobrir todo o volume de um órgão, como o pulmão, e o volume não escaneado receber uma dose mínima, um histograma de dose-volume mostrando porcentagem de volume versus dose seria tendencioso, indicando que uma maior porcentagem do volume recebe dose. Além disso, no caso de certas estruturas críticas, são estabelecidas tolerâncias específicas para a irradiação de volumes fixos especificados em centímetros cúbicos.
+
+\begin{figure}[h]
+    \centering
+    \fcolorbox{DarkTurquoise}{white}{%
+        \includegraphics[width=0.8\textwidth]{Imagens/dvhCumulativo.JPG}
+    }%
+    \caption{DVHs cumulativos para o mesmo plano de tratamento de próstata de quatro campos usado na \ref{fig:dvhDiferencial}. Os DVHs cumulativos ideais são mostrados em (b).}
+    \label{fig:dvhCumulativo}
+\end{figure}
+
+\subsection{Report da Dose e Parâmetros de Qualidade}
 
 	Tanto o ICRU-83 quanto o report da ASTRO defendem fortemente o report da dose baseado em DVH, em vez de reportar a dose para o(s) ponto(s). Isso é necessário para comparar um plano específico com os reportes publicados de constraints dos tecidos normais, como por exemplo, os reports do QUANTEC. Isso evita uma possível falha em reportar a dose para um ponto específico, porque esse ponto pode ser uma dose baixa ou alta, dependendo de onde este ponto está localizado no volume. O report 2009 sobre IMRT da ASTRO observa que, se a prescrição de dose pontual for usada, a diferença entre a dose real administrada e a dose prescrita pode variar em mais de 10\%. Por esse motivo, deve-se ter cuidado ao interpretar os registros de tratamento realizados em outra instituição caso as métricas de DVH não forem reportadas.
 
