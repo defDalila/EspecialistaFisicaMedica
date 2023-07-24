@@ -47,9 +47,9 @@
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
-\titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
-\titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\LobsterTwo\large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
+\titleformat{\section}{\LobsterTwo\huge\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\huge\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bf\LobsterTwo\Large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
 
 
 \DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
@@ -104,7 +104,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\rfoot{Página \thepage}
+\rfoot{\color{DarkTurquoise}\thepage \\ \LobsterTwo{\small\textcolor{CarnationPink}{@defDalila}}}
 
 \title{\LobsterTwo\Huge{Radioterapia}}
 \author{\LobsterTwo\LARGE{Análise de Distribuição de Dose e Espalhamento\nocite{*}}}
@@ -112,11 +112,39 @@
 \begin{document}
 	\maketitle
 
-	\section{Phantoms}
+\section{Introdução}
 
-	Normalmente são feitos de água ou material água-equivalente para manter as mesmas características de absorção e espalhamento dos músculos e outros tecidos moles.
+	Quando um feixe de fótons se propaga pelo ar ou pelo vácuo, seu comportamento é governado pela \textcolor{DarkTurquoise}{\textbf{\textit{lei do inverso do quadrado}}}, onde a \textcolor{MediumOrchid}{\textbf{\textit{intensidade do feixe diminui à medida que se afasta da fonte de radiação}}}. No entanto, quando o feixe de fótons passa através de um fantoma (objeto simulador) ou um paciente, ele é afetado por três efeitos principais: \textcolor{MediumOrchid}{\textbf{\textit{atenuação}}}, \textcolor{MediumOrchid}{\textbf{\textit{espalhamento}}} e a \textcolor{MediumOrchid}{\textbf{\textit{lei do inverso do quadrado}}}. Esses efeitos combinados tornam a determinação da deposição de dose em um fantoma ou paciente uma tarefa desafiadora.
 
-	Um material água equivalente para feixes de megavoltagem devem possuir a mesma densidade eletrônica da água, que é o parâmetro relacionado à probabilidade de interação nas faixas de energia onde predomina o efeito Compton. A densidade eletrônica de um meio é dada pela \ref{eq:densidadeEletronica}:
+	A \textcolor{DarkTurquoise}{\textbf{\textit{atenuação}}} refere-se à \textcolor{MediumOrchid}{\textbf{\textit{redução da intensidade do feixe de fótons à medida que eles interagem e são absorvidos pelo material do fantoma ou paciente}}}. A atenuação depende das características do material e da energia dos fótons. Quanto maior a energia dos fótons, menor é a atenuação. 
+	
+	O \textcolor{DarkTurquoise}{\textbf{\textit{espalhamento}}} ocorre quando os \textcolor{MediumOrchid}{\textbf{\textit{fótons sofrem desvios em sua trajetória ao interagir com o material do fantoma ou paciente}}}. Esses desvios podem ser causados por espalhamento Compton e espalhamento Rayleigh. O espalhamento afeta a \textcolor{MediumOrchid}{\textbf{\textit{distribuição espacial da dose}}}. A lei do inverso do quadrado ainda se aplica, mas agora com as contribuições da atenuação e do espalhamento, o que torna a relação entre a intensidade do feixe e a distância da fonte mais complexa.
+
+	Medir diretamente a distribuição de dose dentro de um paciente é praticamente impossível devido à complexidade e inacessibilidade do interior do corpo humano. No entanto, é crucial ter um \textcolor{MediumOrchid}{\textbf{\textit{conhecimento preciso e exato da distribuição de dose dentro do volume irradiado}}} para garantir um tratamento por radiação bem-sucedido. Uma abordagem comum é \textcolor{MediumOrchid}{\textbf{\textit{estabelecer várias funções matemáticas}}} que relacionam a dose em qualquer ponto dentro do paciente com a dose conhecida em um ponto de calibração do feixe em um fantoma. 
+	
+	O \textcolor{DarkTurquoise}{\textbf{\textit{fantoma}}} é um objeto de referência que possui \textcolor{MediumOrchid}{\textbf{\textit{características semelhantes ao tecido humano}}} e é utilizado para \textcolor{MediumOrchid}{\textbf{\textit{calibrar}}} o sistema de medição. Ao medir a dose em pontos específicos do fantoma e relacioná-la às doses em pontos correspondentes dentro do paciente, é possível obter uma estimativa da distribuição de dose dentro do paciente.
+
+	Essas \textcolor{MediumOrchid}{\textbf{\textit{funções}}} são geralmente determinadas utilizando \textcolor{MediumOrchid}{\textbf{\textit{detectores de radiação apropriados}}} colocados em \textcolor{MediumOrchid}{\textbf{\textit{fantomas}}} que têm características semelhantes ao tecido humano. Os detectores registram a \textcolor{MediumOrchid}{\textbf{\textit{dose ou taxa de dose}}} em pontos específicos do fantoma. A dose ou taxa de dose no \textcolor{MediumOrchid}{\textbf{\textit{ponto de referência}}}, que é o ponto de calibração do feixe, é determinada usando fantomas de água. Os fantomas de água são utilizados porque a água tem \textcolor{MediumOrchid}{\textbf{\textit{propriedades de atenuação semelhantes às do tecido humano}}}. A determinação da dose no ponto de referência é realizada em \textcolor{MediumOrchid}{\textbf{\textit{condições de referência específicas}}}, como profundidade, tamanho de campo e distância fonte-superfície (SSD), que são padronizadas e bem definidas.
+
+	A \ref{fig:pdpSaida} ilustra uma distribuição típica de dose ao longo do eixo central de um feixe de fótons de alta energia incidente em um paciente. Diversos pontos e regiões importantes podem ser identificados nessa distribuição. O feixe de fótons entra no paciente na superfície, fornecendo uma \textcolor{MediumOrchid}{\textbf{\textit{dose superficial}}} específica ($D\text{s}$). À medida que o feixe penetra no paciente, a dose aumenta rapidamente inicialmente até atingir um \textcolor{MediumOrchid}{\textbf{\textit{valor máximo}}} em uma certa profundidade ($z_{max})$. Essa profundidade varia dependendo das características do feixe e do tipo de tratamento. Após atingir o valor máximo, a dose começa a \textcolor{MediumOrchid}{\textbf{\textit{diminuir quase exponencialmente}}} à medida que o feixe se propaga através do paciente. No ponto de saída do paciente, a dose atinge um valor específico ($D\text{ex}$), que é determinado pela interação do feixe com os tecidos e a geometria do tratamento.
+
+	\begin{figure}[h]
+		\centering
+		\fcolorbox{DarkTurquoise}{white}{%
+			\includegraphics[width=0.5\textwidth]{Imagens/pdpSaida.JPG
+			}
+		}%
+		\caption{Deposição de dose de um feixe de fótons de megavoltagem em um paciente. Ds é a dose de superfície no lado de entrada do feixe, Dex é a dose de superfície no lado de saída do feixe. Dmax é a dose máxima geralmente normalizada para 100, resultando em uma curva de dose em profundidade conhecida como distribuição de dose em profundidade percentual (PDD). A região entre z = 0 e z = zmax é referida como a região de acúmulo de dose.}
+		\label{fig:pdpSaida}
+	\end{figure}
+
+	A \textcolor{MediumOrchid}{\textbf{\textit{dose de saída}}} se refere à quantidade de dose que é entregue ao paciente no ponto de saída do feixe de radiação. Na \ref{fig:pdpSaida}, é possível observar que, próximo ao ponto de saída do feixe, \textcolor{MediumOrchid}{\textbf{\textit{as curvas de distribuição de dose apresentam uma ligeira inclinação para baixo}}} em relação à curva de distribuição de dose extrapolada. Isso significa que a dose medida nessa região é ligeiramente menor do que o valor esperado. Essa pequena divergência ocorre devido à falta de contribuição de espalhamento proveniente de áreas além do ponto de saída. No ponto de saída, as áreas além desse ponto não contribuem significativamente para a dose medida devido ao espalhamento limitado no meio de ar.
+
+\section{Phantoms}
+
+	Normalmente são feitos de \textcolor{MediumOrchid}{\textbf{\textit{água ou material água-equivalente}}} para manter as mesmas características de absorção e espalhamento dos músculos e outros tecidos moles.
+
+	Um \textcolor{DarkTurquoise}{\textbf{\textit{material água equivalent}}}e para feixes de megavoltagem devem possuir a mesma densidade eletrônica da água, que é o parâmetro relacionado à probabilidade de interação nas faixas de energia onde predomina o efeito Compton. A densidade eletrônica de um meio é dada pela \ref{eq:densidadeEletronica}:
 
 		\begin{equation}
 			\rho_e = \rho_m \cdot N_A \cdot \left(\frac{Z}{A}\right)
@@ -125,14 +153,14 @@
 
 		\begin{exemplo}[onde:]
 			\begin{itemize}
-				\item \begin{equation}
+				\begin{equation}
 							\frac{Z}{A} = \sum_{i} a_i \cdot \frac{Z_i}{A_i}
-					\end{equation}
-		\item \textcolor{CarnationPink}{$\mathbf{\rho_m}$} é a densidade mássica do meio;
-		\item \textcolor{CarnationPink}{$\mathbf{N_A}$} é o número de Avogadro;
-		\item \textcolor{CarnationPink}{$\mathbf{a_i}$} é a fração de peso do i-ésimo elemento que constitui a molécula;
-		\item \textcolor{CarnationPink}{$\mathbf{Z_i}$} é o número atômico do i-ésimo elemento;
-		\item \textcolor{CarnationPink}{$\mathbf{A_i}$} é o número de massa do i-ésimo elemento.
+				\end{equation}
+				\item \textcolor{DarkTurquoise}{$\mathbf{\rho_m}$} é a densidade mássica do meio;
+				\item \textcolor{DarkTurquoise}{$\mathbf{N_A}$} é o número de Avogadro;
+				\item \textcolor{DarkTurquoise}{$\mathbf{a_i}$} é a fração de peso do i-ésimo elemento que constitui a molécula;
+				\item \textcolor{DarkTurquoise}{$\mathbf{Z_i}$} é o número atômico do i-ésimo elemento;
+				\item \textcolor{DarkTurquoise}{$\mathbf{A_i}$} é o número de massa do i-ésimo elemento.
 			  \end{itemize}
 		\end{exemplo}
 
@@ -158,40 +186,16 @@
 		\end{figure}
 
 
-	Phantoms antropomórficos são aqueles que simulam o corpo humano tendo a forma de um dorso e é composto por materiais que simulam diferentes tecidos como músculo, pulmão, osso e cavidades de ar. Esse phantom é dividido em diversas sessões (vários recortes) sendo possível inserir detectores de radiação como filmes, etc\dots
-
-\subsubsection*{Penetração do Feixe de Fótons}
-
-	Quando um feixe de fótons se propaga pelo ar ou pelo vácuo, seu comportamento é governado pela lei do inverso do quadrado, onde a intensidade do feixe diminui à medida que se afasta da fonte de radiação. No entanto, quando o feixe de fótons passa através de um fantoma (objeto de referência) ou um paciente, ele é afetado por três efeitos principais: atenuação, dispersão e a lei do inverso do quadrado. Esses efeitos combinados tornam a determinação da deposição de dose em um fantoma ou paciente uma tarefa desafiadora.
-
-	A atenuação refere-se à redução da intensidade do feixe de fótons à medida que eles interagem e são absorvidos pelo material do fantoma ou paciente. A atenuação depende das características do material e da energia dos fótons. Quanto maior a energia dos fótons, menor é a atenuação. O espalhamento ocorre quando os fótons sofrem desvios em sua trajetória ao interagir com o material do fantoma ou paciente. Esses desvios podem ser causados por espalhamento Compton e espalhamento Rayleigh. A dispersão afeta a distribuição espacial da dose. A lei do inverso do quadrado ainda se aplica, mas agora com as contribuições da atenuação e do espalhamento, o que torna a relação entre a intensidade do feixe e a distância da fonte mais complexa.
-
-	Medir diretamente a distribuição de dose dentro de um paciente é praticamente impossível devido à complexidade e inacessibilidade do interior do corpo humano. No entanto, é crucial ter um conhecimento preciso e exato da distribuição de dose dentro do volume irradiado para garantir um tratamento por radiação bem-sucedido. Uma abordagem comum é estabelecer várias funções matemáticas que relacionam a dose em qualquer ponto dentro do paciente com a dose conhecida em um ponto de calibração do feixe em um fantoma. O fantoma é um objeto de referência que possui características semelhantes ao tecido humano e é utilizado para calibrar o sistema de medição. Ao medir a dose em pontos específicos do fantoma e relacioná-la às doses em pontos correspondentes dentro do paciente, é possível obter uma estimativa da distribuição de dose dentro do paciente.
-
-	Essas funções são geralmente determinadas utilizando detectores de radiação apropriados colocados em fantomas que têm características semelhantes ao tecido humano. Os detectores registram a dose ou taxa de dose em pontos específicos do fantoma. A dose ou taxa de dose no ponto de referência, que é o ponto de calibração do feixe, é determinada usando ou com fantomas de água. Os fantomas de água são utilizados porque a água tem propriedades de atenuação semelhantes às do tecido humano. A determinação da dose no ponto de referência é realizada em condições de referência específicas, como profundidade, tamanho de campo e distância fonte-superfície (SSD), que são padronizadas e bem definidas.
-
-	A \ref{fig:pdpSaida} ilustra uma distribuição típica de dose ao longo do eixo central de um feixe de fótons de alta energia incidente em um paciente. Diversos pontos e regiões importantes podem ser identificados nessa distribuição. O feixe de fótons entra no paciente na superfície, fornecendo uma dose superficial específica ($D\text{s}$). À medida que o feixe penetra no paciente, a dose aumenta rapidamente inicialmente até atingir um valor máximo em uma certa profundidade ($z_{max})$. Essa profundidade varia dependendo das características do feixe e do tipo de tratamento. Após atingir o valor máximo, a dose começa a diminuir quase exponencialmente à medida que o feixe se propaga através do paciente. No ponto de saída do paciente, a dose atinge um valor específico ($D\text{ex}$), que é determinado pela interação do feixe com os tecidos e a geometria do tratamento.
-
-	\begin{figure}[h]
-		\centering
-		\fcolorbox{DarkTurquoise}{white}{%
-			\includegraphics[width=0.5\textwidth]{Imagens/pdpSaida.JPG
-			}
-		}%
-		\caption{Deposição de dose de um feixe de fótons de megavoltagem em um paciente. Ds é a dose de superfície no lado de entrada do feixe, Dex é a dose de superfície no lado de saída do feixe. Dmax é a dose máxima geralmente normalizada para 100, resultando em uma curva de dose em profundidade conhecida como distribuição de dose em profundidade percentual (PDD). A região entre z = 0 e z = zmax é referida como a região de acúmulo de dose.}
-		\label{fig:pdpSaida}
-	\end{figure}
-
-	A dose de saída se refere à quantidade de dose que é entregue ao paciente no ponto de saída do feixe de radiação. Na \ref{fig:pdpSaida}, é possível observar que, próximo ao ponto de saída do feixe, as curvas de distribuição de dose apresentam uma ligeira inclinação para baixo em relação à curva de distribuição de dose extrapolada. Isso significa que a dose medida nessa região é ligeiramente menor do que o valor esperado. Essa pequena divergência ocorre devido à falta de contribuição de espalhamento proveniente de áreas além do ponto de saída. No ponto de saída, as áreas além desse ponto não contribuem significativamente para a dose medida devido ao espalhamento limitado no meio de ar.
+		\textcolor{DarkTurquoise}{\textbf{\textit{Phantoms antropomórficos}}} são aqueles que \textcolor{MediumOrchid}{\textbf{\textit{simulam o corpo humano}}} tendo a forma de um dorso e é composto por materiais que simulam diferentes tecidos como músculo, pulmão, osso e cavidades de ar. Esse phantom é dividido em diversas sessões (vários recortes) sendo possível inserir detectores de radiação como filmes, etc\dots
 
 
 \section{Distribuição de Dose Na Profundidade}
 
-	A dose absorvida em um meio varia com a profundidade e depende de vários fatores como: \textit{\textbf{Energia do Feixe, profundidade, tamanho de campo, distância até a fonte e sistema de colimação do feixe}}. O Primeiro passo é definir a variação da dose com a profundidade ao longo do eixo central do feixe e as outras quantidades de interesse são derivadas a partir dessa quantidade. As principais quantidades que determinam essa variação são : PDP, TAR, TPR e TMR. Normalmente essas quantidades são obtidas através de medidas com câmaras de ionização com pequenas cavidades. 
+	A dose absorvida em um meio varia com a profundidade e depende de vários fatores como: \textcolor{MediumOrchid}{\textbf{\textit{Energia do Feixe, profundidade, tamanho de campo, distância até a fonte e sistema de colimação do feixe}}}. O Primeiro passo é definir a variação da dose com a profundidade ao longo do eixo central do feixe e as outras quantidades de interesse são derivadas a partir dessa quantidade. As principais quantidades que determinam essa variação são : PDP, TAR, TPR e TMR. Normalmente essas quantidades são obtidas através de medidas com câmaras de ionização com pequenas cavidades. 
 
-	\section{Porcentagem de Dose na Profundidade (PDP)}
+\subsection*{Porcentagem de Dose na Profundidade (PDP)}
 
-	A PDP normaliza a dose na profundidade $d$ com respeito a dose na profundidade de referência ($d_0$), que para feixes de MV normalmente é definida na profundidade de dose máxima ($d_0 = d_{max}$) e para feixes de baixa energia é definido na superfície. A \ref{fig:pdp} mostra a geometria para a definição da PDP.
+	A \textcolor{DarkTurquoise}{\textbf{\textit{PDP}}} \textcolor{MediumOrchid}{\textbf{\textit{normaliza a dose na profundidade $d$ com respeito a dose na profundidade de referência ($d_0$)}}}, que para feixes de MV normalmente é definida na profundidade de dose máxima ($d_0 = d_{max}$) e para feixes de baixa energia é definido na superfície. A \ref{fig:pdp} mostra a geometria para a definição da PDP.
 
 		\begin{figure}[h]
 			\centering
@@ -207,26 +211,26 @@
 		\end{equation}
 
 	
-	A profundidade de dose máxima para feixes de MV ocorrem em maiores profundidades dependendo da energia do feixe, e também varia com o tamanho de campo, uma vez que as variações no tamanho de campo alteram a quantidade de contaminação com elétrons que atingem a superfície. Portanto $d_{max}$ deve ser determinado para um campo pequeno ($3 \times 3 \; cm^2$) para minimizar a contaminação com elétrons, e então se manterá a mesma para todos os tamanhos de campo independente de qual é a real profundidade onde o pico de dose ocorre. A PDP depende de alguns fatores como a energia do feixe (qualidade do feixe), profundidade, tamanho de campo e sua forma, SSD e colimação do feixe. 
+	A profundidade de dose máxima para feixes de MV ocorrem em maiores profundidades dependendo da \textcolor{MediumOrchid}{\textbf{\textit{energia do feixe}}}, e também varia com o \textcolor{MediumOrchid}{\textbf{\textit{tamanho de campo}}}, uma vez que as variações no tamanho de campo alteram a \textcolor{MediumOrchid}{\textbf{\textit{quantidade de contaminação com elétrons}}} que atingem a superfície. Portanto $d_{max}$ deve ser determinado para um campo pequeno ($3 \times 3 \; cm^2$) para minimizar a contaminação com elétrons, e então se manterá a mesma para todos os tamanhos de campo independente de qual é a real profundidade onde o pico de dose ocorre. A PDP depende de alguns fatores como a \textcolor{MediumOrchid}{\textbf{\textit{energia do feixe}}} (qualidade do feixe), \textcolor{MediumOrchid}{\textbf{\textit{profundidade}}}, \textcolor{MediumOrchid}{\textbf{\textit{tamanho de campo e sua forma}}}, \textcolor{MediumOrchid}{\textbf{\textit{SSD}}} e \textcolor{MediumOrchid}{\textbf{\textit{colimação do feixe}}}. 
 
-	\subsection{Dependência com a Qualidade Do Feixe E Profundidade}
-
-		\begin{wrapfigure}{l}{0.5\textwidth}
-			\centering
-			\includegraphics[width=0.48\textwidth]{Imagens/buildupDiferentesFeixes.JPG}
-			\caption{Buildup para diferentes qualidades de feixe}
-			\label{fig:buildupDiferentesFeixes}
-		\end{wrapfigure}
-
-	Além de $d_{max}$ a PDP diminui com a profundidade e aumenta com a energia do feixe. Feixes de maiores energias são mais penetrantes e portanto entregam uma maior PDP na profundidade. Ignorando os efeitos do Inverso do Quadrado da Distância (IQD), a PDP é governada aproximadamente pela atenuação exponencial de modo que a PDP é afetada pela qualidade do feixe através do coeficiente de atenuação médio $\bar{\mu}$.  A medida que $\bar{\mu}$ diminui, o feixe é mais penetrante resultando em uma maior PDP e uma dada profundidade após a região de builup. 
-
-	A \ref{fig:buildupDiferentesFeixes} mostra que a PDP diminui além da profundidade de dose máxima e que o buildup de dose (região entre a superfície e o ponto de profundidade de dose máxima) é maior com o aumento da energia, onde a dose máxima ocorre aproximadamente na superfície para a qualidade com HVL de 3.0 mm Cu e em uma profundidade de $\sim 4$ cm para o feixe de fótons de 25 MV.
-
-	Esse buildup de dose para feixes MV faz com que a dose na pele seja muito menor quando comparado à dose máxima, sendo chamado de efeito poupador da pele; Porém é importante reforçar que possui uma menor dose relativa, o que nem sempre implica em uma dose baixa.
+\subsubsection*{Dependência com a Qualidade Do Feixe E Profundidade}
 
 		
+	Além de $d_{max}$ \textcolor{MediumOrchid}{\textbf{\textit{a PDP diminui com a profundidade e aumenta com a energia do feixe}}}. Feixes de maiores energias são mais \textcolor{MediumOrchid}{\textbf{\textit{penetrantes}}} e portanto entregam uma maior PDP na profundidade. Ignorando os efeitos do Inverso do Quadrado da Distância (IQD), a PDP é governada aproximadamente pela atenuação exponencial de modo que a PDP é afetada pela qualidade do feixe através do coeficiente de atenuação médio $\bar{\mu}$. A medida que $\bar{\mu}$ diminui, o feixe é mais penetrante resultando em uma maior PDP em uma dada profundidade após a região de builup. 
 
-	A medida que os fótons incidem no meio (superfície do phantom ou do paciente), elétrons de alta energia (rápidos) são liberados da superfície e das camadas subsequentes. Estes elétrons depositam sua energia até serem completamente parados no meio, o que ocorre em uma distância significante abaixo de onde foram liberados; Por isso  a fluência dos elétrons e, portanto, a dose absorvida aumenta com a profundidade até alcançar um máximo. Porém, a fluência de fótons diminui continuamente com a profundidade (uma vez que ao interagir com os elétrons, esse fóton é espalhado e deixa de fazer parte do feixe primário), e como resultado, a produção de elétrons também diminui com a profundidade, de modo que o efeito líquido após uma certa profundidade é uma diminuição de dose absorvida. 
+	\begin{wrapfigure}{l}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.48\textwidth]{Imagens/buildupDiferentesFeixes.JPG}
+		\caption{Buildup para diferentes qualidades de feixe}
+		\label{fig:buildupDiferentesFeixes}
+	\end{wrapfigure}
+
+
+	A \ref{fig:buildupDiferentesFeixes} mostra que a \textcolor{MediumOrchid}{\textbf{\textit{PDP diminui além da profundidade de dose máxima}}} e que o \textcolor{MediumOrchid}{\textbf{\textit{buildup de dose }}}(região entre a superfície e o ponto de profundidade de dose máxima) \textcolor{MediumOrchid}{\textbf{\textit{é maior com o aumento da energia}}}, onde a dose máxima ocorre aproximadamente na superfície para a qualidade com HVL de 3.0 mm Cu e em uma profundidade de $\sim 4$ cm para o feixe de fótons de 25 MV.
+
+	Esse buildup de dose para feixes MV faz com que a dose na pele seja muito menor quando comparado à dose máxima, sendo chamado de \textcolor{MediumOrchid}{\textbf{\textit{efeito poupador da pele}}}; Porém é importante reforçar que possui uma menor dose relativa, o que nem sempre implica em uma dose baixa.		
+
+	A medida que os \textcolor{MediumOrchid}{\textbf{\textit{fótons incidem no meio}}} (superfície do phantom ou do paciente), \textcolor{MediumOrchid}{\textbf{\textit{elétrons de alta energia}}} (rápidos) são liberados da superfície e das camadas subsequentes. Estes elétrons depositam sua energia até serem \textcolor{MediumOrchid}{\textbf{\textit{completamente parados no meio}}}, o que ocorre em uma distância significante abaixo de onde foram liberados; Por isso a \textcolor{MediumOrchid}{\textbf{\textit{fluência dos elétrons}}} e, portanto, a \textcolor{MediumOrchid}{\textbf{\textit{dose absorvida aumenta com a profundidade}}} até alcançar um máximo. No entanto, a \textcolor{MediumOrchid}{\textbf{\textit{fluência de fótons diminui continuamente com a profundidade}}} (uma vez que ao interagir com os elétrons, esse fóton é espalhado e deixa de fazer parte do feixe primário), e como resultado, \textcolor{MediumOrchid}{\textbf{\textit{a produção de elétrons também diminui com a profundidade}}}, de modo que o efeito líquido após uma certa profundidade é uma diminuição de dose absorvida. 
 
 		\begin{wrapfigure}{r}{0.5\textwidth}
 			\centering
@@ -235,23 +239,23 @@
 			\label{fig:esquemaBuildup}
 		\end{wrapfigure}
 
-	Como o kerma representa a energia transferida pelos fótons para partículas diretamente ionizantes (elétrons), o kerma é máximo na superfície e diminui com a profundidade devido à diminuição da fluência de energia do feixe de fótons. Por outro lado, a dose absorvida primeiramente aumenta com a profundidade a medida que os elétrons rápidos são liberados em várias profundidades e viajam até maiores profundidade. Como resultado, há uma buildup de elétrons com a profundidade. No entanto, como a dose absorvida depende da fluência dos elétrons, ela alcança um máximo em uma profundidade aproximadamente igual ao alcance dos elétrons no meio. Após essa profundidade, a dose diminui a medida que o kerma continua diminuindo, resultando em uma menor produção de elétrons secundários e então uma menor fluência de elétrons. Como mostra a \ref{fig:esquemaBuildup}, O kerma é inicialmente maior que a dose na região de buildup e passa a ser menor que a dose após a região de buildup; 
+	Como o \textcolor{DarkTurquoise}{\textbf{\textit{kerma}}} representa a \textcolor{MediumOrchid}{\textbf{\textit{energia transferida pelos fótons para partículas diretamente ionizantes}}} (elétrons), o kerma é \textcolor{MediumOrchid}{\textbf{\textit{máximo}}} na superfície e \textcolor{MediumOrchid}{\textbf{\textit{diminui com a profundidade}}} devido à diminuição da fluência de energia do feixe de fótons. Por outro lado, a \textcolor{MediumOrchid}{\textbf{\textit{dose absorvida}}} primeiramente \textcolor{MediumOrchid}{\textbf{\textit{aumenta com a profundidade}}} a medida que os \textcolor{MediumOrchid}{\textbf{\textit{elétrons rápidos são liberados em várias profundidades}}} e viajam até maiores profundidade. Como resultado, há uma buildup de elétrons com a profundidade. No entanto, como \textcolor{MediumOrchid}{\textbf{\textit{a dose absorvida depende da fluência dos elétrons}}}, ela alcança um \textcolor{MediumOrchid}{\textbf{\textit{máximo}}} em uma profundidade aproximadamente igual ao \textcolor{MediumOrchid}{\textbf{\textit{alcance dos elétrons}}} no meio. Após essa profundidade, a \textcolor{MediumOrchid}{\textbf{\textit{dose diminui}}} a medida que o \textcolor{MediumOrchid}{\textbf{\textit{kerma continua diminuindo}}}, resultando em uma \textcolor{MediumOrchid}{\textbf{\textit{menor produção de elétrons secundários}}} e então uma \textcolor{MediumOrchid}{\textbf{\textit{menor fluência de elétrons}}}. Como mostra a \ref{fig:esquemaBuildup}, O kerma é inicialmente maior que a dose na região de buildup e passa a ser menor que a dose após a região de buildup; 
 
 	
-	\subsection{Dependência Com a Forma e o Tamanho do Campo}
+\subsubsection*{Dependência Com a Forma e o Tamanho do Campo}
 
 	O tamanho de campo pode ser definido por duas formas:
 
 	\begin{enumerate}
-		\item \textit{\textcolor{CarnationPink}{Geométrico:}} é definido como a projeção em um plano perpendicular ao eixo do feixe das bordas distais do colimador, normalmente apresentado pela luz de campo, onde o valor nominal das aberturas do colimador coincidem com a luz de campo no isocentro do acelerador (SAD);
-		\item \textit{\textcolor{CarnationPink}{Dosimétrico:}} é definido como a distância interceptada por uma determinada curva de isodose, normalmente isodose de 50\% em um plano perpendicular ao eixo do feixe para uma determinada SSD. 
+		\item \textit{\textcolor{DarkTurquoise}{Geométrico:}} é definido como a projeção em um plano perpendicular ao eixo do feixe das bordas distais do colimador, normalmente apresentado pela luz de campo, onde o valor nominal das aberturas do colimador coincidem com a luz de campo no isocentro do acelerador (SAD);
+		\item \textit{\textcolor{DarkTurquoise}{Dosimétrico:}} é definido como a distância interceptada por uma determinada curva de isodose, normalmente isodose de 50\% em um plano perpendicular ao eixo do feixe para uma determinada SSD. 
 	\end{enumerate}
 
-	Para um campo suficientemente pequeno, pode-se assumir que a dose na profundidade, no volume abrangido por esse tamanho de campo, é devido apenas à contribuição do feixe primário de fótons, ou seja, devido aos fótons que atravessaram o meio sem interagir. Portanto a contribuição dos fótons espalhados é nula para campos pequenos. Porém, a medida que o tamanho de campo aumenta, ha um aumento da contribuição dos fótons espalhados devido a um aumento de volume formado pela projeção do tamanho de campo com a profundidade que permite que o fóton espalhado consiga depositar energia nessa região (e não escape dela como ocorre com campos pequenos). Além disso, o aumento de dose espalhada será maior para maiores profundidades, devido a divergência do campo que forma tamanhos de campo cada vez maiores na profundidade.
+	Para um \textcolor{MediumOrchid}{\textbf{\textit{campo suficientemente pequeno}}}, pode-se assumir que a \textcolor{MediumOrchid}{\textbf{\textit{dose na profundidade}}}, no volume abrangido por esse tamanho de campo, é devido apenas à \textcolor{MediumOrchid}{\textbf{\textit{contribuição do feixe primário de fótons}}}, ou seja, devido aos fótons que atravessaram o meio sem interagir. Portanto a contribuição dos fótons espalhados é nula para campos pequenos. Porém, a medida que o \textcolor{MediumOrchid}{\textbf{\textit{tamanho de campo aumenta}}}, ha um \textcolor{MediumOrchid}{\textbf{\textit{aumento da contribuição dos fótons espalhados}}} devido a um aumento de volume formado pela projeção do tamanho de campo com a profundidade, que permite que o fóton espalhado consiga depositar energia nessa região (e não escape dela como ocorre com campos pequenos). Além disso, \textcolor{MediumOrchid}{\textbf{\textit{o aumento de dose espalhada será maior para maiores profundidades}}}, devido a divergência do campo que forma tamanhos de campo cada vez maiores na profundidade.
 
-	A qualidade do feixe também afeta o aumento da PDP devido ao aumento do tamanho de campo. Quanto maior a energia do feixe, maior a probabilidade do fóton ser espalhado na direção do fóton incidente e portanto, a dependência com o tamanho de campo é menos afetada por maiores energias quando comparado a energias mais baixas.
+	A \textcolor{MediumOrchid}{\textbf{\textit{qualidade do feixe}}} também afeta o \textcolor{MediumOrchid}{\textbf{\textit{aumento da PDP}}} devido ao \textcolor{MediumOrchid}{\textbf{\textit{aumento do tamanho de campo}}}. \textcolor{MediumOrchid}{\textbf{\textit{Quanto maior a energia do feixe, maior a probabilidade do fóton ser espalhado na direção do fóton incidente e portanto}}}, a dependência com o tamanho de campo é menos afetada por maiores energias quando comparado a energias mais baixas.
 
-	A PDP é determinada para campos quadrados, e os campos irregulares ou retangulares são aproximados para seu campo quadrado equivalente, afim de obter a PDP para estes campos. O método de $Sterling$ aproxima campos retangulares para campos quadrados de modo que o campo quadrado equivalente é aquele que possui a mesma razão da área dividida por seu perímetro; Portanto, para os campos retangulares:
+	A PDP é determinada para \textcolor{MediumOrchid}{\textbf{\textit{campos quadrados}}}, e os campos irregulares ou retangulares são aproximados para seu \textcolor{MediumOrchid}{\textbf{\textit{campo quadrado equivalente}}}, afim de obter a PDP para estes campos. O método de $Sterling$ aproxima campos retangulares para campos quadrados de modo que o campo quadrado equivalente é aquele que possui a mesma razão da área dividida por seu perímetro; Portanto, para os campos retangulares:
 
 	\begin{equation}
 		A/P = \frac{a \times b}{2(a + b)}
@@ -273,22 +277,22 @@
 		\label{eq:raioEquivalente}
 	\end{equation}
 
-	\subsection{Dependência com a SSD}
+	\subsubsection*{Dependência com a SSD}
 
-	\begin{wrapfigure}{l}{0.5\textwidth}
+	\begin{wrapfigure}{l}{0.45\textwidth}
 		\centering
-		\includegraphics[width=0.48\textwidth]{Imagens/pdpSsd.JPG}
+		\includegraphics[width=0.4\textwidth]{Imagens/pdpSsd.JPG}
 		\caption{Variação da PDP com a SSD}
 		\label{fig:pdpSsd}
 	\end{wrapfigure}
 
-	A distância da fonte a superfície em feixes clínicos é grande o suficiente para aproximar uma fonte com tamanho finito para uma fonte pontual, de modo que a fluência de fótons, e portanto a taxa de dose no ar livre (taxa de exposição), irá variar com o IQD. 
+	A \textcolor{MediumOrchid}{\textbf{\textit{distância da fonte a superfície}}} em feixes clínicos é grande o suficiente para aproximar uma fonte com tamanho finito para uma fonte pontual, de modo que a \textcolor{MediumOrchid}{\textbf{\textit{fluência de fótons}}}, e portanto a taxa de dose no ar livre (taxa de exposição), irá variar com o IQD. 
 
-	A PDP aumenta com a SSD como um resultado da IQD. Embora a taxa de dose no ponto diminua com o aumento da SSD, a PDP é uma medida de dose relativa, com respeito à dose na profundidade de referência, e portanto irá aumentar com o aumento da SSD. A \ref{fig:pdpSsd} 'mostra que a a queda na taxa de dose entre dois pontos é muito maior em pequenas distâncias a partir da fonte do que para grandes distâncias à fonte; Isso mostra que a PDP diminui mais rapidamente para menores SSDs do que para maiores SSDs. 
+	A \textcolor{MediumOrchid}{\textbf{\textit{PDP aumenta com a SSD como um resultado da IQD}}}. Embora a taxa de dose no ponto diminua com o aumento da SSD, a \textcolor{MediumOrchid}{\textbf{\textit{PDP é uma medida de dose relativa}}}, com respeito à dose na profundidade de referência, e portanto irá aumentar com o aumento da SSD. A \ref{fig:pdpSsd} mostra que a \textcolor{MediumOrchid}{\textbf{\textit{queda na taxa de dose entre dois pontos é muito maior em pequenas distâncias a partir da fonte do que para grandes distâncias à fonte}}}; Isso mostra que a PDP diminui mais rapidamente para menores SSDs do que para maiores SSDs. 
 
-	Portanto, na rotina clínica a SSD deve ser estabelecida de modo que não diminua muito a taxa de dose, mas que seja grande o suficiente para aumentar a PDP em relação a $d_{max}$. Porém, existem tratamentos que requerem uma SSD extendida para conseguir um maior tamanho de campo, de modo que a PDP para a SSD padrão (80 cm por \ce{^{60}Co} e 100 cm para linacs) deve ser convertida para a SSD extendida utilizada no tratamento. 
+	Portanto, na rotina clínica a SSD deve ser estabelecida de modo que não diminua muito a taxa de dose, mas que seja grande o suficiente para aumentar a PDP em relação a $d_{max}$. Porém, existem tratamentos que requerem uma SSD estendida para conseguir um maior tamanho de campo, de modo que a PDP para a SSD padrão (80 cm por \ce{^{60}Co} e 100 cm para linacs) deve ser convertida para a SSD estendida utilizada no tratamento. 
 
-	O \textit{\textcolor{CarnationPink}{Fator Mayneord (F)}} é um fator de correção menos preciso que considera apenas a IQD sem levar em consideração as mudanças no espalhamento devido ao aumento da SSD.
+	O \textcolor{DarkTurquoise}{\textbf{\textit{Fator Mayneord (F)}}} é um fator de correção menos preciso que considera apenas a IQD sem levar em consideração as mudanças no espalhamento devido ao aumento da SSD.
 
 	\begin{figure}[h]
 		\centering
@@ -306,8 +310,8 @@
 	
 	\begin{exemplo}[onde:]
 		\begin{itemize}
-			\item \textcolor{CarnationPink}{$\mathbf{\mu}$} é o coeficiente de atenuação linear efetivo para o feixe primário; e
-			\item \textcolor{CarnationPink}{$\mathbf{K_s}$} é uma função que considera as mudanças na dose espalhada;
+			\item \textcolor{DarkTurquoise}{$\mathbf{\mu}$} é o coeficiente de atenuação linear efetivo para o feixe primário; e
+			\item \textcolor{DarkTurquoise}{$\mathbf{K_s}$} é uma função que considera as mudanças na dose espalhada;
 		\end{itemize}
 	\end{exemplo}
 
@@ -337,17 +341,17 @@
 	\end{exemplo}
 
 
-	Isso mostra que o fator F é maior que 1 para $f_2 > f_1$ e menor que 1 quando $f_2 < f_1$, o que reforça que a PDP aumenta com o aumento da SSD. Além disto, o fator F funciona bem para pequenos tamanhos de campo devido à contribuição mínima da radiação espalhada para estes casos e, consequentemente, pode levar a grandes erros para condições extremas como feixe de baixa energias, campos largos, grandes profundidades e grandes mudanças na SSD pelo mesmo motivo (contribuição da radiação espalhada). 
+	Isso mostra que o fator \textcolor{MediumOrchid}{\textbf{\textit{F é maior que 1 para $f_2 > f_1$ e menor que 1 quando $f_2 < f_1$}}}, o que reforça que a PDP aumenta com o aumento da SSD. Além disto, o fator F funciona bem para \textcolor{MediumOrchid}{\textbf{\textit{pequenos tamanhos}}} de campo devido à contribuição mínima da radiação espalhada para estes casos e, consequentemente, pode levar a grandes erros para condições extremas como feixe de baixa energias, campos largos, grandes profundidades e grandes mudanças na SSD pelo mesmo motivo (contribuição da radiação espalhada). 
 
-	Para campos largos e feixes de baixa energias uma correção mais precisa é dada por:
+	Para \textcolor{MediumOrchid}{\textbf{\textit{campos largos}}} e \textcolor{MediumOrchid}{\textbf{\textit{feixes de baixa energia}}} uma correção mais precisa é dada por:
 
 		\begin{equation}
 			F_{corr} = \frac{(1 + F)}{2}
 		\end{equation}
 
-	\section{Razão Tecido-Ar (TAR)}
+\section{Razão Tecido-Ar (TAR)}
 
-	Foi implementado para atender aos tratamentos em arco, onde a SSD varia com a posição do gantry, porém a SAD (distância fonte eixo - isocentro) se mantém a mesma, eliminando então às correções na PDP devido às variações na SSD. Portanto a TAR foi definida para eliminar a dependência com a SSD. 
+	Foi implementado para atender aos tratamentos em arco, onde a \textcolor{MediumOrchid}{\textbf{\textit{SSD varia com a posição do gantry}}}, porém a \textcolor{MediumOrchid}{\textbf{\textit{SAD (distância fonte eixo - isocentro) se mantém a mesma}}}, eliminando então às correções na PDP devido às variações na SSD. Portanto a TAR foi definida para \textcolor{MediumOrchid}{\textbf{\textit{eliminar a dependência com a SSD}}}. 
 
 	\begin{figure}[h]
 		\centering
@@ -356,20 +360,20 @@
 		\label{fig:esquemaTAR}
 	\end{figure}
 
-	A TAR é definida como a razão entre a dose em um dado ponto no phantom $D_d$ e a dose no ar livre no mesmo ponto $D_{ar}$, como mostra a \ref{fig:esquemaTAR}. Para uma determinada qualidade de feixe, a TAR depende apenas do tamanho de campo na profundidade $r_d$ e da profundidade $d$, ou seja:
+	A TAR é definida como a \textcolor{MediumOrchid}{\textbf{\textit{razão entre a dose em um dado ponto no phantom $D_d$ e a dose no ar livre no mesmo ponto $D_{ar}$}}}, como mostra a \ref{fig:esquemaTAR}. Para uma determinada qualidade de feixe, a TAR depende apenas do \textcolor{MediumOrchid}{\textbf{\textit{tamanho de campo na profundidade $r_d$ e da profundidade $d$}}}, ou seja:
 
 		\begin{equation}
 			TAR(d, r_d) = \frac{D_d}{D_{ar}}
 		\end{equation}
 
 
-	\subsection{Efeito da Distância}
+	\subsubsection*{Efeito da Distância}
 
-	A TAR é independente da distância até a fonte uma vez que ela é dada pela razão entre duas doses medidas no mesmo ponto, de modo que a dependência com a fluência de fótons é removida. Portanto, a TAR representa as mudanças na dose no ponto devido a apenas o espalhamento e a atenuação naquele ponto no phantom quando comparado à dose obtida em  miniphantom colocado no mesmo ponto no ar livre. Portanto, A componente da TAR devido à atenuação depende principalmente da profundidade, uma vez que a atenuaçã varia exponencialmente com a profundidade. Já a componente do espalhamento, é quase independente da divergência do feixe, dependendo apenas da profundidade e do tamanho do campo naquela profundidade.
+	\textcolor{MediumOrchid}{\textbf{\textit{A TAR é independente da distância até a fonte uma vez que ela é dada pela razão entre duas doses medidas no mesmo ponto}}}, de modo que a dependência com a fluência de fótons é removida. Portanto, a TAR representa \textcolor{MediumOrchid}{\textbf{\textit{as mudanças na dose no ponto devido a apenas o espalhamento e a atenuação naquele ponto}}} no phantom quando comparado à dose obtida em  miniphantom colocado no mesmo ponto no ar livre. Portanto, A componente da TAR devido à \textcolor{MediumOrchid}{\textbf{\textit{atenuação}}} depende principalmente da \textcolor{MediumOrchid}{\textbf{\textit{profundidade}}}, uma vez que a atenuação varia exponencialmente com a profundidade. Já a componente do \textcolor{MediumOrchid}{\textbf{\textit{espalhamento}}}, é quase independente da divergência do feixe, dependendo apenas da \textcolor{MediumOrchid}{\textbf{\textit{profundidade e do tamanho do campo}}} naquela profundidade.
 
-	\subsection{Variação com a Energia, Profundidade e Tamanho de Campo}
+	\subsubsection*{Variação com a Energia, Profundidade e Tamanho de Campo}
 
-	Para feixes de Megavoltagem, a TAR aumenta até um máximo na profundidade de dose máxima $d_{max}$ e então diminui com a profundidade aproximadamente exponencialmente. Para um feixe estreito ( 0 cm x 0 cm ) onde a componente do espalhamento é aproximadamente nula, a TAR além de $d_{max}$ é aproximadamente:
+	Para \textcolor{MediumOrchid}{\textbf{\textit{feixes de Megavoltagem}}}, a TAR \textcolor{MediumOrchid}{\textbf{\textit{aumenta}}} até um \textcolor{MediumOrchid}{\textbf{\textit{máximo}}} na profundidade de dose máxima \textcolor{MediumOrchid}{\textbf{\textit{$d_{max}$}}} e então \textcolor{MediumOrchid}{\textbf{\textit{diminui com a profundidade}}} aproximadamente exponencialmente. Para um feixe estreito (0 cm x 0 cm) onde a componente do espalhamento é aproximadamente nula, a TAR além de $d_{max}$ é aproximadamente:
 	
 		\begin{equation}
 			TAR(d, 0) = e^{-\bar{\mu} (d - d_{max})}
@@ -377,9 +381,9 @@
 
 	A medida que o tamanho de campo cresce, A TAR se torna mais complexa devido aos fótons espalhados, porém, a medida que a energia aumenta, os fótons são preferencialmente espalhados na direção de propagação do feixe primário e a TAR continua variando aproximadamente com a atenuação exponencial, através do coeficiente de atenuação efetivo para um determinado tamanho de campo.
 
-	\subsection{Fator de Retroespalhamento (BSF)}
+	\subsection*{Fator de Retroespalhamento (BSF)}
 
-	É também chamado de fator de espalhamento de pico (PSF); Este fator é dado pela TAR na profundidade de dose máxima, ou seja:
+	É também chamado de fator de espalhamento de pico (PSF); Este fator é dado pela \textcolor{MediumOrchid}{\textbf{\textit{TAR na profundidade de dose máxima}}}, ou seja:
 
 		\begin{equation}
 			BSF = \frac{D_{max}}{D_{ar}}
@@ -391,12 +395,12 @@
 
 	\begin{exemplo}[onde:]
 		\begin{itemize}
-			\item \textcolor{CarnationPink}{$\mathbf{d_{max}}$} é a profundidade de dose máxima; e
-			\item \textcolor{CarnationPink}{$\mathbf{r_{d_{max}}}$} é o tamanho de campo projetado em $d_{max}$.
+			\item \textcolor{DarkTurquoise}{$\mathbf{d_{max}}$} é a profundidade de dose máxima; e
+			\item \textcolor{DarkTurquoise}{$\mathbf{r_{d_{max}}}$} é o tamanho de campo projetado em $d_{max}$.
 		\end{itemize}
 	\end{exemplo}
 	
-	Assim como o fator TAR, o BSF é independente da SSD e depende apenas da qualidade do feixe e do tamanho de campo.  o fator BSF é muito maior para feixes de KV comparado com feixes de MV para um mesmo tamanho de campo. A \ref{fig:bsf} mostra a diferença do BSF para diferentes qualidades de feixes e diferentes tamanhos de feixe. 
+	Assim como o fator TAR, o \textcolor{MediumOrchid}{\textbf{\textit{BSF é independente da SSD}}} e depende apenas da \textcolor{MediumOrchid}{\textbf{\textit{qualidade do feixe e do tamanho de campo}}}. O fator BSF é muito maior para feixes de KV comparado com feixes de MV para um mesmo tamanho de campo. A \ref{fig:bsf} mostra a diferença do BSF para diferentes qualidades de feixes e diferentes tamanhos de feixe. 
 
 	\begin{figure}[h]
 		\centering
@@ -408,7 +412,7 @@
 	Por exemplo, o BSF para o \ce{^{60}Co} para um campo 10 cm x 10 cm é de 1.036, o que significa que a Dose máxima é 3.6\% maior no phantom que a dose no ar livre. Esse aumento é devido a contribuição da radiação espalhada nos tecidos acima e abaixo que alcança o ponto de $D_{m}$. A medida que a energia aumenta, o BSF é reduzido até que, em energias acima de 8 MV, a componente devido a radiação espalhada que alcança $d_{max}$ se torna mínima e o fator BSF se aproxima do seu valor mínimo, igual a 1. 
 
 
-	\subsection{Relação entre a PDP e a TAR}
+	\subsection*{Relação entre a PDP e a TAR}
 
 	\begin{figure}[h]
 		\centering
@@ -458,7 +462,7 @@
 		\label{eq:tarParaPdp}
 	\end{equation}
 
-	\subsection{Método TAR para corrigir a PDP para diferentes SSDs}
+	\subsection*{Método TAR para corrigir a PDP para diferentes SSDs}
 
 	Este é um método mais preciso que o Fator F Mayneord pois a TAR considera o espalhamento e está relacionada com a PDP a partir da \ref{eq:tarParaPdp}.
 
@@ -499,7 +503,7 @@
 
 	Para feixes com energias superiores a 8 MV, a variação da PDP com o tamanho de campo é muito pequena de modo que o retroespalhamento pode ser negligenciado e tanto a  \ref{eq:metodoTar} quanto a \ref{eq:burns} podem ser aproximadas para o fator Mayneord.
 
-	\subsection{Cálculo de Dose em Terapia com Arco}
+	\subsection*{Cálculo de Dose em Terapia com Arco}
 
 	O cálculo de dose na profundidade com terapias em arco envolve a determinação da TAR média no isocentro. O contorno do paciente é delineado em um plano contendo o eixo de rotação e o isocentro é então colocado dentro do contorno, normalmente no centro do tumor ou a poucos centímetros dele. O raio é então desenhado a partir desse ponto em intervalos de ângulos, (\ang{20}) como mostra a \ref{fig:tarArco}. 
 
@@ -544,7 +548,7 @@
 
 	Como a SAR foi primeiramente definida para determinar o espalhamento para campos irregulares, os seus valores são tabulados como função da profundidade e do raio de um campo circular nessa profundidade. E como os dados da SAR são derivados a partir da TAR para campos quadrados ou retangulares, o raio do círculo equivalente pode ser obtido através da \ref{eq:raioEquivalente}.
 
-	\subsection{Método de Clarkson para Cálculo de Dose de Campos irregulares}
+	\subsection*{Método de Clarkson para Cálculo de Dose de Campos irregulares}
 	
 	Como a base de dados para os cálculos de dose são determinadas para campos quadrados é necessário utilizar métodos para corrigir esses fatores ao utilizar campos irregulares, como o manto utilizado para o tratamento de linfoma de Hodgkin. 
 
@@ -572,8 +576,8 @@
 
 	\begin{exemplo}[onde:]
 		\begin{itemize}
-			\item \textcolor{CarnationPink}{$\mathbf{\bar{\mu}}$} é o coeficiente de atenuação linear médio;
-			\item \textcolor{CarnationPink}{$\mathbf{d}$} é a profundidade do ponto Q.
+			\item \textcolor{DarkTurquoise}{$\mathbf{\bar{\mu}}$} é o coeficiente de atenuação linear médio;
+			\item \textcolor{DarkTurquoise}{$\mathbf{d}$} é a profundidade do ponto Q.
 		\end{itemize}
 	\end{exemplo}
 
@@ -585,7 +589,7 @@
 
 	\begin{exemplo}[onde:]
 		\begin{itemize}
-			\item \textcolor{CarnationPink}{$\mathbf{BSF}$} é o fator de retroespalhamento que pode ser calculado através do método de Clarkson, onde envolve a TAR na profundidade de dose máxima $d_{max}$ no eixo central, utilizando o contorno do campo ou raio projetado na profundidade de $d_{max}$.
+			\item \textcolor{DarkTurquoise}{$\mathbf{BSF}$} é o fator de retroespalhamento que pode ser calculado através do método de Clarkson, onde envolve a TAR na profundidade de dose máxima $d_{max}$ no eixo central, utilizando o contorno do campo ou raio projetado na profundidade de $d_{max}$.
 		\end{itemize}
 	\end{exemplo}
 

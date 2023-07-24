@@ -47,8 +47,9 @@
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
-\titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
-\titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\section}{\LobsterTwo\huge\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\huge\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bf\LobsterTwo\Large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
 
 
 \DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
@@ -103,7 +104,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\rfoot{Página \thepage}
+\rfoot{\color{DarkTurquoise}\thepage \\ \LobsterTwo{\small\textcolor{CarnationPink}{@defDalila}}}
 
 \title{\LobsterTwo\Huge{Proteção Radiológica}}
 \author{\LobsterTwo\Large{Bases da Proteção Radiológica}\nocite{*}}
@@ -116,33 +117,39 @@
 	O Relatório No. 116 do Conselho Nacional de Proteção contra Radiação (NCRP), Limitação da Exposição à Radiação Ionizante, delineia os objetivos e filosofias de proteção contra radiação no Capítulo 2 desse documento. Os objetivos específicos são:
 
 	\begin{enumerate}[label=\textcolor{CarnationPink}{\arabic*${}^\circ$}]
-		\item "Prevenir a ocorrência de efeitos determinísticos clinicamente significativos induzidos pela radiação, aderindo a limites de dose que estão abaixo dos níveis aparentes de limiar."
-		\item "Limitar o risco de efeitos estocásticos, como câncer e efeitos genéticos, a um nível razoável em relação às necessidades da sociedade, valores, benefícios obtidos e fatores econômicos."
+		\item "\textcolor{DarkTurquoise}{\textbf{\textit{Prevenir}}} a ocorrência de \textcolor{DarkTurquoise}{\textbf{\textit{efeitos determinísticos}}} clinicamente significativos induzidos pela radiação, aderindo a \textcolor{DarkTurquoise}{\textbf{\textit{limites de dose}}} que estão \textcolor{DarkTurquoise}{\textbf{\textit{abaixo}}} dos níveis aparentes de \textcolor{DarkTurquoise}{\textbf{\textit{limiar}}}."
+		\item "\textcolor{DarkTurquoise}{\textbf{\textit{Limitar}}} o risco de \textcolor{DarkTurquoise}{\textbf{\textit{efeitos estocásticos}}}, como câncer e efeitos genéticos, a um \textcolor{DarkTurquoise}{\textbf{\textit{nível razoável}}} em relação às necessidades da sociedade, valores, benefícios obtidos e fatores econômicos."
 	\end{enumerate}
 
-	O objetivo não é reduzir as exposições a níveis próximos de zero, mas sim reduzir os níveis para o princípio ALARA (as low as (is) reasonably achievable) (conforme definido na Seção 10, Artigo 20.1003 do Código de Regulamentações Federais (CFR) da Comissão Reguladora Nuclear dos Estados Unidos (NRC)). O conceito de ALARA claramente inclui a abordagem de risco/benefício incorporando as necessidades da sociedade e os fatores econômicos para reduzir as exposições a um nível razoável. O dinheiro gasto em blindagem excessiva poderia ser melhor utilizado para fornecer cuidados diretos a pacientes com condições conhecidas que podem ser tratadas. Os riscos da exposição à radiação envolvem principalmente a possibilidade de lesões imediatas ou retardadas por meses ou anos. É mais benéfico melhorar o cuidado aos pacientes com uma condição conhecida do que reduzir ainda mais a possibilidade de lesões por radiação ao paciente ou a outras pessoas, desde que o risco seja aceitavelmente baixo. Por exemplo, gastar um extra de US\$200.000 em blindagem retiraria capital que poderia ser usado para atualizar o sistema de planejamento de tratamento (TPS) com um algoritmo de cálculo de dose mais preciso que beneficiaria imediatamente os pacientes.
+	O objetivo não é reduzir as exposições a níveis próximos de zero, mas sim reduzir os níveis para o \textcolor{MediumOrchid}{\textbf{\textit{princípio ALARA}}} (as low as (is) reasonably achievable). O conceito de ALARA claramente inclui a abordagem de \textcolor{MediumOrchid}{\textbf{\textit{risco/benefício}}} incorporando as necessidades da sociedade e os fatores econômicos para reduzir as exposições a um nível razoável. O dinheiro gasto em blindagem excessiva poderia ser melhor utilizado para fornecer cuidados diretos a pacientes com condições conhecidas que podem ser tratadas. Os riscos da exposição à radiação envolvem principalmente a possibilidade de \textcolor{MediumOrchid}{\textbf{\textit{lesões imediatas ou tardias}}} por meses ou anos. É mais benéfico melhorar o cuidado aos pacientes com uma condição conhecida do que reduzir ainda mais a possibilidade de lesões por radiação ao paciente ou a outras pessoas, desde que o risco seja aceitavelmente baixo. Por exemplo, gastar um extra de US\$200.000 em blindagem retiraria capital que poderia ser usado para atualizar o sistema de planejamento de tratamento (TPS) com um algoritmo de cálculo de dose mais preciso que beneficiaria imediatamente os pacientes.
 
-	Para desenvolver os limites de exposição que são usados para manter os riscos em um nível razoável, várias agências internacionais revisam regularmente os dados disponíveis sobre risco de radiação. Entre elas estão o Comitê Científico das Nações Unidas sobre os Efeitos das Radiações Atômicas (UNSCEAR), a Comissão Internacional de Proteção contra Radiação (ICRP) e o Comitê de Efeitos Biológicos da Radiação Ionizante da Academia Nacional de Ciências/Conselho Nacional de Pesquisa (BEIR), sendo o relatório mais recente o BEIR VII. O UNSCEAR e o BEIR desenvolvem estimativas de risco que a ICRP usa para estabelecer limites de dose recomendados. O NCRP determina como essas recomendações serão implementadas nos Estados Unidos.
+	Para desenvolver os \textcolor{MediumOrchid}{\textbf{\textit{limites de exposição}}} que são usados para manter os riscos em um nível razoável, várias agências internacionais revisam regularmente os dados disponíveis sobre risco de radiação. Entre elas estão o Comitê Científico das Nações Unidas sobre os Efeitos das Radiações Atômicas (UNSCEAR), a Comissão Internacional de Proteção contra Radiação (ICRP) e o Comitê de Efeitos Biológicos da Radiação Ionizante da Academia Nacional de Ciências/Conselho Nacional de Pesquisa (BEIR), sendo o relatório mais recente o BEIR VII. O UNSCEAR e o BEIR desenvolvem estimativas de risco que a ICRP usa para estabelecer limites de dose recomendados. O NCRP determina como essas recomendações serão implementadas nos Estados Unidos.
 
-	Os limites de dose para trabalhadores expostos à radiação são mais altos do que os para membros do público em geral. Isso se baseia no fato de que esses trabalhadores receberam treinamento especial em proteção contra radiação, estão cientes dos riscos associados à radiação e decidiram aceitá-los. Para determinar o cumprimento dos limites de dose, uma instituição deve atribuir um monitor de dose ao membro da equipe ou realizar cálculos que mostrem que o trabalhador não excederá 10\% do limite anual. Existem algumas exceções a isso; funcionários que trabalham em áreas de alto risco, como radiologia intervencionista, medicina nuclear e radioterapia, devem ser monitorados independentemente do nível esperado de dose anual. Isso se deve ao potencial de incidentes inesperados, especialmente no caso de braquiterapia em radioterapia. Para garantir o uso seguro contínuo da radiação em medicina, os funcionários devem receber treinamento periódico em segurança radiológica. Esse treinamento deve incluir princípios básicos de segurança radiológica, detalhes específicos de suas funções no trabalho e comunicação de estimativas de risco.
+	Os \textcolor{MediumOrchid}{\textbf{\textit{limites de dose para trabalhadores expostos à radiação são mais altos do que os para membros do público em geral}}}. Isso se baseia no fato de que esses trabalhadores receberam \textcolor{MediumOrchid}{\textbf{\textit{treinamento especial}}} em proteção radiológica, estando cientes dos riscos associados à radiação e decidiram aceitá-los. Para determinar o cumprimento dos limites de dose, uma instituição deve atribuir um monitor de dose ao membro da equipe ou realizar cálculos que mostrem que o trabalhador não excederá 10\% do limite anual. Existem algumas exceções a isso; funcionários que trabalham em áreas de alto risco, como radiologia intervencionista, medicina nuclear e radioterapia, devem ser monitorados independentemente do nível esperado de dose anual. Isso se deve ao \textcolor{MediumOrchid}{\textbf{\textit{potencial de incidentes inesperados}}}, especialmente no caso de \textcolor{MediumOrchid}{\textbf{\textit{braquiterapia}}} em radioterapia. Para garantir o uso seguro contínuo da radiação em medicina, os funcionários devem receber \textcolor{MediumOrchid}{\textbf{\textit{treinamento periódico em segurança radiológica}}}. Esse treinamento deve incluir princípios básicos de segurança radiológica, detalhes específicos de suas funções no trabalho e comunicação de estimativas de risco.
 
-	Para determinar o cumprimento dos limites de dose para o público em geral, são realizados cálculos de blindagem e levantamentos para mostrar que os indivíduos nas áreas próximas à fonte de radiação não excederão os limites regulatórios. Os cálculos devem ser confirmados por meio de uma avaliação dos níveis de dose ao redor da fonte de radiação após a instalação, utilizando um instrumento apropriado. Esses cálculos devem ser revisados regularmente para confirmar que as suposições feitas durante o processo de projeto ainda são válidas.
+	Para determinar o cumprimento dos l\textcolor{MediumOrchid}{\textbf{\textit{imites de dose para o público em geral}}}, são realizados \textcolor{MediumOrchid}{\textbf{\textit{cálculos de blindagem}}} e \textcolor{MediumOrchid}{\textbf{\textit{levantamentos}}} para mostrar que os indivíduos nas áreas próximas à fonte de radiação não excederão os limites regulatórios. Os cálculos devem ser confirmados por meio de uma avaliação dos níveis de dose ao redor da fonte de radiação após a instalação, utilizando um instrumento apropriado. Esses cálculos devem ser revisados regularmente para confirmar que as suposições feitas durante o processo de projeto ainda são válidas.
 
 \section{Níveis de Risco}
 
 	O relatório BEIR VII é um documento importante que fornece informações detalhadas sobre os riscos da exposição à radiação. Ele foi desenvolvido pelo Comitê sobre os Efeitos Biológicos da Radiação Ionizante (BEIR), um comitê do Conselho Nacional de Pesquisa dos Estados Unidos. O relatório BEIR VII aborda principalmente os efeitos estocásticos da radiação, que são aqueles relacionados ao risco de desenvolver câncer.
 
-	Em doses muito altas, os efeitos determinísticos da radiação são observados com os seguintes desfechos e níveis de D50 (a dose na qual 50\% dos indivíduos expostos seriam esperados atingir um determinado desfecho, como a morte): morte do sistema nervoso central (CNS) ($>$20 Sv), morte gastrointestinal (GI) ($>$10 Sv) e morte da medula óssea ($>$5 Sv).. Esses efeitos são causados por danos diretos aos tecidos e órgãos e têm uma relação dose-resposta bem definida. Em doses mais baixas, ocorrem efeitos estocásticos, sendo a principal preocupação o risco excessivo de câncer, com os principais tipos sendo pulmão, fígado, mama, próstata, estômago, cólon, tireoide e leucemia. O BEIR VII cita o número excessivo de casos por 100 mSv como sendo 800 por 100.000 pessoas para homens e 1300 por 100.000 pessoas para mulheres. Há um risco três vezes maior para crianças pequenas, e as mulheres têm um risco duas vezes maior do que os homens.
+	Em doses muito altas, os efeitos determinísticos da radiação são observados com os seguintes desfechos e níveis de $D_{50}$ (a dose na qual 50\% dos indivíduos expostos seriam esperados atingir um determinado desfecho, como a morte):
 
-	No entanto, a principal preocupação com a exposição à radiação é o risco de desenvolvimento de câncer. O relatório BEIR VII destaca que a exposição à radiação ionizante está associada a um risco aumentado de vários tipos de câncer, incluindo pulmão, fígado, mama, próstata, estômago, cólon, tireoide e leucemia. O relatório apresenta estimativas do número excessivo de casos de câncer por 100 mSv de exposição à radiação, levando em consideração fatores como idade, sexo e tipo de câncer. Essas estimativas são importantes para avaliar os riscos e implementar medidas de proteção adequadas.
+	\begin{itemize}
+		\item Morte do sistema nervoso central (CNS) ($>$20 Sv)
+		\item Morte gastrointestinal (GI) ($>$10 Sv)
+		\item Morte da medula óssea ($>$5 Sv)
+	\end{itemize}
+	
+	Esses efeitos são causados por \textcolor{MediumOrchid}{\textbf{\textit{danos diretos aos tecidos e órgãos}}} e têm uma relação \textcolor{MediumOrchid}{\textbf{\textit{dose-resposta}}} bem definida. 
+	
+	Em doses mais baixas, ocorrem \textcolor{MediumOrchid}{\textbf{\textit{efeitos estocásticos}}}, sendo a principal preocupação o \textcolor{MediumOrchid}{\textbf{\textit{risco excessivo de câncer}}}, com os principais tipos sendo pulmão, fígado, mama, próstata, estômago, cólon, tireoide e leucemia. O BEIR VII cita o número excessivo de casos por 100 mSv como sendo 800 por 100.000 pessoas para homens e 1300 por 100.000 pessoas para mulheres. Há um risco três vezes maior para crianças pequenas, e as mulheres têm um risco duas vezes maior do que os homens.
 
-	Uma questão importante discutida no relatório BEIR VII é a existência ou não de um limiar de dose abaixo do qual não há risco de câncer. O modelo linear sem limiar (LNT) é adotado no relatório, o que significa que ele pressupõe que mesmo baixas doses de radiação têm o potencial de causar danos genéticos e aumentar o risco de câncer. No entanto, há um debate contínuo na comunidade científica sobre a validade desse modelo e se existem limiares de dose abaixo dos quais os riscos são insignificantes.
-
-	É importante destacar que as estimativas de risco apresentadas no relatório BEIR VII são baseadas em dados epidemiológicos e estudos de populações expostas à radiação. Essas estimativas são utilizadas para informar as diretrizes e regulamentações de segurança radiológica, a fim de limitar a exposição da população e minimizar os riscos.
+	Uma questão importante discutida no relatório BEIR VII é a existência ou não de um limiar de dose abaixo do qual não há risco de câncer. O \textcolor{MediumOrchid}{\textbf{\textit{modelo linear sem limiar (LNT)}}} é adotado no relatório, o que significa que ele pressupõe que \textcolor{MediumOrchid}{\textbf{\textit{mesmo baixas doses de radiação têm o potencial de causar danos genéticos e aumentar o risco de câncer}}}. No entanto, há um debate contínuo na comunidade científica sobre a validade desse modelo e se existem limiares de dose abaixo dos quais os riscos são insignificantes.
 
 \section{Unidades}
 
-	A estimativa de risco para um órgão específico é determinada por sua sensibilidade biológica à radiação e pelo tipo de radiação envolvida. Para levar em conta a diferença na densidade de ionização causada por cada tipo de radiação, utilizamos um fator de ponderação para modificar a dose física. Esse fator de ponderação é essencial para calcular a dose equivalente ($H_T$). A dose equivalente é dada por:
+	A estimativa de risco para um órgão específico é determinada por sua sensibilidade biológica à radiação e pelo tipo de radiação envolvida. Para levar em conta a diferença na densidade de ionização causada por cada tipo de radiação, utilizamos um fator de ponderação para modificar a dose física. Esse fator de ponderação é essencial para calcular a dose equivalente ($H_T$). A \textcolor{MediumOrchid}{\textbf{\textit{dose equivalente}}} é dada por:
 	
 		\begin{equation}
 			H_T = W_R \times D_T
@@ -155,7 +162,7 @@
 			\end{itemize}
 		\end{exemplo}
 
-	O fator de ponderação da radiação, \textcolor{MediumOrchid}{$\mathbf{W_R}$}, é definido e usado pela Comissão Internacional de Proteção Radiológica (ICRP). É importante ressaltar que anteriormente era utilizado o termo "fator de qualidade" (ou "Q") nos cálculos, e esse termo ainda é utilizado pela U.S. Nuclear Regulatory Commission (NRC). A \ref{fig:prFatorPesoRadiacao} mostra os fatores de ponderação para os diferentes tipos de radiação. 
+	O \textcolor{MediumOrchid}{\textbf{\textit{fator de ponderação da radiação}}}, \textcolor{MediumOrchid}{$\mathbf{W_R}$}, é definido e usado pela Comissão Internacional de Proteção Radiológica (ICRP). É importante ressaltar que anteriormente era utilizado o termo \textcolor{MediumOrchid}{\textbf{\textit{"fator de qualidade"}}} (ou "Q") nos cálculos, e esse termo ainda é utilizado pela U.S. Nuclear Regulatory Commission (NRC). A \ref{fig:prFatorPesoRadiacao} mostra os fatores de ponderação para os diferentes tipos de radiação. 
 
 		\begin{figure}[!h]
 			\centering
@@ -168,10 +175,9 @@
 	
 	Os fatores de ponderação da radiação são valores específicos atribuídos a diferentes tipos de radiação para levar em consideração seus efeitos biológicos relativos. Esses fatores são determinados com base em estudos epidemiológicos e estudos de radiobiologia.
 
-	A unidade de medida padrão para a dose equivalente é o Sievert (Sv) joule por 
-	quilograma (J/kg), no sistema internacional (SI). No entanto, uma unidade mais antiga, o roentgen equivalente (rem), que é igual a 0.01 Sv, também é utilizada em alguns contextos.
+	A unidade de medida padrão para a dose equivalente é o \textcolor{MediumOrchid}{\textbf{\textit{Sievert (Sv)}}} joule por quilograma (J/kg), no sistema internacional (SI). No entanto, uma unidade mais antiga, o roentgen equivalente \textcolor{MediumOrchid}{\textbf{\textit{(rem)}}}, que é igual a \textcolor{MediumOrchid}{\textbf{\textit{0.01 Sv}}}, também é utilizada em alguns contextos.
 	
-	O conceito de dose efetiva (E) leva em consideração a sensibilidade individual de cada órgão à radiação. A dose efetiva é calculada somando-se as doses equivalentes ponderadas de todos os órgãos irradiados, de acordo com os fatores de ponderação específicos de cada órgão. Esse cálculo é representado pela equação:
+	O conceito de \textcolor{MediumOrchid}{\textbf{\textit{dose efetiva (E)}}} leva em consideração a \textcolor{MediumOrchid}{\textbf{\textit{sensibilidade individual de cada órgão}}} à radiação. A dose efetiva é calculada somando-se as doses equivalentes ponderadas de todos os órgãos irradiados, de acordo com os fatores de ponderação específicos de cada órgão. Esse cálculo é representado pela equação:
 
 		\begin{equation}
 			E = \sum_T W_T \cdot H_T
@@ -200,7 +206,7 @@
 
 \section{Limites Regulatórios}
 
-	O NCRP Report No. 116, publicado em 1993, é um importante documento que estabelece os limites de dose efetiva para trabalhadores expostos à radiação e o público em geral. Ele substitui o NCRP Report No. 91, lançado anteriormente em 1987. A atualização do relatório reflete o avanço do conhecimento científico e as mudanças nas diretrizes de proteção radiológica ao longo do tempo.(\ref{fig:prLimitesAnuais}).  Inicialmente, o NCRP recomendou um limite anual de dose efetiva de 0,25 mSv para o público em geral. No entanto, uma clarificação posterior em 2004 justificou o aumento desse limite para 1,0 mSv por ano. Essa alteração foi baseada em estimativas conservadoras incorporadas na metodologia de projeto de blindagem, que considera uma série de fatores para garantir a segurança radiológica.
+	O NCRP Report No. 116, publicado em 1993, é um importante documento que estabelece os limites de dose efetiva para trabalhadores expostos à radiação e o público em geral. A atualização do relatório reflete o avanço do conhecimento científico e as mudanças nas diretrizes de proteção radiológica ao longo do tempo.(\ref{fig:prLimitesAnuais}).  Inicialmente, o NCRP recomendou um limite anual de dose efetiva de 0.25 mSv para o público em geral. No entanto, uma clarificação posterior em 2004 justificou o aumento desse limite para \textcolor{MediumOrchid}{\textbf{\textit{1.0 mSv por ano}}}. Essa alteração foi baseada em estimativas conservadoras incorporadas na metodologia de projeto de blindagem, que considera uma série de fatores para garantir a segurança radiológica.
 
 	\begin{figure}[!h]
 			\centering
@@ -274,7 +280,7 @@
 		
 		\item Posicionamento dos dosímetros em Radioterapia: No campo da Radioterapia, o dosímetro deve ser usado no tronco do corpo acima da cintura. Dosímetros para extremidades devem ser usados ao manipular material radioativo. Essas práticas garantem uma avaliação precisa das doses recebidas pelos profissionais de Radioterapia e auxiliam na proteção radiológica adequada durante esses procedimentos.
 		
-		\item Monitoração de pessoal grávido: O relatório destaca a importância de considerar a monitoração de pessoal grávido. As mulheres grávidas estão sujeitas a diretrizes específicas de proteção radiológica, levando em consideração os possíveis riscos para o feto. A monitoração pessoal adequada e a implementação de medidas de proteção adicionais são essenciais nesses casos.
+		\item Monitoração de pessoal grávida: O relatório destaca a importância de considerar a monitoração de pessoal grávida. As mulheres grávidas estão sujeitas a diretrizes específicas de proteção radiológica, levando em consideração os possíveis riscos para o feto. A monitoração pessoal adequada e a implementação de medidas de proteção adicionais são essenciais nesses casos.
 	\end{enumerate}
 
 
@@ -286,12 +292,12 @@
 	Vários fatores são levados em consideração ao determinar a natureza da blindagem necessária. Esses fatores incluem:
 
 	\begin{enumerate}
-		\item Carga de trabalho (W): Refere-se à frequência com que a fonte de radiação é utilizada, levando em conta o número de pacientes sendo tratados ou examinados por semana e os tempos de tratamento ou exame.
-		\item Fator de uso (U): É determinado pelas capacidades do equipamento e pelos tipos de tratamentos ou exames sendo realizados, considerando com que frequência o feixe de radiação é direcionado para uma direção específica.
-		\item Barreira primária versus barreira secundária: É levado em conta se o feixe primário atinge diretamente a barreira de proteção ou não. A barreira primária é a primeira linha de defesa contra a radiação primária, enquanto a barreira secundária é exposta à radiação espalhada pelo paciente, pelos dispositivos de suporte do paciente e pelas estruturas do ambiente, ou à radiação de fuga da fonte de radiação.
-		\item Fator de ocupação (T): Considera com que frequência a área adjacente à fonte de radiação é ocupada e quem a ocupa (profissional de radioterapia, área controlada ou público em geral). Isso determina o objetivo de projeto (P), que geralmente é expresso em dose efetiva por semana.
-		\item Distância (d): Refere-se à distância da área de interesse em relação à fonte de radiação.
-		\item Tipo de fonte de radiação: Pode variar, incluindo raios-X kV, raios-X MV, radioisótopos ou feixe de partículas.
+		\item \textcolor{DarkTurquoise}{\textbf{\textit{Carga de trabalho (W)}}}: Refere-se à frequência com que a fonte de radiação é utilizada, levando em conta o número de pacientes sendo tratados ou examinados por semana e os tempos de tratamento ou exame.
+		\item \textcolor{DarkTurquoise}{\textbf{\textit{Fator de uso (U)}}}: É determinado pelas capacidades do equipamento e pelos tipos de tratamentos ou exames sendo realizados, considerando com que frequência o feixe de radiação é direcionado para uma direção específica.
+		\item \textcolor{DarkTurquoise}{\textbf{\textit{Barreira primária versus barreira secundária}}}: É levado em conta se o feixe primário atinge diretamente a barreira de proteção ou não. A barreira primária é a primeira linha de defesa contra a radiação primária, enquanto a barreira secundária é exposta à radiação espalhada pelo paciente, pelos dispositivos de suporte do paciente e pelas estruturas do ambiente, ou à radiação de fuga da fonte de radiação.
+		\item \textcolor{DarkTurquoise}{\textbf{\textit{Fator de ocupação (T)}}}: Considera com que frequência a área adjacente à fonte de radiação é ocupada e quem a ocupa (profissional de radioterapia, área controlada ou público em geral). Isso determina o objetivo de projeto (P), que geralmente é expresso em dose efetiva por semana.
+		\item \textcolor{DarkTurquoise}{\textbf{\textit{Distância (d)}}}: Refere-se à distância da área de interesse em relação à fonte de radiação.
+		\item \textcolor{DarkTurquoise}{\textbf{\textit{Tipo de fonte de radiação}}}: Pode variar, incluindo raios-X kV, raios-X MV, radioisótopos ou feixe de partículas.
 	\end{enumerate}
 
 	A equação básica utilizada para calcular o fator de transmissão da barreira (B) necessário para reduzir a dose efetiva em uma área para o objetivo de projeto é:
@@ -304,7 +310,7 @@
 
 	A partir do fator de transmissão (B), é possível calcular o número de camadas deci-redutoras (TVL) necessárias para reduzir a transmissão por um fator de 10. Essas camadas subsequentes, designadas como TVLe, têm valores diferentes devido a mudanças espectrais no feixe à medida que ele penetra na barreira.
 
-	As barreiras secundárias são expostas principalmente à radiação espalhada pelo paciente. A energia e a intensidade dessa radiação espalhada dependem do ângulo em relação ao feixe primário. O feixe primário terá uma intensidade e energia muito maiores do que a radiação espalhada. A radiação de fuga, por sua vez, terá uma energia mais alta do que o feixe primário, devido ao endurecimento à medida que a radiação passa pela blindagem da fonte, mas terá uma intensidade muito menor. Normas como a IEC 60601-2-1 limitam a radiação de fuga ao redor do cabeçote de um acelerador linear a menos de 0.1\% do feixe primário a 1 metro de distância do cabeçote.
+	As barreiras secundárias são expostas à radiação espalhada pelo paciente e à radiação de fuga. A energia e a intensidade dessa radiação espalhada dependem do ângulo em relação ao feixe primário. O feixe primário terá uma intensidade e energia muito maiores do que a radiação espalhada. A radiação de fuga, por sua vez, terá uma energia mais alta do que o feixe primário, devido ao endurecimento à medida que a radiação passa pela blindagem da fonte, mas terá uma intensidade muito menor. Normas como a IEC 60601-2-1 limitam a radiação de fuga ao redor do cabeçote de um acelerador linear a menos de 0.1\% do feixe primário a 1 metro de distância do cabeçote.
 
 	Os fatores de ocupação (T) são projetados para reduzir a necessidade de blindagem em áreas com baixa probabilidade de ocupação humana. No entanto, ao realizar cálculos de blindagem para uma área de baixa ocupação, como um banheiro público, a dose também deve ser avaliada para áreas de alta ocupação adjacentes, como um escritório completamente ocupado. Isso determinará a blindagem necessária nessa direção específica. Os fatores de ocupação recomendados pelo NCRP-151 estão mostrados na \ref{fig:prFatorOcupacao}.
 
@@ -656,7 +662,7 @@
 		\begin{itemize}
 			\item Para cada implante realizado, utiliza-se uma atividade de \SI{500}{U}, que é medida em força de kerma no ar. Além disso, temos uma média de tempo de \SI{50}{horas} por implante e realizamos dois implantes por semana. Ao inserir esses valores na equação de atenuação necessária, obtemos um valor de $B$ igual a \num{0.0036}. Esse valor representa a quantidade de atenuação requerida para alcançar a proteção adequada.
 
-			\item A fim de calcular a espessura necessária para a blindagem, podemos utilizar o conceito de camadas decimais de valor (TVL). O TVL é determinado pelo logaritmo negativo de $B$ na base 10, ou seja, $\text{TVL} = -\log_{10}(B)$. No caso específico mencionado, encontramos um valor de TVL igual a \num{2.44}.
+			\item A fim de calcular a espessura necessária para a blindagem, podemos utilizar o conceito de camadas deci-redutoras (TVL). O TVL é determinado pelo logaritmo negativo de $B$ na base 10, ou seja, $\text{TVL} = -\log_{10}(B)$. No caso específico mencionado, encontramos um valor de TVL igual a \num{2.44}.
 	
 			\item A \ref{fig:prTransLDR}contém os valores de TVL para diversos materiais quando se trata de implantes utilizando o \ce{^{192}Ir} e o \ce{^{137}Cs}. Fazendo uso dos valores específicos para o chumbo, verificamos que seria necessário uma espessura de \SI{54}{mm} para o \ce{^{137}Cs} e \SI{39}{mm} para o \ce{^{192}Ir}, a fim de alcançar a blindagem desejada. Essa espessura é determinada para garantir a proteção adequada contra a radiação gerada durante os procedimentos de implante.
 		\end{itemize}

@@ -1,7 +1,6 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage[utf8]{inputenc}
-% \usepackage[T1]{fontenc}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{siunitx}
 \usepackage[brazil]{babel}
@@ -12,7 +11,7 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{natbib}
 \bibliographystyle{plainnat}
-\bibpunct{[}{]}{,}{s}{}{}
+\bibpunct{\textcolor{MediumOrchid}{\textbf{[}}}{\textcolor{MediumOrchid}{\textbf{]}}}{,}{s}{}{}
 \usepackage{color}
 \usepackage{footnote}
 \usepackage{setspace}
@@ -29,15 +28,31 @@
 \usepackage{enumitem}
 \usepackage{caption}
 \usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{LobsterTwo}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{txfonts}
+\usepackage[bottom]{footmisc}
+\tcbuselibrary{skins,breakable}
+\sisetup{output-decimal-marker={.}}
+
+\makeatletter
+\def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
+\makeatother
+
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
+
+\AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
+\titleformat{\section}{\LobsterTwo\huge\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\huge\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bf\LobsterTwo\Large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
 
 
-\titleformat{\section}{\LARGE\color{CarnationPink}}{\thesection}{1em}{}
-\titleformat{\subsection}{\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
-
-
-\DeclareCaptionLabelFormat{figuras}{\textcolor{CarnationPink}{Figura \arabic{figure}}}
+\DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
 \captionsetup[figure]{labelformat=figuras}
 
 \makeatletter
@@ -48,9 +63,9 @@
 \renewcommand{\thefigure}{Fig. \arabic{figure}}
 \renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
 
-\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\blacksquare$}}
 
-\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
 
 
 \newcounter{exemplo}
@@ -66,8 +81,8 @@
   linewidth=2pt,
   linecolor=CarnationPink,
   frametitlerule=false,
-  frametitlefont=\Large\bfseries\color{CarnationPink},
-  frametitle={\color{CarnationPink}\normalfont\bfseries #1},
+  frametitlefont=\LobsterTwo\large\color{CarnationPink},
+  frametitle={\color{CarnationPink}\LobsterTwo\large #1},
   ]
 }{%
   \end{mdframed}
@@ -84,21 +99,22 @@
 	filecolor=DarkTurquoise,      
 	urlcolor=DarkTurquoise,
 	citecolor=DarkTurquoise,
-	pdftitle={Radioterapia}
+	pdftitle={Especialista em Física da Radioterapia}
 }
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\rfoot{Página \thepage}
+\rfoot{\color{DarkTurquoise}\thepage \\ \LobsterTwo{\small\textcolor{CarnationPink}{@defDalila}}}
 
-\title{Resumo}
-\author{Notas Rápidas \nocite{*}}
-\date{\textit{Dalila Mendonça}}
+
+\title{\LobsterTwo\Huge{Exercícios}}
+\author{\LobsterTwo\Large{Tratamento com Fótons e Planejamento}\nocite{*}}
+\date{\LobsterTwo\textit{Dalila Mendonça}}
 \begin{document}
 	\maketitle
     
-\begin{exemplo}[5. Tratamentos com Fótons]
-    \textcolor{CarnationPink}{Qualidade Do Feixe}
+\begin{exemplo}[Tratamentos com Fótons]
+    \textcolor{MediumOrchid}{\LobsterTwo\textbf{Qualidade Do Feixe}}
     \begin{itemize}
         \item A qualidade do feixe descreve o espectro de energia de um feixe de fótons de raios X (ou raios gama). Alguns feixes de fótons, por exemplo, \ce{^{60}Co}, são quase monoenergéticos (média de 1,25 MeV). Outros feixes, por exemplo, um feixe linac de 6 MV, são polienergéticos. MeV implica uma energia, enquanto 6 MV implica um espectro, com 6 MeV como a energia máxima. A qualidade do feixe de cada fabricante e cada máquina é ligeiramente diferente para feixes com a mesma energia nominal. Para feixes de fótons utilizados em radioterapia, a qualidade do feixe é medida por uma curva chamada curva de Porcentagem de dose na profundidade (PDP). A razão entre o valor da PDP a 20 cm e o valor da PDP a 10 cm de profundidade é freqüentemente utilizado para determinar a qualidade do feixe através de um valor. Para feixes de diagnóstico, o kVp ou camada semi-redutora é usada para definir a qualidade do feixe em vez da PDP;
         
@@ -160,7 +176,7 @@
 
     \end{itemize}
 
-    \textcolor{CarnationPink}{Fatores que Afetam a deposição de dose pelos fótons}
+    \textcolor{MediumOrchid}{\LobsterTwo\textbf{Fatores que Afetam a deposição de dose pelos fótons}}
     \begin{itemize}
         \item Para um determinado tamanho de campo, a PDP (expressa em porcentagem) é medida ao longo do eixo central e é definida como a razão de uma dose em uma determinada profundidade d para a dose em uma profundidade de referência (geralmente d\textsubscript{max}) no eixo central.
         
@@ -170,7 +186,7 @@
 
         \item A PDP em uma produndidade d pode ser afetada por variaçoes no tamanho de campo, energia, SSD e pela utilização de filtros da seguinte maneira:
         
-            \begin{enumerate}[label=\roman*)]
+            \begin{enumerate}[label=(\roman*)]
                 \item Com o aumento do tamanho de campo, a PDP(d) irá aumentar devido ao aumento do espalhamento no meio.
                 \item Cpm Aumento da energia do feixe, a PDP(d) irá aumentar devido ao aumento da penetração;
                 \item Com o Aumento da SSD a PDP(d) irá aumentar devido à lei do inverso quadrado, pois a dose em $d_{max}$ irá diminuir.
@@ -185,7 +201,7 @@
 
         \item Os valores de d\textsubscript{max} são sutilmente diferentes para cada máquina e feixe, porém os valores tipicos para cada energia nominal são:
         
-            \begin{enumerate}[label=\alph*)]
+            \begin{enumerate}[label=(\alph*)]
                 \item \ce{^{60}Co}: 0.5 cm;
                 \item 6 MV: 1.5 cm;
                 \item 10 MV: 2.5 cm;
@@ -209,7 +225,7 @@
         
         \item A PDP aumenta à medida que o tamanho do campo aumenta devido ao espalhamento no tecido fora do eixo central (off-axis). Tanto a dose primária (fótons emitidos diretamente do cabeçote do linac) quanto a dose secundária (espalhamento no tecido) contribuem para a PDP. Embora tanto a dose na profundidade d (D\textsubscript{d}) quanto a dose em d\textsubscript{max} aumentam, o D\textsubscript{d} aumenta mais que a dose em d\textsubscript{max}(D\textsubscript{max}), portanto a PDP aumenta.
         
-        \item O aumento da PDP com o tamanho de campo é maior para feixes de baixa energia. Com altas energias, a maior parte do espalhamento ocorre na mesma direção do fóton incidentee portanto o espalhamento lateral é menor.
+        \item O aumento da PDP com o tamanho de campo é maior para feixes de baixa energia. Com altas energias, a maior parte do espalhamento ocorre na mesma direção do fóton incidente portanto o espalhamento lateral é menor.
         
         \item As maiores vantagens em se utilizar a técnica SAD (que utiliza o fator TMR) quando comparado a técnica de SSD (que utiliza o fator PDP) é que os cálculos utilizando a PDP são convenientes quando não há mudanças na SSD e a SSD é mantida na distância padrão de calibração igual a 100 cm. No entando, um tratamento com diversos campos, a SSD irá mudar devido a variações na superfície do paciente, ou então o paciente deverá ser movido em todo campo de tratamento para igualar a SSD à SSD de calibração. Ao utilizar o método de SAD, utiliza-se a TMR ao invés da PDP, e como a TMR é independente da SSD, torna-se uma vantagem nessas situações de SSD variáveis. 
         
@@ -262,7 +278,7 @@
         \item O método de Clarkson é utilizado para calcular a dose para campos irregulares. Esta técnica envolve dividir um campo irregular em diversas regiões para aproximar o espalhamento para cada região. 
     \end{itemize}
 
-    \textcolor{CarnationPink}{Cálculo de Unidades Monitoras}
+    \textcolor{MediumOrchid}{\LobsterTwo\textbf{Cálculo de Unidades Monitoras}}
     \begin{itemize}
         \item As condições de referência são as condições nas quais o feixe é calibrado. É extremamente importante especificar essas condições, caso contrário, podem ocorrer erros sistemáticos nos cálculos de dose. Um exemplo de condições de referência comuns é que o feixe pode ser calibrado (de acordo com AAPM TG-51) de modo que 1 unidade monitora (1 MU) seja igual a dose de 1 cGy depositada por um fóton de 6 MV na profundidade d\textsubscript{max} usando um tamanho de campo de 10 cm x 10 cm em água com uma distância da fonte à superficie (SSD) de 100 cm. Observe que o tamanho do campo é determinado a 100 cm da fonte.
         
@@ -317,7 +333,7 @@
     \end{itemize}
 \end{exemplo}
 
-\begin{exemplo}[6. Básico de Planejamento de Tratamento]
+\begin{exemplo}[Básico de Planejamento de Tratamento]
     \begin{itemize}
         \item Em um tratamento de crânio total (WB) normalmente são utilizados dois campos laterais deslocados \ang{5} para a direção anterior do paciente, resultando em um campo com angulação de \ang{275} e um campo com angulação de \ang{85}. Este deslocamento no ângulo do gantry é feito para evitar a divergência do feixe nos cristalinos, minimizando a dose depositada nessas estruturas. 
         

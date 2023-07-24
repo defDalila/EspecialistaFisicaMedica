@@ -11,7 +11,7 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{natbib}
 \bibliographystyle{plainnat}
-\bibpunct{[}{]}{,}{s}{}{}
+\bibpunct{\textcolor{MediumOrchid}{\textbf{[}}}{\textcolor{MediumOrchid}{\textbf{]}}}{,}{s}{}{}
 \usepackage{color}
 \usepackage{footnote}
 \usepackage{setspace}
@@ -34,11 +34,22 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage{txfonts}
+\usepackage[bottom]{footmisc}
+\tcbuselibrary{skins,breakable}
+\sisetup{output-decimal-marker={.}}
+
+\makeatletter
+\def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
+\makeatother
+
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
+
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
-\titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
-\titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\section}{\LobsterTwo\huge\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\huge\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bf\LobsterTwo\Large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
 
 
 \DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
@@ -52,9 +63,9 @@
 \renewcommand{\thefigure}{Fig. \arabic{figure}}
 \renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
 
-\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\blacksquare$}}
 
-\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
 
 
 \newcounter{exemplo}
@@ -93,7 +104,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\rfoot{Página \thepage}
+\rfoot{\color{DarkTurquoise}\thepage \\ \LobsterTwo{\small\textcolor{CarnationPink}{@defDalila}}}
 
 \title{\LobsterTwo\Huge{Garantia Da Qualidade}}
 \author{\LobsterTwo\Large{IGRT}\nocite{*}}
@@ -107,53 +118,53 @@
 
 \section{Sistemas de Imagens}
 
-    A tecnologia e o uso de sistemas de imagem durante o tratamento continuam a evoluir em ritmo acelerado. Vários artigos foram publicados sobre este tema e a maior parte dos relatórios de consenso tentam fornecer visões gerais, das quais o documento AAPM TG-104, \textit{The Role of In-Room kV X-Ray Imaging for Patient Setup and Target Localization} é notável por sua perspectiva histórica que remonta ao uso de fontes kV acopladas a Unidades de tratamento \ce{^{60}Co} no final dos anos 1950. Atualmente, as tecnologias mais usadas incluem as seguintes (listas em AAPM TG-104/AAPM TG-179):
+    A tecnologia e o uso de sistemas de imagem durante o tratamento continuam a evoluir em ritmo acelerado. Vários artigos foram publicados sobre este tema e a maior parte dos relatórios de consenso tentam fornecer visões gerais, das quais o documento \textcolor{MediumOrchid}{\textbf{\textit{AAPM TG-104}}}, \textit{The Role of In-Room kV X-Ray Imaging for Patient Setup and Target Localization} é notável por sua perspectiva histórica que remonta ao uso de fontes kV acopladas a Unidades de tratamento \ce{^{60}Co} no final dos anos 1950. Atualmente, as tecnologias mais usadas incluem as seguintes (listas em AAPM TG-104/AAPM TG-179):
 
     \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
-        \item  CT de feixe cônico de quilovoltagem (kV-CBCT), por exemplo:
+        \item \textcolor{DarkTurquoise}{\textbf{\textit{CT de feixe cônico de quilovoltagem (kV-CBCT)}}}, por exemplo:
         \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
-            \item sistema On-Board Imaging (OBI) (Varian Inc., Palo Alto, CA);
+            \item Sistema On-Board Imaging (OBI) (Varian Inc., Palo Alto, CA);
             \item Sistema Synergy X-ray Volume Imager (XVI) (Elekta, Inc., Crawley, Reino Unido).
             \item  Dispositivo de imagem de painel plano em modo fluoroscópico; 2 imagens de projeção por grau com faixa de rotação do gantry de \ang{200} a \ang{360}; Aquisição de 1 a 2 minutos. Essas unidades também são capazes de realizar radiografias e fluoroscopia.
         \end{itemize}
         
-        \item Imagens planares de megavoltagem (imagens de portal) usadas em sistemas baseados em gantry. Documentos de referência: AAPM TG-58 (cerca de 2001) e padrões CAPC QC para EPIDs. Foi desenvolvido tecnicas para utilizar imagens de MV para verificar a administração da dose imediatamente antes do tratamento ou durante o próprio tratamento, uma abordagem conhecida como dosimetria EPID in vivo.
+        \item \textcolor{DarkTurquoise}{\textbf{\textit{Imagens planares de megavoltagem (imagens de portal) usadas em sistemas baseados em gantry}}}. Documentos de referência: AAPM TG-58 (cerca de 2001) e padrões CAPC QC para EPIDs. Foi desenvolvido técnicas para utilizar imagens de MV para verificar a administração da dose imediatamente antes do tratamento ou durante o próprio tratamento, uma abordagem conhecida como dosimetria EPID in-vivo.
         
-        \item Fan-beam MV-CT (TomoTherapy/Accuray, Madison, WI). CT usando o feixe de 3.5 MeV, feixe colimado de 4 mm com pitch 1 a 3 (AAPM TG-148).
+        \item \textcolor{DarkTurquoise}{\textbf{\textit{Fan-beam MV-CT (TomoTherapy/Accuray, Madison, WI}}}). CT usando o feixe de 3.5 MeV, feixe colimado de 4 mm com pitch 1 a 3 (AAPM TG-148).
         
-        \item In-room CT on rails (``TC na sala sobre trilhos''). Menos amplamente utilizado do que as tecnologias acima, embora imagens de qualidade diagnóstica estejam disponíveis. 
+        \item \textcolor{DarkTurquoise}{\textbf{\textit{In-room CT on rails}}} (``TC na sala sobre trilhos''). Menos amplamente utilizado do que as tecnologias acima, embora imagens de qualidade diagnóstica estejam disponíveis. 
         
-        \item Imagem kV estereoscópica planar. Utilizam câmaras de imagem de tubo de raios X/ painéis planos emparelhados montados no chão e no teto para determinar mudanças relativas à DRRs. Os sistemas kV de energia dupla estão se tornando comercialmente disponíveis, que permitem imagens de subtração para melhorar a visualização dos tecidos moles. Exemplos:
+        \item \textcolor{DarkTurquoise}{\textbf{\textit{Imagem kV estereoscópica planar}}}. Utilizam câmaras de imagem de tubo de raios X/ painéis planos emparelhados montados no chão e no teto para determinar mudanças relativas à DRRs. Os sistemas kV de energia dupla estão se tornando comercialmente disponíveis, que permitem imagens de subtração para melhorar a visualização dos tecidos moles. Exemplos:
         \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
             \item Sistema CyberKnife (Accuray Inc., Sunnyvale, CA);
             \item Sistema Novalis ExacTrac (BrainLab AG, Feldkirchen, Alemanha).
         \end{itemize}
         
-        \item “Sistemas combinados” (ou seja, estereoscópico planar mais kV-CBCT). Exemplos:
+        \item \textcolor{DarkTurquoise}{\textbf{\textit{“Sistemas combinados” (ou seja, estereoscópico planar mais kV-CBCT)}}}. Exemplos:
         \begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
             \item NovalisTx platform (Varian Inc., Palo Alto, CA);
             \item  Vero (Mitsubishi Heavy Industries, Ltd. \& Brainlab AG), usando o acelerador MHI-TM2000 e um par de tubos de raios X/painéis de imagens planos montados em um conjunto de O-ring giratório.
         \end{itemize}
 
-        \item Tomossíntese digital. Situada em algum lugar entre a imagem planar e a TC, essa técnica renderiza um “plano espesso” perpendicular ao feixe, adquirindo imagens em uma pequena faixa de ângulos ($<$ \ang{40}).
+        \item \textcolor{DarkTurquoise}{\textbf{\textit{Tomossíntese digital}}}. Situada em algum lugar entre a imagem planar e a TC, essa técnica renderiza um “plano espesso” perpendicular ao feixe, adquirindo imagens em uma pequena faixa de ângulos ($<$ \ang{40}).
     \end{itemize}
 
     Além dos sistemas acima, várias tecnologias “complementares” estão disponíveis para localização durante o tratamento:
     
     \begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
-        \item  O ultrassom tem sido usado para localizar a próstata e a cavidade cirúrgica na mama durante o tratamento. Um sistema de câmera estabelece a relação geométrica entre a sonda transdutora da ultrassom e o isocentro de tratamento. Os produtos comerciais incluem SonArray (Varian Medical Systems, Palo Alto, CA) e Clarity (Elekta Inc., Crawley, Reino Unido). Os desafios incluem variabilidade inter-usuário (e a importância associada do treinamento do usuário), pressão abdominal (foram observados deslocamentos de 5 mm) e movimento intra-fração (um estudo observou deslocamentos de 5 mm em 3\% do tempo).
+        \item  O \textcolor{DarkTurquoise}{\textbf{\textit{ultrassom}}} tem sido usado para localizar a próstata e a cavidade cirúrgica na mama durante o tratamento. Um sistema de câmera estabelece a relação geométrica entre a sonda transdutora da ultrassom e o isocentro de tratamento. Os produtos comerciais incluem \textcolor{DarkTurquoise}{\textbf{\textit{SonArray}}} (Varian Medical Systems, Palo Alto, CA) e \textcolor{DarkTurquoise}{\textbf{\textit{Clarity}}} (Elekta Inc., Crawley, Reino Unido). Os desafios incluem variabilidade inter-usuário (e a importância associada do treinamento do usuário), pressão abdominal (foram observados deslocamentos de 5 mm) e movimento intra-fração (um estudo observou deslocamentos de 5 mm em 3\% do tempo).
 
-        \item Vários sistemas de localização estão disponíveis e dependem de imagens da superfície do paciente e/ou marcadores superficiais (isto é, sistemas de localização não radiográficos). Uma classe de sistemas usa duas ou mais câmeras estereoscópicas para criar imagens de marcadores reflexivos infravermelhos. Estes incluem o sistema FreeTrack (Varian Medical Systems, Palo Alto, CA), que alinha um bite block para tratamentos intracranianos; ExacTrac (BrainLab AG, Feldkirchen, Alemanha); DynaTrac (Elekta Inc., Crawley, Reino Unido); e CyberKnife (Accuray Inc., Sunnyvale, CA), todos os quais usam marcadores reflexivos em alguns modos de operação.
+        \item Vários sistemas de localização estão disponíveis e dependem de \textcolor{DarkTurquoise}{\textbf{\textit{imagens da superfície do paciente e/ou marcadores superficiais}}} (isto é, sistemas de localização não-radiográficos). Uma classe de sistemas usa duas ou mais \textcolor{DarkTurquoise}{\textbf{\textit{câmeras estereoscópicas (infravermelho)}}} para criar imagens de marcadores reflexivos infravermelhos. Estes incluem o sistema FreeTrack (Varian Medical Systems, Palo Alto, CA), que alinha um bite block para tratamentos intracranianos; ExacTrac (BrainLab AG, Feldkirchen, Alemanha); DynaTrac (Elekta Inc., Crawley, Reino Unido); e CyberKnife (Accuray Inc., Sunnyvale, CA), todos os quais usam marcadores reflexivos em alguns modos de operação.
         
-        \item Outros sistemas dependem da projeção de padrões de luz estruturados na superfície do paciente (por exemplo, AlignRT, VisionRT Ltd., Londres, Reino Unido) ou lasers projetados (Sentinel, C-Rad, Uppsala, Suécia). Uma limitação fundamental de todos esses sistemas é a dependência de recursos na superfície de um paciente, que podem não se correlacionar com a posição da anatomia interna de interesse.
+        \item Outros sistemas dependem da \textcolor{DarkTurquoise}{\textbf{\textit{projeção de padrões de luz estruturados na superfície do paciente}}} (por exemplo, AlignRT, VisionRT Ltd., Londres, Reino Unido) ou \textcolor{DarkTurquoise}{\textbf{\textit{lasers projetados}}} (Sentinel, C-Rad, Uppsala, Suécia). Uma limitação fundamental de todos esses sistemas é a dependência de recursos na superfície de um paciente, que podem não se correlacionar com a posição da anatomia interna de interesse.
         
-        \item Uma classe de localização não radiográfica depende de transponders eletromagnéticos implantados cuja localização pode ser determinada por meio de uma bobina fonte/receptor na superfície do paciente ou próximo a ela. Um sistema, Calypso (comercializado pela Varian Medical Systems, Palo Alto, CA) usa dispositivos transponder implantados de 8 mm x 2 mm. Na próstata, três beacons ``guias'' são tipicamente implantados a partir dos quais a rotação/translação da glândula pode ser determinada.
+        \item Uma classe de localização não-radiográfica depende de \textcolor{DarkTurquoise}{\textbf{\textit{transponders eletromagnéticos}}} implantados cuja localização pode ser determinada por meio de uma bobina fonte/receptor na superfície do paciente ou próximo a ela. Um sistema, Calypso (comercializado pela Varian Medical Systems, Palo Alto, CA) usa dispositivos transponders implantados de 8 mm x 2 mm. Na próstata, três beacons (``guias'') são tipicamente implantados a partir dos quais a rotação/translação da glândula pode ser determinada.
         
-        \item Imagens de RM em MR-60Co treatment unit (ViewRay Inc., Bedford, OH) e Aceleradores lineares acoplados a MR.
+        \item Imagens de RM em MR-\ce{^{60}Co} treatment unit (ViewRay Inc., Bedford, OH) e Aceleradores lineares acoplados a MR.
         
     \end{itemize}
 
-    Os centros de radioterapia de prótons também empregam orientação por imagem durante o tratamento, que é brevemente descrita na AAPM TG-104. Quase todos os centros de radioterapia de prótons atualmente dependem de radiografia planar kV e não utilizam TC durante o tratamento. 
+    Os centros de \textcolor{MediumOrchid}{\textbf{\textit{radioterapia com prótons}}} também empregam orientação por imagem durante o tratamento, que é brevemente descrita na AAPM TG-104. Quase todos os centros de radioterapia de prótons atualmente dependem de \textcolor{MediumOrchid}{\textbf{\textit{radiografia planar kV}}} e não utilizam TC durante o tratamento. 
     
 
 \section{Imagem Radiográfica: Qualidade da Imagem e Dose}
@@ -161,11 +172,11 @@
     O desempenho da qualidade de imagem dos sistemas radiográficos é comumente caracterizado por cinco parâmetros:
 
     \begin{enumerate}
-        \item Precisão geométrica;
-        \item Resolução espacial;
-        \item Resolução em baixo contraste;
-        \item Ruído; e
-        \item Uniformidade
+        \item \textcolor{DarkTurquoise}{\textbf{\textit{Precisão geométrica:}}} Refere-se à capacidade do sistema de raios-X em reproduzir com precisão as dimensões e formas dos objetos na imagem;
+        \item \textcolor{DarkTurquoise}{\textbf{\textit{Resolução espacial:}}} capacidade do sistema de raios-X em distinguir pequenos detalhes e estruturas presentes no objeto sendo analisado;
+        \item \textcolor{DarkTurquoise}{\textbf{\textit{Resolução em baixo contraste:}}} capacidade do sistema de raios-X em diferenciar tecidos com níveis de contraste reduzidos;
+        \item \textcolor{DarkTurquoise}{\textbf{\textit{Ruído:}}} consiste em variações aleatórias de intensidade de pixel que não representam informações relevantes do objeto; e
+        \item \textcolor{DarkTurquoise}{\textbf{\textit{Uniformidade:}}}  se refere à consistência dos valores de intensidade dos pixels em toda a imagem.
     \end{enumerate}
 
     Uma discussão particularmente útil sobre contraste e ruído em imagens planares pode ser encontrada no AAPM TG-58, enquanto muitos relatórios discutem imagens de TC (por exemplo, AAPM TG-66, AAPM TG-104 e AAPM TG-179). Recentemente, foi proposto que um sistema possa ser desenvolvido para prever a técnica de imagem ideal para visualizar a detecção de características durante o IGRT.
@@ -178,15 +189,24 @@
         \item Resolução de contraste de 1\% para um objeto de 7 mm em kV-CBCT e 2\% para um objeto de 13 mm em imagens de MC-CBCT.
     \end{enumerate}
 
-    A qualidade da imagem da TC também é afetada por fatores relacionados ao paciente. Os implantes metálicos causam artefatos na TC devido ao endurecimento do feixe, o que pode obscurecer a visualização do tecido e afetar os cálculos dosimétricos se não forem tratados adequadamente. Exemplos de tais implantes são hardware ortopédico (suporte espinhal, hastes no úmero ou fêmur, próteses de quadril e semelhantes), obturações dentárias e marcadores fiduciais implantados.
+    A \textcolor{MediumOrchid}{\textbf{\textit{qualidade da imagem da TC}}} também é \textcolor{MediumOrchid}{\textbf{\textit{afetada}}} por fatores relacionados ao paciente. Os \textcolor{MediumOrchid}{\textbf{\textit{implantes metálicos}}} causam artefatos na TC devido ao endurecimento do feixe, o que pode obscurecer a visualização do tecido e afetar os cálculos dosimétricos se não forem tratados adequadamente. Exemplos de tais implantes são implantes ortopédicos (suporte espinhal, hastes no úmero ou fêmur, próteses de quadril e semelhantes), obturações dentárias e marcadores fiduciais implantados.
 
-    Artefatos são mais proeminentes em kV-CT (versus MV-CT) porque a imagem kV é mais afetada pela interação fotoelétrica, que tem um alto coeficiente de absorção em materiais de alto número atômico. Às vezes, o contraste intravenoso ou oral é usado para visualizar vasos ou esôfago/intestino. Isso também pode resultar em artefatos e afetar os cálculos de dose. 
+    \textcolor{MediumOrchid}{\textbf{\textit{Artefatos são mais proeminentes em kV-CT}}} (versus MV-CT) porque a imagem kV é mais afetada pela \textcolor{MediumOrchid}{\textbf{\textit{interação fotoelétrica}}}, que tem um alto coeficiente de absorção em materiais de alto número atômico. Às vezes, o contraste intravenoso ou oral é usado para visualizar vasos ou esôfago/intestino. Isso também pode resultar em artefatos e afetar os cálculos de dose. 
     
-    Outro artefato relacionado ao paciente é o ruído devido à privação de fótons e endurecimento do feixe. Isso pode ser especialmente evidenciado em pacientes grandes, embora o ruído possa ser reduzido nesses casos aumentando o kVp do tubo de raios X. Se alguma parte da anatomia do paciente estiver fora da região de reconstrução da TC, podem aparecer efeitos de borda (ou seja, “anéis” brilhantes na borda externa da imagem da TC).
+    Outro artefato relacionado ao paciente é o \textcolor{MediumOrchid}{\textbf{\textit{ruído devido à privação de fótons e endurecimento do feixe}}}. Isso pode ser especialmente evidenciado em pacientes grandes, embora o \textcolor{MediumOrchid}{\textbf{\textit{ruído possa ser reduzido nesses casos aumentando o kVp}}} do tubo de raios X. Se alguma parte da anatomia do paciente estiver fora da região de reconstrução da TC, podem aparecer \textcolor{MediumOrchid}{\textbf{\textit{efeitos de borda}}} (ou seja, “anéis” brilhantes na borda externa da imagem da TC).
 
-    A qualidade da imagem em kV-CBCT merece consideração especial. A geometria de feixe cônico produz mais espalhamento do que um feixe de leque, resultando em aumento de ruído, redução de contraste e redução de uniformidade (em particular, artefato “cupping”). Quando os tamanhos dos pacientes são diferentes daqueles usados para calibração, números de TC incorretos podem ser retornados (AAPM TG-179 Seção IV.D). Esta é uma consideração importante se as aquisições do CBCT forem utilizadas para o cálculo da dose. Da mesma forma, os efeitos de imagem devem ser considerados ao usar imagens MV do TomoTherapy para planejamento.
+    A qualidade da imagem em kV-CBCT merece consideração especial. \textcolor{MediumOrchid}{\textbf{\textit{A geometria de feixe cônico produz mais espalhamento do que um feixe de leque}}}, resultando em \textcolor{MediumOrchid}{\textbf{\textit{aumento de ruído}}}, \textcolor{MediumOrchid}{\textbf{\textit{redução de contraste}}} e \textcolor{MediumOrchid}{\textbf{\textit{redução de uniformidade}}} (em particular, artefato “cupping”). Quando os \textcolor{MediumOrchid}{\textbf{\textit{tamanhos dos pacientes são diferentes daqueles usados para calibração, números de TC incorretos podem ser retornados}}} (AAPM TG-179 Seção IV.D). Esta é uma consideração importante se as \textcolor{MediumOrchid}{\textbf{\textit{aquisições do CBCT forem utilizadas para o cálculo da dose}}}. Da mesma forma, os efeitos de imagem devem ser considerados ao usar imagens MV do TomoTherapy para planejamento.
 
-    O kV-CBCT também está sujeito a outros artefatos de imagem, incluindo borramento devido ao movimento do paciente, streaks devido ao movimento de bolha de gás, artefatos de anel de pixels com resposta insuficiente no detector de imagem e artefatos de streaks devido a um número incompleto de projeção de imagens. Exemplos de artefatos de imagem podem ser encontrados na AAPM TG-104 Figura III-B-1.
+    O kV-CBCT também está sujeito a outros artefatos de imagem, incluindo \textcolor{MediumOrchid}{\textbf{\textit{borramento}}} devido ao movimento do paciente, \textcolor{MediumOrchid}{\textbf{\textit{streaks}}} devido ao movimento de bolha de gás, \textcolor{MediumOrchid}{\textbf{\textit{artefatos de anel de pixels}}} com resposta insuficiente no detector de imagem e \textcolor{MediumOrchid}{\textbf{\textit{artefatos de streaks}}} devido a um número incompleto de projeção de imagens. Exemplos de artefatos de imagem podem ser encontrados na \ref{fig:artefatos}.
+
+    \begin{figure}[h]
+        \centering
+        \fcolorbox{DarkTurquoise}{white}{%
+            \includegraphics[width=0.5\textwidth]{Imagens/artefatos.jpg}
+        }%
+        \caption{Artefatos no KV-CBCT -- A e B: cupping e streaks devido ao endurecimento e espalhamento do feixe; C: streak devido à movimentação de gás; D: anéis na imagem reconstruída devido à pixeis mortos ou intermitentes; E: streaks e comets devido a um lag no painel detector plano; F: distorção devido à ângulos de projeção menores que 180 graus dos leques.}
+        \label{fig:artefatosartefatos}
+    \end{figure}
 
 \subsection*{Considerações Sobre a Dose}
 
@@ -201,11 +221,11 @@
         \label{fig:doseEstimadasParaImagens}
     \end{figure}
 
-    A maioria dos valores na \ref{fig:doseEstimadasParaImagens} pode parecer pequenos, mas deve ser lembrado que o paciente recebe uma dose para todo o volume que está sendo examinado. Também, como contexto adicional, a dose entregue na imagem pode exceder a dose de fuga do acelerador linear (linac) em 1 ordem de grandeza, conforme apontado no AAPM TG-75. Além disso, a dose no osso pode ser aproximadamente três vezes maior que as doses listadas na \ref{fig:doseEstimadasParaImagens} devido ao efeito fotoelétrico. Portanto, vale a pena considerar a dose entregue pela imagem. Recomenda-se que a dose seja discutida com o Radio-oncologista de uma perspectiva clínica de custo/benefício. Isso é especialmente verdadeiro para pacientes pediátricos, que apresentam alto risco de malignidade secundária.
+    A maioria dos valores na \ref{fig:doseEstimadasParaImagens} pode parecer pequenos, mas deve ser lembrado que o paciente recebe uma dose para todo o volume que está sendo examinado. Também, como contexto adicional, \textcolor{MediumOrchid}{\textbf{\textit{a dose entregue na imagem pode exceder a dose de fuga do acelerador linear (linac) em 1 ordem de grandeza}}}, conforme apontado no AAPM TG-75. Além disso, a dose no osso pode ser aproximadamente três vezes maior que as doses listadas na \ref{fig:doseEstimadasParaImagens} devido ao efeito fotoelétrico. Portanto, vale a pena considerar a dose entregue pela imagem. Recomenda-se que a dose seja discutida com o Radio-oncologista de uma perspectiva clínica de custo/benefício. Isso é especialmente verdadeiro para \textcolor{MediumOrchid}{\textbf{\textit{pacientes pediátricos}}}, que apresentam \textcolor{MediumOrchid}{\textbf{\textit{alto risco de malignidade secundária}}}.
     
-    O AAPM TG-75 discute maneiras de limitar a dose efetiva, em particular, restringindo a extensão superior/inferior da varredura ao mínimo necessário. A AAPM TG-75 recomenda que a dose de imagem seja incluída na dose terapêutica planejada, pelo menos no contexto da imagem portal MV.
+    O AAPM TG-75 discute maneiras de \textcolor{MediumOrchid}{\textbf{\textit{limitar a dose efetiva}}}, em particular, \textcolor{MediumOrchid}{\textbf{\textit{restringindo a extensão superior e inferior da aquisição ao mínimo necessário}}}. A AAPM TG-75 recomenda que \textcolor{MediumOrchid}{\textbf{\textit{a dose de imagem seja incluída na dose terapêutica planejada}}}, pelo menos no contexto da imagem portal MV.
 
-    Existem alguns aspectos técnicos para medir e relatar a dose de TC que devem ser considerados. AAPM TG-75 e outros relatórios defendem o report da dose de CT em unidades de índice de dose de CT (CTDI). AAPM TG-66 Apêndice II fornece definições concisas desta e de grandezas relacionadas (ver também AAPM TG-75 Seção II.C.1, que apresenta material similar, mas com alguns erros nas definições). Parâmetros importantes são:
+    Existem alguns aspectos técnicos para medir e relatar a dose de TC que devem ser considerados. AAPM TG-75 e outros relatórios defendem o \textcolor{MediumOrchid}{\textbf{\textit{report da dose de CT em unidades de índice de dose de CT (CTDI)}}}. AAPM TG-66 Apêndice II fornece definições concisas desta e de grandezas relacionadas. Alguns Parâmetros importantes são:
 
     \begin{itemize}[label=\textcolor{CarnationPink}{$\blacksquare$}]
         \item \textcolor{DarkTurquoise}{\textbf{$CTDI_{100}$:}} a dose medida em uma rotação de varredura em um comprimento longitudinal de 100 mm;
@@ -214,23 +234,23 @@
         \item \textcolor{DarkTurquoise}{\textbf{$DLP$:}} Produto do comprimento da dose, definido como $CTDI_{vol}$ multiplicado pelo comprimento da varredura;
     \end{itemize}
 
-    Existem desafios com o uso de $CTDI_{100}$ em uma geometria de feixe cônico com mais de 100 mm porque a dose total não é medida como mostra a discussão no  \textit{``Human Health Report Num 5 on dosimetry in CBCT''} da Agência Internacional de Energia Atômica (IAEA) sobre dosimetria em CBCT. Finalmente, em termos de impacto para os pacientes, a quantidade mais relevante não é a dose absorvida, mas sim a dose efetiva (ponderada pelo órgão). Existem, no entanto, muitos desafios na estimativa da dose efetiva para TC durante o tratamento. A Seção IV da AAPM TG-75 descreve a metodologia para cálculos de dose efetiva e os desafios relacionados. Relatórios de dose medida dos sistemas de tratamento são frequentemente citados simplesmente em unidades de mGy (por exemplo, AAPM TG-75).
+    Existem desafios com o uso de $CTDI_{100}$ em uma geometria de feixe cônico com mais de 100 mm porque a dose total não é medida como mostra a discussão no  \textit{``Human Health Report Num 5 on dosimetry in CBCT''} da Agência Internacional de Energia Atômica (IAEA) sobre dosimetria em CBCT. Finalmente, \textcolor{MediumOrchid}{\textbf{\textit{em termos de impacto para os pacientes, a quantidade mais relevante não é a dose absorvida, mas sim a dose efetiva (ponderada pelo órgão)}}}. Existem, no entanto, muitos desafios na estimativa da dose efetiva para TC durante o tratamento. A Seção IV do AAPM TG-75 descreve a metodologia para cálculos de dose efetiva e os desafios relacionados. Relatórios de dose medida dos sistemas de tratamento são frequentemente citados simplesmente em unidades de mGy (por exemplo, AAPM TG-75).
 
     \begin{tcolorbox}[width=\textwidth, colback={white}, colbacktitle={DarkTurquoise!50!white}, title={$\bigstar$ \LobsterTwo{Pitch} $\bigstar $}, coltitle={CarnationPink}, colframe={DarkTurquoise}, fonttitle=\rmfamily\bfseries\Large]
-        Em uma tomografia computadorizada (TC), o termo "pitch" refere-se a uma medida que descreve o avanço da mesa durante o exame em relação à espessura do corte realizado pelo feixe de raios X. É uma medida importante que afeta a velocidade e a qualidade da aquisição das imagens na TC.
+        Em uma tomografia computadorizada (TC), o termo "pitch" refere-se a uma medida que descreve o \textcolor{MediumOrchid}{\textbf{\textit{avanço da mesa durante o exame em relação à espessura do corte}}} realizado pelo feixe de raios X. É uma medida importante que afeta a velocidade e a qualidade da aquisição das imagens na TC.
 
         \
 
-        O pitch é calculado dividindo-se o avanço da mesa pelo valor da espessura do corte. Por exemplo, se a mesa se move 1 cm por rotação completa e o corte possui uma espessura de 0,5 cm, o pitch seria 2 (1 cm / 0,5 cm = 2). Quanto maior o valor do pitch, maior é o avanço da mesa em relação à espessura do corte.
+        \textcolor{MediumOrchid}{\textbf{\textit{O pitch é calculado dividindo-se o avanço da mesa pelo valor da espessura do corte}}}. Por exemplo, se a mesa se move 1 cm por rotação completa e o corte possui uma espessura de 0.5 cm, o pitch seria 2 (1 cm / 0.5 cm = 2). \textcolor{MediumOrchid}{\textbf{\textit{Quanto maior o valor do pitch, maior é o avanço da mesa em relação à espessura do corte}}}.
 
         \
 
-        O pitch afeta diretamente o tempo de aquisição das imagens na TC. Um pitch maior resulta em uma varredura mais rápida, pois a mesa avança mais durante cada rotação do tubo de raios X. No entanto, um pitch maior também pode levar a uma menor sobreposição das imagens, o que pode resultar em menor resolução espacial e possíveis artefatos na imagem. Por outro lado, um pitch menor resulta em uma varredura mais lenta, mas com maior sobreposição das imagens, o que geralmente resulta em uma melhor resolução espacial.
+        O pitch afeta diretamente o \textcolor{MediumOrchid}{\textbf{\textit{tempo de aquisição}}} das imagens na TC. Um \textcolor{MediumOrchid}{\textbf{\textit{pitch maior}}} resulta em uma \textcolor{MediumOrchid}{\textbf{\textit{varredura mais rápida}}}, pois a mesa avança mais durante cada rotação do tubo de raios X. No entanto, um pitch maior também pode levar a uma \textcolor{MediumOrchid}{\textbf{\textit{menor sobreposição das imagens}}}, o que pode resultar em \textcolor{MediumOrchid}{\textbf{\textit{menor resolução espacia}}}l e possíveis \textcolor{MediumOrchid}{\textbf{\textit{artefatos}}} na imagem. Por outro lado, um \textcolor{MediumOrchid}{\textbf{\textit{pitch menor}}} resulta em uma \textcolor{MediumOrchid}{\textbf{\textit{varredura mais lenta}}}, mas com maior sobreposição das imagens, o que geralmente resulta em uma \textcolor{MediumOrchid}{\textbf{\textit{melhor resolução espacial}}}.
     \end{tcolorbox}
 
 \section{Controle de Qualidade para Sistemas de Imagens}
 
-    O teste de aceite e o comissionamento são os primeiros passos no controle de qualidade dos dispositivos de imagem e consistem principalmente na coleta de dados de desempenho para formar o baseline com os quais os futuros testes de controle de qualidade serão comparados. Durante o teste de aceite e comissionamento, os principais recursos do sistema precisam ser avaliados, incluindo funcionalidade, recursos de segurança, calibração e integração do sistema, incluindo a conectividade com o sistema de planejamento de tratamento (por exemplo, transferência de imagens de referência e contornos para o sistema IGRT). Testes adicionais incluem calibração geométrica, teste de posicionamento/reposicionamento e testes de qualidade de imagem. Todos os modos de operação e configurações devem ser considerados durante o teste de aceite e comissionamento. Vários relatórios da ASTRO e da ACR recomendam especificamente o uso de testes de localização end-to-end no momento do comissionamento ou em atualizações.
+    O teste de \textcolor{MediumOrchid}{\textbf{\textit{aceite e o comissionamento}}} são os primeiros passos no controle de qualidade dos dispositivos de imagem e consistem principalmente na \textcolor{MediumOrchid}{\textbf{\textit{coleta de dados de desempenho para formar o baseline}}} com os quais os futuros testes de controle de qualidade serão comparados. Durante o teste de aceite e comissionamento, os principais recursos do sistema precisam ser avaliados, incluindo \textcolor{MediumOrchid}{\textbf{\textit{funcionalidade}}}, \textcolor{MediumOrchid}{\textbf{\textit{recursos de segurança}}}, \textcolor{MediumOrchid}{\textbf{\textit{calibração}}} e \textcolor{MediumOrchid}{\textbf{\textit{integração do sistema}}}, incluindo a conectividade com o sistema de planejamento de tratamento (por exemplo, transferência de imagens de referência e contornos para o sistema IGRT). Testes adicionais incluem calibração geométrica, teste de posicionamento/reposicionamento e testes de qualidade de imagem. Todos os modos de operação e configurações devem ser considerados durante o teste de aceite e comissionamento. Vários relatórios da ASTRO e da ACR recomendam especificamente o uso de \textcolor{MediumOrchid}{\textbf{\textit{testes de localização end-to-end}}} no momento do\textcolor{MediumOrchid}{\textbf{\textit{ comissionamento}}} ou em \textcolor{MediumOrchid}{\textbf{\textit{atualizações}}}.
 
 \subsection*{Controle de Qualidade Contínuo}
 
@@ -254,66 +274,63 @@
         \label{fig:qaImagensParte2}
     \end{figure}
 
-    Um aspecto do controle de qualidade que não é explicitamente observado nos dados apresentados na \ref{fig:qaImagensParte1} e na \ref{fig:qaImagensParte2} é a necessidade de controle de qualidade após grandes atualizações, reparos ou manutenção. A maioria dos relatórios exige esse controle de qualidade. Por exemplo, o AAPM TG-226 recomenda que o físico médico verifique ou restabeleça os baselines do controle de qualidade após atualização, reparo ou serviço. A \ref{fig:qaImagensParte1} e a \ref{fig:qaImagensParte2} apresentam as recomendações específicas mais importantes, mas não lista todos os recursos relacionados ao controle de qualidade. Outros documentos incluem o relatório ACR-ASTRO sobre IGRT e o \textit{``ASTRO safety white paper on IGRT''}.
+    Um aspecto do controle de qualidade que não é explicitamente observado nos dados apresentados na \ref{fig:qaImagensParte1} e na \ref{fig:qaImagensParte2} é a \textcolor{MediumOrchid}{\textbf{\textit{necessidade de controle de qualidade após grandes atualizações, reparos ou manutenção}}}. A maioria dos relatórios exige esse controle de qualidade. Por exemplo, o AAPM TG-226 recomenda que o físico médico \textcolor{MediumOrchid}{\textbf{\textit{verifique ou restabeleça os baselines do controle de qualidade}}} após atualização, reparo ou serviço. A \ref{fig:qaImagensParte1} e a \ref{fig:qaImagensParte2} apresentam as recomendações específicas mais importantes, mas não lista todos os recursos relacionados ao controle de qualidade. Outros documentos incluem o relatório ACR-ASTRO sobre IGRT e o \textit{``ASTRO safety white paper on IGRT''}.
 
-    
-    
-    
 \subsection*{QA Geométrico}
 
-    A \ref{fig:qaImagensParte1} e  lista diversas variedades de testes geométricos de controle de qualidade. Um teste é para dimensionamento geométrico e normalmente emprega um objeto de tamanho conhecido para avaliar as dimensões geométricas geradas pelo sistema de imagem. Isso deverá testar todas as três dimensões, e a frequência recomendada é mensal (ou semestral, dependendo do report). 
+    A \ref{fig:qaImagensParte1} lista diversas variedades de testes geométricos de controle de qualidade. Um teste é para \textcolor{MediumOrchid}{\textbf{\textit{dimensionamento geométrico}}} e normalmente emprega um objeto de tamanho conhecido para avaliar as dimensões geométricas geradas pelo sistema de imagem. Isso deverá testar todas as três dimensões, e a frequência recomendada é mensal (ou semestral, dependendo do report). 
     
-    Alguns reports sugerem um teste anual de orientação geométrica dos sistemas de TC para garantir que a orientação correta da imagem seja retornada nas três dimensões cardeais. Isso normalmente é feito usando um phantom com vários marcadores. 
+    Alguns reports sugerem um \textcolor{MediumOrchid}{\textbf{\textit{teste anual de orientação geométrica dos sistemas de TC}}} para garantir que a orientação correta da imagem seja retornada nas três dimensões cardeais. Isso normalmente é feito usando um phantom com vários marcadores. 
     
-    Um teste geométrico final avalia o alinhamento entre o isocentro da imagem e o isocentro tratamento. Isso é particularmente importante em sistemas nos quais um sistema mecânico diferente é empregado para geração de imagens versus tratamento, como qualquer um dos atuais sistemas de geração de imagens baseados em kV. 
+    Um último teste geométrico avalia o \textcolor{MediumOrchid}{\textbf{\textit{alinhamento entre o isocentro da imagem e o isocentro tratamento}}}. Isso é particularmente importante em sistemas nos quais um sistema mecânico diferente é empregado para geração de imagens versus tratamento, como qualquer um dos atuais sistemas de geração de imagens baseados em kV. 
 
     A \ref{fig:pentaguide} mostra um exemplo de dispositivo para testes de alinhamento de imagens geométricas em sistemas utilizados em linacs. O cubo de plástico contém cavidades e/ou marcadores radiopacos que podem ser visualizados em uma imagem CBCT, bem como imagens planares de kV e MV. Isso fornece um teste diário rápido da coincidência de coordenadas de imagem e tratamento. Recomendações semelhantes podem ser encontradas no AAPM TG-148 para equipamentos TomoTherapy. Testes diários de posicionamento/reposicionamento também podem ser realizados com um dispositivo como o mostrado na \ref{fig:pentaguide}. 
     
-    \begin{figure}[h]
+    \begin{wrapfigure}{r}{0.48\textwidth}
         \centering
         \fcolorbox{DarkTurquoise}{white}{%
-            \includegraphics[width=0.5\textwidth]{Imagens/pentaguide.JPG}
+            \includegraphics[width=0.4\textwidth]{Imagens/pentaguide.JPG}
         }%
         \caption{PentaGuide para alinhamento dos isocentros da Imagem e do linac.}
         \label{fig:pentaguide}
-    \end{figure}
+    \end{wrapfigure}
     
 
-    O cubo de plástico é alinhado com o conjunto de marcadores no canto superior esquerdo. Uma tomografia computadorizada é então realizada e os fiduciais incorporados são alinhados a uma imagem de referência. A mesa do acelerador linear é deslocada pelo valor deslocamento de alinhamento medido. Se a imagem e o alinhamento estiverem corretos, o conjunto de marcas no centro do cubo (o “alvo”) será alinhado com os lasers no isocentro. O AAPM TG-142 e o AAPM TG-226 exigem esse teste diariamente, enquanto o AAPM TG-179 exige “deslocamentos de mesa: precisão dos movimentos” mensais. A AAPM TG-179 sugere que os desvios sejam $<$2 cm e desiguais em todos os eixos para descobrir possíveis erros.
+    O cubo de plástico é alinhado com o conjunto de marcadores no canto superior esquerdo. Uma tomografia computadorizada é então realizada e os fiduciais incorporados são alinhados a uma imagem de referência. A mesa do acelerador linear é deslocada pelo valor deslocamento de alinhamento medido. Se a imagem e o alinhamento estiverem corretos, o conjunto de marcas no centro do cubo (o “alvo”) será alinhado com os lasers no isocentro. O \textcolor{MediumOrchid}{\textbf{\textit{AAPM TG-142}}} e o \textcolor{MediumOrchid}{\textbf{\textit{AAPM TG-226}}} exigem esse teste \textcolor{MediumOrchid}{\textbf{\textit{diariamente}}}, enquanto o AAPM TG-179 exige “deslocamentos de mesa: precisão dos movimentos” mensais. A AAPM TG-179 sugere que os desvios sejam $<$2 cm e desiguais em todos os eixos para descobrir possíveis erros.
 
-    Mensalmente, “testes de alinhamento geométrico” mais extensos são indicados em alguns relatórios (por exemplo, AAPM TG-179, mas não AAPM TG-226). Descrições destes testes para CBCT podem ser encontradas com algum detalhe no AAPM TG-104 (Seção II.B.4), em visão geral no AAPM TG-179 (Seção IV.A). Resumidamente, este teste consiste em alinhar um “rolamento de esferas - ball bearing (BB)” com o isocentro MV, adquirindo imagens do portal em quatro ângulos cardeais do gantry (ângulos opostos do colimador também são adquiridos para eliminar o efeito de possível assimetria do jaw). A etapa alinha precisamente o BB com o isocentro de radiação e o desacopla de qualquer possível desalinhamento com os lasers. Essa etapa de alinhamento do BB ao isocentro da radiação é semelhante à usada em um teste de Winston-Lutz.
+    \textcolor{MediumOrchid}{\textbf{\textit{Mensalmente}}}, \textcolor{MediumOrchid}{\textbf{\textit{“testes de alinhamento geométrico”}}} mais extensos são indicados em alguns relatórios (por exemplo, AAPM TG-179, mas não AAPM TG-226). Descrições destes testes para CBCT podem ser encontradas com algum detalhe no AAPM TG-104 (Seção III.B.4), em visão geral no AAPM TG-179 (Seção IV.A). Resumidamente, \textcolor{MediumOrchid}{\textbf{\textit{este teste consiste em alinhar um “rolamento de esferas - ball bearing (BB)” com o isocentro MV, adquirindo imagens do portal em quatro ângulos cardeais do gantry (ângulos opostos do colimador também são adquiridos para eliminar o efeito de possível assimetria do jaw).}}} A etapa alinha precisamente o BB com o isocentro de radiação e o desacopla de qualquer possível desalinhamento com os lasers. Essa etapa de alinhamento do BB ao isocentro da radiação é semelhante à usada em um \textcolor{MediumOrchid}{\textbf{\textit{teste de Winston-Lutz}}}.
 
-    Depois que o BB estiver alinhado, ele poderá ser usado para adquirir “flexmaps” se o sistema CT precisar ser recalibrado. De acordo com a AAPM TG-179, a recalibração geométrica deve ser realizada conforme recomendado pelo fabricante após grandes atualizações de hardware ou software ou após manutenção que possa afetar o sistema CT. Se a recalibração não for necessária, uma TC pode ser adquirida e o alinhamento geométrico pode ser medido como a distância do centro do BB ao centro do volume de TC reconstruído. O AAPM TG-148 recomenda que o alinhamento entre os sistemas de coordenadas de tratamento e imagem seja testado anualmente usando um phantom end-to-end com filme embutido, arranjos de diodos ou outros meios de medir a distribuição de dose administrada.
+    Depois que o BB estiver alinhado, ele poderá ser usado para adquirir um \textcolor{MediumOrchid}{\textbf{\textit{“flexmaps”}}} se caso o sistema CT precisar ser recalibrado. De acordo com a AAPM TG-179, a recalibração geométrica deve ser realizada conforme recomendado pelo fabricante após grandes atualizações de hardware ou software ou após manutenção que possa afetar o sistema CT. Se a recalibração não for necessária, uma TC pode ser adquirida e o \textcolor{MediumOrchid}{\textbf{\textit{alinhamento geométrico pode ser medido como a distância do centro do BB ao centro do volume de TC reconstruído}}}. O AAPM TG-148 recomenda que o alinhamento entre os sistemas de coordenadas de tratamento e imagem seja testado anualmente usando um phantom end-to-end com filme embutido, arranjos de diodos ou outros meios de medir a distribuição de dose administrada.
 
 \subsection*{QA da Qualidade da Imagem}
 
-    A \ref{fig:qaImagensParte2} fornecem uma visão geral dos testes recomendados de qualidade de imagem. Vários dispositivos comerciais estão disponíveis para este fim. Para QAs de qualidade de imagem planar MV, os fornecedores dos aceleradores lineares normalmente fornecem o phantom de Las Vegas (\ref{fig:lasVegasPhantom}). Este phantom é insuficiente, entretanto, no entanto é útil para realizar os testes de resolução e geometria descritos na \ref{fig:qaImagensParte1}.
+    A \ref{fig:qaImagensParte2} fornecem uma visão geral dos testes recomendados de qualidade de imagem. Vários dispositivos comerciais estão disponíveis para este fim. Para QAs de qualidade de imagem planar MV, os fornecedores dos aceleradores lineares normalmente fornecem o phantom de Las Vegas (\ref{fig:lasVegasPhantom}). Este phantom é insuficiente para todos os testes necessários, entretanto, é útil para realizar os testes de resolução e geometria descritos na \ref{fig:qaImagensParte1}.
 
     \begin{figure}[h]
         \centering
         \subfigure{
 		\fcolorbox{DarkTurquoise}{white}{%
-			\includegraphics[width=0.4\textwidth]{Imagens/lasVegasPhantom1.JPG}
+			\includegraphics[width=0.28\textwidth]{Imagens/lasVegasPhantom1.JPG}
 		}}%
         \subfigure{
 		\fcolorbox{DarkTurquoise}{white}{%
-			\includegraphics[width=0.43\textwidth]{Imagens/lasVegasPhantom.jpg}
+			\includegraphics[width=0.30\textwidth]{Imagens/lasVegasPhantom.jpg}
 		}} %
         \caption{Phantom Las Vegas fornecido pela Varian}
         \label{fig:lasVegasPhantom}
     \end{figure}
 
-    A \ref{fig:qaImagemPlanarMV} mostra um dispositivo alternativo (QC-3 Phantom, Standard Imaging, Middleton, WI) para QA de imagens planares MV. A resolução espacial é medida com os objetos de pares de linhas embutidos na linha do meio, enquanto o contraste é medido com os quadrados e números ao longo de cada borda. Existe um dispositivo semelhante para o QA da qualidade de imagem planar kV. Os fornecedores geralmente fornecem o phantom Leeds TOR 18FG para essa finalidade (\ref{fig:torleeds}).
+    A \ref{fig:qaImagemPlanarMV} mostra um dispositivo alternativo (QC-3 Phantom, Standard Imaging, Middleton, WI) para QA de imagens planares MV. A resolução espacial é medida com as seções de pares de linhas localizados na linha central, enquanto o contraste é medido através dos quadrados e dos números ao longo das bordas do phantom. Existe um dispositivo semelhante ao QC-3 Phantom, porém desenvolvido para o QA da qualidade de imagem planar kV. Os fornecedores geralmente fornecem o phantom Leeds TOR 18FG para essa finalidade (\ref{fig:torleeds}).
 
     \begin{figure}[h]
         \centering
         \subfigure{
 		    \fcolorbox{DarkTurquoise}{white}{%
-			\includegraphics[width=0.44\textwidth]{Imagens/qaImagemPlanar.JPG}
+			\includegraphics[width=0.32\textwidth]{Imagens/qaImagemPlanar.JPG}
 		}}%
         \subfigure{
 		    \fcolorbox{DarkTurquoise}{white}{%
-			\includegraphics[width=0.37\textwidth]{Imagens/mceclip0.png}
+			\includegraphics[width=0.27\textwidth]{Imagens/mceclip0.png}
 		}}%
         \caption{QC-3 Phantom para QA de imagens planares MV}
         \label{fig:qaImagemPlanarMV}
@@ -322,15 +339,15 @@
     \begin{figure}[h]
         \centering
         \fcolorbox{DarkTurquoise}{white}{%
-            \includegraphics[width=0.8\textwidth]{Imagens/torleeds.jpg}
+            \includegraphics[width=0.5\textwidth]{Imagens/torleeds.jpg}
         }%
         \caption{Phantom Tor leeds 18FG pra QA de imagens planares kV.}
         \label{fig:torleeds}
     \end{figure}
 
-    Para controle de qualidade de rotina, o desempenho do sistema de imagem geralmente não é medido em um sentido absoluto, mas sim em relação ao desempenho no momento do comissionamento. O AAPM TG-179 e AAPM TG-142 referem-se às tolerâncias como ``baselines'' ou ``reprodutibilidade''.
+    Para controle de qualidade de rotina, o desempenho do sistema de imagem geralmente não é medido em um sentido absoluto, mas sim em relação ao desempenho no momento do comissionamento. O AAPM TG-179 e AAPM TG-142 referem-se às tolerâncias como \textcolor{MediumOrchid}{\textbf{\textit{``baselines''}}} ou \textcolor{MediumOrchid}{\textbf{\textit{``reprodutibilidade''}}}.
 
-    Dispositivos de teste semelhantes existem para o controle de qualidade de tomografias computadorizadas (CBCT). A maioria das clínicas usa o CatPhan (Phantom Laboratories, Salem, NY), que consiste em vários módulos organizados em cortes transversais, cada um dos quais pode ser avaliado para um endpoint de imagem diferente, incluindo resolução, uniformidade e contraste (\ref{fig:catphan}). O CatPhan 503 (fornecido com aceleradores Elekta) possui três módulos e o CatPhan 504 (fornecido com aceleradores Varian) possui quatro módulos, sendo o módulo extra um para resolução de baixo contraste nos níveis de 1\%, 0.5\% e 0.3\%.
+    Dispositivos de teste semelhantes existem para o controle de qualidade de tomografias computadorizadas (CBCT). A maioria das clínicas usa o \textcolor{MediumOrchid}{\textbf{\textit{CatPhan}}} (Phantom Laboratories, Salem, NY), que consiste em vários módulos organizados em cortes transversais, cada um dos quais pode ser avaliado para um endpoint de imagem diferente, \textcolor{MediumOrchid}{\textbf{\textit{incluindo resolução}}}, \textcolor{MediumOrchid}{\textbf{\textit{uniformidade}}} e \textcolor{MediumOrchid}{\textbf{\textit{contraste}}} (\ref{fig:catphan}). O CatPhan 503 (fornecido com aceleradores Elekta) possui três módulos e o CatPhan 504 (fornecido com aceleradores Varian) possui quatro módulos, sendo o módulo extra um para resolução de baixo contraste nos níveis de 1\%, 0.5\% e 0.3\%.
 
     \begin{figure}[h]
         \centering
@@ -362,30 +379,25 @@
         \label{fig:catphan}
     \end{figure}
 
-
-
-
 \subsection*{QA do Registro da Imagem (Fusão)}
 
-    Um aspecto importante da cadeia de imagens é o registro de imagens (por exemplo, registro de uma ressonância magnética pré-tratamento com a de tomografia computadorizada de simulação para auxiliar no planejamento). O tópico de garantia de qualidade para registro de imagem é abordado no AAPM TG-132, \textit{``Use of Image Registration and Data Fusion Algorithms and Techniques in Radiotherapy Treatment Planning''}. QA é especialmente importante quando algoritmos automáticos são empregados.
+    Um aspecto importante da cadeia de imagens é o registro de imagens (por exemplo, registro de uma ressonância magnética pré-tratamento com a de tomografia computadorizada de simulação para auxiliar no planejamento). O tópico de garantia de qualidade para registro de imagem é abordado no \textcolor{MediumOrchid}{\textbf{\textit{AAPM TG-132}}}, \textit{``Use of Image Registration and Data Fusion Algorithms and Techniques in Radiotherapy Treatment Planning''}. QA é especialmente importante quando algoritmos automáticos são empregados.
 
 \subsection*{Dose devido a Imagem}
 
-    Como pode ser visto na \ref{fig:qaImagensParte2}, a maioria dos reports recomenda que a dose seja medida anualmente para as TCs adquiridas durante o tratamento e para imagens planares (kV ou MV). Portanto, é necessário que o físico médico saiba como fazer essas medidas. O AAPM TG-66 fornece orientação sobre a medida da dose devido a CT. A medida da dose de imagens planares kV é descrita no AAPM TG-2 (Relatório 39). A descrição dos princípios da dose absorvida medida pode ser encontrada no AAPM TG-7 de mamografia. Alguns centros consideram benéfico trabalhar com um físico do diagnóstico por imagem para medir a dose e avaliar os protocolos de imagem anualmente.
+    Como pode ser visto na \ref{fig:qaImagensParte2}, a maioria dos reports recomenda que \textcolor{MediumOrchid}{\textbf{\textit{a dose seja medida anualmente para as TCs adquiridas durante o tratamento e para imagens planares (kV ou MV)}}}. Portanto, é necessário que o físico médico saiba como fazer essas medidas. O \textcolor{MediumOrchid}{\textbf{\textit{AAPM TG-66}}} fornece orientação sobre a medida da dose devido a CT. A medida da dose de imagens planares kV é descrita no \textcolor{MediumOrchid}{\textbf{\textit{AAPM TG-2}}} (Relatório 39).
 
 \subsection*{QA de Outros Sistemas de Localização}
 
-    O QA de sistemas de localização não-radiográficos é discutido em AAPM TG-147. O AAPM TG-154 se concentra especificamente em sistemas de ultrassom utilizados em teleterapia. O TG-154 recomenda testes diários de alinhamento, testes mensais de phantom e laser offset, bem como controle de qualidade trimestral dos próprios phantoms de ultrassom, que estão sujeitos a dessecação. O controle de qualidade da qualidade da imagem é recomendado semestralmente e deve incluir resolução espacial, contraste e sensibilidade (ou seja, profundidade de penetração constante e ausência de artefatos). 
+    O QA de sistemas de localização não-radiográficos é discutido no \textcolor{MediumOrchid}{\textbf{\textit{AAPM TG-147}}}. O \textcolor{MediumOrchid}{\textbf{\textit{AAPM TG-154}}} se concentra especificamente em \textcolor{MediumOrchid}{\textbf{\textit{sistemas de ultrassom }}}utilizados em teleterapia. O TG-154 recomenda \textcolor{MediumOrchid}{\textbf{\textit{testes diários de alinhamento}}}, \textcolor{MediumOrchid}{\textbf{\textit{testes mensais de phantom de ultrassom e offset de laser}}}, bem como \textcolor{MediumOrchid}{\textbf{\textit{controle de qualidade trimestral dos próprios phantoms de ultrassom}}}, que estão sujeitos a \textcolor{MediumOrchid}{\textbf{\textit{dessecação}}}. O controle de qualidade da qualidade da imagem é recomendado \textcolor{MediumOrchid}{\textbf{\textit{semestralmente}}} e deve incluir \textcolor{MediumOrchid}{\textbf{\textit{resolução espacial}}}, \textcolor{MediumOrchid}{\textbf{\textit{contraste}}} e \textcolor{MediumOrchid}{\textbf{\textit{sensibilidade}}} (ou seja, profundidade de penetração constante e ausência de artefatos). 
     
     Muitos sistemas não-radiográficos usam câmeras infravermelhas para localização dos pacientes, marcadores ou dispositivos. A precisão desses sistemas deve ser testada, pois estão sujeitos a possíveis efeitos de movimento e warm-up.
 
 \subsection*{Recomendações de Testes, Frequências e Tolerâncias}
 
-    A \ref{fig:qaImagensParte1} e a \ref{fig:qaImagensParte2} oferecem um guia com respeito à frequência com que os testes de QA devem ser realizados. Essas recomendações são baseadas em uma noção de quais erros seriam detectáveis em cada teste. Por exemplo, o AAPM TG-179 especifica testes diários de controle de qualidade projetados para “identificar quaisquer mudanças repentinas de desempenho ou erros grosseiros que possam resultar de colisões, atualizações ou serviço pós-horário”. Deve-se notar, no entanto, que os vários relatórios de grupo de tarefas e documentos de consenso não concordam sobre quais testes devem ser realizados ou sobre a frequência de tais testes.
+    A \ref{fig:qaImagensParte1} e a \ref{fig:qaImagensParte2} oferecem um guia com respeito à frequência com que os testes de QA devem ser realizados. \textcolor{MediumOrchid}{\textbf{\textit{Essas recomendações são baseadas em uma noção de quais erros seriam detectáveis em cada teste}}}. Por exemplo, o AAPM TG-179 especifica testes diários de controle de qualidade projetados para \textcolor{MediumOrchid}{\textbf{\textit{“identificar quaisquer mudanças repentinas de desempenho ou erros grosseiros que possam resultar de colisões, atualizações ou serviço pós-horário”}}}. Deve-se notar, no entanto, que os vários relatórios de grupo de tarefas (TG) e documentos de consenso não concordam entre si sobre quais testes devem ser realizados ou sobre a frequência de tais testes.
 
-    Para dar um exemplo, a frequência recomendada para testar a resolução espacial de um sistema CBCT varia de mensal (AAPM TG-142) a semestral (AAPM TG-179) e anualmente (AAPM TG-226). Outro exemplo são os testes de qualidade do feixe para CBCT. Isso é recomendado anualmente na AAPM TG-179, mas não tem recomendação específica na AAPM TG-142 ou AAPM TG-226. Alguns relatórios até parecem inconsistentes dentro de si mesmos. Por exemplo, o AAPM TG-142 recomenda um teste anual de qualidade do feixe para sistemas de imagem planar kV, mas não oferece tal recomendação para sistemas CBCT (embora um teste de constância do número de TC possa servir como um substituto). Os níveis de tolerância recomendados também diferem entre os relatórios e alguns relatórios defendem tolerâncias diferentes para algumas técnicas especializadas (por exemplo, stereotactic radiosurgery (SRS)/stereotactic body radiation therapy (SBRT)). 
-    
-    Parcialmente em uma tentativa de retificar essas divergências, a AAPM desenvolveu um documento de Diretriz de Prática de Física Médica (Medical Physics Practice Guideline - MPPG), o AAPM TG-226, \textit{``Commissioning and Quality Assurance of X-Ray Based Image-Guided Radiotherapy Systems''}. O AAPM TG-226 foi projetado para fornecer recomendações que são viáveis em um ambiente pequeno e com recursos limitados. Como tal, são diretrizes práticas mínimas. Como pode ser visto na \ref{fig:qaImagensParte1}, algumas das recomendações do AAPM TG-226 diferem substancialmente de outros relatórios do TG. 
+    Para dar um exemplo, a frequência recomendada para testar a resolução espacial de um sistema CBCT varia de mensal (AAPM TG-142) a semestral (AAPM TG-179) e anualmente (AAPM TG-226). Outro exemplo são os testes de qualidade do feixe para CBCT que é recomendado anualmente no AAPM TG-179, mas não tem recomendação específica na AAPM TG-142 ou AAPM TG-226. Alguns relatórios até parecem inconsistentes dentro de si mesmos. Por exemplo, o AAPM TG-142 recomenda um teste anual de qualidade do feixe para sistemas de imagem planar kV, mas não oferece tal recomendação para sistemas CBCT (embora um teste de constância do número de TC possa servir como um substituto). Os níveis de tolerância recomendados também diferem entre os relatórios e alguns relatórios defendem tolerâncias diferentes para algumas técnicas especializadas (por exemplo, stereotactic radiosurgery (SRS)/stereotactic body radiation therapy (SBRT)). 
 
 \section{Resumo}
 

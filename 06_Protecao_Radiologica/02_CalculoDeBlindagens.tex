@@ -35,18 +35,21 @@
 \usepackage{fontspec}
 \usepackage{txfonts}
 \usepackage[bottom]{footmisc}
+\tcbuselibrary{skins,breakable}
+\sisetup{output-decimal-marker={.}}
 
 \makeatletter
 \def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
 \makeatother
 
-\renewcommand{\footnotelayout}{\itshape\color{black}}
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
 
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
-\titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
-\titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\section}{\LobsterTwo\huge\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\huge\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bf\LobsterTwo\Large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
 
 
 \DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
@@ -60,7 +63,7 @@
 \renewcommand{\thefigure}{Fig. \arabic{figure}}
 \renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
 
-\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\blacksquare$}}
 
 \setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
 
@@ -101,7 +104,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\rfoot{Página \thepage}
+\rfoot{\color{DarkTurquoise}\thepage \\ \LobsterTwo{\small\textcolor{CarnationPink}{@defDalila}}}
 
 \title{\LobsterTwo\Huge{Proteção Radiológica}}
 \author{\LobsterTwo\Large{Cálculo de Blindagens}\nocite{*}}
@@ -194,7 +197,7 @@
     
     \section{Relatório Preliminar de Análise de Segurança}
 
-        \subsection{Formato e Apresentação}
+        \subsection*{Formato e Apresentação}
 
             Todo processo inicia-se com a abertura de um SCRA (Solicitação de Conceção de Licenças e Autorizações) juntamente com um documento elaborado pelo Titular da Instalação apresentando o serviço e descrevendo resumidamente o objetivo do serviço.
 
@@ -220,7 +223,7 @@
                     As folhas deverão ser dobradas para o tamanho A4 contendo carimbo de identificação com  o endereço do serviço, assinatura e CREA do engenheiro ou arquiteto responsável pela obra. É recomendado ter a assinatura e o RT do SPR, porém não é obrigatório.
             \end{enumerate}
 
-        \subsection{Conteúdo do RPAS}
+        \subsection*{Conteúdo do RPAS}
             
             \begin{enumerate}
                 \item \textbf{\textcolor{CarnationPink}{Identificação do Serviço na Folha de Rosto}}
@@ -269,7 +272,7 @@
 
     \section{Limites e Definições Para o Cálculo de Blindagens}
 
-        \subsection{Limites Autorizados e Classificação das Áreas}
+        \subsection*{Limites Autorizados e Classificação das Áreas}
 
             As dimensões das blindagens devem ser tais que estejam em conformidade com os limites definidos pela CNEN e pelo princípio de otimização. Primeiro deve ser calculado os valores de espessura da barreira para os limites primários de dose efetiva e na sequência determina-se as espessuras da barreira utilizando o princípio de otimização. As áreas com radiação e as áreas circunvizinhas devem ser classificadas como áreas restritas (aos trabalhadores) e áreas livres (para indivíduos do público).
             
@@ -328,11 +331,11 @@
                 \item A \textbf{\textit{\textcolor{CarnationPink}{Regra das Duas Fontes}}} é utilizada como uma medida conservadora, sempre que os componentes de radiação são somados para definir a espessura da parede; Neste caso é utilizada a TVL e a HVL da radiação mais penetrante.
             \end{itemize}
 
-        \subsection{Parâmetros Utilizados no Cálculo de Blindagens}
+        \subsection*{Parâmetros Utilizados no Cálculo de Blindagens}
 
             Os parâmetros necessários para o cálculo de blindagens são: \textbf{\textit{Limite de Dose (P), Carga de trabalho (W), Fator Uso (U), Fator Ocupação (T), distância do ponto de cálculo até a fonte ou até o isocentro (d) e Tamanho Máximo do Campo de Radiação (l)}}.
 
-        \subsection*{\textcolor{CarnationPink}{Limite de Dose (P)}}
+        \subsubsection*{Limite de Dose (P)}
 
             Os limites de dose utilizados em cálculo de blindagens estão resumidos na Tabela \ref{tb:limitesDoseCalculoBlindagem}.
 
@@ -356,7 +359,7 @@
                 \end{tabular}
             \end{table}
 
-        \subsection*{\textcolor{CarnationPink}{Carga de Trabalho (W)}}
+        \subsubsection*{Carga de Trabalho (W)}
 
             É a integral do tempo da taxa de dose absorvida determinada na profundidade de dose máxima a 1 m da fonte. 
 
@@ -380,7 +383,7 @@
                 \item Em equipamentos que utilizam a técnica de IMRT, há um aumento da radiação de fuga pelo cabeçote e portanto há um aumento da carga de trabalho para a radiação de fuga.
             \end{itemize}
 
-        \subsection*{\textcolor{CarnationPink}{Fator Uso (U)}}
+        \subsubsection*{Fator Uso (U)}
 
             É definido como a fração da carga de trabalho do feixe primário que é direcionada para a barreira primária. É um fator que é função do ângulo do gantry e irá depender das geometrias utilizadas nos campos de tratamento. Por exemplo, uma variação de \ang{90} entre os campos descreve uma geometria \textit{4-field box}, e o fator uso para estas angulações pode ser utilizado. Porém, um equipamento que realize mais tratamentos com tangentes para mamas terá uma ângulação oblíqua mais adequada para determinação do fator uso. As Figuras \ref{fig:fatorUso} e \ref{fig:fatorUso2} mostram exemplos de fatores uso recomendados por grandes centros.
 
@@ -406,11 +409,11 @@
             \end{figure}
 
 
-        \subsection*{\textcolor{CarnationPink}{Fator Ocupação (T)}}
+        \subsubsection*{Fator Ocupação (T)}
 
             É a fração média de tempo que o indivíduo com maior tempo de exposição está presente na sala enquanto o feixe está ligado. É determinado através da média semanal de horas trabalhadas avaliadas em um ano. Por exemplo, um fator de ocupação 1/40 diz que o indivíduo com maior exposição permaneceu no local apenas 1 hora por semana.
         
-        \subsection{Barreiras de Proteção}
+        \subsection*{Barreiras de Proteção}
 
             \begin{wrapfigure}{r}{0.6\textwidth}
                 \centering
@@ -426,7 +429,7 @@
             A {\textit{\textcolor{CarnationPink}{Barreira Secundária}}} é aquela barreira que protege contra a radiação secundária, ou seja, a radiação espalhada ou produzida devido a iterações com o paciente e a radiação de fuga do cabeçote. Como a radiação é espalhada em todas as direções, toda a sala terá no mínimo a blindagem para radiação secundária. Algumas ressalvas podem ser feitas, por exemplo no piso, caso esteja localizado em subsolo ou em casos de Skyshine, onde a blindagem poderá ser reduzida.
         
         
-        \subsection{Princípios para Diminuição da Exposição}
+        \subsection*{Princípios para Diminuição da Exposição}
             
             São 3 os princípios utilizados para diminuir a exposição de um indivíduo à radiação:
 
@@ -436,7 +439,7 @@
                 \item Adicionando Blindagem entre o indivíduo e a fonte de radiação.
             \end{enumerate}
         
-        \subsection{Considerações Para o Cálculo de Blindagens}
+        \subsection*{Considerações Para o Cálculo de Blindagens}
 
         \begin{wrapfigure}{l}{0.5\textwidth}
             \centering
@@ -475,7 +478,7 @@
 
     \section{Cálculos de Blindagem para as Barreiras}
 
-        \subsection{Cálculo de Blindagem Para a Barreira Primária}
+        \subsection*{Cálculo de Blindagem Para a Barreira Primária}
             
             A barreira primária deve ser projetada para atenuar o feixe útil de fotons e também atenuar a dose equivalente através da barreira causada por produtos secundários do feixe de fótons, como a radiação-$\mathrm{\gamma}$ e os nêutrons. Em uma barreira adequada, a razão entre a dose equivalente transmitida através da barreira e o limite de dose P para o ponto de análise deve ser menor ou igual a 1.
 
@@ -619,7 +622,7 @@
             Os Lasers utilizados no posicionamento devem ser incorporados na blindagem. Esta defasagem na blindagem pode ser em torno de 1 HVL para feixes de alta energia, portando deve ser adicionadas placas de aço ou chumbo com espessura suficiente para fornecer a mesma atenuação da quantidade de blindagem que foi removida para inserção do laser.
 
 
-        \subsection{Largura do Cinturão Primário}
+        \subsubsection*{Largura do Cinturão Primário}
 
             O cinturão primário é uma espessura adicionada à barreira secundária na região do feixe primário que é limitada pela largura do cinturão primário; A largura do cinturão primário por sua vez é determinada através do tamanho máximo da diagonal do maior tamanho de campo, somando no mínimo \qty{30}{cm} de cada lado. O cinturão primário pode ser projetado para que a protuberância, relacionada à diferença de espessura entre a barreira primária e a  barreira secundária, fique para dentro da sala de tratamento, ou para fora da sala de tratamento; e dependendo da sua posição, o tamanho máximo do campo utilizado para definir a largura do cinturão primário será diferente. 
 
@@ -688,7 +691,7 @@
                     Nestes casos, deve-se atentar à falta de simetria das posições da extremidades do campo em relação ao eixo central, projetado na barreira primária, uma vez que os fótons que viajam em duas arestas opostas do feixe, embora saiam com a mesma angulação do feixe, atravessarão a blindagem com diferentes angulações de incidência.  
             
         
-        \subsection{Barreiras Lamidadas}
+        \subsubsection*{Barreiras Lamidadas}
             
             São aquelas que utilizam mais de um material para compor a blindagem, como por exemplo, Concreto, Chumbo e Aço.
 
@@ -741,7 +744,7 @@
 
             Quando $B_{prim}$ é conhecida, o valor de $H_{tr}$ pode ser obtido através da Equação \ref{eq:fatorDeTransmissao} substituindo $P$ por $H_{tr}$. Se na soma,  $H_{tot} > P$ então o cálculo deve ser iterado para reduzir o valor de $H_{tr}$ até que $H_{tot}$ alcance o limite P definido para a blindagem;
 
-        \subsection{Cálculo de Blindagem para a Barreira Secundária}
+        \subsection*{Cálculo de Blindagem para a Barreira Secundária}
 
             As barreiras secundárias são projetadas de forma quem sejam efetivas na blindagem dos seguintes componentes:
 
@@ -824,7 +827,7 @@
 
             Os cálculos para portas e labirintos são separados para Aceleradores Lineares com energia de até \qty{10}{MV} e para Aceleradores Lineares com energias acima de \qty{10}{MV}, pois existem diferenças entre os tipos de radiação secundárias e as fluências produzidas em cada uma dessas faixas de energia.
 
-        \subsection{Aceleradores com Energia de até \qty{10}{MV}}
+        \subsection*{Aceleradores com Energia de até \qty{10}{MV}}
             
 
             Um labirinto é desenvolvido para diminuir o nível de radiação na entrada da sala de tratamento sem a necessidade de utilizar uma porta extemamente massiva. E a menos que o labirinto seja muito longo ou que tenha várias voltas, uma blindagem na porta ainda é necessária.
@@ -980,7 +983,7 @@
                 \item Em casos onde existem a técnica de TBI, o valor de \qty{2.64}{H_G} pode não ser aplicável; Como a técnica de TBI envolve o tratamento em uma localização diferente do isocentro, os efeitos da radiação espalhada na porta deverão ser considerados. 
             \end{enumerate}
             
-        \subsection{Aceleradores com Energia acima de \qty{10}{MV}}
+        \subsection*{Aceleradores com Energia acima de \qty{10}{MV}}
         
 
             A Figura \ref{fig:esquemaLabirintonêutrons} mostra o esquema de um labirinto para aceleradores de alta energia. A estimativa de dose equivalente devido aos fótons espalhados através do labirinto pode ser determinada através do método utilizado para Aceleradores com até 10 MV, no entanto, uma vez que a energia média dos raios gama de captura para o concreto é de \qty{3.6}{MeV}, uma porta e labirinto que fornece blindagem suficiente para os raios gama de captura será suficiente para os fótons espalhados.
@@ -996,7 +999,7 @@
                 \label{fig:esquemaLabirintonêutrons}
             \end{figure}
 
-    \subsubsection{Dose Equivalente dos Fótons Na Porta do Labirinto}
+    \subsubsection*{Dose Equivalente dos Fótons Na Porta do Labirinto}
 
         Para calcular a dose equivalente dos raios gama de captura na porta da sala de tratamento, é utilizado um método descrito por McGinley onde, a dose equivalente $h_{\varphi}$ para os raios gama de captura na entrada externa do labirinto, por unidade de dose de raios-X absorvida no isocentro é dada pela seguinte equação:
 
@@ -1064,7 +1067,7 @@
             \textcolor{CarnationPink}{$\mathbf{W_L}$} é a carga de trabalho para a radiação de fuga.
         \end{exemplo}
 
-    \subsubsection{Dose Equivalente dos Nêutrons Na Porta do Labirinto}
+    \subsubsection*{Dose Equivalente dos Nêutrons Na Porta do Labirinto}
 
         Para Aceleradores operando em energias superiores a 10 MV é necessária uma blindagem na porta tanto para fótons quanto para nêutrons. O a dose equivalente de nêutrons na entrada do labirinto varia um pouco, mas não é afetada pela configuração do colimador. Como a máxima fluência de nêutrons é obtida quando os colimadores estão fechados, espera-se que a maioria dos fotonêutrons se originem no cabeçote dos aceleradores. O campo de nêutrons no labirinto também depende do ângulo do gantry e da localização do plano rotação do alvo na sala de tratamento. Foi demonstrado que o nível de nêutrons na porta é máximo quando o ângulo de gantry está alinhado horizontalmente com a direção 3 - 1, indicado na Figura \ref{fig:esquemaLabirintonêutrons}. 
 
@@ -1141,7 +1144,7 @@
             \textcolor{CarnationPink}{$\mathbf{W_L}$} é a carga de trabalho semanal para a radiação de fuga.
         \end{exemplo}
 
-    \subsection{Dose Equivalente Total na Porta do Labirinto}   
+    \subsubsection*{Dose Equivalente Total na Porta do Labirinto}   
 
         A dose equivalente semanal total $H_W$ na entrada externa do labirinto é dada pela soma de todas as componentes que contribuem para a dose equivalente, ou seja:
 
@@ -1163,7 +1166,7 @@
 
         Para a maior parte dos aceleradores com energia acima de 10 MV, a componente $H_{tot}$ possui uma ordem de grandeza muito menor que a soma de $H_{cg}$ com $H_n$, de forma que esta componente pode ser desprezada.
 
-    \subsection{Blindagem da Porta}
+    \subsection*{Blindagem da Porta}
 
         A blindagem na porta devido a radiação de fuga e a radiação espalhada pode ser obtida com base no fator de transmissão da porta dado pela Equação \ref{eq:TransmissaoBlindagemPorta}. No entanto, em altas energias a componente devido à fuga e espalhamento é relativamente baixa quando comparado às outras componentes que se tornam energéticamente possíveis para maiores energias (nêutrons e raios gama de captura). A energia média para os raios gama de captura é de \qty{3.6}{MeV} e pode alcancar energias da ordem de \qty{10}{MeV} em casos onde os labirintos são muito curtos. Nestes casos pode ser necessário uma TVL de chumbo (equivalente a 6.1 cm). 
 
@@ -1173,7 +1176,7 @@
 
     \section{Procedimentos Especiais}
 
-    \subsection{TBI}
+    \subsection*{TBI}
 
     Em equipamentos que utilizam TBI, a carga de trabalho no isocentro é muito maior que os tratamentos convencionais que utilizam a mesma dose absorvida devido à distância extendida utilizada para este tratamento. A carga de trabalho para o TBI é dada por:
                 
@@ -1191,7 +1194,7 @@
 
     Cada carga de trabalho individual é multiplicada pelo fator uso para fins de cálculo de blindagem e o fator uso para o TBI é igual a 1 para a parede onde o paciente ficará an frente para o tratamento e zero para as demais, portanto a carga de trabalho do TBI só será contabilizada para o cálculo da barreira onde ficará na frente. 
 
-    \subsection{IMRT}
+    \subsection*{IMRT}
 
         Nos tratamentos de IMRT, incluindo SRS e SBRT, devido ao pequeno tamanho de campo é necessário um número elevado de unidades monitoras que aquele necessário nos tratamentos convencionais com a mesma dose absorvida no isocentro. 
 
@@ -1211,14 +1214,14 @@
 
         Os valores de $C_I$ variam de 2 até valores superiores a 10.  O aumento no numero de MU para tratamentos de IMRT não aumentam significativamente a carga de trabalho para a barreira primária ou para a componente da radiação espalhada da barreira secundária pois a dose absorvida no isocentro são similares. No entando, a contribuição na carga de trabalho para a radiação de fuga é significativamente maior por um fator tão grande quanto $C_I$ dependendo da fração de pacientes que são tratados com IMRT.
 
-    \subsection{QA}
+    \subsection*{QA}
 
         Se as medidas de QA forem realizadas rotineiramente durante o horário normal de trabalho, o efeito na carga de trabalho pode não ser insignificante em comparação com a carga de trabalgho do tratamento convencional e o impacto nos requistos de proteção da barreira deve ser avaliado. 
 
         Se a verificação da dose absorvida de tratamentos de IMRT constituir uma parte significativa das medições de QA, um fator de QA ($C_{QA}$) semelhante ao fator de IMRT ($C_I$) pode ser necessário para considerar o aumento nas unidades monitoras.
 
 
-    \subsection{Efeito dos Procedimentos Especiais nos Cálculos}
+    \subsection*{Efeito dos Procedimentos Especiais nos Cálculos}
 
         \begin{itemize}
             \item \textbf{\textcolor{CarnationPink}{Barreira Primária}}
@@ -1279,7 +1282,7 @@
 
         Este valor é utilizada para cálculos de fuga de fótons e produção de nêutrons.
 
-    \subsection{Taxa De Dose Equivalente Média}
+    \subsection*{Taxa De Dose Equivalente Média}
 
         Ao determinar uma barreira, assume-se que a carga de trabalho será uniformemente distribuída ao longo do ano, pontando é razoável projetar uma barreira que atenda ao valor semanal de 1/50 o valor do objetivo anual. Porém, escalas menores do objetivo da blindagem não são apropriadas e podem se tornar incompatíveis com o princípio ALARA. Mais precisamente, o uso de medidas instantâneas de taxa de dose equivalente (IDR) com o acelerador operando com o output máximo não representa propriamente as verdaderias condições de operação. É mais útil se a carga de trabalho e o fator uso forem utilizados em conjunto com a IDR para avaliar a eficácia da barreira. 
 

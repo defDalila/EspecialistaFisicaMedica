@@ -1,7 +1,6 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage[utf8]{inputenc}
-% \usepackage[T1]{fontenc}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{siunitx}
 \usepackage[brazil]{babel}
@@ -12,10 +11,9 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{natbib}
 \bibliographystyle{plainnat}
-\bibpunct{[}{]}{,}{s}{}{}
+\bibpunct{\textcolor{MediumOrchid}{\textbf{[}}}{\textcolor{MediumOrchid}{\textbf{]}}}{,}{s}{}{}
 \usepackage{color}
 \usepackage{footnote}
-\renewcommand{\thefootnote}{\alph{footnote}}
 \usepackage{setspace}
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -29,7 +27,32 @@
 \usepackage[version=4]{mhchem}
 \usepackage{enumitem}
 \usepackage{caption}
-\DeclareCaptionLabelFormat{figuras}{\textcolor{CarnationPink}{Figura \arabic{figure}}}
+\usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{LobsterTwo}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{txfonts}
+\usepackage[bottom]{footmisc}
+\tcbuselibrary{skins,breakable}
+\sisetup{output-decimal-marker={.}}
+
+\makeatletter
+\def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
+\makeatother
+
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
+
+\AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
+
+
+\titleformat{\section}{\LobsterTwo\huge\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\huge\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bf\LobsterTwo\Large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
+
+
+\DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
 \captionsetup[figure]{labelformat=figuras}
 
 \makeatletter
@@ -38,10 +61,11 @@
 
 \renewcommand{\theequation}{Eq. \arabic{equation}}
 \renewcommand{\thefigure}{Fig. \arabic{figure}}
+\renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
 
-\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\blacksquare$}}
 
-\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
 
 
 \newcounter{exemplo}
@@ -57,40 +81,42 @@
   linewidth=2pt,
   linecolor=CarnationPink,
   frametitlerule=false,
-  frametitlefont=\Large\bfseries\color{CarnationPink},
-  frametitle={\color{CarnationPink}\normalfont\bfseries #1},
+  frametitlefont=\LobsterTwo\large\color{CarnationPink},
+  frametitle={\color{CarnationPink}\LobsterTwo\large #1},
   ]
 }{%
   \end{mdframed}
 }
 
-\setlength{\fboxsep}{10pt}
-\setlength{\fboxrule}{1pt}
+\setlength{\fboxsep}{5pt}
+\setlength{\fboxrule}{1.5pt}
 \usepackage{float}
+\renewcommand{\thefootnote}{\alph{footnote}}
 \usepackage{url}
 \hypersetup{
-    colorlinks=true,
-    linkcolor=cyan,
-    filecolor=cyan,      
-    urlcolor=cyan,
-    citecolor=cyan,
-    pdftitle={Resumos}
+	colorlinks=true,
+	linkcolor=DarkTurquoise,
+	filecolor=DarkTurquoise,      
+	urlcolor=DarkTurquoise,
+	citecolor=DarkTurquoise,
+	pdftitle={Especialista em Física da Radioterapia}
 }
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\rfoot{Página \thepage}
+\rfoot{\color{DarkTurquoise}\thepage \\ \LobsterTwo{\small\textcolor{CarnationPink}{@defDalila}}}
 
-\title{Resumo}
-\author{Qualidade e IGRT \nocite{*}}
+\title{\LobsterTwo\Huge{Exercícios}}
+\author{\LobsterTwo\Large{Qualidade e IGRT}\nocite{*}}
+\date{\LobsterTwo{Dalila Mendonça}}
 \date{\textit{Dalila Mendonça}}
 \begin{document}
 	\maketitle
 
 
-\begin{exemplo}[11. Qualidade ]
+\begin{exemplo}[Qualidade]
 
-    \textcolor{CarnationPink}{Controle de Qualidade dos Equipamentos}
+    \textcolor{MediumOrchid}{\LobsterTwo\textbf{Controle de Qualidade dos Equipamentos}}
     \begin{itemize}
         \item De acordo com o TG-142 (\textit{``Task Group 142 report: quality assurance of medical accelerators.''}) Os Controles de Qualidade  (QA) do Acelerador Linear (Linac) requer procedimentos com frequência diária, mensal, anual e sempre for feito algum reparo ou alteração no linac que possa afetar alguma de suas características ou função.
         
@@ -197,7 +223,7 @@
       
     \end{itemize}
 
-    \textcolor{CarnationPink}{Segurança do Paciente}
+    \textcolor{MediumOrchid}{\LobsterTwo\textbf{Segurança do Paciente}}
     \begin{itemize}
         \item Em 2014, A ASTRO juntamente com a AAPM lançaram uma nova iniciativa para a segurança do paciente denominada como ``\textit{Radiation Oncology Incident Learning SystemTM (RO-ILS)}'' (Sistema de Aprendizado com Incidentes em Radioterapia). O RO-ILS documenta, analisa e rastreia os incidentes relacionados à segurança do paciente enviados pelos centros de radioterapia participantes. 
         
@@ -272,7 +298,7 @@
     
 \end{exemplo}
 
-\begin{exemplo}[12. IGRT ]
+\begin{exemplo}[IGRT]
 
     \begin{itemize}
         \item IGRT é Radioterapia Guiada por Imagem. É uma técnica utilizada para garantir que o alvo de tratamento seja localizado e alinhado aos feixes de radiação da mesma forma que estão localizados nas imagens utilizadas para planejar o tratamento antes de entregar o tratamento.
@@ -356,7 +382,7 @@
         
         \item Os dois tipos de binning do ciclo respiratório (dividindo o ciclo em segmentos) são binning de fase e binning de amplitude. A fase é definida selecionando pontos de tempo durante o ciclo respiratório. A amplitude é definida pela atribuição de limiares no ciclo respiratório.
         
-        \item Uma mesa com 6 graus de liberdade (6DoF) refere-se ao movimento da mesa no espaço tridimensional. A mesa se move nas direções translacionais (superior/inferior, esquerda/direita e para cima/baixo) e nas direções rotacionais (pitch, yaw e roll). O pich tem como eixo de rotação o eixo lateral, o yaw tem como eixo de rotação o eixo longitudinal e o roll tem como o eixo de rotação o eixo vertical.
+        \item Uma mesa com 6 graus de liberdade (6DoF) refere-se ao movimento da mesa no espaço tridimensional. A mesa se move nas direções translacionais (superior/inferior, esquerda/direita e para cima/baixo) e nas direções rotacionais (pitch, yaw e roll). O pich tem como eixo de rotação o eixo lateral, o yaw tem como eixo de rotação o eixo vertical e o roll tem como o eixo de rotação o eixo longitudinal.
         
         \item A dose de radiação de qualquer uma das das possíveis CTs utilizadas para IGRT dentro da sala varia de acordo com a técnica utilizada e com a parte do corpo que é visualizada. A dose de radiação fornecida varia de 10 a 50 mGy por aquisição, com CT-on-rails e kV CBCT fornecendo doses mais baixas do que MV CBCT. A dose de radiação pode ser reduzida ajustando a técnica de aquisição de imagem utilizada (kVp, mAs, MUs); minimizando a colimação/jaws para incluir apenas a parte do corpo de interesse e através do uso de filtros apropriados.
         

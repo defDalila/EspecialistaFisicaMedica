@@ -35,18 +35,21 @@
 \usepackage{fontspec}
 \usepackage{txfonts}
 \usepackage[bottom]{footmisc}
+\tcbuselibrary{skins,breakable}
+\sisetup{output-decimal-marker={.}}
 
 \makeatletter
 \def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
 \makeatother
 
-\renewcommand{\footnotelayout}{\itshape\color{black}}
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
 
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
-\titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
-\titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\section}{\LobsterTwo\huge\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\huge\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bf\LobsterTwo\Large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
 
 
 \DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
@@ -101,17 +104,17 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\rfoot{Página \thepage}
+\rfoot{\color{DarkTurquoise}\thepage \\ \LobsterTwo{\small\textcolor{CarnationPink}{@defDalila}}}
 
 
-\title{\LobsterTwo\Huge{Resumo}}
+\title{\LobsterTwo\Huge{Exercícios}}
 \author{\LobsterTwo\Large{Tratamento com Elétrons e Braquiterapia \nocite{*}}}
 \date{\LobsterTwo{Dalila Mendonça}}
 \begin{document}
 	\maketitle
 
 
-\begin{exemplo}[7. Tratamento com Elétrons]
+\begin{exemplo}[Tratamento com Elétrons]
     \begin{itemize}
         \item Os elétrons perdem sua energia no meio através de interações colisionais (ou seja, ionização e excitação) e interações radiativas (bremsstrahlung). Na terapia com elétrons, as perdas radiativas só se tornam significativas em energias mais altas e materiais de alto Z.
         
@@ -226,8 +229,8 @@
     \end{itemize}
 \end{exemplo}
 
-\begin{exemplo}[8. Braquiterapia]
-    \textcolor{CarnationPink}{Braquiterapia}
+\begin{exemplo}[Braquiterapia]
+    \textcolor{MediumOrchid}{\LobsterTwo\textbf{Braquiterapia}}
     \begin{itemize}
         \item A Braquiterapia é um procedimento especial da Radioterapia que utiliza fontes radioativas colocadas a curtas distâncias do alvo de tratamento. A Braquiterapia fornece distribuições de dose com alto índice de conformidade dentro do volume alvo devido as sementes radioativas (ou fontes) serem colocadas diretamente dentro do alvo ou em suas proximidades.
         
@@ -301,7 +304,7 @@
 
     \end{itemize}
 
-    \textcolor{CarnationPink}{Braquiterapia LDR}
+    \textcolor{MediumOrchid}{\LobsterTwo\textbf{Braquiterapia LDR}}
     \begin{itemize}
         \item Os principais isótopos utilizados em implantes permanentes são o Iodo-125, o Paládio-103 e o Césio-131.  Eles são utilizados devido emitirem fótons com uma energia média baixa, sendo \ce{^{125}I} = \qty{0.028}{MeV}, \ce{^{103}}Pd = \qty{0,021}{MeV} e \ce{^{131}Cs} = \qty{0,029}{MeV}, e por terem um tempo de meia vida relativamente curto, sendo \ce{^{125}I} = \qty{59.4}{dias}, \ce{^{103}Pd} = \qty{17}{dias} e \ce{^{131}Cs} = \qty{9.7}{dias}. Portanto, devido a baixa energia dos fótons emitidos, essas fontes irão tratar apenas o tumor devido ao acentuado falloff de dose alcançado para fótons de baixa energia.
         
@@ -345,7 +348,7 @@
 
     \end{itemize}
 
-    \textcolor{CarnationPink}{Braquiterapia HDR}
+    \textcolor{MediumOrchid}{\LobsterTwo\textbf{Braquiterapia HDR}}
     \begin{itemize}
         \item A principal fonte utilizada na Braquiterapia HDR é o Irídio-192. A meia vida do \ce{^{192}Ir} é de 74.4 dias e a energia média dos fótons emitidos é de 380 KeV. Uma fonte típica possui um diâmetro variando entre 0.3 mm até 0.6 mm e um comprimento variando entre 3.5 mm até 10 mm com uma atividade inicial de \qty{\sim 10}{Ci}.
         

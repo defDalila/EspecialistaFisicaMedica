@@ -47,9 +47,9 @@
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
-\titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
-\titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\LobsterTwo\large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
+\titleformat{\section}{\LobsterTwo\huge\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\huge\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bf\LobsterTwo\Large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
 
 
 \DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
@@ -104,7 +104,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\rfoot{Página \thepage}
+\rfoot{\color{DarkTurquoise}\thepage \\ \LobsterTwo{\small\textcolor{CarnationPink}{@defDalila}}}
 
 \title{Braquiterapia}
 \author{Definições E Física da Braquiterapia\nocite{*}}
@@ -137,7 +137,7 @@
 
 	É importante ressaltar que cada técnica de braquiterapia possui indicações específicas, dependendo do tipo de câncer, localização, extensão da doença e outros fatores. A escolha da técnica adequada é realizada pelo médico especialista em radioterapia, levando em consideração as características individuais de cada paciente e o objetivo do tratamento.
 
-\subsection{Duração do Tratamento}
+\subsection*{Duração do Tratamento}
 
 	A duração do tratamento na braquiterapia é classificada em dois tipos: braquiterapia permanente e braquiterapia temporária.
 
@@ -149,9 +149,9 @@
 		
 	\end{enumerate}		
 
-\subsection{Taxa de Dose}
+\subsection*{Taxa de Dose}
+A taxa de dose é outro aspecto importante na classificação da braquiterapia. Existem quatro categorias principais: braquiterapia de baixa taxa de dose (LDR), braquiterapia de média taxa de dose (MDR), braquiterapia de alta taxa de dose (HDR) e braquiterapia com taxa de dose pulsada (PDR).
 
-			A taxa de dose é outro aspecto importante na classificação da braquiterapia. Existem quatro categorias principais: braquiterapia de baixa taxa de dose (LDR), braquiterapia de média taxa de dose (MDR), braquiterapia de alta taxa de dose (HDR) e braquiterapia com taxa de dose pulsada (PDR).
 
 			\begin{itemize}
 				\item \textcolor{DarkTurquoise}{\textbf{LDR:}}  Nesse tipo de braquiterapia, a dose de radiação é entregue a uma taxa de dose entre 0.4 Gy/h e 2 Gy/h. Devido ao longo tempo de tratamento necessário, geralmente é necessário que o paciente seja internado durante o procedimento. No entanto, em alguns casos selecionados, é possível realizar o tratamento de forma ambulatorial, permitindo que o paciente vá para casa durante as pausas entre as sessões de tratamento.
@@ -165,7 +165,7 @@
 
 
 
-		\subsection{Carregamento da Fonte}
+		\subsection*{Carregamento da Fonte}
 
 			
 		Os aplicadores são dispositivos utilizados na braquiterapia para permitir a inserção e posicionamento preciso das fontes de radiação no tecido-alvo, sem a necessidade do médico entrar em contato direto com a fonte. Eles desempenham um papel fundamental no controle da distribuição da dose de radiação e na proteção dos tecidos saudáveis circundantes.
@@ -173,7 +173,7 @@
 		Existem diferentes tipos de aplicadores utilizados na braquiterapia, cada um adequado para uma finalidade específica. Alguns exemplos comuns são:
 
 			\begin{enumerate}
-				\item Os aplicadores permitem que o médico insira a fonte de radiação sem a necessidade do médico entrar em contato direto com a fonte. \textit{\textcolor{CarnationPink}{Exemplo:}} \textit{Aplicador MICK para braquiterapia de próstata,  \ref{img:aplicadorMick}.}
+				\item Os aplicadores permitem que o médico insira a fonte de radiação sem a necessidade do médico entrar em contato direto com a fonte. \textit{\textcolor{MediumOrchid}{Exemplo:}} \textit{Aplicador MICK para braquiterapia de próstata,  \ref{img:aplicadorMick}.}
 					
 				\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
 						\item \textcolor{DarkTurquoise}{\textbf{Aplicador MICK para braquiterapia de próstata:}} Consiste em agulhas finas que são inseridas na próstata para posicionar as fontes de radiação de forma precisa através de um ``mapa''. O aplicador MICK (\ref{img:aplicadorMick}) permite um implante seguro e controlado, garantindo a distribuição adequada da dose de radiação no tecido alvo.
@@ -667,16 +667,21 @@
 
 \section{Distribuição de Dose em Braquiterapia}
 
+\begin{wrapfigure}{l}{0.4\textwidth}
+	\centering
+	\fcolorbox{DarkTurquoise}{white}{%
+	\includegraphics[width=0.35\textwidth]{Imagens/falloffDoseMammosite.JPG}
+	}%
+	\caption{Distribuição de dose com um balão de mama inflado.}
+	\label{img:DistribuicaoDoseBalao}
+\end{wrapfigure}
+
 	A distribuição de dose em braquiterapia é caracterizada por um alto gradiente de dose e um falloff de dose mais rápido em comparação à teleterapia. Isso ocorre devido à baixa energia dos fótons emitidos pelas fontes de braquiterapia, que geralmente estão na faixa de kiloeletronvolts (KeV).
 
-	\begin{wrapfigure}{r}{0.49\textwidth}
-		\centering
-		\includegraphics[width=0.48\textwidth]{Imagens/falloffDoseMammosite.JPG}
-		\caption{Distribuição de dose com um balão de mama inflado.}
-		\label{img:DistribuicaoDoseBalao}
-	\end{wrapfigure}
 
 	Esse alto gradiente de dose é uma vantagem importante, pois permite uma maior preservação dos tecidos saudáveis adjacentes ao alvo. No entanto, essa mesma característica pode tornar desafiador alcançar uma distribuição de dose adequada no alvo quando este está distante da fonte, uma vez que aumentar a dose no alvo também resultaria em um aumento da dose nos tecidos próximos. Para minimizar a dose nos tecidos circundantes, recomenda-se o uso do maior aplicador possível, a fim de afastar esses tecidos da fonte e expô-los a um gradiente de dose menor em uma região mais distante.
+	
+
 	
 	A precisão no posicionamento da fonte de braquiterapia é de extrema importância, uma vez que pequenas discrepâncias de milímetros podem ter um impacto significativo no tratamento. Isso ocorre devido à forma do falloff de dose, que é bastante acentuado em braquiterapia. Portanto, é necessário um posicionamento preciso da fonte, especialmente em sistemas de afterloading remoto, onde a fonte é inserida e removida do aplicador através do robô. O uso de técnicas avançadas, como a imagem por ressonância magnética (MRI) em tempo real, pode auxiliar no posicionamento preciso da fonte em relação ao alvo.
 	
@@ -1047,7 +1052,8 @@
 
 			\begin{figure}[h]
 				\centering
-				\includegraphics[width=0.7\textwidth]{Imagens/carregamentosHistoricos.JPG}
+				\fcolorbox{DarkTurquoise}{white}{%
+				\includegraphics[width=0.7\textwidth]{Imagens/carregamentosHistoricos.JPG}}%
 				\caption{Sistemas de Carregamento Clássicos}
 				\label{img:carregamentosHistoricos}
 			\end{figure} 
@@ -1065,11 +1071,11 @@
 				Os princípios aplicados em diferentes cenários dentro do sistema Patterson-Parker são:
 
 				\begin{enumerate}[label=\textcolor{CarnationPink}{(\roman*)}]
-					\item \textcolor{MediumOrchid}{\textbf{Plano Único:}} Nesse arranjo, uma camada de tecido com 1 cm de espessura é tratada, e a dose prescrita é administrada em um plano paralelo localizado a 0.5 cm de distância do plano da fonte.
+					\item \textcolor{DarkTurquoise}{\textbf{Plano Único:}} Nesse arranjo, uma camada de tecido com 1 cm de espessura é tratada, e a dose prescrita é administrada em um plano paralelo localizado a 0.5 cm de distância do plano da fonte.
 
-					\item \textcolor{MediumOrchid}{\textbf{Plano Duplo:}} Camadas mais espessas de tecido, normalmente de até cerca de 2.5 cm, são tratadas com fontes colocadas em dois planos paralelos. A intensidade total da fonte necessária é dividida igualmente entre os dois planos, seguindo as regras de distribuição usadas para implantes em plano único. Fatores de correção são aplicados para separações entre os planos maiores que 1 cm, para garantir que a dose mínima não seja mais do que 10\% menor do que a dose prescrita. A dose prescrita é administrada em cada plano interior, que está localizado a 0,5 cm dos planos da fonte. É importante observar que, para volumes-alvo espessos, a dose no plano médio pode ser até 20-30\% menor do que a dose prescrita.
+					\item \textcolor{DarkTurquoise}{\textbf{Plano Duplo:}} Camadas mais espessas de tecido, normalmente de até cerca de 2.5 cm, são tratadas com fontes colocadas em dois planos paralelos. A intensidade total da fonte necessária é dividida igualmente entre os dois planos, seguindo as regras de distribuição usadas para implantes em plano único. Fatores de correção são aplicados para separações entre os planos maiores que 1 cm, para garantir que a dose mínima não seja mais do que 10\% menor do que a dose prescrita. A dose prescrita é administrada em cada plano interior, que está localizado a 0,5 cm dos planos da fonte. É importante observar que, para volumes-alvo espessos, a dose no plano médio pode ser até 20-30\% menor do que a dose prescrita.
 					
-					\item \textcolor{MediumOrchid}{\textbf{Outros Volumes:}} Para diferentes formas de volumes, como cilindros, esferas ou sólidos retangulares, as regras de distribuição seguem o conceito de proporção entre casca e núcleo. Normalmente, 75\% da intensidade da fonte é colocada na casca (região periférica), enquanto 25\% é colocada no núcleo (região central).
+					\item \textcolor{DarkTurquoise}{\textbf{Outros Volumes:}} Para diferentes formas de volumes, como cilindros, esferas ou sólidos retangulares, as regras de distribuição seguem o conceito de proporção entre casca e núcleo. Normalmente, 75\% da intensidade da fonte é colocada na casca (região periférica), enquanto 25\% é colocada no núcleo (região central).
 				\end{enumerate}
 				
 				\item \textcolor{DarkTurquoise}{\textbf{Sistema Quimbly:}}
@@ -1146,9 +1152,9 @@
 			O formalismo de cálculo estabelecido pelo TG-43 contemplava primordialmente os modelos de sementes:
 
 				\begin{itemize}
-					\item \textsuperscript{125}I: Nycomed-Armsham 6702 e 6711
-					\item \textsuperscript{103}Pd: Theragenics TP-200
-					\item  \textsuperscript{192}Ir: Best Medial e Alpha-Omega
+					\item \textcolor{DarkTurquoise}{\textbf{\textsuperscript{125}I:}} Nycomed-Armsham 6702 e 6711
+					\item \textcolor{DarkTurquoise}{\textbf{\textsuperscript{103}Pd:}} Theragenics TP-200
+					\item \textcolor{DarkTurquoise}{\textbf{ \textsuperscript{192}Ir}}x: Best Medial e Alpha-Omega
 				\end{itemize}
 			
 			O Report Tg-43 foi atualizado para corrigir inconsistências no report original e para incluir recomendações a cerca de fontes de braquiterapia de baixa energia, incluindo conjuntos de dados dosimétricos paras as novas fontes de \textsuperscript{125}I e \textsuperscript{103}Pd além dos guidelines para a determinação dos parâmetros dosimétricos das fontes de baixa energia.

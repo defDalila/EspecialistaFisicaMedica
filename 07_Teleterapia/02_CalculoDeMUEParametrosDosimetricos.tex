@@ -1,7 +1,6 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage[utf8]{inputenc}
-% \usepackage[T1]{fontenc}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{siunitx}
 \usepackage[brazil]{babel}
@@ -12,7 +11,7 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{natbib}
 \bibliographystyle{plainnat}
-\bibpunct{[}{]}{,}{s}{}{}
+\bibpunct{\textcolor{MediumOrchid}{\textbf{[}}}{\textcolor{MediumOrchid}{\textbf{]}}}{,}{s}{}{}
 \usepackage{color}
 \usepackage{footnote}
 \usepackage{setspace}
@@ -35,11 +34,22 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage{txfonts}
+\usepackage[bottom]{footmisc}
+\tcbuselibrary{skins,breakable}
+\sisetup{output-decimal-marker={.}}
+
+\makeatletter
+\def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
+\makeatother
+
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
+
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
-\titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
-\titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\section}{\LobsterTwo\huge\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\huge\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bf\LobsterTwo\Large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
 
 
 \DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
@@ -53,9 +63,9 @@
 \renewcommand{\thefigure}{Fig. \arabic{figure}}
 \renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
 
-\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\blacksquare$}}
 
-\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
 
 
 \newcounter{exemplo}
@@ -89,12 +99,12 @@
 	filecolor=DarkTurquoise,      
 	urlcolor=DarkTurquoise,
 	citecolor=DarkTurquoise,
-	pdftitle={Radioterapia}
+	pdftitle={Especialista em Física da Radioterapia}
 }
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\rfoot{Página \thepage}
+\rfoot{\color{DarkTurquoise}\thepage \\ \LobsterTwo{\small\textcolor{CarnationPink}{@defDalila}}}
 
 \title{\LobsterTwo\Huge{Radioterapia}}
 \author{\LobsterTwo{Parâmetros e Cálculos De Unidades Monitoras}\nocite{*}}
@@ -191,9 +201,9 @@
     
     A profundidade de dose máxima em feixes de megavoltagem varia com o tamanho de campo e com a SSD devido ao aumento da contaminação do feixe primário com elétrons que incidem na superfície do phantom/paciente. Portanto, para os cálculos serem independentes da contaminação com elétrons, a profundidade de referência utilizada para a normalização não pode ser definida na região de buildup, ou seja, a profundidade de referência deve ser maior que o alcance dos elétrons. 
 
-    Quanto maior o tamanho de campo e quanto menor a SSD, maior será a contaminação com elétrons; E portanto, $d_{max}$ tende a diminuir (se aproximar da superfície) a medida que o tamanho de campo aumenta e $d_{max}$ tende a aumentar (se afastar da superfície) a medida que a SSD aumenta. Portanto se $d_{max}$ for escolhida para ser a profundidade de referência, então $d_{max}$ deve ser definida para o menor tamanho de campo possível que ainda garanta equilíbrio eletrônico lateral (\qtyproduct{3 x 3}{cm}) e para a maior SSD possível (100 cm ou maior) para obter $d_{max}$ em uma configuração que minimiza os efeitos da contaminação com elétrons na determinação da profundidade de dose máxima. Outra forma de se obter $d_{max}$ é plotando uma curva da $\%DD \times (SSD + d)^2$ em função da profundidade $d$ para encontrar $d_{max}$. Esta relação elimina a dependência de $d_{max}$ com a SSD de modo que $d_{max}$ pode ser obtido plotando $d_{max}$ em função do tamanho de campo ( diminuindo o tamanho de campo até o campo  \qtyproduct{3 x 3}{cm}) e então extrapolando para o campo \qtyproduct{0 x 0}{cm}.
+    \textcolor{MediumOrchid}{\textbf{\textit{Quanto maior o tamanho de campo e quanto menor a SSD, maior será a contaminação com elétrons}}}; E portanto, $d_{max}$ tende a diminuir (se aproximar da superfície) a medida que o tamanho de campo aumenta e $d_{max}$ tende a aumentar (se afastar da superfície) a medida que a SSD aumenta. Portanto se $d_{max}$ for escolhida para ser a profundidade de referência, então $d_{max}$ deve ser definida para o menor tamanho de campo possível que ainda garanta equilíbrio eletrônico lateral (\qtyproduct{3 x 3}{cm}) e para a maior SSD possível (100 cm ou maior) para obter $d_{max}$ em uma configuração que minimiza os efeitos da contaminação com elétrons na determinação da profundidade de dose máxima. Outra forma de se obter $d_{max}$ é plotando uma curva da $\%DD \times (SSD + d)^2$ em função da profundidade $d$ para encontrar $d_{max}$. Esta relação elimina a dependência de $d_{max}$ com a SSD de modo que $d_{max}$ pode ser obtido plotando $d_{max}$ em função do tamanho de campo ( diminuindo o tamanho de campo até o campo  \qtyproduct{3 x 3}{cm}) e então extrapolando para o campo \qtyproduct{0 x 0}{cm}.
 
-    A profundidade de referência $d_{max}$ deve se manter a mesma para todos os tamanhos de campo e todas as quantidades dosimétricas relevantes como a PDP, TMR, Sp e o fator de calibração do acelerador devem ser normalizados na profundidade $d_{max}$. 
+    A profundidade de referência $d_{max}$ deve se manter a mesma para todos os tamanhos de campo e todas as quantidades dosimétricas relevantes como a PDP, TMR, Sp e o fator de calibração do acelerador deve ser normalizado na profundidade $d_{max}$. 
 
 
     \begin{tcolorbox}[width=\textwidth, colback={white}, colbacktitle={DarkTurquoise!50!white}, title={$\bigstar$ \LobsterTwo{Observação} $\bigstar $}, coltitle={CarnationPink}, colframe={DarkTurquoise}, fonttitle=\rmfamily\bfseries\Large]
@@ -202,7 +212,7 @@
 
     O TG-71 consiste em um protocolo para cálculo de MU, e estabelece que qualquer profundidade de referência para normalização será aceitável desde que esta profundidade seja invariante com o tamanho de campo e seja $\geq d_{max}$. Para evitar erros nas conversões, o TG-71 recomenda escolher uma profundidade de normalização fixa na profundidade de 10 cm para efetuar os cálculos de dose de todas as energias de fótons.
 
-    \subsection{Relação entre a PDP e a TMR}
+    \subsubsection*{Relação entre a PDP e a TMR}
 
     Para os valores de TMR, assume-se que a fração da contribuição de espalhamento para a dose na profundidade em um determinado ponto é independente da divergência do feixe, dependendo apenas da profundidade do ponto (com respeito à superfície) e o tamanho de campo projetado nessa profundidade. A \ref{fig:tmrECampo} mostra o comportamento de uma curva TMR com a profundidade para diferentes tamanhos de campos para um feixe de 10 MV. 
 
@@ -234,24 +244,24 @@
 
         \begin{exemplo}[onde:]
             \begin{itemize}
-                \item \textcolor{MediumOrchid}{$P$} é a PDP na profundidade de interesse; A PDP é normalizada em $d_{max}$ de modo que a $PDP(d_{max}, r, f) = 100$ para todos os tamanhos de campo e para todas as SSDs;
-                \item \textcolor{MediumOrchid}{$d$} é a profundidade onde deseja-se avaliar a dose;
-                \item \textcolor{MediumOrchid}{$d_{max}$} é a profundidade de referência estabelecida em $d_{max}$; 
-                \item \textcolor{MediumOrchid}{$r$} é o tamanho de campo na superfície;
-                \item \textcolor{MediumOrchid}{$f$} é a SSD;
-                \item \textcolor{MediumOrchid}{$r_d$} $= r \left(\frac{f + d}{f}\right)$
-                \item \textcolor{MediumOrchid}{$r_{d_{max}}$} = $r\left(\frac{f + d_{max}}{f}\right)$
+                \item \textcolor{DarkTurquoise}{$P$} é a PDP na profundidade de interesse; A PDP é normalizada em $d_{max}$ de modo que a $PDP(d_{max}, r, f) = 100$ para todos os tamanhos de campo e para todas as SSDs;
+                \item \textcolor{DarkTurquoise}{$d$} é a profundidade onde deseja-se avaliar a dose;
+                \item \textcolor{DarkTurquoise}{$d_{max}$} é a profundidade de referência estabelecida em $d_{max}$; 
+                \item \textcolor{DarkTurquoise}{$r$} é o tamanho de campo na superfície;
+                \item \textcolor{DarkTurquoise}{$f$} é a SSD;
+                \item \textcolor{DarkTurquoise}{$r_d$} $= r \left(\frac{f + d}{f}\right)$
+                \item \textcolor{DarkTurquoise}{$r_{d_{max}}$} = $r\left(\frac{f + d_{max}}{f}\right)$
             \end{itemize}
         \end{exemplo}
 
-    Portanto, embora a TMR possa ser medida diretamente, ela também pode ser determinada a partir da PDP através da \ref{eq:tmrParaPDP}. Para determinar a TMR do \ce{^{60}Co}, pode-se utilizar a \ref{eq:scpPraSp}  e a \ref{eq:tmrParaPDP}. Além disso, é possível obter a TMR a partir dos dados da TAR para os casos fornecido para os casos como o \ce{^{60}Co} onde a TAR é precisamente definida e conhecida, através da relação:
+    Portanto, embora a TMR possa ser medida diretamente, ela também pode ser determinada a partir da PDP através da \ref{eq:tmrParaPDP}. Para determinar a TMR do \ce{^{60}Co}, pode-se utilizar a \ref{eq:scpPraSp}  e a \ref{eq:tmrParaPDP}. Além disso, é possível obter a TMR a partir dos dados da TAR fornecido para os casos como o \ce{^{60}Co} onde a TAR é precisamente definida e conhecida, através da relação:
 
         \begin{equation}
             TMR(d,r_d) = \left(\frac{TAR(d, r_d)}{TAR(d_{max}, r_d)}\right) = \frac{TAR(d,r_d)}{BSF(r_d)}
             \label{eq:tmrTar}
         \end{equation}
 
-    \subsection{Relação Entre a TPR e a PDP}
+    \subsubsection*{Relação Entre a TPR e a PDP}
 
     A \ref{eq:tmrParaPDP} pode ser generalizada para a TPR em uma profundidade de referência (por exemplo \qty{10}{cm}):
 
@@ -261,16 +271,16 @@
 
     \begin{exemplo}[onde:]
         \begin{itemize}
-            \item \textcolor{MediumOrchid}{$d_0$} é a profundidade de referência;
-            \item \textcolor{MediumOrchid}{$P_N$} é a PDP normalizada na profundidade de referência que pode ser obtida através da PDP regular através da equação: 
+            \item \textcolor{DarkTurquoise}{$d_0$} é a profundidade de referência;
+            \item \textcolor{DarkTurquoise}{$P_N$} é a PDP normalizada na profundidade de referência que pode ser obtida através da PDP regular através da equação: 
             $$P_N(d, r, f) = \frac{P(d, r, f)}{P(d_0, r, f)}$$
-            \item \textcolor{MediumOrchid}{$r_{d_0}$} $= r\left(\frac{f + d_0}{f}\right)$
+            \item \textcolor{DarkTurquoise}{$r_{d_0}$} $= r\left(\frac{f + d_0}{f}\right)$
         \end{itemize}
     \end{exemplo}
 
-    \subsection{SPR e SMR}
+    \subsection*{SPR e SMR}
 
-    A SPR e a SMR são grandezas definidas especialmente para os cálculos da dose espalha no meio, De modo que a SPR e a SMR estão relacionadas com a TPR e a TMR da mesma forma que a SAR está relacionada com a TAR.  Matematicamente, essas quantidades são definidas como:
+    A SPR e a SMR são grandezas definidas especialmente para os cálculos da dose espalhada no meio, De modo que a SPR e a SMR estão relacionadas com a TPR e a TMR da mesma forma que a SAR está relacionada com a TAR.  Matematicamente, essas quantidades são definidas como:
 
         \begin{equation}
             SMR(d, r_d) = TMR(d, r_d) \left(\frac{S_p(r_d)}{S_p(0)}\right) - TMR(d,0)
@@ -306,12 +316,11 @@
         \end{equation}
 
 
-
     \section{Formalismo Para o Cálculo de MU}
 
         O formalismo para cálculo do número de MU irá depender da técnica utilizada no setup de planejamento, onde algumas instituições optam exclusivamente pela técnica isocentrica (SAD), enquanto outros utilizam técnicas da SAD e SSD.
 
-    \subsection{Equações Para o Cálculo de MU}
+    \subsection*{Equações Para o Cálculo de MU}
 
     Técnica Isocêntrica
         \begin{equation}
@@ -342,27 +351,29 @@
 
     \begin{exemplo}[onde:]
         \begin{itemize}
-            \item \textcolor{MediumOrchid}{$r_c$} é o tamanho de campo definido pelo colimador;
-            \item \textcolor{MediumOrchid}{$r_d$} é o tamanho de campo projetado na profundidade d;
-            \item \textcolor{MediumOrchid}{$r$} é o tamanho de campo na superfície;
-            \item \textcolor{MediumOrchid}{$x$} é a distância off-axis (distância radial do pont de análise ao eixo)
-            \item \textcolor{MediumOrchid}{$f$} é a SSD;
-            \item \textcolor{MediumOrchid}{$D$} é a dose a ser entregue no ponto de interesse;
-            \item \textcolor{MediumOrchid}{$D_{cal}$} é o fator de calibração dado em dose por MU na profundidade de referência ($d_{ref}$) sob as condições de referência;
-            \item \textcolor{MediumOrchid}{$S_c(r_c)$} é o fator de espalhamento do colimador definido para um tamanho de campo de colimador $r_c$
-            \item \textcolor{MediumOrchid}{$S_p(r)$} é o fator de espalhamento do phantom na $d_{ref}$ para um tamanho de campo $r$ na superfície;
-            \item \textcolor{MediumOrchid}{$S_p(r_d)$} é o fator de espalhamento do phantom na $d_{ref}$ para um tamanho de campo $r_d$ na profundidade $d$;
-            \item \textcolor{MediumOrchid}{$PDP(d, r, f)$} é a PDP  na profundidade $d$ quando $d_{ref}$ é determinado em $d_{max}$;
-            \item \textcolor{MediumOrchid}{$PDP_N(d, r, f)$} é a PDP na profundidade $d$ normalizada para uma profundidade de referência $d_{0}$ diferente de $d_{max}$;
-            \item \textcolor{MediumOrchid}{$WF(d, r_d, x)$} é o fator filtro na profundidade $d$ para um tamanho de campo na profundidade $r_d$ e em uma distância off-axis x;
-            \item \textcolor{MediumOrchid}{$OAR(d, x)$} é o fator off-axis na profundidade $d$ em uma distância $x$ do eixo central.
-            \item \textcolor{MediumOrchid}{$TF$} é o fator bandeja;
-            \item \textcolor{MediumOrchid}{$SCD$} é a distância da fonte até ao ponto de calibração onde foi especificado $D_{cal}$;
-            \item \textcolor{MediumOrchid}{$SPD$} é a distância da fonte até ao ponto de interesse, onde deseja-se entregar a dose;
-            \item \textcolor{MediumOrchid}{$d_{0}$} é a profundidade de referência para a $TPR$ e a $PDP_N$;
-            \item \textcolor{MediumOrchid}{$d_{max}$} é a profundidade de dose máxima utilizada para a $PDP$ e a $TMR$;
+            \item \textcolor{DarkTurquoise}{$r_c$} é o tamanho de campo definido pelo colimador;
+            \item \textcolor{DarkTurquoise}{$r_d$} é o tamanho de campo projetado na profundidade d;
+            \item \textcolor{DarkTurquoise}{$r$} é o tamanho de campo na superfície;
+            \item \textcolor{DarkTurquoise}{$x$} é a distância off-axis (distância radial do pont de análise ao eixo)
+            \item \textcolor{DarkTurquoise}{$f$} é a SSD;
+            \item \textcolor{DarkTurquoise}{$D$} é a dose a ser entregue no ponto de interesse;
+            \item \textcolor{DarkTurquoise}{$D_{cal}$} é o fator de calibração dado em dose por MU na profundidade de referência ($d_{ref}$) sob as condições de referência;
+            \item \textcolor{DarkTurquoise}{$S_c(r_c)$} é o fator de espalhamento do colimador definido para um tamanho de campo de colimador $r_c$
+            \item \textcolor{DarkTurquoise}{$S_p(r)$} é o fator de espalhamento do phantom na $d_{ref}$ para um tamanho de campo $r$ na superfície;
+            \item \textcolor{DarkTurquoise}{$S_p(r_d)$} é o fator de espalhamento do phantom na $d_{ref}$ para um tamanho de campo $r_d$ na profundidade $d$;
+            \item \textcolor{DarkTurquoise}{$PDP(d, r, f)$} é a PDP  na profundidade $d$ quando $d_{ref}$ é determinado em $d_{max}$;
+            \item \textcolor{DarkTurquoise}{$PDP_N(d, r, f)$} é a PDP na profundidade $d$ normalizada para uma profundidade de referência $d_{0}$ diferente de $d_{max}$;
+            \item \textcolor{DarkTurquoise}{$WF(d, r_d, x)$} é o fator filtro na profundidade $d$ para um tamanho de campo na profundidade $r_d$ e em uma distância off-axis x;
+            \item \textcolor{DarkTurquoise}{$OAR(d, x)$} é o fator off-axis na profundidade $d$ em uma distância $x$ do eixo central.
+            \item \textcolor{DarkTurquoise}{$TF$} é o fator bandeja;
+            \item \textcolor{DarkTurquoise}{$SCD$} é a distância da fonte até ao ponto de calibração onde foi especificado $D_{cal}$;
+            \item \textcolor{DarkTurquoise}{$SPD$} é a distância da fonte até ao ponto de interesse, onde deseja-se entregar a dose;
+            \item \textcolor{DarkTurquoise}{$d_{0}$} é a profundidade de referência para a $TPR$ e a $PDP_N$;
+            \item \textcolor{DarkTurquoise}{$d_{max}$} é a profundidade de dose máxima utilizada para a $PDP$ e a $TMR$;
         \end{itemize}
     \end{exemplo}
+
+    \begin{tcolorbox}[width=\textwidth, colback={white}, colbacktitle={DarkTurquoise!50!white}, title={$\bigstar$ \LobsterTwo{Observação} $\bigstar$}, coltitle={CarnationPink}, colframe={DarkTurquoise}, fonttitle=\rmfamily\bfseries\Large, breakable]
 
     Nas equações para o cálculo das MUs, assume-se que:
 
@@ -373,13 +384,11 @@
         \item A IDQ é válida para a mudança na fluência da energia do fóton no ar em função da distância da fonte. 
     \end{itemize}
 
-
-    \begin{tcolorbox}[width=\textwidth, colback={white}, title={$\bigstar$ \LobsterTwo{Observação} $\bigstar $}, coltitle={CarnationPink}, colframe={DarkTurquoise}, fonttitle=\rmfamily\bfseries\Large]
-
-        Embora exista um fator no cálculo da MU relacionado ao Inverso do quadrado da distância, tanto para a técnica isocêntrica quanto para técnica não isocêntrica, este fator é inserido para corrigir o fator de calibração nos casos em que a profundidade de referência utilizada para determinar o fator é diferente daquela utilizada nos demais parâmetros. Essa alteração se baseia apenas no IQD devido o fator de calibração ser definido em $d_{max}$ e como citado anteriormente, a fluência de energia no ar varia de acordo com a IQD. Outros parâmetros, no entanto, podem não ter uma correção apenas devido à IDQ, devido ao fator ser determinado para uma profundidade no tecido de forma que somente a IQD não irá fornecer a variação da fluência de fótons, sendo necessário considerar a atenuação e o espalhamento. 
+        $\quad$ Embora exista um fator no cálculo da MU relacionado ao inverso do quadrado da distância, tanto para a técnica isocêntrica quanto para técnica não-isocêntrica, este fator é inserido para corrigir o fator de calibração nos casos em que a profundidade de referência utilizada para determinar o fator é diferente daquela utilizada nos demais parâmetros. Essa alteração se baseia apenas no IQD devido o fator de calibração ser definido em $d_{max}$ e como citado anteriormente, a fluência de energia no ar varia de acordo com a IQD. Outros parâmetros, no entanto, podem não ter uma correção apenas devido à IDQ, devido ao fator ser determinado para uma profundidade no tecido de forma que somente a IQD não irá fornecer a variação da fluência de fótons, sendo necessário considerar a atenuação e o espalhamento. 
     \end{tcolorbox}
 
-    \subsection{Cálculo Para as Unidades de \ce{^{60}Co}}
+
+    \subsection*{Cálculo Para as Unidades de \ce{^{60}Co}}
 
         Os métodos já fornecidos são gerais de modo que também podem ser aplicados ao \ce{^{60}Co}. A diferença é que os feixes de \ce{^{60}Co} normalmente são calibrados em termos da taxa de dose no ar ou em termos da taxa de dose no phantom de modo que deve-se determinar o tempo de tratamento para entregar a dose total. Desse modo, deverão ser obtidos os seguintes parâmetros:
 
@@ -393,119 +402,12 @@
 
         Se foram adquiridos os dados de PDP, o $S_p$ poderá ser determinado através da \ref{eq:spBsf} e a $TMR$ poderá ser obtida através da \ref{eq:tmrTar}.
 
-
-    \section{Campos Irregulares}
-
-        A análise dosimétrica para campos irregulares utilizando a TMR e SMR ou a TPR e SPR é análoga ao método utilizado através da TAR e SAR.  Para um campo irregular utilizando o método da integral de Clarkson, onde um campo irregular em uma profundidade $d$ é dividido em n setores, então será determinada a média da SPR ou TPR através dos dados obtidos e então determinar a dose no isocentro.
-
-        $$\overline{SPR}(d, r_d) = \frac{1}{n} \sum_{i = 2}^{n} SPR(d, r_i)$$
-
-
-        onde $r_i$ é o raio do i-ésimo setor na profundidade d e n é o número total de setores $(n = 2\pi/\Delta \theta)$ onde $\Delta\theta$  é o ângulo de setor;
-
-        O valor determinado para $\overline{SPR}(d, r_d)$ é então convertido para o $\overline{SPR}(d, r_d)$ utilizando a \ref{eq:sprTpr}:
-
-
-        $$\overline{TPR}(d, r_d) = \left[TPR(d,0) +\overline{SPR}(f, r_d)\right]\times \frac{S_p(0)}{\bar{S}_p(r_d)}$$
-
-        \begin{exemplo}[onde]
-            \begin{itemize}
-                \item \textcolor{MediumOrchid}{$\bar{S}_p(r_d)$} é o fator médio de espalhamento do phantom para um campo irregular; e
-                \item \textcolor{MediumOrchid}{$S_p(0)$} é o fator de espalhamento do phantom para o campo 0 x 0;
-            \end{itemize}
-        \end{exemplo}
-
-        A equação acima só pode ser aplicada para pontos situados ao longo do eixo central do feixe que normalmente incide sobre um phantom com superfície plana; Para pontos off-axis em um feixe com o perfil de dose do feixe primário não uniforme, deve-se considerar o fator off-axis devido a apenas o feixe primário nesse ponto ($ POAR(d, x)$), de modo que:
-
-        $$\overline{TPR}(d, r_d) = \left[POAR(d, x) \times TPR(d, 0) + \overline{SPR}(d, r_d)\right] \times \frac{S_p(0)}{\bar{S}_p(r_d)}$$
-
-        E semelhantemente para a TMR, temos:
-     
-        $$\overline{TMR}(d, r_d) = \left[POAR(d, x) \times TMR(d, 0) + \overline{SMR}(d, r_d)\right] \times \frac{S_p(0)}{\bar{S}_p(r_d)}$$
-
-
-       Utilizando a \ref{eq:tmrParaPDP} para converter a $\overline{TMR}(d,r_d)$ para a $PDP(d, r, f)$ temos:
-
-        $$PDP(d, r, f) = 100 \times \left[POAR(d,x) \times TMR(d,0) + \overline{SMR}(d, r_d) \right] \times \frac{S_p(0)}{\bar{S}_p(r_d)} \times \frac{\bar{S}_p(r_d)}{S_p(r_{d_{max}})} \times \left(\frac{f + d_{max}}{f + d}\right)^2$$
-
-        Chegando na expressão final para a PDP:
-
-        \begin{equation}
-            PDP(d, r, f) = 100 \times \left[POAR(d,x) \times TMR(d,0) + \overline{SMR}(d, r_d) \right] \times \frac{1}{1 + \overline{SMR}(d_{max}, r_{d_{max}})} \times \left(\frac{f + d_{max}}{f + d}\right)^2
-        \end{equation}
-
-    \subsection{Variação da SSD dentro do Campo}
-
-        A PDP é normalizada na profundidade de dose máxima ao longo do eixo central, porém é possível que dentro desse mesmo campo, em um ponto off-axis, a SSD seja diferente da SSD com respeito ao eixo central onde a PDP é definida, onde nesse ponto haverá um gap vertical entre a pele e o plano perpendicular formado pela SSD no eixo central. Seja $f$ a SSD ao longo do eixo central e $g$ o gap entre a superfície da pele e plano onde a SSD é definida, a PDP para um ponto Q localizado em uma profundidade $d$ logo abaixo o gap é dada por:
-
-            \begin{equation}
-                PDP(d, r, f) = 100 \times \left[POAR(d,x) \times TMR(d,0) + \overline{SMR}(d, r_d) \right] \times \frac{1}{1 + \overline{SMR}(d_{max}, r_{d_{max}})} \times \left(\frac{f + d_{max}}{f + d + g}\right)^2
-            \end{equation}
-
-
-        O valor de $g$ poderá ser positivo ou negativo, dependendo se a SSD para o ponto Q é maior ou menor que a SSD definida no eixo central.
-
-
-    \subsection{Cálculos Computacionais de Campos Irregulares}
-
-        Os algoritmos de computação baseados no método integral de Clarkson foram amplamente utilizados para realizar cálculos 2D dos parâmetros dosimétricos com respeito aos campos irregulares. Esses algoritmos armazenavam permanentemente uma tabela de valores da SMR em função do raio de campos circulares e os valor da $POAR(d, x)$ extraídos dos perfis de dose na profundidade desejada.
-
-        Estes dados são armazenados em forma de tabelas com os valores das $POARs$ em função da razão entre a distância lateral do ponto até o eixo central ($l$) e a distância ao longo da mesma linha até à borda geométrica do campo ($L$), ou seja, é dado a $POAR$ em função de $l/L$, onde normalmente esses valores são obtidos para campos largos.
-
-        Para cada paciente eram definidos:
-
-        \begin{enumerate}[label=\textcolor{CarnationPink}{\roman*.}]
-            \item \textcolor{MediumOrchid}{\textbf{Pontos de Contorno:}} É desenhado contorno externo do campo irregular (bordas do campo) em um filme de portal, feito com o bloco de colimação do campo que será de fato irradiadpo ou através de marcadores colocados nas bordas do campo para definir sua geometria. Este contorno do campo no filme é digitalizado e suas coordenadas são armazenadas no sistema computacional;
-            \item \textcolor{MediumOrchid}{\textbf{Pontos de Cálculo:}} são inseridas as coordenadas (x, y) dos pontos de cálculo de dose incluindo as coordenadas do ponto de referência, que normalmente é definido do eixo central em relação ao qual os valores de PDPs são determinados.
-            \item \textcolor{MediumOrchid}{\textbf{Medidas das dimensões do Paciente:}} são armazenadas as medidas tomadas da espessura do paciente em vários pontos de interesse e os diferentes  valores de SSDs e distâncias do filme até a fonte. A \ref{fig:distanciasCamposIrregulares} mostra um exemplo de medidas registradas considerando um tratamento com um campo de manto utilizado para linfomas de Hodgkin.            
-        \end{enumerate}
-            
-                \begin{figure}[h]
-                    \centering
-                    \fcolorbox{DarkTurquoise}{white}{%
-                        \includegraphics[width=0.5\textwidth]{Imagens/distanciasCamposIrregulares.JPG}
-                    }%
-                    \caption{Medidas registradas para análise devido a campos irregulares}
-                    \label{fig:distanciasCamposIrregulares}
-                \end{figure}
-
-        Para o tratamento, eram fornecidas tabelas com os dados diários das doses em cada ponto definido previamente, calculados pelo sistema computacional. Esta tabela era utilizada na programação do tratamento de modo que a dose em varias regiões pudesse ser ajustada; Portanto as áreas cuja dose prescrita tivesse sido alcançada em um determinado número de frações era bloqueada até o final do tratamento. A \ref{fig:dadoscalc2d} mostra um esboço da tabela de dados fornecidas pelo algoritmo de cálculo computacional 2D. Embora os métodos de cálculo 2D tenham sido amplamente substituídos por algoritmos de cálculo 3D, esses dados 2D podem ser utilizados para conferir manualmente os cálculos computacionais.
-
-        \begin{figure}[h]
-            \centering
-            \fcolorbox{DarkTurquoise}{white}{%
-                \includegraphics[width=0.6\textwidth]{Imagens/dadoscalc2d.JPG}
-            }%
-            \caption{Dados de dose diária calculados por um algoritmo 2D para campos irregulares.}
-            \label{fig:dadoscalc2d}
-        \end{figure}
-
-    \subsection{Campos Assimétricos}
-
-        Os atuais aceleradores possuem jaws colimadores assimétricos, ou seja, cada jaw colimador pode se mover independentemente, diferente dos primeiros sistemas de colimação onde os pares de jaws X ou Y se moviam simetricamente, de modo que a posição de cada jaw com relação ao seu oposto (por exemplo $X_1$ e $X_2$) eram equidistantes do isocentro. 
-
-        É necessário levar em consideração as mudanças no fator de espalhamento do colimador, fator de espalhamento no phantom e na qualidade do feixe off-axis nos dos campos assimetricamente colimados.  A qualidade do feixe off-axis é afetada devido à utilização de filtros aplanadores, utilizados para deixar a dose plana em uma determinada profundidade (normalmente a 10 cm). o filtro aplanador causa um maior endurecimento do feixe na região central do campo quando comparado às periferias do feixe.
-
-        Portanto, para determinar os cálculos considerando campos assimétricos, assume-se que as mudanças na fluência dos fótons espalhados devido à colimação assimétrica é pequena de modo que pode-se assumir que o fator de espalhamento devido à colimação assimétrica é equivalente ao fator de espalhamento causado por uma colimação simétrica que tenha a mesma abertura fornecida pela colimação assimétrica. Essa é uma aproximação razoável a medida que o ponto de cálculo de dose esteja localizado do centro do campo, longe de suas bordas. O espalhamento do phantom também pode ser considerado o mesmo para o campo assimétrico e para um campo simétrico com o mesma dimensão e forma desde que o ponto de cálculo esteja localizado longe das bordas do campo para evitar os efeitos de penumbra. 
-
-        A distribuição de dose devido ao feixe primário varia com a distância lateral a partir do eixo central devido às mudanças na qualidade do feixe lateralmente causadas pelo filtro aplanador. Portanto a PDP, TMR ou TPT ao longo do eixo central para um campo assimétrico não são as mesmas que a de um campo simétrico com mesma forma e tamanho. Além disso, a fluência do feixe em pontos off-axis varia em função da distância a partir do eixo central, possuindo valores diferentes a medida que a distancia varia. Esses efeitos não são enunciados em campos simétricos pois normalmente o alvo é centralizado no campo, e então o alvo e o ponto de cálculo são posicionados ao longo do eixo central da distribuição de dose. Porém, considerando os campos assimétricos, o alvo ou o ponto de interesse pode não estar ao longo do eixo central, e portanto, nesses casos, deve-se fazer uma correção no cálculo da dose, que irá depender da profundidade do ponto e de sua distância a partir do eixo central.
-
-        A planura de um feixe é estabelecida dentro de 80\% do maior tamanho de campo possível na profundidade de 10 cm, tendo uma variação dentro de $\pm$ 3\%; não considerar as correções de dose off-axis para campos assimétricos irá fornecer erros desta magnitude sob essas condições e portando as correções de dose off-axis seguirá as mudanças na planura do feixe em função da profundidade e da distância ao eixo.
-
-
-        As equações gerais para o cálculo de MU são utilizadas para os cálculos dos campos assimétricos, alterando o fator $OAR(d, x)$ para o fator $POAR(d, x)$. O fator $POAR(d, x)$ é a razão entre a dose em um ponto off-axis devido a radiação primária e a dose no eixo central na mesma profundidade para um campo simétrico amplo. O Fator $POAR(d, x)$ pode ser extraído a partir dos perfis de campo obtidos para o maior campo disponível, em diferentes profundidade, subtraindo componente de espalhamento. Além desse método indireto, existem dois métodos medem diretamente o fator $POAR(d, x)$:
-
-        \begin{enumerate}
-            \item Através da medida dos perfis de dose transmitidos através de diferentes espessuras de um absorvedor sob condições de ``boa geometria'' (feixe estreito e grande distância entre o detector e o absorvedor);
-            \item Através de um método aproximado que mede os perfis de dose em função da profundidade para um feixe estreito alongado (5 cm x 40 cm). Devido ao perfil de dose do feixe primário ser criado pelo filtro aplanador que possui uma simetria radial, os dados da POAR podem ser tabelados como função da profundidade e da distância radial com respeito ao eixo central.
-        \end{enumerate}
-    
 \section{Fator OFF-Axis e Perfis de Feixe}
 
 
     As distribuições de dose ao longo do eixo central do feixe de radiação fornecem apenas informações parciais sobre a dose dentro do paciente. Para ter uma descrição completa e precisa da dose em 2D e 3D, é necessário combinar os dados do eixo central com perfis de dose obtidos fora do eixo central. 
 
-    Os dados fora do eixo são obtidos por meio da medição dos perfis de feixe de radiação perpendicularmente ao eixo central em profundidades específicas em um fantoma. Geralmente, essas medições são feitas em duas profundidades: zmax, que é a profundidade onde a dose atinge seu valor máximo, e 10 cm, que é uma profundidade padrão utilizada para verificar a conformidade com as especificações do equipamento. Dependendo do sistema de planejamento de tratamento (TPS) utilizado no departamento, podem ser necessárias medições em profundidades adicionais.
+    Os dados fora do eixo são obtidos por meio da medição dos perfis de feixe de radiação perpendicularmente ao eixo central em profundidades específicas em um fantoma. Geralmente, essas medições são feitas em duas profundidades: $d_{\text{max}}$, que é a profundidade onde a dose atinge seu valor máximo, e 10 cm, que é uma profundidade padrão utilizada para verificar a conformidade com as especificações do equipamento. Dependendo do sistema de planejamento de tratamento (TPS) utilizado no departamento, podem ser necessárias medições em profundidades adicionais.
 
     A \ref{fig:perfiDeFeixe} apresenta exemplos de perfis de dose típicos medidos em diferentes profundidades em um meio aquoso (água) para dois tamanhos de campo: 10 x 10 $cm^2$ e 30 x 30 $^2$. Esses perfis de dose foram obtidos utilizando um feixe de raios X de alta energia de 10 MV. Ao combinar a distribuição de dose obtida ao longo do eixo central com os dados obtidos fora do eixo, é possível criar uma matriz de dose volumétrica, que fornece informações sobre a distribuição de dose em 2D e 3D. A taxa fora do eixo (OAR, do inglês "Off-Axis Ratio") é uma medida comumente utilizada para avaliar a dose em um ponto localizado fora do eixo central do feixe de radiação. Essa taxa é definida como a razão entre a dose em um ponto fora do eixo e a dose no eixo central do feixe na mesma profundidade em um fantoma.
 
@@ -547,7 +449,7 @@
 
 \subsubsection*{Simetria}
 
-    A simetria do feixe refere-se à uniformidade da distribuição de dose em cada lado do eixo central do feixe. A profundidade de dose máxima ($z_{\text{max}}$) é frequentemente utilizada para avaliar a simetria do feixe, pois é nessa profundidade que a dose é mais sensível a desvios de simetria.
+    A simetria do feixe refere-se à uniformidade da distribuição de dose em cada lado do eixo central do feixe. A profundidade de dose máxima ($d_{\text{max}}$) é frequentemente utilizada para avaliar a simetria do feixe, pois é nessa profundidade que a dose é mais sensível a desvios de simetria.
 
     Para determinar a simetria do feixe, seleciona-se dois pontos de dose no perfil do feixe que estão igualmente distantes do eixo central. Esses pontos são comparados entre si. Uma especificação comum para a simetria do feixe é que a diferença entre esses dois pontos de dose deve ser inferior a 2\%.  Como alternativa ao método anterior, também é possível calcular a simetria do feixe comparando as áreas sob o perfil do feixe em cada lado do eixo central (direita e esquerda). Essas áreas são calculadas estendendo-se até isodose de 50\% (normalizado para 100\% no ponto do eixo central). A simetria do feixe (S) é então calculada usando a seguinte equação:
 
@@ -556,6 +458,112 @@
     \end{equation}
 
     Para determinar as áreas sob os perfis de $z_{\text{max}}$, existem diferentes métodos disponíveis. Um dispositivo de varredura em tanque de água, como um ``plotador'' de isodoses 3D, pode oferecer uma opção automática para calcular essas áreas. Alternativamente, métodos práticos como o uso de um planímetro ou a contagem de quadrados em papel gráfico podem ser empregados ao analisar uma cópia impressa do perfil do feixe. Esses métodos permitem a avaliação precisa da simetria do feixe.
+
+\section{Campos Irregulares}
+
+        A análise dosimétrica para campos irregulares utilizando a TMR e SMR ou a TPR e SPR é análoga ao método utilizado através da TAR e SAR.  Para um campo irregular utilizando o método da integral de Clarkson, onde um campo irregular em uma profundidade $d$ é dividido em n setores, então será determinada a média da SPR ou TPR através dos dados obtidos e então determinar a dose no isocentro.
+
+        $$\overline{SPR}(d, r_d) = \frac{1}{n} \sum_{i = 2}^{n} SPR(d, r_i)$$
+
+
+        onde $r_i$ é o raio do i-ésimo setor na profundidade d e n é o número total de setores $(n = 2\pi/\Delta \theta)$ onde $\Delta\theta$  é o ângulo de setor;
+
+        O valor determinado para $\overline{SPR}(d, r_d)$ é então convertido para o $\overline{SPR}(d, r_d)$ utilizando a \ref{eq:sprTpr}:
+
+
+        $$\overline{TPR}(d, r_d) = \left[TPR(d,0) +\overline{SPR}(f, r_d)\right]\times \frac{S_p(0)}{\bar{S}_p(r_d)}$$
+
+        \begin{exemplo}[onde]
+            \begin{itemize}
+                \item \textcolor{DarkTurquoise}{$\bar{S}_p(r_d)$} é o fator médio de espalhamento do phantom para um campo irregular; e
+                \item \textcolor{DarkTurquoise}{$S_p(0)$} é o fator de espalhamento do phantom para o campo 0 x 0;
+            \end{itemize}
+        \end{exemplo}
+
+        A equação acima só pode ser aplicada para pontos situados ao longo do eixo central do feixe que normalmente incide sobre um phantom com superfície plana; Para pontos off-axis em um feixe com o perfil de dose do feixe primário não uniforme, deve-se considerar o fator off-axis devido a apenas o feixe primário nesse ponto ($ POAR(d, x)$), de modo que:
+
+        $$\overline{TPR}(d, r_d) = \left[POAR(d, x) \times TPR(d, 0) + \overline{SPR}(d, r_d)\right] \times \frac{S_p(0)}{\bar{S}_p(r_d)}$$
+
+        E semelhantemente para a TMR, temos:
+     
+        $$\overline{TMR}(d, r_d) = \left[POAR(d, x) \times TMR(d, 0) + \overline{SMR}(d, r_d)\right] \times \frac{S_p(0)}{\bar{S}_p(r_d)}$$
+
+
+       Utilizando a \ref{eq:tmrParaPDP} para converter a $\overline{TMR}(d,r_d)$ para a $PDP(d, r, f)$ temos:
+
+        $$PDP(d, r, f) = 100 \times \left[POAR(d,x) \times TMR(d,0) + \overline{SMR}(d, r_d) \right] \times \frac{S_p(0)}{\bar{S}_p(r_d)} \times \frac{\bar{S}_p(r_d)}{S_p(r_{d_{max}})} \times \left(\frac{f + d_{max}}{f + d}\right)^2$$
+
+        Chegando na expressão final para a PDP:
+
+        \begin{equation}
+            PDP(d, r, f) = 100 \times \left[POAR(d,x) \times TMR(d,0) + \overline{SMR}(d, r_d) \right] \times \frac{1}{1 + \overline{SMR}(d_{max}, r_{d_{max}})} \times \left(\frac{f + d_{max}}{f + d}\right)^2
+        \end{equation}
+
+\subsubsection*{Variação da SSD dentro do Campo}
+
+        A PDP é normalizada na profundidade de dose máxima ao longo do eixo central, porém é possível que dentro desse mesmo campo, em um ponto off-axis, a SSD seja diferente da SSD com respeito ao eixo central onde a PDP é definida, onde nesse ponto haverá um gap vertical entre a pele e o plano perpendicular formado pela SSD no eixo central. Seja $f$ a SSD ao longo do eixo central e $g$ o gap entre a superfície da pele e plano onde a SSD é definida, a PDP para um ponto Q localizado em uma profundidade $d$ logo abaixo o gap é dada por:
+
+            \begin{equation}
+                PDP(d, r, f) = 100 \times \left[POAR(d,x) \times TMR(d,0) + \overline{SMR}(d, r_d) \right] \times \frac{1}{1 + \overline{SMR}(d_{max}, r_{d_{max}})} \times \left(\frac{f + d_{max}}{f + d + g}\right)^2
+            \end{equation}
+
+
+        O valor de $g$ poderá ser positivo ou negativo, dependendo se a SSD para o ponto Q é maior ou menor que a SSD definida no eixo central.
+
+
+\subsubsection*{Cálculos Computacionais de Campos Irregulares}
+
+        Os algoritmos de computação baseados no método integral de Clarkson foram amplamente utilizados para realizar cálculos 2D dos parâmetros dosimétricos com respeito aos campos irregulares. Esses algoritmos armazenavam permanentemente uma tabela de valores da SMR em função do raio de campos circulares e os valor da $POAR(d, x)$ extraídos dos perfis de dose na profundidade desejada.
+
+        Estes dados são armazenados em forma de tabelas com os valores das $POARs$ em função da razão entre a distância lateral do ponto até o eixo central ($l$) e a distância ao longo da mesma linha até à borda geométrica do campo ($L$), ou seja, é dado a $POAR$ em função de $l/L$, onde normalmente esses valores são obtidos para campos largos.
+
+        Para cada paciente eram definidos:
+
+        \begin{enumerate}[label=\textcolor{CarnationPink}{\roman*.}]
+            \item \textcolor{DarkTurquoise}{\textbf{Pontos de Contorno:}} É desenhado contorno externo do campo irregular (bordas do campo) em um filme de portal, feito com o bloco de colimação do campo que será de fato irradiadpo ou através de marcadores colocados nas bordas do campo para definir sua geometria. Este contorno do campo no filme é digitalizado e suas coordenadas são armazenadas no sistema computacional;
+            \item \textcolor{DarkTurquoise}{\textbf{Pontos de Cálculo:}} são inseridas as coordenadas (x, y) dos pontos de cálculo de dose incluindo as coordenadas do ponto de referência, que normalmente é definido do eixo central em relação ao qual os valores de PDPs são determinados.
+            \item \textcolor{DarkTurquoise}{\textbf{Medidas das dimensões do Paciente:}} são armazenadas as medidas tomadas da espessura do paciente em vários pontos de interesse e os diferentes  valores de SSDs e distâncias do filme até a fonte. A \ref{fig:distanciasCamposIrregulares} mostra um exemplo de medidas registradas considerando um tratamento com um campo de manto utilizado para linfomas de Hodgkin.            
+        \end{enumerate}
+            
+                \begin{figure}[h]
+                    \centering
+                    \fcolorbox{DarkTurquoise}{white}{%
+                        \includegraphics[width=0.5\textwidth]{Imagens/distanciasCamposIrregulares.JPG}
+                    }%
+                    \caption{Medidas registradas para análise devido a campos irregulares}
+                    \label{fig:distanciasCamposIrregulares}
+                \end{figure}
+
+        Para o tratamento, eram fornecidas tabelas com os dados diários das doses em cada ponto definido previamente, calculados pelo sistema computacional. Esta tabela era utilizada na programação do tratamento de modo que a dose em varias regiões pudesse ser ajustada; Portanto as áreas cuja dose prescrita tivesse sido alcançada em um determinado número de frações era bloqueada até o final do tratamento. A \ref{fig:dadoscalc2d} mostra um esboço da tabela de dados fornecidas pelo algoritmo de cálculo computacional 2D. Embora os métodos de cálculo 2D tenham sido amplamente substituídos por algoritmos de cálculo 3D, esses dados 2D podem ser utilizados para conferir manualmente os cálculos computacionais.
+
+        \begin{figure}[h]
+            \centering
+            \fcolorbox{DarkTurquoise}{white}{%
+                \includegraphics[width=0.6\textwidth]{Imagens/dadoscalc2d.JPG}
+            }%
+            \caption{Dados de dose diária calculados por um algoritmo 2D para campos irregulares.}
+            \label{fig:dadoscalc2d}
+        \end{figure}
+
+\subsubsection*{Campos Assimétricos}
+
+        Os atuais aceleradores possuem jaws colimadores assimétricos, ou seja, cada jaw colimador pode se mover independentemente, diferente dos primeiros sistemas de colimação onde os pares de jaws X ou Y se moviam simetricamente, de modo que a posição de cada jaw com relação ao seu oposto (por exemplo $X_1$ e $X_2$) eram equidistantes do isocentro. 
+
+        É necessário levar em consideração as mudanças no fator de espalhamento do colimador, fator de espalhamento no phantom e na qualidade do feixe off-axis nos dos campos assimetricamente colimados.  A qualidade do feixe off-axis é afetada devido à utilização de filtros aplanadores, utilizados para deixar a dose plana em uma determinada profundidade (normalmente a 10 cm). o filtro aplanador causa um maior endurecimento do feixe na região central do campo quando comparado às periferias do feixe.
+
+        Portanto, para determinar os cálculos considerando campos assimétricos, assume-se que as mudanças na fluência dos fótons espalhados devido à colimação assimétrica é pequena de modo que pode-se assumir que o fator de espalhamento devido à colimação assimétrica é equivalente ao fator de espalhamento causado por uma colimação simétrica que tenha a mesma abertura fornecida pela colimação assimétrica. Essa é uma aproximação razoável a medida que o ponto de cálculo de dose esteja localizado do centro do campo, longe de suas bordas. O espalhamento do phantom também pode ser considerado o mesmo para o campo assimétrico e para um campo simétrico com o mesma dimensão e forma desde que o ponto de cálculo esteja localizado longe das bordas do campo para evitar os efeitos de penumbra. 
+
+        A distribuição de dose devido ao feixe primário varia com a distância lateral a partir do eixo central devido às mudanças na qualidade do feixe lateralmente causadas pelo filtro aplanador. Portanto a PDP, TMR ou TPT ao longo do eixo central para um campo assimétrico não são as mesmas que a de um campo simétrico com mesma forma e tamanho. Além disso, a fluência do feixe em pontos off-axis varia em função da distância a partir do eixo central, possuindo valores diferentes a medida que a distancia varia. Esses efeitos não são enunciados em campos simétricos pois normalmente o alvo é centralizado no campo, e então o alvo e o ponto de cálculo são posicionados ao longo do eixo central da distribuição de dose. Porém, considerando os campos assimétricos, o alvo ou o ponto de interesse pode não estar ao longo do eixo central, e portanto, nesses casos, deve-se fazer uma correção no cálculo da dose, que irá depender da profundidade do ponto e de sua distância a partir do eixo central.
+
+        A planura de um feixe é estabelecida dentro de 80\% do maior tamanho de campo possível na profundidade de 10 cm, tendo uma variação dentro de $\pm$ 3\%; não considerar as correções de dose off-axis para campos assimétricos irá fornecer erros desta magnitude sob essas condições e portando as correções de dose off-axis seguirá as mudanças na planura do feixe em função da profundidade e da distância ao eixo.
+
+
+        As equações gerais para o cálculo de MU são utilizadas para os cálculos dos campos assimétricos, alterando o fator $OAR(d, x)$ para o fator $POAR(d, x)$. O fator $POAR(d, x)$ é a razão entre a dose em um ponto off-axis devido a radiação primária e a dose no eixo central na mesma profundidade para um campo simétrico amplo. O Fator $POAR(d, x)$ pode ser extraído a partir dos perfis de campo obtidos para o maior campo disponível, em diferentes profundidade, subtraindo componente de espalhamento. Além desse método indireto, existem dois métodos medem diretamente o fator $POAR(d, x)$:
+
+        \begin{enumerate}
+            \item Através da medida dos perfis de dose transmitidos através de diferentes espessuras de um absorvedor sob condições de ``boa geometria'' (feixe estreito e grande distância entre o detector e o absorvedor);
+            \item Através de um método aproximado que mede os perfis de dose em função da profundidade para um feixe estreito alongado (5 cm x 40 cm). Devido ao perfil de dose do feixe primário ser criado pelo filtro aplanador que possui uma simetria radial, os dados da POAR podem ser tabelados como função da profundidade e da distância radial com respeito ao eixo central.
+        \end{enumerate}
     
 \bibliography{ref.bib}
 \end{document}

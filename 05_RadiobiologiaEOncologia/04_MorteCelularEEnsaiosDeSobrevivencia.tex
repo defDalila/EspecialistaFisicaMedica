@@ -11,7 +11,7 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{natbib}
 \bibliographystyle{plainnat}
-\bibpunct{[}{]}{,}{s}{}{}
+\bibpunct{\textcolor{MediumOrchid}{\textbf{[}}}{\textcolor{MediumOrchid}{\textbf{]}}}{,}{s}{}{}
 \usepackage{color}
 \usepackage{footnote}
 \usepackage{setspace}
@@ -34,11 +34,22 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage{txfonts}
+\usepackage[bottom]{footmisc}
+\tcbuselibrary{skins,breakable}
+\sisetup{output-decimal-marker={.}}
+
+\makeatletter
+\def\footnoterule{\kern-3pt\color{MediumOrchid}\hrule\@width0.6\textwidth height 0.8pt\kern2.6pt}
+\makeatother
+
+\renewcommand{\footnotelayout}{\itshape\color{MediumOrchid}}
+
 \AtBeginEnvironment{equation}{\fontsize{13}{16}\selectfont}
 
 
-\titleformat{\section}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesection.}{1em}{}
-\titleformat{\subsection}{\LobsterTwo\LARGE\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\section}{\LobsterTwo\huge\color{CarnationPink}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\LobsterTwo\huge\color{CarnationPink}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bf\LobsterTwo\Large\color{MediumOrchid}}{\thesubsubsection}{1em}{}
 
 
 \DeclareCaptionLabelFormat{figuras}{\textcolor{DarkTurquoise}{Figura \arabic{figure}}}
@@ -52,9 +63,9 @@
 \renewcommand{\thefigure}{Fig. \arabic{figure}}
 \renewcommand{\thesection}{\textcolor{CarnationPink}{\arabic{section}}}
 
-\setlist[itemize]{label=\textcolor{CarnationPink}{$\mathbf{\square}$}}
+\setlist[itemize]{label=\textcolor{CarnationPink}{$\blacksquare$}}
 
-\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left}
+\setlist[enumerate]{label=\textcolor{CarnationPink}{\arabic*.}, align=left, leftmargin=1.5cm}
 
 
 \newcounter{exemplo}
@@ -93,7 +104,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\rfoot{Página \thepage}
+\rfoot{\color{DarkTurquoise}\thepage \\ \LobsterTwo{\small\textcolor{CarnationPink}{@defDalila}}}
 
 \title{\LobsterTwo\Huge{Radiobiologia}}
 \author{\LobsterTwo\Large{Mecanismos De Morte Celular e Ensaios de Sobrevivência}\nocite{*}}
@@ -102,49 +113,45 @@
 	\maketitle
 
 
-\section{Introdução}
-
-	Existem muitas maneiras pelas quais células normais e tumorais podem morrer devido a danos radio-induzidos. Danos extensos no DNA podem resultar em catástrofe mitótica,  senescência, ou necrose com respectiva inflamação. Alternativamente, alguns tipos de células podem sofrer apoptose, uma morte “programada” ordenada da célula que não envolve o processo inflamatório. No entanto, outros modos de morte, como necroptose e autofagia (e até mesmo submodos), foram identificados, sendo sua relevância para a resposta geral à radiação uma área ativa de investigação. Deve-se notar que não há resposta geral à radiação por todas as células, uma vez que o modo de morte pode ser dependente da dose e do tipo de célula. A sobrevivência celular sob várias condições pode ser medida usando ensaios in vitro e in vivo. Diferentes ensaios são adequados para medir diferentes pontos finais em tumores e tecidos normais. No entanto, a sobrevivência de células clonogênicas é geralmente considerada o padrão-ouro para medir a perda da integridade reprodutiva após a irradiação, independentemente do modo de morte.
 
 \section{Morte Celular}
 
-	A morte celular na radiobiologia é definida como a \textcolor{DarkTurquoise}{\textbf{perda da capacidade clonogênica}} de uma célula. A definição de morte celular é extremamente importante ao abordar a erradicação de tumores e a inibição do seu crescimento.
+	A \textcolor{DarkTurquoise}{\textbf{\textit{morte celular}}} na radiobiologia é definida como a \textcolor{MediumOrchid}{\textbf{\textit{perda da capacidade clonogênica}}} de uma célula. A definição de morte celular é extremamente importante ao abordar a erradicação de tumores e a inibição do seu crescimento.
 	
-	Quando as células tumorais perdem a capacidade de se reproduzir, elas deixam de ser viáveis clonogenicamente, ou seja, não conseguem mais formar colônias de células viáveis. Isso é um aspecto crucial no tratamento de câncer, pois a capacidade de um tumor se reproduzir e crescer é fundamental para sua sobrevivência e propagação.
+	Quando as células tumorais perdem a capacidade de se reproduzir, elas deixam de ser \textcolor{MediumOrchid}{\textbf{\textit{viáveis}}} clonogenicamente, ou seja, não conseguem mais formar colônias de células viáveis. Isso é um aspecto crucial no tratamento de câncer, pois a capacidade de um tumor se reproduzir e crescer é fundamental para sua sobrevivência e propagação.
 
-	Além disso, a perda da integridade reprodutiva também é relevante para tecidos normais que se dividem rapidamente, como o intestino e a medula óssea. Esses tecidos normais em rápida divisão são sensíveis à radioterapia ou quimioterapia, que visam danificar o DNA das células em passando por divisão, prejudicando sua capacidade de se replicar. A perda da capacidade de se reproduzir nessas células normais pode ter efeitos colaterais indesejados, como danos ao revestimento do intestino ou supressão da produção de células sanguíneas na medula óssea. Portanto, é necessário considerar cuidadosamente a ação de tratamentos anti-tumorais para minimizar os efeitos negativos nesses tecidos normais.
+	Além disso, a \textcolor{MediumOrchid}{\textbf{\textit{perda da integridade reprodutiva}}} também é relevante para \textcolor{MediumOrchid}{\textbf{\textit{tecidos normais}}} que se dividem rapidamente, como o intestino e a medula óssea. Esses tecidos normais em rápida divisão são sensíveis à radioterapia ou quimioterapia, que visam danificar o DNA das células em passando por divisão, prejudicando sua capacidade de se replicar. A perda da capacidade de se reproduzir nessas células normais pode ter \textcolor{MediumOrchid}{\textbf{\textit{efeitos colaterais indesejados}}}, como danos ao revestimento do intestino ou supressão da produção de células sanguíneas na medula óssea.
 
-	Por outro lado, o a definição de morte celular não é tão relevante para tecidos normais altamente diferenciados, como os nervos e músculos. Esses tecidos já são considerados "mortos" de acordo com essa definição, pois não possuem capacidade de divisão celular significativa. Esses tecidos têm células altamente especializadas e seu papel principal é a condução de sinais elétricos (no caso dos nervos) ou a contração muscular (no caso dos músculos), e não a proliferação celular.
+	Por outro lado, o \textcolor{MediumOrchid}{\textbf{\textit{a definição de morte celular não é tão relevante para tecidos normais altamente diferenciados}}}, como os nervos e músculos. Esses tecidos já são considerados "mortos" de acordo com essa definição, pois \textcolor{MediumOrchid}{\textbf{\textit{não possuem capacidade de divisão celular significativa}}}. Esses tecidos têm células altamente especializadas e seu papel principal é a condução de sinais elétricos (no caso dos nervos) ou a contração muscular (no caso dos músculos), e não a proliferação celular.
 
-	Células com extensos danos no DNA podem continuar a se dividir por algumas vezes após o dano antes de chegarem a um ponto em que não conseguem mais se dividir. Nesse ponto, a célula é considerada "morta" reprodutivamente, ou seja, ela perdeu a capacidade de se reproduzir e gerar novas células. Quando uma célula se torna reprodutivamente morta, ela se torna não clonogênica. Isso significa que a célula não é capaz de formar uma colônia em um ambiente de cultivo in vitro, onde as células são cultivadas em laboratório. Além disso, a célula também não pode reestabelecer um clone ou um tumor em um ambiente in vivo, ou seja, no organismo vivo.
+	\textcolor{MediumOrchid}{\textbf{\textit{Células com extensos danos no DNA podem continuar a se dividir por algumas vezes após o dano antes de chegarem a um ponto em que não conseguem mais se dividir}}}. Nesse ponto, a célula é considerada "morta" reprodutivamente, ou seja, ela perdeu a capacidade de se reproduzir e gerar novas células. Quando uma célula se torna reprodutivamente morta, ela se torna \textcolor{MediumOrchid}{\textbf{\textit{não clonogênica}}}. Isso significa que a célula não é capaz de formar uma colônia em um ambiente de cultura in vitro, onde as células são cultivadas em laboratório. Além disso, a célula também não pode reestabelecer um clone ou um tumor em um ambiente in vivo, ou seja, no organismo vivo.
 
-\subsection{Mecanismos de Morte Celular Após a Irradiação}
+\subsection*{Mecanismos de Morte Celular Após a Irradiação}
 
 	\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
 		\item \textcolor{DarkTurquoise}{\LobsterTwo\Large\textbf{Necrose:}}
 		
-		A necrose é uma forma ``passiva'' não programada de morte celular geralmente desencadeada por danos extensos e irreversíveis às células.
+		A necrose é uma forma \textcolor{MediumOrchid}{\textbf{\textit{``passiva''}}} não programada de morte celular geralmente desencadeada por danos extensos e irreversíveis às células.
 
 		\textcolor{MediumOrchid}{$(i)$} A necrose geralmente é desencadeada por uma lesão  grave que excede a capacidade das células de se adaptarem e sobreviverem. Isso pode incluir falta de oxigênio, toxinas, infecção, traumas ou temperaturas extremas. \textcolor{MediumOrchid}{$(ii)$} A lesão causa disrupção na membrana plasmática da célula, resultando em vazamento de conteúdo intracelular. Isso ocorre devido ao aumento da permeabilidade da membrana, o que leva à perda do equilíbrio iônico e acúmulo de íons e substâncias intracelulares no ambiente extracelular. \textcolor{MediumOrchid}{$(iii)$} A ruptura da célula e a liberação de substâncias intracelulares podem desencadear uma resposta inflamatória. Os mediadores inflamatórios, como citocinas e quimiocinas, são liberados, atraindo células inflamatórias, como neutrófilos e macrófagos, para a área afetada. \textcolor{MediumOrchid}{$(iv)$} A lesão e a ruptura da membrana podem levar ao influxo de água e sais minerais para dentro da célula, resultando em um inchaço celular chamado edema. Esse inchaço ocorre devido a distúrbios no equilíbrio osmótico e na função das bombas de íons da célula. \textcolor{MediumOrchid}{$(v)$} A necrose geralmente leva à ruptura do núcleo da célula, resultando na dispersão do material genético no citoplasma. Esse processo é chamado de cariorrexe. \textcolor{MediumOrchid}{$(vi)$}  Durante a necrose, várias enzimas e outras substâncias intracelulares são liberadas no ambiente extracelular, incluindo enzimas lisossômicas, proteínas citoplasmáticas e conteúdo mitocondrial. Essas substâncias podem ser tóxicas para as células vizinhas e atraentes para células inflamatórias, ampliando a resposta inflamatória. \textcolor{MediumOrchid}{$(vii)$} Após a necrose, o corpo inicia o processo de reparo, formando tecido de granulação\footnote{Tecido de granulação é um tipo de tecido de reparação que se forma durante o processo de cicatrização de feridas ou lesões}. Isso envolve a proliferação de células e vasos sanguíneos a partir do tecido saudável adjacente para preencher a área lesionada.
 		
 
 		\item \textcolor{DarkTurquoise}{\LobsterTwo\Large\textbf{Apoptose:}}
 		
-		É a forma mais comum de morte celular programada. Também é conhecida como morte de interfase para ser diferenciada da morte mitótica. Na apoptose a célula sofre uma série de mudanças ordenadas e degenerativas.
+		É a \textcolor{MediumOrchid}{\textbf{\textit{forma mais comum de morte celular programada}}}. Também é conhecida como morte de interfase para ser diferenciada da morte mitótica. Na apoptose a célula sofre uma série de mudanças ordenadas e degenerativas.
 
 		\textcolor{MediumOrchid}{$(i)$} A apoptose é desencadeada por uma variedade de estímulos, como sinais celulares, danos ao DNA, estresse celular, falta de nutrientes, entre outros. Esses estímulos ativam vias de sinalização que levam à ativação de proteases específicas chamadas caspases, que são as principais mediadoras da apoptose. \textcolor{MediumOrchid}{$(ii)$} Um dos primeiros sinais visíveis da apoptose é a condensação do material genético no núcleo da célula. O DNA se fragmenta e se compacta, formando estruturas características chamadas corpos apoptóticos. \textcolor{MediumOrchid}{$(iii)$} O DNA da célula em apoptose sofre fragmentação em múltiplos fragmentos de tamanho característico. Esses fragmentos são resultantes da ativação de endonucleases, enzimas responsáveis pela quebra do DNA. \textcolor{MediumOrchid}{$(iv)$}  Durante a apoptose, a membrana plasmática sofre mudanças estruturais. Moléculas lipídicas específicas, chamadas fosfatidilserina, são expostas na face externa da membrana, sinalizando para células vizinhas e células fagocitárias que devem remover a célula apoptótica. \textcolor{MediumOrchid}{$(v)$}  A célula apoptótica se retrai e se fragmenta em pequenos corpos apoptóticos. Esses corpos contêm o material celular compactado e fragmentado, bem como organelas celulares. \textcolor{MediumOrchid}{$(vi)$}  Os corpos apoptóticos são reconhecidos e englobados por células vizinhas ou por células especializadas no sistema imunológico, como macrófagos. Esse processo de fagocitose permite a remoção eficiente dos restos celulares sem causar inflamação ou danos ao tecido. \textcolor{MediumOrchid}{$(vii)$} Ao contrário da necrose, a apoptose ocorre sem desencadear uma resposta inflamatória significativa. Isso ocorre porque a célula apoptótica é rapidamente fagocitada e removida, evitando a liberação de substâncias inflamatórias.
 
 		A apoptose é parte importante do desenvolvimento embrionário normal. O desaparecimento da teia interdigital nas mãos de alguns mamíferos e a regressão das caudas dos girinos são exemplos de apoptose. 
 
-		A apoptose ocorre em resposta à radiação em algumas, mas não em todas as células. Células muito radiossensíveis, como linfócitos normais, linfoma e células de neuroblastoma, têm muita apoptose. Células tumorais muito radiorresistentes, como melanoma e glioblastoma, não apresentam apoptose significativa.
+		A apoptose ocorre em resposta à radiação em algumas, mas não em todas as células. Células muito \textcolor{MediumOrchid}{\textbf{\textit{radiossensíveis}}}, como linfócitos normais, linfoma e células de neuroblastoma, \textcolor{MediumOrchid}{\textbf{\textit{têm muita apoptose}}}. Células tumorais muito \textcolor{MediumOrchid}{\textbf{\textit{radiorresistentes}}}, como melanoma e glioblastoma, \textcolor{MediumOrchid}{\textbf{\textit{não apresentam apoptose significativa}}}.
 
-		Dependente de energia e geralmente requer transcrição e tradução. 
 
 		\item \textcolor{DarkTurquoise}{\LobsterTwo\Large\textbf{Autofagia:}}
 		
-		Na autofagia a célula degrada seus próprios componentes utilizando os lisossomos. Normalmente ocorre em resposta à privação de nutrientes; no entanto, muitos cânceres humanos, incluindo adenocarcinomas pancreáticos, dependem da reciclagem autofágica de componentes celulares para sustentar o crescimento das células tumorais.
+		Na autofagia \textcolor{MediumOrchid}{\textbf{\textit{a célula degrada seus próprios componentes utilizando os lisossomos}}}. Normalmente ocorre em resposta à privação de nutrientes; no entanto, muitos cânceres humanos, incluindo adenocarcinomas pancreáticos, dependem da reciclagem autofágica de componentes celulares para sustentar o crescimento das células tumorais.
 
-		Muitas vezes, uma parte normal do crescimento/desenvolvimento celular e permite que as células encontrem um equilíbrio entre síntese, degradação e reutilização de componentes celulares, principalmente em resposta à inanição celular\footnote{Inanição celular se refere a uma condição na qual as células não recebem nutrientes adequados para sobreviver e funcionar corretamente.}.
+		Muitas vezes, a autofagia é uma parte normal do crescimento/desenvolvimento celular e permite que as células encontrem um equilíbrio entre síntese, degradação e reutilização de componentes celulares, principalmente em resposta à inanição celular\footnote{Inanição celular se refere a uma condição na qual as células não recebem nutrientes adequados para sobreviver e funcionar corretamente.}.
 
 		A degradação de componentes celulares pelo lisossomo é desencadeada por proteínas codificadas por genes relacionados à autofagia, ou ATG, notadamente Atg8 e Atg6 (ou LC3 e Beclin-1, respectivamente, em células de mamíferos). Este processo envolve a formação do autofagossomo, que sequestra uma organela ou material e depois se funde com um lisossomo, onde ocorre a degradação do conteúdo do autofagossomo. A autofagia pode ser induzida por inibição de mTOR, ativação de PI3K, ativação mitocondrial de ERK ou ativação de JNK.
 
@@ -152,88 +159,87 @@
 
 		\item \textcolor{DarkTurquoise}{\LobsterTwo\Large\textbf{Catástrofe Mitótica:}}
 		
-		A catástrofe mitótica (ou morte mitótica) ocorre quando as células são incapazes de segregar adequadamente seus cromossomos durante a mitose. A morte celular ocorre devido a danos maciços no DNA. As células geralmente não conseguem completar a citocinese e geralmente se tornam células multinucleadas “gigantes” que contêm vários micronúcleos.
+		A catástrofe mitótica (ou morte mitótica) \textcolor{MediumOrchid}{\textbf{\textit{ocorre quando as células são incapazes de segregar adequadamente seus cromossomos durante a mitose}}}. A morte celular ocorre devido a danos maciços no DNA. As células geralmente não conseguem completar a citocinese e geralmente se tornam células multinucleadas “gigantes” que contêm vários micronúcleos.
 
-		A catástrofe mitótica é causada por aberrações letais do DNA, que são causadas por quebras na fita dupla do DNA pela irradiação. A aberração do DNA não é letal até que a célula tente a mitose, então há um atraso de tempo entre a irradiação e a catástrofe mitótica. Este processo é dependente do tipo de célula e é por isso que leva de dias a semanas para um tumor regredir após a irradiação.
+		A catástrofe mitótica é causada por aberrações letais do DNA, que são causadas por quebras na fita dupla do DNA pela irradiação. \textcolor{MediumOrchid}{\textbf{\textit{A aberração do DNA não é letal até que a célula tente a mitose}}}, então há um atraso de tempo entre a irradiação e a catástrofe mitótica. Este processo é dependente do tipo de célula e é por isso que leva de dias a semanas para um tumor regredir após a irradiação.
 		
 		\item \textcolor{DarkTurquoise}{\LobsterTwo\Large\textbf{Senescência:}}
 		
-		É definida como a cessação do ciclo celular. Neste processo, as células permanecem intactas, mas tornam-se incapazes de se dividir devido a danos no DNA. Isso as torna “reprodutivamente mortas”, embora as células ainda estejam lá. A senescência é uma parte normal do envelhecimento celular, mas também pode ocorrer em resposta a lesões, incluindo aquelas induzidas pela radiação. As proteínas p16 e β-galactosidase são marcadores moleculares de senescência.
+		É definida como a \textcolor{MediumOrchid}{\textbf{\textit{cessação do ciclo celular}}}. Neste processo, as células permanecem intactas, mas tornam-se incapazes de se dividir devido a danos no DNA. Isso as torna “reprodutivamente mortas”, embora as células ainda estejam lá. A senescência é uma \textcolor{MediumOrchid}{\textbf{\textit{parte normal do envelhecimento celula}}}r, mas também pode ocorrer em resposta a lesões, incluindo aquelas induzidas pela radiação. As proteínas p16 e $\beta$-galactosidase são marcadores moleculares de senescência.
 
 		\item \textcolor{DarkTurquoise}{\LobsterTwo\Large\textbf{Necroptose:}}
 		
-		A necroptose é outra forma regulada de morte celular porém independente de caspase. A morte celular é executada por “proteínas quinases de interação com o receptor” RIP1 e RIP3, MLKL. A formação do necrossoma (um complexo de RIP1, RIP3 e MLKL) faz a mediação de eventos, como uma explosão de espécies reativas de oxigênio (ROS), e a permeabilização da membrana plasmática. A RIP1 deve fosforilar e ativar RIP3, e a RIP3 deve fosforilar a MLKL para formar o trímero. O trímero MLKL se transloca para a membrana plasmática, causando permeabilização da membrana plasmática. Este é um mecanismo de execução chave. A necroptose pode ser inibida por agentes que atuam em RIP1, RIP3 e MLKL.
+		A necroptose é outra \textcolor{MediumOrchid}{\textbf{\textit{forma regulada de morte celular}}} porém independente de caspase. A morte celular é executada por “proteínas quinases de interação com o receptor” RIP1 e RIP3, MLKL. A formação do necrossoma (um complexo de RIP1, RIP3 e MLKL) faz a mediação de eventos, como uma explosão de espécies reativas de oxigênio (ROS), e a permeabilização da membrana plasmática. A RIP1 deve fosforilar e ativar RIP3, e a RIP3 deve fosforilar a MLKL para formar o trímero. O trímero MLKL se transloca para a membrana plasmática, causando permeabilização da membrana plasmática. Este é um mecanismo de execução chave. A necroptose pode ser inibida por agentes que atuam em RIP1, RIP3 e MLKL.
 
 		\item \textcolor{DarkTurquoise}{\LobsterTwo\Large\textbf{Anoikis:}}
 		
-		É uma forma alternativa de morte celular programada. A Anoikis é uma morte celular programada que ocorre quando as células são colocadas em um órgão ou tecido desconhecido. As células cancerígenas devem superar anoikis para ocorrer metástases. A proteína BIM-EL está associada a este processo. Esse processo facilita a liberação do citocromo C da mitocôndria, ativando por sua vez caspases e desencadeando a fragmentação do DNA semelhante ao que é observado durante a apoptose.
+		É uma \textcolor{MediumOrchid}{\textbf{\textit{forma alternativa de morte celular programada}}}. A Anoikis é uma morte celular programada que ocorre quando as células são colocadas em um órgão ou tecido desconhecido. As células cancerígenas devem superar anoikis para ocorrer metástases. A proteína BIM-EL está associada a este processo. Esse processo facilita a liberação do citocromo C da mitocôndria, ativando por sua vez caspases e desencadeando a fragmentação do DNA semelhante ao que é observado durante a apoptose.
 	\end{itemize}
 
 
-\subsection{Reações Teciduais após a Irradiação}
+\subsection*{Reações Teciduais após a Irradiação}
 
 	\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
-		\item A \textcolor{DarkTurquoise}{\textbf{apoptose}} geralmente começa dentro de 6–24 h após a irradiação; no entanto, também foi observada apoptose retardada (vários dias), e alterações apoptóticas iniciais podem ser observadas mais cedo em algumas linhagens celulares, dependendo dos estímulos e da dose. Os corpos apoptóticos são rapidamente degradados pelas células espectadoras, então eles desaparecem rapidamente.
-		\item A \textcolor{DarkTurquoise}{\textbf{catástrofe mitótica}} geralmente ocorre dentro de um a dois ciclos celulares (15 h a 2 semanas em células ciclando ativamente).
-		\item A \textcolor{DarkTurquoise}{\textbf{necrose}} pode ser observada por dias a um pequeno número de semanas após a irradiação. Em doses muito altas, pode ocorrer dentro de minutos a horas após a irradiação.
-		\item As \textcolor{DarkTurquoise}{\textbf{respostas tardias}} são caracterizadas por alterações que ocorrem no tecido irradiado após meses ou anos após a exposição à radiação. Essas alterações podem não estar diretamente ligadas à morte celular, sendo as principais respostas tardias a Fibrose, alterações microvasculares, inflamação crônica e a diminuição da cicatrização de feridas.
+		\item A \textcolor{DarkTurquoise}{\textbf{Apoptose}} geralmente começa dentro de \textcolor{MediumOrchid}{\textbf{\textit{6–24 h}}} após a irradiação; no entanto, também foi observada apoptose retardada (vários dias), e alterações apoptóticas iniciais podem ser observadas mais cedo em algumas linhagens celulares, dependendo dos estímulos e da dose. Os corpos apoptóticos são rapidamente degradados pelas células espectadoras, então eles desaparecem rapidamente.
+		\item A \textcolor{DarkTurquoise}{\textbf{Catástrofe mitótica}} geralmente ocorre dentro de \textcolor{MediumOrchid}{\textbf{\textit{um a dois ciclos celulares}}} (15 h a 2 semanas em células ciclando ativamente).
+		\item A \textcolor{DarkTurquoise}{\textbf{Necrose}} pode ser observada por \textcolor{MediumOrchid}{\textbf{\textit{dias a um pequeno número de semanas}}} após a irradiação. Em doses muito altas, pode ocorrer dentro de minutos a horas após a irradiação.
+		\item As \textcolor{DarkTurquoise}{\textbf{Respostas tardias}} são caracterizadas por alterações que ocorrem no tecido irradiado após \textcolor{MediumOrchid}{\textbf{\textit{meses ou anos}}} após a exposição à radiação. Essas alterações podem não estar diretamente ligadas à morte celular, sendo as principais respostas tardias a Fibrose, alterações microvasculares, inflamação crônica e a diminuição da cicatrização de feridas.
 	\end{itemize}
-
 
 \section{Sobrevivência Das Células Após a Irradiação}
 
-\subsection{Radiossensibilidade}
+\subsection*{Radiossensibilidade}
 
-	A radiossensibilidade depende de três fatores principais: conteúdo de DNA (ou tamanho “alvo”), mecanismos de reparo e mecanismo de morte. Quanto mais DNA existir em uma célula, mais fácil a radiação atingir uma dessas moléculas então é maior a sensibilidade dessa célula. Quando mais a célula é eficiente em reparo, menor a sua radiossensibilidade; e quando mais propensa a apoptose, mais a célula é radiossensível.
+	A radiossensibilidade depende de três fatores principais: \textcolor{MediumOrchid}{\textbf{\textit{conteúdo do DNA (ou tamanho do “alvo”), mecanismos de reparo e mecanismo de morte}}}. Quanto mais DNA existir em uma célula, mais fácil a radiação atingir uma dessas moléculas então é maior a sensibilidade dessa célula. Quando mais a célula é eficiente em reparo, menor a sua radiossensibilidade; e quando mais propensa a apoptose, mais a célula é radiossensível.
 
-\subsection*{Células de Mamíferos}
+\subsubsection*{Células de Mamíferos}
 
-	As células de mamíferos são altamente radiossensíveis porque têm muito DNA e podem sofrer apoptose. $\sim$2 Gy pode matar aproximadamente metade das células de mamíferos, $\sim$70 Gy entregues em frações de 2 Gy podem esterilizar um tumor.
+	As células de mamíferos são \textcolor{MediumOrchid}{\textbf{\textit{altamente radiossensíveis}}} porque têm muito DNA e podem sofrer apoptose. $\sim$2 Gy pode matar aproximadamente metade das células de mamíferos, $\sim$70 Gy entregues em frações de 2 Gy podem esterilizar um tumor.
 
-	A sobrevivência celular geralmente diminui à medida que o tamanho da fração e a taxa de dose aumentam. Isso se deve à diminuição da oportunidade para as células repararem os danos no DNA. As células que não se dividem são as mais radiorresistentes, enquanto as células que se dividem rapidamente com apoptose ativa são altamente radiossensíveis.
+	A \textcolor{MediumOrchid}{\textbf{\textit{sobrevivência celular}}} geralmente \textcolor{MediumOrchid}{\textbf{\textit{diminui}}} à medida que o \textcolor{MediumOrchid}{\textbf{\textit{tamanho da fração (aumento da dose por fração) e a taxa de dose aumentam}}}. Isso se deve à diminuição da oportunidade para as células repararem os danos no DNA. As \textcolor{MediumOrchid}{\textbf{\textit{células que não se dividem são as mais radiorresistentes, enquanto as células que se dividem rapidamente com apoptose ativa são altamente radiossensíveis}}}.
 
-\subsection*{Bactérias}
+\subsubsection*{Bactérias}
 
-	Leveduras e bactérias são muito mais resistentes, devido ao conteúdo de DNA muito menor (menor tamanho do alvo). $\sim$ 10s a 100s de Gy matarão metade das bactérias e leveduras. Um irradiador de processamento de alimentos pode fornecer até 20.000 Gy para esterilizar bactérias. 
+	Leveduras e bactérias são muito mais \textcolor{MediumOrchid}{\textbf{\textit{resistentes}}}, devido ao conteúdo de DNA muito menor (menor tamanho do alvo). $\sim$ 10s a 100s de Gy matarão metade das bactérias e leveduras. Um irradiador de processamento de alimentos pode fornecer até 20.000 Gy para esterilizar bactérias. 
 
-\subsection*{Vírus}
+\subsubsection*{Vírus}
 
-	Os vírus são extremamente radiorresistentes porque têm muito pouco DNA (e, portanto, têm um tamanho de alvo menor) em comparação com uma célula eucariótica. Certas bactérias, como Micrococcus (Deinococcus) radiodurans, são radiorresistentes devido ao reparo do DNA. Dose letal para vírus está na faixa kGy.
+	Os vírus são \textcolor{MediumOrchid}{\textbf{\textit{extremamente radiorresistentes}}} porque têm muito pouco DNA (e, portanto, têm um tamanho de alvo menor) em comparação com uma célula eucariótica. A dose letal para vírus está na faixa kGy.
 
 \section{Ensaios de Sobrevivência}
 
 	Existem duas abordagens diferentes utilizadas para avaliar a sobrevivência celular: Os ensaios in vitro e os ensaios in vivo.
 
 	\begin{itemize}[label=\textcolor{CarnationPink}{$\blacktriangleright$}]
-		\item Os \textcolor{DarkTurquoise}{\LobsterTwo\textbf{ensaios in vitro}} são conduzidos em um ambiente controlado em laboratório, utilizando células isoladas em cultura. Nesse tipo de ensaio, as células são expostas a diferentes condições experimentais, como exposição a drogas, radiação, estresse oxidativo, entre outros, e a viabilidade celular é medida por meio de ensaios de citotoxicidade ou apoptose. As principais características de um ensaio in vitro são:
+		\item Os \textcolor{DarkTurquoise}{\LobsterTwo\textbf{ensaios in vitro}} são conduzidos em um \textcolor{MediumOrchid}{\textbf{\textit{ambiente controlado em laboratório}}}, utilizando células isoladas em cultura. Nesse tipo de ensaio, as células são expostas a diferentes condições experimentais, como exposição a drogas, radiação, estresse oxidativo, entre outros; e a viabilidade celular é medida por meio de ensaios de citotoxicidade ou apoptose. As principais características de um ensaio in vitro são:
 		
 		\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
-			\item \textcolor{MediumOrchid}{\textbf{Controle experimental:}} Os ensaios in vitro permitem um controle mais preciso das condições experimentais, como concentração de substâncias químicas, tempo de exposição e ambiente de cultura das células.
-			\item \textcolor{MediumOrchid}{\textbf{Menor custo e tempo:}} Os ensaios in vitro geralmente são mais rápidos e menos dispendiosos em comparação com os ensaios in vivo, pois não envolvem animais vivos.
-			\item \textcolor{MediumOrchid}{\textbf{Limitações na fisiologia celular:}} As células cultivadas em laboratório podem não refletir completamente o ambiente complexo e interações celulares presentes no organismo vivo.
-			\item \textcolor{MediumOrchid}{\textbf{Falta de interações sistêmicas:}} Os ensaios in vitro não podem avaliar o efeito de fatores sistêmicos, como o sistema imunológico, vasculatura e outras células presentes no organismo. Não é possível medir os efeitos tardios.
+			\item \textcolor{DarkTurquoise}{\textbf{Controle experimental:}} Os ensaios in vitro permitem um \textcolor{MediumOrchid}{\textbf{\textit{controle mais preciso das condições experimentais}}}, como concentração de substâncias químicas, tempo de exposição e ambiente de cultura das células.
+			\item \textcolor{DarkTurquoise}{\textbf{Menor custo e tempo:}} Os ensaios in vitro geralmente são mais rápidos e menos dispendiosos em comparação com os ensaios in vivo, pois não envolvem animais vivos.
+			\item \textcolor{DarkTurquoise}{\textbf{Limitações na fisiologia celular:}} As células cultivadas em laboratório \textcolor{MediumOrchid}{\textbf{\textit{podem não refletir completamente o ambiente complexo e interações celulares presentes no organismo vivo}}}.
+			\item \textcolor{DarkTurquoise}{\textbf{Falta de interações sistêmicas:}} Os ensaios in vitro \textcolor{MediumOrchid}{\textbf{\textit{não podem avaliar o efeito de fatores sistêmicos}}}, como o sistema imunológico, vasculatura e outras células presentes no organismo. \textcolor{MediumOrchid}{\textbf{\textit{Não é possível medir os efeitos tardios}}}.
 		\end{itemize}
 		
 		\item Os \textcolor{DarkTurquoise}{\LobsterTwo\textbf{ensaios in vivo}} são realizados em organismos vivos, como animais de laboratório. Nesses ensaios, as células são implantadas ou administradas nos animais, e a sobrevivência celular é avaliada em um contexto fisiológico mais complexo. As principais características dos ensaios in vivo são:
 		\begin{itemize}[label=\textcolor{CarnationPink}{$\star$}]
-			\item \textcolor{MediumOrchid}{\textbf{Fisiologia mais próxima da realidade:}} Os ensaios in vivo permitem avaliar as células em um ambiente mais próximo do que ocorre no organismo vivo, incluindo interações com outros tipos de células, tecidos e sistemas. Pode medir os efeitos iniciais e tardios se esperar o tempo suficiente.
-			\item \textcolor{MediumOrchid}{\textbf{Resposta imunológica:}} Os ensaios in vivo podem fornecer informações sobre a resposta imunológica às células transplantadas ou tratamentos.
-			\item \textcolor{MediumOrchid}{\textbf{Complexidade e custo:}} Os ensaios in vivo são mais complexos, exigem um maior número de recursos, tempo e expertise, além de envolverem o uso de animais vivos, o que levanta questões éticas.
-			\item \textcolor{MediumOrchid}{\textbf{Dificuldade de controle experimental:}} Alguns fatores experimentais, como a dosagem precisa e a interação complexa com outros sistemas biológicos, podem ser difíceis de controlar nos ensaios in vivo. Além disso as células animais têm tolerâncias diferentes para radiação e quimioterapia.
+			\item \textcolor{DarkTurquoise}{\textbf{Fisiologia mais próxima da realidade:}} Os ensaios in vivo permitem avaliar as células em um ambiente mais próximo do que ocorre no organismo vivo, incluindo interações com outros tipos de células, tecidos e sistemas. Pode medir os efeitos iniciais e tardios se esperar o tempo suficiente.
+			\item \textcolor{DarkTurquoise}{\textbf{Resposta imunológica:}} Os ensaios in vivo podem fornecer informações sobre a \textcolor{MediumOrchid}{\textbf{\textit{resposta imunológica}}} às células transplantadas ou tratamentos.
+			\item \textcolor{DarkTurquoise}{\textbf{Complexidade e custo:}} Os ensaios in vivo são mais complexos, exigem um maior número de recursos, tempo e expertise, além de envolverem o uso de animais vivos, o que levanta questões éticas.
+			\item \textcolor{DarkTurquoise}{\textbf{Dificuldade de controle experimental:}} Alguns fatores experimentais, como a dosagem precisa e a interação complexa com outros sistemas biológicos, podem ser difíceis de controlar nos ensaios in vivo. Além disso as células animais têm tolerâncias diferentes para radiação e quimioterapia.
 		\end{itemize}
 	\end{itemize}
 
 
-\subsection{Ensaio de Sobrevivência Clonogênica In Vitro}
+\subsection*{Ensaio de Sobrevivência Clonogênica In Vitro}
 
-	A \textcolor{DarkTurquoise}{\textbf{sobrevivência clonogênica}} é definida pela capacidade de formar colônias. O ensaio de sobrevivência clonogênica in vitro é um método utilizado para avaliar a capacidade das células de formar colônias viáveis após um tratamento ou exposição a um agente de interesse. Esse ensaio é especialmente útil para medir a capacidade de sobrevivência e proliferação de células-tronco, células progenitoras ou células tumorais. Um esquema ensaio in vitro é exemplificado na \ref{fig:fracaoDeSobrevivencia}.
+	A \textcolor{DarkTurquoise}{\textbf{sobrevivência clonogênica}} é definida pela \textcolor{MediumOrchid}{\textbf{\textit{capacidade de formar colônias}}}. O ensaio de sobrevivência clonogênica in vitro é um método utilizado para avaliar a capacidade das células de formar \textcolor{MediumOrchid}{\textbf{\textit{colônias viáveis}}} após um tratamento ou exposição a um agente de interesse. Esse ensaio é especialmente útil para medir a capacidade de sobrevivência e proliferação de células-tronco, células progenitoras ou células tumorais. Um esquema ensaio in vitro é exemplificado na \ref{fig:fracaoDeSobrevivencia}.
 
 	\begin{figure}[h]
 		\centering
 		\fcolorbox{DarkTurquoise}{white}{%
 			\includegraphics[width=0.8\textwidth]{Imagens/fracaoDeSobrevivencia.jpg}
 		}%
-		\caption{O ensaio de sobrevivência clonogênica. A fração sobrevivente pode ser calculada dividindo a porcentagem de colônias formadas pela eficiência de revestimento (porcentagem de colônias formadas sem irradiação)}
+		\caption{O ensaio de sobrevivência clonogênica. A fração de sobrevivência pode ser calculada dividindo a porcentagem de colônias formadas pela eficiência de formação de colônias (porcentagem de colônias formadas sem irradiação)}
 		\label{fig:fracaoDeSobrevivencia}
 	\end{figure}
 
@@ -248,12 +254,12 @@
 		\item \textcolor{DarkTurquoise}{\textbf{Análise e cálculo da sobrevivência clonogênica:}} Com base no número de colônias formadas, é possível calcular a fração de sobrevivência clonogênica, que representa a capacidade das células de formar colônias viáveis em relação ao número de células iniciais.
 	\end{enumerate}
 
-	Mesmo na ausência de radiação, nem todas as células colocadas em uma placa formarão uma colônia. O "plating efficiency" (PE) é definido como a proporção de células que formam colônias viáveis em relação ao número total de células semeadas inicialmente. É expresso em termos de porcentagem. Por exemplo, se 1.000 células são semeadas e 100 colônias viáveis são formadas, a PE seria então:
+	Mesmo na ausência de radiação, nem todas as células colocadas em uma placa formarão uma colônia. O \textcolor{DarkTurquoise}{\textbf{\textit{"plating efficiency" (PE)}}} é definido como a \textcolor{MediumOrchid}{\textbf{\textit{proporção de células que formam colônias viáveis em relação ao número total de células semeadas inicialmente}}}. É expresso em termos de porcentagem. Por exemplo, se 1.000 células são semeadas e 100 colônias viáveis são formadas, a PE seria então:
 	
 		$$PE = \left(\frac{100}{1000}\right) \times 100\% = 10\%$$
 	
 
-	A fração de sobrevivência (SF), por outro lado, é uma medida da capacidade das células de sobreviver após um tratamento específico em relação às células não tratadas, como por exemplo a irradiação. É calculada dividindo a PE das células irradiadas pela PE das células não irradiadas e é expressa como uma fração ou porcentagem, ou seja:
+	A \textcolor{DarkTurquoise}{\textbf{\textit{fração de sobrevivência (SF)}}}, por outro lado, é uma \textcolor{MediumOrchid}{\textbf{\textit{medida da capacidade das células de sobreviver após um tratamento específico em relação às células não tratadas}}}, como por exemplo a irradiação. É calculada dividindo a PE das células irradiadas pela PE das células não irradiadas e é expressa como uma fração ou porcentagem, ou seja:
 	
 		$$SF(Dose) = \frac{\%colonias (Dose)}{\%colonias (Sem \; Dose)}$$
 	
@@ -262,7 +268,7 @@
 		$$SF = \frac{15\%}{30\%} = 0.5 = 50\%$$
 	
 
-\subsection{Ensaios de tecido normal in vivo}
+\subsection*{Ensaios de tecido normal in vivo}
 
 	Um exemplo de ensaio in vivo é o \textcolor{DarkTurquoise}{\textbf{ensaio de células-tronco da cripta jejunal}}. Este ensaio é realizado em tecido normal para avaliar a atividade e a capacidade de regeneração das células-tronco presentes nas criptas intestinais do jejuno. Esse ensaio é frequentemente utilizado em estudos que investigam a função das células-tronco intestinais, a resposta à lesão ou o efeito de determinados tratamentos, como a radioterapia, sobre a regeneração do tecido intestinal. Outos ensaios in vivo são:Ensaio de células-tronco da medula óssea (Till e McCulloch), ensaio de clone de pele e ensaio de túbulos renais. A \ref{fig:ensaioInVido} apresenta uma esquematização desses ensaios.
 
@@ -287,36 +293,11 @@
 		\item \textcolor{DarkTurquoise}{\textbf{Avaliação das criptas intestinais:}} As criptas intestinais são avaliadas microscopicamente para contar e analisar as criptas marcadas com o rótulo de marcação. Isso permite determinar a capacidade das células-tronco intestinais de formar novas criptas e regenerar o tecido intestinal.
 	\end{enumerate}
 
-	O ensaio de células-tronco da medula óssea, desenvolvido por James Till e Ernest McCulloch, é um ensaio in vivo utilizado para identificar e quantificar células-tronco hematopoiéticas presentes na medula óssea. Nesse ensaio, as células da medula óssea são injetadas em camundongos irradiados ou imunossuprimidos, e a capacidade dessas células de formar colônias de células sanguíneas é avaliada. Esse ensaio foi pioneiro na demonstração da existência de células-tronco hematopoiéticas.
+	O \textcolor{MediumOrchid}{\textbf{\textit{ensaio de células-tronco da medula óssea}}}, desenvolvido por James Till e Ernest McCulloch, é um ensaio in vivo utilizado para identificar e quantificar células-tronco hematopoiéticas presentes na medula óssea. Nesse ensaio, as células da medula óssea são injetadas em camundongos irradiados ou imunossuprimidos, e a capacidade dessas células de formar colônias de células sanguíneas é avaliada. Esse ensaio foi pioneiro na demonstração da existência de células-tronco hematopoiéticas.
 
-	O ensaio de clone de pele é um ensaio in vivo utilizado para avaliar a presença e a capacidade de regeneração de células-tronco da pele. Nesse ensaio, uma pequena quantidade de células da pele é injetada em uma região da pele de um receptor imunodeficiente, e a capacidade dessas células de formar uma estrutura semelhante a uma epiderme é avaliada. Esse ensaio é utilizado para estudar as células-tronco da pele e a regeneração cutânea.
+	O \textcolor{MediumOrchid}{\textbf{\textit{ensaio de clone de pele}}} é um ensaio in vivo utilizado para avaliar a presença e a capacidade de regeneração de células-tronco da pele. Nesse ensaio, uma pequena quantidade de células da pele é injetada em uma região da pele de um receptor imunodeficiente, e a capacidade dessas células de formar uma estrutura semelhante a uma epiderme é avaliada. Esse ensaio é utilizado para estudar as células-tronco da pele e a regeneração cutânea.
 
-	O ensaio de túbulos renais é um ensaio in vitro utilizado para avaliar a capacidade de células renais, incluindo células-tronco renais, de formar estruturas semelhantes a túbulos renais funcionais. Nesse ensaio, as células renais são isoladas e cultivadas em condições específicas que promovem a formação de estruturas tridimensionais semelhantes a túbulos renais. A formação dessas estruturas é então avaliada microscopicamente, juntamente com a expressão de marcadores específicos de células renais. Esse ensaio é utilizado para estudar a regeneração renal e a função das células-tronco renais.
-
-\section{Efeitos Bystander e Abscopal}
-
-	A compreensão da morte celular induzida pela radiação ionizante evoluiu além da ideia de que ela ocorre exclusivamente por exposição direta à radiação. Estudos experimentais têm mostrado que células não diretamente expostas à radiação também podem sofrer morte celular quando estão próximas a células irradiadas, mesmo que não tenham sido diretamente atingidas pela radiação. Esse fenômeno é conhecido como "morte celular induzida por espectador" ou bystander-induced cell death em inglês.
-
-	O efeito bystander é um fenômeno complexo e multifatorial. Várias vias de comunicação celular estão envolvidas na transmissão de sinais entre as células irradiadas e as células vizinhas não irradiadas. Acredita-se que moléculas sinalizadoras, como citocinas, fatores de crescimento, espécies reativas de oxigênio e nitrogênio, entre outras, sejam liberadas pelas células irradiadas e afetem as células vizinhas. Esses sinais podem levar à ativação de vias de sinalização intracelular e desencadear respostas celulares, incluindo apoptose (morte programada) e senescência celular (parada permanente do ciclo celular).
-
-	Portanto, existem duas principais formas de efeitos bystander:
-
-	\begin{enumerate}
-		\item Efeito bystander mediado por moléculas solúveis: Após a irradiação de uma célula, ela libera moléculas solúveis, como citocinas, fatores de crescimento e espécies reativas de oxigênio, que podem afetar células não irradiadas próximas. Essas moléculas sinalizadoras podem induzir danos no DNA, ativação de vias de morte celular, inflamação e outras respostas celulares.
-		\item Efeito bystander mediado por junções comunicantes: As junções comunicantes, também conhecidas como junções gap, são canais que conectam células vizinhas, permitindo a transferência direta de moléculas e íons. Após a irradiação de uma célula, a radiação pode afetar as junções comunicantes, levando à transferência de sinais e moléculas para células não irradiadas.
-	\end{enumerate}
-
-
-	Além do efeito bystander entre células adjacentes, também foi observado que a radiação ionizante tem o potencial de influenciar a morte celular além do campo de radiação imediato, em outras regiões do organismo. Esse fenômeno é conhecido como "efeito abscopal". O efeito abscopal é um fenômeno raro e interessante observado na radioterapia, no qual a radiação aplicada em um local específico do corpo também causa efeitos terapêuticos em locais distantes do alvo irradiado. Em outras palavras, o efeito abscopal refere-se aos efeitos sistêmicos da radiação em tecidos ou tumores fora do campo de irradiação direta.
-
-	Historicamente, o termo "abscopal" era usado para descrever os efeitos da radioterapia observados em lesões tumorais fora do campo de irradiação. No entanto, o termo tem sido usado de forma mais ampla para incluir qualquer efeito sistêmico observado após a exposição localizada à radiação.
-	
-	O mecanismo exato do efeito abscopal ainda não é completamente compreendido, mas acredita-se que esteja relacionado a uma resposta imunológica estimulada pela radiação. Acredita-se que a radiação cause a liberação de antígenos tumorais e sinais inflamatórios, que por sua vez ativam o sistema imunológico. Isso pode levar à destruição de células tumorais em locais distantes não irradiados, conhecido como efeito "in situ" do sistema imunológico.
-	
-
-	Além disso, efeitos bystander semelhantes provavelmente ocorrem em tecidos normais. Após a radioterapia em órgãos não linfoides, como o cérebro ou o pulmão, observou-se a ocorrência de linfopenia, uma redução no número de linfócitos no sangue periférico. Essa linfopenia pode ocorrer mesmo que os linfócitos não tenham sido diretamente irradiados, sugerindo a presença de efeitos bystander. Acredita-se que esses efeitos em tecidos normais envolvam uma resposta imunológica complexa, que pode incluir a liberação de citocinas e a ativação de células imunes, como macrófagos e células dendríticas.
-
-	Embora os mecanismos exatos do efeito bystander e do efeito abscopal ainda estejam sendo investigados, esses fenômenos têm implicações importantes na radioterapia e na compreensão dos efeitos biológicos da radiação ionizante. Eles destacam a complexidade das interações entre células e tecidos após a exposição à radiação e têm o potencial de serem explorados para melhorar a eficácia dos tratamentos e minimizar os efeitos colaterais. Além disso, o estudo desses fenômenos pode fornecer insights valiosos sobre a resposta imunológica ao câncer e abrir novas oportunidades terapêuticas na área da imunoterapia.
+	O \textcolor{MediumOrchid}{\textbf{\textit{ensaio de túbulos renais}}} é um ensaio in vitro utilizado para avaliar a capacidade de células renais, incluindo células-tronco renais, de formar estruturas semelhantes a túbulos renais funcionais. Nesse ensaio, as células renais são isoladas e cultivadas em condições específicas que promovem a formação de estruturas tridimensionais semelhantes a túbulos renais. A formação dessas estruturas é então avaliada microscopicamente, juntamente com a expressão de marcadores específicos de células renais. Esse ensaio é utilizado para estudar a regeneração renal e a função das células-tronco renais.
 
 
 \bibliography{ref.bib}
